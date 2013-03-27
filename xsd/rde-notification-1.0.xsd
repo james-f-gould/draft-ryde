@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="urn:ietf:params:xml:ns:rdeNotification-1.0"
+  xmlns:rdeNotification="urn:ietf:params:xml:ns:rdeNotification-1.0"
+  xmlns:rdeReport="urn:ietf:params:xml:ns:rdeReport-1.0"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+
+  <import namespace="urn:ietf:params:xml:ns:rdeReport-1.0"
+    schemaLocation="rde-report-1.0.xsd"/>
+
+  <annotation>
+    <documentation>
+      Registry Data Escrow Notification schema
+    </documentation>
+  </annotation>
+
+  <!-- Root Element -->
+  <element name="notification" type="rdeNotification:notificationType"/>
+
+  <!-- Notification -->
+  <complexType name="notificationType">
+    <sequence>
+      <element name="reDate" type="date"/>
+      <element name="status" type="rdeNotification:statusType"/>
+      <element ref="rdeReport:report"/>
+    </sequence>
+  </complexType>
+
+  <simpleType name="statusType">
+    <restriction base="token">
+      <enumeration value="valid"/>
+      <enumeration value="invalid"/>
+      <enumeration value="missing"/>
+    </restriction>
+  </simpleType>
+</schema>

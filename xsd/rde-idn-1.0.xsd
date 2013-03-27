@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="urn:ietf:params:xml:ns:rdeIDN-1.0"
+  xmlns:rdeIDN="urn:ietf:params:xml:ns:rdeIDN-1.0"
+  xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+
+  <import namespace="urn:ietf:params:xml:ns:rde-1.0"
+    schemaLocation="rde-1.0.xsd"/>
+
+  <annotation>
+    <documentation>
+      Registry Data Escrow IDN provisioning schema
+    </documentation>
+  </annotation>
+
+  <element name="idnTableRef" type="rdeIDN:contentType"
+    substitutionGroup="rde:content"/>
+
+  <!-- Content Type -->
+  <complexType name="contentType">
+    <complexContent>
+      <extension base="rde:contentType">
+        <sequence>
+          <element name="url" type="anyURI"/>
+          <element name="urlPolicy" type="anyURI"/>
+        </sequence>
+        <attribute name="id" type="rdeIDN:IdType" use="required"/>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <simpleType name="IdType">
+    <restriction base="ID">
+      <whiteSpace value="collapse"/>
+    </restriction>
+  </simpleType>
+
+</schema>
