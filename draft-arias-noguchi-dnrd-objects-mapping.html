@@ -145,12 +145,12 @@
 <tr><td class="header">Network Working Group</td><td class="header">F. Arias</td></tr>
 <tr><td class="header">Internet-Draft</td><td class="header">G. Lozano</td></tr>
 <tr><td class="header">Intended status: Standards Track</td><td class="header">ICANN</td></tr>
-<tr><td class="header">Expires: October 2, 2013</td><td class="header">S. Noguchi</td></tr>
+<tr><td class="header">Expires: October 3, 2013</td><td class="header">S. Noguchi</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">JPRS</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">J. Gould</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">C. Thippeswamy</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">VeriSign</td></tr>
-<tr><td class="header">&nbsp;</td><td class="header">March 31, 2013</td></tr>
+<tr><td class="header">&nbsp;</td><td class="header">April 1, 2013</td></tr>
 </table></td></tr></table>
 <h1><br />Domain Name Registration Data (DNRD) Objects Mapping<br />draft-arias-noguchi-dnrd-objects-mapping-03</h1>
 
@@ -177,7 +177,7 @@ and may be updated, replaced, or obsoleted by other documents at any time.
 It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
-This Internet-Draft will expire on October 2, 2013.</p>
+This Internet-Draft will expire on October 3, 2013.</p>
 
 <h3>Copyright Notice</h3>
 <p>
@@ -211,10 +211,12 @@ Country names<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor6">4.3.</a>&nbsp;
 Telephone numbers<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor7">4.4.</a>&nbsp;
+Checksum<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor8">4.5.</a>&nbsp;
 IP addresses<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#csvElements">4.5.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#csvElements">4.6.</a>&nbsp;
 CSV elements<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#intandloc">4.6.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#intandloc">4.7.</a>&nbsp;
 Internationalized and Localized Elements<br />
 <a href="#Object_Description">5.</a>&nbsp;
 Object Description<br />
@@ -226,53 +228,53 @@ Host Object<br />
 Contact Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#registrarObject">5.4.</a>&nbsp;
 Registrar Object<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor8">5.5.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor9">5.5.</a>&nbsp;
 RDE IDN Practices<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor9">5.6.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor10">5.6.</a>&nbsp;
 RDE NNDN<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#eppParams">5.7.</a>&nbsp;
 RDE EPP Parameters object<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor10">5.8.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor11">5.8.</a>&nbsp;
 RDE Policy object<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor11">5.9.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor12">5.9.</a>&nbsp;
 Header object<br />
-<a href="#anchor12">6.</a>&nbsp;
+<a href="#anchor13">6.</a>&nbsp;
 RDE IDN Variants handling<br />
-<a href="#anchor13">7.</a>&nbsp;
+<a href="#anchor14">7.</a>&nbsp;
 Profile<br />
-<a href="#anchor14">8.</a>&nbsp;
+<a href="#anchor15">8.</a>&nbsp;
 Appendix A. Example of a full deposit using the XML model only<br />
-<a href="#anchor15">9.</a>&nbsp;
+<a href="#anchor16">9.</a>&nbsp;
 Appendix B. Example of differential deposit using the XML model only<br />
-<a href="#anchor16">10.</a>&nbsp;
+<a href="#anchor17">10.</a>&nbsp;
 Appendix C. Data escrow agent extended verification process<br />
-<a href="#anchor17">11.</a>&nbsp;
+<a href="#anchor18">11.</a>&nbsp;
 Appendix D. Data escrow notifications<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor18">11.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor19">11.1.</a>&nbsp;
 Notifications from Registry Operators to Third Parties<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor19">11.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor20">11.2.</a>&nbsp;
 Notifications from Data Escrow Agents to Third Parties<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#formalSyntax">11.3.</a>&nbsp;
 Formal Syntax<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor36">11.4.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor37">11.4.</a>&nbsp;
 Policy Object<br />
-<a href="#anchor37">12.</a>&nbsp;
+<a href="#anchor38">12.</a>&nbsp;
 Internationalization Considerations<br />
-<a href="#anchor38">13.</a>&nbsp;
+<a href="#anchor39">13.</a>&nbsp;
 IANA Considerations<br />
-<a href="#anchor39">14.</a>&nbsp;
+<a href="#anchor40">14.</a>&nbsp;
 Security Considerations<br />
-<a href="#anchor40">15.</a>&nbsp;
+<a href="#anchor41">15.</a>&nbsp;
 Acknowledgments<br />
-<a href="#anchor41">16.</a>&nbsp;
+<a href="#anchor42">16.</a>&nbsp;
 Change History<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor42">16.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor43">16.1.</a>&nbsp;
 Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mapping-00<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor43">16.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor44">16.2.</a>&nbsp;
 Changes from version 00 to 01<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor44">16.3.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor45">16.3.</a>&nbsp;
 Changes from version 01 to 02<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor45">16.4.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor46">16.4.</a>&nbsp;
 Changes from version 02 to 03<br />
 <a href="#rfc.references1">17.</a>&nbsp;
 References<br />
@@ -346,7 +348,7 @@ Introduction</h3>
                     
 </li>
 <li>
-                        Header: Used to specify counters of objects in the SRS database at a certain point in time (watermark).
+                        Header: Used to specify counters of objects in the database at a certain point in time (watermark).
                     
 </li>
 <li>
@@ -469,6 +471,16 @@ Telephone numbers</h3>
 <a name="anchor7"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.4"></a><h3>4.4.&nbsp;
+Checksum</h3>
+
+<p>
+                    Checksum of the CSV data escrow files MUST use CRC32, that is the algorithm used in the ISO 3309 standard 
+                    and in section 8.1.1.6.2 of ITU-T recommendation V.42.
+                
+</p>
+<a name="anchor8"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.4.5"></a><h3>4.5.&nbsp;
 IP addresses</h3>
 
 <p>
@@ -478,12 +490,12 @@ IP addresses</h3>
 </p>
 <a name="csvElements"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.4.5"></a><h3>4.5.&nbsp;
+<a name="rfc.section.4.6"></a><h3>4.6.&nbsp;
 CSV elements</h3>
 
 <a name="rdeCsv-csv"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.4.5.1"></a><h3>4.5.1.&nbsp;
+<a name="rfc.section.4.6.1"></a><h3>4.6.1.&nbsp;
 &lt;rdeCsv:csv&gt; element</h3>
 
 <p>
@@ -527,7 +539,7 @@ CSV elements</h3>
                       
 </dd>
 <dt>chksum</dt>
-<dd>Defines the checksum CRC (UNIX cksum) of the CSV file.  This attribute is used to validate 
+<dd>Defines the checksum of the CSV file using CRC32.  This attribute is used to validate 
                       that the full CSV file exists and has not been tampered with.
                       
 </dd>
@@ -567,7 +579,7 @@ CSV elements</h3>
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="E6D52D73"&gt;
         domain-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -604,7 +616,7 @@ clientY,2009-04-03T22:00:00.0Z,registrarX,clientX
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="E19349E0"&gt;
         domain-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -630,7 +642,7 @@ domainN.test
 </p>
 <a name="csvCommonFieldElements"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.4.5.2"></a><h3>4.5.2.&nbsp;
+<a name="rfc.section.4.6.2"></a><h3>4.6.2.&nbsp;
 CSV common field elements</h3>
 
 <p>The &lt;rdeCsv:fields&gt; element defined in the 
@@ -749,7 +761,7 @@ CSV common field elements</h3>
 
 <a name="intandloc"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.4.6"></a><h3>4.6.&nbsp;
+<a name="rfc.section.4.7"></a><h3>4.7.&nbsp;
 Internationalized and Localized Elements</h3>
 
 <p>
@@ -803,7 +815,7 @@ Internationalized and Localized Elements</h3>
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1924040625 268"&gt;
+        cksum="9CB43C2E"&gt;
         registrar-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -843,7 +855,7 @@ Internationalized and Localized Elements</h3>
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="02CC2504"&gt;
         contactPostal-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1227,7 +1239,7 @@ CSV Model</h3>
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="E6D52D73"&gt;
         domain-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1282,7 +1294,7 @@ registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
-     cksum="1234567890 987654"&gt;
+     cksum="E19349E0"&gt;
      domain-delete-YYYYMMDD.csv
     &lt;/rdeCsv:file&gt;
   &lt;/rdeCsv:files&gt;
@@ -1393,7 +1405,7 @@ domainN.test
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="4932EA57"&gt;
         domainContacts-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1448,7 +1460,7 @@ clientY,2011-10-03T09:05:00.0Z
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
-     cksum="1234567890 987654"&gt;
+     cksum="6BC9F9E8"&gt;
      domainContacts-delete-YYYYMMDD.csv
     &lt;/rdeCsv:file&gt;
   &lt;/rdeCsv:files&gt;
@@ -1557,7 +1569,7 @@ domain2.test,sh8013,tech
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="31B475C5"&gt;
         domainStatuses-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1607,7 +1619,7 @@ redemptionPeriod,registrarX,clientY,2011-11-14T10:05:00.0Z
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
-     cksum="1234567890 987654"&gt;
+     cksum="F54AADF6"&gt;
      domainStatuses-delete-YYYYMMDD.csv
     &lt;/rdeCsv:file&gt;
   &lt;/rdeCsv:files&gt;
@@ -1717,7 +1729,7 @@ domain2.test,pendingDelete
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="430306BC"&gt;
         domainNameServersObj-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1772,7 +1784,7 @@ clientY,2009-12-03T09:05:00.0Z
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="736D6F61"&gt;
         domainNameServersAttr-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1824,7 +1836,7 @@ clientY,2009-12-03T09:05:00.0Z
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
-     cksum="1234567890 987654"&gt;
+     cksum="7448DAA0"&gt;
      domainNameServersObj-delete-YYYYMMDD.csv
     &lt;/rdeCsv:file&gt;
   &lt;/rdeCsv:files&gt;
@@ -1870,7 +1882,7 @@ domain2.test,ns2.domain.example
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
-     cksum="1234567890 987654"&gt;
+     cksum="546C66A5"&gt;
      domainNameServersAttr-delete-YYYYMMDD.csv
     &lt;/rdeCsv:file&gt;
   &lt;/rdeCsv:files&gt;
@@ -2028,7 +2040,7 @@ domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-       cksum="1234567890 987654"&gt;
+       cksum="AA15CB43"&gt;
        dnssec-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -2074,8 +2086,8 @@ domain1.test,604800,257,3,1,AQPJ////4QQQ
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-       cksum="1234567890 987654"&gt;
-       dnssec-delete-YYYYMMDD.csv
+       cksum="ADB014A2"&gt;
+       dnssec-ds-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
   &lt;/rdeCsv:csv&gt;
@@ -2120,8 +2132,8 @@ domain1.test,12346,3,1,38EC35D5B3A34B44C39B
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-       cksum="1234567890 987654"&gt;
-       dnssec-delete-YYYYMMDD.csv
+       cksum="B3E06C5C"&gt;
+       dnssec-key-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
   &lt;/rdeCsv:csv&gt;
@@ -2221,7 +2233,7 @@ domain1.test,257,3,1,AQPJ////4QQQ
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-       cksum="1234567890 987654"&gt;
+       cksum="71170194"&gt;
        domainTransfer-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -2269,7 +2281,7 @@ domain2.test,clientApproved,registrarX,clientY,
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-       cksum="1234567890 987654"&gt;
+       cksum="10C3EDA8"&gt;
        domainTransfer-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -2549,7 +2561,7 @@ CSV Model</h3>
    &lt;/rdeCsv:fields&gt;
    &lt;rdeCsv:files&gt;
      &lt;rdeCsv:file
-      cksum="1410255126 216"&gt;
+      cksum="120938E3"&gt;
       host-YYYYMMDD.csv
      &lt;/rdeCsv:file&gt;
    &lt;/rdeCsv:files&gt;
@@ -2597,7 +2609,7 @@ clientX,2009-05-08T12:10:00.0Z,clientX,
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
-     cksum="1234567890 987654"&gt;
+     cksum="1B92A07C"&gt;
      host-delete-YYYYMMDD.csv
     &lt;/rdeCsv:file&gt;
   &lt;/rdeCsv:files&gt;
@@ -2698,7 +2710,7 @@ ns1.example.test2
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="2F4C2E4A"&gt;
         hostStatuses-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -2745,7 +2757,7 @@ ns1.domain2.test,ok,,,registrarX,clientY,2011-10-03T09:05:00.0Z
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
-     cksum="1234567890 987654"&gt;
+     cksum="8088E027"&gt;
      hostStatuses-delete-YYYYMMDD.csv
     &lt;/rdeCsv:file&gt;
   &lt;/rdeCsv:files&gt;
@@ -2852,7 +2864,7 @@ ns1.domain1.test,clientDeleteProhibited
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="2C2A7A9F"&gt;
         hostAddressesObj-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -2900,7 +2912,7 @@ v6,clientX,2009-12-03T09:05:00.0Z
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
-     cksum="1234567890 987654"&gt;
+     cksum="B211225B"&gt;
      hostAddressesObj-delete-YYYYMMDD.csv
     &lt;/rdeCsv:file&gt;
   &lt;/rdeCsv:files&gt;
@@ -2950,7 +2962,7 @@ ns1.domain1.test,1080:0:0:0:8:800:200C:417A
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="2DF599DB"&gt;
         hostAddressesAttr-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -2998,7 +3010,7 @@ v6,clientX,2009-12-03T09:05:00.0Z
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
-     cksum="1234567890 987654"&gt;
+     cksum="11576C5B"&gt;
      hostAddressesAttr-delete-YYYYMMDD.csv
     &lt;/rdeCsv:file&gt;
   &lt;/rdeCsv:files&gt;
@@ -3426,7 +3438,7 @@ CSV Model</h3>
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
      &lt;rdeCsv:file
-      cksum="1410255126 216"&gt;
+      cksum="D7F106A5"&gt;
       contact-YYYYMMDD.csv
      &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -3473,7 +3485,7 @@ mycontactid,Cmycontactid-TEST,+1.7034444444,1234,
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1410255126 216"&gt;
+        cksum="6F2B988F"&gt;
         contact-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -3568,7 +3580,7 @@ mycontactid
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="4122B192"&gt;
         contactStatuses-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -3615,7 +3627,7 @@ mycontactid,ok,,,registrarX,clientY,2011-10-03T09:05:00.0Z
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
-     cksum="1234567890 987654"&gt;
+     cksum="CBEE0AB6"&gt;
      contactStatuses-delete-YYYYMMDD.csv
     &lt;/rdeCsv:file&gt;
   &lt;/rdeCsv:files&gt;
@@ -3651,45 +3663,45 @@ sh8013,clientDeleteProhibited
 <blockquote class="text"><dl>
 <dt>&lt;csvContact:fPostalType&gt;</dt>
 <dd>Contains the form of the postal-address information with type="contact:postalLineType".  
-                This field specifies the form ("int" or "loc"), as defined in <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>, of the 
+                This field specifies the form ("int" or "loc"), as defined in <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>, of the 
                 &lt;csvContact:fName&gt;, &lt;csvContact:fOrg&gt;, &lt;csvContact:fStreet&gt;, &lt;csvContact:fCity&gt;, 
                 &lt;csvContact:fSp&gt;, &lt;csvContact:fPc&gt;, &lt;csvContact:fCc&gt; fields.  
                 
 </dd>
 <dt>&lt;csvContact:fName&gt;</dt>
 <dd>Contains the contact's name of the individual or role represented by the contact with type="contact:postalLineType" and isRequired="true".  
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
+                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
                 
 </dd>
 <dt>&lt;csvContact:fOrg&gt;</dt>
 <dd>Contains the name of the organization with which the contact is affiliated with type="contact:optPostalLineType".  
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
+                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
               
 </dd>
 <dt>&lt;csvContact:fStreet&gt;</dt>
 <dd>Contains the contact's contact's street address line with type="contact:fPostalLineType".  An index attribute 
                 is required to indicate which street address line the field represents with index "0" for the first line and index "2" for the last line.  
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
+                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
                 
 </dd>
 <dt>&lt;csvContact:fCity&gt;</dt>
 <dd>Contains the contact's city with type="contact:postalLineType" and isRequired="true".   
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
+                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
                 
 </dd>
 <dt>&lt;csvContact:fSp&gt;</dt>
 <dd>Contains the contact's state or province with type="contact:optPostalLineType".   
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
+                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
                 
 </dd>
 <dt>&lt;csvContact:fPc&gt;</dt>
 <dd>Contains the contact's postal code with type="contact:pcType".  
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
+                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
                 
 </dd>
 <dt>&lt;csvContact:fCc&gt;</dt>
 <dd>Contains the contact's country code with type="contact:ccType".   
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
+                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>. 
                 
 </dd>
 </dl></blockquote>
@@ -3735,7 +3747,7 @@ sh8013,clientDeleteProhibited
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="02CC2504"&gt;
         contactPostal-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -3781,7 +3793,7 @@ mycontactid,int,"John Smith","Acme Inc.",
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="9A47B820"&gt;
         contactPostal-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -3878,7 +3890,7 @@ mycontactid,int
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="D0929632"&gt;
         contactTransfer-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -3925,7 +3937,7 @@ registrarY,clientY,2011-04-09T20:38:00.0Z
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="AF1479BD"&gt;
         contactTransfer-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -4055,7 +4067,7 @@ mycontactid,2011-04-08T19:38:00.0Z
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="89043A90"&gt;
         contactDisclose-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -4100,7 +4112,7 @@ mycontactid,1,1,1,0,0,0,0,0,0,0
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1234567890 987654"&gt;
+        cksum="6F2B988F"&gt;
         contactDisclose-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -4435,23 +4447,23 @@ CSV Model</h3>
 <blockquote class="text"><dl>
 <dt>&lt;csvContact:fStreet&gt;</dt>
 <dd>Registrar street address line with an "index" attribute that represents the order of the street address line from "0" to "2".  
-                    An OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>.
+                    An OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>.
 </dd>
 <dt>&lt;csvContact:fCity&gt;</dt>
 <dd>Registrar city with an OPTIONAL "isLoc" attribute that is used to 
-                    indicate the localized or internationalized form, as defined in <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>.
+                    indicate the localized or internationalized form, as defined in <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>.
 </dd>
 <dt>&lt;csvContact:fSp&gt;</dt>
 <dd>Registrar state or province with an OPTIONAL "isLoc" attribute that is used to 
-                    indicate the localized or internationalized form, as defined in <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>.
+                    indicate the localized or internationalized form, as defined in <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>.
 </dd>
 <dt>&lt;csvContact:fPc&gt;</dt>
 <dd>Registrar postal code with an OPTIONAL "isLoc" attribute that is used to 
-                    indicate the localized or internationalized form, as defined in <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>.
+                    indicate the localized or internationalized form, as defined in <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>.
 </dd>
 <dt>&lt;csvContact:fCc&gt;</dt>
 <dd>Registrar country code with an OPTIONAL "isLoc" attribute that is used to 
-                    indicate the localized or internationalized form, as defined in <a class='info' href='#intandloc'>Section&nbsp;4.6<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>.
+                    indicate the localized or internationalized form, as defined in <a class='info' href='#intandloc'>Section&nbsp;4.7<span> (</span><span class='info'>Internationalized and Localized Elements</span><span>)</span></a>.
 </dd>
 <dt>&lt;csvContact:fVoice&gt;</dt>
 <dd>Registrar voice telephone number.
@@ -4508,7 +4520,7 @@ CSV Model</h3>
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1924040625 268"&gt;
+        cksum="9CB43C2E"&gt;
         registrar-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -4553,7 +4565,7 @@ http://whois.example.test,2005-04-23T11:49:00.0Z,
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="1924040625 268"&gt;
+        cksum="307B87AE"&gt;
         registrar-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -4580,7 +4592,7 @@ EXAMPLE2
 </dd>
 </dl></blockquote>
 
-<a name="anchor8"></a><br /><hr />
+<a name="anchor9"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.5"></a><h3>5.5.&nbsp;
 RDE IDN Practices</h3>
@@ -4640,7 +4652,7 @@ RDE IDN Practices</h3>
 
                     
 </p>
-<a name="anchor9"></a><br /><hr />
+<a name="anchor10"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.6"></a><h3>5.6.&nbsp;
 RDE NNDN</h3>
@@ -4858,7 +4870,7 @@ RDE EPP Parameters object</h3>
 
                 
 </p>
-<a name="anchor10"></a><br /><hr />
+<a name="anchor11"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.8"></a><h3>5.8.&nbsp;
 RDE Policy object</h3>
@@ -4901,7 +4913,7 @@ RDE Policy object</h3>
 
                     
 </p>
-<a name="anchor11"></a><br /><hr />
+<a name="anchor12"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.9"></a><h3>5.9.&nbsp;
 Header object</h3>
@@ -4968,7 +4980,7 @@ Header object</h3>
 
                     
 </p>
-<a name="anchor12"></a><br /><hr />
+<a name="anchor13"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.6"></a><h3>6.&nbsp;
 RDE IDN Variants handling</h3>
@@ -4988,7 +5000,7 @@ RDE IDN Variants handling</h3>
                 takes precedence over an implicit representation.
             
 </p>
-<a name="anchor13"></a><br /><hr />
+<a name="anchor14"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.7"></a><h3>7.&nbsp;
 Profile</h3>
@@ -5034,7 +5046,7 @@ Profile</h3>
 </ol><p>
             
 </p>
-<a name="anchor14"></a><br /><hr />
+<a name="anchor15"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.8"></a><h3>8.&nbsp;
 Appendix A. Example of a full deposit using the XML model only</h3>
@@ -5271,7 +5283,7 @@ Appendix A. Example of a full deposit using the XML model only</h3>
 
 
 </p>
-<a name="anchor15"></a><br /><hr />
+<a name="anchor16"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.9"></a><h3>9.&nbsp;
 Appendix B. Example of differential deposit using the XML model only</h3>
@@ -5348,7 +5360,7 @@ Appendix B. Example of differential deposit using the XML model only</h3>
 
             
 </p>
-<a name="anchor16"></a><br /><hr />
+<a name="anchor17"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.10"></a><h3>10.&nbsp;
 Appendix C. Data escrow agent extended verification process</h3>
@@ -5402,7 +5414,7 @@ Appendix C. Data escrow agent extended verification process</h3>
 </ul><p>
             
 </p>
-<a name="anchor17"></a><br /><hr />
+<a name="anchor18"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11"></a><h3>11.&nbsp;
 Appendix D. Data escrow notifications</h3>
@@ -5416,7 +5428,7 @@ Appendix D. Data escrow notifications</h3>
                 access to the data escrow deposit file is available.
             
 </p>
-<a name="anchor18"></a><br /><hr />
+<a name="anchor19"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.1"></a><h3>11.1.&nbsp;
 Notifications from Registry Operators to Third Parties</h3>
@@ -5524,7 +5536,7 @@ Notifications from Registry Operators to Third Parties</h3>
 
                     
 </p>
-<a name="anchor19"></a><br /><hr />
+<a name="anchor20"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.2"></a><h3>11.2.&nbsp;
 Notifications from Data Escrow Agents to Third Parties</h3>
@@ -5653,7 +5665,7 @@ Formal Syntax</h3>
                 The last schema defines the eppParams objects.
             
 </p>
-<a name="anchor20"></a><br /><hr />
+<a name="anchor21"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.1"></a><h3>11.3.1.&nbsp;
 RDE CSV Schema</h3>
@@ -6083,7 +6095,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor21"></a><br /><hr />
+<a name="anchor22"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.2"></a><h3>11.3.2.&nbsp;
 RDE Domain Object</h3>
@@ -6240,7 +6252,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor22"></a><br /><hr />
+<a name="anchor23"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.3"></a><h3>11.3.3.&nbsp;
 CSV Domain Object</h3>
@@ -6483,7 +6495,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor23"></a><br /><hr />
+<a name="anchor24"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.4"></a><h3>11.3.4.&nbsp;
 RDE Host Object</h3>
@@ -6605,7 +6617,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor24"></a><br /><hr />
+<a name="anchor25"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.5"></a><h3>11.3.5.&nbsp;
 CSV Host Object</h3>
@@ -6779,7 +6791,7 @@ END</pre></div><p>
 
             
 </p>
-<a name="anchor25"></a><br /><hr />
+<a name="anchor26"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.6"></a><h3>11.3.6.&nbsp;
 RDE Contact Object</h3>
@@ -6923,7 +6935,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor26"></a><br /><hr />
+<a name="anchor27"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.7"></a><h3>11.3.7.&nbsp;
 CSV Contact Object</h3>
@@ -7274,7 +7286,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor27"></a><br /><hr />
+<a name="anchor28"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.8"></a><h3>11.3.8.&nbsp;
 RDE Registrar Object</h3>
@@ -7480,7 +7492,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor28"></a><br /><hr />
+<a name="anchor29"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.9"></a><h3>11.3.9.&nbsp;
 CSV Registrar Object</h3>
@@ -7676,7 +7688,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor29"></a><br /><hr />
+<a name="anchor30"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.10"></a><h3>11.3.10.&nbsp;
 RDE IDN and IDN Table Reference Objects</h3>
@@ -7777,7 +7789,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor30"></a><br /><hr />
+<a name="anchor31"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.11"></a><h3>11.3.11.&nbsp;
 CSV IDN Language Object</h3>
@@ -7898,7 +7910,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor31"></a><br /><hr />
+<a name="anchor32"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.12"></a><h3>11.3.12.&nbsp;
 EPP Parameters Object</h3>
@@ -8006,7 +8018,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor32"></a><br /><hr />
+<a name="anchor33"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.13"></a><h3>11.3.13.&nbsp;
 NNDN Object</h3>
@@ -8129,7 +8141,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor33"></a><br /><hr />
+<a name="anchor34"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.14"></a><h3>11.3.14.&nbsp;
 Header Object</h3>
@@ -8235,7 +8247,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor34"></a><br /><hr />
+<a name="anchor35"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.15"></a><h3>11.3.15.&nbsp;
 Report Object</h3>
@@ -8332,7 +8344,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor35"></a><br /><hr />
+<a name="anchor36"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.3.16"></a><h3>11.3.16.&nbsp;
 Notifiaction Object</h3>
@@ -8430,7 +8442,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor36"></a><br /><hr />
+<a name="anchor37"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11.4"></a><h3>11.4.&nbsp;
 Policy Object</h3>
@@ -8519,7 +8531,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor37"></a><br /><hr />
+<a name="anchor38"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.12"></a><h3>12.&nbsp;
 Internationalization Considerations</h3>
@@ -8532,7 +8544,7 @@ Internationalization Considerations</h3>
                 is RECOMMENDED.
             
 </p>
-<a name="anchor38"></a><br /><hr />
+<a name="anchor39"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13"></a><h3>13.&nbsp;
 IANA Considerations</h3>
@@ -8831,7 +8843,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<a name="anchor39"></a><br /><hr />
+<a name="anchor40"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.14"></a><h3>14.&nbsp;
 Security Considerations</h3>
@@ -8862,7 +8874,7 @@ Security Considerations</h3>
                 &quot;meaningful&quot;.
             
 </p>
-<a name="anchor40"></a><br /><hr />
+<a name="anchor41"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.15"></a><h3>15.&nbsp;
 Acknowledgments</h3>
@@ -8875,7 +8887,7 @@ Acknowledgments</h3>
                 TBD
             
 </p>
-<a name="anchor41"></a><br /><hr />
+<a name="anchor42"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.16"></a><h3>16.&nbsp;
 Change History</h3>
@@ -8884,7 +8896,7 @@ Change History</h3>
                 [[RFC Editor: Please remove this section.]]
             
 </p>
-<a name="anchor42"></a><br /><hr />
+<a name="anchor43"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.16.1"></a><h3>16.1.&nbsp;
 Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mapping-00</h3>
@@ -8916,7 +8928,7 @@ Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mappin
 </ol><p>
                 
 </p>
-<a name="anchor43"></a><br /><hr />
+<a name="anchor44"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.16.2"></a><h3>16.2.&nbsp;
 Changes from version 00 to 01</h3>
@@ -8939,7 +8951,7 @@ Changes from version 00 to 01</h3>
 </ol><p>
                 
 </p>
-<a name="anchor44"></a><br /><hr />
+<a name="anchor45"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.16.3"></a><h3>16.3.&nbsp;
 Changes from version 01 to 02</h3>
@@ -8968,7 +8980,7 @@ Changes from version 01 to 02</h3>
 </ol><p>
                 
 </p>
-<a name="anchor45"></a><br /><hr />
+<a name="anchor46"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.16.4"></a><h3>16.4.&nbsp;
 Changes from version 02 to 03</h3>
@@ -8977,6 +8989,8 @@ Changes from version 02 to 03</h3>
                     </p>
 <ol class="text">
 <li>Merged draft-gould-thippeswamy-dnrd-csv-mapping-03 into draft-arias-noguchi-dnrd-objects-mapping-02.
+</li>
+<li>Changed the cksum attribute of &lt;rdeCsv:file&gt; to use CRC32 and changed all of the sample cksum values to use CRC32.
 </li>
 </ol><p>
                 

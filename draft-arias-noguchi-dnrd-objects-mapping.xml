@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="31" month="March" year="2013"/>
+        <date day="1" month="April" year="2013"/>
         
         <area> Applications </area>
         
@@ -179,7 +179,7 @@
                         EPP parameters: Definition of the specific EPP parameters supported by the Registry Operator.
                     </t>
                     <t>
-                        Header: Used to specify counters of objects in the SRS database at a certain point in time (watermark).
+                        Header: Used to specify counters of objects in the database at a certain point in time (watermark).
                     </t>
                     <t>
                         Policy: Used to specify OPTIONAL elements from this specification that are REQUIRED based on
@@ -271,6 +271,14 @@
                 </t>
             </section>
             
+            <section title="Checksum">
+                <t>
+                    Checksum of the CSV data escrow files MUST use CRC32, that is the algorithm used in the ISO 3309 standard 
+                    and in section 8.1.1.6.2 of ITU-T recommendation V.42.
+                </t>
+            </section>
+            
+            
             <section title="IP addresses">
                 <t>
                     IP addresses syntax MUST conform either to, Internet Protocol <xref target="RFC0791"/>, for IPv4 
@@ -307,7 +315,7 @@
                       </t>
                       <t hangText="encoding">Defines the encoding of the CSV file with the default encoding of "UTF-8".
                       </t>
-                      <t hangText="chksum">Defines the checksum CRC (UNIX cksum) of the CSV file.  This attribute is used to validate 
+                      <t hangText="chksum">Defines the checksum of the CSV file using CRC32.  This attribute is used to validate 
                       that the full CSV file exists and has not been tampered with.
                       </t>
                     </list></t>
@@ -341,7 +349,7 @@
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="E6D52D73">
         domain-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -370,7 +378,7 @@ clientY,2009-04-03T22:00:00.0Z,registrarX,clientX
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="E19349E0">
         domain-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -504,7 +512,7 @@ domainN.test]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1924040625 268">
+        cksum="9CB43C2E">
         registrar-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -540,7 +548,7 @@ domainN.test]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="02CC2504">
         contactPostal-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -836,7 +844,7 @@ domainN.test]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="E6D52D73">
         domain-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -883,7 +891,7 @@ registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z]]>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="1234567890 987654">
+     cksum="E19349E0">
      domain-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -959,7 +967,7 @@ domainN.test]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="4932EA57">
         domainContacts-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -1006,7 +1014,7 @@ clientY,2011-10-03T09:05:00.0Z]]>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="1234567890 987654">
+     cksum="6BC9F9E8">
      domainContacts-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -1082,7 +1090,7 @@ domain2.test,sh8013,tech]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="31B475C5">
         domainStatuses-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -1124,7 +1132,7 @@ redemptionPeriod,registrarX,clientY,2011-11-14T10:05:00.0Z]]>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="1234567890 987654">
+     cksum="F54AADF6">
      domainStatuses-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -1203,7 +1211,7 @@ domain2.test,pendingDelete]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="430306BC">
         domainNameServersObj-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -1251,7 +1259,7 @@ clientY,2009-12-03T09:05:00.0Z]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="736D6F61">
         domainNameServersAttr-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -1296,7 +1304,7 @@ clientY,2009-12-03T09:05:00.0Z]]>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="1234567890 987654">
+     cksum="7448DAA0">
      domainNameServersObj-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -1334,7 +1342,7 @@ domain2.test,ns2.domain.example]]>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="1234567890 987654">
+     cksum="546C66A5">
      domainNameServersAttr-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -1455,7 +1463,7 @@ domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-       cksum="1234567890 987654">
+       cksum="AA15CB43">
        dnssec-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -1493,8 +1501,8 @@ domain1.test,604800,257,3,1,AQPJ////4QQQ]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-       cksum="1234567890 987654">
-       dnssec-delete-YYYYMMDD.csv
+       cksum="ADB014A2">
+       dnssec-ds-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
   </rdeCsv:csv>
@@ -1531,8 +1539,8 @@ domain1.test,12346,3,1,38EC35D5B3A34B44C39B]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-       cksum="1234567890 987654">
-       dnssec-delete-YYYYMMDD.csv
+       cksum="B3E06C5C">
+       dnssec-key-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
   </rdeCsv:csv>
@@ -1599,7 +1607,7 @@ domain1.test,257,3,1,AQPJ////4QQQ]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-       cksum="1234567890 987654">
+       cksum="71170194">
        domainTransfer-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -1639,7 +1647,7 @@ domain2.test,clientApproved,registrarX,clientY,
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-       cksum="1234567890 987654">
+       cksum="10C3EDA8">
        domainTransfer-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -1851,7 +1859,7 @@ domain2.test,2012-03-08T19:38:00.0Z]]>
    </rdeCsv:fields>
    <rdeCsv:files>
      <rdeCsv:file 
-      cksum="1410255126 216">
+      cksum="120938E3">
       host-YYYYMMDD.csv
      </rdeCsv:file> 
    </rdeCsv:files>
@@ -1891,7 +1899,7 @@ clientX,2009-05-08T12:10:00.0Z,clientX,
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="1234567890 987654">
+     cksum="1B92A07C">
      host-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -1960,7 +1968,7 @@ ns1.example.test2]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="2F4C2E4A">
         hostStatuses-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -1999,7 +2007,7 @@ ns1.domain2.test,ok,,,registrarX,clientY,2011-10-03T09:05:00.0Z]]>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="1234567890 987654">
+     cksum="8088E027">
      hostStatuses-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -2075,7 +2083,7 @@ ns1.domain1.test,clientDeleteProhibited]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="2C2A7A9F">
         hostAddressesObj-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2115,7 +2123,7 @@ v6,clientX,2009-12-03T09:05:00.0Z]]>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="1234567890 987654">
+     cksum="B211225B">
      hostAddressesObj-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -2157,7 +2165,7 @@ ns1.domain1.test,1080:0:0:0:8:800:200C:417A]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="2DF599DB">
         hostAddressesAttr-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2197,7 +2205,7 @@ v6,clientX,2009-12-03T09:05:00.0Z]]>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="1234567890 987654">
+     cksum="11576C5B">
      hostAddressesAttr-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -2544,7 +2552,7 @@ Dns1.domain1.test-TEST,1080:0:0:0:8:800:200C:417A]]>
     </rdeCsv:fields>
     <rdeCsv:files>
      <rdeCsv:file 
-      cksum="1410255126 216">
+      cksum="D7F106A5">
       contact-YYYYMMDD.csv
      </rdeCsv:file> 
     </rdeCsv:files>
@@ -2583,7 +2591,7 @@ mycontactid,Cmycontactid-TEST,+1.7034444444,1234,
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1410255126 216">
+        cksum="6F2B988F">
         contact-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2648,7 +2656,7 @@ mycontactid]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="4122B192">
         contactStatuses-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2687,7 +2695,7 @@ mycontactid,ok,,,registrarX,clientY,2011-10-03T09:05:00.0Z]]>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="1234567890 987654">
+     cksum="CBEE0AB6">
      contactStatuses-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -2783,7 +2791,7 @@ sh8013,clientDeleteProhibited]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="02CC2504">
         contactPostal-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2821,7 +2829,7 @@ mycontactid,int,"John Smith","Acme Inc.",
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="9A47B820">
         contactPostal-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2886,7 +2894,7 @@ mycontactid,int]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="D0929632">
         contactTransfer-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2925,7 +2933,7 @@ registrarY,clientY,2011-04-09T20:38:00.0Z]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="AF1479BD">
         contactTransfer-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3029,7 +3037,7 @@ mycontactid,2011-04-08T19:38:00.0Z]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="89043A90">
         contactDisclose-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3067,7 +3075,7 @@ mycontactid,1,1,1,0,0,0,0,0,0,0]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1234567890 987654">
+        cksum="6F2B988F">
         contactDisclose-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3376,7 +3384,7 @@ mycontactid]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1924040625 268">
+        cksum="9CB43C2E">
         registrar-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3413,7 +3421,7 @@ http://whois.example.test,2005-04-23T11:49:00.0Z,
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1924040625 268">
+        cksum="307B87AE">
         registrar-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -7302,6 +7310,7 @@ END]]></artwork></figure>
                 <t>
                     <list style="numbers">
                         <t>Merged draft-gould-thippeswamy-dnrd-csv-mapping-03 into draft-arias-noguchi-dnrd-objects-mapping-02.</t>
+                        <t>Changed the cksum attribute of &lt;rdeCsv:file&gt; to use CRC32 and changed all of the sample cksum values to use CRC32.</t>
                     </list>
                 </t>
             </section>

@@ -34,7 +34,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1234567890 98765432">
+						cksum="E19349E0">
 						domain-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -47,7 +47,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1234567890 98765432">
+						cksum="6BC9F9E8">
 						domainContacts-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -59,7 +59,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1234567890 98765432">
+						cksum="F54AADF6">
 						domainStatuses-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -71,7 +71,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1234567890 98765432">
+						cksum="7448DAA0">
 						domainNameServersObj-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -86,7 +86,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1234567890 98765432">
+						cksum="ADB014A2">
 						dnssec-ds-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -101,7 +101,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1234567890 98765432">
+						cksum="B3E06C5C">
 						dnssec-key-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -113,7 +113,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1234567890 98765432">
+						cksum="10C3EDA8">
 						domainTransfer-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -126,7 +126,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1410255126 216">
+						cksum="1B92A07C">
 						host-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -138,7 +138,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1410255126 216">
+						cksum="8088E027">
 						hostStatuses-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -150,7 +150,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1410255126 216">
+						cksum="B211225B">
 						hostAddressesObj-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -163,7 +163,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1410255126 216">
+						cksum="6F2B988F">
 						contact-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -175,7 +175,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1410255126 216">
+						cksum="CBEE0AB6">
 						contactStatuses-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -188,7 +188,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1234567890 98765432">
+						cksum="6F2B988F">
 						contactPostal-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -200,7 +200,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1234567890 98765432">
+						cksum="AF1479BD">
 						contactTransfer-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -211,7 +211,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1234567890 98765432">
+						cksum="6F2B988F">
 						contactDisclose-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -224,7 +224,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="1924040625 268">
+						cksum="307B87AE">
 						registrar-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -237,7 +237,7 @@
 				</rdeCsv:fields>
 				<rdeCsv:files>
 					<rdeCsv:file 
-						cksum="2186160075 371">
+						cksum="757B573A">
 						idnLanguage-delete-YYYYMMDD.csv
 					</rdeCsv:file> 
 				</rdeCsv:files>
@@ -265,7 +265,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="E6D52D73">
 	 					domain-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -282,7 +282,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="4932EA57">
 	 					domainContacts-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -301,7 +301,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="31B475C5">
 	 					domainStatuses-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -317,7 +317,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="430306BC">
 	 					domainNameServers-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -334,7 +334,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="AA15CB43">
 	 					dnssec-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -354,7 +354,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="71170194">
 	 					domainTransfer-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -377,7 +377,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1410255126 216">
+	 					cksum="120938E3">
 	 					host-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -395,7 +395,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="2F4C2E4A">
 	 					hostStatuses-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -412,7 +412,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="2C2A7A9F">
 	 					hostAddresses-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -439,7 +439,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1410255126 216">
+	 					cksum="D7F106A5">
 	 					contact-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -457,7 +457,7 @@
       		</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="4122B192">
 	 					contactStatuses-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -479,7 +479,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="02CC2504">
 	 					contactPostal-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -498,7 +498,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="D0929632">
 	 					contactTransfer-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -520,7 +520,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1234567890 98765432">
+	 					cksum="89043A90">
 	 					contactDisclose-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -554,7 +554,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1924040625 268">
+	 					cksum="9CB43C2E">
 	 					registrar-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -569,7 +569,7 @@
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="1924040625 268">
+	 					cksum="D462EAD0">
 	 					idnLanguage-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
