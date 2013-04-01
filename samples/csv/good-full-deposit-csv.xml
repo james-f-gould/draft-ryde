@@ -28,8 +28,7 @@
 	 </rde:rdeMenu>
 	 <rde:contents>
 	 	<csvDomain:contents>
-	 		<rdeCsv:csv name="domain">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="domain" sep=",">
 	 			<rdeCsv:fields>
 	 				<csvDomain:fName/> 				
 	 				<rdeCsv:fRoid/> 				
@@ -52,10 +51,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="domainContacts">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="domainContacts" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvDomain:fName/>
+	 				<csvDomain:fName parent="true"/>
 	 				<csvContact:fId/>
 	 				<csvDomain:fContactType/>
 	 				<rdeCsv:fCrRr/>
@@ -69,10 +67,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="domainStatuses">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="domainStatuses" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvDomain:fName/>
+	 				<csvDomain:fName parent="true"/>
 	 				<csvDomain:fStatus/>
 	 				<rdeCsv:fStatusDescription/>
 	 				<rdeCsv:fLanguage/>
@@ -88,10 +85,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="domainNameServers">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="domainNameServers" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvDomain:fName/>
+	 				<csvDomain:fName parent="true"/>
 	 				<csvHost:fName/>
 	 				<rdeCsv:fCrRr/>
 	 				<rdeCsv:fCrID/>
@@ -104,10 +100,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="dnssec">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="dnssec" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvDomain:fName/>
+	 				<csvDomain:fName parent="true"/>
 	 				<csvDomain:fMaxSigLife/>
 	 				<csvDomain:fKeyTag/>
 	 				<csvDomain:fDsAlg/>
@@ -121,10 +116,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="dnssec">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="dnssec" sep=",">
 	 			<rdeCsv:fields>
-					<csvDomain:fName/>
+					<csvDomain:fName parent="true"/>
 	 				<csvDomain:fMaxSigLife/>
 					<csvDomain:fFlags/>
 					<csvDomain:fProtocol/>
@@ -138,10 +132,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="domainTransfer">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="domainTransfer" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvDomain:fName/>
+	 				<csvDomain:fName parent="true"/>
 	 				<rdeCsv:fTrStatus/>
 	 				<rdeCsv:fReRr/>
 	 				<rdeCsv:fReID/>
@@ -160,8 +153,7 @@
 	 		</rdeCsv:csv>
 		</csvDomain:contents>
 	 	<csvHost:contents>
-	 		<rdeCsv:csv name="host">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="host" sep=",">
 	 			<rdeCsv:fields>
 	 				<csvHost:fName/>
 	 				<rdeCsv:fRoid/>
@@ -181,10 +173,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="hostStatuses">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="hostStatuses" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvHost:fName/>
+	 				<csvHost:fName parent="true"/>
 	 				<csvHost:fStatus/>
 	 				<rdeCsv:fStatusDescription/>
 	 				<rdeCsv:fLanguage/>
@@ -199,10 +190,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="hostAddresses">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="hostAddresses" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvHost:fName/>
+	 				<csvHost:fName parent="true"/>
 	 				<csvHost:fAddr/>
 	 				<csvHost:fAddrVersion/>
 	 				<rdeCsv:fCrRr/>
@@ -218,8 +208,7 @@
 	 		</rdeCsv:csv>
 		</csvHost:contents>
 	 	<csvContact:contents>
-	 		<rdeCsv:csv name="contact">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="contact" sep=",">
 	 			<rdeCsv:fields>
 	 				<csvContact:fId/>
 	 				<rdeCsv:fRoid/>
@@ -243,10 +232,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="contactStatuses">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="contactStatuses" sep=",">
 	 			<rdeCsv:fields>
-      			<csvContact:fId/>
+      			<csvContact:fId parent="true"/>
       			<csvContact:fStatus/>
       			<rdeCsv:fStatusDescription/>
      				<rdeCsv:fLanguage/>
@@ -261,10 +249,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="contactPostal">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="contactPostal" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvContact:fId/>
+	 				<csvContact:fId parent="true"/>
 	 				<csvContact:fPostalType/>
 	 				<csvContact:fName/>
 	 				<csvContact:fOrg/>
@@ -283,10 +270,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>	 		
-	 		<rdeCsv:csv name="contactTransfer">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="contactTransfer" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvContact:fId/>
+	 				<csvContact:fId parent="true"/>
 	 				<rdeCsv:fTrStatus/>
 	 				<rdeCsv:fReRr/>
 	 				<rdeCsv:fReID/>
@@ -302,10 +288,9 @@
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="contactDisclose">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="contactDisclose" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvContact:fId/>
+	 				<csvContact:fId parent="true"/>
 	 				<csvContact:fDiscloseFlag/>
 	 				<csvContact:fDiscloseNameLoc/>
 	 				<csvContact:fDiscloseNameInt/>
@@ -326,8 +311,7 @@
 	 		</rdeCsv:csv>
 		</csvContact:contents>
 	 	<csvRegistrar:contents>
-	 		<rdeCsv:csv name="registrar">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="registrar" sep=",">
 	 			<rdeCsv:fields>
 	 				<csvRegistrar:fId/>
 	 				<rdeCsv:fRoid/>
@@ -360,8 +344,7 @@
 	 		</rdeCsv:csv>
 		</csvRegistrar:contents>
 	 	<csvIDN:contents>
-	 		<rdeCsv:csv name="idnLanguage">
-	 			<rdeCsv:sep>,</rdeCsv:sep>
+	 		<rdeCsv:csv name="idnLanguage" sep=",">
 	 			<rdeCsv:fields>
 	 				<rdeCsv:fLanguage isRequired="true"/>
 	 				<rdeCsv:fUrl isRequired="true"/>

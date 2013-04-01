@@ -297,8 +297,6 @@
       &lt;csvDomain:deletes&gt; elements contain one or more &lt;rdeCsv:csv&gt; elements.
                   The &lt;rdeCsv:csv&gt; element has the following child elements:</t>
                   <t><list style="hanging">
-                    <t hangText="&lt;rdeCsv:sep&gt;">Optional definition of the CSV separator characters with the default 
-                    separator character of ",".</t>
                     <t hangText="&lt;rdeCsv:fields&gt;">Ordered list of CSV fields used in the CSV files.  There is one or more 
                     child elements that substitute for the &lt;rdeCsv:field&gt; abstract element.  Each element 
                     defines the format of the CSV field contained in the CSV files.  The &lt;rdeCsv:field&gt; elements  
@@ -306,7 +304,9 @@
                     elements support the "isRequired" attribute, with a default value of "false", when set to "true" indicates that the field must be non-empty 
                     in the CSV files and when set to "false" indicates that the field MAY be empty in the CSV files.  The "isRequired" 
                     attribute MAY be specifically set for the field elements within the XML schema and MAY be overridden when specifying 
-                    the fields under the &lt;rdeCsv:fields&gt; element.</t>
+                    the fields under the &lt;rdeCsv:fields&gt; element.  The &lt;rdeCsv:field&gt; element supports an OPTIONAL "parent" attribute 
+                    that identifies the field as a reference to the parent object.  For example, the &lt;rdeCsv:csv name="domainStatuses"&gt; &lt;csvDomain:fName&gt; field SHOULD 
+                    set the "parent" attribute to "true" to identify it has the parent domain name of the domain status.</t>  
                     <t hangText="&lt;rdeCsv:files&gt;">A list of one or more CSV files using the &lt;rdeCsv:file&gt; child element.  
                     The &lt;rdeCsv:file&gt; child element defines a reference to the CSV file name and has the following optional attributes:</t>
                     <t><list style="hanging">
@@ -322,7 +322,7 @@
                   </list></t>
                   <t>The &lt;rdeCsv:csv&gt; elements requires a "name" attribute that defines the 
                   purpose of the CSV file with values like "domain", "host", "contact".  The supported "name" attribute values 
-                  are defined for each object type.
+                  are defined for each object type.  The OPTIONAL "sep" attribute defines the CSV separator character with the default separator character of ",".
                   </t>
                   <t>The following is an example of the &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element for domain name records where the &lt;rdeCsv:fRegistrant&gt; is 
                   set as required with isRequired="true".</t>
@@ -330,8 +330,7 @@
                         <figure><artwork><![CDATA[
 <csvDomain:contents>
 ...
-  <rdeCsv:csv name="domain">
-    <rdeCsv:sep>,</rdeCsv:sep>
+  <rdeCsv:csv name="domain" sep=",">
     <rdeCsv:fields>
       <csvDomain:fName/>
       <rdeCsv:fRoid/>
@@ -481,8 +480,7 @@ domainN.test]]>
 ...
 <csvRegistrar:contents>
 ...
-  <rdeCsv:csv name="registrar">
-    <rdeCsv:sep>,</rdeCsv:sep>
+  <rdeCsv:csv name="registrar" sep=",">
     <rdeCsv:fields>
       <csvRegistrar:fId/>
       <rdeCsv:fRoid/>
@@ -532,9 +530,8 @@ domainN.test]]>
 <csvContact:contents>
 ...
   <rdeCsv:csv name="contactPostal">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvContact:fId/>
+      <csvContact:fId parent="true"/>
       <csvContact:fPostalType/>
       <csvContact:fName/>
       <csvContact:fOrg/>
@@ -826,7 +823,6 @@ domainN.test]]>
 <csvDomain:contents>
 ...
   <rdeCsv:csv name="domain">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
       <csvDomain:fName/>
       <rdeCsv:fRoid/>
@@ -956,9 +952,8 @@ domainN.test]]>
 <csvDomain:contents>
 ...
   <rdeCsv:csv name="domainContacts">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <csvContact:fId/>
       <csvDomain:fContactType/>
       <rdeCsv:fCrRr/>
@@ -1008,7 +1003,7 @@ clientY,2011-10-03T09:05:00.0Z]]>
 ...
  <rdeCsv:csv name="domainContacts">
   <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <csvContact:fId/>
       <csvDomain:fContactType/>
   </rdeCsv:fields>
@@ -1077,9 +1072,8 @@ domain2.test,sh8013,tech]]>
 <csvDomain:contents>
 ...
   <rdeCsv:csv name="domainStatuses">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <csvDomain:fStatus/>
       <rdeCsv:fStatusDescription/>
       <rdeCsv:fLanguage/>
@@ -1127,7 +1121,7 @@ redemptionPeriod,registrarX,clientY,2011-11-14T10:05:00.0Z]]>
 ...
  <rdeCsv:csv name="domainStatuses">
   <rdeCsv:fields>
-    <csvDomain:fName/>
+    <csvDomain:fName parent="true"/>
     <csvDomain:fStatus/>
   </rdeCsv:fields>
   <rdeCsv:files>
@@ -1201,9 +1195,8 @@ domain2.test,pendingDelete]]>
 <csvDomain:contents>
 ...
   <rdeCsv:csv name="domainNameServers">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <csvHost:fName/>
       <rdeCsv:fCrRr/>
       <rdeCsv:fCrID/>
@@ -1249,9 +1242,8 @@ clientY,2009-12-03T09:05:00.0Z]]>
 <csvDomain:contents>
 ...
   <rdeCsv:csv name="domainNameServers">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <rdeCsv:fRoid/>
       <rdeCsv:fCrRr/>
       <rdeCsv:fCrID/>
@@ -1299,7 +1291,7 @@ clientY,2009-12-03T09:05:00.0Z]]>
 ...
  <rdeCsv:csv name="domainNameServers">
   <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <csvHost:fName/>
   </rdeCsv:fields>
   <rdeCsv:files>
@@ -1337,7 +1329,7 @@ domain2.test,ns2.domain.example]]>
 ...
  <rdeCsv:csv name="domainNameServers">
   <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <rdeCsv:fRoid/>
   </rdeCsv:fields>
   <rdeCsv:files>
@@ -1413,9 +1405,8 @@ domain2.test,Dns2.domain.example-TEST]]>
 <csvDomain:contents>
 ...
   <rdeCsv:csv name="dnssec">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <csvDomain:fMaxSigLife/>
       <csvDomain:fKeyTag/>
       <csvDomain:fDsAlg/>
@@ -1452,9 +1443,8 @@ domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B]]>
 <csvDomain:contents>
 ...
   <rdeCsv:csv name="dnssec">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <csvDomain:fMaxSigLife/>
       <csvDomain:fFlags/>
       <csvDomain:fProtocol/>
@@ -1493,7 +1483,7 @@ domain1.test,604800,257,3,1,AQPJ////4QQQ]]>
 ...
   <rdeCsv:csv name="dnssec">
     <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <csvDomain:fKeyTag/>
       <csvDomain:fDsAlg/>
       <csvDomain:fDigestType/>
@@ -1531,7 +1521,7 @@ domain1.test,12346,3,1,38EC35D5B3A34B44C39B]]>
 ...
   <rdeCsv:csv name="dnssec">
     <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <csvDomain:fFlags/>
       <csvDomain:fProtocol/>
       <csvDomain:fKeyAlg/>
@@ -1593,9 +1583,8 @@ domain1.test,257,3,1,AQPJ////4QQQ]]>
 <csvDomain:contents>
 ...
   <rdeCsv:csv name="domainTransfer">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <rdeCsv:fTrStatus/>
       <rdeCsv:fReRr/>
       <rdeCsv:fReID/>
@@ -1642,7 +1631,7 @@ domain2.test,clientApproved,registrarX,clientY,
 ...
   <rdeCsv:csv name="domainTransfer">
     <rdeCsv:fields>
-      <csvDomain:fName/>
+      <csvDomain:fName parent="true"/>
       <rdeCsv:fReDate/>
     </rdeCsv:fields>
     <rdeCsv:files>
@@ -1844,7 +1833,6 @@ domain2.test,2012-03-08T19:38:00.0Z]]>
 <csvHost:contents>
 ...
   <rdeCsv:csv name="host">
-   <rdeCsv:sep>,</rdeCsv:sep>
    <rdeCsv:fields>
      <csvHost:fName/>
      <rdeCsv:fRoid/>
@@ -1895,7 +1883,7 @@ clientX,2009-05-08T12:10:00.0Z,clientX,
 ...
  <rdeCsv:csv name="host">
   <rdeCsv:fields>
-    <csvHost:fName/>
+    <csvHost:fName parent="true"/>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
@@ -1956,9 +1944,8 @@ ns1.example.test2]]>
 <csvHost:contents>
 ...
   <rdeCsv:csv name="hostStatuses">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvHost:fName/>
+      <csvHost:fName parent="true"/>
       <csvHost:fStatus/>
       <rdeCsv:fStatusDescription/>
       <rdeCsv:fLanguage/>
@@ -2002,7 +1989,7 @@ ns1.domain2.test,ok,,,registrarX,clientY,2011-10-03T09:05:00.0Z]]>
 ...
  <rdeCsv:csv name="hostStatuses">
   <rdeCsv:fields>
-      <csvHost:fName/>
+      <csvHost:fName parent="true"/>
       <csvHost:fStatus/>
   </rdeCsv:fields>
   <rdeCsv:files>
@@ -2072,9 +2059,8 @@ ns1.domain1.test,clientDeleteProhibited]]>
 <csvHost:contents>
 ...
   <rdeCsv:csv name="hostAddresses">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvHost:fName/>
+      <csvHost:fName parent="true"/>
       <csvHost:fAddr/>
       <csvHost:fAddrVersion/>
       <rdeCsv:fCrRr/>
@@ -2118,7 +2104,7 @@ v6,clientX,2009-12-03T09:05:00.0Z]]>
 ...
  <rdeCsv:csv name="hostAddresses">
   <rdeCsv:fields>
-      <csvHost:fName/>
+      <csvHost:fName parent="true"/>
       <csvHost:fAddr/>
   </rdeCsv:fields>
   <rdeCsv:files>
@@ -2154,9 +2140,8 @@ ns1.domain1.test,1080:0:0:0:8:800:200C:417A]]>
 <csvHost:contents>
 ...
   <rdeCsv:csv name="hostAddresses">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <rdeCsv:fRoid/>
+      <rdeCsv:fRoid parent="true"/>
       <csvHost:fAddr/>
       <csvHost:fAddrVersion/>
       <rdeCsv:fCrRr/>
@@ -2200,7 +2185,7 @@ v6,clientX,2009-12-03T09:05:00.0Z]]>
 ...
  <rdeCsv:csv name="hostAddresses">
   <rdeCsv:fields>
-    <rdeCsv:fRoid/>
+    <rdeCsv:fRoid parent="true"/>
     <csvHost:fAddr/>
   </rdeCsv:fields>
   <rdeCsv:files>
@@ -2393,7 +2378,7 @@ Dns1.domain1.test-TEST,1080:0:0:0:8:800:200C:417A]]>
                                     </t>
                                 </list>
                             </t>
-							<t>
+              <t>
                                 An OPTIONAL &lt;disclose&gt; element that identifies elements that requiring exceptional server-operator 
                                 handling to allow or restrict disclosure to third parties. See Section 2.9 of 
                                 <xref target="RFC5733"/> for a description of the child elements contained within the 
@@ -2533,7 +2518,6 @@ Dns1.domain1.test-TEST,1080:0:0:0:8:800:200C:417A]]>
 <csvContact:contents>
 ...
   <rdeCsv:csv name="contact">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
      <csvContact:fId/>
      <rdeCsv:fRoid/>
@@ -2644,9 +2628,8 @@ mycontactid]]>
 <csvContact:contents>
 ...
   <rdeCsv:csv name="contactStatuses">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvContact:fId/>
+      <csvContact:fId parent="true"/>
       <csvContact:fStatus/>
       <rdeCsv:fStatusDescription/>
       <rdeCsv:fLanguage/>
@@ -2690,7 +2673,7 @@ mycontactid,ok,,,registrarX,clientY,2011-10-03T09:05:00.0Z]]>
 ...
  <rdeCsv:csv name="contactStatuses">
   <rdeCsv:fields>
-      <csvContact:fId/>
+      <csvContact:fId parent="true"/>
       <csvContact:fStatus/>
   </rdeCsv:fields>
   <rdeCsv:files>
@@ -2775,9 +2758,8 @@ sh8013,clientDeleteProhibited]]>
 <csvContact:contents>
 ...
   <rdeCsv:csv name="contactPostal">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvContact:fId/>
+      <csvContact:fId parent="true"/>
       <csvContact:fPostalType/>
       <csvContact:fName/>
       <csvContact:fOrg/>
@@ -2822,9 +2804,8 @@ mycontactid,int,"John Smith","Acme Inc.",
 <csvContact:deletes>
 ...
   <rdeCsv:csv name="contactPostal">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvContact:fId/>
+      <csvContact:fId parent="true"/>
       <csvContact:fPostalType/>
     </rdeCsv:fields>
     <rdeCsv:files>
@@ -2881,9 +2862,8 @@ mycontactid,int]]>
 <csvContact:contents>
 ...
   <rdeCsv:csv name="contactTransfer">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvContact:fId/>
+      <csvContact:fId parent="true"/>
       <rdeCsv:fTrStatus/>
       <rdeCsv:fReRr/>
       <rdeCsv:fReID/>
@@ -2928,7 +2908,7 @@ registrarY,clientY,2011-04-09T20:38:00.0Z]]>
 ...
   <rdeCsv:csv name="contactTransfer">
     <rdeCsv:fields>
-      <csvContact:fId/>
+      <csvContact:fId parent="true"/>
       <rdeCsv:fReDate/>
     </rdeCsv:fields>
     <rdeCsv:files>
@@ -3021,9 +3001,8 @@ mycontactid,2011-04-08T19:38:00.0Z]]>
 <csvContact:contents>
 ...
   <rdeCsv:csv name="contactDisclose">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <csvContact:fId/>
+      <csvContact:fId parent="true"/>
       <csvContact:fDiscloseFlag/>
       <csvContact:fDiscloseNameLoc/>
       <csvContact:fDiscloseNameInt/>
@@ -3071,7 +3050,7 @@ mycontactid,1,1,1,0,0,0,0,0,0,0]]>
 ...
   <rdeCsv:csv name="contactDisclose">
     <rdeCsv:fields>
-      <csvContact:fId/>
+      <csvContact:fId parent="true"/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -3097,7 +3076,7 @@ mycontactid]]>
                     </t>    
                 </list></t>
                 
-				  </section>                
+          </section>                
             
             </section>
             
@@ -3358,7 +3337,6 @@ mycontactid]]>
 <csvRegistrar:contents>
 ...
   <rdeCsv:csv name="registrar">
-    <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
       <csvRegistrar:fId/>
       <rdeCsv:fRoid/>
@@ -3444,7 +3422,7 @@ EXAMPLE2]]>
                     
                      </list></t>  
          
-            	</section>
+              </section>
             </section>
             
             <section title="RDE IDN Practices">
@@ -3733,25 +3711,25 @@ EXAMPLE2]]>
                     <t>
                         <figure><artwork><![CDATA[
 ...
-   <rdeHeader:header>
-      <rdeHeader:tld>test</rdeHeader:tld>
-      <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeDomain-1.0">2</rdeHeader:count>
-      <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeHost-1.0">1</rdeHeader:count>
-      <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeContact-1.0">1</rdeHeader:count>
-      <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0">1
-	  </rdeHeader:count>
-      <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1</rdeHeader:count>
-      <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0">1</rdeHeader:count>
-      <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
-	  </rdeHeader:count>
-    </rdeHeader:header>
+<rdeHeader:header>
+  <rdeHeader:tld>test</rdeHeader:tld>
+  <rdeHeader:count
+    uri="urn:ietf:params:xml:ns:rdeDomain-1.0">2</rdeHeader:count>
+  <rdeHeader:count
+    uri="urn:ietf:params:xml:ns:rdeHost-1.0">1</rdeHeader:count>
+  <rdeHeader:count
+    uri="urn:ietf:params:xml:ns:rdeContact-1.0">1</rdeHeader:count>
+  <rdeHeader:count
+    uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0">1
+  </rdeHeader:count>
+  <rdeHeader:count
+    uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1</rdeHeader:count>
+  <rdeHeader:count
+    uri="urn:ietf:params:xml:ns:rdeNNDN-1.0">1</rdeHeader:count>
+  <rdeHeader:count
+    uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
+  </rdeHeader:count>
+</rdeHeader:header>
 ...]]>
                         </artwork></figure>
                     </t>
@@ -3860,14 +3838,14 @@ EXAMPLE2]]>
         uri="urn:ietf:params:xml:ns:rdeContact-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeNNDN-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
     </rdeHeader:header>
 
     <!-- Domian: example1.test -->
@@ -4034,7 +4012,7 @@ EXAMPLE2]]>
         </epp:statement>
       </rdeEppParams:dcp>
     </rdeEppParams:eppParams>
-	<rdePolicy:policy element="rdeDom:registrant" />
+  <rdePolicy:policy element="rdeDom:registrant" />
   </rde:contents>
 </rde:deposit>
 ]]>
@@ -4097,14 +4075,14 @@ EXAMPLE2]]>
         uri="urn:ietf:params:xml:ns:rdeContact-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeNNDN-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
     </rdeHeader:header>
   </rde:contents>
 </rde:deposit>
@@ -4219,7 +4197,7 @@ EXAMPLE2]]>
 <?xml version="1.0" encoding="UTF-8"?>
   <rdeReport:report
     xmlns:rdeReport="urn:ietf:params:xml:ns:rdeReport-1.0"
-	xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0">
+  xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0">
     <rdeReport:id>20101017001</rdeReport:id>
     <rdeReport:reDate>2010-10-17T01:51:10.0Z</rdeReport:reDate>
     <rdeReport:vaDate>2010-10-17T02:51:10.0Z</rdeReport:vaDate>
@@ -4236,14 +4214,14 @@ EXAMPLE2]]>
         uri="urn:ietf:params:xml:ns:rdeContact-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeNNDN-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
     </rdeHeader:header>
   </rdeReport:report>
 ]]>
@@ -4331,14 +4309,14 @@ EXAMPLE2]]>
         uri="urn:ietf:params:xml:ns:rdeContact-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeNNDN-1.0">1</rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
     </rdeHeader:header>
   </rdeReport:report>
 </rdeNotification:notification>
@@ -4433,15 +4411,14 @@ EXAMPLE2]]>
   
   
   <!-- Definition of CSV file -->  
- <complexType name="csvType">
-   <sequence>
-    <element name="sep" type="token" default="," 
-      minOccurs="0"/>
-    <element name="fields" type="rdeCsv:fieldsType"/>
-    <element name="files" type="rdeCsv:filesType"/>
-   </sequence>
-   <attribute name="name" type="token" use="required"/>
- </complexType>
+  <complexType name="csvType">
+    <sequence>
+     <element name="fields" type="rdeCsv:fieldsType"/>
+     <element name="files" type="rdeCsv:filesType"/>
+    </sequence>
+    <attribute name="name" type="token" use="required"/>
+    <attribute name="sep" type="token" default=","/>
+  </complexType>
 
  
  <!-- Abstract field type -->
@@ -4459,6 +4436,7 @@ EXAMPLE2]]>
       <sequence/>
       <attribute name="isRequired" type="boolean" 
         default="false"/>
+      <attribute name="parent" type="boolean"/>
     </extension>
   </complexContent>
  </complexType>
@@ -4470,6 +4448,7 @@ EXAMPLE2]]>
       <sequence/>
       <attribute name="isRequired" type="boolean" 
         default="true"/>
+      <attribute name="parent" type="boolean"/>
     </extension>
   </complexContent>
  </complexType>
@@ -4853,10 +4832,13 @@ END]]></artwork></figure>
     </documentation>
   </annotation>
 
-  <element name="abstractDomain" type="rdeDomain:abstractContentType"
+  <element name="abstractDomain" 
+    type="rdeDomain:abstractContentType"
     substitutionGroup="rde:content" abstract="true"/>
-  <element name="domain" substitutionGroup="rdeDomain:abstractDomain"/>
-  <element name="delete" type="rdeDomain:deleteType"
+  <element name="domain" 
+    substitutionGroup="rdeDomain:abstractDomain"/>
+  <element name="delete" 
+    type="rdeDomain:deleteType"
     substitutionGroup="rde:delete"/>
 
   <!-- Content Type -->
@@ -4864,33 +4846,48 @@ END]]></artwork></figure>
     <complexContent>
       <extension base="rde:contentType">
         <sequence>
-          <element name="name" type="eppcom:labelType"/>
-          <element name="roid" type="eppcom:roidType"/>
-          <element name="uName" type="eppcom:labelType" minOccurs="0"/>
-          <element name="idnTableId" type="IDREF" minOccurs="0"/>
-          <element name="originalName" type="eppcom:labelType"
-            minOccurs="0"/>
-          <element name="status" type="domain:statusType"
-            maxOccurs="11"/>
-          <element name="rgpStatus" type="rgp:statusType" minOccurs="0"
+          <element name="name" 
+            type="eppcom:labelType"/>
+          <element name="roid" 
+            type="eppcom:roidType"/>
+          <element name="uName" 
+            type="eppcom:labelType" minOccurs="0"/>
+          <element name="idnTableId" 
+            type="IDREF" minOccurs="0"/>
+          <element name="originalName" 
+            type="eppcom:labelType" minOccurs="0"/>
+          <element name="status" 
+            type="domain:statusType" maxOccurs="11"/>
+          <element name="rgpStatus" 
+            type="rgp:statusType" minOccurs="0"
             maxOccurs="unbounded"/>
-          <element name="registrant" type="eppcom:clIDType"
-            minOccurs="0"/>
-          <element name="contact" type="domain:contactType"
+          <element name="registrant" 
+            type="eppcom:clIDType" minOccurs="0"/>
+          <element name="contact" 
+            type="domain:contactType"
             minOccurs="0" maxOccurs="unbounded"/>
-          <element name="ns" type="domain:nsType" minOccurs="0"/>
-          <element name="clID" type="eppcom:clIDType"/>
-          <element name="crRr" type="rde:rrType"/>
-          <element name="crDate" type="dateTime" minOccurs="0"/>
-          <element name="exDate" type="dateTime" minOccurs="0"/>
-          <element name="upRr" type="rde:rrType" minOccurs="0"/>
-          <element name="upDate" type="dateTime" minOccurs="0"/>
-          <element name="secDNS" type="secDNS:dsOrKeyType"
-            minOccurs="0"/>
-          <element name="trDate" type="dateTime" minOccurs="0"/>
-          <element name="authInfo" type="domain:authInfoType"
-            minOccurs="0"/>
-          <element name="trnData" type="rdeDomain:transferDataType"
+          <element name="ns" 
+            type="domain:nsType" minOccurs="0"/>
+          <element name="clID" 
+            type="eppcom:clIDType"/>
+          <element name="crRr" 
+            type="rde:rrType"/>
+          <element name="crDate" 
+            type="dateTime" minOccurs="0"/>
+          <element name="exDate" 
+            type="dateTime" minOccurs="0"/>
+          <element name="upRr" 
+            type="rde:rrType" minOccurs="0"/>
+          <element name="upDate" 
+            type="dateTime" minOccurs="0"/>
+          <element name="secDNS" 
+            type="secDNS:dsOrKeyType" minOccurs="0"/>
+          <element name="trDate" 
+            type="dateTime" minOccurs="0"/>
+          <element name="authInfo" 
+            type="domain:authInfoType" minOccurs="0"/>
+          <element name="trnData" 
+            type="rdeDomain:transferDataType" 
             minOccurs="0"/>
         </sequence>
       </extension>
@@ -4899,12 +4896,18 @@ END]]></artwork></figure>
 
   <complexType name="transferDataType">
     <sequence>
-      <element name="trStatus" type="eppcom:trStatusType"/>
-      <element name="reRr" type="rde:rrType"/>
-      <element name="reDate" type="dateTime"/>
-      <element name="acRr" type="rde:rrType"/>
-      <element name="acDate" type="dateTime"/>
-      <element name="exDate" type="dateTime" minOccurs="0"/>
+      <element name="trStatus" 
+        type="eppcom:trStatusType"/>
+      <element name="reRr" 
+        type="rde:rrType"/>
+      <element name="reDate" 
+        type="dateTime"/>
+      <element name="acRr" 
+        type="rde:rrType"/>
+      <element name="acDate" 
+        type="dateTime"/>
+      <element name="exDate" 
+        type="dateTime" minOccurs="0"/>
     </sequence>
   </complexType>
 
@@ -4913,8 +4916,8 @@ END]]></artwork></figure>
     <complexContent>
       <extension base="rde:deleteType">
         <sequence>
-          <element name="name" type="eppcom:labelType"
-            maxOccurs="unbounded"/>
+          <element name="name" 
+            type="eppcom:labelType" maxOccurs="unbounded"/>
         </sequence>
       </extension>
     </complexContent>
@@ -5232,17 +5235,27 @@ END]]></artwork></figure>
     <complexContent>
       <extension base="rde:contentType">
         <sequence>
-          <element name="name" type="eppcom:labelType"/>
-          <element name="roid" type="eppcom:roidType"/>
-          <element name="status" type="host:statusType" maxOccurs="7"/>
-          <element name="addr" type="host:addrType" minOccurs="0"
+          <element name="name" 
+            type="eppcom:labelType"/>
+          <element name="roid" 
+            type="eppcom:roidType"/>
+          <element name="status" 
+            type="host:statusType" maxOccurs="7"/>
+          <element name="addr" 
+            type="host:addrType" minOccurs="0"
             maxOccurs="unbounded"/>
-          <element name="clID" type="eppcom:clIDType"/>
-          <element name="crRr" type="rde:rrType"/>
-          <element name="crDate" type="dateTime"/>
-          <element name="upRr" type="rde:rrType" minOccurs="0"/>
-          <element name="upDate" type="dateTime" minOccurs="0"/>
-          <element name="trDate" type="dateTime" minOccurs="0"/>
+          <element name="clID" 
+            type="eppcom:clIDType"/>
+          <element name="crRr" 
+            type="rde:rrType"/>
+          <element name="crDate" 
+            type="dateTime"/>
+          <element name="upRr" 
+            type="rde:rrType" minOccurs="0"/>
+          <element name="upDate" 
+            type="dateTime" minOccurs="0"/>
+          <element name="trDate" 
+            type="dateTime" minOccurs="0"/>
         </sequence>
       </extension>
     </complexContent>
@@ -5253,8 +5266,8 @@ END]]></artwork></figure>
     <complexContent>
       <extension base="rde:deleteType">
         <sequence>
-          <element name="name" type="eppcom:labelType"
-            maxOccurs="unbounded"/>
+          <element name="name" 
+            type="eppcom:labelType" maxOccurs="unbounded"/>
         </sequence>
       </extension>
     </complexContent>
@@ -5494,11 +5507,13 @@ END]]></artwork></figure>
     </documentation>
   </annotation>
 
-  <element name="abstractContact" type="rdeContact:abstractContentType"
+  <element name="abstractContact" 
+    type="rdeContact:abstractContentType"
     substitutionGroup="rde:content" abstract="true"/>
   <element name="contact"
     substitutionGroup="rdeContact:abstractContact"/>
-  <element name="delete" type="rdeContact:deleteType"
+  <element name="delete" 
+    type="rdeContact:deleteType"
     substitutionGroup="rde:delete"/>
 
   <!-- Contact Type -->
@@ -5506,25 +5521,36 @@ END]]></artwork></figure>
     <complexContent>
       <extension base="rde:contentType">
         <sequence>
-          <element name="id" type="eppcom:clIDType"/>
-          <element name="roid" type="eppcom:roidType"/>
-          <element name="status" type="contact:statusType"
-            maxOccurs="7"/>
-          <element name="postalInfo" type="contact:postalInfoType"
-            maxOccurs="2"/>
-          <element name="voice" type="contact:e164Type" minOccurs="0"/>
-          <element name="fax" type="contact:e164Type" minOccurs="0"/>
-          <element name="email" type="eppcom:minTokenType"/>
-          <element name="clID" type="eppcom:clIDType"/>
-          <element name="crRr" type="rde:rrType"/>
-          <element name="crDate" type="dateTime"/>
-          <element name="upRr" type="rde:rrType" minOccurs="0"/>
-          <element name="upDate" type="dateTime" minOccurs="0"/>
-          <element name="trDate" type="dateTime" minOccurs="0"/>
-          <element name="trnData" type="rdeContact:transferDataType"
-            minOccurs="0"/>
-          <element name="disclose" type="contact:discloseType"
-            minOccurs="0"/>
+          <element name="id" 
+            type="eppcom:clIDType"/>
+          <element name="roid" 
+            type="eppcom:roidType"/>
+          <element name="status" 
+            type="contact:statusType" maxOccurs="7"/>
+          <element name="postalInfo" 
+            type="contact:postalInfoType" maxOccurs="2"/>
+          <element name="voice" 
+            type="contact:e164Type" minOccurs="0"/>
+          <element name="fax" 
+            type="contact:e164Type" minOccurs="0"/>
+          <element name="email" 
+            type="eppcom:minTokenType"/>
+          <element name="clID" 
+            type="eppcom:clIDType"/>
+          <element name="crRr" 
+            type="rde:rrType"/>
+          <element name="crDate" 
+            type="dateTime"/>
+          <element name="upRr" 
+            type="rde:rrType" minOccurs="0"/>
+          <element name="upDate" 
+            type="dateTime" minOccurs="0"/>
+          <element name="trDate" 
+            type="dateTime" minOccurs="0"/>
+          <element name="trnData" 
+            type="rdeContact:transferDataType" minOccurs="0"/>
+          <element name="disclose" 
+            type="contact:discloseType" minOccurs="0"/>
         </sequence>
       </extension>
     </complexContent>
@@ -5546,7 +5572,8 @@ END]]></artwork></figure>
     <complexContent>
       <extension base="rde:deleteType">
         <sequence>
-          <element name="id" type="eppcom:clIDType" minOccurs="0"
+          <element name="id" 
+            type="eppcom:clIDType" minOccurs="0"
             maxOccurs="unbounded"/>
         </sequence>
       </extension>
@@ -5980,20 +6007,31 @@ END]]></artwork></figure>
     <complexContent>
       <extension base="rde:contentType">
         <sequence>
-          <element name="id" type="eppcom:clIDType"/>
-          <element name="name" type="rdeRegistrar:nameType"/>
-          <element name="gurid" type="positiveInteger" minOccurs="0"/>
-          <element name="status" type="rdeRegistrar:statusType"/>
-          <element name="postalInfo" type="rdeRegistrar:postalInfoType"
+          <element name="id" 
+            type="eppcom:clIDType"/>
+          <element name="name" 
+            type="rdeRegistrar:nameType"/>
+          <element name="gurid" 
+            type="positiveInteger" minOccurs="0"/>
+          <element name="status" 
+            type="rdeRegistrar:statusType"/>
+          <element name="postalInfo" 
+            type="rdeRegistrar:postalInfoType"
             maxOccurs="2"/>
-          <element name="voice" type="contact:e164Type" minOccurs="0"/>
-          <element name="fax" type="contact:e164Type" minOccurs="0"/>
-          <element name="email" type="eppcom:minTokenType"/>
-          <element name="url" type="anyURI" minOccurs="0"/>
-          <element name="whoisInfo" type="rdeRegistrar:whoisInfoType"
-            minOccurs="0"/>
-          <element name="crDate" type="dateTime"/>
-          <element name="upDate" type="dateTime" minOccurs="0"/>
+          <element name="voice" 
+            type="contact:e164Type" minOccurs="0"/>
+          <element name="fax" 
+            type="contact:e164Type" minOccurs="0"/>
+          <element name="email" 
+            type="eppcom:minTokenType"/>
+          <element name="url" 
+            type="anyURI" minOccurs="0"/>
+          <element name="whoisInfo" 
+            type="rdeRegistrar:whoisInfoType" minOccurs="0"/>
+          <element name="crDate" 
+            type="dateTime"/>
+          <element name="upDate" 
+            type="dateTime" minOccurs="0"/>
         </sequence>
       </extension>
     </complexContent>
@@ -6016,9 +6054,11 @@ END]]></artwork></figure>
 
   <complexType name="postalInfoType">
     <sequence>
-      <element name="addr" type="rdeRegistrar:addrType" />
+      <element name="addr" 
+        type="rdeRegistrar:addrType" />
     </sequence>
-    <attribute name="type" type="rdeRegistrar:postalInfoEnumType"
+    <attribute name="type" 
+      type="rdeRegistrar:postalInfoEnumType"
       use="required" />
   </complexType>
 
@@ -6031,13 +6071,18 @@ END]]></artwork></figure>
 
   <complexType name="addrType">
     <sequence>
-      <element name="street" type="rdeRegistrar:optPostalLineType"
+      <element name="street" 
+        type="rdeRegistrar:optPostalLineType"
         minOccurs="0" maxOccurs="3" />
-      <element name="city" type="rdeRegistrar:postalLineType" />
-      <element name="sp" type="rdeRegistrar:optPostalLineType"
+      <element name="city" 
+        type="rdeRegistrar:postalLineType" />
+      <element name="sp" 
+        type="rdeRegistrar:optPostalLineType"
         minOccurs="0" />
-      <element name="pc" type="rdeRegistrar:pcType" minOccurs="0" />
-      <element name="cc" type="rdeRegistrar:ccType" />
+      <element name="pc" 
+        type="rdeRegistrar:pcType" minOccurs="0" />
+      <element name="cc" 
+        type="rdeRegistrar:ccType" />
     </sequence>
   </complexType>
 
@@ -6068,8 +6113,10 @@ END]]></artwork></figure>
 
   <complexType name="whoisInfoType">
     <sequence>
-      <element name="name" type="eppcom:labelType" minOccurs="0"/>
-      <element name="url" type="anyURI" minOccurs="0"/>
+      <element name="name" 
+        type="eppcom:labelType" minOccurs="0"/>
+      <element name="url" 
+        type="anyURI" minOccurs="0"/>
     </sequence>
   </complexType>
 
@@ -6078,7 +6125,8 @@ END]]></artwork></figure>
     <complexContent>
       <extension base="rde:deleteType">
         <sequence>
-          <element name="id" type="eppcom:clIDType" minOccurs="0"
+          <element name="id" 
+            type="eppcom:clIDType" minOccurs="0"
             maxOccurs="unbounded"/>
         </sequence>
       </extension>
@@ -6551,11 +6599,15 @@ END]]></artwork></figure>
         <sequence>
           <element name="version" type="epp:versionType"
             maxOccurs="unbounded"/>
-          <element name="lang" type="language" maxOccurs="unbounded"/>
-          <element name="objURI" type="anyURI" maxOccurs="unbounded"/>
-          <element name="svcExtension" type="epp:extURIType"
+          <element name="lang" 
+            type="language" maxOccurs="unbounded"/>
+          <element name="objURI" 
+            type="anyURI" maxOccurs="unbounded"/>
+          <element name="svcExtension" 
+            type="epp:extURIType"
             minOccurs="0"/>
-          <element name="dcp" type="epp:dcpType"/>
+          <element name="dcp" 
+            type="epp:dcpType"/>
         </sequence>
       </extension>
     </complexContent>
@@ -6629,9 +6681,11 @@ END]]></artwork></figure>
     </documentation>
   </annotation>
 
-  <element name="abstractNNDN" type="rdeNNDN:abstractContentType"
+  <element name="abstractNNDN" 
+    type="rdeNNDN:abstractContentType"
     substitutionGroup="rde:content" abstract="true"/>
-  <element name="NNDN" substitutionGroup="rdeNNDN:abstractNNDN"/>
+  <element name="NNDN" 
+    substitutionGroup="rdeNNDN:abstractNNDN"/>
   <element name="delete" type="rdeNNDN:deleteType"
     substitutionGroup="rde:delete"/>
 
@@ -6640,13 +6694,19 @@ END]]></artwork></figure>
     <complexContent>
       <extension base="rde:contentType">
         <sequence>
-          <element name="aName" type="eppcom:labelType"/>
-          <element name="uName" type="eppcom:labelType" minOccurs="0"/>
-          <element name="idnTableId" type="IDREF" minOccurs="0"/>
-          <element name="originalName" type="eppcom:labelType"
+          <element name="aName" 
+            type="eppcom:labelType"/>
+          <element name="uName" 
+            type="eppcom:labelType" minOccurs="0"/>
+          <element name="idnTableId" 
+            type="IDREF" minOccurs="0"/>
+          <element name="originalName" 
+            type="eppcom:labelType"
             minOccurs="0"/>
-          <element name="nameState" type="rdeNNDN:nameState"/>
-          <element name="crDate" type="dateTime"/>
+          <element name="nameState" 
+            type="rdeNNDN:nameState"/>
+          <element name="crDate" 
+            type="dateTime"/>
         </sequence>
       </extension>
     </complexContent>
@@ -6664,7 +6724,8 @@ END]]></artwork></figure>
     <complexContent>
       <extension base="rde:deleteType">
         <sequence>
-          <element name="aName" type="eppcom:labelType" minOccurs="0"
+          <element name="aName" 
+            type="eppcom:labelType" minOccurs="0"
             maxOccurs="unbounded"/>
         </sequence>
       </extension>
@@ -6898,7 +6959,8 @@ END]]></artwork></figure>
                 <t>
                     <figure><artwork><![CDATA[BEGIN
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="urn:ietf:params:xml:ns:rdeNotification-1.0"
+<schema 
+  targetNamespace="urn:ietf:params:xml:ns:rdeNotification-1.0"
   xmlns:rdeNotification="urn:ietf:params:xml:ns:rdeNotification-1.0"
   xmlns:rdeReport="urn:ietf:params:xml:ns:rdeReport-1.0"
   xmlns="http://www.w3.org/2001/XMLSchema"
@@ -6914,7 +6976,8 @@ END]]></artwork></figure>
   </annotation>
 
   <!-- Root Element -->
-  <element name="notification" type="rdeNotification:notificationType"/>
+  <element name="notification" 
+     type="rdeNotification:notificationType"/>
 
   <!-- Notification -->
   <complexType name="notificationType">
@@ -6997,13 +7060,13 @@ END]]></artwork></figure>
       Registry Data Escrow Policy schema
     </documentation>
   </annotation>
-	
+  
   <import namespace="urn:ietf:params:xml:ns:rde-1.0"
     schemaLocation="rde-1.0.xsd"/>
-	
+  
   <element name="policy" type="rdePolicy:policyType"
     substitutionGroup="rde:content"/>
-	
+  
   <complexType name="policyType">
     <complexContent>
       <extension base="rde:contentType">
@@ -7310,7 +7373,9 @@ END]]></artwork></figure>
                 <t>
                     <list style="numbers">
                         <t>Merged draft-gould-thippeswamy-dnrd-csv-mapping-03 into draft-arias-noguchi-dnrd-objects-mapping-02.</t>
-                        <t>Changed the cksum attribute of &lt;rdeCsv:file&gt; to use CRC32 and changed all of the sample cksum values to use CRC32.</t>
+                        <t>Changed the cksum attribute of &lt;rdeCsv:file&gt; to use CRC32 and changed all of the sample cksum values to use CRC32, based on feedback from David Kipling.</t>
+                        <t>Changed the optional &lt;rdeCsv:sep&gt; element to be an optional "sep" attribute value of the &lt;rdeCsv:csv&gt; element with a default value of "," based on feedback from David Kipling.</t>
+                        <t>Added support for the optional "parent" attribute for the to the CSV fields to indicate a field as a reference to the parent object, based on feedback from David Kipling.</t>
                     </list>
                 </t>
             </section>
@@ -7321,7 +7386,7 @@ END]]></artwork></figure>
     
     <back>
         
-        <references title='Normative References'>	
+        <references title='Normative References'> 
             
       &RFC2119;
  
