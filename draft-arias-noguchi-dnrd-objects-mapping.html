@@ -145,12 +145,12 @@
 <tr><td class="header">Network Working Group</td><td class="header">F. Arias</td></tr>
 <tr><td class="header">Internet-Draft</td><td class="header">G. Lozano</td></tr>
 <tr><td class="header">Intended status: Standards Track</td><td class="header">ICANN</td></tr>
-<tr><td class="header">Expires: October 3, 2013</td><td class="header">S. Noguchi</td></tr>
+<tr><td class="header">Expires: October 5, 2013</td><td class="header">S. Noguchi</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">JPRS</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">J. Gould</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">C. Thippeswamy</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">VeriSign</td></tr>
-<tr><td class="header">&nbsp;</td><td class="header">April 1, 2013</td></tr>
+<tr><td class="header">&nbsp;</td><td class="header">April 3, 2013</td></tr>
 </table></td></tr></table>
 <h1><br />Domain Name Registration Data (DNRD) Objects Mapping<br />draft-arias-noguchi-dnrd-objects-mapping-03</h1>
 
@@ -177,7 +177,7 @@ and may be updated, replaced, or obsoleted by other documents at any time.
 It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
-This Internet-Draft will expire on October 3, 2013.</p>
+This Internet-Draft will expire on October 5, 2013.</p>
 
 <h3>Copyright Notice</h3>
 <p>
@@ -517,8 +517,8 @@ CSV elements</h3>
                     in the CSV files and when set to "false" indicates that the field MAY be empty in the CSV files.  The "isRequired" 
                     attribute MAY be specifically set for the field elements within the XML schema and MAY be overridden when specifying 
                     the fields under the &lt;rdeCsv:fields&gt; element.  The &lt;rdeCsv:field&gt; element supports an OPTIONAL "parent" attribute 
-                    that identifies the field as a reference to the parent object.  For example, the &lt;rdeCsv:csv name="domainStatuses"&gt; &lt;csvDomain:fName&gt; field SHOULD 
-                    set the "parent" attribute to "true" to identify it has the parent domain name of the domain status.
+                    that identifies the field as a reference to a parent object.  For example, the &lt;rdeCsv:csv name="domainStatuses"&gt; &lt;csvDomain:fName&gt; field SHOULD 
+                    set the "parent" attribute to "true" to identify it as the parent domain name of the domain status.
 </dd>
 <dt>&lt;rdeCsv:files&gt;</dt>
 <dd>A list of one or more CSV files using the &lt;rdeCsv:file&gt; child element.  
@@ -879,8 +879,7 @@ Domain Name Object</h3>
 <p>
                     The domain name object is based on the EPP domain name mapping specified in <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>. The domain name 
                    object supports both the XML Model and the CSV Model, defined in the <a class='info' href='#models'>Models<span> (</span><span class='info'>Models</span><span>)</span></a> section.  The 
-                   elements used for both models are defined in the following sections.  Both models use the &lt;rdeDomain:contents&gt; child 
-                   element of the &lt;rde:contents&gt; element to hold the domain name objects for the deposit. 
+                   elements used for both models are defined in the following sections. 
                 
 </p>
 <a name="domainXmlModel"></a><br /><hr />
@@ -2303,8 +2302,7 @@ Host Object</h3>
 <p>
                     The host object is based on the EPP host name mapping in <a class='info' href='#RFC5732'>[RFC5732]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Host Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>. The 
                     host object supports both the XML Model and the CSV Model, defined in <a class='info' href='#models'>Models<span> (</span><span class='info'>Models</span><span>)</span></a> section.  The 
-                    elements used for both models are defined in the following sections.  Both models use the &lt;rdeHost:contents&gt; child 
-                    element of the &lt;rde:contents&gt; element to hold the host objects for the deposit. 
+                    elements used for both models are defined in the following sections. 
                 
 </p>
 <a name="hostXmlModel"></a><br /><hr />
@@ -3029,8 +3027,7 @@ Contact Object</h3>
 <p>
                     The contact object is based on the EPP contact name mapping in <a class='info' href='#RFC5733'>[RFC5733]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Contact Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>. The 
                     contact object supports both the XML Model and the CSV Model, defined in <a class='info' href='#models'>Models<span> (</span><span class='info'>Models</span><span>)</span></a> section.  The 
-                    elements used for both models are defined in the following sections.  Both models use the &lt;rdeContact:contents&gt; child 
-                    element of the &lt;rde:contents&gt; element to hold the contact objects for the deposit. 
+                    elements used for both models are defined in the following sections.   
                 
 </p>
 <a name="contactXmlModel"></a><br /><hr />
@@ -4125,8 +4122,7 @@ Registrar Object</h3>
                     The registrar object represents the sponsoring client for other objects, for operational 
                     purposes MAY be the registry operator.  
                     The registrar object supports both the XML Model and the CSV Model, defined in <a class='info' href='#models'>Section&nbsp;2<span> (</span><span class='info'>Models</span><span>)</span></a>.  The 
-                    elements used for both models are defined in the following sections.  Both models use the &lt;rdeRegistrar:contents&gt; child 
-                    element of the &lt;rde:contents&gt; element to hold the registrar objects for the deposit.  
+                    elements used for both models are defined in the following sections.  
                 
 </p>
 <a name="registrarXmlModel"></a><br /><hr />
@@ -9055,7 +9051,7 @@ Changes from version 02 to 03</h3>
 </li>
 <li>Changed the optional &lt;rdeCsv:sep&gt; element to be an optional "sep" attribute value of the &lt;rdeCsv:csv&gt; element with a default value of "," based on feedback from David Kipling.
 </li>
-<li>Added support for the optional "parent" attribute for the to the CSV fields to indicate a field as a reference to the parent object, based on feedback from David Kipling.
+<li>Added support for the optional "parent" attribute for the to the CSV fields to indicate a field as a reference to a parent object, based on feedback from David Kipling.
 </li>
 </ol><p>
                 
