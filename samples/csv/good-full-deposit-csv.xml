@@ -8,13 +8,15 @@
 	 xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
 	 xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
 	 xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+	 xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
     urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd 
     urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd 
     urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd 
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd" 
+    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
+    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd" 
     type="FULL"
 	 id="20101017001" prevId="20101010001">
 	 <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
@@ -27,6 +29,23 @@
    	<rde:objURI>urn:ietf:params:xml:ns:csvIDN-1.0</rde:objURI>
 	 </rde:rdeMenu>
 	 <rde:contents>
+      <rdeHeader:header>
+         <rdeHeader:tld>test</rdeHeader:tld>
+         <rdeHeader:count	uri="urn:ietf:params:xml:ns:csvDomain-1.0">2
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">1
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">1
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">1
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">1
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0">1
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
+         </rdeHeader:count>
+      </rdeHeader:header>	 
 	 	<csvDomain:contents>
 	 		<rdeCsv:csv name="domain" sep=",">
 	 			<rdeCsv:fields>
