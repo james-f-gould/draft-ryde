@@ -62,49 +62,49 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    described in the Simplified BSD License.
 
 
+Table of Contents
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   4
+   2.  Models  . . . . . . . . . . . . . . . . . . . . . . . . . . .   4
+   3.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   5
+   4.  General Conventions . . . . . . . . . . . . . . . . . . . . .   6
+     4.1.  Date and Time . . . . . . . . . . . . . . . . . . . . . .   6
+     4.2.  Country names . . . . . . . . . . . . . . . . . . . . . .   6
+     4.3.  Telephone numbers . . . . . . . . . . . . . . . . . . . .   6
+     4.4.  Checksum  . . . . . . . . . . . . . . . . . . . . . . . .   6
+     4.5.  IP addresses  . . . . . . . . . . . . . . . . . . . . . .   6
+     4.6.  CSV elements  . . . . . . . . . . . . . . . . . . . . . .   6
+     4.7.  Internationalized and Localized Elements  . . . . . . . .  11
+   5.  Object Description  . . . . . . . . . . . . . . . . . . . . .  13
+     5.1.  Domain Name Object  . . . . . . . . . . . . . . . . . . .  13
+     5.2.  Host Object . . . . . . . . . . . . . . . . . . . . . . .  39
+     5.3.  Contact Object  . . . . . . . . . . . . . . . . . . . . .  52
+     5.4.  Registrar Object  . . . . . . . . . . . . . . . . . . . .  71
+     5.5.  IDN Table Reference Object  . . . . . . . . . . . . . . .  78
+     5.6.  RDE NNDN  . . . . . . . . . . . . . . . . . . . . . . . .  81
+     5.7.  EPP Parameters Object . . . . . . . . . . . . . . . . . .  83
+     5.8.  Policy Object . . . . . . . . . . . . . . . . . . . . . .  84
+     5.9.  Header Object . . . . . . . . . . . . . . . . . . . . . .  85
+   6.  RDE IDN Variants handling . . . . . . . . . . . . . . . . . .  87
+   7.  Profile . . . . . . . . . . . . . . . . . . . . . . . . . . .  87
+   8.  Appendix A. Example of a full deposit using the XML model . .  88
+   9.  Appendix B. Example of differential deposit using the XML
+       model . . . . . . . . . . . . . . . . . . . . . . . . . . . .  92
+   10. Appendix A. Example of a full deposit using the CSV model . .  94
+   11. Appendix B. Example of differential deposit using the CSV
+       model . . . . . . . . . . . . . . . . . . . . . . . . . . . . 101
+   12. Appendix C. Data escrow agent extended verification process . 113
+   13. Appendix D. Data escrow notifications . . . . . . . . . . . . 114
+     13.1. Notifications from Registry Operators to Third Parties  . 114
+     13.2. Notifications from Data Escrow Agents to Third Parties  . 116
+     13.3. Formal Syntax . . . . . . . . . . . . . . . . . . . . . . 118
+     13.4. Policy Object . . . . . . . . . . . . . . . . . . . . . . 171
+   14. Internationalization Considerations . . . . . . . . . . . . . 173
+   15. IANA Considerations . . . . . . . . . . . . . . . . . . . . . 173
+   16. Security Considerations . . . . . . . . . . . . . . . . . . . 178
+   17. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . 179
+   18. Change History  . . . . . . . . . . . . . . . . . . . . . . . 179
+     18.1. Changes from
 
 
 
@@ -113,114 +113,58 @@ Arias, et al.            Expires October 5, 2013                [Page 2]
 Internet-Draft            DNRD Objects Mapping                April 2013
 
 
-Table of Contents
-
-   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   5
-   2.  Models  . . . . . . . . . . . . . . . . . . . . . . . . . . .   5
-   3.  Terminology . . . . . . . . . . . . . . . . . . . . . . . . .   6
-   4.  General Conventions . . . . . . . . . . . . . . . . . . . . .   7
-     4.1.  Date and Time . . . . . . . . . . . . . . . . . . . . . .   7
-     4.2.  Country names . . . . . . . . . . . . . . . . . . . . . .   7
-     4.3.  Telephone numbers . . . . . . . . . . . . . . . . . . . .   7
-     4.4.  Checksum  . . . . . . . . . . . . . . . . . . . . . . . .   7
-     4.5.  IP addresses  . . . . . . . . . . . . . . . . . . . . . .   7
-     4.6.  CSV elements  . . . . . . . . . . . . . . . . . . . . . .   7
-     4.7.  Internationalized and Localized Elements  . . . . . . . .  12
-   5.  Object Description  . . . . . . . . . . . . . . . . . . . . .  14
-     5.1.  Domain Name Object  . . . . . . . . . . . . . . . . . . .  14
-     5.2.  Host Object . . . . . . . . . . . . . . . . . . . . . . .  40
-     5.3.  Contact Object  . . . . . . . . . . . . . . . . . . . . .  53
-     5.4.  Registrar Object  . . . . . . . . . . . . . . . . . . . .  72
-     5.5.  RDE IDN Practices . . . . . . . . . . . . . . . . . . . .  79
-     5.6.  RDE NNDN  . . . . . . . . . . . . . . . . . . . . . . . .  80
-     5.7.  RDE EPP Parameters object . . . . . . . . . . . . . . . .  82
-     5.8.  RDE Policy object . . . . . . . . . . . . . . . . . . . .  83
-     5.9.  Header object . . . . . . . . . . . . . . . . . . . . . .  84
-   6.  RDE IDN Variants handling . . . . . . . . . . . . . . . . . .  85
-   7.  Profile . . . . . . . . . . . . . . . . . . . . . . . . . . .  85
-   8.  Appendix A. Example of a full deposit using the XML model
-       only  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  86
-   9.  Appendix B. Example of differential deposit using the XML
-       model only  . . . . . . . . . . . . . . . . . . . . . . . . .  90
-   10. Appendix C. Data escrow agent extended verification process .  92
-   11. Appendix D. Data escrow notifications . . . . . . . . . . . .  92
-     11.1. Notifications from Registry Operators to Third Parties  .  93
-     11.2. Notifications from Data Escrow Agents to Third Parties  .  94
-     11.3. Formal Syntax . . . . . . . . . . . . . . . . . . . . . .  96
-     11.4. Policy Object . . . . . . . . . . . . . . . . . . . . . . 149
-   12. Internationalization Considerations . . . . . . . . . . . . . 151
-   13. IANA Considerations . . . . . . . . . . . . . . . . . . . . . 151
-   14. Security Considerations . . . . . . . . . . . . . . . . . . . 156
-   15. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . 157
-   16. Change History  . . . . . . . . . . . . . . . . . . . . . . . 157
-     16.1. Changes from
            draft-arias-noguchi-registry-data-escrow-02 to
-           -dnrd-objects-mapping-00  . . . . . . . . . . . . . . . . 157
-     16.2. Changes from version 00 to 01 . . . . . . . . . . . . . . 157
-     16.3. Changes from version 01 to 02 . . . . . . . . . . . . . . 158
-     16.4. Changes from version 02 to 03 . . . . . . . . . . . . . . 158
-   17. References  . . . . . . . . . . . . . . . . . . . . . . . . . 159
-     17.1. Normative References  . . . . . . . . . . . . . . . . . . 159
+           -dnrd-objects-mapping-00  . . . . . . . . . . . . . . . . 179
+     18.2. Changes from version 00 to 01 . . . . . . . . . . . . . . 179
+     18.3. Changes from version 01 to 02 . . . . . . . . . . . . . . 180
+     18.4. Changes from version 02 to 03 . . . . . . . . . . . . . . 180
+   19. References  . . . . . . . . . . . . . . . . . . . . . . . . . 181
+     19.1. Normative References  . . . . . . . . . . . . . . . . . . 181
+     19.2. Informative References  . . . . . . . . . . . . . . . . . 181
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 182
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 Arias, et al.            Expires October 5, 2013                [Page 3]
-
-Internet-Draft            DNRD Objects Mapping                April 2013
-
-
-     17.2. Informative References  . . . . . . . . . . . . . . . . . 159
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 160
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Arias, et al.            Expires October 5, 2013                [Page 4]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -276,7 +220,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013                [Page 5]
+Arias, et al.            Expires October 5, 2013                [Page 4]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -332,7 +276,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013                [Page 6]
+Arias, et al.            Expires October 5, 2013                [Page 5]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -388,7 +332,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013                [Page 7]
+Arias, et al.            Expires October 5, 2013                [Page 6]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -444,7 +388,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013                [Page 8]
+Arias, et al.            Expires October 5, 2013                [Page 7]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -500,7 +444,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013                [Page 9]
+Arias, et al.            Expires October 5, 2013                [Page 8]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -556,7 +500,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 10]
+Arias, et al.            Expires October 5, 2013                [Page 9]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -612,7 +556,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 11]
+Arias, et al.            Expires October 5, 2013               [Page 10]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -668,7 +612,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 12]
+Arias, et al.            Expires October 5, 2013               [Page 11]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -724,7 +668,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 13]
+Arias, et al.            Expires October 5, 2013               [Page 12]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -775,12 +719,12 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
    There are two elements used in the data escrow of the domain name
    objects for the XML model including the <rdeDomain:domain>, under the
-   <rdeDomain:contents> element, and the <rdeDomain:delete> element,
-   under the <rde:deletes> element.
+   <rde:contents> element, and the <rdeDomain:delete> element, under the
+   <rde:deletes> element.
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 14]
+Arias, et al.            Expires October 5, 2013               [Page 13]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -836,7 +780,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 15]
+Arias, et al.            Expires October 5, 2013               [Page 14]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -892,7 +836,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 16]
+Arias, et al.            Expires October 5, 2013               [Page 15]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -948,7 +892,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 17]
+Arias, et al.            Expires October 5, 2013               [Page 16]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1004,7 +948,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 18]
+Arias, et al.            Expires October 5, 2013               [Page 17]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1060,7 +1004,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 19]
+Arias, et al.            Expires October 5, 2013               [Page 18]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1116,7 +1060,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 20]
+Arias, et al.            Expires October 5, 2013               [Page 19]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1172,7 +1116,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 21]
+Arias, et al.            Expires October 5, 2013               [Page 20]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1228,7 +1172,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 22]
+Arias, et al.            Expires October 5, 2013               [Page 21]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1284,7 +1228,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 23]
+Arias, et al.            Expires October 5, 2013               [Page 22]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1340,7 +1284,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 24]
+Arias, et al.            Expires October 5, 2013               [Page 23]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1396,7 +1340,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 25]
+Arias, et al.            Expires October 5, 2013               [Page 24]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1452,7 +1396,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 26]
+Arias, et al.            Expires October 5, 2013               [Page 25]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1508,7 +1452,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 27]
+Arias, et al.            Expires October 5, 2013               [Page 26]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1564,7 +1508,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 28]
+Arias, et al.            Expires October 5, 2013               [Page 27]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1620,7 +1564,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 29]
+Arias, et al.            Expires October 5, 2013               [Page 28]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1676,7 +1620,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 30]
+Arias, et al.            Expires October 5, 2013               [Page 29]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1732,7 +1676,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 31]
+Arias, et al.            Expires October 5, 2013               [Page 30]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1788,7 +1732,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 32]
+Arias, et al.            Expires October 5, 2013               [Page 31]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1844,7 +1788,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 33]
+Arias, et al.            Expires October 5, 2013               [Page 32]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1900,7 +1844,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 34]
+Arias, et al.            Expires October 5, 2013               [Page 33]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -1956,7 +1900,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 35]
+Arias, et al.            Expires October 5, 2013               [Page 34]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2012,7 +1956,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 36]
+Arias, et al.            Expires October 5, 2013               [Page 35]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2068,7 +2012,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 37]
+Arias, et al.            Expires October 5, 2013               [Page 36]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2124,7 +2068,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 38]
+Arias, et al.            Expires October 5, 2013               [Page 37]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2180,7 +2124,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 39]
+Arias, et al.            Expires October 5, 2013               [Page 38]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2236,7 +2180,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 40]
+Arias, et al.            Expires October 5, 2013               [Page 39]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2292,7 +2236,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 41]
+Arias, et al.            Expires October 5, 2013               [Page 40]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2348,7 +2292,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 42]
+Arias, et al.            Expires October 5, 2013               [Page 41]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2404,7 +2348,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 43]
+Arias, et al.            Expires October 5, 2013               [Page 42]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2460,7 +2404,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 44]
+Arias, et al.            Expires October 5, 2013               [Page 43]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2516,7 +2460,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 45]
+Arias, et al.            Expires October 5, 2013               [Page 44]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2572,7 +2516,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 46]
+Arias, et al.            Expires October 5, 2013               [Page 45]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2628,7 +2572,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 47]
+Arias, et al.            Expires October 5, 2013               [Page 46]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2684,7 +2628,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 48]
+Arias, et al.            Expires October 5, 2013               [Page 47]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2740,7 +2684,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 49]
+Arias, et al.            Expires October 5, 2013               [Page 48]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2796,7 +2740,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 50]
+Arias, et al.            Expires October 5, 2013               [Page 49]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2852,7 +2796,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 51]
+Arias, et al.            Expires October 5, 2013               [Page 50]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2908,7 +2852,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 52]
+Arias, et al.            Expires October 5, 2013               [Page 51]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -2964,7 +2908,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 53]
+Arias, et al.            Expires October 5, 2013               [Page 52]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3020,7 +2964,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 54]
+Arias, et al.            Expires October 5, 2013               [Page 53]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3076,7 +3020,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 55]
+Arias, et al.            Expires October 5, 2013               [Page 54]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3132,7 +3076,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 56]
+Arias, et al.            Expires October 5, 2013               [Page 55]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3188,7 +3132,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 57]
+Arias, et al.            Expires October 5, 2013               [Page 56]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3244,7 +3188,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 58]
+Arias, et al.            Expires October 5, 2013               [Page 57]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3300,7 +3244,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 59]
+Arias, et al.            Expires October 5, 2013               [Page 58]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3356,7 +3300,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 60]
+Arias, et al.            Expires October 5, 2013               [Page 59]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3412,7 +3356,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 61]
+Arias, et al.            Expires October 5, 2013               [Page 60]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3468,7 +3412,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 62]
+Arias, et al.            Expires October 5, 2013               [Page 61]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3524,7 +3468,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 63]
+Arias, et al.            Expires October 5, 2013               [Page 62]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3580,7 +3524,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 64]
+Arias, et al.            Expires October 5, 2013               [Page 63]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3636,7 +3580,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 65]
+Arias, et al.            Expires October 5, 2013               [Page 64]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3692,7 +3636,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 66]
+Arias, et al.            Expires October 5, 2013               [Page 65]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3748,7 +3692,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 67]
+Arias, et al.            Expires October 5, 2013               [Page 66]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3804,7 +3748,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 68]
+Arias, et al.            Expires October 5, 2013               [Page 67]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3860,7 +3804,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 69]
+Arias, et al.            Expires October 5, 2013               [Page 68]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3916,7 +3860,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 70]
+Arias, et al.            Expires October 5, 2013               [Page 69]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -3972,7 +3916,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 71]
+Arias, et al.            Expires October 5, 2013               [Page 70]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4028,7 +3972,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 72]
+Arias, et al.            Expires October 5, 2013               [Page 71]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4084,7 +4028,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 73]
+Arias, et al.            Expires October 5, 2013               [Page 72]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4140,7 +4084,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 74]
+Arias, et al.            Expires October 5, 2013               [Page 73]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4196,7 +4140,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 75]
+Arias, et al.            Expires October 5, 2013               [Page 74]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4252,7 +4196,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 76]
+Arias, et al.            Expires October 5, 2013               [Page 75]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4308,7 +4252,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 77]
+Arias, et al.            Expires October 5, 2013               [Page 76]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4364,7 +4308,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 78]
+Arias, et al.            Expires October 5, 2013               [Page 77]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4406,28 +4350,34 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    EXAMPLE
    EXAMPLE2
 
-5.5.  RDE IDN Practices
+5.5.  IDN Table Reference Object
 
-   The RDE Internationalized Domain Names (IDN) Practices reference is a
+   The Internationalized Domain Names (IDN) table reference object is a
    pseudo-object that is used to provide a short reference to the IDN
-   Table and Policy used in IDN registrations.  The <idnTableRef>
-   element has an "id" attribute that is used to uniquely identify an
-   IDN Table stored externally.
+   Table and Policy used in IDN registrations.  The IDN reference object
+   supports both the XML and the CSV Model, defined in the Models
+   (Section 2) section.  The elements used for both models are defined
+   in the following sections.
 
 
 
 
 
 
-
-Arias, et al.            Expires October 5, 2013               [Page 79]
+Arias, et al.            Expires October 5, 2013               [Page 78]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
 
-5.5.1.  <idnTableRef> object
+5.5.1.  XML Model
 
-   The OPTIONAL <idnTableRef> contains the following elements.  An id
+   There are one element used in the data escrow of the IDN table
+   reference objects for the XML model that is the <rdeIDN:idnTableRef>,
+   under the <rde:contents> element.
+
+5.5.1.1.  <rdeIDN:idnTableRef> object
+
+   The <rdeIDN:idnTableRef> contains the following elements.  An "id"
    attribute is used to specify an identifier for the IDN table.
 
    o  An <url> element that contains the URL of the IDN table that is
@@ -4453,6 +4403,121 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </rdeIDN:idnTableRef>
    ...
 
+5.5.2.  CSV Model
+
+   The IDN domain names, defined in Section 5.1, MAY have references to
+   the IDN language using the <rdeCsv:fLanguage> field element.  The IDN
+   table reference object defines the mapping of a language to a
+   language table URL.  The language table URL defines the character
+   code points that can be used for the language.  The elements used for
+   the IDN table reference object is defined in this section.  The
+   <csvIDN:contents> child element of the <rde:contents> element is used
+   to hold the new or updated IDN table reference objects for the
+   deposit.  The <csvIDN:deletes> child element of the <rde:deletes>
+   element is used to hold the deleted or purged IDN table reference
+   objects for the deposit.  Both the <csvIDN:contents> and <csvIDN:
+   deletes> elements contain one or more <rdeCsv:csv> elements with the
+
+
+
+Arias, et al.            Expires October 5, 2013               [Page 79]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+   following supported "name" attribute values:
+
+   "idnLanguage"  Defines the fields and CSV file references used for
+      the IDN table reference object records.
+
+      The following "rdeCsv" fields, defined in Section 4.6.2, MAY be
+      used in the "idnLanguage" <rdeCsv:csv> <rdeCsv:fields> element:
+
+
+
+      <rdeCsv:fLanguage>  The language tag that matches the values for
+         the <rdeCsv:fLanguage> field element in the "domain" CSV files,
+         as defined in Section 5.1.
+
+      <rdeCsv:fUrl>  URL that defines the character code points that can
+         be used for the language defined by the <rdeCsv:fLanguage>
+         field element.
+
+      Example of a "idnLanguage" <csvIDN:contents> <rdeCsv:csv> element:
+
+
+
+   ...
+   <csvIDN:contents>
+   ...
+     <rdeCsv:csv name="idnLanguage">
+       <rdeCsv:sep>,</rdeCsv:sep>
+       <rdeCsv:fields>
+         <rdeCsv:fLanguage/>
+         <rdeCsv:fUrl/>
+       </rdeCsv:fields>
+       <rdeCsv:files>
+         <rdeCsv:file
+           cksum="1924040625 268">
+           idnLanguage-YYYYMMDD.csv
+         </rdeCsv:file>
+       </rdeCsv:files>
+     </rdeCsv:csv>
+   ...
+   </csvIDN:contents>
+   ...
+
+      Example of the corresponding idnLanguage-YYYYMMDD.csv file.  The
+      file contains two IDN language records.
+
+
+
+
+
+
+
+Arias, et al.            Expires October 5, 2013               [Page 80]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+
+
+   LANG-1,
+   http://www.iana.org/domains/idn-tables/tables/test_tab1_1.1.txt
+   LANG-2,
+   http://www.iana.org/domains/idn-tables/tables/test_tab2_1.1.txt
+
+      Example of a "idnLanguage" <csvIDN:deletes> <rdeCsv:csv> element:
+
+
+
+   ...
+   <csvIDN:deletes>
+   ...
+    <rdeCsv:csv name="idnLanguage">
+       <rdeCsv:fields>
+         <rdeCsv:fLanguage/>
+       </rdeCsv:fields>
+       <rdeCsv:files>
+         <rdeCsv:file
+           cksum="1924040625 268">
+           idnLanguage-YYYYMMDD.csv
+         </rdeCsv:file>
+       </rdeCsv:files>
+     </rdeCsv:csv>
+   ...
+   </csvIDN:deletes>
+   ...
+
+      Example of the idnLanguage-delete-YYYYMMDD.csv file.  The file
+      contains two IDN language records.
+
+
+
+   LANG1
+   LANG2
+
 5.6.  RDE NNDN
 
    A NNDN (NNDN's not domain name) does not exist as a domain object; it
@@ -4464,22 +4529,20 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
    A <NNDN> element substitutes for the <abstractNNDN> abstract element
    to define a concrete definition of a NNDN.  The <abstractDomain>
+
+
+
+Arias, et al.            Expires October 5, 2013               [Page 81]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
    element can be replaced by other NNDN definitions using the XML
    schema substitution groups feature.
 
 5.6.1.  <NNDN> object
 
    The OPTIONAL <NNDN> element contains the following child elements:
-
-
-
-
-
-
-Arias, et al.            Expires October 5, 2013               [Page 80]
-
-Internet-Draft            DNRD Objects Mapping                April 2013
-
 
    o  An <aName> element that contains the ASCII Compatible Encoding
       (ACE) of the NNDN.
@@ -4523,18 +4586,19 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </rdeNNDN:NNDN>
    ...
 
+
+
+Arias, et al.            Expires October 5, 2013               [Page 82]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
 5.6.2.  <rdeNNDN:delete> object
 
    The <rdeNNDN:delete> element contains the ACE of a NNDN that was
    deleted, i.e., the <aName>.
 
    Example of <rdeNDN:delete> object:
-
-
-
-Arias, et al.            Expires October 5, 2013               [Page 81]
-
-Internet-Draft            DNRD Objects Mapping                April 2013
 
 
    ...
@@ -4547,15 +4611,17 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </rde:deletes>
    ...
 
-5.7.  RDE EPP Parameters object
+5.7.  EPP Parameters Object
 
-   An OPTIONAL <eppParams> element contains some EPP parameters that may
-   be helpful when rebuilding a registry from the escrow deposits.  The
-   element SHOULD be included in Deposits if the registry uses EPP.
+   The EPP Parameters Object defines the set of object and object
+   extension services supported by the registry, as defined in
+   [RFC5730].  The EPP Parameters Object only supports the XML model and
+   is defined using the the <rdeEppParams:eppParams> element.  The EPP
+   Parameters Object SHOULD be included if the registry uses EPP.
 
-   The syntax and content of the <eppParams> children elements is as
-   explained in section 2.4 of [RFC5730].  The children of the
-   <eppParams> are as follows:
+   The syntax and content of the <rdeEppParams:eppParams> children
+   elements is as explained in section 2.4 of [RFC5730].  The children
+   of the <eppParams> are as follows:
 
    o  One or more <version> elements that indicate the EPP versions
       supported by the registry.
@@ -4575,22 +4641,15 @@ Internet-Draft            DNRD Objects Mapping                April 2013
       server's privacy policy for data collection and management.  See
       section 2.4 of [RFC5730] for more details.
 
-   Example of <eppParams> element object:
 
 
 
-
-
-
-
-
-
-
-
-
-Arias, et al.            Expires October 5, 2013               [Page 82]
+Arias, et al.            Expires October 5, 2013               [Page 83]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+   Example of <eppParams> element object:
 
 
    ...
@@ -4626,49 +4685,80 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </rdeEppParams:eppParams>
    ...
 
-5.8.  RDE Policy object
+5.8.  Policy Object
 
-   The RDE Policy is a pseudo-object that is used to specify which
-   OPTIONAL elements from this specification are REQUIRED based on the
-   business model of the registry.
+   The Policy object is a pseudo-object that is used to specify which
+   OPTIONAL elements from XML Model are REQUIRED based on the business
+   model of the registry.  For the CSV Model, the OPTIONAL "isRequired"
+   attribute of the <rdeCsv:field> elements, defined in Section 4.6.1,
+   is used to specify which OPTIONAL fields are REQUIRED based on the
+   business model of the regsitry.
 
-5.8.1.  <policy> object
+
+
+
+
+
+
+Arias, et al.            Expires October 5, 2013               [Page 84]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+5.8.1.  <rdePolicy:policy> object
 
    The OPTIONAL <policy> contains the following attributes:
 
    o  An <element> that defines that the referenced <element> is
       REQUIRED.
 
-   Example of <policy> object:
-
-
-
-
-Arias, et al.            Expires October 5, 2013               [Page 83]
-
-Internet-Draft            DNRD Objects Mapping                April 2013
+   Example of <rdePolicy:policy> object:
 
 
    ...
    <rdePolicy:policy element="rdeDom:registrant" />
    ...
 
-5.9.  Header object
+5.9.  Header Object
 
-   The RDE Header is a pseudo-object that is used to specify the number
-   of objects in the SRS at a specific point in time (watermark)
+   The Header Object is a pseudo-object that is used to specify the
+   number of objects in the SRS at a specific point in time (watermark)
    regardless of the type of deposit: differential, full or incremental.
+   The Header Object only supports the XML model and is defined using
+   the <rdeHeader:header> element.
 
-5.9.1.  <header> object
+5.9.1.  <rdeHeader:header> object
 
-   The <header> contains the following attributes:
+   The <rdeHeader:header> contains the following attributes:
 
    o  A <tld> element that defines TLD being escrowed.
 
-   o  A <count> element that number of objects being escrowed.  An uri
-      attribute is used to define the type of object.
+   o  A <count> element that number of objects being escrowed.  An "uri"
+      attribute is used to define the type of object.  The "uri"
+      attributes reflects the XML namespace URI of the primary objects
+      for the XML Model and CSV Model.  For example, the "uri" is set to
+      "urn:ietf:params:xml:ns:rdeDomain-1.0" for domain name objects
+      using the XML Model, and the "uri" is set to
+      "urn:ietf:params:xml:ns:csvDomain-1.0" for domain name objects
+      using the CSV Model.
 
-   Example of <header> object:
+   Example of <rdeHeader:header> object referencing only the XML Model
+   objects:
+
+
+
+
+
+
+
+
+
+
+
+
+Arias, et al.            Expires October 5, 2013               [Page 85]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
 
 
    ...
@@ -4693,14 +4783,36 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </rdeHeader:header>
    ...
 
+   Example of <rdeHeader:header> object referencing the CSV and XML
+   Model objects:
+
+
+   ...
+   <rdeHeader:header>
+     <rdeHeader:tld>test</rdeHeader:tld>
+     <rdeHeader:count
+       uri="urn:ietf:params:xml:ns:csvDomain-1.0">2</rdeHeader:count>
+     <rdeHeader:count
+       uri="urn:ietf:params:xml:ns:csvHost-1.0">1</rdeHeader:count>
+     <rdeHeader:count
+       uri="urn:ietf:params:xml:ns:csvContact-1.0">1</rdeHeader:count>
+     <rdeHeader:count
+       uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">1
+     </rdeHeader:count>
+     <rdeHeader:count
+       uri="urn:ietf:params:xml:ns:csvIDN-1.0">1</rdeHeader:count>
+     <rdeHeader:count
+       uri="urn:ietf:params:xml:ns:csvNNDN-1.0">1</rdeHeader:count>
+     <rdeHeader:count
+       uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
+     </rdeHeader:count>
+   </rdeHeader:header>
+   ...
 
 
 
 
-
-
-
-Arias, et al.            Expires October 5, 2013               [Page 84]
+Arias, et al.            Expires October 5, 2013               [Page 86]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4756,12 +4868,12 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 85]
+Arias, et al.            Expires October 5, 2013               [Page 87]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
 
-8.  Appendix A. Example of a full deposit using the XML model only
+8.  Appendix A. Example of a full deposit using the XML model
 
    Example of a full deposit using the XML model only:
 
@@ -4812,7 +4924,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 86]
+Arias, et al.            Expires October 5, 2013               [Page 88]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4868,7 +4980,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 87]
+Arias, et al.            Expires October 5, 2013               [Page 89]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4924,7 +5036,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 88]
+Arias, et al.            Expires October 5, 2013               [Page 90]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -4980,7 +5092,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 89]
+Arias, et al.            Expires October 5, 2013               [Page 91]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5021,7 +5133,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-9.  Appendix B. Example of differential deposit using the XML model only
+9.  Appendix B. Example of differential deposit using the XML model
 
    Example of a differential deposit using the XML model only:
 
@@ -5036,7 +5148,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 90]
+Arias, et al.            Expires October 5, 2013               [Page 92]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5092,7 +5204,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 91]
+Arias, et al.            Expires October 5, 2013               [Page 93]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5105,7 +5217,1098 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-10.  Appendix C. Data escrow agent extended verification process
+10.  Appendix A. Example of a full deposit using the CSV model
+
+   Example of a full deposit using the CSV model:
+
+
+   <?xml version="1.0" encoding="UTF-8"?>
+   <rde:deposit
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+      xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
+      xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
+      xmlns:csvHost="urn:ietf:params:xml:ns:csvHost-1.0"
+      xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
+      xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
+      xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+       xsi:schemaLocation="
+       urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
+       urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
+       urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd
+       urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
+       urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
+       urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd"
+       type="FULL"
+      id="20101017001" prevId="20101010001">
+      <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
+      <rde:rdeMenu>
+       <rde:version>1.0</rde:version>
+       <rde:objURI>urn:ietf:params:xml:ns:csvDomain-1.0</rde:objURI>
+       <rde:objURI>urn:ietf:params:xml:ns:csvHost-1.0</rde:objURI>
+       <rde:objURI>urn:ietf:params:xml:ns:csvContact-1.0</rde:objURI>
+       <rde:objURI>urn:ietf:params:xml:ns:csvRegistrar-1.0</rde:objURI>
+       <rde:objURI>urn:ietf:params:xml:ns:csvIDN-1.0</rde:objURI>
+      </rde:rdeMenu>
+      <rde:contents>
+       <csvDomain:contents>
+         <rdeCsv:csv name="domain" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName/>
+             <rdeCsv:fRoid/>
+             <rdeCsv:fLanguage/>
+
+
+
+Arias, et al.            Expires October 5, 2013               [Page 94]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+             <csvDomain:fOriginalName/>
+             <rdeCsv:fRegistrant isRequired="true"/>
+             <rdeCsv:fClID/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+             <rdeCsv:fUpRr/>
+             <rdeCsv:fUpID/>
+             <rdeCsv:fUpDate/>
+             <rdeCsv:fExDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="E6D52D73">
+               domain-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainContacts" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvContact:fId/>
+             <csvDomain:fContactType/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="4932EA57">
+               domainContacts-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainStatuses" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvDomain:fStatus/>
+             <rdeCsv:fStatusDescription/>
+             <rdeCsv:fLanguage/>
+             <csvDomain:fRgpStatus/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="31B475C5">
+
+
+
+Arias, et al.            Expires October 5, 2013               [Page 95]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+               domainStatuses-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainNameServers" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvHost:fName/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="430306BC">
+               domainNameServers-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="dnssec" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvDomain:fMaxSigLife/>
+             <csvDomain:fKeyTag/>
+             <csvDomain:fDsAlg/>
+             <csvDomain:fDigestType/>
+             <csvDomain:fDigest/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="AA15CB43">
+               dnssec-ds-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="dnssec" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvDomain:fMaxSigLife/>
+             <csvDomain:fFlags/>
+             <csvDomain:fProtocol/>
+             <csvDomain:fKeyAlg/>
+             <csvDomain:fPubKey/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="1B16F334">
+               dnssec-key-YYYYMMDD.csv
+
+
+
+Arias, et al.            Expires October 5, 2013               [Page 96]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainTransfer" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <rdeCsv:fTrStatus/>
+             <rdeCsv:fReRr/>
+             <rdeCsv:fReID/>
+             <rdeCsv:fReDate/>
+             <rdeCsv:fAcRr/>
+             <rdeCsv:fAcID/>
+             <rdeCsv:fAcDate/>
+             <rdeCsv:fExDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="71170194">
+               domainTransfer-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvDomain:contents>
+       <csvHost:contents>
+         <rdeCsv:csv name="host" sep=",">
+           <rdeCsv:fields>
+             <csvHost:fName/>
+             <rdeCsv:fRoid/>
+             <rdeCsv:fClID/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+             <rdeCsv:fUpRr/>
+             <rdeCsv:fUpID/>
+             <rdeCsv:fUpDate/>
+             <rdeCsv:fTrDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="120938E3">
+               host-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="hostStatuses" sep=",">
+           <rdeCsv:fields>
+             <csvHost:fName parent="true"/>
+             <csvHost:fStatus/>
+
+
+
+Arias, et al.            Expires October 5, 2013               [Page 97]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+             <rdeCsv:fStatusDescription/>
+             <rdeCsv:fLanguage/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="2F4C2E4A">
+               hostStatuses-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="hostAddresses" sep=",">
+           <rdeCsv:fields>
+             <csvHost:fName parent="true"/>
+             <csvHost:fAddr/>
+             <csvHost:fAddrVersion/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="2C2A7A9F">
+               hostAddresses-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvHost:contents>
+       <csvContact:contents>
+         <rdeCsv:csv name="contact" sep=",">
+           <rdeCsv:fields>
+             <csvContact:fId/>
+             <rdeCsv:fRoid/>
+             <csvContact:fVoice/>
+             <csvContact:fVoiceExt/>
+             <csvContact:fFax/>
+             <csvContact:fFaxExt/>
+             <csvContact:fEmail/>
+             <rdeCsv:fClID/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+             <rdeCsv:fUpRr/>
+             <rdeCsv:fUpID/>
+             <rdeCsv:fUpDate/>
+           </rdeCsv:fields>
+
+
+
+Arias, et al.            Expires October 5, 2013               [Page 98]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="D7F106A5">
+               contact-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactStatuses" sep=",">
+           <rdeCsv:fields>
+               <csvContact:fId parent="true"/>
+               <csvContact:fStatus/>
+               <rdeCsv:fStatusDescription/>
+               <rdeCsv:fLanguage/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+             </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="4122B192">
+               contactStatuses-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactPostal" sep=",">
+           <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+             <csvContact:fPostalType/>
+             <csvContact:fName/>
+             <csvContact:fOrg/>
+             <csvContact:fStreet index="0"/>
+             <csvContact:fStreet index="1"/>
+             <csvContact:fStreet index="2"/>
+             <csvContact:fCity/>
+             <csvContact:fSp/>
+             <csvContact:fPc/>
+             <csvContact:fCc/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="02CC2504">
+               contactPostal-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactTransfer" sep=",">
+           <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+
+
+
+Arias, et al.            Expires October 5, 2013               [Page 99]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+             <rdeCsv:fTrStatus/>
+             <rdeCsv:fReRr/>
+             <rdeCsv:fReID/>
+             <rdeCsv:fReDate/>
+             <rdeCsv:fAcRr/>
+             <rdeCsv:fAcID/>
+             <rdeCsv:fAcDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="D0929632">
+               contactTransfer-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactDisclose" sep=",">
+           <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+             <csvContact:fDiscloseFlag/>
+             <csvContact:fDiscloseNameLoc/>
+             <csvContact:fDiscloseNameInt/>
+             <csvContact:fDiscloseOrgLoc/>
+             <csvContact:fDiscloseOrgInt/>
+             <csvContact:fDiscloseAddrLoc/>
+             <csvContact:fDiscloseAddrInt/>
+             <csvContact:fDiscloseVoice/>
+             <csvContact:fDiscloseFax/>
+             <csvContact:fDiscloseEmail/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="89043A90">
+               contactDisclose-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvContact:contents>
+       <csvRegistrar:contents>
+         <rdeCsv:csv name="registrar" sep=",">
+           <rdeCsv:fields>
+             <csvRegistrar:fId/>
+             <rdeCsv:fRoid/>
+             <csvRegistrar:fName isLoc="false"/>
+             <csvRegistrar:fGurid/>
+             <csvRegistrar:fStatus/>
+             <csvContact:fStreet isLoc="false" index="0"/>
+             <csvContact:fStreet isLoc="false" index="1"/>
+             <csvContact:fStreet isLoc="false" index="2"/>
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 100]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+             <csvContact:fCity isLoc="false" />
+             <csvContact:fSp isLoc="false" />
+             <csvContact:fPc isLoc="false" />
+             <csvContact:fCc isLoc="false" />
+             <csvContact:fVoice/>
+             <csvContact:fVoiceExt/>
+             <csvContact:fFax/>
+             <csvContact:fFaxExt/>
+             <csvContact:fEmail/>
+             <rdeCsv:fUrl/>
+             <csvRegistrar:fWhoisUrl/>
+             <rdeCsv:fCrDate/>
+             <rdeCsv:fUpDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="9CB43C2E">
+               registrar-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvRegistrar:contents>
+       <csvIDN:contents>
+         <rdeCsv:csv name="idnLanguage" sep=",">
+           <rdeCsv:fields>
+             <rdeCsv:fLanguage isRequired="true"/>
+             <rdeCsv:fUrl isRequired="true"/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="D462EAD0">
+               idnLanguage-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvIDN:contents>
+      </rde:contents>
+   </rde:deposit>
+
+
+
+11.  Appendix B. Example of differential deposit using the CSV model
+
+   Example of a differential deposit using the CSV model:
+
+
+   <?xml version="1.0" encoding="UTF-8"?>
+   <rde:deposit
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 101]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+      xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
+      xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
+      xmlns:csvHost="urn:ietf:params:xml:ns:csvHost-1.0"
+      xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
+      xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
+      xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+       xsi:schemaLocation="
+       urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
+       urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
+       urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd
+       urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
+       urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
+       urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd"
+       type="FULL"
+      id="20101017001" prevId="20101010001">
+      <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
+      <rde:rdeMenu>
+       <rde:version>1.0</rde:version>
+       <rde:objURI>urn:ietf:params:xml:ns:csvDomain-1.0</rde:objURI>
+       <rde:objURI>urn:ietf:params:xml:ns:csvHost-1.0</rde:objURI>
+       <rde:objURI>urn:ietf:params:xml:ns:csvContact-1.0</rde:objURI>
+       <rde:objURI>urn:ietf:params:xml:ns:csvRegistrar-1.0</rde:objURI>
+       <rde:objURI>urn:ietf:params:xml:ns:csvIDN-1.0</rde:objURI>
+      </rde:rdeMenu>
+      <rde:deletes>
+       <csvDomain:deletes>
+         <rdeCsv:csv name="domain">
+           <rdeCsv:fields>
+             <csvDomain:fName/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="E19349E0">
+               domain-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainContacts">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvContact:fId/>
+             <csvDomain:fContactType/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="6BC9F9E8">
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 102]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+               domainContacts-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainStatuses">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvDomain:fStatus/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="F54AADF6">
+               domainStatuses-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainNameServers">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvHost:fName/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="7448DAA0">
+               domainNameServersObj-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="dnssec">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvDomain:fKeyTag/>
+             <csvDomain:fDsAlg/>
+             <csvDomain:fDigestType/>
+             <csvDomain:fDigest/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="ADB014A2">
+               dnssec-ds-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="dnssec">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvDomain:fFlags/>
+             <csvDomain:fProtocol/>
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 103]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+             <csvDomain:fKeyAlg/>
+             <csvDomain:fPubKey/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="B3E06C5C">
+               dnssec-key-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainTransfer">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <rdeCsv:fReDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="10C3EDA8">
+               domainTransfer-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvDomain:deletes>
+       <csvHost:deletes>
+         <rdeCsv:csv name="host">
+           <rdeCsv:fields>
+             <csvHost:fName/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="1B92A07C">
+               host-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="hostStatuses">
+           <rdeCsv:fields>
+             <csvHost:fName parent="true"/>
+             <csvHost:fStatus/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="8088E027">
+               hostStatuses-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="hostAddresses">
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 104]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+           <rdeCsv:fields>
+             <csvHost:fName parent="true"/>
+             <csvHost:fAddr/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="B211225B">
+               hostAddressesObj-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvHost:deletes>
+       <csvContact:deletes>
+         <rdeCsv:csv name="contact">
+           <rdeCsv:fields>
+             <csvContact:fId/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="6F2B988F">
+               contact-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactStatuses">
+           <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+             <csvContact:fStatus/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="CBEE0AB6">
+               contactStatuses-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactPostal" sep=",">
+           <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+             <csvContact:fPostalType/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="6F2B988F">
+               contactPostal-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 105]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+         <rdeCsv:csv name="contactTransfer">
+           <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+             <rdeCsv:fReDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="AF1479BD">
+               contactTransfer-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactDisclose">
+           <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="6F2B988F">
+               contactDisclose-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvContact:deletes>
+       <csvRegistrar:deletes>
+         <rdeCsv:csv name="registrar">
+           <rdeCsv:fields>
+             <csvRegistrar:fId/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="307B87AE">
+               registrar-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvRegistrar:deletes>
+       <csvIDN:deletes>
+         <rdeCsv:csv name="idnLanguage">
+           <rdeCsv:fields>
+             <rdeCsv:fLanguage/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="757B573A">
+               idnLanguage-delete-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 106]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+         </rdeCsv:csv>
+       </csvIDN:deletes>
+      </rde:deletes>
+      <rde:contents>
+       <csvDomain:contents>
+         <rdeCsv:csv name="domain" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName/>
+             <rdeCsv:fRoid/>
+             <rdeCsv:fLanguage/>
+             <csvDomain:fOriginalName/>
+             <rdeCsv:fRegistrant/>
+             <rdeCsv:fClID/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+             <rdeCsv:fUpRr/>
+             <rdeCsv:fUpID/>
+             <rdeCsv:fUpDate/>
+             <rdeCsv:fExDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="E6D52D73">
+               domain-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainContacts" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvContact:fId/>
+             <csvDomain:fContactType/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="4932EA57">
+               domainContacts-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainStatuses" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvDomain:fStatus/>
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 107]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+             <rdeCsv:fStatusDescription/>
+             <rdeCsv:fLanguage/>
+             <csvDomain:fRgpStatus/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="31B475C5">
+               domainStatuses-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainNameServers" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvHost:fName/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="430306BC">
+               domainNameServers-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="dnssec" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+             <csvDomain:fMaxSigLife/>
+             <csvDomain:fKeyTag/>
+             <csvDomain:fDsAlg/>
+             <csvDomain:fDigestType/>
+             <csvDomain:fDigest/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="AA15CB43">
+               dnssec-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="domainTransfer" sep=",">
+           <rdeCsv:fields>
+             <csvDomain:fName parent="true"/>
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 108]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+             <rdeCsv:fTrStatus/>
+             <rdeCsv:fReRr/>
+             <rdeCsv:fReID/>
+             <rdeCsv:fReDate/>
+             <rdeCsv:fAcRr/>
+             <rdeCsv:fAcID/>
+             <rdeCsv:fAcDate/>
+             <rdeCsv:fExDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="71170194">
+               domainTransfer-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvDomain:contents>
+       <csvHost:contents>
+         <rdeCsv:csv name="host" sep=",">
+           <rdeCsv:fields>
+             <csvHost:fName/>
+             <rdeCsv:fRoid/>
+             <rdeCsv:fClID/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+             <rdeCsv:fUpRr/>
+             <rdeCsv:fUpID/>
+             <rdeCsv:fUpDate/>
+             <rdeCsv:fTrDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="120938E3">
+               host-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="hostStatuses" sep=",">
+           <rdeCsv:fields>
+             <csvHost:fName parent="true"/>
+             <csvHost:fStatus/>
+             <rdeCsv:fStatusDescription/>
+             <rdeCsv:fLanguage/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+           </rdeCsv:fields>
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 109]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="2F4C2E4A">
+               hostStatuses-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="hostAddresses" sep=",">
+           <rdeCsv:fields>
+             <csvHost:fName parent="true"/>
+             <csvHost:fAddr/>
+             <csvHost:fAddrVersion/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="2C2A7A9F">
+               hostAddresses-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvHost:contents>
+       <csvContact:contents>
+         <rdeCsv:csv name="contact" sep=",">
+           <rdeCsv:fields>
+             <csvContact:fId/>
+             <rdeCsv:fRoid/>
+             <csvContact:fVoice/>
+             <csvContact:fVoiceExt/>
+             <csvContact:fFax/>
+             <csvContact:fFaxExt/>
+             <csvContact:fEmail/>
+             <rdeCsv:fClID/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+             <rdeCsv:fUpRr/>
+             <rdeCsv:fUpID/>
+             <rdeCsv:fUpDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="D7F106A5">
+               contact-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 110]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactStatuses" sep=",">
+           <rdeCsv:fields>
+               <csvContact:fId parent="true"/>
+               <csvContact:fStatus/>
+               <rdeCsv:fStatusDescription/>
+               <rdeCsv:fLanguage/>
+             <rdeCsv:fCrRr/>
+             <rdeCsv:fCrID/>
+             <rdeCsv:fCrDate/>
+             </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="4122B192">
+               contactStatuses-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactPostal" sep=",">
+           <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+             <csvContact:fPostalType/>
+             <csvContact:fName/>
+             <csvContact:fOrg/>
+             <csvContact:fStreet index="0"/>
+             <csvContact:fStreet index="1"/>
+             <csvContact:fStreet index="2"/>
+             <csvContact:fCity/>
+             <csvContact:fSp/>
+             <csvContact:fPc/>
+             <csvContact:fCc/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="02CC2504">
+               contactPostal-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactTransfer" sep=",">
+           <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+             <rdeCsv:fTrStatus/>
+             <rdeCsv:fReRr/>
+             <rdeCsv:fReID/>
+             <rdeCsv:fReDate/>
+             <rdeCsv:fAcRr/>
+             <rdeCsv:fAcID/>
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 111]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+             <rdeCsv:fAcDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="D0929632">
+               contactTransfer-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactDisclose" sep=",">
+           <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+             <csvContact:fDiscloseFlag/>
+             <csvContact:fDiscloseNameLoc/>
+             <csvContact:fDiscloseNameInt/>
+             <csvContact:fDiscloseOrgLoc/>
+             <csvContact:fDiscloseOrgInt/>
+             <csvContact:fDiscloseAddrLoc/>
+             <csvContact:fDiscloseAddrInt/>
+             <csvContact:fDiscloseVoice/>
+             <csvContact:fDiscloseFax/>
+             <csvContact:fDiscloseEmail/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="89043A90">
+               contactDisclose-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvContact:contents>
+       <csvRegistrar:contents>
+         <rdeCsv:csv name="registrar" sep=",">
+           <rdeCsv:fields>
+             <csvRegistrar:fId/>
+             <rdeCsv:fRoid/>
+             <csvRegistrar:fName isLoc="false"/>
+             <csvRegistrar:fGurid/>
+             <csvRegistrar:fStatus/>
+             <csvContact:fStreet isLoc="false" index="0"/>
+             <csvContact:fStreet isLoc="false" index="1"/>
+             <csvContact:fStreet isLoc="false" index="2"/>
+             <csvContact:fCity isLoc="false" />
+             <csvContact:fSp isLoc="false" />
+             <csvContact:fPc isLoc="false" />
+             <csvContact:fCc isLoc="false" />
+             <csvContact:fVoice/>
+             <csvContact:fVoiceExt/>
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 112]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
+             <csvContact:fFax/>
+             <csvContact:fFaxExt/>
+             <csvContact:fEmail/>
+             <rdeCsv:fUrl/>
+             <csvRegistrar:fWhoisUrl/>
+             <rdeCsv:fCrDate/>
+             <rdeCsv:fUpDate/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="9CB43C2E">
+               registrar-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvRegistrar:contents>
+       <csvIDN:contents>
+         <rdeCsv:csv name="idnLanguage" sep=",">
+           <rdeCsv:fields>
+             <rdeCsv:fLanguage/>
+             <rdeCsv:fUrl/>
+           </rdeCsv:fields>
+           <rdeCsv:files>
+             <rdeCsv:file
+               cksum="D462EAD0">
+               idnLanguage-YYYYMMDD.csv
+             </rdeCsv:file>
+           </rdeCsv:files>
+         </rdeCsv:csv>
+       </csvIDN:contents>
+      </rde:contents>
+   </rde:deposit>
+
+
+
+12.  Appendix C. Data escrow agent extended verification process
 
    The Data Escrow Agent MAY perform a extended verification process
    using the contents of data escrow deposits to a point in time
@@ -5118,6 +6321,14 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
       *  In the case of the XML model, the contents of the escrow
          deposits MUST be validated using the XML schemas of the
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 113]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
+
          profile.
 
    o  Count the objects and validate that number of objects is equal to
@@ -5135,7 +6346,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    o  All idnTableRef definitions linked from other objects are present.
 
 
-11.  Appendix D. Data escrow notifications
+13.  Appendix D. Data escrow notifications
 
    Data escrowing involves several parties interacting with the
    objective of restoring the operations of a Domain Registry in case of
@@ -5145,20 +6356,12 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    escrow deposit even if no access to the data escrow deposit file is
    available.
 
-
-
-
-Arias, et al.            Expires October 5, 2013               [Page 92]
-
-Internet-Draft            DNRD Objects Mapping                April 2013
-
-
-11.1.  Notifications from Registry Operators to Third Parties
+13.1.  Notifications from Registry Operators to Third Parties
 
    Registry Operators MAY notify Third Parties that a data escrow
    deposit file was sent to the Data Escrow Agent.
 
-11.1.1.  <report> object
+13.1.1.  <report> object
 
    The <report> object is used by Registry Operator to notify Third
    Parties about successful delivery of a data escrow deposit to a Data
@@ -5172,6 +6375,15 @@ Internet-Draft            DNRD Objects Mapping                April 2013
       escrow deposit by the data escrow agent.  It is recommended that
       the report identifier be the same as the data escrow deposit
       identifier.
+
+
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 114]
+
+Internet-Draft            DNRD Objects Mapping                April 2013
+
 
    o  A <reDate> element contains the date and time that the data escrow
       deposit was successful received by the data escrow agent.
@@ -5204,7 +6416,27 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 93]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arias, et al.            Expires October 5, 2013              [Page 115]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5241,12 +6473,12 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </rdeReport:report>
 
 
-11.2.  Notifications from Data Escrow Agents to Third Parties
+13.2.  Notifications from Data Escrow Agents to Third Parties
 
    Data Escrow Agents MAY notify Third Parties that a data escrow
    deposit file was received or it is missing for a specific date.
 
-11.2.1.  <notification> object
+13.2.1.  <notification> object
 
    The <notification> object is used by Data Escrow Agents to notify
    Third Parties about sucessful reception/validation of a data escrow
@@ -5260,7 +6492,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 94]
+Arias, et al.            Expires October 5, 2013              [Page 116]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5316,7 +6548,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 95]
+Arias, et al.            Expires October 5, 2013              [Page 117]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5358,7 +6590,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
  </rdeNotification:notification>
 
 
-11.3.  Formal Syntax
+13.3.  Formal Syntax
 
    Seven schemas are presented here.  The first schema is the base RDE
    schema.  The second schema defines domain object for RDE.  The third
@@ -5372,12 +6604,12 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 96]
+Arias, et al.            Expires October 5, 2013              [Page 118]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
 
-11.3.1.  RDE CSV Schema
+13.3.1.  RDE CSV Schema
 
    Copyright (c) 2012 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -5428,7 +6660,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 97]
+Arias, et al.            Expires October 5, 2013              [Page 119]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5484,7 +6716,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 98]
+Arias, et al.            Expires October 5, 2013              [Page 120]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5540,7 +6772,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013               [Page 99]
+Arias, et al.            Expires October 5, 2013              [Page 121]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5596,7 +6828,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 100]
+Arias, et al.            Expires October 5, 2013              [Page 122]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5652,7 +6884,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 101]
+Arias, et al.            Expires October 5, 2013              [Page 123]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5708,7 +6940,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 102]
+Arias, et al.            Expires October 5, 2013              [Page 124]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5764,7 +6996,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 103]
+Arias, et al.            Expires October 5, 2013              [Page 125]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5820,7 +7052,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 104]
+Arias, et al.            Expires October 5, 2013              [Page 126]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5846,7 +7078,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.2.  RDE Domain Object
+13.3.2.  RDE Domain Object
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -5876,7 +7108,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 105]
+Arias, et al.            Expires October 5, 2013              [Page 127]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5932,7 +7164,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 106]
+Arias, et al.            Expires October 5, 2013              [Page 128]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -5988,7 +7220,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 107]
+Arias, et al.            Expires October 5, 2013              [Page 129]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6026,7 +7258,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.3.  CSV Domain Object
+13.3.3.  CSV Domain Object
 
    Copyright (c) 2012 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -6044,7 +7276,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 108]
+Arias, et al.            Expires October 5, 2013              [Page 130]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6100,7 +7332,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 109]
+Arias, et al.            Expires October 5, 2013              [Page 131]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6156,7 +7388,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 110]
+Arias, et al.            Expires October 5, 2013              [Page 132]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6212,7 +7444,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 111]
+Arias, et al.            Expires October 5, 2013              [Page 133]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6268,7 +7500,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 112]
+Arias, et al.            Expires October 5, 2013              [Page 134]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6283,7 +7515,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.4.  RDE Host Object
+13.3.4.  RDE Host Object
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -6324,7 +7556,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 113]
+Arias, et al.            Expires October 5, 2013              [Page 135]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6380,7 +7612,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 114]
+Arias, et al.            Expires October 5, 2013              [Page 136]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6406,7 +7638,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.5.  CSV Host Object
+13.3.5.  CSV Host Object
 
    Copyright (c) 2012 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -6436,7 +7668,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 115]
+Arias, et al.            Expires October 5, 2013              [Page 137]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6492,7 +7724,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 116]
+Arias, et al.            Expires October 5, 2013              [Page 138]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6548,7 +7780,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 117]
+Arias, et al.            Expires October 5, 2013              [Page 139]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6579,7 +7811,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.6.  RDE Contact Object
+13.3.6.  RDE Contact Object
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -6604,7 +7836,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 118]
+Arias, et al.            Expires October 5, 2013              [Page 140]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6660,7 +7892,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 119]
+Arias, et al.            Expires October 5, 2013              [Page 141]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6716,7 +7948,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 120]
+Arias, et al.            Expires October 5, 2013              [Page 142]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6736,7 +7968,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.7.  CSV Contact Object
+13.3.7.  CSV Contact Object
 
    Copyright (c) 2012 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -6772,7 +8004,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 121]
+Arias, et al.            Expires October 5, 2013              [Page 143]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6828,7 +8060,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 122]
+Arias, et al.            Expires October 5, 2013              [Page 144]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6884,7 +8116,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 123]
+Arias, et al.            Expires October 5, 2013              [Page 145]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6940,7 +8172,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 124]
+Arias, et al.            Expires October 5, 2013              [Page 146]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -6996,7 +8228,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 125]
+Arias, et al.            Expires October 5, 2013              [Page 147]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7052,7 +8284,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 126]
+Arias, et al.            Expires October 5, 2013              [Page 148]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7108,7 +8340,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 127]
+Arias, et al.            Expires October 5, 2013              [Page 149]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7117,7 +8349,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.8.  RDE Registrar Object
+13.3.8.  RDE Registrar Object
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -7164,7 +8396,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 128]
+Arias, et al.            Expires October 5, 2013              [Page 150]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7220,7 +8452,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 129]
+Arias, et al.            Expires October 5, 2013              [Page 151]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7276,7 +8508,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 130]
+Arias, et al.            Expires October 5, 2013              [Page 152]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7332,7 +8564,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 131]
+Arias, et al.            Expires October 5, 2013              [Page 153]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7350,7 +8582,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.9.  CSV Registrar Object
+13.3.9.  CSV Registrar Object
 
    Copyright (c) 2012 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -7388,7 +8620,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 132]
+Arias, et al.            Expires October 5, 2013              [Page 154]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7444,7 +8676,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 133]
+Arias, et al.            Expires October 5, 2013              [Page 155]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7500,7 +8732,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 134]
+Arias, et al.            Expires October 5, 2013              [Page 156]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7545,7 +8777,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.10.  RDE IDN and IDN Table Reference Objects
+13.3.10.  RDE IDN Table Reference Objects
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -7556,7 +8788,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 135]
+Arias, et al.            Expires October 5, 2013              [Page 157]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7612,7 +8844,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 136]
+Arias, et al.            Expires October 5, 2013              [Page 158]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7659,7 +8891,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.11.  CSV IDN Language Object
+13.3.11.  CSV IDN Language Object
 
    Copyright (c) 2012 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -7668,7 +8900,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 137]
+Arias, et al.            Expires October 5, 2013              [Page 159]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7724,7 +8956,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 138]
+Arias, et al.            Expires October 5, 2013              [Page 160]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7771,7 +9003,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.12.  EPP Parameters Object
+13.3.12.  EPP Parameters Object
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -7780,7 +9012,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 139]
+Arias, et al.            Expires October 5, 2013              [Page 161]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7836,7 +9068,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 140]
+Arias, et al.            Expires October 5, 2013              [Page 162]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7874,7 +9106,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.13.  NNDN Object
+13.3.13.  NNDN Object
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -7892,7 +9124,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 141]
+Arias, et al.            Expires October 5, 2013              [Page 163]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7948,7 +9180,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 142]
+Arias, et al.            Expires October 5, 2013              [Page 164]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -7997,14 +9229,14 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.14.  Header Object
+13.3.14.  Header Object
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 143]
+Arias, et al.            Expires October 5, 2013              [Page 165]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8060,7 +9292,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 144]
+Arias, et al.            Expires October 5, 2013              [Page 166]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8116,12 +9348,12 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 145]
+Arias, et al.            Expires October 5, 2013              [Page 167]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
 
-11.3.15.  Report Object
+13.3.15.  Report Object
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -8172,7 +9404,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 146]
+Arias, et al.            Expires October 5, 2013              [Page 168]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8215,7 +9447,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.3.16.  Notifiaction Object
+13.3.16.  Notifiaction Object
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -8228,7 +9460,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 147]
+Arias, et al.            Expires October 5, 2013              [Page 169]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8284,7 +9516,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 148]
+Arias, et al.            Expires October 5, 2013              [Page 170]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8330,7 +9562,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    </schema>
    END
 
-11.4.  Policy Object
+13.4.  Policy Object
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
    of the code.  All rights reserved.
@@ -8340,7 +9572,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 149]
+Arias, et al.            Expires October 5, 2013              [Page 171]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8396,7 +9628,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 150]
+Arias, et al.            Expires October 5, 2013              [Page 172]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8432,7 +9664,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    END
 
 
-12.  Internationalization Considerations
+14.  Internationalization Considerations
 
    Data Escrow deposits are represented in XML, which provides native
    support for encoding information using the Unicode character set and
@@ -8443,7 +9675,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    RECOMMENDED.
 
 
-13.  IANA Considerations
+15.  IANA Considerations
 
    This document uses URNs to describe XML namespaces and XML schemas
    conforming to a registry mechanism described in [RFC3688].  Fourteen
@@ -8452,7 +9684,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 151]
+Arias, et al.            Expires October 5, 2013              [Page 173]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8508,7 +9740,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 152]
+Arias, et al.            Expires October 5, 2013              [Page 174]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8564,7 +9796,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 153]
+Arias, et al.            Expires October 5, 2013              [Page 175]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8620,7 +9852,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 154]
+Arias, et al.            Expires October 5, 2013              [Page 176]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8676,7 +9908,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 155]
+Arias, et al.            Expires October 5, 2013              [Page 177]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8707,7 +9939,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
       See the "Formal Syntax" section of this document.
 
 
-14.  Security Considerations
+16.  Security Considerations
 
    This specification does not define the security mechanisms to be used
    in the transmission of the data escrow deposits, since it only
@@ -8732,7 +9964,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 156]
+Arias, et al.            Expires October 5, 2013              [Page 178]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8743,7 +9975,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    from the Registry, but also the contents are also "meaningful".
 
 
-15.  Acknowledgments
+17.  Acknowledgments
 
    Parts of this document are based on EPP [RFC5730] and related RFCs by
    Scott Hollenbeck.
@@ -8751,11 +9983,11 @@ Internet-Draft            DNRD Objects Mapping                April 2013
    TBD
 
 
-16.  Change History
+18.  Change History
 
    [[RFC Editor: Please remove this section.]]
 
-16.1.  Changes from draft-arias-noguchi-registry-data-escrow-02 to
+18.1.  Changes from draft-arias-noguchi-registry-data-escrow-02 to
        -dnrd-objects-mapping-00
 
    1.  Added definition for child elements under the <domain> element.
@@ -8778,7 +10010,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
    9.  Fixed some typographical errors and omissions.
 
-16.2.  Changes from version 00 to 01
+18.2.  Changes from version 00 to 01
 
    1.  Specify OPTIONAL elements in the draft.
 
@@ -8788,7 +10020,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 157]
+Arias, et al.            Expires October 5, 2013              [Page 179]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8801,7 +10033,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
    6.  Added lgr to the IDN table object.
 
-16.3.  Changes from version 01 to 02
+18.3.  Changes from version 01 to 02
 
    1.  Updates to the all objects based on feedback from the list.
 
@@ -8821,7 +10053,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
    9.  Added FULL, DIFF deposit examples using the XML model only.
 
-16.4.  Changes from version 02 to 03
+18.4.  Changes from version 02 to 03
 
    1.  Merged draft-gould-thippeswamy-dnrd-csv-mapping-03 into
        draft-arias-noguchi-dnrd-objects-mapping-02.
@@ -8839,17 +10071,17 @@ Internet-Draft            DNRD Objects Mapping                April 2013
        based on feedback from David Kipling.
 
 
-17.  References
+19.  References
 
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 158]
+Arias, et al.            Expires October 5, 2013              [Page 180]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
 
-17.1.  Normative References
+19.1.  Normative References
 
    [ISO-3166-1]
               International Organization for Standardization, "Codes for
@@ -8888,7 +10120,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
               Security Extensions Mapping for the Extensible
               Provisioning Protocol (EPP)", RFC 5910, May 2010.
 
-17.2.  Informative References
+19.2.  Informative References
 
    [RFC0791]  Postel, J., "Internet Protocol", STD 5, RFC 791,
               September 1981.
@@ -8900,7 +10132,7 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 159]
+Arias, et al.            Expires October 5, 2013              [Page 181]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -8956,7 +10188,7 @@ Authors' Addresses
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 160]
+Arias, et al.            Expires October 5, 2013              [Page 182]
 
 Internet-Draft            DNRD Objects Mapping                April 2013
 
@@ -9012,5 +10244,5 @@ Internet-Draft            DNRD Objects Mapping                April 2013
 
 
 
-Arias, et al.            Expires October 5, 2013              [Page 161]
+Arias, et al.            Expires October 5, 2013              [Page 183]
 

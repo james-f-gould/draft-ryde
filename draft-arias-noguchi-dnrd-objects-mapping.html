@@ -229,58 +229,62 @@ Contact Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#registrarObject">5.4.</a>&nbsp;
 Registrar Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor9">5.5.</a>&nbsp;
-RDE IDN Practices<br />
+IDN Table Reference Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor10">5.6.</a>&nbsp;
 RDE NNDN<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#eppParams">5.7.</a>&nbsp;
-RDE EPP Parameters object<br />
+EPP Parameters Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor11">5.8.</a>&nbsp;
-RDE Policy object<br />
+Policy Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor12">5.9.</a>&nbsp;
-Header object<br />
+Header Object<br />
 <a href="#anchor13">6.</a>&nbsp;
 RDE IDN Variants handling<br />
 <a href="#anchor14">7.</a>&nbsp;
 Profile<br />
 <a href="#anchor15">8.</a>&nbsp;
-Appendix A. Example of a full deposit using the XML model only<br />
+Appendix A. Example of a full deposit using the XML model<br />
 <a href="#anchor16">9.</a>&nbsp;
-Appendix B. Example of differential deposit using the XML model only<br />
+Appendix B. Example of differential deposit using the XML model<br />
 <a href="#anchor17">10.</a>&nbsp;
-Appendix C. Data escrow agent extended verification process<br />
+Appendix A. Example of a full deposit using the CSV model<br />
 <a href="#anchor18">11.</a>&nbsp;
+Appendix B. Example of differential deposit using the CSV model<br />
+<a href="#anchor19">12.</a>&nbsp;
+Appendix C. Data escrow agent extended verification process<br />
+<a href="#anchor20">13.</a>&nbsp;
 Appendix D. Data escrow notifications<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor19">11.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor21">13.1.</a>&nbsp;
 Notifications from Registry Operators to Third Parties<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor20">11.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor22">13.2.</a>&nbsp;
 Notifications from Data Escrow Agents to Third Parties<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#formalSyntax">11.3.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#formalSyntax">13.3.</a>&nbsp;
 Formal Syntax<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor37">11.4.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor39">13.4.</a>&nbsp;
 Policy Object<br />
-<a href="#anchor38">12.</a>&nbsp;
-Internationalization Considerations<br />
-<a href="#anchor39">13.</a>&nbsp;
-IANA Considerations<br />
 <a href="#anchor40">14.</a>&nbsp;
-Security Considerations<br />
+Internationalization Considerations<br />
 <a href="#anchor41">15.</a>&nbsp;
-Acknowledgments<br />
+IANA Considerations<br />
 <a href="#anchor42">16.</a>&nbsp;
+Security Considerations<br />
+<a href="#anchor43">17.</a>&nbsp;
+Acknowledgments<br />
+<a href="#anchor44">18.</a>&nbsp;
 Change History<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor43">16.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor45">18.1.</a>&nbsp;
 Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mapping-00<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor44">16.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor46">18.2.</a>&nbsp;
 Changes from version 00 to 01<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor45">16.3.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor47">18.3.</a>&nbsp;
 Changes from version 01 to 02<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor46">16.4.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor48">18.4.</a>&nbsp;
 Changes from version 02 to 03<br />
-<a href="#rfc.references1">17.</a>&nbsp;
+<a href="#rfc.references1">19.</a>&nbsp;
 References<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rfc.references1">17.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rfc.references1">19.1.</a>&nbsp;
 Normative References<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rfc.references2">17.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rfc.references2">19.2.</a>&nbsp;
 Informative References<br />
 <a href="#rfc.authors">&#167;</a>&nbsp;
 Authors' Addresses<br />
@@ -889,7 +893,7 @@ XML Model</h3>
 
 <p>There are
                    two elements used in the data escrow of the domain name objects for the XML model including the 
-                   &lt;rdeDomain:domain&gt;, under the &lt;rdeDomain:contents&gt; element, and the &lt;rdeDomain:delete&gt; element,
+                   &lt;rdeDomain:domain&gt;, under the &lt;rde:contents&gt; element, and the &lt;rdeDomain:delete&gt; element,
                    under the &lt;rde:deletes&gt; element.
                   
 </p>
@@ -4567,21 +4571,32 @@ EXAMPLE2
 <a name="anchor9"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.5"></a><h3>5.5.&nbsp;
-RDE IDN Practices</h3>
+IDN Table Reference Object</h3>
 
 <p>
-                    The RDE Internationalized Domain Names (IDN) Practices reference is a pseudo-object that is used 
-                    to provide a short reference to the IDN Table and Policy used in IDN registrations. The &lt;idnTableRef&gt;
-                    element has an "id" attribute that is used to uniquely identify an IDN Table stored externally.
+                The Internationalized Domain Names (IDN) table reference object is a pseudo-object that is used to 
+                provide a short reference to the IDN Table and Policy used in IDN registrations.  The IDN reference 
+                object supports both the XML and the CSV Model, defined in the <a class='info' href='#models'>Models<span> (</span><span class='info'>Models</span><span>)</span></a> section.  
+                The elements used for both models are defined in the following sections.
                 
+</p>
+<a name="idnXmlModel"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.5.5.1"></a><h3>5.5.1.&nbsp;
+XML Model</h3>
+
+<p>There are
+                   one element used in the data escrow of the IDN table reference objects for the XML model that is the 
+                   &lt;rdeIDN:idnTableRef&gt;, under the &lt;rde:contents&gt; element.
+                  
 </p>
 <a name="idnTableRef_object"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.5.5.1"></a><h3>5.5.1.&nbsp;
-&lt;idnTableRef&gt; object</h3>
+<a name="rfc.section.5.5.1.1"></a><h3>5.5.1.1.&nbsp;
+&lt;rdeIDN:idnTableRef&gt; object</h3>
 
 <p>
-                        The OPTIONAL &lt;idnTableRef&gt; contains the following elements. An id attribute is used
+                        The &lt;rdeIDN:idnTableRef&gt; contains the following elements. An "id" attribute is used
                         to specify an identifier for the IDN table.
                     
 </p>
@@ -4624,6 +4639,137 @@ RDE IDN Practices</h3>
 
                     
 </p>
+<a name="idnCsvModel"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.5.5.2"></a><h3>5.5.2.&nbsp;
+CSV Model</h3>
+
+<p> 
+                   The IDN domain names, defined in <a class='info' href='#domainNameObject'>Section&nbsp;5.1<span> (</span><span class='info'>Domain Name Object</span><span>)</span></a>, MAY have references 
+                   to the IDN language using the &lt;rdeCsv:fLanguage&gt; field element.  
+                   The IDN table reference object defines the mapping of a language to a language table URL.
+                   The language table URL defines the character code points that can be used for 
+                   the language. The elements used for the IDN table reference object is defined in this section.
+                   The &lt;csvIDN:contents&gt; child 
+                   element of the &lt;rde:contents&gt; element is used to hold the new or updated IDN table reference objects for the deposit.  
+                   The &lt;csvIDN:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
+                   purged IDN table reference objects for the deposit.  Both the &lt;csvIDN:contents&gt; and &lt;csvIDN:deletes&gt; 
+                   elements contain one or more &lt;rdeCsv:csv&gt; elements with the following supported "name" attribute values:
+                
+</p>
+<p></p>
+<blockquote class="text"><dl>
+<dt>&quot;idnLanguage&quot;</dt>
+<dd>Defines the fields and CSV file references 
+                  used for the IDN table reference object records.  
+                  
+</dd>
+<dt></dt>
+<dd>The following "rdeCsv" fields, defined in <a class='info' href='#csvCommonFieldElements'>Section&nbsp;4.6.2<span> (</span><span class='info'>CSV common field elements</span><span>)</span></a>,  
+                  MAY be used in the "idnLanguage" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                   
+</dd>
+<dt></dt>
+<dd>
+<blockquote class="text"><dl>
+<dt>&lt;rdeCsv:fLanguage&gt;</dt>
+<dd>The language tag that matches the values for the &lt;rdeCsv:fLanguage&gt; field element in the "domain" CSV files, as defined in <a class='info' href='#domainNameObject'>Section&nbsp;5.1<span> (</span><span class='info'>Domain Name Object</span><span>)</span></a>.
+</dd>
+<dt>&lt;rdeCsv:fUrl&gt;</dt>
+<dd>URL that defines the character code points that can be used for the language defined by the &lt;rdeCsv:fLanguage&gt; field element.
+</dd>
+</dl></blockquote>
+</dd>
+<dt></dt>
+<dd>
+                        Example of a "idnLanguage" &lt;csvIDN:contents&gt; &lt;rdeCsv:csv&gt; element:
+                    
+</dd>
+<dt></dt>
+<dd>
+                        <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+...
+&lt;csvIDN:contents&gt;
+...
+  &lt;rdeCsv:csv name="idnLanguage"&gt;
+    &lt;rdeCsv:sep&gt;,&lt;/rdeCsv:sep&gt;
+    &lt;rdeCsv:fields&gt;
+      &lt;rdeCsv:fLanguage/&gt;
+      &lt;rdeCsv:fUrl/&gt;
+    &lt;/rdeCsv:fields&gt;
+    &lt;rdeCsv:files&gt;
+      &lt;rdeCsv:file
+        cksum="1924040625 268"&gt;
+        idnLanguage-YYYYMMDD.csv
+      &lt;/rdeCsv:file&gt;
+    &lt;/rdeCsv:files&gt;
+  &lt;/rdeCsv:csv&gt;
+...
+&lt;/csvIDN:contents&gt;
+...
+</pre></div>
+                    
+</dd>
+<dt></dt>
+<dd>
+                        Example of the corresponding idnLanguage-YYYYMMDD.csv file.
+                        The file contains two IDN language records.
+                    
+</dd>
+<dt></dt>
+<dd>
+                        <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+LANG-1,
+http://www.iana.org/domains/idn-tables/tables/test_tab1_1.1.txt
+LANG-2,
+http://www.iana.org/domains/idn-tables/tables/test_tab2_1.1.txt
+</pre></div>
+                    
+</dd>
+<dt></dt>
+<dd>
+                        Example of a "idnLanguage" &lt;csvIDN:deletes&gt; &lt;rdeCsv:csv&gt; element:
+                    
+</dd>
+<dt></dt>
+<dd>
+                        <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+...
+&lt;csvIDN:deletes&gt;
+...
+ &lt;rdeCsv:csv name="idnLanguage"&gt;
+    &lt;rdeCsv:fields&gt;
+      &lt;rdeCsv:fLanguage/&gt;
+    &lt;/rdeCsv:fields&gt;
+    &lt;rdeCsv:files&gt;
+      &lt;rdeCsv:file
+        cksum="1924040625 268"&gt;
+        idnLanguage-YYYYMMDD.csv
+      &lt;/rdeCsv:file&gt;
+    &lt;/rdeCsv:files&gt;
+  &lt;/rdeCsv:csv&gt;
+...
+&lt;/csvIDN:deletes&gt;
+...
+</pre></div>
+                    
+</dd>
+<dt></dt>
+<dd>
+                        Example of the idnLanguage-delete-YYYYMMDD.csv file.
+                        The file contains two IDN language records.
+                    
+</dd>
+<dt></dt>
+<dd>
+                        <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+LANG1
+LANG2
+</pre></div>
+                    
+</dd>
+</dl></blockquote>
+
 <a name="anchor10"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.6"></a><h3>5.6.&nbsp;
@@ -4753,16 +4899,18 @@ RDE NNDN</h3>
 <a name="eppParams"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.7"></a><h3>5.7.&nbsp;
-RDE EPP Parameters object</h3>
+EPP Parameters Object</h3>
 
 <p>
-                    An OPTIONAL &lt;eppParams&gt; element contains some EPP parameters that may be helpful when
-                    rebuilding a registry from the escrow deposits. The element SHOULD be included in Deposits
-                    if the registry uses EPP.
+                    The  EPP Parameters Object defines the set of object and object extension services 
+                    supported by the registry, as defined in <a class='info' href='#RFC5730'>[RFC5730]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a>.  The 
+                    EPP Parameters Object only supports the XML model and is defined using the 
+                    the &lt;rdeEppParams:eppParams&gt; element.
+                    The EPP Parameters Object SHOULD be included if the registry uses EPP.
                 
 </p>
 <p>
-                    The syntax and content of the &lt;eppParams&gt; children elements is as explained in section
+                    The syntax and content of the &lt;rdeEppParams:eppParams&gt; children elements is as explained in section
                     2.4 of <a class='info' href='#RFC5730'>[RFC5730]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a>. The children of the &lt;eppParams&gt; are as follows:
                 
 </p>
@@ -4845,17 +4993,20 @@ RDE EPP Parameters object</h3>
 <a name="anchor11"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.8"></a><h3>5.8.&nbsp;
-RDE Policy object</h3>
+Policy Object</h3>
 
 <p>
-                    The RDE Policy is a pseudo-object that is used to specify which OPTIONAL elements 
-                    from this specification are REQUIRED based on the business model of the registry.
+                    The Policy object is a pseudo-object that is used to specify which OPTIONAL elements 
+                    from XML Model are REQUIRED based on the business model of the registry.  For the CSV Model, the 
+                    OPTIONAL "isRequired" attribute of the &lt;rdeCsv:field&gt; elements, defined in 
+                    <a class='info' href='#rdeCsv-csv'>Section&nbsp;4.6.1<span> (</span><span class='info'>&lt;rdeCsv:csv&gt; element</span><span>)</span></a>, is used to specify which OPTIONAL fields are REQUIRED
+                    based on the business model of the regsitry.
                 
 </p>
 <a name="policy_object"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.8.1"></a><h3>5.8.1.&nbsp;
-&lt;policy&gt; object</h3>
+&lt;rdePolicy:policy&gt; object</h3>
 
 <p>
                         The OPTIONAL &lt;policy&gt; contains the following attributes:
@@ -4872,7 +5023,7 @@ RDE Policy object</h3>
                     
 </p>
 <p>
-                        Example of &lt;policy&gt; object:
+                        Example of &lt;rdePolicy:policy&gt; object:
                     
 </p>
 <p>
@@ -4888,21 +5039,22 @@ RDE Policy object</h3>
 <a name="anchor12"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.9"></a><h3>5.9.&nbsp;
-Header object</h3>
+Header Object</h3>
 
 <p>
-                    The RDE Header is a pseudo-object that is used to specify the number
+                    The Header Object is a pseudo-object that is used to specify the number
                     of objects in the SRS at a specific point in time (watermark) regardless
-                    of the type of deposit: differential, full or incremental.
+                    of the type of deposit: differential, full or incremental.  The Header Object 
+                    only supports the XML model and is defined using the &lt;rdeHeader:header&gt; element.
                 
 </p>
 <a name="header_object"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.9.1"></a><h3>5.9.1.&nbsp;
-&lt;header&gt; object</h3>
+&lt;rdeHeader:header&gt; object</h3>
 
 <p>
-                        The &lt;header&gt; contains the following attributes:
+                        The &lt;rdeHeader:header&gt; contains the following attributes:
                     
 </p>
 <p>
@@ -4914,14 +5066,18 @@ Header object</h3>
 </li>
 <li>
                                 A &lt;count&gt; element that number of objects being escrowed.
-                                An uri attribute is used to define the type of object.
+                                An "uri" attribute is used to define the type of object.  The "uri" attributes 
+                                reflects the XML namespace URI of the primary objects for 
+                                the XML Model and CSV Model.  For example, the "uri" is set to "urn:ietf:params:xml:ns:rdeDomain-1.0" 
+                                for domain name objects using the XML Model, and the "uri" is set to "urn:ietf:params:xml:ns:csvDomain-1.0" 
+                                for domain name objects using the CSV Model.
                             
 </li>
 </ul><p>
                     
 </p>
 <p>
-                        Example of &lt;header&gt; object:
+                        Example of &lt;rdeHeader:header&gt; object referencing only the XML Model objects:
                     
 </p>
 <p>
@@ -4943,6 +5099,38 @@ Header object</h3>
     uri="urn:ietf:params:xml:ns:rdeIDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
   &lt;rdeHeader:count
     uri="urn:ietf:params:xml:ns:rdeNNDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
+  &lt;rdeHeader:count
+    uri="urn:ietf:params:xml:ns:rdeEppParams-1.0"&gt;1
+  &lt;/rdeHeader:count&gt;
+&lt;/rdeHeader:header&gt;
+...
+</pre></div><p>
+
+                    
+</p>
+<p>
+                        Example of &lt;rdeHeader:header&gt; object referencing the CSV and XML Model objects:
+                    
+</p>
+<p>
+                        </p>
+<div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+...
+&lt;rdeHeader:header&gt;
+  &lt;rdeHeader:tld&gt;test&lt;/rdeHeader:tld&gt;
+  &lt;rdeHeader:count
+    uri="urn:ietf:params:xml:ns:csvDomain-1.0"&gt;2&lt;/rdeHeader:count&gt;
+  &lt;rdeHeader:count
+    uri="urn:ietf:params:xml:ns:csvHost-1.0"&gt;1&lt;/rdeHeader:count&gt;
+  &lt;rdeHeader:count
+    uri="urn:ietf:params:xml:ns:csvContact-1.0"&gt;1&lt;/rdeHeader:count&gt;
+  &lt;rdeHeader:count
+    uri="urn:ietf:params:xml:ns:csvRegistrar-1.0"&gt;1
+  &lt;/rdeHeader:count&gt;
+  &lt;rdeHeader:count
+    uri="urn:ietf:params:xml:ns:csvIDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
+  &lt;rdeHeader:count
+    uri="urn:ietf:params:xml:ns:csvNNDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
   &lt;rdeHeader:count
     uri="urn:ietf:params:xml:ns:rdeEppParams-1.0"&gt;1
   &lt;/rdeHeader:count&gt;
@@ -5021,7 +5209,7 @@ Profile</h3>
 <a name="anchor15"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.8"></a><h3>8.&nbsp;
-Appendix A. Example of a full deposit using the XML model only</h3>
+Appendix A. Example of a full deposit using the XML model</h3>
 
 <p>
                 Example of a full deposit using the XML model only:
@@ -5258,7 +5446,7 @@ Appendix A. Example of a full deposit using the XML model only</h3>
 <a name="anchor16"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.9"></a><h3>9.&nbsp;
-Appendix B. Example of differential deposit using the XML model only</h3>
+Appendix B. Example of differential deposit using the XML model</h3>
 
 <p>
                 Example of a differential deposit using the XML model only:
@@ -5335,6 +5523,963 @@ Appendix B. Example of differential deposit using the XML model only</h3>
 <a name="anchor17"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.10"></a><h3>10.&nbsp;
+Appendix A. Example of a full deposit using the CSV model</h3>
+
+<p>
+                Example of a full deposit using the CSV model:
+            
+</p>
+<p>    
+                </p>
+<div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;rde:deposit
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+   xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
+   xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
+   xmlns:csvHost="urn:ietf:params:xml:ns:csvHost-1.0"
+   xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
+   xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
+   xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+    xsi:schemaLocation="
+    urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
+    urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
+    urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd
+    urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
+    urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
+    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd"
+    type="FULL"
+   id="20101017001" prevId="20101010001"&gt;
+   &lt;rde:watermark&gt;2010-10-18T00:00:00Z&lt;/rde:watermark&gt;
+   &lt;rde:rdeMenu&gt;
+    &lt;rde:version&gt;1.0&lt;/rde:version&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvDomain-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvHost-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvContact-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvRegistrar-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvIDN-1.0&lt;/rde:objURI&gt;
+   &lt;/rde:rdeMenu&gt;
+   &lt;rde:contents&gt;
+    &lt;csvDomain:contents&gt;
+      &lt;rdeCsv:csv name="domain" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName/&gt;
+          &lt;rdeCsv:fRoid/&gt;
+          &lt;rdeCsv:fLanguage/&gt;
+          &lt;csvDomain:fOriginalName/&gt;
+          &lt;rdeCsv:fRegistrant isRequired="true"/&gt;
+          &lt;rdeCsv:fClID/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+          &lt;rdeCsv:fUpRr/&gt;
+          &lt;rdeCsv:fUpID/&gt;
+          &lt;rdeCsv:fUpDate/&gt;
+          &lt;rdeCsv:fExDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="E6D52D73"&gt;
+            domain-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainContacts" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvContact:fId/&gt;
+          &lt;csvDomain:fContactType/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="4932EA57"&gt;
+            domainContacts-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainStatuses" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvDomain:fStatus/&gt;
+          &lt;rdeCsv:fStatusDescription/&gt;
+          &lt;rdeCsv:fLanguage/&gt;
+          &lt;csvDomain:fRgpStatus/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="31B475C5"&gt;
+            domainStatuses-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainNameServers" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvHost:fName/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="430306BC"&gt;
+            domainNameServers-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="dnssec" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvDomain:fMaxSigLife/&gt;
+          &lt;csvDomain:fKeyTag/&gt;
+          &lt;csvDomain:fDsAlg/&gt;
+          &lt;csvDomain:fDigestType/&gt;
+          &lt;csvDomain:fDigest/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="AA15CB43"&gt;
+            dnssec-ds-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="dnssec" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvDomain:fMaxSigLife/&gt;
+          &lt;csvDomain:fFlags/&gt;
+          &lt;csvDomain:fProtocol/&gt;
+          &lt;csvDomain:fKeyAlg/&gt;
+          &lt;csvDomain:fPubKey/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="1B16F334"&gt;
+            dnssec-key-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainTransfer" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;rdeCsv:fTrStatus/&gt;
+          &lt;rdeCsv:fReRr/&gt;
+          &lt;rdeCsv:fReID/&gt;
+          &lt;rdeCsv:fReDate/&gt;
+          &lt;rdeCsv:fAcRr/&gt;
+          &lt;rdeCsv:fAcID/&gt;
+          &lt;rdeCsv:fAcDate/&gt;
+          &lt;rdeCsv:fExDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="71170194"&gt;
+            domainTransfer-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvDomain:contents&gt;
+    &lt;csvHost:contents&gt;
+      &lt;rdeCsv:csv name="host" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvHost:fName/&gt;
+          &lt;rdeCsv:fRoid/&gt;
+          &lt;rdeCsv:fClID/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+          &lt;rdeCsv:fUpRr/&gt;
+          &lt;rdeCsv:fUpID/&gt;
+          &lt;rdeCsv:fUpDate/&gt;
+          &lt;rdeCsv:fTrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="120938E3"&gt;
+            host-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="hostStatuses" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvHost:fName parent="true"/&gt;
+          &lt;csvHost:fStatus/&gt;
+          &lt;rdeCsv:fStatusDescription/&gt;
+          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="2F4C2E4A"&gt;
+            hostStatuses-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="hostAddresses" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvHost:fName parent="true"/&gt;
+          &lt;csvHost:fAddr/&gt;
+          &lt;csvHost:fAddrVersion/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="2C2A7A9F"&gt;
+            hostAddresses-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvHost:contents&gt;
+    &lt;csvContact:contents&gt;
+      &lt;rdeCsv:csv name="contact" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId/&gt;
+          &lt;rdeCsv:fRoid/&gt;
+          &lt;csvContact:fVoice/&gt;
+          &lt;csvContact:fVoiceExt/&gt;
+          &lt;csvContact:fFax/&gt;
+          &lt;csvContact:fFaxExt/&gt;
+          &lt;csvContact:fEmail/&gt;
+          &lt;rdeCsv:fClID/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+          &lt;rdeCsv:fUpRr/&gt;
+          &lt;rdeCsv:fUpID/&gt;
+          &lt;rdeCsv:fUpDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="D7F106A5"&gt;
+            contact-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactStatuses" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+            &lt;csvContact:fId parent="true"/&gt;
+            &lt;csvContact:fStatus/&gt;
+            &lt;rdeCsv:fStatusDescription/&gt;
+            &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+          &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="4122B192"&gt;
+            contactStatuses-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactPostal" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId parent="true"/&gt;
+          &lt;csvContact:fPostalType/&gt;
+          &lt;csvContact:fName/&gt;
+          &lt;csvContact:fOrg/&gt;
+          &lt;csvContact:fStreet index="0"/&gt;
+          &lt;csvContact:fStreet index="1"/&gt;
+          &lt;csvContact:fStreet index="2"/&gt;
+          &lt;csvContact:fCity/&gt;
+          &lt;csvContact:fSp/&gt;
+          &lt;csvContact:fPc/&gt;
+          &lt;csvContact:fCc/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="02CC2504"&gt;
+            contactPostal-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactTransfer" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId parent="true"/&gt;
+          &lt;rdeCsv:fTrStatus/&gt;
+          &lt;rdeCsv:fReRr/&gt;
+          &lt;rdeCsv:fReID/&gt;
+          &lt;rdeCsv:fReDate/&gt;
+          &lt;rdeCsv:fAcRr/&gt;
+          &lt;rdeCsv:fAcID/&gt;
+          &lt;rdeCsv:fAcDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="D0929632"&gt;
+            contactTransfer-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactDisclose" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId parent="true"/&gt;
+          &lt;csvContact:fDiscloseFlag/&gt;
+          &lt;csvContact:fDiscloseNameLoc/&gt;
+          &lt;csvContact:fDiscloseNameInt/&gt;
+          &lt;csvContact:fDiscloseOrgLoc/&gt;
+          &lt;csvContact:fDiscloseOrgInt/&gt;
+          &lt;csvContact:fDiscloseAddrLoc/&gt;
+          &lt;csvContact:fDiscloseAddrInt/&gt;
+          &lt;csvContact:fDiscloseVoice/&gt;
+          &lt;csvContact:fDiscloseFax/&gt;
+          &lt;csvContact:fDiscloseEmail/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="89043A90"&gt;
+            contactDisclose-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvContact:contents&gt;
+    &lt;csvRegistrar:contents&gt;
+      &lt;rdeCsv:csv name="registrar" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvRegistrar:fId/&gt;
+          &lt;rdeCsv:fRoid/&gt;
+          &lt;csvRegistrar:fName isLoc="false"/&gt;
+          &lt;csvRegistrar:fGurid/&gt;
+          &lt;csvRegistrar:fStatus/&gt;
+          &lt;csvContact:fStreet isLoc="false" index="0"/&gt;
+          &lt;csvContact:fStreet isLoc="false" index="1"/&gt;
+          &lt;csvContact:fStreet isLoc="false" index="2"/&gt;
+          &lt;csvContact:fCity isLoc="false" /&gt;
+          &lt;csvContact:fSp isLoc="false" /&gt;
+          &lt;csvContact:fPc isLoc="false" /&gt;
+          &lt;csvContact:fCc isLoc="false" /&gt;
+          &lt;csvContact:fVoice/&gt;
+          &lt;csvContact:fVoiceExt/&gt;
+          &lt;csvContact:fFax/&gt;
+          &lt;csvContact:fFaxExt/&gt;
+          &lt;csvContact:fEmail/&gt;
+          &lt;rdeCsv:fUrl/&gt;
+          &lt;csvRegistrar:fWhoisUrl/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+          &lt;rdeCsv:fUpDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="9CB43C2E"&gt;
+            registrar-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvRegistrar:contents&gt;
+    &lt;csvIDN:contents&gt;
+      &lt;rdeCsv:csv name="idnLanguage" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;rdeCsv:fLanguage isRequired="true"/&gt;
+          &lt;rdeCsv:fUrl isRequired="true"/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="D462EAD0"&gt;
+            idnLanguage-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvIDN:contents&gt;
+   &lt;/rde:contents&gt;
+&lt;/rde:deposit&gt;
+
+</pre></div><p>
+
+
+</p>
+<a name="anchor18"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.11"></a><h3>11.&nbsp;
+Appendix B. Example of differential deposit using the CSV model</h3>
+
+<p>
+                Example of a differential deposit using the CSV model:
+            
+</p>
+<p>    
+                </p>
+<div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;rde:deposit
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+   xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
+   xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
+   xmlns:csvHost="urn:ietf:params:xml:ns:csvHost-1.0"
+   xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
+   xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
+   xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+    xsi:schemaLocation="
+    urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
+    urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
+    urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd
+    urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
+    urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
+    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd"
+    type="FULL"
+   id="20101017001" prevId="20101010001"&gt;
+   &lt;rde:watermark&gt;2010-10-18T00:00:00Z&lt;/rde:watermark&gt;
+   &lt;rde:rdeMenu&gt;
+    &lt;rde:version&gt;1.0&lt;/rde:version&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvDomain-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvHost-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvContact-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvRegistrar-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvIDN-1.0&lt;/rde:objURI&gt;
+   &lt;/rde:rdeMenu&gt;
+   &lt;rde:deletes&gt;
+    &lt;csvDomain:deletes&gt;
+      &lt;rdeCsv:csv name="domain"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="E19349E0"&gt;
+            domain-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainContacts"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvContact:fId/&gt;
+          &lt;csvDomain:fContactType/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="6BC9F9E8"&gt;
+            domainContacts-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainStatuses"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvDomain:fStatus/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="F54AADF6"&gt;
+            domainStatuses-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainNameServers"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvHost:fName/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="7448DAA0"&gt;
+            domainNameServersObj-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="dnssec"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvDomain:fKeyTag/&gt;
+          &lt;csvDomain:fDsAlg/&gt;
+          &lt;csvDomain:fDigestType/&gt;
+          &lt;csvDomain:fDigest/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="ADB014A2"&gt;
+            dnssec-ds-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="dnssec"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvDomain:fFlags/&gt;
+          &lt;csvDomain:fProtocol/&gt;
+          &lt;csvDomain:fKeyAlg/&gt;
+          &lt;csvDomain:fPubKey/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="B3E06C5C"&gt;
+            dnssec-key-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainTransfer"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;rdeCsv:fReDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="10C3EDA8"&gt;
+            domainTransfer-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvDomain:deletes&gt;
+    &lt;csvHost:deletes&gt;
+      &lt;rdeCsv:csv name="host"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvHost:fName/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="1B92A07C"&gt;
+            host-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="hostStatuses"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvHost:fName parent="true"/&gt;
+          &lt;csvHost:fStatus/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="8088E027"&gt;
+            hostStatuses-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="hostAddresses"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvHost:fName parent="true"/&gt;
+          &lt;csvHost:fAddr/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="B211225B"&gt;
+            hostAddressesObj-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvHost:deletes&gt;
+    &lt;csvContact:deletes&gt;
+      &lt;rdeCsv:csv name="contact"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="6F2B988F"&gt;
+            contact-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactStatuses"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId parent="true"/&gt;
+          &lt;csvContact:fStatus/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="CBEE0AB6"&gt;
+            contactStatuses-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactPostal" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId parent="true"/&gt;
+          &lt;csvContact:fPostalType/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="6F2B988F"&gt;
+            contactPostal-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactTransfer"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId parent="true"/&gt;
+          &lt;rdeCsv:fReDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="AF1479BD"&gt;
+            contactTransfer-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactDisclose"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId parent="true"/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="6F2B988F"&gt;
+            contactDisclose-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvContact:deletes&gt;
+    &lt;csvRegistrar:deletes&gt;
+      &lt;rdeCsv:csv name="registrar"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvRegistrar:fId/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="307B87AE"&gt;
+            registrar-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvRegistrar:deletes&gt;
+    &lt;csvIDN:deletes&gt;
+      &lt;rdeCsv:csv name="idnLanguage"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;rdeCsv:fLanguage/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="757B573A"&gt;
+            idnLanguage-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvIDN:deletes&gt;
+   &lt;/rde:deletes&gt;
+   &lt;rde:contents&gt;
+    &lt;csvDomain:contents&gt;
+      &lt;rdeCsv:csv name="domain" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName/&gt;
+          &lt;rdeCsv:fRoid/&gt;
+          &lt;rdeCsv:fLanguage/&gt;
+          &lt;csvDomain:fOriginalName/&gt;
+          &lt;rdeCsv:fRegistrant/&gt;
+          &lt;rdeCsv:fClID/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+          &lt;rdeCsv:fUpRr/&gt;
+          &lt;rdeCsv:fUpID/&gt;
+          &lt;rdeCsv:fUpDate/&gt;
+          &lt;rdeCsv:fExDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="E6D52D73"&gt;
+            domain-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainContacts" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvContact:fId/&gt;
+          &lt;csvDomain:fContactType/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="4932EA57"&gt;
+            domainContacts-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainStatuses" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvDomain:fStatus/&gt;
+          &lt;rdeCsv:fStatusDescription/&gt;
+          &lt;rdeCsv:fLanguage/&gt;
+          &lt;csvDomain:fRgpStatus/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="31B475C5"&gt;
+            domainStatuses-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainNameServers" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvHost:fName/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="430306BC"&gt;
+            domainNameServers-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="dnssec" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;csvDomain:fMaxSigLife/&gt;
+          &lt;csvDomain:fKeyTag/&gt;
+          &lt;csvDomain:fDsAlg/&gt;
+          &lt;csvDomain:fDigestType/&gt;
+          &lt;csvDomain:fDigest/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="AA15CB43"&gt;
+            dnssec-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="domainTransfer" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName parent="true"/&gt;
+          &lt;rdeCsv:fTrStatus/&gt;
+          &lt;rdeCsv:fReRr/&gt;
+          &lt;rdeCsv:fReID/&gt;
+          &lt;rdeCsv:fReDate/&gt;
+          &lt;rdeCsv:fAcRr/&gt;
+          &lt;rdeCsv:fAcID/&gt;
+          &lt;rdeCsv:fAcDate/&gt;
+          &lt;rdeCsv:fExDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="71170194"&gt;
+            domainTransfer-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvDomain:contents&gt;
+    &lt;csvHost:contents&gt;
+      &lt;rdeCsv:csv name="host" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvHost:fName/&gt;
+          &lt;rdeCsv:fRoid/&gt;
+          &lt;rdeCsv:fClID/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+          &lt;rdeCsv:fUpRr/&gt;
+          &lt;rdeCsv:fUpID/&gt;
+          &lt;rdeCsv:fUpDate/&gt;
+          &lt;rdeCsv:fTrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="120938E3"&gt;
+            host-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="hostStatuses" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvHost:fName parent="true"/&gt;
+          &lt;csvHost:fStatus/&gt;
+          &lt;rdeCsv:fStatusDescription/&gt;
+          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="2F4C2E4A"&gt;
+            hostStatuses-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="hostAddresses" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvHost:fName parent="true"/&gt;
+          &lt;csvHost:fAddr/&gt;
+          &lt;csvHost:fAddrVersion/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="2C2A7A9F"&gt;
+            hostAddresses-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvHost:contents&gt;
+    &lt;csvContact:contents&gt;
+      &lt;rdeCsv:csv name="contact" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId/&gt;
+          &lt;rdeCsv:fRoid/&gt;
+          &lt;csvContact:fVoice/&gt;
+          &lt;csvContact:fVoiceExt/&gt;
+          &lt;csvContact:fFax/&gt;
+          &lt;csvContact:fFaxExt/&gt;
+          &lt;csvContact:fEmail/&gt;
+          &lt;rdeCsv:fClID/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+          &lt;rdeCsv:fUpRr/&gt;
+          &lt;rdeCsv:fUpID/&gt;
+          &lt;rdeCsv:fUpDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="D7F106A5"&gt;
+            contact-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactStatuses" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+            &lt;csvContact:fId parent="true"/&gt;
+            &lt;csvContact:fStatus/&gt;
+            &lt;rdeCsv:fStatusDescription/&gt;
+            &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+          &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="4122B192"&gt;
+            contactStatuses-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactPostal" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId parent="true"/&gt;
+          &lt;csvContact:fPostalType/&gt;
+          &lt;csvContact:fName/&gt;
+          &lt;csvContact:fOrg/&gt;
+          &lt;csvContact:fStreet index="0"/&gt;
+          &lt;csvContact:fStreet index="1"/&gt;
+          &lt;csvContact:fStreet index="2"/&gt;
+          &lt;csvContact:fCity/&gt;
+          &lt;csvContact:fSp/&gt;
+          &lt;csvContact:fPc/&gt;
+          &lt;csvContact:fCc/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="02CC2504"&gt;
+            contactPostal-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactTransfer" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId parent="true"/&gt;
+          &lt;rdeCsv:fTrStatus/&gt;
+          &lt;rdeCsv:fReRr/&gt;
+          &lt;rdeCsv:fReID/&gt;
+          &lt;rdeCsv:fReDate/&gt;
+          &lt;rdeCsv:fAcRr/&gt;
+          &lt;rdeCsv:fAcID/&gt;
+          &lt;rdeCsv:fAcDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="D0929632"&gt;
+            contactTransfer-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+      &lt;rdeCsv:csv name="contactDisclose" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvContact:fId parent="true"/&gt;
+          &lt;csvContact:fDiscloseFlag/&gt;
+          &lt;csvContact:fDiscloseNameLoc/&gt;
+          &lt;csvContact:fDiscloseNameInt/&gt;
+          &lt;csvContact:fDiscloseOrgLoc/&gt;
+          &lt;csvContact:fDiscloseOrgInt/&gt;
+          &lt;csvContact:fDiscloseAddrLoc/&gt;
+          &lt;csvContact:fDiscloseAddrInt/&gt;
+          &lt;csvContact:fDiscloseVoice/&gt;
+          &lt;csvContact:fDiscloseFax/&gt;
+          &lt;csvContact:fDiscloseEmail/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="89043A90"&gt;
+            contactDisclose-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvContact:contents&gt;
+    &lt;csvRegistrar:contents&gt;
+      &lt;rdeCsv:csv name="registrar" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvRegistrar:fId/&gt;
+          &lt;rdeCsv:fRoid/&gt;
+          &lt;csvRegistrar:fName isLoc="false"/&gt;
+          &lt;csvRegistrar:fGurid/&gt;
+          &lt;csvRegistrar:fStatus/&gt;
+          &lt;csvContact:fStreet isLoc="false" index="0"/&gt;
+          &lt;csvContact:fStreet isLoc="false" index="1"/&gt;
+          &lt;csvContact:fStreet isLoc="false" index="2"/&gt;
+          &lt;csvContact:fCity isLoc="false" /&gt;
+          &lt;csvContact:fSp isLoc="false" /&gt;
+          &lt;csvContact:fPc isLoc="false" /&gt;
+          &lt;csvContact:fCc isLoc="false" /&gt;
+          &lt;csvContact:fVoice/&gt;
+          &lt;csvContact:fVoiceExt/&gt;
+          &lt;csvContact:fFax/&gt;
+          &lt;csvContact:fFaxExt/&gt;
+          &lt;csvContact:fEmail/&gt;
+          &lt;rdeCsv:fUrl/&gt;
+          &lt;csvRegistrar:fWhoisUrl/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+          &lt;rdeCsv:fUpDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="9CB43C2E"&gt;
+            registrar-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvRegistrar:contents&gt;
+    &lt;csvIDN:contents&gt;
+      &lt;rdeCsv:csv name="idnLanguage" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fUrl/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="D462EAD0"&gt;
+            idnLanguage-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvIDN:contents&gt;
+   &lt;/rde:contents&gt;
+&lt;/rde:deposit&gt;
+
+</pre></div><p>
+
+            
+</p>
+<a name="anchor19"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.12"></a><h3>12.&nbsp;
 Appendix C. Data escrow agent extended verification process</h3>
 
 <p>
@@ -5386,9 +6531,9 @@ Appendix C. Data escrow agent extended verification process</h3>
 </ul><p>
             
 </p>
-<a name="anchor18"></a><br /><hr />
+<a name="anchor20"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11"></a><h3>11.&nbsp;
+<a name="rfc.section.13"></a><h3>13.&nbsp;
 Appendix D. Data escrow notifications</h3>
 
 <p>
@@ -5400,9 +6545,9 @@ Appendix D. Data escrow notifications</h3>
                 access to the data escrow deposit file is available.
             
 </p>
-<a name="anchor19"></a><br /><hr />
+<a name="anchor21"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.1"></a><h3>11.1.&nbsp;
+<a name="rfc.section.13.1"></a><h3>13.1.&nbsp;
 Notifications from Registry Operators to Third Parties</h3>
 
 <p>
@@ -5412,7 +6557,7 @@ Notifications from Registry Operators to Third Parties</h3>
 </p>
 <a name="report_object"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.1.1"></a><h3>11.1.1.&nbsp;
+<a name="rfc.section.13.1.1"></a><h3>13.1.1.&nbsp;
 &lt;report&gt; object</h3>
 
 <p>
@@ -5508,9 +6653,9 @@ Notifications from Registry Operators to Third Parties</h3>
 
                     
 </p>
-<a name="anchor20"></a><br /><hr />
+<a name="anchor22"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.2"></a><h3>11.2.&nbsp;
+<a name="rfc.section.13.2"></a><h3>13.2.&nbsp;
 Notifications from Data Escrow Agents to Third Parties</h3>
 
 <p>
@@ -5520,7 +6665,7 @@ Notifications from Data Escrow Agents to Third Parties</h3>
 </p>
 <a name="notification_object"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.2.1"></a><h3>11.2.1.&nbsp;
+<a name="rfc.section.13.2.1"></a><h3>13.2.1.&nbsp;
 &lt;notification&gt; object</h3>
 
 <p>
@@ -5625,7 +6770,7 @@ Notifications from Data Escrow Agents to Third Parties</h3>
 </p>
 <a name="formalSyntax"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3"></a><h3>11.3.&nbsp;
+<a name="rfc.section.13.3"></a><h3>13.3.&nbsp;
 Formal Syntax</h3>
 
 <p>
@@ -5637,9 +6782,9 @@ Formal Syntax</h3>
                 The last schema defines the eppParams objects.
             
 </p>
-<a name="anchor21"></a><br /><hr />
+<a name="anchor23"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.1"></a><h3>11.3.1.&nbsp;
+<a name="rfc.section.13.3.1"></a><h3>13.3.1.&nbsp;
 RDE CSV Schema</h3>
 
 <p>
@@ -6068,9 +7213,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor22"></a><br /><hr />
+<a name="anchor24"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.2"></a><h3>11.3.2.&nbsp;
+<a name="rfc.section.13.3.2"></a><h3>13.3.2.&nbsp;
 RDE Domain Object</h3>
 
 <p>
@@ -6249,9 +7394,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor23"></a><br /><hr />
+<a name="anchor25"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.3"></a><h3>11.3.3.&nbsp;
+<a name="rfc.section.13.3.3"></a><h3>13.3.3.&nbsp;
 CSV Domain Object</h3>
 
 <p>
@@ -6492,9 +7637,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor24"></a><br /><hr />
+<a name="anchor26"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.4"></a><h3>11.3.4.&nbsp;
+<a name="rfc.section.13.3.4"></a><h3>13.3.4.&nbsp;
 RDE Host Object</h3>
 
 <p>
@@ -6624,9 +7769,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor25"></a><br /><hr />
+<a name="anchor27"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.5"></a><h3>11.3.5.&nbsp;
+<a name="rfc.section.13.3.5"></a><h3>13.3.5.&nbsp;
 CSV Host Object</h3>
 
 <p>
@@ -6798,9 +7943,9 @@ END</pre></div><p>
 
             
 </p>
-<a name="anchor26"></a><br /><hr />
+<a name="anchor28"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.6"></a><h3>11.3.6.&nbsp;
+<a name="rfc.section.13.3.6"></a><h3>13.3.6.&nbsp;
 RDE Contact Object</h3>
 
 <p>
@@ -6956,9 +8101,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor27"></a><br /><hr />
+<a name="anchor29"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.7"></a><h3>11.3.7.&nbsp;
+<a name="rfc.section.13.3.7"></a><h3>13.3.7.&nbsp;
 CSV Contact Object</h3>
 
 <p>
@@ -7307,9 +8452,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor28"></a><br /><hr />
+<a name="anchor30"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.8"></a><h3>11.3.8.&nbsp;
+<a name="rfc.section.13.3.8"></a><h3>13.3.8.&nbsp;
 RDE Registrar Object</h3>
 
 <p>
@@ -7534,9 +8679,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor29"></a><br /><hr />
+<a name="anchor31"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.9"></a><h3>11.3.9.&nbsp;
+<a name="rfc.section.13.3.9"></a><h3>13.3.9.&nbsp;
 CSV Registrar Object</h3>
 
 <p>
@@ -7730,10 +8875,10 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor30"></a><br /><hr />
+<a name="anchor32"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.10"></a><h3>11.3.10.&nbsp;
-RDE IDN and IDN Table Reference Objects</h3>
+<a name="rfc.section.13.3.10"></a><h3>13.3.10.&nbsp;
+RDE IDN Table Reference Objects</h3>
 
 <p>
                     Copyright (c) 2011 IETF Trust and the persons identified as authors
@@ -7831,9 +8976,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor31"></a><br /><hr />
+<a name="anchor33"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.11"></a><h3>11.3.11.&nbsp;
+<a name="rfc.section.13.3.11"></a><h3>13.3.11.&nbsp;
 CSV IDN Language Object</h3>
 
 <p>
@@ -7952,9 +9097,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor32"></a><br /><hr />
+<a name="anchor34"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.12"></a><h3>11.3.12.&nbsp;
+<a name="rfc.section.13.3.12"></a><h3>13.3.12.&nbsp;
 EPP Parameters Object</h3>
 
 <p>
@@ -8064,9 +9209,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor33"></a><br /><hr />
+<a name="anchor35"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.13"></a><h3>11.3.13.&nbsp;
+<a name="rfc.section.13.3.13"></a><h3>13.3.13.&nbsp;
 NNDN Object</h3>
 
 <p>
@@ -8196,9 +9341,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor34"></a><br /><hr />
+<a name="anchor36"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.14"></a><h3>11.3.14.&nbsp;
+<a name="rfc.section.13.3.14"></a><h3>13.3.14.&nbsp;
 Header Object</h3>
 
 <p>
@@ -8302,9 +9447,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor35"></a><br /><hr />
+<a name="anchor37"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.15"></a><h3>11.3.15.&nbsp;
+<a name="rfc.section.13.3.15"></a><h3>13.3.15.&nbsp;
 Report Object</h3>
 
 <p>
@@ -8399,9 +9544,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor36"></a><br /><hr />
+<a name="anchor38"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.3.16"></a><h3>11.3.16.&nbsp;
+<a name="rfc.section.13.3.16"></a><h3>13.3.16.&nbsp;
 Notifiaction Object</h3>
 
 <p>
@@ -8499,9 +9644,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor37"></a><br /><hr />
+<a name="anchor39"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.11.4"></a><h3>11.4.&nbsp;
+<a name="rfc.section.13.4"></a><h3>13.4.&nbsp;
 Policy Object</h3>
 
 <p>
@@ -8588,9 +9733,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor38"></a><br /><hr />
+<a name="anchor40"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.12"></a><h3>12.&nbsp;
+<a name="rfc.section.14"></a><h3>14.&nbsp;
 Internationalization Considerations</h3>
 
 <p>
@@ -8601,9 +9746,9 @@ Internationalization Considerations</h3>
                 is RECOMMENDED.
             
 </p>
-<a name="anchor39"></a><br /><hr />
+<a name="anchor41"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.13"></a><h3>13.&nbsp;
+<a name="rfc.section.15"></a><h3>15.&nbsp;
 IANA Considerations</h3>
 
 <p>
@@ -8900,9 +10045,9 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<a name="anchor40"></a><br /><hr />
+<a name="anchor42"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.14"></a><h3>14.&nbsp;
+<a name="rfc.section.16"></a><h3>16.&nbsp;
 Security Considerations</h3>
 
 <p>
@@ -8931,9 +10076,9 @@ Security Considerations</h3>
                 &quot;meaningful&quot;.
             
 </p>
-<a name="anchor41"></a><br /><hr />
+<a name="anchor43"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.15"></a><h3>15.&nbsp;
+<a name="rfc.section.17"></a><h3>17.&nbsp;
 Acknowledgments</h3>
 
 <p>
@@ -8944,18 +10089,18 @@ Acknowledgments</h3>
                 TBD
             
 </p>
-<a name="anchor42"></a><br /><hr />
+<a name="anchor44"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.16"></a><h3>16.&nbsp;
+<a name="rfc.section.18"></a><h3>18.&nbsp;
 Change History</h3>
 
 <p>
                 [[RFC Editor: Please remove this section.]]
             
 </p>
-<a name="anchor43"></a><br /><hr />
+<a name="anchor45"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.16.1"></a><h3>16.1.&nbsp;
+<a name="rfc.section.18.1"></a><h3>18.1.&nbsp;
 Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mapping-00</h3>
 
 <p>
@@ -8985,9 +10130,9 @@ Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mappin
 </ol><p>
                 
 </p>
-<a name="anchor44"></a><br /><hr />
+<a name="anchor46"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.16.2"></a><h3>16.2.&nbsp;
+<a name="rfc.section.18.2"></a><h3>18.2.&nbsp;
 Changes from version 00 to 01</h3>
 
 <p>
@@ -9008,9 +10153,9 @@ Changes from version 00 to 01</h3>
 </ol><p>
                 
 </p>
-<a name="anchor45"></a><br /><hr />
+<a name="anchor47"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.16.3"></a><h3>16.3.&nbsp;
+<a name="rfc.section.18.3"></a><h3>18.3.&nbsp;
 Changes from version 01 to 02</h3>
 
 <p>
@@ -9037,9 +10182,9 @@ Changes from version 01 to 02</h3>
 </ol><p>
                 
 </p>
-<a name="anchor46"></a><br /><hr />
+<a name="anchor48"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.16.4"></a><h3>16.4.&nbsp;
+<a name="rfc.section.18.4"></a><h3>18.4.&nbsp;
 Changes from version 02 to 03</h3>
 
 <p>
@@ -9058,12 +10203,12 @@ Changes from version 02 to 03</h3>
 </p>
 <a name="rfc.references"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.17"></a><h3>17.&nbsp;
+<a name="rfc.section.19"></a><h3>19.&nbsp;
 References</h3>
 
 <a name="rfc.references1"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<h3>17.1.&nbsp;Normative References</h3>
+<h3>19.1.&nbsp;Normative References</h3>
 <table width="99%" border="0">
 <tr><td class="author-text" valign="top"><a name="ISO-3166-1">[ISO-3166-1]</a></td>
 <td class="author-text">International Organization for Standardization, &ldquo;Codes for the representation of names of countries and their 
@@ -9090,7 +10235,7 @@ References</h3>
 
 <a name="rfc.references2"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<h3>17.2.&nbsp;Informative References</h3>
+<h3>19.2.&nbsp;Informative References</h3>
 <table width="99%" border="0">
 <tr><td class="author-text" valign="top"><a name="RFC0791">[RFC0791]</a></td>
 <td class="author-text">Postel, J., &ldquo;<a href="http://tools.ietf.org/html/rfc791">Internet Protocol</a>,&rdquo; STD&nbsp;5, RFC&nbsp;791, September&nbsp;1981 (<a href="http://www.rfc-editor.org/rfc/rfc791.txt">TXT</a>).</td></tr>
