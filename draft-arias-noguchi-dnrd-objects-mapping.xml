@@ -3577,27 +3577,33 @@ LANG2]]>
              </section>
             </section>
             
-            <section title="RDE NNDN">
+            <section title="NNDN Object">
                 
                 <t>
-                    A NNDN (NNDN's not domain name) does not exist as a domain object; it is stored in the SRS database.
-                    NNDNs can optionally be used to store registry reserved names or IDN variant handling (blocked and withheld).
-                    
+                    A NNDN (NNDN's not domain name) does not exist as a domain object; it is stored in the database.
+                    NNDNs can optionally be used to store registry reserved names or IDN variant handling (blocked and withheld).             
                     A NNDN is a lightweight domain object that is not linked to a Registrar.
-                    
-                    A FQDN can only exist as a domain name or NNDN, but not both.
+                    A FQDN can only exist as a domain name or NNDN, but not both.  The NNDN object supports 
+                    both the XML and the CSV Model, defined in the <xref target="models">Models</xref> section.  
+                    The elements used for both models are defined in the following sections.
                 </t>           
                 
+               <section title="XML Model" anchor="nndnXmlModel">
+                <t>There are
+                   two elements used in the data escrow of the NNDN objects for the XML model including the 
+                   &lt;rdeNNDN:NNDN&gt;, under the &lt;rde:contents&gt; element, and the &lt;rdeNNDN:delete&gt; element,
+                   under the &lt;rde:deletes&gt; element.
+                  </t>
                 <t>
-                    A &lt;NNDN&gt; element substitutes for the &lt;abstractNNDN&gt;
+                    A &lt;rdeNNDN:NNDN&gt; element substitutes for the &lt;rdeNNDN:abstractNNDN&gt;
                     abstract element to define a concrete definition of a NNDN.  The
-                    &lt;abstractDomain&gt; element can be replaced by other NNDN definitions
+                    &lt;rdeNNDN:abstractDomain&gt; element can be replaced by other NNDN definitions
                     using the XML schema substitution groups feature.
                 </t>
                 
-                <section title="&lt;NNDN&gt; object" anchor="ndn_object">
+                <section title="&lt;rdeNNDN:NNDN&gt; object" anchor="ndn_object">
                     <t>
-                        The OPTIONAL &lt;NNDN&gt; element contains the following child elements:
+                        The &lt;rdeNNDN:NNDN&gt; element contains the following child elements:
                     </t>
                     <t>
                         <list style="symbols">
@@ -3636,7 +3642,7 @@ LANG2]]>
                         </list>
                     </t>
                     <t>
-                        Example of &lt;NNDN&gt; object:
+                        Example of &lt;rdeNNDN:NNDN&gt; object:
                     </t>
                     <t>    
                         <figure><artwork><![CDATA[
@@ -3658,7 +3664,7 @@ LANG2]]>
                         The &lt;rdeNNDN:delete&gt; element contains the ACE of a NNDN that was deleted, i.e., the &lt;aName&gt;.
                     </t>
                     <t>
-                        Example of &lt;rdeNDN:delete&gt; object:
+                        Example of &lt;rdeNNDN::delete&gt; object:
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
@@ -3674,7 +3680,111 @@ LANG2]]>
                         </artwork></figure>
                     </t>
                 </section>
+                </section>
                 
+               <section title="CSV Model" anchor="nndnCsvModel">
+                <t>For the CSV Model of the NNDN object, the &lt;csvNNDN:contents&gt; child 
+                   element of the &lt;rde:contents&gt; element is used to hold the new or updated NNDN objects for the deposit.  
+                   The &lt;csvNNDN:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
+                   purged NNDN objects for the deposit.  Both the &lt;csvNNDN:contents&gt; and &lt;csvNNDN:deletes&gt; 
+                   elements contain one or more &lt;rdeCsv:csv&gt; elements with the following supported "name" attribute values:
+                </t>
+                <t><list style="hanging">
+                  <t hangText="&quot;NNDN&quot;">Defines the fields and CSV file references 
+                  used for the NNDN object records.  The following field elements were added for use in the "NNDN" 
+                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
+                  <t hangText="&lt;csvNNDN:fAName&gt;">ASCII Compatible Encoding (ACE) field of the NNDN with type="eppcom:labelType" and isRequired="true".  
+                  </t>
+                  
+                <t hangText="&lt;csvNNDN:fOriginalName&gt;">Domain name used to generate the IDN variant with type="eppcom:labelType".</t>
+                <t hangText="&lt;csvNNDN:fNameState&gt;">State of the NNDN: blocked or withheld with type="rdeNNDN:nameState".  See <xref target="ndn_object"/> for a description 
+                of the possible values for the &lt;rdeNNDN:nameState&gt; element.</t>
+  
+                  </list></t>
+                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                  MAY be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list  style="hanging">
+                    <t hangText="&lt;rdeCsv:fUName&gt;">Name of the NNDN in Unicode character set for the &lt;csvNNDN:fAName&gt; field element.</t>
+                    <t hangText="&lt;rdeCsv:fLanguage&gt;">IDN language tag for the NNDN that matches an IDN Table Reference Object record.</t>
+                    <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the domain name object.</t>
+                  </list></t>
+                    <t>
+                        Example of a "NNDN" &lt;csvNNDN:contents&gt; &lt;rdeCsv:csv&gt; element:
+                    </t>
+                    <t>
+                        <figure><artwork><![CDATA[
+...
+<csvNNDN:contents>
+...
+  <rdeCsv:csv name="NNDN" sep=",">
+    <rdeCsv:fields>
+      <csvNNDN:fAName isRequired="true"/>
+      <rdeCsv:fLanguage/>         
+      <csvNNDN:fOriginalName/>
+      <csvNNDN:fNameState/>
+      <rdeCsv:fCrDate/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+        cksum="01F72976">
+        NNDN-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvNNDN:contents>
+...
+]]>
+                        </artwork></figure>
+                    </t>    
+                    <t>
+                        Example of the corresponding NNDN-YYYYMMDD.csv file.
+                        The file contains a single NNDN record for an IDN.
+                    </t>
+                    <t>
+                        <figure><artwork><![CDATA[
+xn--exampl-gva.test,pt-BR,Dexample1-TEST,withheld,2005-04-23T11:49:00.0Z]]>
+                        </artwork></figure>
+                    </t>    
+                    <t>
+                        Example of a "NNDN" &lt;csvNNDN:deletes&gt; &lt;rdeCsv:csv&gt; element:
+                    </t>
+                    <t>
+                        <figure><artwork><![CDATA[
+...
+<csvNNDN:deletes>
+...
+  <rdeCsv:csv name="NNDN">
+    <rdeCsv:fields>
+      <csvNNDN:fAName isRequired="true"/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+        cksum="6C253927">
+        NNDN-delete-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvNNDN:deletes>
+...]]>
+                        </artwork></figure>
+                    </t>    
+                    <t>
+                        Example of the corresponding NNDN-delete-YYYYMMDD.csv file.
+                        The file contains one NNDN record.
+                    </t>
+                    <t>
+                        <figure><artwork><![CDATA[
+xn--pingino-q2a.test]]>
+                        </artwork></figure>
+                    </t> 
+                  </list></t>
+              </section>
+               
             </section>
             
             <section title="EPP Parameters Object" anchor="eppParams">
@@ -7710,7 +7820,7 @@ END]]></artwork></figure>
                 </t>
             </section>
             
-            <section title="NNDN Object">
+            <section title="RDE NNDN Object">
                 <t>
                     Copyright (c) 2011 IETF Trust and the persons identified as authors
                     of the code.  All rights reserved.
@@ -7824,6 +7934,140 @@ END]]></artwork></figure>
       </extension>
     </complexContent>
   </complexType>
+</schema>
+END]]></artwork></figure>
+                </t>
+            </section>
+
+            <section title="CSV NNDN Object">
+                <t>
+                    Copyright (c) 2013 IETF Trust and the persons identified as authors
+                    of the code.  All rights reserved.
+                </t>
+                <t>                
+                    Redistribution and use in source and binary forms, with or without
+                    modification, are permitted provided that the following conditions
+                    are met:
+                </t>
+                <t>                
+                    <list style="symbols">
+                        <t>
+                            Redistributions of source code must retain the above copyright
+                            notice, this list of conditions and the following disclaimer.
+                        </t>
+                        <t>
+                            Redistributions in binary form must reproduce the above copyright
+                            notice, this list of conditions and the following disclaimer in
+                            the documentation and/or other materials provided with the
+                            distribution.                            
+                        </t>
+                        <t>
+                            Neither the name of Internet Society, IETF or IETF Trust, nor the
+                            names of specific contributors, may be used to endorse or promote
+                            products derived from this software without specific prior written
+                            permission.
+                        </t>
+                    </list>
+                </t>
+                <t>
+                    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+                    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+                    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+                    A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
+                    OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+                    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+                    LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+                    DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+                    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+                    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+                    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+                </t>
+                <t>
+                    <figure><artwork><![CDATA[BEGIN
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema targetNamespace="urn:ietf:params:xml:ns:csvNNDN-1.0"
+       xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
+       xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+       xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
+       xmlns:rdeNNDN="urn:ietf:params:xml:ns:rdeNNDN-1.0"
+       xmlns="http://www.w3.org/2001/XMLSchema"
+       elementFormDefault="qualified">
+
+  <!--
+  Import common element types
+  -->
+  <import namespace="urn:ietf:params:xml:ns:rde-1.0"
+       schemaLocation="rde-1.0.xsd"/>
+  <import namespace="urn:ietf:params:xml:ns:rdeCsv-1.0"
+       schemaLocation="rdeCsv-1.0.xsd"/>
+  <import namespace="urn:ietf:params:xml:ns:rdeNNDN-1.0"
+       schemaLocation="rde-nndn-1.0.xsd"/>
+
+  <annotation>
+   <documentation>
+    NNDN (NNDN's not domain name) (CSV) Object 
+   </documentation>
+  </annotation>
+
+  <!--
+  Child elements of the <rde:contents> object
+  -->
+  <element name="contents" type="csvNNDN:contentType"
+  substitutionGroup="rde:content"/>
+
+  <complexType name="contentType">
+   <complexContent>
+    <extension base="rde:contentType">
+       <sequence>
+         <element ref="rdeCsv:csv" maxOccurs="unbounded"/>
+       </sequence>
+    </extension>
+   </complexContent>
+  </complexType>
+
+  <!--
+  Child elements of the <rde:deletes> object
+  -->
+  <element name="deletes" type="csvNNDN:deleteType"
+  substitutionGroup="rde:delete"/>
+
+  <complexType name="deleteType">
+   <complexContent>
+    <extension base="rde:deleteType">
+       <sequence>
+         <element ref="rdeCsv:csv" maxOccurs="unbounded"/>
+       </sequence>
+    </extension>
+   </complexContent>
+  </complexType>
+
+ <!-- ASCII Compatible Encoding (ACE) name field -->
+ <element name="fAName" type="rdeCsv:fNameRequiredType" 
+  substitutionGroup="rdeCsv:field"/>
+
+
+ <!-- domain name used to generate the IDN variant field -->
+ <element name="fOriginalName" type="rdeCsv:fNameType" 
+  substitutionGroup="rdeCsv:field"/> 
+
+ <!-- RGP status field -->
+ <element name="fNameState" 
+ type="csvNNDN:fNameStateType" 
+  substitutionGroup="rdeCsv:field"/>
+ <complexType name="fNameStateType">
+  <complexContent>
+    <extension base="rdeCsv:fieldOptionalType">
+      <sequence/>
+      <attribute name="type" type="token"  
+      default="rdeNNDN\:nameState"/>
+    </extension>
+  </complexContent>
+ </complexType>
+  
+  <!--
+  End of schema.
+  -->
 </schema>
 END]]></artwork></figure>
                 </t>
@@ -8222,14 +8466,14 @@ END]]></artwork></figure>
                 </list>
             </t>
             
-            <t>Registration request for the RDE CSV domain namespace:
+            <t>Registration request for the CSV domain namespace:
                 <list>
                     <t>URI: urn:ietf:params:xml:ns:csvDomain-1.0</t>
                     <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
                     <t>XML: None.  Namespace URIs do not represent an XML specification.</t>
                 </list>
             </t>
-            <t>Registration request for the RDE CSV domain XML schema:
+            <t>Registration request for the CSV domain XML schema:
                 <list>
                     <t>URI: urn:ietf:params:xml:schema:csvDomain-1.0</t>
                     <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
@@ -8253,14 +8497,14 @@ END]]></artwork></figure>
                 </list>
             </t>
             
-            <t>Registration request for the RDE CSV host namespace:
+            <t>Registration request for the CSV host namespace:
                 <list>
                     <t>URI: urn:ietf:params:xml:ns:csvHost-1.0</t>
                     <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
                     <t>XML: None.  Namespace URIs do not represent an XML specification.</t>
                 </list>
             </t>
-            <t>Registration request for the RDE CSV host XML schema:
+            <t>Registration request for the CSV host XML schema:
                 <list>
                     <t>URI: urn:ietf:params:xml:schema:csvHost-1.0</t>
                     <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
@@ -8284,14 +8528,14 @@ END]]></artwork></figure>
                 </list>
             </t>
             
-            <t>Registration request for the RDE CSV contact namespace:
+            <t>Registration request for the CSV contact namespace:
                 <list>
                     <t>URI: urn:ietf:params:xml:ns:csvContact-1.0</t>
                     <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
                     <t>XML: None.  Namespace URIs do not represent an XML specification.</t>
                 </list>
             </t>
-            <t>Registration request for the RDE CSV contact XML schema:
+            <t>Registration request for the CSV contact XML schema:
                 <list>
                     <t>URI: urn:ietf:params:xml:schema:csvContact-1.0</t>
                     <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
@@ -8315,14 +8559,14 @@ END]]></artwork></figure>
                 </list>
             </t>
             
-            <t>Registration request for the RDE CSV registrar namespace:
+            <t>Registration request for the CSV registrar namespace:
                 <list>
                     <t>URI: urn:ietf:params:xml:ns:csvRegistrar-1.0</t>
                     <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
                     <t>XML: None.  Namespace URIs do not represent an XML specification.</t>
                 </list>
             </t>
-            <t>Registration request for the RDE CSV registrar XML schema:
+            <t>Registration request for the CSV registrar XML schema:
                 <list>
                     <t>URI: urn:ietf:params:xml:schema:csvRegistrar-1.0</t>
                     <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
@@ -8346,16 +8590,46 @@ END]]></artwork></figure>
                 </list>
             </t>
             
-            <t>Registration request for the RDE CSV IDN namespace:
+            <t>Registration request for the CSV IDN namespace:
                 <list>
                     <t>URI: urn:ietf:params:xml:ns:csvIDN-1.0</t>
                     <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
                     <t>XML: None.  Namespace URIs do not represent an XML specification.</t>
                 </list>
             </t>
-            <t>Registration request for the RDE CSV IDN XML schema:
+            <t>Registration request for the CSV IDN XML schema:
                 <list>
                     <t>URI: urn:ietf:params:xml:schema:csvIDN-1.0</t>
+                    <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
+                    <t>See the &quot;Formal Syntax&quot; section of this document.</t>
+                </list>
+            </t>
+            
+            <t>Registration request for the RDE NNDN namespace:
+                <list>
+                    <t>URI: urn:ietf:params:xml:ns:rdeNNDN-1.0</t>
+                    <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
+                    <t>XML: None.  Namespace URIs do not represent an XML specification.</t>
+                </list>
+            </t>
+            <t>Registration request for the RDE NNDN XML schema:
+                <list>
+                    <t>URI: urn:ietf:params:xml:schema:rdeNNDN-1.0</t>
+                    <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
+                    <t>See the &quot;Formal Syntax&quot; section of this document.</t>
+                </list>
+            </t>
+            
+            <t>Registration request for the CSV NNDN namespace:
+                <list>
+                    <t>URI: urn:ietf:params:xml:ns:csvNNDN-1.0</t>
+                    <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
+                    <t>XML: None.  Namespace URIs do not represent an XML specification.</t>
+                </list>
+            </t>
+            <t>Registration request for the CSV NNDN XML schema:
+                <list>
+                    <t>URI: urn:ietf:params:xml:schema:csvNNDN-1.0</t>
                     <t>Registrant Contact: See the &quot;Author&apos;s Address&quot; section of this document.</t>
                     <t>See the &quot;Formal Syntax&quot; section of this document.</t>
                 </list>
@@ -8469,6 +8743,7 @@ END]]></artwork></figure>
                         <t>Changed the cksum attribute of &lt;rdeCsv:file&gt; to use CRC32 and changed all of the sample cksum values to use CRC32, based on feedback from David Kipling.</t>
                         <t>Changed the optional &lt;rdeCsv:sep&gt; element to be an optional "sep" attribute value of the &lt;rdeCsv:csv&gt; element with a default value of "," based on feedback from David Kipling.</t>
                         <t>Added support for the optional "parent" attribute for the to the CSV fields to indicate a field as a reference to a parent object, based on feedback from David Kipling.</t>
+                        <t>Added support for the CSV model for the NNDN.</t>
                     </list>
                 </t>
             </section>

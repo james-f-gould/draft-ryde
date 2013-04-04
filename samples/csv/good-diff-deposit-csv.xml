@@ -8,13 +8,17 @@
 	 xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
 	 xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
 	 xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+	 xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
+	 xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
     urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd 
     urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd 
     urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd 
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd" 
+    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd 
+    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
+    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd" 
     type="FULL"
 	 id="20101017001" prevId="20101010001">
 	 <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
@@ -242,8 +246,38 @@
 				</rdeCsv:files>
 			</rdeCsv:csv>
 	 	</csvIDN:deletes>
+	 	<csvNNDN:deletes>
+			<rdeCsv:csv name="NNDN">
+				<rdeCsv:fields>
+	 				<csvNNDN:fAName isRequired="true"/>
+				</rdeCsv:fields>
+				<rdeCsv:files>
+					<rdeCsv:file 
+						cksum="6C253927">
+						NNDN-delete-YYYYMMDD.csv
+					</rdeCsv:file> 
+				</rdeCsv:files>
+			</rdeCsv:csv>
+	 	</csvNNDN:deletes>
 	 </rde:deletes>
 	 <rde:contents>
+      <rdeHeader:header>
+         <rdeHeader:tld>test</rdeHeader:tld>
+         <rdeHeader:count	uri="urn:ietf:params:xml:ns:csvDomain-1.0">2
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">1
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">1
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">1
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">1
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0">1
+         </rdeHeader:count>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
+         </rdeHeader:count>
+      </rdeHeader:header>	 
 	 	<csvDomain:contents>
 	 		<rdeCsv:csv name="domain" sep=",">
 	 			<rdeCsv:fields>
@@ -558,5 +592,22 @@
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
 		</csvIDN:contents>
+	 	<csvNNDN:contents>
+	 		<rdeCsv:csv name="NNDN" sep=",">
+	 			<rdeCsv:fields>
+	 				<csvNNDN:fAName isRequired="true"/>
+	 				<rdeCsv:fLanguage/>	 				
+	 				<csvNNDN:fOriginalName/>
+	 				<csvNNDN:fNameState/>
+	 				<rdeCsv:fCrDate/>
+	 			</rdeCsv:fields>
+	 			<rdeCsv:files>
+	 				<rdeCsv:file 
+	 					cksum="01F72976">
+	 					NNDN-YYYYMMDD.csv
+	 				</rdeCsv:file> 
+	 			</rdeCsv:files>
+	 		</rdeCsv:csv>
+		</csvNNDN:contents>
 	 </rde:contents>
 </rde:deposit>

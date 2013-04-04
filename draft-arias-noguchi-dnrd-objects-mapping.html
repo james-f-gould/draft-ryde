@@ -231,7 +231,7 @@ Registrar Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor9">5.5.</a>&nbsp;
 IDN Table Reference Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor10">5.6.</a>&nbsp;
-RDE NNDN<br />
+NNDN Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#eppParams">5.7.</a>&nbsp;
 EPP Parameters Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor11">5.8.</a>&nbsp;
@@ -260,25 +260,25 @@ Notifications from Registry Operators to Third Parties<br />
 Notifications from Data Escrow Agents to Third Parties<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#formalSyntax">13.3.</a>&nbsp;
 Formal Syntax<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor39">13.4.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor40">13.4.</a>&nbsp;
 Policy Object<br />
-<a href="#anchor40">14.</a>&nbsp;
+<a href="#anchor41">14.</a>&nbsp;
 Internationalization Considerations<br />
-<a href="#anchor41">15.</a>&nbsp;
+<a href="#anchor42">15.</a>&nbsp;
 IANA Considerations<br />
-<a href="#anchor42">16.</a>&nbsp;
+<a href="#anchor43">16.</a>&nbsp;
 Security Considerations<br />
-<a href="#anchor43">17.</a>&nbsp;
+<a href="#anchor44">17.</a>&nbsp;
 Acknowledgments<br />
-<a href="#anchor44">18.</a>&nbsp;
+<a href="#anchor45">18.</a>&nbsp;
 Change History<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor45">18.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor46">18.1.</a>&nbsp;
 Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mapping-00<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor46">18.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor47">18.2.</a>&nbsp;
 Changes from version 00 to 01<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor47">18.3.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor48">18.3.</a>&nbsp;
 Changes from version 01 to 02<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor48">18.4.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor49">18.4.</a>&nbsp;
 Changes from version 02 to 03<br />
 <a href="#rfc.references1">19.</a>&nbsp;
 References<br />
@@ -4773,31 +4773,42 @@ LANG2
 <a name="anchor10"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.6"></a><h3>5.6.&nbsp;
-RDE NNDN</h3>
+NNDN Object</h3>
 
 <p>
-                    A NNDN (NNDN's not domain name) does not exist as a domain object; it is stored in the SRS database.
-                    NNDNs can optionally be used to store registry reserved names or IDN variant handling (blocked and withheld).
-                    
+                    A NNDN (NNDN's not domain name) does not exist as a domain object; it is stored in the database.
+                    NNDNs can optionally be used to store registry reserved names or IDN variant handling (blocked and withheld).             
                     A NNDN is a lightweight domain object that is not linked to a Registrar.
-                    
-                    A FQDN can only exist as a domain name or NNDN, but not both.
+                    A FQDN can only exist as a domain name or NNDN, but not both.  The NNDN object supports 
+                    both the XML and the CSV Model, defined in the <a class='info' href='#models'>Models<span> (</span><span class='info'>Models</span><span>)</span></a> section.  
+                    The elements used for both models are defined in the following sections.
                 
 </p>
+<a name="nndnXmlModel"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.5.6.1"></a><h3>5.6.1.&nbsp;
+XML Model</h3>
+
+<p>There are
+                   two elements used in the data escrow of the NNDN objects for the XML model including the 
+                   &lt;rdeNNDN:NNDN&gt;, under the &lt;rde:contents&gt; element, and the &lt;rdeNNDN:delete&gt; element,
+                   under the &lt;rde:deletes&gt; element.
+                  
+</p>
 <p>
-                    A &lt;NNDN&gt; element substitutes for the &lt;abstractNNDN&gt;
+                    A &lt;rdeNNDN:NNDN&gt; element substitutes for the &lt;rdeNNDN:abstractNNDN&gt;
                     abstract element to define a concrete definition of a NNDN.  The
-                    &lt;abstractDomain&gt; element can be replaced by other NNDN definitions
+                    &lt;rdeNNDN:abstractDomain&gt; element can be replaced by other NNDN definitions
                     using the XML schema substitution groups feature.
                 
 </p>
 <a name="ndn_object"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.5.6.1"></a><h3>5.6.1.&nbsp;
-&lt;NNDN&gt; object</h3>
+<a name="rfc.section.5.6.1.1"></a><h3>5.6.1.1.&nbsp;
+&lt;rdeNNDN:NNDN&gt; object</h3>
 
 <p>
-                        The OPTIONAL &lt;NNDN&gt; element contains the following child elements:
+                        The &lt;rdeNNDN:NNDN&gt; element contains the following child elements:
                     
 </p>
 <p>
@@ -4848,7 +4859,7 @@ RDE NNDN</h3>
                     
 </p>
 <p>
-                        Example of &lt;NNDN&gt; object:
+                        Example of &lt;rdeNNDN:NNDN&gt; object:
                     
 </p>
 <p>    
@@ -4869,7 +4880,7 @@ RDE NNDN</h3>
 </p>
 <a name="delNDNObject"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.5.6.2"></a><h3>5.6.2.&nbsp;
+<a name="rfc.section.5.6.1.2"></a><h3>5.6.1.2.&nbsp;
 &lt;rdeNNDN:delete&gt; object</h3>
 
 <p>
@@ -4877,7 +4888,7 @@ RDE NNDN</h3>
                     
 </p>
 <p>
-                        Example of &lt;rdeNDN:delete&gt; object:
+                        Example of &lt;rdeNNDN::delete&gt; object:
                     
 </p>
 <p>
@@ -4896,6 +4907,150 @@ RDE NNDN</h3>
 
                     
 </p>
+<a name="nndnCsvModel"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.5.6.2"></a><h3>5.6.2.&nbsp;
+CSV Model</h3>
+
+<p>For the CSV Model of the NNDN object, the &lt;csvNNDN:contents&gt; child 
+                   element of the &lt;rde:contents&gt; element is used to hold the new or updated NNDN objects for the deposit.  
+                   The &lt;csvNNDN:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
+                   purged NNDN objects for the deposit.  Both the &lt;csvNNDN:contents&gt; and &lt;csvNNDN:deletes&gt; 
+                   elements contain one or more &lt;rdeCsv:csv&gt; elements with the following supported "name" attribute values:
+                
+</p>
+<p></p>
+<blockquote class="text"><dl>
+<dt>&quot;NNDN&quot;</dt>
+<dd>Defines the fields and CSV file references 
+                  used for the NNDN object records.  The following field elements were added for use in the "NNDN" 
+                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  
+</dd>
+<dt></dt>
+<dd>
+<blockquote class="text"><dl>
+<dt>&lt;csvNNDN:fAName&gt;</dt>
+<dd>ASCII Compatible Encoding (ACE) field of the NNDN with type="eppcom:labelType" and isRequired="true".  
+                  
+</dd>
+<dt>&lt;csvNNDN:fOriginalName&gt;</dt>
+<dd>Domain name used to generate the IDN variant with type="eppcom:labelType".
+</dd>
+<dt>&lt;csvNNDN:fNameState&gt;</dt>
+<dd>State of the NNDN: blocked or withheld with type="rdeNNDN:nameState".  See <a class='info' href='#ndn_object'>Section&nbsp;5.6.1.1<span> (</span><span class='info'>&lt;rdeNNDN:NNDN&gt; object</span><span>)</span></a> for a description 
+                of the possible values for the &lt;rdeNNDN:nameState&gt; element.
+</dd>
+</dl></blockquote>
+</dd>
+<dt></dt>
+<dd>The following "rdeCsv" fields, defined in section <a class='info' href='#csvCommonFieldElements'>CSV common field elements<span> (</span><span class='info'>CSV common field elements</span><span>)</span></a>,  
+                  MAY be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  
+</dd>
+<dt></dt>
+<dd>
+<blockquote class="text"><dl>
+<dt>&lt;rdeCsv:fUName&gt;</dt>
+<dd>Name of the NNDN in Unicode character set for the &lt;csvNNDN:fAName&gt; field element.
+</dd>
+<dt>&lt;rdeCsv:fLanguage&gt;</dt>
+<dd>IDN language tag for the NNDN that matches an IDN Table Reference Object record.
+</dd>
+<dt>&lt;rdeCsv:fCrDate&gt;</dt>
+<dd>Created date and time of the domain name object.
+</dd>
+</dl></blockquote>
+</dd>
+<dt></dt>
+<dd>
+                        Example of a "NNDN" &lt;csvNNDN:contents&gt; &lt;rdeCsv:csv&gt; element:
+                    
+</dd>
+<dt></dt>
+<dd>
+                        <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+...
+&lt;csvNNDN:contents&gt;
+...
+  &lt;rdeCsv:csv name="NNDN" sep=","&gt;
+    &lt;rdeCsv:fields&gt;
+      &lt;csvNNDN:fAName isRequired="true"/&gt;
+      &lt;rdeCsv:fLanguage/&gt;
+      &lt;csvNNDN:fOriginalName/&gt;
+      &lt;csvNNDN:fNameState/&gt;
+      &lt;rdeCsv:fCrDate/&gt;
+    &lt;/rdeCsv:fields&gt;
+    &lt;rdeCsv:files&gt;
+      &lt;rdeCsv:file
+        cksum="01F72976"&gt;
+        NNDN-YYYYMMDD.csv
+      &lt;/rdeCsv:file&gt;
+    &lt;/rdeCsv:files&gt;
+  &lt;/rdeCsv:csv&gt;
+...
+&lt;/csvNNDN:contents&gt;
+...
+
+</pre></div>
+                    
+</dd>
+<dt></dt>
+<dd>
+                        Example of the corresponding NNDN-YYYYMMDD.csv file.
+                        The file contains a single NNDN record for an IDN.
+                    
+</dd>
+<dt></dt>
+<dd>
+                        <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+xn--exampl-gva.test,pt-BR,Dexample1-TEST,withheld,2005-04-23T11:49:00.0Z
+</pre></div>
+                    
+</dd>
+<dt></dt>
+<dd>
+                        Example of a "NNDN" &lt;csvNNDN:deletes&gt; &lt;rdeCsv:csv&gt; element:
+                    
+</dd>
+<dt></dt>
+<dd>
+                        <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+...
+&lt;csvNNDN:deletes&gt;
+...
+  &lt;rdeCsv:csv name="NNDN"&gt;
+    &lt;rdeCsv:fields&gt;
+      &lt;csvNNDN:fAName isRequired="true"/&gt;
+    &lt;/rdeCsv:fields&gt;
+    &lt;rdeCsv:files&gt;
+      &lt;rdeCsv:file
+        cksum="6C253927"&gt;
+        NNDN-delete-YYYYMMDD.csv
+      &lt;/rdeCsv:file&gt;
+    &lt;/rdeCsv:files&gt;
+  &lt;/rdeCsv:csv&gt;
+...
+&lt;/csvNNDN:deletes&gt;
+...
+</pre></div>
+                    
+</dd>
+<dt></dt>
+<dd>
+                        Example of the corresponding NNDN-delete-YYYYMMDD.csv file.
+                        The file contains one NNDN record.
+                    
+</dd>
+<dt></dt>
+<dd>
+                        <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+xn--pingino-q2a.test
+</pre></div>
+                    
+</dd>
+</dl></blockquote>
+
 <a name="eppParams"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.7"></a><h3>5.7.&nbsp;
@@ -9212,7 +9367,7 @@ END</pre></div><p>
 <a name="anchor35"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.13"></a><h3>13.3.13.&nbsp;
-NNDN Object</h3>
+RDE NNDN Object</h3>
 
 <p>
                     Copyright (c) 2011 IETF Trust and the persons identified as authors
@@ -9344,6 +9499,153 @@ END</pre></div><p>
 <a name="anchor36"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.14"></a><h3>13.3.14.&nbsp;
+CSV NNDN Object</h3>
+
+<p>
+                    Copyright (c) 2013 IETF Trust and the persons identified as authors
+                    of the code.  All rights reserved.
+                
+</p>
+<p>                
+                    Redistribution and use in source and binary forms, with or without
+                    modification, are permitted provided that the following conditions
+                    are met:
+                
+</p>
+<p>                
+                    </p>
+<ul class="text">
+<li>
+                            Redistributions of source code must retain the above copyright
+                            notice, this list of conditions and the following disclaimer.
+                        
+</li>
+<li>
+                            Redistributions in binary form must reproduce the above copyright
+                            notice, this list of conditions and the following disclaimer in
+                            the documentation and/or other materials provided with the
+                            distribution.                            
+                        
+</li>
+<li>
+                            Neither the name of Internet Society, IETF or IETF Trust, nor the
+                            names of specific contributors, may be used to endorse or promote
+                            products derived from this software without specific prior written
+                            permission.
+                        
+</li>
+</ul><p>
+                
+</p>
+<p>
+                    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+                    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+                    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+                    A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
+                    OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+                    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+                    LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+                    DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+                    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+                    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+                    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+                
+</p>
+<p>
+                    </p>
+<div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>BEGIN
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;schema targetNamespace="urn:ietf:params:xml:ns:csvNNDN-1.0"
+       xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
+       xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+       xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
+       xmlns:rdeNNDN="urn:ietf:params:xml:ns:rdeNNDN-1.0"
+       xmlns="http://www.w3.org/2001/XMLSchema"
+       elementFormDefault="qualified"&gt;
+
+  &lt;!--
+  Import common element types
+  --&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"
+       schemaLocation="rde-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rdeCsv-1.0"
+       schemaLocation="rdeCsv-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rdeNNDN-1.0"
+       schemaLocation="rde-nndn-1.0.xsd"/&gt;
+
+  &lt;annotation&gt;
+   &lt;documentation&gt;
+    NNDN (NNDN's not domain name) (CSV) Object
+   &lt;/documentation&gt;
+  &lt;/annotation&gt;
+
+  &lt;!--
+  Child elements of the &lt;rde:contents&gt; object
+  --&gt;
+  &lt;element name="contents" type="csvNNDN:contentType"
+  substitutionGroup="rde:content"/&gt;
+
+  &lt;complexType name="contentType"&gt;
+   &lt;complexContent&gt;
+    &lt;extension base="rde:contentType"&gt;
+       &lt;sequence&gt;
+         &lt;element ref="rdeCsv:csv" maxOccurs="unbounded"/&gt;
+       &lt;/sequence&gt;
+    &lt;/extension&gt;
+   &lt;/complexContent&gt;
+  &lt;/complexType&gt;
+
+  &lt;!--
+  Child elements of the &lt;rde:deletes&gt; object
+  --&gt;
+  &lt;element name="deletes" type="csvNNDN:deleteType"
+  substitutionGroup="rde:delete"/&gt;
+
+  &lt;complexType name="deleteType"&gt;
+   &lt;complexContent&gt;
+    &lt;extension base="rde:deleteType"&gt;
+       &lt;sequence&gt;
+         &lt;element ref="rdeCsv:csv" maxOccurs="unbounded"/&gt;
+       &lt;/sequence&gt;
+    &lt;/extension&gt;
+   &lt;/complexContent&gt;
+  &lt;/complexType&gt;
+
+ &lt;!-- ASCII Compatible Encoding (ACE) name field --&gt;
+ &lt;element name="fAName" type="rdeCsv:fNameRequiredType"
+  substitutionGroup="rdeCsv:field"/&gt;
+
+
+ &lt;!-- domain name used to generate the IDN variant field --&gt;
+ &lt;element name="fOriginalName" type="rdeCsv:fNameType"
+  substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;!-- RGP status field --&gt;
+ &lt;element name="fNameState"
+ type="csvNNDN:fNameStateType"
+  substitutionGroup="rdeCsv:field"/&gt;
+ &lt;complexType name="fNameStateType"&gt;
+  &lt;complexContent&gt;
+    &lt;extension base="rdeCsv:fieldOptionalType"&gt;
+      &lt;sequence/&gt;
+      &lt;attribute name="type" type="token"
+      default="rdeNNDN\:nameState"/&gt;
+    &lt;/extension&gt;
+  &lt;/complexContent&gt;
+ &lt;/complexType&gt;
+
+  &lt;!--
+  End of schema.
+  --&gt;
+&lt;/schema&gt;
+END</pre></div><p>
+
+                
+</p>
+<a name="anchor37"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.13.3.15"></a><h3>13.3.15.&nbsp;
 Header Object</h3>
 
 <p>
@@ -9447,9 +9749,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor37"></a><br /><hr />
+<a name="anchor38"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.13.3.15"></a><h3>13.3.15.&nbsp;
+<a name="rfc.section.13.3.16"></a><h3>13.3.16.&nbsp;
 Report Object</h3>
 
 <p>
@@ -9544,9 +9846,9 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor38"></a><br /><hr />
+<a name="anchor39"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.13.3.16"></a><h3>13.3.16.&nbsp;
+<a name="rfc.section.13.3.17"></a><h3>13.3.17.&nbsp;
 Notifiaction Object</h3>
 
 <p>
@@ -9644,7 +9946,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor39"></a><br /><hr />
+<a name="anchor40"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.4"></a><h3>13.4.&nbsp;
 Policy Object</h3>
@@ -9733,7 +10035,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor40"></a><br /><hr />
+<a name="anchor41"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.14"></a><h3>14.&nbsp;
 Internationalization Considerations</h3>
@@ -9746,7 +10048,7 @@ Internationalization Considerations</h3>
                 is RECOMMENDED.
             
 </p>
-<a name="anchor41"></a><br /><hr />
+<a name="anchor42"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.15"></a><h3>15.&nbsp;
 IANA Considerations</h3>
@@ -9805,7 +10107,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<p>Registration request for the RDE CSV domain namespace:
+<p>Registration request for the CSV domain namespace:
                 </p>
 <blockquote class="text">
 <p>URI: urn:ietf:params:xml:ns:csvDomain-1.0
@@ -9817,7 +10119,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<p>Registration request for the RDE CSV domain XML schema:
+<p>Registration request for the CSV domain XML schema:
                 </p>
 <blockquote class="text">
 <p>URI: urn:ietf:params:xml:schema:csvDomain-1.0
@@ -9853,7 +10155,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<p>Registration request for the RDE CSV host namespace:
+<p>Registration request for the CSV host namespace:
                 </p>
 <blockquote class="text">
 <p>URI: urn:ietf:params:xml:ns:csvHost-1.0
@@ -9865,7 +10167,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<p>Registration request for the RDE CSV host XML schema:
+<p>Registration request for the CSV host XML schema:
                 </p>
 <blockquote class="text">
 <p>URI: urn:ietf:params:xml:schema:csvHost-1.0
@@ -9901,7 +10203,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<p>Registration request for the RDE CSV contact namespace:
+<p>Registration request for the CSV contact namespace:
                 </p>
 <blockquote class="text">
 <p>URI: urn:ietf:params:xml:ns:csvContact-1.0
@@ -9913,7 +10215,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<p>Registration request for the RDE CSV contact XML schema:
+<p>Registration request for the CSV contact XML schema:
                 </p>
 <blockquote class="text">
 <p>URI: urn:ietf:params:xml:schema:csvContact-1.0
@@ -9949,7 +10251,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<p>Registration request for the RDE CSV registrar namespace:
+<p>Registration request for the CSV registrar namespace:
                 </p>
 <blockquote class="text">
 <p>URI: urn:ietf:params:xml:ns:csvRegistrar-1.0
@@ -9961,7 +10263,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<p>Registration request for the RDE CSV registrar XML schema:
+<p>Registration request for the CSV registrar XML schema:
                 </p>
 <blockquote class="text">
 <p>URI: urn:ietf:params:xml:schema:csvRegistrar-1.0
@@ -9997,7 +10299,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<p>Registration request for the RDE CSV IDN namespace:
+<p>Registration request for the CSV IDN namespace:
                 </p>
 <blockquote class="text">
 <p>URI: urn:ietf:params:xml:ns:csvIDN-1.0
@@ -10009,10 +10311,58 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<p>Registration request for the RDE CSV IDN XML schema:
+<p>Registration request for the CSV IDN XML schema:
                 </p>
 <blockquote class="text">
 <p>URI: urn:ietf:params:xml:schema:csvIDN-1.0
+</p>
+<p>Registrant Contact: See the &quot;Author&#039;s Address&quot; section of this document.
+</p>
+<p>See the &quot;Formal Syntax&quot; section of this document.
+</p>
+</blockquote><p>
+            
+</p>
+<p>Registration request for the RDE NNDN namespace:
+                </p>
+<blockquote class="text">
+<p>URI: urn:ietf:params:xml:ns:rdeNNDN-1.0
+</p>
+<p>Registrant Contact: See the &quot;Author&#039;s Address&quot; section of this document.
+</p>
+<p>XML: None.  Namespace URIs do not represent an XML specification.
+</p>
+</blockquote><p>
+            
+</p>
+<p>Registration request for the RDE NNDN XML schema:
+                </p>
+<blockquote class="text">
+<p>URI: urn:ietf:params:xml:schema:rdeNNDN-1.0
+</p>
+<p>Registrant Contact: See the &quot;Author&#039;s Address&quot; section of this document.
+</p>
+<p>See the &quot;Formal Syntax&quot; section of this document.
+</p>
+</blockquote><p>
+            
+</p>
+<p>Registration request for the CSV NNDN namespace:
+                </p>
+<blockquote class="text">
+<p>URI: urn:ietf:params:xml:ns:csvNNDN-1.0
+</p>
+<p>Registrant Contact: See the &quot;Author&#039;s Address&quot; section of this document.
+</p>
+<p>XML: None.  Namespace URIs do not represent an XML specification.
+</p>
+</blockquote><p>
+            
+</p>
+<p>Registration request for the CSV NNDN XML schema:
+                </p>
+<blockquote class="text">
+<p>URI: urn:ietf:params:xml:schema:csvNNDN-1.0
 </p>
 <p>Registrant Contact: See the &quot;Author&#039;s Address&quot; section of this document.
 </p>
@@ -10045,7 +10395,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<a name="anchor42"></a><br /><hr />
+<a name="anchor43"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.16"></a><h3>16.&nbsp;
 Security Considerations</h3>
@@ -10076,7 +10426,7 @@ Security Considerations</h3>
                 &quot;meaningful&quot;.
             
 </p>
-<a name="anchor43"></a><br /><hr />
+<a name="anchor44"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.17"></a><h3>17.&nbsp;
 Acknowledgments</h3>
@@ -10089,7 +10439,7 @@ Acknowledgments</h3>
                 TBD
             
 </p>
-<a name="anchor44"></a><br /><hr />
+<a name="anchor45"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18"></a><h3>18.&nbsp;
 Change History</h3>
@@ -10098,7 +10448,7 @@ Change History</h3>
                 [[RFC Editor: Please remove this section.]]
             
 </p>
-<a name="anchor45"></a><br /><hr />
+<a name="anchor46"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18.1"></a><h3>18.1.&nbsp;
 Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mapping-00</h3>
@@ -10130,7 +10480,7 @@ Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mappin
 </ol><p>
                 
 </p>
-<a name="anchor46"></a><br /><hr />
+<a name="anchor47"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18.2"></a><h3>18.2.&nbsp;
 Changes from version 00 to 01</h3>
@@ -10153,7 +10503,7 @@ Changes from version 00 to 01</h3>
 </ol><p>
                 
 </p>
-<a name="anchor47"></a><br /><hr />
+<a name="anchor48"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18.3"></a><h3>18.3.&nbsp;
 Changes from version 01 to 02</h3>
@@ -10182,7 +10532,7 @@ Changes from version 01 to 02</h3>
 </ol><p>
                 
 </p>
-<a name="anchor48"></a><br /><hr />
+<a name="anchor49"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18.4"></a><h3>18.4.&nbsp;
 Changes from version 02 to 03</h3>
@@ -10197,6 +10547,8 @@ Changes from version 02 to 03</h3>
 <li>Changed the optional &lt;rdeCsv:sep&gt; element to be an optional "sep" attribute value of the &lt;rdeCsv:csv&gt; element with a default value of "," based on feedback from David Kipling.
 </li>
 <li>Added support for the optional "parent" attribute for the to the CSV fields to indicate a field as a reference to a parent object, based on feedback from David Kipling.
+</li>
+<li>Added support for the CSV model for the NNDN.
 </li>
 </ol><p>
                 
