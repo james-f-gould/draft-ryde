@@ -210,9 +210,9 @@ Date and Time<br />
 Country names<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor6">4.3.</a>&nbsp;
 Telephone numbers<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor7">4.4.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#checksum">4.4.</a>&nbsp;
 Checksum<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor8">4.5.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor7">4.5.</a>&nbsp;
 IP addresses<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#csvElements">4.6.</a>&nbsp;
 CSV elements<br />
@@ -228,57 +228,57 @@ Host Object<br />
 Contact Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#registrarObject">5.4.</a>&nbsp;
 Registrar Object<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor9">5.5.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor8">5.5.</a>&nbsp;
 IDN Table Reference Object<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor10">5.6.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor9">5.6.</a>&nbsp;
 NNDN Object<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#eppParams">5.7.</a>&nbsp;
 EPP Parameters Object<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor11">5.8.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor10">5.8.</a>&nbsp;
 Policy Object<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor12">5.9.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor11">5.9.</a>&nbsp;
 Header Object<br />
-<a href="#anchor13">6.</a>&nbsp;
+<a href="#anchor12">6.</a>&nbsp;
 RDE IDN Variants handling<br />
-<a href="#anchor14">7.</a>&nbsp;
+<a href="#anchor13">7.</a>&nbsp;
 Profile<br />
-<a href="#anchor15">8.</a>&nbsp;
+<a href="#anchor14">8.</a>&nbsp;
 Appendix A. Example of a full deposit using the XML model<br />
-<a href="#anchor16">9.</a>&nbsp;
+<a href="#anchor15">9.</a>&nbsp;
 Appendix B. Example of differential deposit using the XML model<br />
-<a href="#anchor17">10.</a>&nbsp;
+<a href="#anchor16">10.</a>&nbsp;
 Appendix A. Example of a full deposit using the CSV model<br />
-<a href="#anchor18">11.</a>&nbsp;
+<a href="#anchor17">11.</a>&nbsp;
 Appendix B. Example of differential deposit using the CSV model<br />
-<a href="#anchor19">12.</a>&nbsp;
+<a href="#anchor18">12.</a>&nbsp;
 Appendix C. Data escrow agent extended verification process<br />
-<a href="#anchor20">13.</a>&nbsp;
+<a href="#anchor19">13.</a>&nbsp;
 Appendix D. Data escrow notifications<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor21">13.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor20">13.1.</a>&nbsp;
 Notifications from Registry Operators to Third Parties<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor22">13.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor21">13.2.</a>&nbsp;
 Notifications from Data Escrow Agents to Third Parties<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#formalSyntax">13.3.</a>&nbsp;
 Formal Syntax<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor40">13.4.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor39">13.4.</a>&nbsp;
 Policy Object<br />
-<a href="#anchor41">14.</a>&nbsp;
+<a href="#anchor40">14.</a>&nbsp;
 Internationalization Considerations<br />
-<a href="#anchor42">15.</a>&nbsp;
+<a href="#anchor41">15.</a>&nbsp;
 IANA Considerations<br />
-<a href="#anchor43">16.</a>&nbsp;
+<a href="#anchor42">16.</a>&nbsp;
 Security Considerations<br />
-<a href="#anchor44">17.</a>&nbsp;
+<a href="#anchor43">17.</a>&nbsp;
 Acknowledgments<br />
-<a href="#anchor45">18.</a>&nbsp;
+<a href="#anchor44">18.</a>&nbsp;
 Change History<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor46">18.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor45">18.1.</a>&nbsp;
 Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mapping-00<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor47">18.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor46">18.2.</a>&nbsp;
 Changes from version 00 to 01<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor48">18.3.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor47">18.3.</a>&nbsp;
 Changes from version 01 to 02<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor49">18.4.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor48">18.4.</a>&nbsp;
 Changes from version 02 to 03<br />
 <a href="#rfc.references1">19.</a>&nbsp;
 References<br />
@@ -342,9 +342,8 @@ Introduction</h3>
                 </p>
 <ul class="text">
 <li>
-                        IDN practices: Internationalized Domain Names (IDN) included in the Domain Object Data Escrow 
-                        include references to the languages rules that define the set of character code points allowed for a
-                        specific language.
+                        IDN Table Reference: Internationalized Domain Names (IDN) included in the Domain Object Data Escrow 
+                        include references to the IDN Table and Policy used in IDN registration.  
                     
 </li>
 <li>
@@ -379,12 +378,20 @@ Models</h3>
 <li> 
                         XML: The XML model includes all of the deposit information (meta-data
                         and data) in an XML document.  The definition of the XML format is
-                        fully defined in the XML schemas. 
+                        fully defined in the XML schemas.  As a convention, the objects represented 
+                        using the XML model are referenced using RDE and an XML namespace that is 
+                        prefixed with "rde".  For example, the Domain Name object represented using 
+                        the XML model can be referred to as the RDE Domain Name with the XML 
+                        namespace including rdeDomain (urn:ietf:params:xml:ns:rdeDomain-1.0).
                     
 </li>
 <li> 
                         CSV: The CSV model uses XML to define the data escrow format of the
-                        data contained in referenced Comma-Separated Values (CSV) files.
+                        data contained in referenced Comma-Separated Values (CSV) files.  As a 
+                        convention, the objects represented using the CSV model are referenced 
+                        using CSV and an XML namespace that is prefixed with "csv".  For example, 
+                        the Domain Name object represented using the CSV model can be referred 
+                        to as the CSV Domain Name with the XML namespace including csvDomain (urn:ietf:params:xml:ns:csvDomain-1.0).
                     
 </li>
 </ul><p>
@@ -472,7 +479,7 @@ Telephone numbers</h3>
                     digits representing the telephone number.
                 
 </p>
-<a name="anchor7"></a><br /><hr />
+<a name="checksum"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.4"></a><h3>4.4.&nbsp;
 Checksum</h3>
@@ -482,7 +489,7 @@ Checksum</h3>
                     and in section 8.1.1.6.2 of ITU-T recommendation V.42.
                 
 </p>
-<a name="anchor8"></a><br /><hr />
+<a name="anchor7"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.5"></a><h3>4.5.&nbsp;
 IP addresses</h3>
@@ -541,7 +548,7 @@ CSV elements</h3>
                       
 </dd>
 <dt>chksum</dt>
-<dd>Defines the checksum of the CSV file using CRC32.  This attribute is used to validate 
+<dd>Defines the checksum of the CSV file using CRC32, as defined in <a class='info' href='#checksum'>Section&nbsp;4.4<span> (</span><span class='info'>Checksum</span><span>)</span></a>.  This attribute is used to validate 
                       that the full CSV file exists and has not been tampered with.
                       
 </dd>
@@ -2455,8 +2462,7 @@ XML Model</h3>
 <a name="rfc.section.5.2.1.3"></a><h3>5.2.1.3.&nbsp;
 CSV Model</h3>
 
-<p>For the CSV Model of the host object, the 
-                    elements used for Host Object is defined in this section.  The &lt;csvHost:contents&gt; child 
+<p>For the CSV Model of the host object, the &lt;csvHost:contents&gt; child 
                    element of the &lt;rde:contents&gt; element is used to hold the new or updated host objects for the deposit.  
                    The &lt;csvHost:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
                    purged host objects for the deposit.  Both the &lt;csvHost:contents&gt; and &lt;csvHost:deletes&gt; 
@@ -3309,8 +3315,7 @@ XML Model</h3>
 <a name="rfc.section.5.3.2"></a><h3>5.3.2.&nbsp;
 CSV Model</h3>
 
-<p>For the CSV Model of the contact object, the 
-                    elements used for the Contact Object are defined in this section.  The &lt;csvContact:contents&gt; child 
+<p>For the CSV Model of the contact object, the &lt;csvContact:contents&gt; child 
                    element of the &lt;rde:contents&gt; element is used to hold the new or updated contact objects for the deposit.  
                    The &lt;csvContact:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
                    purged contact objects for the deposit.  Both the &lt;csvContact:contents&gt; and &lt;csvContact:deletes&gt; 
@@ -4568,7 +4573,7 @@ EXAMPLE2
 </dd>
 </dl></blockquote>
 
-<a name="anchor9"></a><br /><hr />
+<a name="anchor8"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.5"></a><h3>5.5.&nbsp;
 IDN Table Reference Object</h3>
@@ -4770,7 +4775,7 @@ LANG2
 </dd>
 </dl></blockquote>
 
-<a name="anchor10"></a><br /><hr />
+<a name="anchor9"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.6"></a><h3>5.6.&nbsp;
 NNDN Object</h3>
@@ -5145,7 +5150,7 @@ EPP Parameters Object</h3>
 
                 
 </p>
-<a name="anchor11"></a><br /><hr />
+<a name="anchor10"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.8"></a><h3>5.8.&nbsp;
 Policy Object</h3>
@@ -5155,7 +5160,7 @@ Policy Object</h3>
                     from XML Model are REQUIRED based on the business model of the registry.  For the CSV Model, the 
                     OPTIONAL "isRequired" attribute of the &lt;rdeCsv:field&gt; elements, defined in 
                     <a class='info' href='#rdeCsv-csv'>Section&nbsp;4.6.1<span> (</span><span class='info'>&lt;rdeCsv:csv&gt; element</span><span>)</span></a>, is used to specify which OPTIONAL fields are REQUIRED
-                    based on the business model of the regsitry.
+                    based on the business model of the registry.
                 
 </p>
 <a name="policy_object"></a><br /><hr />
@@ -5191,7 +5196,7 @@ Policy Object</h3>
 
                     
 </p>
-<a name="anchor12"></a><br /><hr />
+<a name="anchor11"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5.9"></a><h3>5.9.&nbsp;
 Header Object</h3>
@@ -5295,7 +5300,7 @@ Header Object</h3>
 
                     
 </p>
-<a name="anchor13"></a><br /><hr />
+<a name="anchor12"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.6"></a><h3>6.&nbsp;
 RDE IDN Variants handling</h3>
@@ -5315,7 +5320,7 @@ RDE IDN Variants handling</h3>
                 takes precedence over an implicit representation.
             
 </p>
-<a name="anchor14"></a><br /><hr />
+<a name="anchor13"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.7"></a><h3>7.&nbsp;
 Profile</h3>
@@ -5361,7 +5366,7 @@ Profile</h3>
 </ol><p>
             
 </p>
-<a name="anchor15"></a><br /><hr />
+<a name="anchor14"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.8"></a><h3>8.&nbsp;
 Appendix A. Example of a full deposit using the XML model</h3>
@@ -5598,7 +5603,7 @@ Appendix A. Example of a full deposit using the XML model</h3>
 
 
 </p>
-<a name="anchor16"></a><br /><hr />
+<a name="anchor15"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.9"></a><h3>9.&nbsp;
 Appendix B. Example of differential deposit using the XML model</h3>
@@ -5675,7 +5680,7 @@ Appendix B. Example of differential deposit using the XML model</h3>
 
             
 </p>
-<a name="anchor17"></a><br /><hr />
+<a name="anchor16"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.10"></a><h3>10.&nbsp;
 Appendix A. Example of a full deposit using the CSV model</h3>
@@ -5697,13 +5702,17 @@ Appendix A. Example of a full deposit using the CSV model</h3>
    xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
    xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
    xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+   xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
+   xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
     urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd
     urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
     urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd"
+    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
+    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
+    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd"
     type="FULL"
    id="20101017001" prevId="20101010001"&gt;
    &lt;rde:watermark&gt;2010-10-18T00:00:00Z&lt;/rde:watermark&gt;
@@ -5714,8 +5723,27 @@ Appendix A. Example of a full deposit using the CSV model</h3>
     &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvContact-1.0&lt;/rde:objURI&gt;
     &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvRegistrar-1.0&lt;/rde:objURI&gt;
     &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvIDN-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:csvNNDN-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeEppParams-1.0&lt;/rde:objURI&gt;
    &lt;/rde:rdeMenu&gt;
    &lt;rde:contents&gt;
+      &lt;rdeHeader:header&gt;
+         &lt;rdeHeader:tld&gt;test&lt;/rdeHeader:tld&gt;
+         &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvDomain-1.0"&gt;4
+         &lt;/rdeHeader:count&gt;
+         &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0"&gt;2
+         &lt;/rdeHeader:count&gt;
+         &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0"&gt;2
+         &lt;/rdeHeader:count&gt;
+         &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0"&gt;1
+         &lt;/rdeHeader:count&gt;
+         &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0"&gt;2
+         &lt;/rdeHeader:count&gt;
+         &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0"&gt;1
+         &lt;/rdeHeader:count&gt;
+         &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:rdeEppParams-1.0"&gt;1
+         &lt;/rdeHeader:count&gt;
+      &lt;/rdeHeader:header&gt;
     &lt;csvDomain:contents&gt;
       &lt;rdeCsv:csv name="domain" sep=","&gt;
         &lt;rdeCsv:fields&gt;
@@ -6046,6 +6074,23 @@ Appendix A. Example of a full deposit using the CSV model</h3>
         &lt;/rdeCsv:files&gt;
       &lt;/rdeCsv:csv&gt;
     &lt;/csvIDN:contents&gt;
+    &lt;csvNNDN:contents&gt;
+      &lt;rdeCsv:csv name="NNDN" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvNNDN:fAName isRequired="true"/&gt;
+          &lt;rdeCsv:fLanguage/&gt;
+          &lt;csvNNDN:fOriginalName/&gt;
+          &lt;csvNNDN:fNameState/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="01F72976"&gt;
+            NNDN-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvNNDN:contents&gt;
    &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;
 
@@ -6053,7 +6098,7 @@ Appendix A. Example of a full deposit using the CSV model</h3>
 
 
 </p>
-<a name="anchor18"></a><br /><hr />
+<a name="anchor17"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.11"></a><h3>11.&nbsp;
 Appendix B. Example of differential deposit using the CSV model</h3>
@@ -6075,13 +6120,17 @@ Appendix B. Example of differential deposit using the CSV model</h3>
    xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
    xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
    xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+   xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
+   xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
     urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd
     urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
     urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd"
+    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
+    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
+    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd"
     type="FULL"
    id="20101017001" prevId="20101010001"&gt;
    &lt;rde:watermark&gt;2010-10-18T00:00:00Z&lt;/rde:watermark&gt;
@@ -6309,8 +6358,38 @@ Appendix B. Example of differential deposit using the CSV model</h3>
         &lt;/rdeCsv:files&gt;
       &lt;/rdeCsv:csv&gt;
     &lt;/csvIDN:deletes&gt;
+    &lt;csvNNDN:deletes&gt;
+      &lt;rdeCsv:csv name="NNDN"&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvNNDN:fAName isRequired="true"/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="6C253927"&gt;
+            NNDN-delete-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvNNDN:deletes&gt;
    &lt;/rde:deletes&gt;
    &lt;rde:contents&gt;
+      &lt;rdeHeader:header&gt;
+        &lt;rdeHeader:tld&gt;test&lt;/rdeHeader:tld&gt;
+        &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvDomain-1.0"&gt;4
+        &lt;/rdeHeader:count&gt;
+        &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0"&gt;2
+        &lt;/rdeHeader:count&gt;
+        &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0"&gt;2
+        &lt;/rdeHeader:count&gt;
+        &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
+        &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0"&gt;2
+        &lt;/rdeHeader:count&gt;
+        &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
+        &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:rdeEppParams-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
+      &lt;/rdeHeader:header&gt;
     &lt;csvDomain:contents&gt;
       &lt;rdeCsv:csv name="domain" sep=","&gt;
         &lt;rdeCsv:fields&gt;
@@ -6625,6 +6704,23 @@ Appendix B. Example of differential deposit using the CSV model</h3>
         &lt;/rdeCsv:files&gt;
       &lt;/rdeCsv:csv&gt;
     &lt;/csvIDN:contents&gt;
+    &lt;csvNNDN:contents&gt;
+      &lt;rdeCsv:csv name="NNDN" sep=","&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvNNDN:fAName isRequired="true"/&gt;
+          &lt;rdeCsv:fLanguage/&gt;
+          &lt;csvNNDN:fOriginalName/&gt;
+          &lt;csvNNDN:fNameState/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+        &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:files&gt;
+          &lt;rdeCsv:file
+            cksum="01F72976"&gt;
+            NNDN-YYYYMMDD.csv
+          &lt;/rdeCsv:file&gt;
+        &lt;/rdeCsv:files&gt;
+      &lt;/rdeCsv:csv&gt;
+    &lt;/csvNNDN:contents&gt;
    &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;
 
@@ -6632,7 +6728,7 @@ Appendix B. Example of differential deposit using the CSV model</h3>
 
             
 </p>
-<a name="anchor19"></a><br /><hr />
+<a name="anchor18"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.12"></a><h3>12.&nbsp;
 Appendix C. Data escrow agent extended verification process</h3>
@@ -6686,7 +6782,7 @@ Appendix C. Data escrow agent extended verification process</h3>
 </ul><p>
             
 </p>
-<a name="anchor20"></a><br /><hr />
+<a name="anchor19"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13"></a><h3>13.&nbsp;
 Appendix D. Data escrow notifications</h3>
@@ -6700,7 +6796,7 @@ Appendix D. Data escrow notifications</h3>
                 access to the data escrow deposit file is available.
             
 </p>
-<a name="anchor21"></a><br /><hr />
+<a name="anchor20"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.1"></a><h3>13.1.&nbsp;
 Notifications from Registry Operators to Third Parties</h3>
@@ -6808,7 +6904,7 @@ Notifications from Registry Operators to Third Parties</h3>
 
                     
 </p>
-<a name="anchor22"></a><br /><hr />
+<a name="anchor21"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.2"></a><h3>13.2.&nbsp;
 Notifications from Data Escrow Agents to Third Parties</h3>
@@ -6937,7 +7033,7 @@ Formal Syntax</h3>
                 The last schema defines the eppParams objects.
             
 </p>
-<a name="anchor23"></a><br /><hr />
+<a name="anchor22"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.1"></a><h3>13.3.1.&nbsp;
 RDE CSV Schema</h3>
@@ -7368,7 +7464,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor24"></a><br /><hr />
+<a name="anchor23"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.2"></a><h3>13.3.2.&nbsp;
 RDE Domain Object</h3>
@@ -7549,7 +7645,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor25"></a><br /><hr />
+<a name="anchor24"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.3"></a><h3>13.3.3.&nbsp;
 CSV Domain Object</h3>
@@ -7792,7 +7888,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor26"></a><br /><hr />
+<a name="anchor25"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.4"></a><h3>13.3.4.&nbsp;
 RDE Host Object</h3>
@@ -7924,7 +8020,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor27"></a><br /><hr />
+<a name="anchor26"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.5"></a><h3>13.3.5.&nbsp;
 CSV Host Object</h3>
@@ -8098,7 +8194,7 @@ END</pre></div><p>
 
             
 </p>
-<a name="anchor28"></a><br /><hr />
+<a name="anchor27"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.6"></a><h3>13.3.6.&nbsp;
 RDE Contact Object</h3>
@@ -8256,7 +8352,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor29"></a><br /><hr />
+<a name="anchor28"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.7"></a><h3>13.3.7.&nbsp;
 CSV Contact Object</h3>
@@ -8607,7 +8703,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor30"></a><br /><hr />
+<a name="anchor29"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.8"></a><h3>13.3.8.&nbsp;
 RDE Registrar Object</h3>
@@ -8834,7 +8930,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor31"></a><br /><hr />
+<a name="anchor30"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.9"></a><h3>13.3.9.&nbsp;
 CSV Registrar Object</h3>
@@ -9030,7 +9126,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor32"></a><br /><hr />
+<a name="anchor31"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.10"></a><h3>13.3.10.&nbsp;
 RDE IDN Table Reference Objects</h3>
@@ -9131,7 +9227,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor33"></a><br /><hr />
+<a name="anchor32"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.11"></a><h3>13.3.11.&nbsp;
 CSV IDN Language Object</h3>
@@ -9252,7 +9348,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor34"></a><br /><hr />
+<a name="anchor33"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.12"></a><h3>13.3.12.&nbsp;
 EPP Parameters Object</h3>
@@ -9364,7 +9460,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor35"></a><br /><hr />
+<a name="anchor34"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.13"></a><h3>13.3.13.&nbsp;
 RDE NNDN Object</h3>
@@ -9496,7 +9592,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor36"></a><br /><hr />
+<a name="anchor35"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.14"></a><h3>13.3.14.&nbsp;
 CSV NNDN Object</h3>
@@ -9643,7 +9739,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor37"></a><br /><hr />
+<a name="anchor36"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.15"></a><h3>13.3.15.&nbsp;
 Header Object</h3>
@@ -9749,7 +9845,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor38"></a><br /><hr />
+<a name="anchor37"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.16"></a><h3>13.3.16.&nbsp;
 Report Object</h3>
@@ -9846,7 +9942,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor39"></a><br /><hr />
+<a name="anchor38"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.3.17"></a><h3>13.3.17.&nbsp;
 Notifiaction Object</h3>
@@ -9946,7 +10042,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor40"></a><br /><hr />
+<a name="anchor39"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.13.4"></a><h3>13.4.&nbsp;
 Policy Object</h3>
@@ -10035,7 +10131,7 @@ END</pre></div><p>
 
                 
 </p>
-<a name="anchor41"></a><br /><hr />
+<a name="anchor40"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.14"></a><h3>14.&nbsp;
 Internationalization Considerations</h3>
@@ -10048,7 +10144,7 @@ Internationalization Considerations</h3>
                 is RECOMMENDED.
             
 </p>
-<a name="anchor42"></a><br /><hr />
+<a name="anchor41"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.15"></a><h3>15.&nbsp;
 IANA Considerations</h3>
@@ -10395,7 +10491,7 @@ IANA Considerations</h3>
 </blockquote><p>
             
 </p>
-<a name="anchor43"></a><br /><hr />
+<a name="anchor42"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.16"></a><h3>16.&nbsp;
 Security Considerations</h3>
@@ -10426,7 +10522,7 @@ Security Considerations</h3>
                 &quot;meaningful&quot;.
             
 </p>
-<a name="anchor44"></a><br /><hr />
+<a name="anchor43"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.17"></a><h3>17.&nbsp;
 Acknowledgments</h3>
@@ -10439,7 +10535,7 @@ Acknowledgments</h3>
                 TBD
             
 </p>
-<a name="anchor45"></a><br /><hr />
+<a name="anchor44"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18"></a><h3>18.&nbsp;
 Change History</h3>
@@ -10448,7 +10544,7 @@ Change History</h3>
                 [[RFC Editor: Please remove this section.]]
             
 </p>
-<a name="anchor46"></a><br /><hr />
+<a name="anchor45"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18.1"></a><h3>18.1.&nbsp;
 Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mapping-00</h3>
@@ -10480,7 +10576,7 @@ Changes from draft-arias-noguchi-registry-data-escrow-02 to -dnrd-objects-mappin
 </ol><p>
                 
 </p>
-<a name="anchor47"></a><br /><hr />
+<a name="anchor46"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18.2"></a><h3>18.2.&nbsp;
 Changes from version 00 to 01</h3>
@@ -10503,7 +10599,7 @@ Changes from version 00 to 01</h3>
 </ol><p>
                 
 </p>
-<a name="anchor48"></a><br /><hr />
+<a name="anchor47"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18.3"></a><h3>18.3.&nbsp;
 Changes from version 01 to 02</h3>
@@ -10532,7 +10628,7 @@ Changes from version 01 to 02</h3>
 </ol><p>
                 
 </p>
-<a name="anchor49"></a><br /><hr />
+<a name="anchor48"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18.4"></a><h3>18.4.&nbsp;
 Changes from version 02 to 03</h3>

@@ -35,15 +35,15 @@
 	 <rde:contents>
       <rdeHeader:header>
          <rdeHeader:tld>test</rdeHeader:tld>
-         <rdeHeader:count	uri="urn:ietf:params:xml:ns:csvDomain-1.0">2
+         <rdeHeader:count	uri="urn:ietf:params:xml:ns:csvDomain-1.0">4
          </rdeHeader:count>
-         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">1
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">2
          </rdeHeader:count>
-         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">1
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">2
          </rdeHeader:count>
          <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">1
          </rdeHeader:count>
-         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">1
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">2
          </rdeHeader:count>
          <rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0">1
          </rdeHeader:count>

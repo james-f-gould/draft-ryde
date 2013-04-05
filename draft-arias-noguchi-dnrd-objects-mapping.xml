@@ -171,9 +171,8 @@
             <t>
                 <list style="symbols">
                     <t>
-                        IDN practices: Internationalized Domain Names (IDN) included in the Domain Object Data Escrow 
-                        include references to the languages rules that define the set of character code points allowed for a
-                        specific language.
+                        IDN Table Reference: Internationalized Domain Names (IDN) included in the Domain Object Data Escrow 
+                        include references to the IDN Table and Policy used in IDN registration.  
                     </t>
                     <t>
                         EPP parameters: Definition of the specific EPP parameters supported by the Registry Operator.
@@ -199,11 +198,19 @@
                     <t> 
                         XML: The XML model includes all of the deposit information (meta-data
                         and data) in an XML document.  The definition of the XML format is
-                        fully defined in the XML schemas. 
+                        fully defined in the XML schemas.  As a convention, the objects represented 
+                        using the XML model are referenced using RDE and an XML namespace that is 
+                        prefixed with "rde".  For example, the Domain Name object represented using 
+                        the XML model can be referred to as the RDE Domain Name with the XML 
+                        namespace including rdeDomain (urn:ietf:params:xml:ns:rdeDomain-1.0).
                     </t>
                     <t> 
                         CSV: The CSV model uses XML to define the data escrow format of the
-                        data contained in referenced Comma-Separated Values (CSV) files.
+                        data contained in referenced Comma-Separated Values (CSV) files.  As a 
+                        convention, the objects represented using the CSV model are referenced 
+                        using CSV and an XML namespace that is prefixed with "csv".  For example, 
+                        the Domain Name object represented using the CSV model can be referred 
+                        to as the CSV Domain Name with the XML namespace including csvDomain (urn:ietf:params:xml:ns:csvDomain-1.0).
                     </t>
                 </list>
             </t>
@@ -271,7 +278,7 @@
                 </t>
             </section>
             
-            <section title="Checksum">
+            <section title="Checksum" anchor="checksum">
                 <t>
                     Checksum of the CSV data escrow files MUST use CRC32, that is the algorithm used in the ISO 3309 standard 
                     and in section 8.1.1.6.2 of ITU-T recommendation V.42.
@@ -315,7 +322,7 @@
                       </t>
                       <t hangText="encoding">Defines the encoding of the CSV file with the default encoding of "UTF-8".
                       </t>
-                      <t hangText="chksum">Defines the checksum of the CSV file using CRC32.  This attribute is used to validate 
+                      <t hangText="chksum">Defines the checksum of the CSV file using CRC32, as defined in <xref target="checksum"/>.  This attribute is used to validate 
                       that the full CSV file exists and has not been tampered with.
                       </t>
                     </list></t>
@@ -1783,8 +1790,7 @@ domain2.test,2012-03-08T19:38:00.0Z]]>
                 </section>
                 
                <section title="CSV Model" anchor="hostCsvModel">
-                <t>For the CSV Model of the host object, the 
-                    elements used for Host Object is defined in this section.  The &lt;csvHost:contents&gt; child 
+                <t>For the CSV Model of the host object, the &lt;csvHost:contents&gt; child 
                    element of the &lt;rde:contents&gt; element is used to hold the new or updated host objects for the deposit.  
                    The &lt;csvHost:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
                    purged host objects for the deposit.  Both the &lt;csvHost:contents&gt; and &lt;csvHost:deletes&gt; 
@@ -2459,8 +2465,7 @@ Dns1.domain1.test-TEST,1080:0:0:0:8:800:200C:417A]]>
             </section>
 
                <section title="CSV Model" anchor="contactCsvModel">
-                <t>For the CSV Model of the contact object, the 
-                    elements used for the Contact Object are defined in this section.  The &lt;csvContact:contents&gt; child 
+                <t>For the CSV Model of the contact object, the &lt;csvContact:contents&gt; child 
                    element of the &lt;rde:contents&gt; element is used to hold the new or updated contact objects for the deposit.  
                    The &lt;csvContact:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
                    purged contact objects for the deposit.  Both the &lt;csvContact:contents&gt; and &lt;csvContact:deletes&gt; 
@@ -3874,7 +3879,7 @@ xn--pingino-q2a.test]]>
                     from XML Model are REQUIRED based on the business model of the registry.  For the CSV Model, the 
                     OPTIONAL "isRequired" attribute of the &lt;rdeCsv:field&gt; elements, defined in 
                     <xref target="rdeCsv-csv"/>, is used to specify which OPTIONAL fields are REQUIRED
-                    based on the business model of the regsitry.
+                    based on the business model of the registry.
                 </t>
                 
                 <section title="&lt;rdePolicy:policy&gt; object" anchor="policy_object">
@@ -4363,13 +4368,17 @@ xn--pingino-q2a.test]]>
    xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
    xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
    xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+   xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
+   xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
     urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd 
     urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd 
     urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd 
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd" 
+    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
+    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
+    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd" 
     type="FULL"
    id="20101017001" prevId="20101010001">
    <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
@@ -4380,8 +4389,27 @@ xn--pingino-q2a.test]]>
     <rde:objURI>urn:ietf:params:xml:ns:csvContact-1.0</rde:objURI>
     <rde:objURI>urn:ietf:params:xml:ns:csvRegistrar-1.0</rde:objURI>
     <rde:objURI>urn:ietf:params:xml:ns:csvIDN-1.0</rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:csvNNDN-1.0</rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeEppParams-1.0</rde:objURI>
    </rde:rdeMenu>
    <rde:contents>
+      <rdeHeader:header>
+        <rdeHeader:tld>test</rdeHeader:tld>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvDomain-1.0">4
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">2
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">2
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">1
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">2
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0">1
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
+        </rdeHeader:count>
+      </rdeHeader:header>  
     <csvDomain:contents>
       <rdeCsv:csv name="domain" sep=",">
         <rdeCsv:fields>
@@ -4712,6 +4740,23 @@ xn--pingino-q2a.test]]>
         </rdeCsv:files>
       </rdeCsv:csv>
     </csvIDN:contents>
+    <csvNNDN:contents>
+      <rdeCsv:csv name="NNDN" sep=",">
+        <rdeCsv:fields>
+          <csvNNDN:fAName isRequired="true"/>
+          <rdeCsv:fLanguage/>         
+          <csvNNDN:fOriginalName/>
+          <csvNNDN:fNameState/>
+          <rdeCsv:fCrDate/>
+        </rdeCsv:fields>
+        <rdeCsv:files>
+          <rdeCsv:file 
+            cksum="01F72976">
+            NNDN-YYYYMMDD.csv
+          </rdeCsv:file> 
+        </rdeCsv:files>
+      </rdeCsv:csv>
+    </csvNNDN:contents>
    </rde:contents>
 </rde:deposit>
 ]]>
@@ -4735,13 +4780,17 @@ xn--pingino-q2a.test]]>
    xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
    xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
    xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+   xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
+   xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
     urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd 
     urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd 
     urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd 
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd" 
+    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd 
+    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
+    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd" 
     type="FULL"
    id="20101017001" prevId="20101010001">
    <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
@@ -4969,8 +5018,38 @@ xn--pingino-q2a.test]]>
         </rdeCsv:files>
       </rdeCsv:csv>
     </csvIDN:deletes>
+    <csvNNDN:deletes>
+      <rdeCsv:csv name="NNDN">
+        <rdeCsv:fields>
+          <csvNNDN:fAName isRequired="true"/>
+        </rdeCsv:fields>
+        <rdeCsv:files>
+          <rdeCsv:file 
+            cksum="6C253927">
+            NNDN-delete-YYYYMMDD.csv
+          </rdeCsv:file> 
+        </rdeCsv:files>
+      </rdeCsv:csv>
+    </csvNNDN:deletes>
    </rde:deletes>
    <rde:contents>
+      <rdeHeader:header>
+        <rdeHeader:tld>test</rdeHeader:tld>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvDomain-1.0">4
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">2
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">2
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">1
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">2
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0">1
+        </rdeHeader:count>
+        <rdeHeader:count uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
+        </rdeHeader:count>
+      </rdeHeader:header>  
     <csvDomain:contents>
       <rdeCsv:csv name="domain" sep=",">
         <rdeCsv:fields>
@@ -5285,6 +5364,23 @@ xn--pingino-q2a.test]]>
         </rdeCsv:files>
       </rdeCsv:csv>
     </csvIDN:contents>
+    <csvNNDN:contents>
+      <rdeCsv:csv name="NNDN" sep=",">
+        <rdeCsv:fields>
+          <csvNNDN:fAName isRequired="true"/>
+          <rdeCsv:fLanguage/>         
+          <csvNNDN:fOriginalName/>
+          <csvNNDN:fNameState/>
+          <rdeCsv:fCrDate/>
+        </rdeCsv:fields>
+        <rdeCsv:files>
+          <rdeCsv:file 
+            cksum="01F72976">
+            NNDN-YYYYMMDD.csv
+          </rdeCsv:file> 
+        </rdeCsv:files>
+      </rdeCsv:csv>
+    </csvNNDN:contents>
    </rde:contents>
 </rde:deposit>
 ]]>
