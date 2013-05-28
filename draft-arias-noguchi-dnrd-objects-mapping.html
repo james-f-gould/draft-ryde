@@ -145,12 +145,12 @@
 <tr><td class="header">Network Working Group</td><td class="header">F. Arias</td></tr>
 <tr><td class="header">Internet-Draft</td><td class="header">G. Lozano</td></tr>
 <tr><td class="header">Intended status: Standards Track</td><td class="header">ICANN</td></tr>
-<tr><td class="header">Expires: October 5, 2013</td><td class="header">S. Noguchi</td></tr>
+<tr><td class="header">Expires: November 29, 2013</td><td class="header">S. Noguchi</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">JPRS</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">J. Gould</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">C. Thippeswamy</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">VeriSign</td></tr>
-<tr><td class="header">&nbsp;</td><td class="header">April 3, 2013</td></tr>
+<tr><td class="header">&nbsp;</td><td class="header">May 28, 2013</td></tr>
 </table></td></tr></table>
 <h1><br />Domain Name Registration Data (DNRD) Objects Mapping<br />draft-arias-noguchi-dnrd-objects-mapping-04</h1>
 
@@ -177,7 +177,7 @@ and may be updated, replaced, or obsoleted by other documents at any time.
 It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
-This Internet-Draft will expire on October 5, 2013.</p>
+This Internet-Draft will expire on November 29, 2013.</p>
 
 <h3>Copyright Notice</h3>
 <p>
@@ -1395,25 +1395,6 @@ domainN.test
 </dl></blockquote>
 </dd>
 <dt></dt>
-<dd>The following "rdeCsv" fields, defined in section <a class='info' href='#csvCommonFieldElements'>CSV common field elements<span> (</span><span class='info'>CSV common field elements</span><span>)</span></a>,  
-                  MAY be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  
-</dd>
-<dt></dt>
-<dd>
-<blockquote class="text"><dl>
-<dt>&lt;rdeCsv:fCrRr&gt;</dt>
-<dd>Identifier of the registrar, defined in <a class='info' href='#registrarObject'>Section&nbsp;5.4<span> (</span><span class='info'>Registrar Object</span><span>)</span></a>, of the client that created the object.
-</dd>
-<dt>&lt;rdeCsv:fCrID&gt;</dt>
-<dd>Identifier of client that created the domain object link to the contact object.
-</dd>
-<dt>&lt;rdeCsv:fCrDate&gt;</dt>
-<dd>Date and time that the domain object link to the contact object was created.
-</dd>
-</dl></blockquote>
-</dd>
-<dt></dt>
 <dd>
                         Example of a "domainContacts" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element:
                     
@@ -1429,13 +1410,10 @@ domainN.test
       &lt;csvDomain:fName parent="true"/&gt;
       &lt;csvContact:fId/&gt;
       &lt;csvDomain:fContactType/&gt;
-      &lt;rdeCsv:fCrRr/&gt;
-      &lt;rdeCsv:fCrID/&gt;
-      &lt;rdeCsv:fCrDate/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="4932EA57"&gt;
+        cksum="70A7C17B"&gt;
         domainContacts-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1456,18 +1434,12 @@ domainN.test
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,sh8013,admin,registrarX,
-clientY,2011-10-03T09:05:00.0Z
-domain1.test,mycontactid,tech,registrarX,
-clientY,2011-10-03T09:05:00.0Z
-domain1.test,mycontactid,billing,registrarX,
-clientY,2011-10-03T09:05:00.0Z
-domain2.test,mycontactid,admin,registrarX,
-clientY,2011-10-03T09:05:00.0Z
-domain2.test,sh8013,tech,registrarX,
-clientY,2011-10-03T09:05:00.0Z
-domain2.test,mycontactid,billing,registrarX,
-clientY,2011-10-03T09:05:00.0Z
+domain1.test,sh8013,admin
+domain1.test,mycontactid,tech
+domain1.test,mycontactid,billing
+domain2.test,mycontactid,admin
+domain2.test,sh8013,tech
+domain2.test,mycontactid,billing
 </pre></div>
                     
 </dd>
@@ -1563,15 +1535,6 @@ domain2.test,sh8013,tech
 <dt>&lt;rdeCsv:fLanguage&gt;</dt>
 <dd>Language of the &lt;rdeCsv:fStatusDescription&gt; field.
 </dd>
-<dt>&lt;rdeCsv:fCrRr&gt;</dt>
-<dd>Identifier of the registrar, defined in <a class='info' href='#registrarObject'>Section&nbsp;5.4<span> (</span><span class='info'>Registrar Object</span><span>)</span></a>, of the client that created the object.
-</dd>
-<dt>&lt;rdeCsv:fCrID&gt;</dt>
-<dd>Identifier of client that set the status for the domain name object.
-</dd>
-<dt>&lt;rdeCsv:fCrDate&gt;</dt>
-<dd>Date and time that the status was set for the domain name object.
-</dd>
 </dl></blockquote>
 </dd>
 <dt></dt>
@@ -1592,13 +1555,10 @@ domain2.test,sh8013,tech
       &lt;rdeCsv:fStatusDescription/&gt;
       &lt;rdeCsv:fLanguage/&gt;
       &lt;csvDomain:fRgpStatus/&gt;
-      &lt;rdeCsv:fCrRr/&gt;
-      &lt;rdeCsv:fCrID/&gt;
-      &lt;rdeCsv:fCrDate/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="31B475C5"&gt;
+        cksum="EB8C548E"&gt;
         domainStatuses-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1620,13 +1580,13 @@ domain2.test,sh8013,tech
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
 domain1.test,clientUpdateProhibited,"Disallow update",
-en,,registrarX,clientY,2009-12-03T09:05:00.0Z
+en,
 domain1.test,clientDeleteProhibited,"Disallow delete",
-en,,registrarX,clientY,2010-12-04T10:05:00.0Z
+en,
 domain2.test,clientUpdateProhibited,"Disallow update",
-en,,registrarX,clientY,2011-10-03T09:05:00.0Z
+en,
 domain2.test,pendingDelete,,,
-redemptionPeriod,registrarX,clientY,2011-11-14T10:05:00.0Z
+redemptionPeriod
 </pre></div>
                     
 </dd>
@@ -1718,15 +1678,6 @@ domain2.test,pendingDelete
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;rdeCsv:fCrRr&gt;</dt>
-<dd>Identifier of the registrar, defined in <a class='info' href='#registrarObject'>Section&nbsp;5.4<span> (</span><span class='info'>Registrar Object</span><span>)</span></a>, of the client that created the link between the domain name object and the delegated host.
-</dd>
-<dt>&lt;rdeCsv:fCrID&gt;</dt>
-<dd>Identifier of client that created the link between the domain name object and the delegated host.
-</dd>
-<dt>&lt;rdeCsv:fCrDate&gt;</dt>
-<dd>Date and time that the delegated host (name server) was set for the domain name object.
-</dd>
 <dt>&lt;rdeCsv:fRoid&gt;</dt>
 <dd>Registry Object IDentifier (ROID) used to uniquely reference a delegated host record with the &lt;domain:hostAttr&gt; model in 
                     <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>.  The host ROID MAY be used in place of the host name using 
@@ -1751,13 +1702,10 @@ domain2.test,pendingDelete
     &lt;rdeCsv:fields&gt;
       &lt;csvDomain:fName parent="true"/&gt;
       &lt;csvHost:fName/&gt;
-      &lt;rdeCsv:fCrRr/&gt;
-      &lt;rdeCsv:fCrID/&gt;
-      &lt;rdeCsv:fCrDate/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="430306BC"&gt;
+        cksum="7448DAA0"&gt;
         domainNameServersObj-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1778,14 +1726,10 @@ domain2.test,pendingDelete
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,ns1.domain2.test,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-domain1.test,ns2.domain2.test,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-domain2.test,ns1.domain.example,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-domain2.test,ns2.domain.example,registrarX,
-clientY,2009-12-03T09:05:00.0Z
+domain1.test,ns1.domain2.test
+domain1.test,ns2.domain2.test
+domain2.test,ns1.domain.example
+domain2.test,ns2.domain.example
 </pre></div>
                     
 </dd>
@@ -1805,13 +1749,10 @@ clientY,2009-12-03T09:05:00.0Z
     &lt;rdeCsv:fields&gt;
       &lt;csvDomain:fName parent="true"/&gt;
       &lt;rdeCsv:fRoid/&gt;
-      &lt;rdeCsv:fCrRr/&gt;
-      &lt;rdeCsv:fCrID/&gt;
-      &lt;rdeCsv:fCrDate/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="736D6F61"&gt;
+        cksum="546C66A5"&gt;
         domainNameServersAttr-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1833,14 +1774,10 @@ clientY,2009-12-03T09:05:00.0Z
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,Dns1.domain2.test-TEST,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-domain1.test,Dns2.domain2.test-TEST,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-domain2.test,Dns1.domain.example-TEST,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-domain2.test,Dns2.domain.example-TEST,registrarX,
-clientY,2009-12-03T09:05:00.0Z
+domain1.test,Dns1.domain2.test-TEST
+domain1.test,Dns2.domain2.test-TEST
+domain2.test,Dns1.domain.example-TEST
+domain2.test,Dns2.domain.example-TEST
 </pre></div>
                     
 </dd>
@@ -8858,6 +8795,8 @@ Changes from version 03 to 04</h3>
 <li>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "hostStatuses" and "hostAddresses" CSV files.
 </li>
 <li>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "contactStatuses" CSV file.
+</li>
+<li>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "domainContacts", "domainStatuses", and "domainNameServers" CSV files.
 </li>
 </ol><p>
                 

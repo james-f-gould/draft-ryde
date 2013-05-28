@@ -79,13 +79,10 @@
 	 				<csvDomain:fName parent="true"/>
 	 				<csvContact:fId/>
 	 				<csvDomain:fContactType/>
-	 				<rdeCsv:fCrRr/>
-	 				<rdeCsv:fCrID/>
-	 				<rdeCsv:fCrDate/>
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="4932EA57">
+	 					cksum="70A7C17B">
 	 					domainContacts-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -97,13 +94,10 @@
 	 				<rdeCsv:fStatusDescription/>
 	 				<rdeCsv:fLanguage/>
 	 				<csvDomain:fRgpStatus/>
-	 				<rdeCsv:fCrRr/>
-	 				<rdeCsv:fCrID/>
-	 				<rdeCsv:fCrDate/>
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="31B475C5">
+	 					cksum="EB8C548E">
 	 					domainStatuses-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -112,13 +106,10 @@
 	 			<rdeCsv:fields>
 	 				<csvDomain:fName parent="true"/>
 	 				<csvHost:fName/>
-	 				<rdeCsv:fCrRr/>
-	 				<rdeCsv:fCrID/>
-	 				<rdeCsv:fCrDate/>
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="430306BC">
+	 					cksum="7448DAA0">
 	 					domainNameServers-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
