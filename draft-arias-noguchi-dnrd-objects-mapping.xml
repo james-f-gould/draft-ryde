@@ -2598,9 +2598,6 @@ mycontactid]]>
                   <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fStatusDescription&gt;">The contact object status description which is free form text describing the rationale for the status.</t>
                     <t hangText="&lt;rdeCsv:fLanguage&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
-                    <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
-                    <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that set the status for the contact object.</t>
-                    <t hangText="&lt;rdeCsv:fCrDate&gt;">The date and time that the status was set for the contact object.</t>
                   </list></t>
                     <t>
                         Example of a "contactStatuses" &lt;csvContact:contents&gt; &lt;rdeCsv:csv&gt; element:
@@ -2616,13 +2613,10 @@ mycontactid]]>
       <csvContact:fStatus/>
       <rdeCsv:fStatusDescription/>
       <rdeCsv:fLanguage/>
-      <rdeCsv:fCrRr/>
-      <rdeCsv:fCrID/>
-      <rdeCsv:fCrDate/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="4122B192">
+        cksum="2AAF99D4">
         contactStatuses-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2639,11 +2633,9 @@ mycontactid]]>
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
-sh8013,clientUpdateProhibited,"Disallow update",
-en,registrarX,clientY,2009-12-03T09:05:00.0Z
-sh8013,clientDeleteProhibited,"Disallow delete",
-en,registrarX,clientY,2010-12-04T10:05:00.0Z
-mycontactid,ok,,,registrarX,clientY,2011-10-03T09:05:00.0Z]]>
+sh8013,clientUpdateProhibited,"Disallow update",en
+sh8013,clientDeleteProhibited,"Disallow delete",en
+mycontactid,ok,,]]>
                         </artwork></figure>
                     </t>    
                     <t>
@@ -7125,6 +7117,7 @@ END]]></artwork></figure>
                       <t>The Report and Notification objects were moved to draft-lozano-icann-registry-interfaces</t>
                       <t>The section Data escrow notifications was moved to draft-lozano-icann-registry-interfaces</t>
                       <t>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "hostStatuses" and "hostAddresses" CSV files.</t>
+                      <t>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "contactStatuses" CSV file.</t>
                     </list>
                 </t>
             </section>

@@ -467,13 +467,10 @@
             <csvContact:fStatus/>
             <rdeCsv:fStatusDescription/>
             <rdeCsv:fLanguage/>
-          <rdeCsv:fCrRr/>
-          <rdeCsv:fCrID/>
-          <rdeCsv:fCrDate/>
-          </rdeCsv:fields>
+        </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="4122B192">
+            cksum="2AAF99D4">
             contactStatuses-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>

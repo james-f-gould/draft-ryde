@@ -3528,15 +3528,6 @@ mycontactid
 <dt>&lt;rdeCsv:fLanguage&gt;</dt>
 <dd>Language of the &lt;rdeCsv:fStatusDescription&gt; field.
 </dd>
-<dt>&lt;rdeCsv:fCrRr&gt;</dt>
-<dd>Identifier of the registrar, defined in <a class='info' href='#registrarObject'>Section&nbsp;5.4<span> (</span><span class='info'>Registrar Object</span><span>)</span></a>, of the client that created the object.
-</dd>
-<dt>&lt;rdeCsv:fCrID&gt;</dt>
-<dd>Identifier of client that set the status for the contact object.
-</dd>
-<dt>&lt;rdeCsv:fCrDate&gt;</dt>
-<dd>The date and time that the status was set for the contact object.
-</dd>
 </dl></blockquote>
 </dd>
 <dt></dt>
@@ -3556,13 +3547,10 @@ mycontactid
       &lt;csvContact:fStatus/&gt;
       &lt;rdeCsv:fStatusDescription/&gt;
       &lt;rdeCsv:fLanguage/&gt;
-      &lt;rdeCsv:fCrRr/&gt;
-      &lt;rdeCsv:fCrID/&gt;
-      &lt;rdeCsv:fCrDate/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="4122B192"&gt;
+        cksum="2AAF99D4"&gt;
         contactStatuses-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -3583,11 +3571,9 @@ mycontactid
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-sh8013,clientUpdateProhibited,"Disallow update",
-en,registrarX,clientY,2009-12-03T09:05:00.0Z
-sh8013,clientDeleteProhibited,"Disallow delete",
-en,registrarX,clientY,2010-12-04T10:05:00.0Z
-mycontactid,ok,,,registrarX,clientY,2011-10-03T09:05:00.0Z
+sh8013,clientUpdateProhibited,"Disallow update",en
+sh8013,clientDeleteProhibited,"Disallow delete",en
+mycontactid,ok,,
 </pre></div>
                     
 </dd>
@@ -8870,6 +8856,8 @@ Changes from version 03 to 04</h3>
 <li>The section Data escrow notifications was moved to draft-lozano-icann-registry-interfaces
 </li>
 <li>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "hostStatuses" and "hostAddresses" CSV files.
+</li>
+<li>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "contactStatuses" CSV file.
 </li>
 </ol><p>
                 
