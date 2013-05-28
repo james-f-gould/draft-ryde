@@ -1818,7 +1818,7 @@ domain2.test,2012-03-08T19:38:00.0Z]]>
                   <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fRoid&gt;">Repository Object IDentifier (ROID) assigned to the host object.  The &lt;rdeCsv:fRoid&gt; uniquely 
                     identifies the host object that MAY be used in place of the &lt;csvHost:fName&gt; field element to uniquely identify the 
-                    host object when the &;lt;csvHost:fName&gt; is not unique due to the server supporting the &lt;domain:hostAttr&gt; model of <xref target="RFC5731"/> or 
+                    host object when the &lt;csvHost:fName&gt; is not unique due to the server supporting the &lt;domain:hostAttr&gt; model of <xref target="RFC5731"/> or 
                     when the server supports a set of external hosts per sponsoring client.</t>
                     <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of the sponsoring client.  In the case of external hosts, the server MAY create a unique set of external 
                     hosts for each sponsoring client, so the &lt;csvHost:fName&gt; itself won't be unique but instead the combination of the &lt;rdeCsv:fClID&gt; and the 
@@ -1938,9 +1938,6 @@ ns1.example.test2]]>
                     per sponsoring client.</t>
                     <t hangText="&lt;rdeCsv:fStatusDescription&gt;">Host object status description which is free form text describing the rationale for the status.</t>
                     <t hangText="&lt;rdeCsv:fLanguage&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
-                    <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
-                    <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that set the status for the host object.</t>
-                    <t hangText="&lt;rdeCsv:fCrDate&gt;">Date and time that the status was set for the host object.</t>
                   </list></t>
                     <t>
                         Example of a "hostStatuses" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element:
@@ -1956,9 +1953,6 @@ ns1.example.test2]]>
       <csvHost:fStatus/>
       <rdeCsv:fStatusDescription/>
       <rdeCsv:fLanguage/>
-      <rdeCsv:fCrRr/>
-      <rdeCsv:fCrID/>
-      <rdeCsv:fCrDate/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -1979,11 +1973,9 @@ ns1.example.test2]]>
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
-ns1.domain1.test,clientUpdateProhibited,"Disallow update",
-en,registrarX,clientY,2009-12-03T09:05:00.0Z
-ns1.domain1.test,clientDeleteProhibited,"Disallow delete",
-en,registrarX,clientY,2010-12-04T10:05:00.0Z
-ns1.domain2.test,ok,,,registrarX,clientY,2011-10-03T09:05:00.0Z]]>
+ns1.domain1.test,clientUpdateProhibited,"Disallow update",en
+ns1.domain1.test,clientDeleteProhibited,"Disallow delete",en
+ns1.domain2.test,ok,,]]>
                         </artwork></figure>
                     </t>    
                     <t>
@@ -2052,9 +2044,6 @@ ns1.domain1.test,clientDeleteProhibited]]>
                      <t hangText="&lt;rdeCsv:fRoid&gt;">Host object Registry Object IDentifier (ROID) that uniquely identifies the host object when 
                     the &lt;csvHost:fName&gt; is not unique.  The &lt;rdeCsv:fRoid&gt; is used for servers that supports a set of external host objects 
                     per sponsoring client or when the server supports the &lt;domain:hostAttr&gt; model of <xref target="RFC5731"/>.</t>
-                    <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
-                     <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that set the address for the host object.</t>
-                     <t hangText="&lt;rdeCsv:fCrDate&gt;">Date and time that the address was set for the host object.</t>
                   </list></t>
                     <t>
                         Example of a "hostAddresses" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element for server that supports the &lt;domain:hostObj&gt; model 
@@ -2070,9 +2059,6 @@ ns1.domain1.test,clientDeleteProhibited]]>
       <csvHost:fName parent="true"/>
       <csvHost:fAddr/>
       <csvHost:fAddrVersion/>
-      <rdeCsv:fCrRr/>
-      <rdeCsv:fCrID/>
-      <rdeCsv:fCrDate/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -2093,12 +2079,9 @@ ns1.domain1.test,clientDeleteProhibited]]>
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
-ns1.domain1.test,192.0.2.2,v4,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-ns1.domain1.test,192.0.2.29,v4,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-ns1.domain1.test,1080:0:0:0:8:800:200C:417A,
-v6,clientX,2009-12-03T09:05:00.0Z]]>
+ns1.domain1.test,192.0.2.2,v4
+ns1.domain1.test,192.0.2.29,v4
+ns1.domain1.test,1080:0:0:0:8:800:200C:417A,v6]]>
                         </artwork></figure>
                     </t>    
                     <t>
@@ -2151,9 +2134,6 @@ ns1.domain1.test,1080:0:0:0:8:800:200C:417A]]>
       <rdeCsv:fRoid parent="true"/>
       <csvHost:fAddr/>
       <csvHost:fAddrVersion/>
-      <rdeCsv:fCrRr/>
-      <rdeCsv:fCrID/>
-      <rdeCsv:fCrDate/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -2174,12 +2154,9 @@ ns1.domain1.test,1080:0:0:0:8:800:200C:417A]]>
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
-Dns1.domain1.test-TEST,192.0.2.2,v4,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-Dns1.domain1.test-TEST,192.0.2.29,v4,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-Dns1.domain1.test-TEST,1080:0:0:0:8:800:200C:417A,
-v6,clientX,2009-12-03T09:05:00.0Z]]>
+Dns1.domain1.test-TEST,192.0.2.2,v4
+Dns1.domain1.test-TEST,192.0.2.29,v4
+Dns1.domain1.test-TEST,1080:0:0:0:8:800:200C:417A,v6]]>
                         </artwork></figure>
                     </t>    
                     <t>
@@ -7147,7 +7124,7 @@ END]]></artwork></figure>
                       <t>Added mirrored state to NNDN</t>
                       <t>The Report and Notification objects were moved to draft-lozano-icann-registry-interfaces</t>
                       <t>The section Data escrow notifications was moved to draft-lozano-icann-registry-interfaces</t>
-                      
+                      <t>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "hostStatuses" and "hostAddresses" CSV files.</t>
                     </list>
                 </t>
             </section>

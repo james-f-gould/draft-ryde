@@ -2527,7 +2527,7 @@ CSV Model</h3>
 <dt>&lt;rdeCsv:fRoid&gt;</dt>
 <dd>Repository Object IDentifier (ROID) assigned to the host object.  The &lt;rdeCsv:fRoid&gt; uniquely 
                     identifies the host object that MAY be used in place of the &lt;csvHost:fName&gt; field element to uniquely identify the 
-                    host object when the &;lt;csvHost:fName&gt; is not unique due to the server supporting the &lt;domain:hostAttr&gt; model of <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> or 
+                    host object when the &lt;csvHost:fName&gt; is not unique due to the server supporting the &lt;domain:hostAttr&gt; model of <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> or 
                     when the server supports a set of external hosts per sponsoring client.
 </dd>
 <dt>&lt;rdeCsv:fClID&gt;</dt>
@@ -2698,15 +2698,6 @@ ns1.example.test2
 <dt>&lt;rdeCsv:fLanguage&gt;</dt>
 <dd>Language of the &lt;rdeCsv:fStatusDescription&gt; field.
 </dd>
-<dt>&lt;rdeCsv:fCrRr&gt;</dt>
-<dd>Identifier of the registrar, defined in <a class='info' href='#registrarObject'>Section&nbsp;5.4<span> (</span><span class='info'>Registrar Object</span><span>)</span></a>, of the client that created the object.
-</dd>
-<dt>&lt;rdeCsv:fCrID&gt;</dt>
-<dd>Identifier of client that set the status for the host object.
-</dd>
-<dt>&lt;rdeCsv:fCrDate&gt;</dt>
-<dd>Date and time that the status was set for the host object.
-</dd>
 </dl></blockquote>
 </dd>
 <dt></dt>
@@ -2726,9 +2717,6 @@ ns1.example.test2
       &lt;csvHost:fStatus/&gt;
       &lt;rdeCsv:fStatusDescription/&gt;
       &lt;rdeCsv:fLanguage/&gt;
-      &lt;rdeCsv:fCrRr/&gt;
-      &lt;rdeCsv:fCrID/&gt;
-      &lt;rdeCsv:fCrDate/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
@@ -2753,11 +2741,9 @@ ns1.example.test2
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-ns1.domain1.test,clientUpdateProhibited,"Disallow update",
-en,registrarX,clientY,2009-12-03T09:05:00.0Z
-ns1.domain1.test,clientDeleteProhibited,"Disallow delete",
-en,registrarX,clientY,2010-12-04T10:05:00.0Z
-ns1.domain2.test,ok,,,registrarX,clientY,2011-10-03T09:05:00.0Z
+ns1.domain1.test,clientUpdateProhibited,"Disallow update",en
+ns1.domain1.test,clientDeleteProhibited,"Disallow delete",en
+ns1.domain2.test,ok,,
 </pre></div>
                     
 </dd>
@@ -2851,15 +2837,6 @@ ns1.domain1.test,clientDeleteProhibited
                     the &lt;csvHost:fName&gt; is not unique.  The &lt;rdeCsv:fRoid&gt; is used for servers that supports a set of external host objects 
                     per sponsoring client or when the server supports the &lt;domain:hostAttr&gt; model of <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>.
 </dd>
-<dt>&lt;rdeCsv:fCrRr&gt;</dt>
-<dd>Identifier of the registrar, defined in <a class='info' href='#registrarObject'>Section&nbsp;5.4<span> (</span><span class='info'>Registrar Object</span><span>)</span></a>, of the client that created the object.
-</dd>
-<dt>&lt;rdeCsv:fCrID&gt;</dt>
-<dd>Identifier of client that set the address for the host object.
-</dd>
-<dt>&lt;rdeCsv:fCrDate&gt;</dt>
-<dd>Date and time that the address was set for the host object.
-</dd>
 </dl></blockquote>
 </dd>
 <dt></dt>
@@ -2879,9 +2856,6 @@ ns1.domain1.test,clientDeleteProhibited
       &lt;csvHost:fName parent="true"/&gt;
       &lt;csvHost:fAddr/&gt;
       &lt;csvHost:fAddrVersion/&gt;
-      &lt;rdeCsv:fCrRr/&gt;
-      &lt;rdeCsv:fCrID/&gt;
-      &lt;rdeCsv:fCrDate/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
@@ -2906,12 +2880,9 @@ ns1.domain1.test,clientDeleteProhibited
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-ns1.domain1.test,192.0.2.2,v4,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-ns1.domain1.test,192.0.2.29,v4,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-ns1.domain1.test,1080:0:0:0:8:800:200C:417A,
-v6,clientX,2009-12-03T09:05:00.0Z
+ns1.domain1.test,192.0.2.2,v4
+ns1.domain1.test,192.0.2.29,v4
+ns1.domain1.test,1080:0:0:0:8:800:200C:417A,v6
 </pre></div>
                     
 </dd>
@@ -2976,9 +2947,6 @@ ns1.domain1.test,1080:0:0:0:8:800:200C:417A
       &lt;rdeCsv:fRoid parent="true"/&gt;
       &lt;csvHost:fAddr/&gt;
       &lt;csvHost:fAddrVersion/&gt;
-      &lt;rdeCsv:fCrRr/&gt;
-      &lt;rdeCsv:fCrID/&gt;
-      &lt;rdeCsv:fCrDate/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
@@ -3003,12 +2971,9 @@ ns1.domain1.test,1080:0:0:0:8:800:200C:417A
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-Dns1.domain1.test-TEST,192.0.2.2,v4,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-Dns1.domain1.test-TEST,192.0.2.29,v4,registrarX,
-clientY,2009-12-03T09:05:00.0Z
-Dns1.domain1.test-TEST,1080:0:0:0:8:800:200C:417A,
-v6,clientX,2009-12-03T09:05:00.0Z
+Dns1.domain1.test-TEST,192.0.2.2,v4
+Dns1.domain1.test-TEST,192.0.2.29,v4
+Dns1.domain1.test-TEST,1080:0:0:0:8:800:200C:417A,v6
 </pre></div>
                     
 </dd>
@@ -8903,6 +8868,8 @@ Changes from version 03 to 04</h3>
 <li>The Report and Notification objects were moved to draft-lozano-icann-registry-interfaces
 </li>
 <li>The section Data escrow notifications was moved to draft-lozano-icann-registry-interfaces
+</li>
+<li>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "hostStatuses" and "hostAddresses" CSV files.
 </li>
 </ol><p>
                 

@@ -414,13 +414,10 @@
           <csvHost:fStatus/>
           <rdeCsv:fStatusDescription/>
           <rdeCsv:fLanguage/>
-          <rdeCsv:fCrRr/>
-          <rdeCsv:fCrID/>
-          <rdeCsv:fCrDate/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="2F4C2E4A">
+            cksum="732C3DBA">
             hostStatuses-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -430,13 +427,10 @@
           <csvHost:fName parent="true"/>
           <csvHost:fAddr/>
           <csvHost:fAddrVersion/>
-          <rdeCsv:fCrRr/>
-          <rdeCsv:fCrID/>
-          <rdeCsv:fCrDate/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="2C2A7A9F">
+            cksum="730BF7E7">
             hostAddresses-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
