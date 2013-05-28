@@ -1,3 +1,3 @@
-ns1.domain1.test,clientUpdateProhibited,"Disallow update",en
-ns1.domain1.test,clientDeleteProhibited,"Disallow delete",en
-ns1.domain2.test,ok,,
+ns1domain1test-TEST,clientUpdateProhibited,"Disallow update",en
+ns1domain1test-TEST,clientDeleteProhibited,"Disallow delete",en
+ns1domain2test-TEST,ok,,

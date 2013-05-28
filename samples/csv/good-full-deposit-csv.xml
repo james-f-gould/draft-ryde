@@ -55,7 +55,7 @@
 	 			<rdeCsv:fields>
 	 				<csvDomain:fName/> 				
 	 				<rdeCsv:fRoid/> 				
-	 				<rdeCsv:fLang/>	 				
+	 				<rdeCsv:fIdnTableId/>	 				
 	 				<csvDomain:fOriginalName/>
 	 				<rdeCsv:fRegistrant isRequired="true"/>
 	 				<rdeCsv:fClID/>
@@ -105,11 +105,11 @@
 	 		<rdeCsv:csv name="domainNameServers" sep=",">
 	 			<rdeCsv:fields>
 	 				<csvDomain:fName parent="true"/>
-	 				<csvHost:fName/>
+          		<rdeCsv:fRoid/>
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="7448DAA0">
+	 					cksum="546C66A5">
 	 					domainNameServers-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -189,27 +189,27 @@
 	 		</rdeCsv:csv>
 	 		<rdeCsv:csv name="hostStatuses" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvHost:fName parent="true"/>
+          		<rdeCsv:fRoid parent="true"/>
 	 				<csvHost:fStatus/>
 	 				<rdeCsv:fStatusDescription/>
 	 				<rdeCsv:fLang/>
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="732C3DBA">
+	 					cksum="0BA504FC">
 	 					hostStatuses-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
 	 		</rdeCsv:csv>
 	 		<rdeCsv:csv name="hostAddresses" sep=",">
 	 			<rdeCsv:fields>
-	 				<csvHost:fName parent="true"/>
+          		<rdeCsv:fRoid parent="true"/>
 	 				<csvHost:fAddr/>
 	 				<csvHost:fAddrVersion/>
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
 	 				<rdeCsv:file 
-	 					cksum="730BF7E7">
+	 					cksum="17888F02">
 	 					hostAddresses-YYYYMMDD.csv
 	 				</rdeCsv:file> 
 	 			</rdeCsv:files>
@@ -351,7 +351,7 @@
 	 	<csvIDN:contents>
 	 		<rdeCsv:csv name="idnLanguage" sep=",">
 	 			<rdeCsv:fields>
-	 				<rdeCsv:fLang isRequired="true"/>
+	 				<rdeCsv:fIdnTableId isRequired="true"/>
 	 				<rdeCsv:fUrl isRequired="true"/>
 	 			</rdeCsv:fields>
 	 			<rdeCsv:files>
@@ -366,7 +366,7 @@
 	 		<rdeCsv:csv name="NNDN" sep=",">
 	 			<rdeCsv:fields>
 	 				<csvNNDN:fAName isRequired="true"/>
-	 				<rdeCsv:fLang/>	 				
+	 				<rdeCsv:fIdnTableId/>	 				
 	 				<csvNNDN:fOriginalName/>
 	 				<csvNNDN:fNameState/>
 	 				<rdeCsv:fCrDate/>

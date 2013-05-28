@@ -262,6 +262,9 @@
   </complexContent>
  </complexType>
 
+ <!-- IDN Table Identifier -->
+ <element name="fIdnTableId" type="rdeCsv:fTokenType" 
+  substitutionGroup="rdeCsv:field"/>
  
  <!-- State of the most recent transfer request -->
  <element name="fTrStatus" type="rdeCsv:fTrStatusType" 
