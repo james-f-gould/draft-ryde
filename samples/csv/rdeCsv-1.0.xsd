@@ -250,9 +250,9 @@
 
 
  <!-- language type -->
- <element name="fLanguage" type="rdeCsv:fLanguageType" 
+ <element name="fLang" type="rdeCsv:fLangType" 
   substitutionGroup="rdeCsv:field"/>
- <complexType name="fLanguageType">
+ <complexType name="fLangType">
   <complexContent>
     <extension base="rdeCsv:fieldOptionalType">
       <sequence/>

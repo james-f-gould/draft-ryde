@@ -342,7 +342,7 @@
     <rdeCsv:fields>
       <csvDomain:fName/>
       <rdeCsv:fRoid/>
-      <rdeCsv:fLanguage/>
+      <rdeCsv:fLang/>
       <csvDomain:fOriginalName/>
       <rdeCsv:fRegistrant isRequired="true"/>
       <rdeCsv:fClID/>
@@ -457,7 +457,7 @@ domainN.test]]>
                   </t>
                   <t hangText="&lt;rdeCsv:fTokenType&gt;">General token field with type="token".
                   </t>
-                  <t hangText="&lt;rdeCsv:fLanguage&gt;">General language field with type="language".
+                  <t hangText="&lt;rdeCsv:fLang&gt;">General language field with type="language".
                   </t>
                   <t hangText="&lt;rdeCsv:fPositiveIntegerType&gt;">General positive integer field with type="positiveInteger".
                   </t>
@@ -809,7 +809,7 @@ domainN.test]]>
                   <t><list  style="hanging">
                     <t hangText="&lt;rdeCsv:fUName&gt;">UTF8 encoded domain name for the &lt;csvDomain:fName&gt; field element.</t>
                     <t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) for the domain name object.</t>
-                    <t hangText="&lt;rdeCsv:fLanguage&gt;">IDN language tag for the IDN domain name object.</t>
+                    <t hangText="&lt;rdeCsv:fLang&gt;">IDN language tag for the IDN domain name object.</t>
                     <t hangText="&lt;rdeCsv:fRegistrant&gt;">Registrant contact identifier for the domain name object.</t>
                     <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client that sponsors the domain name object.</t>
                     <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
@@ -833,7 +833,7 @@ domainN.test]]>
     <rdeCsv:fields>
       <csvDomain:fName/>
       <rdeCsv:fRoid/>
-      <rdeCsv:fLanguage/>
+      <rdeCsv:fLang/>
       <csvDomain:fOriginalName/>
       <rdeCsv:fRegistrant/>
       <rdeCsv:fClID/>
@@ -1047,7 +1047,7 @@ domain2.test,sh8013,tech]]>
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fStatusDescription&gt;">Domain object status description which is free form text describing the rationale for the status.</t>
-                    <t hangText="&lt;rdeCsv:fLanguage&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
+                    <t hangText="&lt;rdeCsv:fLang&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
                   </list></t>
                     <t>
                         Example of a "domainStatuses" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element:
@@ -1062,7 +1062,7 @@ domain2.test,sh8013,tech]]>
       <csvDomain:fName parent="true"/>
       <csvDomain:fStatus/>
       <rdeCsv:fStatusDescription/>
-      <rdeCsv:fLanguage/>
+      <rdeCsv:fLang/>
       <csvDomain:fRgpStatus/>
     </rdeCsv:fields>
     <rdeCsv:files>
@@ -1896,7 +1896,7 @@ ns1.example.test2]]>
                     the &lt;csvHost:fName&gt; is not unique.  The &lt;rdeCsv:fRoid&gt; is used for servers that support a set of external host objects 
                     per sponsoring client.</t>
                     <t hangText="&lt;rdeCsv:fStatusDescription&gt;">Host object status description which is free form text describing the rationale for the status.</t>
-                    <t hangText="&lt;rdeCsv:fLanguage&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
+                    <t hangText="&lt;rdeCsv:fLang&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
                   </list></t>
                     <t>
                         Example of a "hostStatuses" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element:
@@ -1911,7 +1911,7 @@ ns1.example.test2]]>
       <csvHost:fName parent="true"/>
       <csvHost:fStatus/>
       <rdeCsv:fStatusDescription/>
-      <rdeCsv:fLanguage/>
+      <rdeCsv:fLang/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -2556,7 +2556,7 @@ mycontactid]]>
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fStatusDescription&gt;">The contact object status description which is free form text describing the rationale for the status.</t>
-                    <t hangText="&lt;rdeCsv:fLanguage&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
+                    <t hangText="&lt;rdeCsv:fLang&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
                   </list></t>
                     <t>
                         Example of a "contactStatuses" &lt;csvContact:contents&gt; &lt;rdeCsv:csv&gt; element:
@@ -2571,7 +2571,7 @@ mycontactid]]>
       <csvContact:fId parent="true"/>
       <csvContact:fStatus/>
       <rdeCsv:fStatusDescription/>
-      <rdeCsv:fLanguage/>
+      <rdeCsv:fLang/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -3414,7 +3414,7 @@ EXAMPLE2]]>
                <section title="CSV Model" anchor="idnCsvModel">
                 <t> 
                    The IDN domain names, defined in <xref target="domainNameObject"/>, MAY have references 
-                   to the IDN language using the &lt;rdeCsv:fLanguage&gt; field element.  
+                   to the IDN language using the &lt;rdeCsv:fLang&gt; field element.  
                    The IDN table reference object defines the mapping of a language to a language table URL.
                    The language table URL defines the character code points that can be used for 
                    the language. The elements used for the IDN table reference object is defined in this section.
@@ -3432,8 +3432,8 @@ EXAMPLE2]]>
                   MAY be used in the "idnLanguage" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                    </t>
                   <t><list style="hanging">
-                    <t hangText="&lt;rdeCsv:fLanguage&gt;">The language tag that matches the values for the &lt;rdeCsv:fLanguage&gt; field element in the "domain" CSV files, as defined in <xref target="domainNameObject"/>.</t>
-                    <t hangText="&lt;rdeCsv:fUrl&gt;">URL that defines the character code points that can be used for the language defined by the &lt;rdeCsv:fLanguage&gt; field element.</t>
+                    <t hangText="&lt;rdeCsv:fLang&gt;">The language tag that matches the values for the &lt;rdeCsv:fLang&gt; field element in the "domain" CSV files, as defined in <xref target="domainNameObject"/>.</t>
+                    <t hangText="&lt;rdeCsv:fUrl&gt;">URL that defines the character code points that can be used for the language defined by the &lt;rdeCsv:fLang&gt; field element.</t>
                    </list></t>
                     <t>
                         Example of a "idnLanguage" &lt;csvIDN:contents&gt; &lt;rdeCsv:csv&gt; element:
@@ -3446,7 +3446,7 @@ EXAMPLE2]]>
   <rdeCsv:csv name="idnLanguage">
     <rdeCsv:sep>,</rdeCsv:sep>
     <rdeCsv:fields>
-      <rdeCsv:fLanguage/>
+      <rdeCsv:fLang/>
       <rdeCsv:fUrl/>
     </rdeCsv:fields>
     <rdeCsv:files>
@@ -3483,7 +3483,7 @@ http://www.iana.org/domains/idn-tables/tables/test_tab2_1.1.txt]]>
 ...
  <rdeCsv:csv name="idnLanguage">
     <rdeCsv:fields>
-      <rdeCsv:fLanguage/>
+      <rdeCsv:fLang/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -3653,7 +3653,7 @@ LANG2]]>
                   </t>
                   <t><list  style="hanging">
                     <t hangText="&lt;rdeCsv:fUName&gt;">Name of the NNDN in Unicode character set for the &lt;csvNNDN:fAName&gt; field element.</t>
-                    <t hangText="&lt;rdeCsv:fLanguage&gt;">IDN language tag for the NNDN that matches an IDN Table Reference Object record.</t>
+                    <t hangText="&lt;rdeCsv:fLang&gt;">IDN language tag for the NNDN that matches an IDN Table Reference Object record.</t>
                     <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the domain name object.</t>
                   </list></t>
                     <t>
@@ -3667,7 +3667,7 @@ LANG2]]>
   <rdeCsv:csv name="NNDN" sep=",">
     <rdeCsv:fields>
       <csvNNDN:fAName isRequired="true"/>
-      <rdeCsv:fLanguage/>         
+      <rdeCsv:fLang/>         
       <csvNNDN:fOriginalName/>
       <csvNNDN:fNameState/>
       <rdeCsv:fCrDate/>
@@ -4345,9 +4345,9 @@ xn--pingino-q2a.test]]>
 
 
  <!-- language type -->
- <element name="fLanguage" type="rdeCsv:fLanguageType" 
+ <element name="fLang" type="rdeCsv:fLangType" 
   substitutionGroup="rdeCsv:field"/>
- <complexType name="fLanguageType">
+ <complexType name="fLangType">
   <complexContent>
     <extension base="rdeCsv:fieldOptionalType">
       <sequence/>
@@ -7078,6 +7078,7 @@ END]]></artwork></figure>
                       <t>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "hostStatuses" and "hostAddresses" CSV files.</t>
                       <t>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "contactStatuses" CSV file.</t>
                       <t>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "domainContacts", "domainStatuses", and "domainNameServers" CSV files.</t>
+                      <t>Changed &lt;rdeCsv:fLanguage&gt; to &lt;rdeCsv:fLang&gt;.</t>
                     </list>
                 </t>
             </section>
@@ -7453,7 +7454,7 @@ END]]></artwork></figure>
         <rdeCsv:fields>
           <csvDomain:fName/>        
           <rdeCsv:fRoid/>         
-          <rdeCsv:fLanguage/>         
+          <rdeCsv:fLang/>         
           <csvDomain:fOriginalName/>
           <rdeCsv:fRegistrant isRequired="true"/>
           <rdeCsv:fClID/>
@@ -7493,7 +7494,7 @@ END]]></artwork></figure>
           <csvDomain:fName parent="true"/>
           <csvDomain:fStatus/>
           <rdeCsv:fStatusDescription/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <csvDomain:fRgpStatus/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
@@ -7599,7 +7600,7 @@ END]]></artwork></figure>
           <csvHost:fName parent="true"/>
           <csvHost:fStatus/>
           <rdeCsv:fStatusDescription/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
           <rdeCsv:fCrDate/>
@@ -7658,7 +7659,7 @@ END]]></artwork></figure>
             <csvContact:fId parent="true"/>
             <csvContact:fStatus/>
             <rdeCsv:fStatusDescription/>
-            <rdeCsv:fLanguage/>
+            <rdeCsv:fLang/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
           <rdeCsv:fCrDate/>
@@ -7767,7 +7768,7 @@ END]]></artwork></figure>
     <csvIDN:contents>
       <rdeCsv:csv name="idnLanguage" sep=",">
         <rdeCsv:fields>
-          <rdeCsv:fLanguage isRequired="true"/>
+          <rdeCsv:fLang isRequired="true"/>
           <rdeCsv:fUrl isRequired="true"/>
         </rdeCsv:fields>
         <rdeCsv:files>
@@ -7782,7 +7783,7 @@ END]]></artwork></figure>
       <rdeCsv:csv name="NNDN" sep=",">
         <rdeCsv:fields>
           <csvNNDN:fAName isRequired="true"/>
-          <rdeCsv:fLanguage/>         
+          <rdeCsv:fLang/>         
           <csvNNDN:fOriginalName/>
           <csvNNDN:fNameState/>
           <rdeCsv:fCrDate/>
@@ -8046,7 +8047,7 @@ END]]></artwork></figure>
     <csvIDN:deletes>
       <rdeCsv:csv name="idnLanguage">
         <rdeCsv:fields>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
@@ -8093,7 +8094,7 @@ END]]></artwork></figure>
         <rdeCsv:fields>
           <csvDomain:fName/>        
           <rdeCsv:fRoid/>         
-          <rdeCsv:fLanguage/>         
+          <rdeCsv:fLang/>         
           <csvDomain:fOriginalName/>
           <rdeCsv:fRegistrant/>
           <rdeCsv:fClID/>
@@ -8133,7 +8134,7 @@ END]]></artwork></figure>
           <csvDomain:fName parent="true"/>
           <csvDomain:fStatus/>
           <rdeCsv:fStatusDescription/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <csvDomain:fRgpStatus/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
@@ -8223,7 +8224,7 @@ END]]></artwork></figure>
           <csvHost:fName parent="true"/>
           <csvHost:fStatus/>
           <rdeCsv:fStatusDescription/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
           <rdeCsv:fCrDate/>
@@ -8282,7 +8283,7 @@ END]]></artwork></figure>
             <csvContact:fId parent="true"/>
             <csvContact:fStatus/>
             <rdeCsv:fStatusDescription/>
-            <rdeCsv:fLanguage/>
+            <rdeCsv:fLang/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
           <rdeCsv:fCrDate/>
@@ -8391,7 +8392,7 @@ END]]></artwork></figure>
     <csvIDN:contents>
       <rdeCsv:csv name="idnLanguage" sep=",">
         <rdeCsv:fields>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <rdeCsv:fUrl/>
         </rdeCsv:fields>
         <rdeCsv:files>
@@ -8406,7 +8407,7 @@ END]]></artwork></figure>
       <rdeCsv:csv name="NNDN" sep=",">
         <rdeCsv:fields>
           <csvNNDN:fAName isRequired="true"/>
-          <rdeCsv:fLanguage/>         
+          <rdeCsv:fLang/>         
           <csvNNDN:fOriginalName/>
           <csvNNDN:fNameState/>
           <rdeCsv:fCrDate/>

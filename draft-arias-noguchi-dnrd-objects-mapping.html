@@ -600,7 +600,7 @@ CSV elements</h3>
     &lt;rdeCsv:fields&gt;
       &lt;csvDomain:fName/&gt;
       &lt;rdeCsv:fRoid/&gt;
-      &lt;rdeCsv:fLanguage/&gt;
+      &lt;rdeCsv:fLang/&gt;
       &lt;csvDomain:fOriginalName/&gt;
       &lt;rdeCsv:fRegistrant isRequired="true"/&gt;
       &lt;rdeCsv:fClID/&gt;
@@ -776,7 +776,7 @@ CSV common field elements</h3>
 <dd>General token field with type="token".
                   
 </dd>
-<dt>&lt;rdeCsv:fLanguage&gt;</dt>
+<dt>&lt;rdeCsv:fLang&gt;</dt>
 <dd>General language field with type="language".
                   
 </dd>
@@ -1206,7 +1206,7 @@ CSV Model</h3>
 <dt>&lt;rdeCsv:fRoid&gt;</dt>
 <dd>Registry Object IDentifier (ROID) for the domain name object.
 </dd>
-<dt>&lt;rdeCsv:fLanguage&gt;</dt>
+<dt>&lt;rdeCsv:fLang&gt;</dt>
 <dd>IDN language tag for the IDN domain name object.
 </dd>
 <dt>&lt;rdeCsv:fRegistrant&gt;</dt>
@@ -1256,7 +1256,7 @@ CSV Model</h3>
     &lt;rdeCsv:fields&gt;
       &lt;csvDomain:fName/&gt;
       &lt;rdeCsv:fRoid/&gt;
-      &lt;rdeCsv:fLanguage/&gt;
+      &lt;rdeCsv:fLang/&gt;
       &lt;csvDomain:fOriginalName/&gt;
       &lt;rdeCsv:fRegistrant/&gt;
       &lt;rdeCsv:fClID/&gt;
@@ -1532,7 +1532,7 @@ domain2.test,sh8013,tech
 <dt>&lt;rdeCsv:fStatusDescription&gt;</dt>
 <dd>Domain object status description which is free form text describing the rationale for the status.
 </dd>
-<dt>&lt;rdeCsv:fLanguage&gt;</dt>
+<dt>&lt;rdeCsv:fLang&gt;</dt>
 <dd>Language of the &lt;rdeCsv:fStatusDescription&gt; field.
 </dd>
 </dl></blockquote>
@@ -1553,7 +1553,7 @@ domain2.test,sh8013,tech
       &lt;csvDomain:fName parent="true"/&gt;
       &lt;csvDomain:fStatus/&gt;
       &lt;rdeCsv:fStatusDescription/&gt;
-      &lt;rdeCsv:fLanguage/&gt;
+      &lt;rdeCsv:fLang/&gt;
       &lt;csvDomain:fRgpStatus/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
@@ -2632,7 +2632,7 @@ ns1.example.test2
 <dt>&lt;rdeCsv:fStatusDescription&gt;</dt>
 <dd>Host object status description which is free form text describing the rationale for the status.
 </dd>
-<dt>&lt;rdeCsv:fLanguage&gt;</dt>
+<dt>&lt;rdeCsv:fLang&gt;</dt>
 <dd>Language of the &lt;rdeCsv:fStatusDescription&gt; field.
 </dd>
 </dl></blockquote>
@@ -2653,7 +2653,7 @@ ns1.example.test2
       &lt;csvHost:fName parent="true"/&gt;
       &lt;csvHost:fStatus/&gt;
       &lt;rdeCsv:fStatusDescription/&gt;
-      &lt;rdeCsv:fLanguage/&gt;
+      &lt;rdeCsv:fLang/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
@@ -3462,7 +3462,7 @@ mycontactid
 <dt>&lt;rdeCsv:fStatusDescription&gt;</dt>
 <dd>The contact object status description which is free form text describing the rationale for the status.
 </dd>
-<dt>&lt;rdeCsv:fLanguage&gt;</dt>
+<dt>&lt;rdeCsv:fLang&gt;</dt>
 <dd>Language of the &lt;rdeCsv:fStatusDescription&gt; field.
 </dd>
 </dl></blockquote>
@@ -3483,7 +3483,7 @@ mycontactid
       &lt;csvContact:fId parent="true"/&gt;
       &lt;csvContact:fStatus/&gt;
       &lt;rdeCsv:fStatusDescription/&gt;
-      &lt;rdeCsv:fLanguage/&gt;
+      &lt;rdeCsv:fLang/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
@@ -4569,7 +4569,7 @@ CSV Model</h3>
 
 <p> 
                    The IDN domain names, defined in <a class='info' href='#domainNameObject'>Section&nbsp;5.1<span> (</span><span class='info'>Domain Name Object</span><span>)</span></a>, MAY have references 
-                   to the IDN language using the &lt;rdeCsv:fLanguage&gt; field element.  
+                   to the IDN language using the &lt;rdeCsv:fLang&gt; field element.  
                    The IDN table reference object defines the mapping of a language to a language table URL.
                    The language table URL defines the character code points that can be used for 
                    the language. The elements used for the IDN table reference object is defined in this section.
@@ -4595,11 +4595,11 @@ CSV Model</h3>
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;rdeCsv:fLanguage&gt;</dt>
-<dd>The language tag that matches the values for the &lt;rdeCsv:fLanguage&gt; field element in the "domain" CSV files, as defined in <a class='info' href='#domainNameObject'>Section&nbsp;5.1<span> (</span><span class='info'>Domain Name Object</span><span>)</span></a>.
+<dt>&lt;rdeCsv:fLang&gt;</dt>
+<dd>The language tag that matches the values for the &lt;rdeCsv:fLang&gt; field element in the "domain" CSV files, as defined in <a class='info' href='#domainNameObject'>Section&nbsp;5.1<span> (</span><span class='info'>Domain Name Object</span><span>)</span></a>.
 </dd>
 <dt>&lt;rdeCsv:fUrl&gt;</dt>
-<dd>URL that defines the character code points that can be used for the language defined by the &lt;rdeCsv:fLanguage&gt; field element.
+<dd>URL that defines the character code points that can be used for the language defined by the &lt;rdeCsv:fLang&gt; field element.
 </dd>
 </dl></blockquote>
 </dd>
@@ -4617,7 +4617,7 @@ CSV Model</h3>
   &lt;rdeCsv:csv name="idnLanguage"&gt;
     &lt;rdeCsv:sep&gt;,&lt;/rdeCsv:sep&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;rdeCsv:fLanguage/&gt;
+      &lt;rdeCsv:fLang/&gt;
       &lt;rdeCsv:fUrl/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
@@ -4662,7 +4662,7 @@ http://www.iana.org/domains/idn-tables/tables/test_tab2_1.1.txt
 ...
  &lt;rdeCsv:csv name="idnLanguage"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;rdeCsv:fLanguage/&gt;
+      &lt;rdeCsv:fLang/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
@@ -4886,7 +4886,7 @@ CSV Model</h3>
 <dt>&lt;rdeCsv:fUName&gt;</dt>
 <dd>Name of the NNDN in Unicode character set for the &lt;csvNNDN:fAName&gt; field element.
 </dd>
-<dt>&lt;rdeCsv:fLanguage&gt;</dt>
+<dt>&lt;rdeCsv:fLang&gt;</dt>
 <dd>IDN language tag for the NNDN that matches an IDN Table Reference Object record.
 </dd>
 <dt>&lt;rdeCsv:fCrDate&gt;</dt>
@@ -4908,7 +4908,7 @@ CSV Model</h3>
   &lt;rdeCsv:csv name="NNDN" sep=","&gt;
     &lt;rdeCsv:fields&gt;
       &lt;csvNNDN:fAName isRequired="true"/&gt;
-      &lt;rdeCsv:fLanguage/&gt;
+      &lt;rdeCsv:fLang/&gt;
       &lt;csvNNDN:fOriginalName/&gt;
       &lt;csvNNDN:fNameState/&gt;
       &lt;rdeCsv:fCrDate/&gt;
@@ -5671,9 +5671,9 @@ RDE CSV Schema</h3>
 
 
  &lt;!-- language type --&gt;
- &lt;element name="fLanguage" type="rdeCsv:fLanguageType"
+ &lt;element name="fLang" type="rdeCsv:fLangType"
   substitutionGroup="rdeCsv:field"/&gt;
- &lt;complexType name="fLanguageType"&gt;
+ &lt;complexType name="fLangType"&gt;
   &lt;complexContent&gt;
     &lt;extension base="rdeCsv:fieldOptionalType"&gt;
       &lt;sequence/&gt;
@@ -8798,6 +8798,8 @@ Changes from version 03 to 04</h3>
 </li>
 <li>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "domainContacts", "domainStatuses", and "domainNameServers" CSV files.
 </li>
+<li>Changed &lt;rdeCsv:fLanguage&gt; to &lt;rdeCsv:fLang&gt;.
+</li>
 </ol><p>
                 
 </p>
@@ -9186,7 +9188,7 @@ Example of a full deposit using the CSV model</h3>
         &lt;rdeCsv:fields&gt;
           &lt;csvDomain:fName/&gt;
           &lt;rdeCsv:fRoid/&gt;
-          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fLang/&gt;
           &lt;csvDomain:fOriginalName/&gt;
           &lt;rdeCsv:fRegistrant isRequired="true"/&gt;
           &lt;rdeCsv:fClID/&gt;
@@ -9226,7 +9228,7 @@ Example of a full deposit using the CSV model</h3>
           &lt;csvDomain:fName parent="true"/&gt;
           &lt;csvDomain:fStatus/&gt;
           &lt;rdeCsv:fStatusDescription/&gt;
-          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fLang/&gt;
           &lt;csvDomain:fRgpStatus/&gt;
           &lt;rdeCsv:fCrRr/&gt;
           &lt;rdeCsv:fCrID/&gt;
@@ -9332,7 +9334,7 @@ Example of a full deposit using the CSV model</h3>
           &lt;csvHost:fName parent="true"/&gt;
           &lt;csvHost:fStatus/&gt;
           &lt;rdeCsv:fStatusDescription/&gt;
-          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fLang/&gt;
           &lt;rdeCsv:fCrRr/&gt;
           &lt;rdeCsv:fCrID/&gt;
           &lt;rdeCsv:fCrDate/&gt;
@@ -9391,7 +9393,7 @@ Example of a full deposit using the CSV model</h3>
             &lt;csvContact:fId parent="true"/&gt;
             &lt;csvContact:fStatus/&gt;
             &lt;rdeCsv:fStatusDescription/&gt;
-            &lt;rdeCsv:fLanguage/&gt;
+            &lt;rdeCsv:fLang/&gt;
           &lt;rdeCsv:fCrRr/&gt;
           &lt;rdeCsv:fCrID/&gt;
           &lt;rdeCsv:fCrDate/&gt;
@@ -9500,7 +9502,7 @@ Example of a full deposit using the CSV model</h3>
     &lt;csvIDN:contents&gt;
       &lt;rdeCsv:csv name="idnLanguage" sep=","&gt;
         &lt;rdeCsv:fields&gt;
-          &lt;rdeCsv:fLanguage isRequired="true"/&gt;
+          &lt;rdeCsv:fLang isRequired="true"/&gt;
           &lt;rdeCsv:fUrl isRequired="true"/&gt;
         &lt;/rdeCsv:fields&gt;
         &lt;rdeCsv:files&gt;
@@ -9515,7 +9517,7 @@ Example of a full deposit using the CSV model</h3>
       &lt;rdeCsv:csv name="NNDN" sep=","&gt;
         &lt;rdeCsv:fields&gt;
           &lt;csvNNDN:fAName isRequired="true"/&gt;
-          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fLang/&gt;
           &lt;csvNNDN:fOriginalName/&gt;
           &lt;csvNNDN:fNameState/&gt;
           &lt;rdeCsv:fCrDate/&gt;
@@ -9785,7 +9787,7 @@ Example of differential deposit using the CSV model</h3>
     &lt;csvIDN:deletes&gt;
       &lt;rdeCsv:csv name="idnLanguage"&gt;
         &lt;rdeCsv:fields&gt;
-          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fLang/&gt;
         &lt;/rdeCsv:fields&gt;
         &lt;rdeCsv:files&gt;
           &lt;rdeCsv:file
@@ -9832,7 +9834,7 @@ Example of differential deposit using the CSV model</h3>
         &lt;rdeCsv:fields&gt;
           &lt;csvDomain:fName/&gt;
           &lt;rdeCsv:fRoid/&gt;
-          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fLang/&gt;
           &lt;csvDomain:fOriginalName/&gt;
           &lt;rdeCsv:fRegistrant/&gt;
           &lt;rdeCsv:fClID/&gt;
@@ -9872,7 +9874,7 @@ Example of differential deposit using the CSV model</h3>
           &lt;csvDomain:fName parent="true"/&gt;
           &lt;csvDomain:fStatus/&gt;
           &lt;rdeCsv:fStatusDescription/&gt;
-          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fLang/&gt;
           &lt;csvDomain:fRgpStatus/&gt;
           &lt;rdeCsv:fCrRr/&gt;
           &lt;rdeCsv:fCrID/&gt;
@@ -9962,7 +9964,7 @@ Example of differential deposit using the CSV model</h3>
           &lt;csvHost:fName parent="true"/&gt;
           &lt;csvHost:fStatus/&gt;
           &lt;rdeCsv:fStatusDescription/&gt;
-          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fLang/&gt;
           &lt;rdeCsv:fCrRr/&gt;
           &lt;rdeCsv:fCrID/&gt;
           &lt;rdeCsv:fCrDate/&gt;
@@ -10021,7 +10023,7 @@ Example of differential deposit using the CSV model</h3>
             &lt;csvContact:fId parent="true"/&gt;
             &lt;csvContact:fStatus/&gt;
             &lt;rdeCsv:fStatusDescription/&gt;
-            &lt;rdeCsv:fLanguage/&gt;
+            &lt;rdeCsv:fLang/&gt;
           &lt;rdeCsv:fCrRr/&gt;
           &lt;rdeCsv:fCrID/&gt;
           &lt;rdeCsv:fCrDate/&gt;
@@ -10130,7 +10132,7 @@ Example of differential deposit using the CSV model</h3>
     &lt;csvIDN:contents&gt;
       &lt;rdeCsv:csv name="idnLanguage" sep=","&gt;
         &lt;rdeCsv:fields&gt;
-          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fLang/&gt;
           &lt;rdeCsv:fUrl/&gt;
         &lt;/rdeCsv:fields&gt;
         &lt;rdeCsv:files&gt;
@@ -10145,7 +10147,7 @@ Example of differential deposit using the CSV model</h3>
       &lt;rdeCsv:csv name="NNDN" sep=","&gt;
         &lt;rdeCsv:fields&gt;
           &lt;csvNNDN:fAName isRequired="true"/&gt;
-          &lt;rdeCsv:fLanguage/&gt;
+          &lt;rdeCsv:fLang/&gt;
           &lt;csvNNDN:fOriginalName/&gt;
           &lt;csvNNDN:fNameState/&gt;
           &lt;rdeCsv:fCrDate/&gt;

@@ -414,7 +414,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
        <rdeCsv:fields>
          <csvDomain:fName/>
          <rdeCsv:fRoid/>
-         <rdeCsv:fLanguage/>
+         <rdeCsv:fLang/>
          <csvDomain:fOriginalName/>
          <rdeCsv:fRegistrant isRequired="true"/>
          <rdeCsv:fClID/>
@@ -576,7 +576,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
 
    <rdeCsv:fTokenType>  General token field with type="token".
 
-   <rdeCsv:fLanguage>  General language field with type="language".
+   <rdeCsv:fLang>  General language field with type="language".
 
    <rdeCsv:fPositiveIntegerType>  General positive integer field with
       type="positiveInteger".
@@ -965,8 +965,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
       <rdeCsv:fRoid>  Registry Object IDentifier (ROID) for the domain
          name object.
 
-      <rdeCsv:fLanguage>  IDN language tag for the IDN domain name
-         object.
+      <rdeCsv:fLang>  IDN language tag for the IDN domain name object.
 
       <rdeCsv:fRegistrant>  Registrant contact identifier for the domain
          name object.
@@ -997,6 +996,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
       <rdeCsv:fTrDate>  Date and time of the last transfer for the
          domain name object.
 
+      Example of a "domain" <csvDomain:contents> <rdeCsv:csv> element:
 
 
 
@@ -1009,8 +1009,6 @@ Arias, et al.           Expires November 29, 2013              [Page 18]
 Internet-Draft            DNRD Objects Mapping                  May 2013
 
 
-      Example of a "domain" <csvDomain:contents> <rdeCsv:csv> element:
-
 
 
    ...
@@ -1020,7 +1018,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
        <rdeCsv:fields>
          <csvDomain:fName/>
          <rdeCsv:fRoid/>
-         <rdeCsv:fLanguage/>
+         <rdeCsv:fLang/>
          <csvDomain:fOriginalName/>
          <rdeCsv:fRegistrant/>
          <rdeCsv:fClID/>
@@ -1047,6 +1045,8 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
       contains four records (active ASCII domain, pendingDelete domain,
       original IDN with LANG1 language rules, and variant IDN with LANG1
       language rules).
+
+
 
 
 
@@ -1303,8 +1303,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
          which is free form text describing the rationale for the
          status.
 
-      <rdeCsv:fLanguage>  Language of the <rdeCsv:fStatusDescription>
-         field.
+      <rdeCsv:fLang>  Language of the <rdeCsv:fStatusDescription> field.
 
       Example of a "domainStatuses" <csvDomain:contents> <rdeCsv:csv>
       element:
@@ -1319,7 +1318,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
          <csvDomain:fName parent="true"/>
          <csvDomain:fStatus/>
          <rdeCsv:fStatusDescription/>
-         <rdeCsv:fLanguage/>
+         <rdeCsv:fLang/>
          <csvDomain:fRgpStatus/>
        </rdeCsv:fields>
        <rdeCsv:files>
@@ -1333,8 +1332,9 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
    </csvDomain:contents>
    ...
 
-
-
+      Example of the corresponding domainStatuses-YYYYMMDD.csv file.
+      The file contains the statuses for the two domain names
+      domain1.test and domain2.test.
 
 
 
@@ -1344,10 +1344,6 @@ Arias, et al.           Expires November 29, 2013              [Page 24]
 
 Internet-Draft            DNRD Objects Mapping                  May 2013
 
-
-      Example of the corresponding domainStatuses-YYYYMMDD.csv file.
-      The file contains the statuses for the two domain names
-      domain1.test and domain2.test.
 
 
 
@@ -1392,7 +1388,11 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
    domain1.test,clientUpdateProhibited
    domain2.test,pendingDelete
 
-
+   "domainNameServers"  Defines the fields and CSV file references used
+      for the domain name delegated hosts (name servers).  The
+      "domainNameServers" CSV files define the relationship between a
+      domain name object and a delegated host.  It will support both the
+      <domain:hostAttr>, using a <rdeCsv:fRoid> field element, or the
 
 
 
@@ -1401,11 +1401,6 @@ Arias, et al.           Expires November 29, 2013              [Page 25]
 Internet-Draft            DNRD Objects Mapping                  May 2013
 
 
-   "domainNameServers"  Defines the fields and CSV file references used
-      for the domain name delegated hosts (name servers).  The
-      "domainNameServers" CSV files define the relationship between a
-      domain name object and a delegated host.  It will support both the
-      <domain:hostAttr>, using a <rdeCsv:fRoid> field element, or the
       <domain:hostObj> model, using a <csvHost:fName> field element,
       defined in [RFC5731].  See Section 5.2 for information in how to
       support either the <domain:hostAttr> or <domain:hostObj> model
@@ -1452,11 +1447,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
 
 
 
+
+
+
+
+
 Arias, et al.           Expires November 29, 2013              [Page 26]
 
 Internet-Draft            DNRD Objects Mapping                  May 2013
-
-
 
 
    ...
@@ -1492,6 +1490,8 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
       Example of a "domainNameServers" <csvDomain:contents> <rdeCsv:csv>
       element for a server supporting the <domain:hostAttr> model of
       [RFC5731].
+
+
 
 
 
@@ -2423,8 +2423,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
       <rdeCsv:fStatusDescription>  Host object status description which
          is free form text describing the rationale for the status.
 
-      <rdeCsv:fLanguage>  Language of the <rdeCsv:fStatusDescription>
-         field.
+      <rdeCsv:fLang>  Language of the <rdeCsv:fStatusDescription> field.
 
       Example of a "hostStatuses" <csvHost:contents> <rdeCsv:csv>
       element:
@@ -2439,7 +2438,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
          <csvHost:fName parent="true"/>
          <csvHost:fStatus/>
          <rdeCsv:fStatusDescription/>
-         <rdeCsv:fLanguage/>
+         <rdeCsv:fLang/>
        </rdeCsv:fields>
        <rdeCsv:files>
          <rdeCsv:file
@@ -2455,6 +2454,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
       Example of the corresponding hostStatuses-YYYYMMDD.csv file.  The
       file contains the statuses for the two host names ns1.domain1.test
       and ns1.domain2.test.
+
 
 
 
@@ -3259,8 +3259,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
          which is free form text describing the rationale for the
          status.
 
-      <rdeCsv:fLanguage>  Language of the <rdeCsv:fStatusDescription>
-         field.
+      <rdeCsv:fLang>  Language of the <rdeCsv:fStatusDescription> field.
 
       Example of a "contactStatuses" <csvContact:contents> <rdeCsv:csv>
       element:
@@ -3275,7 +3274,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
          <csvContact:fId parent="true"/>
          <csvContact:fStatus/>
          <rdeCsv:fStatusDescription/>
-         <rdeCsv:fLanguage/>
+         <rdeCsv:fLang/>
        </rdeCsv:fields>
        <rdeCsv:files>
          <rdeCsv:file
@@ -3297,6 +3296,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
    sh8013,clientUpdateProhibited,"Disallow update",en
    sh8013,clientDeleteProhibited,"Disallow delete",en
    mycontactid,ok,,
+
 
 
 
@@ -4294,7 +4294,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
 5.5.2.  CSV Model
 
    The IDN domain names, defined in Section 5.1, MAY have references to
-   the IDN language using the <rdeCsv:fLanguage> field element.  The IDN
+   the IDN language using the <rdeCsv:fLang> field element.  The IDN
    table reference object defines the mapping of a language to a
    language table URL.  The language table URL defines the character
    code points that can be used for the language.  The elements used for
@@ -4323,13 +4323,13 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
 
 
 
-      <rdeCsv:fLanguage>  The language tag that matches the values for
-         the <rdeCsv:fLanguage> field element in the "domain" CSV files,
-         as defined in Section 5.1.
+      <rdeCsv:fLang>  The language tag that matches the values for the
+         <rdeCsv:fLang> field element in the "domain" CSV files, as
+         defined in Section 5.1.
 
       <rdeCsv:fUrl>  URL that defines the character code points that can
-         be used for the language defined by the <rdeCsv:fLanguage>
-         field element.
+         be used for the language defined by the <rdeCsv:fLang> field
+         element.
 
       Example of a "idnLanguage" <csvIDN:contents> <rdeCsv:csv> element:
 
@@ -4341,7 +4341,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
      <rdeCsv:csv name="idnLanguage">
        <rdeCsv:sep>,</rdeCsv:sep>
        <rdeCsv:fields>
-         <rdeCsv:fLanguage/>
+         <rdeCsv:fLang/>
          <rdeCsv:fUrl/>
        </rdeCsv:fields>
        <rdeCsv:files>
@@ -4385,7 +4385,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
    ...
     <rdeCsv:csv name="idnLanguage">
        <rdeCsv:fields>
-         <rdeCsv:fLanguage/>
+         <rdeCsv:fLang/>
        </rdeCsv:fields>
        <rdeCsv:files>
          <rdeCsv:file
@@ -4563,8 +4563,8 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
       <rdeCsv:fUName>  Name of the NNDN in Unicode character set for the
          <csvNNDN:fAName> field element.
 
-      <rdeCsv:fLanguage>  IDN language tag for the NNDN that matches an
-         IDN Table Reference Object record.
+      <rdeCsv:fLang>  IDN language tag for the NNDN that matches an IDN
+         Table Reference Object record.
 
       <rdeCsv:fCrDate>  Created date and time of the domain name object.
 
@@ -4599,7 +4599,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
      <rdeCsv:csv name="NNDN" sep=",">
        <rdeCsv:fields>
          <csvNNDN:fAName isRequired="true"/>
-         <rdeCsv:fLanguage/>
+         <rdeCsv:fLang/>
          <csvNNDN:fOriginalName/>
          <csvNNDN:fNameState/>
          <rdeCsv:fCrDate/>
@@ -5327,9 +5327,9 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
 
 
     <!-- language type -->
-    <element name="fLanguage" type="rdeCsv:fLanguageType"
+    <element name="fLang" type="rdeCsv:fLangType"
      substitutionGroup="rdeCsv:field"/>
-    <complexType name="fLanguageType">
+    <complexType name="fLangType">
      <complexContent>
        <extension base="rdeCsv:fieldOptionalType">
          <sequence/>
@@ -8436,6 +8436,8 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
         <rdeCsv:fCrDate> from the "domainContacts", "domainStatuses",
         and "domainNameServers" CSV files.
 
+   13.  Changed <rdeCsv:fLanguage> to <rdeCsv:fLang>.
+
 
 15.  Example of a full deposit using the XML model
 
@@ -8447,8 +8449,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
    xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
    xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"
    xmlns:secDNS="urn:ietf:params:xml:ns:secDNS-1.1"
-   xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
-   xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
 
 
 
@@ -8457,6 +8457,8 @@ Arias, et al.           Expires November 29, 2013             [Page 151]
 Internet-Draft            DNRD Objects Mapping                  May 2013
 
 
+   xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+   xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:rdeDom="urn:ietf:params:xml:ns:rdeDomain-1.0"
    xmlns:rdeHost="urn:ietf:params:xml:ns:rdeHost-1.0"
    xmlns:rdeContact="urn:ietf:params:xml:ns:rdeContact-1.0"
@@ -8503,8 +8505,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
            </rdeHeader:count>
      </rdeHeader:header>
 
-     <!-- Domian: example1.test -->
-     <rdeDom:domain>
 
 
 
@@ -8513,6 +8513,8 @@ Arias, et al.           Expires November 29, 2013             [Page 152]
 Internet-Draft            DNRD Objects Mapping                  May 2013
 
 
+     <!-- Domian: example1.test -->
+     <rdeDom:domain>
        <rdeDom:name>example1.test</rdeDom:name>
        <rdeDom:roid>Dexample1-TEST</rdeDom:roid>
        <rdeDom:status s="ok"/>
@@ -8559,8 +8561,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
        <rdeHost:upRr>RegistrarX</rdeHost:upRr>
        <rdeHost:upDate>2009-10-03T09:34:00.0Z</rdeHost:upDate>
      </rdeHost:host>
-
-
 
 
 
@@ -8863,7 +8863,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
         <rdeCsv:fields>
           <csvDomain:fName/>
           <rdeCsv:fRoid/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <csvDomain:fOriginalName/>
           <rdeCsv:fRegistrant isRequired="true"/>
           <rdeCsv:fClID/>
@@ -8911,7 +8911,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
           <csvDomain:fName parent="true"/>
           <csvDomain:fStatus/>
           <rdeCsv:fStatusDescription/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <csvDomain:fRgpStatus/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
@@ -9033,7 +9033,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
           <csvHost:fName parent="true"/>
           <csvHost:fStatus/>
           <rdeCsv:fStatusDescription/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
           <rdeCsv:fCrDate/>
@@ -9100,7 +9100,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
             <csvContact:fId parent="true"/>
             <csvContact:fStatus/>
             <rdeCsv:fStatusDescription/>
-            <rdeCsv:fLanguage/>
+            <rdeCsv:fLang/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
           <rdeCsv:fCrDate/>
@@ -9225,7 +9225,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
     <csvIDN:contents>
       <rdeCsv:csv name="idnLanguage" sep=",">
         <rdeCsv:fields>
-          <rdeCsv:fLanguage isRequired="true"/>
+          <rdeCsv:fLang isRequired="true"/>
           <rdeCsv:fUrl isRequired="true"/>
         </rdeCsv:fields>
         <rdeCsv:files>
@@ -9248,7 +9248,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
       <rdeCsv:csv name="NNDN" sep=",">
         <rdeCsv:fields>
           <csvNNDN:fAName isRequired="true"/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <csvNNDN:fOriginalName/>
           <csvNNDN:fNameState/>
           <rdeCsv:fCrDate/>
@@ -9549,7 +9549,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
     <csvIDN:deletes>
       <rdeCsv:csv name="idnLanguage">
         <rdeCsv:fields>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file
@@ -9604,7 +9604,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
         <rdeCsv:fields>
           <csvDomain:fName/>
           <rdeCsv:fRoid/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <csvDomain:fOriginalName/>
           <rdeCsv:fRegistrant/>
           <rdeCsv:fClID/>
@@ -9652,7 +9652,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
           <csvDomain:fName parent="true"/>
           <csvDomain:fStatus/>
           <rdeCsv:fStatusDescription/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <csvDomain:fRgpStatus/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
@@ -9758,7 +9758,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
           <csvHost:fName parent="true"/>
           <csvHost:fStatus/>
           <rdeCsv:fStatusDescription/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
           <rdeCsv:fCrDate/>
@@ -9825,7 +9825,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
             <csvContact:fId parent="true"/>
             <csvContact:fStatus/>
             <rdeCsv:fStatusDescription/>
-            <rdeCsv:fLanguage/>
+            <rdeCsv:fLang/>
           <rdeCsv:fCrRr/>
           <rdeCsv:fCrID/>
           <rdeCsv:fCrDate/>
@@ -9950,7 +9950,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
     <csvIDN:contents>
       <rdeCsv:csv name="idnLanguage" sep=",">
         <rdeCsv:fields>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <rdeCsv:fUrl/>
         </rdeCsv:fields>
         <rdeCsv:files>
@@ -9973,7 +9973,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
       <rdeCsv:csv name="NNDN" sep=",">
         <rdeCsv:fields>
           <csvNNDN:fAName isRequired="true"/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <csvNNDN:fOriginalName/>
           <csvNNDN:fNameState/>
           <rdeCsv:fCrDate/>

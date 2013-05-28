@@ -236,7 +236,7 @@
     <csvIDN:deletes>
       <rdeCsv:csv name="idnLanguage">
         <rdeCsv:fields>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
@@ -283,7 +283,7 @@
         <rdeCsv:fields>
           <csvDomain:fName/>        
           <rdeCsv:fRoid/>         
-          <rdeCsv:fLanguage/>         
+          <rdeCsv:fLang/>         
           <csvDomain:fOriginalName/>
           <rdeCsv:fRegistrant/>
           <rdeCsv:fClID/>
@@ -320,7 +320,7 @@
           <csvDomain:fName parent="true"/>
           <csvDomain:fStatus/>
           <rdeCsv:fStatusDescription/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <csvDomain:fRgpStatus/>
         </rdeCsv:fields>
         <rdeCsv:files>
@@ -404,7 +404,7 @@
           <csvHost:fName parent="true"/>
           <csvHost:fStatus/>
           <rdeCsv:fStatusDescription/>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
@@ -457,7 +457,7 @@
             <csvContact:fId parent="true"/>
             <csvContact:fStatus/>
             <rdeCsv:fStatusDescription/>
-            <rdeCsv:fLanguage/>
+            <rdeCsv:fLang/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
@@ -563,7 +563,7 @@
     <csvIDN:contents>
       <rdeCsv:csv name="idnLanguage" sep=",">
         <rdeCsv:fields>
-          <rdeCsv:fLanguage/>
+          <rdeCsv:fLang/>
           <rdeCsv:fUrl/>
         </rdeCsv:fields>
         <rdeCsv:files>
@@ -578,7 +578,7 @@
       <rdeCsv:csv name="NNDN" sep=",">
         <rdeCsv:fields>
           <csvNNDN:fAName isRequired="true"/>
-          <rdeCsv:fLanguage/>         
+          <rdeCsv:fLang/>         
           <csvNNDN:fOriginalName/>
           <csvNNDN:fNameState/>
           <rdeCsv:fCrDate/>
