@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
-	 xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
-	 xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
-	 xmlns:csvHost="urn:ietf:params:xml:ns:csvHost-1.0"
-	 xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
-	 xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
-	 xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
-	 xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
-	 xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+   xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
+   xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
+   xmlns:csvHost="urn:ietf:params:xml:ns:csvHost-1.0"
+   xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
+   xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
+   xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+   xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
+   xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
@@ -20,364 +20,371 @@
     urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
     urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd" 
     type="FULL"
-	 id="20101017001" prevId="20101010001">
-	 <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
-	 <rde:rdeMenu>
-   	<rde:version>1.0</rde:version>
-   	<rde:objURI>urn:ietf:params:xml:ns:csvDomain-1.0</rde:objURI>
-   	<rde:objURI>urn:ietf:params:xml:ns:csvHost-1.0</rde:objURI>
-   	<rde:objURI>urn:ietf:params:xml:ns:csvContact-1.0</rde:objURI>
-   	<rde:objURI>urn:ietf:params:xml:ns:csvRegistrar-1.0</rde:objURI>
-   	<rde:objURI>urn:ietf:params:xml:ns:csvIDN-1.0</rde:objURI>
-   	<rde:objURI>urn:ietf:params:xml:ns:csvNNDN-1.0</rde:objURI>
-   	<rde:objURI>urn:ietf:params:xml:ns:rdeEppParams-1.0</rde:objURI>
-	 </rde:rdeMenu>
-	 <rde:contents>
-      <rdeHeader:header>
-         <rdeHeader:tld>test</rdeHeader:tld>
-         <rdeHeader:count	uri="urn:ietf:params:xml:ns:csvDomain-1.0">4
-         </rdeHeader:count>
-         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">2
-         </rdeHeader:count>
-         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">2
-         </rdeHeader:count>
-         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">1
-         </rdeHeader:count>
-         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">2
-         </rdeHeader:count>
-         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0">1
-         </rdeHeader:count>
-         <rdeHeader:count uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
-         </rdeHeader:count>
-      </rdeHeader:header>	 
-	 	<csvDomain:contents>
-	 		<rdeCsv:csv name="domain" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvDomain:fName/> 				
-	 				<rdeCsv:fRoid/> 				
-	 				<rdeCsv:fIdnTableId/>	 				
-	 				<csvDomain:fOriginalName/>
-	 				<rdeCsv:fRegistrant isRequired="true"/>
-	 				<rdeCsv:fClID/>
-	 				<rdeCsv:fCrRr/>
-	 				<rdeCsv:fCrID/>
-	 				<rdeCsv:fCrDate/>
-	 				<rdeCsv:fUpRr/>
-	 				<rdeCsv:fUpID/>
-	 				<rdeCsv:fUpDate/>
-	 				<rdeCsv:fExDate/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="E6D52D73">
-	 					domain-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="domainContacts" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvDomain:fName parent="true"/>
-	 				<csvContact:fId/>
-	 				<csvDomain:fContactType/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="70A7C17B">
-	 					domainContacts-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="domainStatuses" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvDomain:fName parent="true"/>
-	 				<csvDomain:fStatus/>
-	 				<rdeCsv:fStatusDescription/>
-	 				<rdeCsv:fLang/>
-	 				<csvDomain:fRgpStatus/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="EB8C548E">
-	 					domainStatuses-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="domainNameServers" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvDomain:fName parent="true"/>
-          		<rdeCsv:fRoid/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="546C66A5">
-	 					domainNameServers-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="dnssec" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvDomain:fName parent="true"/>
-	 				<csvDomain:fMaxSigLife/>
-	 				<csvDomain:fKeyTag/>
-	 				<csvDomain:fDsAlg/>
-	 				<csvDomain:fDigestType/>
-	 				<csvDomain:fDigest/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="AA15CB43">
-	 					dnssec-ds-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="dnssec" sep=",">
-	 			<rdeCsv:fields>
-					<csvDomain:fName parent="true"/>
-	 				<csvDomain:fMaxSigLife/>
-					<csvDomain:fFlags/>
-					<csvDomain:fProtocol/>
-					<csvDomain:fKeyAlg/>
-					<csvDomain:fPubKey/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="1B16F334">
-	 					dnssec-key-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="domainTransfer" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvDomain:fName parent="true"/>
-	 				<rdeCsv:fTrStatus/>
-	 				<rdeCsv:fReRr/>
-	 				<rdeCsv:fReID/>
-	 				<rdeCsv:fReDate/>
-	 				<rdeCsv:fAcRr/>
-	 				<rdeCsv:fAcID/>
-	 				<rdeCsv:fAcDate/>
-	 				<rdeCsv:fExDate/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="71170194">
-	 					domainTransfer-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-		</csvDomain:contents>
-	 	<csvHost:contents>
-	 		<rdeCsv:csv name="host" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvHost:fName/>
-	 				<rdeCsv:fRoid/>
-	 				<rdeCsv:fClID/>
-	 				<rdeCsv:fCrRr/>
-	 				<rdeCsv:fCrID/>
-	 				<rdeCsv:fCrDate/>
-	 				<rdeCsv:fUpRr/>
-	 				<rdeCsv:fUpID/>
-	 				<rdeCsv:fUpDate/>
-	 				<rdeCsv:fTrDate/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="120938E3">
-	 					host-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="hostStatuses" sep=",">
-	 			<rdeCsv:fields>
-          		<rdeCsv:fRoid parent="true"/>
-	 				<csvHost:fStatus/>
-	 				<rdeCsv:fStatusDescription/>
-	 				<rdeCsv:fLang/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="0BA504FC">
-	 					hostStatuses-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="hostAddresses" sep=",">
-	 			<rdeCsv:fields>
-          		<rdeCsv:fRoid parent="true"/>
-	 				<csvHost:fAddr/>
-	 				<csvHost:fAddrVersion/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="17888F02">
-	 					hostAddresses-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-		</csvHost:contents>
-	 	<csvContact:contents>
-	 		<rdeCsv:csv name="contact" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvContact:fId/>
-	 				<rdeCsv:fRoid/>
-	 				<csvContact:fVoice/>
-	 				<csvContact:fVoiceExt/>
-	 				<csvContact:fFax/>
-	 				<csvContact:fFaxExt/>
-	 				<csvContact:fEmail/>
-	 				<rdeCsv:fClID/>
-	 				<rdeCsv:fCrRr/>
-	 				<rdeCsv:fCrID/>
-	 				<rdeCsv:fCrDate/>
-	 				<rdeCsv:fUpRr/>
-	 				<rdeCsv:fUpID/>
-	 				<rdeCsv:fUpDate/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="D7F106A5">
-	 					contact-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="contactStatuses" sep=",">
-	 			<rdeCsv:fields>
-      			<csvContact:fId parent="true"/>
-      			<csvContact:fStatus/>
-      			<rdeCsv:fStatusDescription/>
-     				<rdeCsv:fLang/>
-      		</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="2AAF99D4">
-	 					contactStatuses-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="contactPostal" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvContact:fId parent="true"/>
-	 				<csvContact:fPostalType/>
-	 				<csvContact:fName/>
-	 				<csvContact:fOrg/>
-	 				<csvContact:fStreet index="0"/>
-	 				<csvContact:fStreet index="1"/>
-	 				<csvContact:fStreet index="2"/>
-	 				<csvContact:fCity/>
-	 				<csvContact:fSp/>
-		 			<csvContact:fPc/>
-		 			<csvContact:fCc/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="02CC2504">
-	 					contactPostal-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>	 		
-	 		<rdeCsv:csv name="contactTransfer" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvContact:fId parent="true"/>
-	 				<rdeCsv:fTrStatus/>
-	 				<rdeCsv:fReRr/>
-	 				<rdeCsv:fReID/>
-	 				<rdeCsv:fReDate/>
-	 				<rdeCsv:fAcRr/>
-	 				<rdeCsv:fAcID/>
-	 				<rdeCsv:fAcDate/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="D0929632">
-	 					contactTransfer-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-	 		<rdeCsv:csv name="contactDisclose" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvContact:fId parent="true"/>
-	 				<csvContact:fDiscloseFlag/>
-	 				<csvContact:fDiscloseNameLoc/>
-	 				<csvContact:fDiscloseNameInt/>
-	 				<csvContact:fDiscloseOrgLoc/>
-	 				<csvContact:fDiscloseOrgInt/>
-	 				<csvContact:fDiscloseAddrLoc/>
-	 				<csvContact:fDiscloseAddrInt/>
-	 				<csvContact:fDiscloseVoice/>
-	 				<csvContact:fDiscloseFax/>
-	 				<csvContact:fDiscloseEmail/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="89043A90">
-	 					contactDisclose-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-		</csvContact:contents>
-	 	<csvRegistrar:contents>
-	 		<rdeCsv:csv name="registrar" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvRegistrar:fId/>
-	 				<rdeCsv:fRoid/>
-	 				<csvRegistrar:fName isLoc="false"/>
-	 				<csvRegistrar:fGurid/>
-	 				<csvRegistrar:fStatus/>
-	 				<csvContact:fStreet isLoc="false" index="0"/>
-	 				<csvContact:fStreet isLoc="false" index="1"/>
-	 				<csvContact:fStreet isLoc="false" index="2"/>
-	 				<csvContact:fCity isLoc="false" />
-	 				<csvContact:fSp isLoc="false" />
-		 			<csvContact:fPc isLoc="false" />
-		 			<csvContact:fCc isLoc="false" />
-	 				<csvContact:fVoice/>
-	 				<csvContact:fVoiceExt/>
-	 				<csvContact:fFax/>
-	 				<csvContact:fFaxExt/>
-	 				<csvContact:fEmail/>
-	 				<rdeCsv:fUrl/>
-	 				<csvRegistrar:fWhoisUrl/>
-	 				<rdeCsv:fCrDate/>
-	 				<rdeCsv:fUpDate/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="9CB43C2E">
-	 					registrar-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-		</csvRegistrar:contents>
-	 	<csvIDN:contents>
-	 		<rdeCsv:csv name="idnLanguage" sep=",">
-	 			<rdeCsv:fields>
-	 				<rdeCsv:fIdnTableId isRequired="true"/>
-	 				<rdeCsv:fUrl isRequired="true"/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="D462EAD0">
-	 					idnLanguage-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-		</csvIDN:contents>
-	 	<csvNNDN:contents>
-	 		<rdeCsv:csv name="NNDN" sep=",">
-	 			<rdeCsv:fields>
-	 				<csvNNDN:fAName isRequired="true"/>
-	 				<rdeCsv:fIdnTableId/>	 				
-	 				<csvNNDN:fOriginalName/>
-	 				<csvNNDN:fNameState/>
-	 				<rdeCsv:fCrDate/>
-	 			</rdeCsv:fields>
-	 			<rdeCsv:files>
-	 				<rdeCsv:file 
-	 					cksum="01F72976">
-	 					NNDN-YYYYMMDD.csv
-	 				</rdeCsv:file> 
-	 			</rdeCsv:files>
-	 		</rdeCsv:csv>
-		</csvNNDN:contents>
-	 </rde:contents>
+   id="20101017001" prevId="20101010001">
+   <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
+   <rde:rdeMenu>
+    <rde:version>1.0</rde:version>
+    <rde:objURI>urn:ietf:params:xml:ns:csvDomain-1.0</rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:csvHost-1.0</rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:csvContact-1.0</rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:csvRegistrar-1.0</rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:csvIDN-1.0</rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:csvNNDN-1.0</rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeEppParams-1.0</rde:objURI>
+   </rde:rdeMenu>
+   <rde:contents>
+     <rdeHeader:header>
+      <rdeHeader:tld>test</rdeHeader:tld>
+      <rdeHeader:count uri="urn:ietf:params:xml:ns:csvDomain-1.0">
+      4
+      </rdeHeader:count>
+      <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">
+      2
+      </rdeHeader:count>
+      <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">
+      2
+      </rdeHeader:count>
+      <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">
+      1
+      </rdeHeader:count>
+      <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">
+      2
+      </rdeHeader:count>
+      <rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0">
+      1
+      </rdeHeader:count>
+      <rdeHeader:count uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">
+      1
+      </rdeHeader:count>
+     </rdeHeader:header>  
+     <csvDomain:contents>
+       <rdeCsv:csv name="domain" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName/>        
+           <rdeCsv:fRoid/>         
+           <rdeCsv:fIdnTableId/>         
+           <csvDomain:fOriginalName/>
+           <rdeCsv:fRegistrant isRequired="true"/>
+           <rdeCsv:fClID/>
+           <rdeCsv:fCrRr/>
+           <rdeCsv:fCrID/>
+           <rdeCsv:fCrDate/>
+           <rdeCsv:fUpRr/>
+           <rdeCsv:fUpID/>
+           <rdeCsv:fUpDate/>
+           <rdeCsv:fExDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="E6D52D73">
+             domain-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="domainContacts" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <csvContact:fId/>
+           <csvDomain:fContactType/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="70A7C17B">
+             domainContacts-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="domainStatuses" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <csvDomain:fStatus/>
+           <rdeCsv:fStatusDescription/>
+           <rdeCsv:fLang/>
+           <csvDomain:fRgpStatus/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="EB8C548E">
+             domainStatuses-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="domainNameServers" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <rdeCsv:fRoid/>
+           </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="546C66A5">
+             domainNameServers-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="dnssec" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <csvDomain:fMaxSigLife/>
+           <csvDomain:fKeyTag/>
+           <csvDomain:fDsAlg/>
+           <csvDomain:fDigestType/>
+           <csvDomain:fDigest/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="AA15CB43">
+             dnssec-ds-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="dnssec" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <csvDomain:fMaxSigLife/>
+           <csvDomain:fFlags/>
+           <csvDomain:fProtocol/>
+           <csvDomain:fKeyAlg/>
+           <csvDomain:fPubKey/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="1B16F334">
+             dnssec-key-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="domainTransfer" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <rdeCsv:fTrStatus/>
+           <rdeCsv:fReRr/>
+           <rdeCsv:fReID/>
+           <rdeCsv:fReDate/>
+           <rdeCsv:fAcRr/>
+           <rdeCsv:fAcID/>
+           <rdeCsv:fAcDate/>
+           <rdeCsv:fExDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="71170194">
+             domainTransfer-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvDomain:contents>
+     <csvHost:contents>
+       <rdeCsv:csv name="host" sep=",">
+         <rdeCsv:fields>
+           <csvHost:fName/>
+           <rdeCsv:fRoid/>
+           <rdeCsv:fClID/>
+           <rdeCsv:fCrRr/>
+           <rdeCsv:fCrID/>
+           <rdeCsv:fCrDate/>
+           <rdeCsv:fUpRr/>
+           <rdeCsv:fUpID/>
+           <rdeCsv:fUpDate/>
+           <rdeCsv:fTrDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="120938E3">
+             host-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="hostStatuses" sep=",">
+         <rdeCsv:fields>
+               <rdeCsv:fRoid parent="true"/>
+           <csvHost:fStatus/>
+           <rdeCsv:fStatusDescription/>
+           <rdeCsv:fLang/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="0BA504FC">
+             hostStatuses-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="hostAddresses" sep=",">
+         <rdeCsv:fields>
+               <rdeCsv:fRoid parent="true"/>
+           <csvHost:fAddr/>
+           <csvHost:fAddrVersion/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="17888F02">
+             hostAddresses-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvHost:contents>
+     <csvContact:contents>
+       <rdeCsv:csv name="contact" sep=",">
+         <rdeCsv:fields>
+           <csvContact:fId/>
+           <rdeCsv:fRoid/>
+           <csvContact:fVoice/>
+           <csvContact:fVoiceExt/>
+           <csvContact:fFax/>
+           <csvContact:fFaxExt/>
+           <csvContact:fEmail/>
+           <rdeCsv:fClID/>
+           <rdeCsv:fCrRr/>
+           <rdeCsv:fCrID/>
+           <rdeCsv:fCrDate/>
+           <rdeCsv:fUpRr/>
+           <rdeCsv:fUpID/>
+           <rdeCsv:fUpDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="D7F106A5">
+             contact-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="contactStatuses" sep=",">
+         <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+             <csvContact:fStatus/>
+             <rdeCsv:fStatusDescription/>
+             <rdeCsv:fLang/>
+           </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="2AAF99D4">
+             contactStatuses-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="contactPostal" sep=",">
+         <rdeCsv:fields>
+           <csvContact:fId parent="true"/>
+           <csvContact:fPostalType/>
+           <csvContact:fName/>
+           <csvContact:fOrg/>
+           <csvContact:fStreet index="0"/>
+           <csvContact:fStreet index="1"/>
+           <csvContact:fStreet index="2"/>
+           <csvContact:fCity/>
+           <csvContact:fSp/>
+           <csvContact:fPc/>
+           <csvContact:fCc/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="02CC2504">
+             contactPostal-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>     
+       <rdeCsv:csv name="contactTransfer" sep=",">
+         <rdeCsv:fields>
+           <csvContact:fId parent="true"/>
+           <rdeCsv:fTrStatus/>
+           <rdeCsv:fReRr/>
+           <rdeCsv:fReID/>
+           <rdeCsv:fReDate/>
+           <rdeCsv:fAcRr/>
+           <rdeCsv:fAcID/>
+           <rdeCsv:fAcDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="D0929632">
+             contactTransfer-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="contactDisclose" sep=",">
+         <rdeCsv:fields>
+           <csvContact:fId parent="true"/>
+           <csvContact:fDiscloseFlag/>
+           <csvContact:fDiscloseNameLoc/>
+           <csvContact:fDiscloseNameInt/>
+           <csvContact:fDiscloseOrgLoc/>
+           <csvContact:fDiscloseOrgInt/>
+           <csvContact:fDiscloseAddrLoc/>
+           <csvContact:fDiscloseAddrInt/>
+           <csvContact:fDiscloseVoice/>
+           <csvContact:fDiscloseFax/>
+           <csvContact:fDiscloseEmail/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="89043A90">
+             contactDisclose-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvContact:contents>
+     <csvRegistrar:contents>
+       <rdeCsv:csv name="registrar" sep=",">
+         <rdeCsv:fields>
+           <csvRegistrar:fId/>
+           <rdeCsv:fRoid/>
+           <csvRegistrar:fName isLoc="false"/>
+           <csvRegistrar:fGurid/>
+           <csvRegistrar:fStatus/>
+           <csvContact:fStreet isLoc="false" index="0"/>
+           <csvContact:fStreet isLoc="false" index="1"/>
+           <csvContact:fStreet isLoc="false" index="2"/>
+           <csvContact:fCity isLoc="false" />
+           <csvContact:fSp isLoc="false" />
+           <csvContact:fPc isLoc="false" />
+           <csvContact:fCc isLoc="false" />
+           <csvContact:fVoice/>
+           <csvContact:fVoiceExt/>
+           <csvContact:fFax/>
+           <csvContact:fFaxExt/>
+           <csvContact:fEmail/>
+           <rdeCsv:fUrl/>
+           <csvRegistrar:fWhoisUrl/>
+           <rdeCsv:fCrDate/>
+           <rdeCsv:fUpDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="9CB43C2E">
+             registrar-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvRegistrar:contents>
+     <csvIDN:contents>
+       <rdeCsv:csv name="idnLanguage" sep=",">
+         <rdeCsv:fields>
+           <rdeCsv:fIdnTableId isRequired="true"/>
+           <rdeCsv:fUrl isRequired="true"/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="D462EAD0">
+             idnLanguage-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvIDN:contents>
+     <csvNNDN:contents>
+       <rdeCsv:csv name="NNDN" sep=",">
+         <rdeCsv:fields>
+           <csvNNDN:fAName isRequired="true"/>
+           <rdeCsv:fIdnTableId/>         
+           <csvNNDN:fOriginalName/>
+           <csvNNDN:fNameState/>
+           <rdeCsv:fCrDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="01F72976">
+             NNDN-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvNNDN:contents>
+   </rde:contents>
 </rde:deposit>
