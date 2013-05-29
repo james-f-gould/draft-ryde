@@ -343,7 +343,6 @@
       <csvDomain:fName/>
       <rdeCsv:fRoid/>
       <rdeCsv:fIdnTableId/>
-      <csvDomain:fOriginalName/>
       <rdeCsv:fRegistrant isRequired="true"/>
       <rdeCsv:fClID/>
       <rdeCsv:fCrRr/>
@@ -369,7 +368,7 @@
                   with a single record matching the &lt;rdeCsv:fields&gt; definition.</t>
                     <t>
                         <figure><artwork><![CDATA[
-domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
+domain1.test,Ddomain2-TEST,,registrantid,registrarX,registrarX,
 clientY,2009-04-03T22:00:00.0Z,registrarX,clientX
 2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z]]>
                         </artwork></figure>
@@ -793,36 +792,36 @@ domainN.test]]>
                 </t>
                 <t><list style="hanging">
                   <t hangText="&quot;domain&quot;">Defines the fields and CSV file references 
-                  used for the domain name object records.  The following field elements were added for use in the "domain" 
+                  used for the domain name object records.  The following field elements MUST be used in the "domain" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                   <t hangText="&lt;csvDomain:fName&gt;">Domain name field with type="eppcom:labelType" and isRequired="true".  
                   </t>
                   
-                <t hangText="&lt;csvDomain:fOriginalName&gt;">Fully qualified name of the original IDN domain name object related to the 
-                      variant domain name object with type="eppcom:labelType".
-                </t>
-  
+                  </list></t>
+                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                  MUST be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list  style="hanging">
+                    <t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) for the domain name object.</t>
+                    <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client that sponsors the domain name object.</t>
+                    <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
+                    <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the domain name object.</t>
+                    <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
+                    <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the domain name object.</t>
+                    <t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date and time for the domain name object.</t>
+                    <t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time of the last transfer for the domain name object.</t>
                   </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
                   MAY be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list  style="hanging">
                     <t hangText="&lt;rdeCsv:fUName&gt;">UTF8 encoded domain name for the &lt;csvDomain:fName&gt; field element.</t>
-                    <t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) for the domain name object.</t>
                     <t hangText="&lt;rdeCsv:fIdnTableId&gt;">IDN Table Identifier used for the IDN domain name object that MUST match a &lt;rdeCsv:fIdnTableId&gt; field element in the "idnLanguage" CSV files, as defined in <xref target="idnCsvModel"/>.</t>
-                    <t hangText="&lt;rdeCsv:fLang&gt;">IDN language tag for the IDN domain name object.</t>
                     <t hangText="&lt;rdeCsv:fRegistrant&gt;">Registrant contact identifier for the domain name object.</t>
-                    <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client that sponsors the domain name object.</t>
-                    <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
                     <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the domain name object.</t>
-                    <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the domain name object.</t>
-                    <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
                     <t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of the client that last updated the domain name object.</t>
-                    <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the domain name object.</t>
-                    <t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date and time for the domain name object.</t>
-                    <t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time of the last transfer for the domain name object.</t>
                   </list></t>
                     <t>
                         Example of a "domain" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element:
@@ -837,7 +836,6 @@ domainN.test]]>
       <csvDomain:fName/>
       <rdeCsv:fRoid/>
       <rdeCsv:fIdnTableId/>
-      <csvDomain:fOriginalName/>
       <rdeCsv:fRegistrant/>
       <rdeCsv:fClID/>
       <rdeCsv:fCrRr/>
@@ -868,17 +866,17 @@ domainN.test]]>
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
-domain1.test,Ddomain2-TEST,,,registrantid,
+domain1.test,Ddomain2-TEST,,registrantid,
 registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,
 clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-domain2.test,Ddomain1-TEST,,,registrantid,
+domain2.test,Ddomain1-TEST,,registrantid,
 registrarX,registrarX,clientY,1999-04-03T22:00:00.0Z,registrarX,
 clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-xn-abc123.test,Dxn-abc123-TEST,LANG1,,,
+xn-abc123.test,Dxn-abc123-TEST,LANG1,,
 registrantid,registrarX,registrarX,clientY,
 2009-04-03T22:00:00.0Z,registrarX,clientY,2009-12-03T09:05:00.0Z,
 2015-04-03T22:00:00.0Z
-xn-abc321.test,Dxn-abc321-TEST,LANG1,xn-abc123.test,
+xn-abc321.test,Dxn-abc321-TEST,LANG1,
 registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
 registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z]]>
                         </artwork></figure>
@@ -931,14 +929,14 @@ domainN.test]]>
                 
                   </list></t>
                  <t>The following "csvDomain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-                  MAY be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;csvDomain:fName&gt;">The name of the domain object that is linked to the contact object.</t>
                   </list></t>
                 
                   <t>The following "csvContact" fields, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-                  MAY be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;csvContact:fId&gt;">The server-unique contact identifier.</t>
@@ -1025,7 +1023,7 @@ domain2.test,sh8013,tech]]>
      
                   <t hangText="&quot;domainStatuses&quot;">Defines the fields and CSV file references 
                   used for the domain name object statuses.  
-                  The following field elements were added for use in the "domainStatuses" 
+                  The following field elements MUST be used in the "domainStatuses" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -1038,7 +1036,7 @@ domain2.test,sh8013,tech]]>
                    </list></t>
                 
                  <t>The following "csvDomain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-                  MAY be used in the "domainStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "domainStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;csvDomain:fName&gt;">Domain name of status.</t>
@@ -1427,23 +1425,31 @@ domain1.test,257,3,1,AQPJ////4QQQ]]>
                   
                   <t hangText="&quot;domainTransfer&quot;">Defines the fields and CSV file references 
                   used for the domain name object pending and completed transfer records.  No additional 
-                  field elements were added for use in the "domainTransfer"  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element. 
-                  The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MAY be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  field elements were added for use in the "domainTransfer"  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element.</t>
+                  
+                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                  MUST be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request.</t>
                     <t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer.</t>
-                    <t hangText="&lt;rdeCsv:fReID&gt;">Identifier of client that requested the transfer.</t>
                     <t hangText="&lt;rdeCsv:fReDate&gt;">Date and time that the transfer was requested.</t>
                     <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action.</t>
-                    <t hangText="&lt;rdeCsv:fAcID&gt;">Identifier of client that should take or took action for transfer.</t>
                     <t hangText="&lt;rdeCsv:fAcDate&gt;">Date and time that the transfer action should be taken or has been taken.</t>
                     <t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date if the transfer command caused or causes a change in the validity period.</t>
                   </list></t>
  
-                  <t>The following "csvDomain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
+                 <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
                   MAY be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
+                    <t hangText="&lt;rdeCsv:fReID&gt;">Identifier of client that requested the transfer.</t>
+                    <t hangText="&lt;rdeCsv:fAcID&gt;">Identifier of client that should take or took action for transfer.</t>
+                  </list></t>
+
+ 
+                  <t>The following "csvDomain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
+                  MUST be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;csvDomain:fName&gt;">Domain name of the domain object involved in the transfer.</t>
@@ -1671,7 +1677,7 @@ domain2.test,2012-03-08T19:38:00.0Z]]>
                 <t><list style="hanging">
                   <t hangText="&quot;host&quot;">Defines the fields and CSV file references 
                   used for the host object records.  
-                  The following field elements were added for use in the "host" 
+                  The following field elements MUST be used in the "host" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -1681,10 +1687,15 @@ domain2.test,2012-03-08T19:38:00.0Z]]>
                                  
                   </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MAY be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fRoid&gt;">Repository Object IDentifier (ROID) assigned to the host object.</t>
+                   </list></t>
+                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                  MAY be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of the sponsoring client.</t>
                     <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
                     <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the host object.</t>
@@ -1753,11 +1764,11 @@ clientX,2009-05-08T12:10:00.0Z,clientX,
 ...
  <rdeCsv:csv name="host">
   <rdeCsv:fields>
-    <csvHost:fName parent="true"/>
+    <rdeCsv:fRoid/>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="1B92A07C">
+     cksum="E3408F5E">
      host-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -1773,8 +1784,8 @@ clientX,2009-05-08T12:10:00.0Z,clientX,
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
-ns1.example.test
-ns1.example.test2]]>
+Hns1_example_test-TEST
+Hns1_example_test2-TEST]]>
                         </artwork></figure>
                     </t>    
                  
@@ -1792,10 +1803,15 @@ ns1.example.test2]]>
                 
                 
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MAY be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fRoid&gt;">Host object Registry Object IDentifier (ROID) assigned to the host object.</t>
+                  </list></t>
+                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                  MAY be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fStatusDescription&gt;">Host object status description which is free form text describing the rationale for the status.</t>
                     <t hangText="&lt;rdeCsv:fLang&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
                   </list></t>
@@ -1876,8 +1892,8 @@ ns1domain1test-TEST,clientDeleteProhibited]]>
    
                   <t hangText="&quot;hostAddresses&quot;">Defines the fields and CSV file references 
                   used for the host object IP addresses.  
-                 The following field elements were added for use in the "hostAddresses" 
-                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                 The following field elements MUST be used in the "hostAddresses" 
+                 &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                   
@@ -4653,10 +4669,6 @@ END]]></artwork></figure>
   </complexContent>
  </complexType>
   
- <!-- Original Domain Name for Variant field -->
- <element name="fOriginalName" type="rdeCsv:fNameType" 
-  substitutionGroup="rdeCsv:field"/>
-  
  <!-- Domain status field -->
  <element name="fStatus" type="csvDomain:fStatusType" 
   substitutionGroup="rdeCsv:field"/>
@@ -6923,7 +6935,10 @@ END]]></artwork></figure>
                       <t>Removed references to the &lt;rdeCsv:fCrRr&gt;, &lt;rdeCsv:fCrID&gt;, and &lt;rdeCsv:fCrDate&gt; from the "domainContacts", "domainStatuses", and "domainNameServers" CSV files.</t>
                       <t>Changed &lt;rdeCsv:fLanguage&gt; to &lt;rdeCsv:fLang&gt;.</t>
                       <t>Replaced use of &lt;rdeCsv:fLang&gt; to new &lt;rdeCsv:fIdnTableId&gt; field in the "domain", "idnLanguage", and "NNDN" CSV files.</t>
+                      <t>Replaced use of &lt;csvHost:fName&gt; with &lt;rdeCsv:fRoid&gt; in the "host" &lt;csvHost:deletes&gt; &lt;rdeCsv:csv&gt; element.</t>
                       <t>Changed the foreign key of the hosts to use &lt;rdeCsv:fRoid&gt; instead of &lt;csvHost:fName&gt; and removed use of &lt;csvHost:fName&gt; in the "domainNameServers", "hostStatuses", and "hostAddresses" CSV files.</t>
+                      <t>Removed the definition of the &lt;csvDomain:fOriginalName&gt; field element since the &lt;csvNNDN:fOriginalName&gt; field element handles the case of referencing the original domain name of a variant.</t>
+                      <t>Added use of the MUST keyword for CSV fields that are required to be supported in an EPP based system</t>
                    </list>
                 </t>
             </section>
@@ -7342,7 +7357,6 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
            <csvDomain:fName/>        
            <rdeCsv:fRoid/>         
            <rdeCsv:fIdnTableId/>         
-           <csvDomain:fOriginalName/>
            <rdeCsv:fRegistrant isRequired="true"/>
            <rdeCsv:fClID/>
            <rdeCsv:fCrRr/>
@@ -7806,11 +7820,11 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
     <csvHost:deletes>
       <rdeCsv:csv name="host">
         <rdeCsv:fields>
-          <csvHost:fName/>
+          <rdeCsv:fRoid/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="1B92A07C">
+            cksum="E3408F5E">
             host-delete-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -7971,7 +7985,6 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
           <csvDomain:fName/>        
           <rdeCsv:fRoid/>         
           <rdeCsv:fIdnTableId/>         
-          <csvDomain:fOriginalName/>
           <rdeCsv:fRegistrant/>
           <rdeCsv:fClID/>
           <rdeCsv:fCrRr/>

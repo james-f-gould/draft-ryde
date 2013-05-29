@@ -156,10 +156,6 @@
   </complexContent>
  </complexType>
   
- <!-- Original Domain Name for Variant field -->
- <element name="fOriginalName" type="rdeCsv:fNameType" 
-  substitutionGroup="rdeCsv:field"/>
-  
  <!-- Domain status field -->
  <element name="fStatus" type="csvDomain:fStatusType" 
   substitutionGroup="rdeCsv:field"/>

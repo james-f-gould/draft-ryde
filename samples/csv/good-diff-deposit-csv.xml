@@ -126,11 +126,11 @@
     <csvHost:deletes>
       <rdeCsv:csv name="host">
         <rdeCsv:fields>
-          <csvHost:fName/>
+          <rdeCsv:fRoid/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="1B92A07C">
+            cksum="E3408F5E">
             host-delete-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -291,7 +291,6 @@
           <csvDomain:fName/>        
           <rdeCsv:fRoid/>         
           <rdeCsv:fIdnTableId/>         
-          <csvDomain:fOriginalName/>
           <rdeCsv:fRegistrant/>
           <rdeCsv:fClID/>
           <rdeCsv:fCrRr/>

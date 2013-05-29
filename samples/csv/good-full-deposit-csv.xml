@@ -63,7 +63,6 @@
            <csvDomain:fName/>        
            <rdeCsv:fRoid/>         
            <rdeCsv:fIdnTableId/>         
-           <csvDomain:fOriginalName/>
            <rdeCsv:fRegistrant isRequired="true"/>
            <rdeCsv:fClID/>
            <rdeCsv:fCrRr/>
