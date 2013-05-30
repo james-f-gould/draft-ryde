@@ -484,8 +484,8 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
    The <rdeCsv:fields> element defined in the <rdeCsv:csv> element
    (Section 4.6.1) section has child elements that substitute for the
    abstract <rdeCsv:field> element.  By convention <rdeCsv:field>
-   elements incude an 'f' prefix to identify it as a field definition
-   element.  There are a set of common field elements that are used
+   elements incude an 'f' prefix to identify them as field definition
+   elements.  There are a set of common field elements that are used
    across multiple data escrow objects.  The common field elements are
    defined using the "urn:ietf:params:xml:ns:rdeCsv-1.0" namespace and
    using the "rdeCsv" sample namespace prefix.  The CSV common field
@@ -8182,7 +8182,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
         the case of referencing the original domain name of a variant.
 
    18.  Added use of the MUST keyword for CSV fields that are required
-        to be supported in an EPP based system
+        to be supported in an EPP based system.
 
    19.  Removed use of the <rdeCsv:fRoid> field element for the
         "registrar" CSV file.

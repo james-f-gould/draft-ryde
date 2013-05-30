@@ -407,8 +407,8 @@ domainN.test]]>
                 <t>The &lt;rdeCsv:fields&gt; element defined in the 
                 <xref target="rdeCsv-csv">&lt;rdeCsv:csv&gt; element</xref> 
                 section has child elements that substitute for the abstract &lt;rdeCsv:field&gt; element.  
-                By convention &lt;rdeCsv:field&gt; elements incude an 'f' prefix to identify it as a field 
-                definition element.  There are a set of common field elements that are used across 
+                By convention &lt;rdeCsv:field&gt; elements incude an 'f' prefix to identify them as field 
+                definition elements.  There are a set of common field elements that are used across 
                 multiple data escrow objects.  The common field elements are defined using the 
                 "urn:ietf:params:xml:ns:rdeCsv-1.0" namespace and using the "rdeCsv" sample namespace prefix.  
                 The CSV common field elements include:
@@ -6994,7 +6994,7 @@ END]]></artwork></figure>
                       <t>Replaced use of &lt;csvHost:fName&gt; with &lt;rdeCsv:fRoid&gt; in the "host" &lt;csvHost:deletes&gt; &lt;rdeCsv:csv&gt; element.</t>
                       <t>Changed the foreign key of the hosts to use &lt;rdeCsv:fRoid&gt; instead of &lt;csvHost:fName&gt; and removed use of &lt;csvHost:fName&gt; in the "domainNameServers", "hostStatuses", and "hostAddresses" CSV files.</t>
                       <t>Removed the definition of the &lt;csvDomain:fOriginalName&gt; field element since the &lt;csvNNDN:fOriginalName&gt; field element handles the case of referencing the original domain name of a variant.</t>
-                      <t>Added use of the MUST keyword for CSV fields that are required to be supported in an EPP based system</t>
+                      <t>Added use of the MUST keyword for CSV fields that are required to be supported in an EPP based system.</t>
                       <t>Removed use of the &lt;rdeCsv:fRoid&gt; field element for the "registrar" CSV file.</t>
                    </list>
                 </t>
