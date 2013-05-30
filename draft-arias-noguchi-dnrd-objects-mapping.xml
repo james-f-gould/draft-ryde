@@ -394,7 +394,7 @@ clientY,2009-04-03T22:00:00.0Z,registrarX,clientX
                         </artwork></figure>
                     </t>
                   <t>The following is example of the "domain-delete-YYYYMMDD.csv" file 
-                  with a single record and matching the single &lt;csvDomain:fName&gt; field.</t>
+                  with three records that matches the single &lt;csvDomain:fName&gt; field.</t>
                     <t>
                         <figure><artwork><![CDATA[
 domain1.test
@@ -2484,12 +2484,6 @@ sh8013,clientDeleteProhibited]]>
                   </t>
                   <t><list style="hanging">
   
-                <t hangText="&lt;csvContact:fPostalType&gt;">Contains the form of the postal-address information with type="contact:postalLineType".  
-                This field specifies the form ("int" or "loc"), as defined in <xref target="intandloc"/>, of the 
-                &lt;csvContact:fName&gt;, &lt;csvContact:fOrg&gt;, &lt;csvContact:fStreet&gt;, &lt;csvContact:fCity&gt;, 
-                &lt;csvContact:fSp&gt;, &lt;csvContact:fPc&gt;, &lt;csvContact:fCc&gt; fields.  
-                </t>
- 
                 <t hangText="&lt;csvContact:fName&gt;">Contains the contact's name of the individual or role represented by the contact with type="contact:postalLineType" and isRequired="true".  
                 An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
                 </t>
@@ -2516,6 +2510,12 @@ sh8013,clientDeleteProhibited]]>
                   </t>
                   <t><list style="hanging">
   
+                <t hangText="&lt;csvContact:fPostalType&gt;">Contains the form of the postal-address information with type="contact:postalLineType".  
+                This field specifies the form ("int" or "loc"), as defined in <xref target="intandloc"/>, of the 
+                &lt;csvContact:fName&gt;, &lt;csvContact:fOrg&gt;, &lt;csvContact:fStreet&gt;, &lt;csvContact:fCity&gt;, 
+                &lt;csvContact:fSp&gt;, &lt;csvContact:fPc&gt;, &lt;csvContact:fCc&gt; fields.  
+                </t>
+ 
                 <t hangText="&lt;csvContact:fOrg&gt;">Contains the name of the organization with which the contact is affiliated with type="contact:optPostalLineType".  
                 An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
               </t>

@@ -472,7 +472,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
    </csvDomain:deletes>
 
    The following is example of the "domain-delete-YYYYMMDD.csv" file
-   with a single record and matching the single <csvDomain:fName> field.
+   with three records that matches the single <csvDomain:fName> field.
 
 
    domain1.test
@@ -3010,12 +3010,12 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
 
 
 
-      <csvContact:fPostalType>  Contains the form of the postal-address
-         information with type="contact:postalLineType".  This field
-         specifies the form ("int" or "loc"), as defined in Section 4.7,
-         of the <csvContact:fName>, <csvContact:fOrg>, <csvContact:
-         fStreet>, <csvContact:fCity>, <csvContact:fSp>, <csvContact:
-         fPc>, <csvContact:fCc> fields.
+      <csvContact:fName>  Contains the contact's name of the individual
+         or role represented by the contact with type="contact:
+         postalLineType" and isRequired="true".  An OPTIONAL "isLoc"
+         attribute to used to indicate the localized or
+         internationalized form as defined in section Section 4.7.
+
 
 
 
@@ -3024,12 +3024,6 @@ Arias, et al.           Expires December 1, 2013               [Page 54]
 
 Internet-Draft            DNRD Objects Mapping                  May 2013
 
-
-      <csvContact:fName>  Contains the contact's name of the individual
-         or role represented by the contact with type="contact:
-         postalLineType" and isRequired="true".  An OPTIONAL "isLoc"
-         attribute to used to indicate the localized or
-         internationalized form as defined in section Section 4.7.
 
       <csvContact:fStreet>  Contains the contact's contact's street
          address line with type="contact:fPostalLineType".  An index
@@ -3058,6 +3052,13 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
 
 
 
+      <csvContact:fPostalType>  Contains the form of the postal-address
+         information with type="contact:postalLineType".  This field
+         specifies the form ("int" or "loc"), as defined in Section 4.7,
+         of the <csvContact:fName>, <csvContact:fOrg>, <csvContact:
+         fStreet>, <csvContact:fCity>, <csvContact:fSp>, <csvContact:
+         fPc>, <csvContact:fCc> fields.
+
       <csvContact:fOrg>  Contains the name of the organization with
          which the contact is affiliated with type="contact:
          optPostalLineType".  An OPTIONAL "isLoc" attribute to used to
@@ -3069,10 +3070,9 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
          attribute to used to indicate the localized or
          internationalized form as defined in section Section 4.7.
 
-      <csvContact:fPc>  Contains the contact's postal code with
-         type="contact:pcType".  An OPTIONAL "isLoc" attribute to used
-         to indicate the localized or internationalized form as defined
-         in section Section 4.7.
+
+
+
 
 
 
@@ -3080,6 +3080,11 @@ Arias, et al.           Expires December 1, 2013               [Page 55]
 
 Internet-Draft            DNRD Objects Mapping                  May 2013
 
+
+      <csvContact:fPc>  Contains the contact's postal code with
+         type="contact:pcType".  An OPTIONAL "isLoc" attribute to used
+         to indicate the localized or internationalized form as defined
+         in section Section 4.7.
 
       The following "csvContact" fields, defined for the "contact"
       <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
@@ -3123,11 +3128,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
    </csvContact:contents>
    ...
 
-      Example of the contactPostal-YYYYMMDD.csv file.  The file contains
-      two contact postal records.
-
-
-
 
 
 
@@ -3136,6 +3136,9 @@ Arias, et al.           Expires December 1, 2013               [Page 56]
 
 Internet-Draft            DNRD Objects Mapping                  May 2013
 
+
+      Example of the contactPostal-YYYYMMDD.csv file.  The file contains
+      two contact postal records.
 
 
 
@@ -3182,9 +3185,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
       "contactTransfer" <rdeCsv:csv> <rdeCsv:fields> element.  The
       following "rdeCsv" fields, defined in section CSV common field
       elements (Section 4.6.2), MUST be used in the "contactTransfer"
-      <rdeCsv:csv> <rdeCsv:fields> element:
-
-
 
 
 
@@ -3192,6 +3192,8 @@ Arias, et al.           Expires December 1, 2013               [Page 57]
 
 Internet-Draft            DNRD Objects Mapping                  May 2013
 
+
+      <rdeCsv:csv> <rdeCsv:fields> element:
 
 
 
@@ -3230,8 +3232,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2013
 
       Example of a "contactTransfer" <csvContact:contents> <rdeCsv:csv>
       element:
-
-
 
 
 
