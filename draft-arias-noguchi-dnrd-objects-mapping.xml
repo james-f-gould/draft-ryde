@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="29" month="May" year="2013"/>
+        <date day="30" month="May" year="2013"/>
         
         <area> Applications </area>
         
@@ -792,7 +792,8 @@ domainN.test]]>
                 </t>
                 <t><list style="hanging">
                   <t hangText="&quot;domain&quot;">Defines the fields and CSV file references 
-                  used for the domain name object records.  The following field elements MUST be used in the "domain" 
+                  used for the domain name object records.</t>
+                  <t>The following "csvDomain" field elements, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used in the "domain" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -917,8 +918,8 @@ domainN.test]]>
                         </artwork></figure>
                     </t>  
                   <t hangText="&quot;domainContacts&quot;">Defines the fields and CSV file references 
-                  used for the domain name object link records to contact objects, as described in <xref target="contactObject"/>.  
-                  The following field elements were added for use in the "domainContacts" 
+                  used for the domain name object link records to contact objects, as described in <xref target="contactObject"/>.</t>
+                  <t>The following "csvDomain" field elements, defined for the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used in the "domainContacts" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -928,7 +929,7 @@ domainN.test]]>
                 
                 
                   </list></t>
-                 <t>The following "csvDomain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
+                 <t>The following "csvDomain" field elements, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
                   MUST be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -1022,8 +1023,8 @@ domain2.test,sh8013,tech]]>
    
      
                   <t hangText="&quot;domainStatuses&quot;">Defines the fields and CSV file references 
-                  used for the domain name object statuses.  
-                  The following field elements MUST be used in the "domainStatuses" 
+                  used for the domain name object statuses.</t>  
+                  <t>The following "csvDomain" field elements, defined for the "domainStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used in the "domainStatuses" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -1231,7 +1232,8 @@ domain2.test,Dns2domainexample-TEST]]>
                     </t>    
  
                   <t hangText="&quot;dnssec&quot;">Defines the fields and CSV file references used 
-                  for the domain name object DNSSEC records (DS or Key Data).  The following field elements were added for use 
+                  for the domain name object DNSSEC records (DS or Key Data).</t>
+                  <t>The following "csvDomain" field elements, defined for the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element, MAY be used 
                   in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -1676,8 +1678,8 @@ domain2.test,2012-03-08T19:38:00.0Z]]>
                 
                 <t><list style="hanging">
                   <t hangText="&quot;host&quot;">Defines the fields and CSV file references 
-                  used for the host object records.  
-                  The following field elements MUST be used in the "host" 
+                  used for the host object records.</t>  
+                  <t>The following "csvHost" field elements, defined for the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used in the "host" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -1891,8 +1893,8 @@ ns1domain1test-TEST,clientDeleteProhibited]]>
                     </t>    
    
                   <t hangText="&quot;hostAddresses&quot;">Defines the fields and CSV file references 
-                  used for the host object IP addresses.  
-                 The following field elements MUST be used in the "hostAddresses" 
+                  used for the host object IP addresses.</t>  
+                 <t>The following "csvHost" field elements, defined for the "hostAddresses" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element, MUST be used in the "hostAddresses" 
                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -2243,14 +2245,24 @@ ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A]]>
                 </t>
                 <t><list style="hanging">
                   <t hangText="&quot;contact&quot;">Defines the fields and CSV file references 
-                  used for the contact object records.  The following field elements were added for use in the "contact" 
-                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  used for the contact object records.</t>
+                  <t>The following "csvContact" field elements, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used in the 
+                  "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
   
                 <t hangText="&lt;csvContact:fId&gt;">Contains the server-unique contact identifier with type="eppcom:clIDType" and isRequired="true".  
                 </t>
  
+                <t hangText="&lt;csvContact:fEmail&gt;">Contains the contact's email address with type="eppcom:minTokenType" and isRequired="true".  
+                </t>
+                  </list></t>
+ 
+  					<t>The following field elements MAY be used in the 
+                  "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
+  
                 <t hangText="&lt;csvContact:fVoice&gt;">Contains the contact's voice telephone number with type="contact:e164StringType".  
                 </t>
 
@@ -2262,24 +2274,25 @@ ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A]]>
 
                 <t hangText="&lt;csvContact:fFaxExt&gt;">Contains the contact's facsimile telephone number extension with type="token".  
                 </t>
-
-                <t hangText="&lt;csvContact:fEmail&gt;">Contains the contact's email address with type="eppcom:minTokenType" and isRequired="true".  
-                </t>
-   
                   </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MAY be used in the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fRoid&gt;">The Registry Object IDentifier (ROID) for the contact object.</t>
                     <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client (registrar) that sponsors the contact object.</t>
                     <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
-                    <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the contact object.</t>
                     <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the contact object</t>
                     <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
-                    <t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of the client that last updated the contact object.</t>
                     <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the contact object.</t>
                     <t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time of the last transfer for the contact object.</t>
+                  </list></t>
+                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                  MAY be used in the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
+                    <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the contact object.</t>
+                    <t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of the client that last updated the contact object.</t>
                   </list></t>
                     <t>
                         Example of a "contact" &lt;csvContact:contacts&gt; &lt;rdeCsv:csv&gt; element:
@@ -2372,8 +2385,8 @@ mycontactid]]>
                   used for the contact object statuses.  
                   </t>
                  
-                 <t>The following "csvContact" fields, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-                  MAY be used in the "contactStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                 <t>The following "csvContact" field elements, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
+                  MUST be used in the "contactStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier of status.</t>
@@ -2465,8 +2478,9 @@ sh8013,clientDeleteProhibited]]>
  
                  
                   <t hangText="&quot;contactPostal&quot;">Defines the fields and CSV file references 
-                  used for the contact postal info object records.  The following field elements were added for use in the "contactPostal" 
-                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  used for the contact postal info object records.</t>
+                  <t>The following "csvContact" field elements, defined for the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,
+                  MUST be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
   
@@ -2480,10 +2494,6 @@ sh8013,clientDeleteProhibited]]>
                 An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
                 </t>
 
-                <t hangText="&lt;csvContact:fOrg&gt;">Contains the name of the organization with which the contact is affiliated with type="contact:optPostalLineType".  
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
-              </t>
-
                 <t hangText="&lt;csvContact:fStreet&gt;">Contains the contact's contact's street address line with type="contact:fPostalLineType".  An index attribute 
                 is required to indicate which street address line the field represents with index "0" for the first line and index "2" for the last line.  
                 An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
@@ -2493,6 +2503,23 @@ sh8013,clientDeleteProhibited]]>
                 An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
                 </t>
 
+                <t hangText="&lt;csvContact:fCc&gt;">Contains the contact's country code with type="contact:ccType".   
+                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
+                </t>
+   
+                  </list></t>
+                  
+                  <t hangText="&quot;contactPostal&quot;">Defines the fields and CSV file references 
+                  used for the contact postal info object records.</t>
+                  <t>The following "csvContact" field elements, defined for the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
+                  MAY be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
+  
+                <t hangText="&lt;csvContact:fOrg&gt;">Contains the name of the organization with which the contact is affiliated with type="contact:optPostalLineType".  
+                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
+              </t>
+
                 <t hangText="&lt;csvContact:fSp&gt;">Contains the contact's state or province with type="contact:optPostalLineType".   
                 An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
                 </t>
@@ -2500,14 +2527,12 @@ sh8013,clientDeleteProhibited]]>
                 <t hangText="&lt;csvContact:fPc&gt;">Contains the contact's postal code with type="contact:pcType".  
                 An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
                 </t>
-
-                <t hangText="&lt;csvContact:fCc&gt;">Contains the contact's country code with type="contact:ccType".   
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
-                </t>
    
                   </list></t>
+                  
+                  
                   <t>The following "csvContact" fields, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
-                  is used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object.</t>
@@ -2599,19 +2624,24 @@ mycontactid,int]]>
                   used for the contact object pending and completed transfer records.  No additional 
                   field elements were added for use in the "contactTransfer"  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element. 
                   The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MAY be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request.</t>
                     <t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer.</t>
-                    <t hangText="&lt;rdeCsv:fReID&gt;">Identifier of client that requested the transfer.</t>
                     <t hangText="&lt;rdeCsv:fReDate&gt;">Date and time that the transfer was requested.</t>
                     <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action.</t>
-                    <t hangText="&lt;rdeCsv:fAcID&gt;">Identifier of client that should take or took action for transfer.</t>
                     <t hangText="&lt;rdeCsv:fAcDate&gt;">Date and time that the transfer action should be taken or has been taken</t>
                   </list></t>
+                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                  MAY be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
+                    <t hangText="&lt;rdeCsv:fReID&gt;">Identifier of client that requested the transfer.</t>
+                    <t hangText="&lt;rdeCsv:fAcID&gt;">Identifier of client that should take or took action for transfer.</t>
+                  </list></t>
                   <t>The following "csvContact" fields, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
-                  is used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object.</t>
@@ -2700,7 +2730,9 @@ mycontactid,2011-04-08T19:38:00.0Z]]>
                
                 
                   <t hangText="&quot;contactDisclose&quot;">Defines the fields and CSV file references 
-                  used for the contact disclose object records. The following field elements were added for use in the "contactDisclose" 
+                  used for the contact disclose object records.</t>
+                  <t>The following "csvContact" field elements, defined for the "contactDisclose" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
+                  MAY be used in the "contactDisclose" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -3041,7 +3073,9 @@ mycontactid]]>
 
                 <t><list style="hanging">
                   <t hangText="&quot;registrar&quot;">Defines the fields and CSV file references 
-                  used for the registrar object records.  The following field elements were added for use in the "registrar" 
+                  used for the registrar object records.</t>
+                  <t>The following "csvRegistrar" field elements, defined for the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
+                  MUST be used in the "registrar" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -3051,45 +3085,56 @@ mycontactid]]>
  
                 <t hangText="&lt;csvRegistrar:fName&gt;">Contains the name of the registrar with type="normalizedString" and isRequired="true".  
                 </t>
-
-                <t hangText="&lt;csvRegistrar:fGurid&gt;">Contains the ID assigned by ICANN with type="positiveInteger".  
+                
+                <t hangText="&lt;csvRegistrar:fStatus&gt;">Contains the status of the registrar with type="csvRegistrar:statusValueType".  
                 </t>
 
-                <t hangText="&lt;csvRegistrar:fStatus&gt;">Contains the status of the registrar with type="csvRegistrar:statusValueType".  
+                  </list></t>
+                  
+					<t>The following field elements MAY be used in the "registrar" 
+                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
+
+                <t hangText="&lt;csvRegistrar:fGurid&gt;">Contains the ID assigned by ICANN with type="positiveInteger".  
                 </t>
 
                 <t hangText="&lt;csvRegistrar:fWhoisUrl&gt;">Contains the Whois URL of the registrar with type="anyURI".  
                 </t>
                 
-                  </list></t>
+                  </list></t>                  
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MAY be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
-                    <t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) for the registrar object.</t>
                     <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the registrar object.</t>
                     <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the registrar object.</t>
                     <t hangText="&lt;rdeCsv:fUrl&gt;">URL for the registrar web home page.</t>
                   </list></t>
-                   <t>The following "csvContact" fields, defined in section <xref target="contactObject"/>,  
-                  MAY be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  <t>The following "csvContact" fields, defined in section <xref target="contactObject"/>,  
+                  MUST be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;csvContact:fStreet&gt;">Registrar street address line with an "index" attribute that represents the order of the street address line from "0" to "2".  
                     An OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
                     <t hangText="&lt;csvContact:fCity&gt;">Registrar city with an OPTIONAL "isLoc" attribute that is used to 
                     indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
+                    <t hangText="&lt;csvContact:fCc&gt;">Registrar country code with an OPTIONAL "isLoc" attribute that is used to 
+                    indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
+                    <t hangText="&lt;csvContact:fEmail&gt;">Registrar email address.</t>
+                </list></t>
+                  <t>The following "csvContact" fields, defined in section <xref target="contactObject"/>,  
+                  MAY be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
                     <t hangText="&lt;csvContact:fSp&gt;">Registrar state or province with an OPTIONAL "isLoc" attribute that is used to 
                     indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
                     <t hangText="&lt;csvContact:fPc&gt;">Registrar postal code with an OPTIONAL "isLoc" attribute that is used to 
-                    indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
-                    <t hangText="&lt;csvContact:fCc&gt;">Registrar country code with an OPTIONAL "isLoc" attribute that is used to 
                     indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
                     <t hangText="&lt;csvContact:fVoice&gt;">Registrar voice telephone number.</t>
                     <t hangText="&lt;csvContact:fVoiceExt&gt;">Registrar voice telephone number extension.</t>
                     <t hangText="&lt;csvContact:fFax&gt;">Registrar facsimile telephone number.</t>
                     <t hangText="&lt;csvContact:fFaxExt&gt;">Registrar facsimile telephone number extension.</t>
-                    <t hangText="&lt;csvContact:fEmail&gt;">Registrar email address.</t>
                 </list></t>
                    <t>
                         Example of a "registrar" &lt;csvRegistrar:contents&gt; &lt;rdeCsv:csv&gt; element. 
@@ -3102,7 +3147,6 @@ mycontactid]]>
   <rdeCsv:csv name="registrar">
     <rdeCsv:fields>
       <csvRegistrar:fId/>
-      <rdeCsv:fRoid/>
       <csvRegistrar:fName isLoc="false"/>
       <csvRegistrar:fGurid/>
       <csvRegistrar:fStatus/>
@@ -3141,7 +3185,7 @@ mycontactid]]>
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
-EXAMPLE,REGISTRAR123-TEST,"Example Inc.",1234,ok,"123 Example Dr.",
+EXAMPLE,"Example Inc.",1234,ok,"123 Example Dr.",
 "Suite 100",,Dulles,VA,20166-6503,US,+1.7035555555,1234,
 +1.7035555556,,jdoe@example.test,http://www.example.test,
 http://whois.example.test,2005-04-23T11:49:00.0Z,
@@ -3259,7 +3303,7 @@ EXAMPLE2]]>
                   used for the IDN table reference object records.  
                   </t>
                   <t>The following "rdeCsv" fields, defined in <xref target="csvCommonFieldElements"/>,  
-                  MAY be used in the "idnLanguage" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "idnLanguage" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                    </t>
                   <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fIdnTableId&gt;">The language identifier that matches the values for the &lt;rdeCsv:fIdnTableId&gt; field element in the "domain" CSV files, as defined in <xref target="domainNameObject"/>.</t>
@@ -3466,17 +3510,30 @@ LANG2]]>
                 </t>
                 <t><list style="hanging">
                   <t hangText="&quot;NNDN&quot;">Defines the fields and CSV file references 
-                  used for the NNDN object records.  The following field elements were added for use in the "NNDN" 
+                  used for the NNDN object records.</t>
+                  <t>The following "csvNNDN" field elements, defined for the "NNDN" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
+                  MUST be used in the "NNDN" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                   <t hangText="&lt;csvNNDN:fAName&gt;">ASCII Compatible Encoding (ACE) field of the NNDN with type="eppcom:labelType" and isRequired="true".  
                   </t>
                   
-                <t hangText="&lt;csvNNDN:fOriginalName&gt;">Domain name used to generate the IDN variant with type="eppcom:labelType".</t>
                 <t hangText="&lt;csvNNDN:fNameState&gt;">State of the NNDN: blocked or withheld with type="rdeNNDN:nameState".  See <xref target="ndn_object"/> for a description 
                 of the possible values for the &lt;rdeNNDN:nameState&gt; element.</t>
   
+                  </list></t>
+                  <t>The following field elements MAY be used in the "NNDN" 
+                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
+                <t hangText="&lt;csvNNDN:fOriginalName&gt;">Domain name used to generate the IDN variant with type="eppcom:labelType".</t>  
+                  </list></t>
+                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                  MUST be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list  style="hanging">
+                    <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the domain name object.</t>
                   </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
                   MAY be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
@@ -3484,7 +3541,6 @@ LANG2]]>
                   <t><list  style="hanging">
                     <t hangText="&lt;rdeCsv:fUName&gt;">Name of the NNDN in Unicode character set for the &lt;csvNNDN:fAName&gt; field element.</t>
                     <t hangText="&lt;rdeCsv:fIdnTableId&gt;">IDN Table Identifier for the NNDN that matches an IDN Table Reference Object record, as defined in <xref target="idnCsvModel"/>.</t>
-                    <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the domain name object.</t>
                   </list></t>
                     <t>
                         Example of a "NNDN" &lt;csvNNDN:contents&gt; &lt;rdeCsv:csv&gt; element:
@@ -6939,6 +6995,7 @@ END]]></artwork></figure>
                       <t>Changed the foreign key of the hosts to use &lt;rdeCsv:fRoid&gt; instead of &lt;csvHost:fName&gt; and removed use of &lt;csvHost:fName&gt; in the "domainNameServers", "hostStatuses", and "hostAddresses" CSV files.</t>
                       <t>Removed the definition of the &lt;csvDomain:fOriginalName&gt; field element since the &lt;csvNNDN:fOriginalName&gt; field element handles the case of referencing the original domain name of a variant.</t>
                       <t>Added use of the MUST keyword for CSV fields that are required to be supported in an EPP based system</t>
+                      <t>Removed use of the &lt;rdeCsv:fRoid&gt; field element for the "registrar" CSV file.</t>
                    </list>
                 </t>
             </section>
@@ -7619,7 +7676,6 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
        <rdeCsv:csv name="registrar" sep=",">
          <rdeCsv:fields>
            <csvRegistrar:fId/>
-           <rdeCsv:fRoid/>
            <csvRegistrar:fName isLoc="false"/>
            <csvRegistrar:fGurid/>
            <csvRegistrar:fStatus/>

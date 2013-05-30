@@ -325,7 +325,6 @@
        <rdeCsv:csv name="registrar" sep=",">
          <rdeCsv:fields>
            <csvRegistrar:fId/>
-           <rdeCsv:fRoid/>
            <csvRegistrar:fName isLoc="false"/>
            <csvRegistrar:fGurid/>
            <csvRegistrar:fStatus/>
