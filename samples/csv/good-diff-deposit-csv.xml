@@ -586,6 +586,7 @@
           <rdeCsv:fIdnTableId/>         
           <csvNNDN:fOriginalName/>
           <csvNNDN:fNameState/>
+          <csvNNDN:fMirroringNS/>
           <rdeCsv:fCrDate/>
         </rdeCsv:fields>
         <rdeCsv:files>

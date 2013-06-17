@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="30" month="May" year="2013"/>
+        <date day="5" month="June" year="2013"/>
         
         <area> Applications </area>
         
@@ -3519,7 +3519,7 @@ LANG2]]>
                   <t hangText="&lt;csvNNDN:fAName&gt;">ASCII Compatible Encoding (ACE) field of the NNDN with type="eppcom:labelType" and isRequired="true".  
                   </t>
                   
-                <t hangText="&lt;csvNNDN:fNameState&gt;">State of the NNDN: blocked or withheld with type="rdeNNDN:nameState".  See <xref target="ndn_object"/> for a description 
+                <t hangText="&lt;csvNNDN:fNameState&gt;">State of the NNDN: blocked, withheld or mirrored with type="rdeNNDN:nameState".  See <xref target="ndn_object"/> for a description 
                 of the possible values for the &lt;rdeNNDN:nameState&gt; element.</t>
   
                   </list></t>
@@ -3528,6 +3528,8 @@ LANG2]]>
                   </t>
                   <t><list style="hanging">
                 <t hangText="&lt;csvNNDN:fOriginalName&gt;">Domain name used to generate the IDN variant with type="eppcom:labelType".</t>  
+                <t hangText="&lt;csvNNDN:fMirroringNS&gt;">Defines whether the "mirroring" &lt;csvNNDN:fNameState&gt; uses the NS mirror mechanism, as described for the &lt;rdeNNDN:nameState&gt; "mirroringNS" attribute in <xref target="ndn_object"/>, with type="boolean".  
+                If the field element is not defined the default value is "true".</t>  
                   </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
                   MUST be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
@@ -3556,11 +3558,12 @@ LANG2]]>
       <rdeCsv:fIdnTableId/>         
       <csvNNDN:fOriginalName/>
       <csvNNDN:fNameState/>
+      <csvNNDN:fMirroringNS/>
       <rdeCsv:fCrDate/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="01F72976">
+        cksum="5EDB3FB1">
         NNDN-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3573,12 +3576,15 @@ LANG2]]>
                     </t>    
                     <t>
                         Example of the corresponding NNDN-YYYYMMDD.csv file.
-                        The file contains a single NNDN record for an IDN.
+                        The file contains a two NNDN record for an IDN with 
+                        one blocked variant and one mirrored variant.
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
 xn--exampl-gva.test,pt-BR,xn--exampl.test,
-withheld,2005-04-23T11:49:00.0Z]]>
+blocked,,2005-04-23T11:49:00.0Z
+xn--exampl2-gva.test,pt-BR,xn--exampl.test,
+mirrored,1,2005-04-23T11:49:00.0Z]]>
                         </artwork></figure>
                     </t>    
                     <t>
@@ -6463,6 +6469,11 @@ END]]></artwork></figure>
     </extension>
   </complexContent>
  </complexType>
+ 
+ <!-- Mirroring uses NS mirror mechanism? -->
+ <element name="fMirroringNS" 
+  type="rdeCsv:fBooleanType" 
+  substitutionGroup="rdeCsv:field"/>
   
   <!--
   End of schema.
@@ -6996,6 +7007,7 @@ END]]></artwork></figure>
                       <t>Removed the definition of the &lt;csvDomain:fOriginalName&gt; field element since the &lt;csvNNDN:fOriginalName&gt; field element handles the case of referencing the original domain name of a variant.</t>
                       <t>Added use of the MUST keyword for CSV fields that are required to be supported in an EPP based system.</t>
                       <t>Removed use of the &lt;rdeCsv:fRoid&gt; field element for the "registrar" CSV file.</t>
+                      <t>Added definition of &lt;csvNNDN:fMirroringNS&gt; field element.</t>
                    </list>
                 </t>
             </section>

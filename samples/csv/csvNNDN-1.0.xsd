@@ -78,6 +78,11 @@
     </extension>
   </complexContent>
  </complexType>
+
+ <!-- Mirroring uses NS mirror mechanism? -->
+ <element name="fMirroringNS" 
+  type="rdeCsv:fBooleanType" 
+  substitutionGroup="rdeCsv:field"/>
   
   <!--
   End of schema.
