@@ -1238,15 +1238,11 @@ domain2.test,Dns2domainexample-TEST]]>
  
                   <t hangText="&quot;dnssec&quot;">Defines the fields and CSV file references used 
                   for the domain name object DNSSEC records (DS or Key Data).</t>
-                  <t>The following "csvDomain" field elements, defined for the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element, MAY be used 
-                  in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element:
+                  <t>The following "csvDomain" field elements, defined for the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used 
+                  in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element when the DS Data Interface per <xref target="RFC5910"/> is used:
                   </t>
                   <t><list style="hanging">
-                <t hangText="&lt;csvDomain:fMaxSigLife&gt;">Indicates a child's preference for the number of seconds 
-                after signature generation when the parent's signature on the DS information provided by the child 
-                will expire with type="secDNS:maxSigLifeType" defined in <xref target="RFC5910"/>.
-                </t>
-                <t hangText="&lt;csvDomain:fKeyTag&gt;">Contains the DS key tag value per <xref target="RFC5910"/> with type="unsignedShort".
+                <t hangText="&lt;csvDomain:fKeyTag&gt;">Contains the DS key tag value per <xref target="RFC5910"/> with type="unsignedShort".  
                 </t>
   
                 <t hangText="&lt;csvDomain:fDsAlg&gt;">Contains the DS algorithm value per <xref target="RFC5910"/> with type="unsignedByte".
@@ -1257,7 +1253,11 @@ domain2.test,Dns2domainexample-TEST]]>
   
                 <t hangText="&lt;csvDomain:fDigest&gt;">Contains the DS digest value per <xref target="RFC5910"/> with type="hexBinary".
                 </t>
-
+                  </list></t>
+                 <t>The following "csvDomain" field elements, defined for the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used 
+                  in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element when the Key Data Interface per <xref target="RFC5910"/> is used:
+                  </t>
+                  <t><list style="hanging">
                 <t hangText="&lt;csvDomain:fFlags&gt;">Contains the flags field value per <xref target="RFC5910"/> with type="unsignedShort".
                 </t>
                                 
@@ -1270,24 +1270,22 @@ domain2.test,Dns2domainexample-TEST]]>
                   <t hangText="&lt;csvDomain:fPubKey&gt;">Contains the public key value per <xref target="RFC5910"/> with type="secDNS:keyType".
                 </t>
                   </list></t>
+                  
+                  <t>The following "csvDomain" field elements, defined for the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MAY be used 
+                  in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element:
+                  </t>
+                  <t><list style="hanging">
+                <t hangText="&lt;csvDomain:fMaxSigLife&gt;">Indicates a child's preference for the number of seconds 
+                after signature generation when the parent's signature on the DS information provided by the child 
+                will expire with type="secDNS:maxSigLifeType" defined in <xref target="RFC5910"/>.
+                </t>
+                  </list></t>
                   <t>The following "domain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-                  MAY be used in the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
                     <t hangText="&lt;csvDomain:fName&gt;">Domain name of the domain object associated with the DNSSEC record.</t>
                   </list></t>
-                  <t>
-                  <list style="symbols">
-                    <t>
-                      If the DNSSEC DS data interface is used, the following field elements MUST be present:
-                      fKeyTag, fDsAlg, fDigestType and fDigest.
-                    </t>
-                    <t>
-                      If the DNSSEC Key data interface is used, the following field elements MUST be present:
-                      fFlags, fProtocol, fKeyAlg and fPubKey.
-                    </t>
-                  </list>
-                  </t>
                      <t>
                         Example of a "dnssec" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element with the DS Data Interface of <xref target="RFC5910"/>:
                     </t>

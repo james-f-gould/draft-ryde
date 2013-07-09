@@ -1784,21 +1784,15 @@ domain2.test,Dns2domainexample-TEST
                   for the domain name object DNSSEC records (DS or Key Data).
 </dd>
 <dt></dt>
-<dd>The following "csvDomain" field elements, defined for the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element, MAY be used 
-                  in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element:
+<dd>The following "csvDomain" field elements, defined for the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used 
+                  in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element when the DS Data Interface per <a class='info' href='#RFC5910'>[RFC5910]<span> (</span><span class='info'>Gould, J. and S. Hollenbeck, &ldquo;Domain Name System (DNS) Security Extensions Mapping for the Extensible Provisioning Protocol (EPP),&rdquo; May&nbsp;2010.</span><span>)</span></a> is used:
                   
 </dd>
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;csvDomain:fMaxSigLife&gt;</dt>
-<dd>Indicates a child's preference for the number of seconds 
-                after signature generation when the parent's signature on the DS information provided by the child 
-                will expire with type="secDNS:maxSigLifeType" defined in <a class='info' href='#RFC5910'>[RFC5910]<span> (</span><span class='info'>Gould, J. and S. Hollenbeck, &ldquo;Domain Name System (DNS) Security Extensions Mapping for the Extensible Provisioning Protocol (EPP),&rdquo; May&nbsp;2010.</span><span>)</span></a>.
-                
-</dd>
 <dt>&lt;csvDomain:fKeyTag&gt;</dt>
-<dd>Contains the DS key tag value per <a class='info' href='#RFC5910'>[RFC5910]<span> (</span><span class='info'>Gould, J. and S. Hollenbeck, &ldquo;Domain Name System (DNS) Security Extensions Mapping for the Extensible Provisioning Protocol (EPP),&rdquo; May&nbsp;2010.</span><span>)</span></a> with type="unsignedShort".
+<dd>Contains the DS key tag value per <a class='info' href='#RFC5910'>[RFC5910]<span> (</span><span class='info'>Gould, J. and S. Hollenbeck, &ldquo;Domain Name System (DNS) Security Extensions Mapping for the Extensible Provisioning Protocol (EPP),&rdquo; May&nbsp;2010.</span><span>)</span></a> with type="unsignedShort".  
                 
 </dd>
 <dt>&lt;csvDomain:fDsAlg&gt;</dt>
@@ -1813,6 +1807,16 @@ domain2.test,Dns2domainexample-TEST
 <dd>Contains the DS digest value per <a class='info' href='#RFC5910'>[RFC5910]<span> (</span><span class='info'>Gould, J. and S. Hollenbeck, &ldquo;Domain Name System (DNS) Security Extensions Mapping for the Extensible Provisioning Protocol (EPP),&rdquo; May&nbsp;2010.</span><span>)</span></a> with type="hexBinary".
                 
 </dd>
+</dl></blockquote>
+</dd>
+<dt></dt>
+<dd>The following "csvDomain" field elements, defined for the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used 
+                  in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element when the Key Data Interface per <a class='info' href='#RFC5910'>[RFC5910]<span> (</span><span class='info'>Gould, J. and S. Hollenbeck, &ldquo;Domain Name System (DNS) Security Extensions Mapping for the Extensible Provisioning Protocol (EPP),&rdquo; May&nbsp;2010.</span><span>)</span></a> is used:
+                  
+</dd>
+<dt></dt>
+<dd>
+<blockquote class="text"><dl>
 <dt>&lt;csvDomain:fFlags&gt;</dt>
 <dd>Contains the flags field value per <a class='info' href='#RFC5910'>[RFC5910]<span> (</span><span class='info'>Gould, J. and S. Hollenbeck, &ldquo;Domain Name System (DNS) Security Extensions Mapping for the Extensible Provisioning Protocol (EPP),&rdquo; May&nbsp;2010.</span><span>)</span></a> with type="unsignedShort".
                 
@@ -1832,8 +1836,24 @@ domain2.test,Dns2domainexample-TEST
 </dl></blockquote>
 </dd>
 <dt></dt>
+<dd>The following "csvDomain" field elements, defined for the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MAY be used 
+                  in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element:
+                  
+</dd>
+<dt></dt>
+<dd>
+<blockquote class="text"><dl>
+<dt>&lt;csvDomain:fMaxSigLife&gt;</dt>
+<dd>Indicates a child's preference for the number of seconds 
+                after signature generation when the parent's signature on the DS information provided by the child 
+                will expire with type="secDNS:maxSigLifeType" defined in <a class='info' href='#RFC5910'>[RFC5910]<span> (</span><span class='info'>Gould, J. and S. Hollenbeck, &ldquo;Domain Name System (DNS) Security Extensions Mapping for the Extensible Provisioning Protocol (EPP),&rdquo; May&nbsp;2010.</span><span>)</span></a>.
+                
+</dd>
+</dl></blockquote>
+</dd>
+<dt></dt>
 <dd>The following "domain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-                  MAY be used in the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  MUST be used in the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   
 </dd>
 <dt></dt>
@@ -1843,23 +1863,6 @@ domain2.test,Dns2domainexample-TEST
 <dd>Domain name of the domain object associated with the DNSSEC record.
 </dd>
 </dl></blockquote>
-</dd>
-<dt></dt>
-<dd>
-                  
-<ul class="text">
-<li>
-                      If the DNSSEC DS data interface is used, the following field elements MUST be present:
-                      fKeyTag, fDsAlg, fDigestType and fDigest.
-                    
-</li>
-<li>
-                      If the DNSSEC Key data interface is used, the following field elements MUST be present:
-                      fFlags, fProtocol, fKeyAlg and fPubKey.
-                    
-</li>
-</ul>
-                  
 </dd>
 <dt></dt>
 <dd>

@@ -1517,15 +1517,11 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
       domain name object DNSSEC records (DS or Key Data).
 
       The following "csvDomain" field elements, defined for the "dnssec"
-      <rdeCsv:csv> rdeCsv:fields> element, MAY be used in the "dnssec"
-      <rdeCsv:csv> rdeCsv:fields> element:
+      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the "dnssec"
+      <rdeCsv:csv> rdeCsv:fields> element when the DS Data Interface per
+      [RFC5910] is used:
 
 
-
-      <csvDomain:fMaxSigLife>  Indicates a child's preference for the
-         number of seconds after signature generation when the parent's
-         signature on the DS information provided by the child will
-         expire with type="secDNS:maxSigLifeType" defined in [RFC5910].
 
       <csvDomain:fKeyTag>  Contains the DS key tag value per [RFC5910]
          with type="unsignedShort".
@@ -1539,6 +1535,13 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
       <csvDomain:fDigest>  Contains the DS digest value per [RFC5910]
          with type="hexBinary".
 
+      The following "csvDomain" field elements, defined for the "dnssec"
+      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the "dnssec"
+      <rdeCsv:csv> rdeCsv:fields> element when the Key Data Interface
+      per [RFC5910] is used:
+
+
+
       <csvDomain:fFlags>  Contains the flags field value per [RFC5910]
          with type="unsignedShort".
 
@@ -1551,14 +1554,11 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
       <csvDomain:fPubKey>  Contains the public key value per [RFC5910]
          with type="secDNS:keyType".
 
-      The following "domain" fields, defined for the "domain" <rdeCsv:
-      csv> <rdeCsv:fields> element, MAY be used in the "dnssec" <rdeCsv:
-      csv> <rdeCsv:fields> element:
+      The following "csvDomain" field elements, defined for the "dnssec"
+      <rdeCsv:csv> <rdeCsv:fields> element, MAY be used in the "dnssec"
+      <rdeCsv:csv> rdeCsv:fields> element:
 
 
-
-      <csvDomain:fName>  Domain name of the domain object associated
-         with the DNSSEC record.
 
 
 
@@ -1571,13 +1571,19 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-      *  If the DNSSEC DS data interface is used, the following field
-         elements MUST be present: fKeyTag, fDsAlg, fDigestType and
-         fDigest.
+      <csvDomain:fMaxSigLife>  Indicates a child's preference for the
+         number of seconds after signature generation when the parent's
+         signature on the DS information provided by the child will
+         expire with type="secDNS:maxSigLifeType" defined in [RFC5910].
 
-      *  If the DNSSEC Key data interface is used, the following field
-         elements MUST be present: fFlags, fProtocol, fKeyAlg and
-         fPubKey.
+      The following "domain" fields, defined for the "domain" <rdeCsv:
+      csv> <rdeCsv:fields> element, MUST be used in the "dnssec"
+      <rdeCsv:csv> <rdeCsv:fields> element:
+
+
+
+      <csvDomain:fName>  Domain name of the domain object associated
+         with the DNSSEC record.
 
       Example of a "dnssec" <csvDomain:contents> <rdeCsv:csv> element
       with the DS Data Interface of [RFC5910]:
@@ -1611,12 +1617,6 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-   domain1.test,604800,12345,3,1,49FD46E6C4B45C55D4AC
-   domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B
-
-
-
-
 
 
 
@@ -1624,6 +1624,11 @@ Arias, et al.           Expires January 10, 2014               [Page 29]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
+
+
+
+   domain1.test,604800,12345,3,1,49FD46E6C4B45C55D4AC
+   domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B
 
       Example of a "dnssec" <csvDomain:contents> <rdeCsv:csv> element
       with the Key Data Interface of [RFC5910]:
@@ -1662,11 +1667,6 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
       Example of a "dnssec" <csvDomain:deletes> <rdeCsv:csv> element
       with the DS Data Interface of [RFC5910]:
-
-
-
-
-
 
 
 
