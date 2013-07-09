@@ -145,12 +145,12 @@
 <tr><td class="header">Network Working Group</td><td class="header">F. Arias</td></tr>
 <tr><td class="header">Internet-Draft</td><td class="header">G. Lozano</td></tr>
 <tr><td class="header">Intended status: Standards Track</td><td class="header">ICANN</td></tr>
-<tr><td class="header">Expires: December 7, 2013</td><td class="header">S. Noguchi</td></tr>
+<tr><td class="header">Expires: January 5, 2014</td><td class="header">S. Noguchi</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">JPRS</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">J. Gould</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">C. Thippeswamy</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">VeriSign</td></tr>
-<tr><td class="header">&nbsp;</td><td class="header">June 5, 2013</td></tr>
+<tr><td class="header">&nbsp;</td><td class="header">July 04, 2013</td></tr>
 </table></td></tr></table>
 <h1><br />Domain Name Registration Data (DNRD) Objects Mapping<br />draft-arias-noguchi-dnrd-objects-mapping-04</h1>
 
@@ -177,7 +177,7 @@ and may be updated, replaced, or obsoleted by other documents at any time.
 It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
-This Internet-Draft will expire on December 7, 2013.</p>
+This Internet-Draft will expire on January 5, 2014.</p>
 
 <h3>Copyright Notice</h3>
 <p>
@@ -601,6 +601,7 @@ CSV elements</h3>
       &lt;csvDomain:fName/&gt;
       &lt;rdeCsv:fRoid/&gt;
       &lt;rdeCsv:fIdnTableId/&gt;
+      &lt;csvDomain:fOriginalName/&gt;
       &lt;rdeCsv:fRegistrant isRequired="true"/&gt;
       &lt;rdeCsv:fClID/&gt;
       &lt;rdeCsv:fCrRr/&gt;
@@ -682,7 +683,7 @@ CSV common field elements</h3>
 <p>The &lt;rdeCsv:fields&gt; element defined in the 
                 <a class='info' href='#rdeCsv-csv'>&lt;rdeCsv:csv&gt; element<span> (</span><span class='info'>&lt;rdeCsv:csv&gt; element</span><span>)</span></a> 
                 section has child elements that substitute for the abstract &lt;rdeCsv:field&gt; element.  
-                By convention &lt;rdeCsv:field&gt; elements incude an 'f' prefix to identify them as field 
+                By convention &lt;rdeCsv:field&gt; elements include an 'f' prefix to identify them as field 
                 definition elements.  There are a set of common field elements that are used across 
                 multiple data escrow objects.  The common field elements are defined using the 
                 "urn:ietf:params:xml:ns:rdeCsv-1.0" namespace and using the "rdeCsv" sample namespace prefix.  
@@ -1191,6 +1192,11 @@ CSV Model</h3>
 <dd>Domain name field with type="eppcom:labelType" and isRequired="true".  
                   
 </dd>
+<dt>&lt;csvDomain:fOriginalName&gt;</dt>
+<dd>Fully qualified name of the original IDN domain name object related to the 
+                      variant domain name object with type="eppcom:labelType".
+                
+</dd>
 </dl></blockquote>
 </dd>
 <dt></dt>
@@ -1268,6 +1274,7 @@ CSV Model</h3>
       &lt;csvDomain:fName/&gt;
       &lt;rdeCsv:fRoid/&gt;
       &lt;rdeCsv:fIdnTableId/&gt;
+	  &lt;csvDomain:fOriginalName/&gt;
       &lt;rdeCsv:fRegistrant/&gt;
       &lt;rdeCsv:fClID/&gt;
       &lt;rdeCsv:fCrRr/&gt;
@@ -1837,6 +1844,23 @@ domain2.test,Dns2domainexample-TEST
 <dd>Domain name of the domain object associated with the DNSSEC record.
 </dd>
 </dl></blockquote>
+</dd>
+<dt></dt>
+<dd>
+                  
+<ul class="text">
+<li>
+                      If the DNSSEC DS data interface is used, the following field elements MUST be present:
+                      fKeyTag, fDsAlg, fDigestType and fDigest.
+                    
+</li>
+<li>
+                      If the DNSSEC Key data interface is used, the following field elements MUST be present:
+                      fFlags, fProtocol, fKeyAlg and fPubKey.
+                    
+</li>
+</ul>
+                  
 </dd>
 <dt></dt>
 <dd>
@@ -4404,7 +4428,7 @@ IDN Table Reference Object</h3>
 <a name="rfc.section.5.5.1"></a><h3>5.5.1.&nbsp;
 XML Model</h3>
 
-<p>There are
+<p>There is
                    one element used in the data escrow of the IDN table reference objects for the XML model that is the 
                    &lt;rdeIDN:idnTableRef&gt;, under the &lt;rde:contents&gt; element.
                   
@@ -4595,11 +4619,18 @@ LANG2
 NNDN Object</h3>
 
 <p>
-                    A NNDN (NNDN's not domain name) does not exist as a domain object; it is stored in the database.
-                    NNDNs can optionally be used to store registry reserved names or (blocked, withheld or mirrored) IDN variants.
-                    A NNDN is a lightweight domain-like object that is not linked to a Registrar.
-                    A FQDN can only exist as a domain name or NNDN, but not both.                             
-                    
+                  A NNDN (NNDN's not domain name) can be used to store registry reserved names or (blocked, withheld or mirrored) IDN variants.
+                
+</p>
+<p>
+                  A NNDN is a lightweight domain-like object that is not linked directly to a Registrar (a mirroring NNDN is linked to a Registrar via the original name).
+              
+</p>
+<p>
+               A domain name can only exist as a domain name object or NNDN object, but not both. 
+              
+</p>
+<p>
                     The NNDN object supports 
                     both the XML and the CSV Model, defined in the <a class='info' href='#models'>Models<span> (</span><span class='info'>Models</span><span>)</span></a> section.  
                     The elements used for both models are defined in the following sections.
@@ -4636,7 +4667,7 @@ XML Model</h3>
                         </p>
 <ul class="text">
 <li>
-                            An &lt;aName&gt; element that contains the A-label of the NNDN.
+                            An &lt;aName&gt; element that contains the ASCII Compatible Encoding (ACE) field of the NNDN.
                           
 </li>
 <li>
@@ -4697,7 +4728,7 @@ XML Model</h3>
 &lt;rdeNNDN:NNDN&gt;
   &lt;rdeNNDN:aName&gt;xn--exampl-gva.test&lt;/rdeNNDN:aName&gt;
   &lt;rdeNNDN:idnTableId&gt;pt-BR&lt;/rdeNNDN:idnTableId&gt;
-  &lt;rdeNNDN:originalNamexn--exampl.test&lt;/rdeNNDN:originalName&gt;
+  &lt;rdeNNDN:originalName&gt;example1.test&lt;/rdeNNDN:originalName&gt;
   &lt;rdeNNDN:nameState&gt;withheld&lt;/rdeNNDN:nameState&gt;
   &lt;rdeNNDN:crDate&gt;2005-04-23T11:49:00.0Z&lt;/rdeNNDN:crDate&gt;
 &lt;/rdeNNDN:NNDN&gt;
@@ -4766,8 +4797,11 @@ CSV Model</h3>
 <dd>ASCII Compatible Encoding (ACE) field of the NNDN with type="eppcom:labelType" and isRequired="true".  
                   
 </dd>
+<dt>&lt;csvNNDN:fOriginalName&gt;</dt>
+<dd>Domain name used to generate the IDN variant with type="eppcom:labelType".
+</dd>
 <dt>&lt;csvNNDN:fNameState&gt;</dt>
-<dd>State of the NNDN: blocked, withheld or mirrored with type="rdeNNDN:nameState".  See <a class='info' href='#ndn_object'>Section&nbsp;5.6.1.1<span> (</span><span class='info'>&lt;rdeNNDN:NNDN&gt; object</span><span>)</span></a> for a description 
+<dd>State of the NNDN: blocked or withheld with type="rdeNNDN:nameState".  See <a class='info' href='#ndn_object'>Section&nbsp;5.6.1.1<span> (</span><span class='info'>&lt;rdeNNDN:NNDN&gt; object</span><span>)</span></a> for a description 
                 of the possible values for the &lt;rdeNNDN:nameState&gt; element.
 </dd>
 </dl></blockquote>
@@ -4782,10 +4816,6 @@ CSV Model</h3>
 <blockquote class="text"><dl>
 <dt>&lt;csvNNDN:fOriginalName&gt;</dt>
 <dd>Domain name used to generate the IDN variant with type="eppcom:labelType".
-</dd>
-<dt>&lt;csvNNDN:fMirroringNS&gt;</dt>
-<dd>Defines whether the "mirroring" &lt;csvNNDN:fNameState&gt; uses the NS mirror mechanism, as described for the &lt;rdeNNDN:nameState&gt; "mirroringNS" attribute in <a class='info' href='#ndn_object'>Section&nbsp;5.6.1.1<span> (</span><span class='info'>&lt;rdeNNDN:NNDN&gt; object</span><span>)</span></a>, with type="boolean".  
-                If the field element is not defined the default value is "true".
 </dd>
 </dl></blockquote>
 </dd>
@@ -4835,12 +4865,11 @@ CSV Model</h3>
       &lt;rdeCsv:fIdnTableId/&gt;
       &lt;csvNNDN:fOriginalName/&gt;
       &lt;csvNNDN:fNameState/&gt;
-      &lt;csvNNDN:fMirroringNS/&gt;
       &lt;rdeCsv:fCrDate/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="5EDB3FB1"&gt;
+        cksum="01F72976"&gt;
         NNDN-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -4855,17 +4884,14 @@ CSV Model</h3>
 <dt></dt>
 <dd>
                         Example of the corresponding NNDN-YYYYMMDD.csv file.
-                        The file contains a two NNDN record for an IDN with 
-                        one blocked variant and one mirrored variant.
+                        The file contains a single NNDN record for an IDN.
                     
 </dd>
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
 xn--exampl-gva.test,pt-BR,xn--exampl.test,
-blocked,,2005-04-23T11:49:00.0Z
-xn--exampl2-gva.test,pt-BR,xn--exampl.test,
-mirrored,1,2005-04-23T11:49:00.0Z
+withheld,2005-04-23T11:49:00.0Z
 </pre></div>
                     
 </dd>
@@ -4923,6 +4949,7 @@ EPP Parameters Object</h3>
                     EPP Parameters Object only supports the XML model and is defined using the 
                     the &lt;rdeEppParams:eppParams&gt; element.
                     The EPP Parameters Object SHOULD be included if the registry uses EPP.
+                    Only one EPP Parameters Object MUST exist at a certain point in time (watermark).
                 
 </p>
 <p>
@@ -5172,8 +5199,17 @@ RDE IDN Variants handling</h3>
             
 </p>
 <p>
-                A registry could choose to escrow IDN variants as domains or NNDN objects.
+              A registry could choose to escrow IDN variants as domains or NNDN objects. An specific IDN variant can be represented
+              in the escrow deposit, as a domain or as a NNDN object, but not both.
             
+</p>
+<p>
+            If using domain objects to represent IDN variants, the normal behavior 
+            during restoration of a SRS based on an escrow deposit is to restore the 
+            IDN variants as a mirrored variant. If the registration data of the IDN 
+            variant is different from the original name, the details of this specific 
+            implementation MUST be described in the IDN policy document.
+          
 </p>
 <p>
                 A NNDN or a domain name are explicit representations of an IDN variant while an IDN variant
@@ -5233,7 +5269,7 @@ Profile</h3>
 Data escrow agent extended verification process</h3>
 
 <p>
-          The Data Escrow Agent SHOULD perform a extended verification process using the contents of
+          The Data Escrow Agent MUST perform a extended verification process using the contents of the
           data escrow deposits to a point in time (watermark), last full plus all differentials
           or last full plus last incremental escrow deposits.
           
@@ -5253,29 +5289,34 @@ Data escrow agent extended verification process</h3>
             
 </li>
 <li>
-              Count the objects and validate that number of objects is 
+              Count the objects and validate that the number of objects is 
               equal to the number objects reported in the &lt;header&gt; element of the
               escrow deposit of that point in time (watermark).
             
 </li>
 <li>
-              All contacts linked to domain names are present.
+              All contacts objects linked to domain names MUST be present.
             
 </li>
 <li>
-              All registrars linked to other objects are present.
+              All registrars objects linked to other objects MUST be present.
             
 </li>
 <li>
-              A name exists only as a domain name or NNDN.
+              A domain name exists as a domain name or NNDN, but not both.
             
 </li>
 <li>
-              The elements listed in the &lt;policy&gt; element are present.
+              The elements listed as required in the &lt;policy&gt; element MUST be present.
             
 </li>
 <li>
-              All idnTableRef definitions linked from other objects are present.
+              All idnTableRef definitions linked from other objects MUST be present.
+            
+</li>
+<li>
+              If an EPP Parameters Object was escrowed in the past, one and only one EPP Parameters Object MUST
+              be present.
             
 </li>
 </ul><p>
@@ -5793,16 +5834,11 @@ RDE Domain Object</h3>
   xmlns="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified"&gt;
 
-  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
-    schemaLocation="eppcom-1.0.xsd" /&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:domain-1.0"
-    schemaLocation="domain-1.0.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:secDNS-1.1"
-    schemaLocation="secdns-1.1.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:rgp-1.0"
-    schemaLocation="rgp-1.0.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:domain-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:secDNS-1.1"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rgp-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"/&gt;
 
   &lt;annotation&gt;
     &lt;documentation&gt;
@@ -6119,6 +6155,10 @@ CSV Domain Object</h3>
   &lt;/complexContent&gt;
  &lt;/complexType&gt;
 
+ &lt;!-- Original Domain Name for Variant field --&gt;
+ &lt;element name="fOriginalName" type="rdeCsv:fNameType"
+  substitutionGroup="rdeCsv:field"/&gt;
+
  &lt;!-- Domain status field --&gt;
  &lt;element name="fStatus" type="csvDomain:fStatusType"
   substitutionGroup="rdeCsv:field"/&gt;
@@ -6209,12 +6249,9 @@ RDE Host Object</h3>
   xmlns="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified"&gt;
 
-  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
-    schemaLocation="eppcom-1.0.xsd" /&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:host-1.0"
-    schemaLocation="host-1.0.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:host-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"/&gt;
 
   &lt;annotation&gt;
     &lt;documentation&gt;
@@ -6222,13 +6259,10 @@ RDE Host Object</h3>
     &lt;/documentation&gt;
   &lt;/annotation&gt;
 
-  &lt;element name="abstractHost"
-    type="rdeHost:abstractContentType"
+  &lt;element name="abstractHost" type="rdeHost:abstractContentType"
     substitutionGroup="rde:content" abstract="true"/&gt;
-  &lt;element name="host"
-    substitutionGroup="rdeHost:abstractHost" /&gt;
-  &lt;element name="delete"
-    type="rdeHost:deleteType"
+  &lt;element name="host" substitutionGroup="rdeHost:abstractHost" /&gt;
+  &lt;element name="delete" type="rdeHost:deleteType"
     substitutionGroup="rde:delete"/&gt;
 
   &lt;!-- Content Type --&gt;
@@ -6522,12 +6556,9 @@ RDE Contact Object</h3>
   elementFormDefault="qualified"&gt;
 
   &lt;!-- Import common element types. --&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
-    schemaLocation="eppcom-1.0.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:contact-1.0"
-    schemaLocation="contact-1.0.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:contact-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"/&gt;
 
   &lt;annotation&gt;
     &lt;documentation&gt;
@@ -7032,14 +7063,10 @@ RDE Registrar Object</h3>
   elementFormDefault="qualified"&gt;
 
   &lt;!-- Import common element types. --&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
-    schemaLocation="eppcom-1.0.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:domain-1.0"
-    schemaLocation="domain-1.0.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:contact-1.0"
-    schemaLocation="contact-1.0.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:domain-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:contact-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"/&gt;
 
   &lt;annotation&gt;
     &lt;documentation&gt;
@@ -7451,8 +7478,7 @@ RDE IDN Table Reference Objects</h3>
   xmlns="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified"&gt;
 
-  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"/&gt;
 
   &lt;annotation&gt;
     &lt;documentation&gt;
@@ -7675,12 +7701,9 @@ EPP Parameters Object</h3>
   xmlns="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified"&gt;
 
-  &lt;import namespace="urn:ietf:params:xml:ns:epp-1.0"
-    schemaLocation="epp-1.0.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
-    schemaLocation="eppcom-1.0.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:epp-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"/&gt;
 
   &lt;annotation&gt;
     &lt;documentation&gt;
@@ -7786,10 +7809,8 @@ NNDN Object</h3>
   xmlns="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified"&gt;
 
-  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
-    schemaLocation="eppcom-1.0.xsd"/&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"/&gt;
 
   &lt;annotation&gt;
     &lt;documentation&gt;
@@ -7797,13 +7818,10 @@ NNDN Object</h3>
     &lt;/documentation&gt;
   &lt;/annotation&gt;
 
-  &lt;element name="abstractNNDN"
-    type="rdeNNDN:abstractContentType"
+  &lt;element name="abstractNNDN" type="rdeNNDN:abstractContentType"
     substitutionGroup="rde:content" abstract="true"/&gt;
-  &lt;element name="NNDN"
-    substitutionGroup="rdeNNDN:abstractNNDN"/&gt;
-  &lt;element name="delete"
-    type="rdeNNDN:deleteType"
+  &lt;element name="NNDN" substitutionGroup="rdeNNDN:abstractNNDN"/&gt;
+  &lt;element name="delete" type="rdeNNDN:deleteType"
     substitutionGroup="rde:delete"/&gt;
 
   &lt;!-- Content Type --&gt;
@@ -8001,11 +8019,6 @@ CSV NNDN Object</h3>
   &lt;/complexContent&gt;
  &lt;/complexType&gt;
 
- &lt;!-- Mirroring uses NS mirror mechanism? --&gt;
- &lt;element name="fMirroringNS"
-  type="rdeCsv:fBooleanType"
-  substitutionGroup="rdeCsv:field"/&gt;
-
   &lt;!--
   End of schema.
   --&gt;
@@ -8085,9 +8098,7 @@ Policy Object</h3>
     &lt;/documentation&gt;
   &lt;/annotation&gt;
 
-  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/&gt;
-
+  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"/&gt;
   &lt;element name="policy" type="rdePolicy:policyType"
     substitutionGroup="rde:content"/&gt;
 
@@ -8170,10 +8181,8 @@ Header Object</h3>
   xmlns="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified"&gt;
 
-  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
-    schemaLocation="eppcom-1.0.xsd" /&gt;
-  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:rde-1.0"/&gt;
 
   &lt;annotation&gt;
     &lt;documentation&gt;
@@ -8770,8 +8779,6 @@ Changes from version 03 to 04</h3>
 </li>
 <li>Removed use of the &lt;rdeCsv:fRoid&gt; field element for the "registrar" CSV file.
 </li>
-<li>Added definition of &lt;csvNNDN:fMirroringNS&gt; field element.
-</li>
 </ol><p>
                 
 </p>
@@ -8823,26 +8830,21 @@ Example of a full deposit using the XML model</h3>
     &lt;rdeHeader:header&gt;
       &lt;rdeHeader:tld&gt;test&lt;/rdeHeader:tld&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeDomain-1.0"&gt;2
-      &lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeDomain-1.0"&gt;2&lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeHost-1.0"&gt;1
-      &lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeHost-1.0"&gt;1&lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeContact-1.0"&gt;1
-      &lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeContact-1.0"&gt;1&lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0"&gt;1
-      &lt;/rdeHeader:count&gt;
+	  &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeIDN-1.0"&gt;1
-      &lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeIDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0"&gt;1
-      &lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeEppParams-1.0"&gt;1
-    &lt;/rdeHeader:count&gt;
+	  &lt;/rdeHeader:count&gt;
     &lt;/rdeHeader:header&gt;
 
     &lt;!-- Domian: example1.test --&gt;
@@ -8886,15 +8888,12 @@ Example of a full deposit using the XML model</h3>
       &lt;rdeHost:status s="linked"/&gt;
       &lt;rdeHost:addr ip="v4"&gt;192.0.2.2&lt;/rdeHost:addr&gt;
       &lt;rdeHost:addr ip="v4"&gt;192.0.2.29&lt;/rdeHost:addr&gt;
-      &lt;rdeHost:addr ip="v6"&gt;1080:0:0:0:8:800:200C:417A
-      &lt;/rdeHost:addr&gt;
+      &lt;rdeHost:addr ip="v6"&gt;1080:0:0:0:8:800:200C:417A&lt;/rdeHost:addr&gt;
       &lt;rdeHost:clID&gt;RegistrarX&lt;/rdeHost:clID&gt;
       &lt;rdeHost:crRr&gt;RegistrarX&lt;/rdeHost:crRr&gt;
-      &lt;rdeHost:crDate&gt;1999-05-08T12:10:00.0Z
-      &lt;/rdeHost:crDate&gt;
+      &lt;rdeHost:crDate&gt;1999-05-08T12:10:00.0Z&lt;/rdeHost:crDate&gt;
       &lt;rdeHost:upRr&gt;RegistrarX&lt;/rdeHost:upRr&gt;
-      &lt;rdeHost:upDate&gt;2009-10-03T09:34:00.0Z
-      &lt;/rdeHost:upDate&gt;
+      &lt;rdeHost:upDate&gt;2009-10-03T09:34:00.0Z&lt;/rdeHost:upDate&gt;
     &lt;/rdeHost:host&gt;
 
 
@@ -8916,21 +8915,15 @@ Example of a full deposit using the XML model</h3>
           &lt;contact:cc&gt;US&lt;/contact:cc&gt;
         &lt;/contact:addr&gt;
       &lt;/rdeContact:postalInfo&gt;
-      &lt;rdeContact:voice x="1234"&gt;+1.7035555555
-      &lt;/rdeContact:voice&gt;
+      &lt;rdeContact:voice x="1234"&gt;+1.7035555555&lt;/rdeContact:voice&gt;
       &lt;rdeContact:fax&gt;+1.7035555556&lt;/rdeContact:fax&gt;
       &lt;rdeContact:email&gt;jdoe@example.test&lt;/rdeContact:email&gt;
       &lt;rdeContact:clID&gt;RegistrarX&lt;/rdeContact:clID&gt;
-      &lt;rdeContact:crRr client="jdoe"&gt;RegistrarX
-      &lt;/rdeContact:crRr&gt;
-      &lt;rdeContact:crDate&gt;2009-09-13T08:01:00.0Z
-      &lt;/rdeContact:crDate&gt;
-      &lt;rdeContact:upRr client="jdoe"&gt;RegistrarX
-      &lt;/rdeContact:upRr&gt;
-      &lt;rdeContact:upDate&gt;2009-11-26T09:10:00.0Z
-      &lt;/rdeContact:upDate&gt;
-      &lt;rdeContact:trDate&gt;2009-12-03T09:05:00.0Z
-      &lt;/rdeContact:trDate&gt;
+      &lt;rdeContact:crRr client="jdoe"&gt;RegistrarX&lt;/rdeContact:crRr&gt;
+      &lt;rdeContact:crDate&gt;2009-09-13T08:01:00.0Z&lt;/rdeContact:crDate&gt;
+      &lt;rdeContact:upRr client="jdoe"&gt;RegistrarX&lt;/rdeContact:upRr&gt;
+      &lt;rdeContact:upDate&gt;2009-11-26T09:10:00.0Z&lt;/rdeContact:upDate&gt;
+      &lt;rdeContact:trDate&gt;2009-12-03T09:05:00.0Z&lt;/rdeContact:trDate&gt;
       &lt;rdeContact:disclose flag="0"&gt;
         &lt;contact:voice/&gt;
         &lt;contact:email/&gt;
@@ -8945,44 +8938,30 @@ Example of a full deposit using the XML model</h3>
       &lt;rdeRegistrar:status&gt;ok&lt;/rdeRegistrar:status&gt;
       &lt;rdeRegistrar:postalInfo type="int"&gt;
         &lt;rdeRegistrar:addr&gt;
-          &lt;rdeRegistrar:street&gt;123 Example Dr.
-          &lt;/rdeRegistrar:street&gt;
-          &lt;rdeRegistrar:street&gt;Suite 100
-          &lt;/rdeRegistrar:street&gt;
-          &lt;rdeRegistrar:city&gt;Dulles
-          &lt;/rdeRegistrar:city&gt;
-          &lt;rdeRegistrar:sp&gt;VA
-          &lt;/rdeRegistrar:sp&gt;
-          &lt;rdeRegistrar:pc&gt;20166-6503
-          &lt;/rdeRegistrar:pc&gt;
-          &lt;rdeRegistrar:cc&gt;US
-          &lt;/rdeRegistrar:cc&gt;
+          &lt;rdeRegistrar:street&gt;123 Example Dr.&lt;/rdeRegistrar:street&gt;
+          &lt;rdeRegistrar:street&gt;Suite 100&lt;/rdeRegistrar:street&gt;
+          &lt;rdeRegistrar:city&gt;Dulles&lt;/rdeRegistrar:city&gt;
+          &lt;rdeRegistrar:sp&gt;VA&lt;/rdeRegistrar:sp&gt;
+          &lt;rdeRegistrar:pc&gt;20166-6503&lt;/rdeRegistrar:pc&gt;
+          &lt;rdeRegistrar:cc&gt;US&lt;/rdeRegistrar:cc&gt;
         &lt;/rdeRegistrar:addr&gt;
       &lt;/rdeRegistrar:postalInfo&gt;
-      &lt;rdeRegistrar:voice x="1234"&gt;+1.7035555555
-      &lt;/rdeRegistrar:voice&gt;
-      &lt;rdeRegistrar:fax&gt;+1.7035555556
-      &lt;/rdeRegistrar:fax&gt;
-      &lt;rdeRegistrar:email&gt;jdoe@example.test
-      &lt;/rdeRegistrar:email&gt;
-      &lt;rdeRegistrar:url&gt;http://www.example.test
-      &lt;/rdeRegistrar:url&gt;
+      &lt;rdeRegistrar:voice x="1234"&gt;+1.7035555555&lt;/rdeRegistrar:voice&gt;
+      &lt;rdeRegistrar:fax&gt;+1.7035555556&lt;/rdeRegistrar:fax&gt;
+      &lt;rdeRegistrar:email&gt;jdoe@example.test&lt;/rdeRegistrar:email&gt;
+      &lt;rdeRegistrar:url&gt;http://www.example.test&lt;/rdeRegistrar:url&gt;
       &lt;rdeRegistrar:whoisInfo&gt;
-        &lt;rdeRegistrar:name&gt;whois.example.test
-        &lt;/rdeRegistrar:name&gt;
-        &lt;rdeRegistrar:url&gt;http://whois.example.test
-        &lt;/rdeRegistrar:url&gt;
+        &lt;rdeRegistrar:name&gt;whois.example.test&lt;/rdeRegistrar:name&gt;
+        &lt;rdeRegistrar:url&gt;http://whois.example.test&lt;/rdeRegistrar:url&gt;
       &lt;/rdeRegistrar:whoisInfo&gt;
-      &lt;rdeRegistrar:crDate&gt;2005-04-23T11:49:00.0Z
-      &lt;/rdeRegistrar:crDate&gt;
-      &lt;rdeRegistrar:upDate&gt;2009-02-17T17:51:00.0Z
-      &lt;/rdeRegistrar:upDate&gt;
+      &lt;rdeRegistrar:crDate&gt;2005-04-23T11:49:00.0Z&lt;/rdeRegistrar:crDate&gt;
+      &lt;rdeRegistrar:upDate&gt;2009-02-17T17:51:00.0Z&lt;/rdeRegistrar:upDate&gt;
     &lt;/rdeRegistrar:registrar&gt;
 
     &lt;!-- IDN Table --&gt;
     &lt;rdeIDN:idnTableRef id="pt-BR"&gt;
       &lt;rdeIDN:url&gt;
-http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
+        http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
       &lt;/rdeIDN:url&gt;
       &lt;rdeIDN:urlPolicy&gt;
         http://registro.br/dominio/regras.html
@@ -8993,7 +8972,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
     &lt;rdeNNDN:NNDN&gt;
       &lt;rdeNNDN:aName&gt;xn--exampl-gva.test&lt;/rdeNNDN:aName&gt;
       &lt;rdeNNDN:idnTableId&gt;pt-BR&lt;/rdeNNDN:idnTableId&gt;
-      &lt;rdeNNDN:originalName&gt;Dexample1-TEST&lt;/rdeNNDN:originalName&gt;
+      &lt;rdeNNDN:originalName&gt;example1.test&lt;/rdeNNDN:originalName&gt;
       &lt;rdeNNDN:nameState&gt;withheld&lt;/rdeNNDN:nameState&gt;
       &lt;rdeNNDN:crDate&gt;2005-04-23T11:49:00.0Z&lt;/rdeNNDN:crDate&gt;
     &lt;/rdeNNDN:NNDN&gt;
@@ -9012,10 +8991,8 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         urn:ietf:params:xml:ns:host-1.0
       &lt;/rdeEppParams:objURI&gt;
       &lt;rdeEppParams:svcExtension&gt;
-        &lt;epp:extURI&gt;urn:ietf:params:xml:ns:rgp-1.0
-        &lt;/epp:extURI&gt;
-        &lt;epp:extURI&gt;urn:ietf:params:xml:ns:secDNS-1.1
-        &lt;/epp:extURI&gt;
+        &lt;epp:extURI&gt;urn:ietf:params:xml:ns:rgp-1.0&lt;/epp:extURI&gt;
+        &lt;epp:extURI&gt;urn:ietf:params:xml:ns:secDNS-1.1&lt;/epp:extURI&gt;
       &lt;/rdeEppParams:svcExtension&gt;
       &lt;rdeEppParams:dcp&gt;
       &lt;epp:access&gt;&lt;epp:all/&gt;&lt;/epp:access&gt;
@@ -9034,9 +9011,9 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         &lt;/epp:statement&gt;
       &lt;/rdeEppParams:dcp&gt;
     &lt;/rdeEppParams:eppParams&gt;
-  &lt;rdePolicy:policy
-     scope="//rde:deposit/rde:contents/rdeDomain:domain"
-     element="rdeDom:registrant" /&gt;
+	&lt;rdePolicy:policy
+	   scope="//rde:deposit/rde:contents/rdeDomain:domain"
+	   element="rdeDom:registrant" /&gt;
   &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;
 
@@ -9098,26 +9075,21 @@ Example of differential deposit using the XML model</h3>
     &lt;rdeHeader:header&gt;
       &lt;rdeHeader:tld&gt;test&lt;/rdeHeader:tld&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeDomain-1.0"&gt;1
-      &lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeDomain-1.0"&gt;1&lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeHost-1.0"&gt;1
-      &lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeHost-1.0"&gt;1&lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeContact-1.0"&gt;1
-      &lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeContact-1.0"&gt;1&lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0"&gt;1
-    &lt;/rdeHeader:count&gt;
+	  &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeIDN-1.0"&gt;1
-      &lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeIDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0"&gt;1
-      &lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeEppParams-1.0"&gt;1
-    &lt;/rdeHeader:count&gt;
+	  &lt;/rdeHeader:count&gt;
     &lt;/rdeHeader:header&gt;
   &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;
@@ -9203,6 +9175,7 @@ Example of a full deposit using the CSV model</h3>
            &lt;csvDomain:fName/&gt;
            &lt;rdeCsv:fRoid/&gt;
            &lt;rdeCsv:fIdnTableId/&gt;
+           &lt;csvDomain:fOriginalName/&gt;
            &lt;rdeCsv:fRegistrant isRequired="true"/&gt;
            &lt;rdeCsv:fClID/&gt;
            &lt;rdeCsv:fCrRr/&gt;
@@ -9836,6 +9809,7 @@ Example of differential deposit using the CSV model</h3>
           &lt;csvDomain:fName/&gt;
           &lt;rdeCsv:fRoid/&gt;
           &lt;rdeCsv:fIdnTableId/&gt;
+          &lt;csvDomain:fOriginalName/&gt;
           &lt;rdeCsv:fRegistrant/&gt;
           &lt;rdeCsv:fClID/&gt;
           &lt;rdeCsv:fCrRr/&gt;
