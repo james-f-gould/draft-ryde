@@ -145,12 +145,12 @@
 <tr><td class="header">Network Working Group</td><td class="header">F. Arias</td></tr>
 <tr><td class="header">Internet-Draft</td><td class="header">G. Lozano</td></tr>
 <tr><td class="header">Intended status: Standards Track</td><td class="header">ICANN</td></tr>
-<tr><td class="header">Expires: January 5, 2014</td><td class="header">S. Noguchi</td></tr>
+<tr><td class="header">Expires: January 10, 2014</td><td class="header">S. Noguchi</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">JPRS</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">J. Gould</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">C. Thippeswamy</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">VeriSign</td></tr>
-<tr><td class="header">&nbsp;</td><td class="header">July 04, 2013</td></tr>
+<tr><td class="header">&nbsp;</td><td class="header">July 09, 2013</td></tr>
 </table></td></tr></table>
 <h1><br />Domain Name Registration Data (DNRD) Objects Mapping<br />draft-arias-noguchi-dnrd-objects-mapping-04</h1>
 
@@ -177,7 +177,7 @@ and may be updated, replaced, or obsoleted by other documents at any time.
 It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
-This Internet-Draft will expire on January 5, 2014.</p>
+This Internet-Draft will expire on January 10, 2014.</p>
 
 <h3>Copyright Notice</h3>
 <p>
@@ -1274,7 +1274,7 @@ CSV Model</h3>
       &lt;csvDomain:fName/&gt;
       &lt;rdeCsv:fRoid/&gt;
       &lt;rdeCsv:fIdnTableId/&gt;
-	  &lt;csvDomain:fOriginalName/&gt;
+    &lt;csvDomain:fOriginalName/&gt;
       &lt;rdeCsv:fRegistrant/&gt;
       &lt;rdeCsv:fClID/&gt;
       &lt;rdeCsv:fCrRr/&gt;
@@ -8814,14 +8814,22 @@ Example of a full deposit using the XML model</h3>
   &lt;rde:watermark&gt;2010-10-17T00:00:00Z&lt;/rde:watermark&gt;
   &lt;rde:rdeMenu&gt;
     &lt;rde:version&gt;1.0&lt;/rde:version&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeHeader-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeContact-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeHost-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeDomain-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeRegistrar-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeIDN-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeNNDN-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeEppParams-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeHeader-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeContact-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeHost-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeDomain-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeRegistrar-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeIDN-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeNNDN-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeEppParams-1.0
+    &lt;/rde:objURI&gt;
   &lt;/rde:rdeMenu&gt;
 
   &lt;!-- Contents --&gt;
@@ -8830,21 +8838,26 @@ Example of a full deposit using the XML model</h3>
     &lt;rdeHeader:header&gt;
       &lt;rdeHeader:tld&gt;test&lt;/rdeHeader:tld&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeDomain-1.0"&gt;2&lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeDomain-1.0"&gt;2
+        &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeHost-1.0"&gt;1&lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeHost-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeContact-1.0"&gt;1&lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeContact-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0"&gt;1
-	  &lt;/rdeHeader:count&gt;
+    &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeIDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeIDN-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeEppParams-1.0"&gt;1
-	  &lt;/rdeHeader:count&gt;
+    &lt;/rdeHeader:count&gt;
     &lt;/rdeHeader:header&gt;
 
     &lt;!-- Domian: example1.test --&gt;
@@ -8888,7 +8901,8 @@ Example of a full deposit using the XML model</h3>
       &lt;rdeHost:status s="linked"/&gt;
       &lt;rdeHost:addr ip="v4"&gt;192.0.2.2&lt;/rdeHost:addr&gt;
       &lt;rdeHost:addr ip="v4"&gt;192.0.2.29&lt;/rdeHost:addr&gt;
-      &lt;rdeHost:addr ip="v6"&gt;1080:0:0:0:8:800:200C:417A&lt;/rdeHost:addr&gt;
+      &lt;rdeHost:addr ip="v6"&gt;1080:0:0:0:8:800:200C:417A
+      &lt;/rdeHost:addr&gt;
       &lt;rdeHost:clID&gt;RegistrarX&lt;/rdeHost:clID&gt;
       &lt;rdeHost:crRr&gt;RegistrarX&lt;/rdeHost:crRr&gt;
       &lt;rdeHost:crDate&gt;1999-05-08T12:10:00.0Z&lt;/rdeHost:crDate&gt;
@@ -8915,15 +8929,23 @@ Example of a full deposit using the XML model</h3>
           &lt;contact:cc&gt;US&lt;/contact:cc&gt;
         &lt;/contact:addr&gt;
       &lt;/rdeContact:postalInfo&gt;
-      &lt;rdeContact:voice x="1234"&gt;+1.7035555555&lt;/rdeContact:voice&gt;
-      &lt;rdeContact:fax&gt;+1.7035555556&lt;/rdeContact:fax&gt;
-      &lt;rdeContact:email&gt;jdoe@example.test&lt;/rdeContact:email&gt;
+      &lt;rdeContact:voice x="1234"&gt;+1.7035555555
+      &lt;/rdeContact:voice&gt;
+      &lt;rdeContact:fax&gt;+1.7035555556
+      &lt;/rdeContact:fax&gt;
+      &lt;rdeContact:email&gt;jdoe@example.test
+      &lt;/rdeContact:email&gt;
       &lt;rdeContact:clID&gt;RegistrarX&lt;/rdeContact:clID&gt;
-      &lt;rdeContact:crRr client="jdoe"&gt;RegistrarX&lt;/rdeContact:crRr&gt;
-      &lt;rdeContact:crDate&gt;2009-09-13T08:01:00.0Z&lt;/rdeContact:crDate&gt;
-      &lt;rdeContact:upRr client="jdoe"&gt;RegistrarX&lt;/rdeContact:upRr&gt;
-      &lt;rdeContact:upDate&gt;2009-11-26T09:10:00.0Z&lt;/rdeContact:upDate&gt;
-      &lt;rdeContact:trDate&gt;2009-12-03T09:05:00.0Z&lt;/rdeContact:trDate&gt;
+      &lt;rdeContact:crRr client="jdoe"&gt;RegistrarX
+      &lt;/rdeContact:crRr&gt;
+      &lt;rdeContact:crDate&gt;2009-09-13T08:01:00.0Z
+      &lt;/rdeContact:crDate&gt;
+      &lt;rdeContact:upRr client="jdoe"&gt;RegistrarX
+      &lt;/rdeContact:upRr&gt;
+      &lt;rdeContact:upDate&gt;2009-11-26T09:10:00.0Z
+      &lt;/rdeContact:upDate&gt;
+      &lt;rdeContact:trDate&gt;2009-12-03T09:05:00.0Z
+      &lt;/rdeContact:trDate&gt;
       &lt;rdeContact:disclose flag="0"&gt;
         &lt;contact:voice/&gt;
         &lt;contact:email/&gt;
@@ -8938,30 +8960,40 @@ Example of a full deposit using the XML model</h3>
       &lt;rdeRegistrar:status&gt;ok&lt;/rdeRegistrar:status&gt;
       &lt;rdeRegistrar:postalInfo type="int"&gt;
         &lt;rdeRegistrar:addr&gt;
-          &lt;rdeRegistrar:street&gt;123 Example Dr.&lt;/rdeRegistrar:street&gt;
-          &lt;rdeRegistrar:street&gt;Suite 100&lt;/rdeRegistrar:street&gt;
+          &lt;rdeRegistrar:street&gt;123 Example Dr.
+          &lt;/rdeRegistrar:street&gt;
+          &lt;rdeRegistrar:street&gt;Suite 100
+          &lt;/rdeRegistrar:street&gt;
           &lt;rdeRegistrar:city&gt;Dulles&lt;/rdeRegistrar:city&gt;
           &lt;rdeRegistrar:sp&gt;VA&lt;/rdeRegistrar:sp&gt;
           &lt;rdeRegistrar:pc&gt;20166-6503&lt;/rdeRegistrar:pc&gt;
           &lt;rdeRegistrar:cc&gt;US&lt;/rdeRegistrar:cc&gt;
         &lt;/rdeRegistrar:addr&gt;
       &lt;/rdeRegistrar:postalInfo&gt;
-      &lt;rdeRegistrar:voice x="1234"&gt;+1.7035555555&lt;/rdeRegistrar:voice&gt;
-      &lt;rdeRegistrar:fax&gt;+1.7035555556&lt;/rdeRegistrar:fax&gt;
-      &lt;rdeRegistrar:email&gt;jdoe@example.test&lt;/rdeRegistrar:email&gt;
-      &lt;rdeRegistrar:url&gt;http://www.example.test&lt;/rdeRegistrar:url&gt;
+      &lt;rdeRegistrar:voice x="1234"&gt;+1.7035555555
+      &lt;/rdeRegistrar:voice&gt;
+      &lt;rdeRegistrar:fax&gt;+1.7035555556
+      &lt;/rdeRegistrar:fax&gt;
+      &lt;rdeRegistrar:email&gt;jdoe@example.test
+      &lt;/rdeRegistrar:email&gt;
+      &lt;rdeRegistrar:url&gt;http://www.example.test
+      &lt;/rdeRegistrar:url&gt;
       &lt;rdeRegistrar:whoisInfo&gt;
-        &lt;rdeRegistrar:name&gt;whois.example.test&lt;/rdeRegistrar:name&gt;
-        &lt;rdeRegistrar:url&gt;http://whois.example.test&lt;/rdeRegistrar:url&gt;
+        &lt;rdeRegistrar:name&gt;whois.example.test
+        &lt;/rdeRegistrar:name&gt;
+        &lt;rdeRegistrar:url&gt;http://whois.example.test
+        &lt;/rdeRegistrar:url&gt;
       &lt;/rdeRegistrar:whoisInfo&gt;
-      &lt;rdeRegistrar:crDate&gt;2005-04-23T11:49:00.0Z&lt;/rdeRegistrar:crDate&gt;
-      &lt;rdeRegistrar:upDate&gt;2009-02-17T17:51:00.0Z&lt;/rdeRegistrar:upDate&gt;
+      &lt;rdeRegistrar:crDate&gt;2005-04-23T11:49:00.0Z
+      &lt;/rdeRegistrar:crDate&gt;
+      &lt;rdeRegistrar:upDate&gt;2009-02-17T17:51:00.0Z
+      &lt;/rdeRegistrar:upDate&gt;
     &lt;/rdeRegistrar:registrar&gt;
 
     &lt;!-- IDN Table --&gt;
     &lt;rdeIDN:idnTableRef id="pt-BR"&gt;
       &lt;rdeIDN:url&gt;
-        http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
+http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
       &lt;/rdeIDN:url&gt;
       &lt;rdeIDN:urlPolicy&gt;
         http://registro.br/dominio/regras.html
@@ -8991,8 +9023,10 @@ Example of a full deposit using the XML model</h3>
         urn:ietf:params:xml:ns:host-1.0
       &lt;/rdeEppParams:objURI&gt;
       &lt;rdeEppParams:svcExtension&gt;
-        &lt;epp:extURI&gt;urn:ietf:params:xml:ns:rgp-1.0&lt;/epp:extURI&gt;
-        &lt;epp:extURI&gt;urn:ietf:params:xml:ns:secDNS-1.1&lt;/epp:extURI&gt;
+        &lt;epp:extURI&gt;urn:ietf:params:xml:ns:rgp-1.0
+        &lt;/epp:extURI&gt;
+        &lt;epp:extURI&gt;urn:ietf:params:xml:ns:secDNS-1.1
+        &lt;/epp:extURI&gt;
       &lt;/rdeEppParams:svcExtension&gt;
       &lt;rdeEppParams:dcp&gt;
       &lt;epp:access&gt;&lt;epp:all/&gt;&lt;/epp:access&gt;
@@ -9011,9 +9045,9 @@ Example of a full deposit using the XML model</h3>
         &lt;/epp:statement&gt;
       &lt;/rdeEppParams:dcp&gt;
     &lt;/rdeEppParams:eppParams&gt;
-	&lt;rdePolicy:policy
-	   scope="//rde:deposit/rde:contents/rdeDomain:domain"
-	   element="rdeDom:registrant" /&gt;
+  &lt;rdePolicy:policy
+     scope="//rde:deposit/rde:contents/rdeDomain:domain"
+     element="rdeDom:registrant" /&gt;
   &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;
 
@@ -9052,14 +9086,22 @@ Example of differential deposit using the XML model</h3>
   &lt;rde:watermark&gt;2010-10-17T00:00:00Z&lt;/rde:watermark&gt;
   &lt;rde:rdeMenu&gt;
     &lt;rde:version&gt;1.0&lt;/rde:version&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeHeader-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeContact-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeHost-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeDomain-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeRegistrar-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeIDN-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeNNDN-1.0&lt;/rde:objURI&gt;
-    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeEppParams-1.0&lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeHeader-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeContact-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeHost-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeDomain-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeRegistrar-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeIDN-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeNNDN-1.0
+    &lt;/rde:objURI&gt;
+    &lt;rde:objURI&gt;urn:ietf:params:xml:ns:rdeEppParams-1.0
+    &lt;/rde:objURI&gt;
   &lt;/rde:rdeMenu&gt;
 
   &lt;!-- Deletes --&gt;
@@ -9075,21 +9117,26 @@ Example of differential deposit using the XML model</h3>
     &lt;rdeHeader:header&gt;
       &lt;rdeHeader:tld&gt;test&lt;/rdeHeader:tld&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeDomain-1.0"&gt;1&lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeDomain-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeHost-1.0"&gt;1&lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeHost-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeContact-1.0"&gt;1&lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeContact-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0"&gt;1
-	  &lt;/rdeHeader:count&gt;
+    &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeIDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeIDN-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0"&gt;1&lt;/rdeHeader:count&gt;
+        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0"&gt;1
+        &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeEppParams-1.0"&gt;1
-	  &lt;/rdeHeader:count&gt;
+    &lt;/rdeHeader:count&gt;
     &lt;/rdeHeader:header&gt;
   &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;

@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="04" month="July" year="2013"/>
+        <date day="09" month="July" year="2013"/>
         
         <area> Applications </area>
         
@@ -804,7 +804,7 @@ domainN.test]]>
                 <t hangText="&lt;csvDomain:fOriginalName&gt;">Fully qualified name of the original IDN domain name object related to the 
                       variant domain name object with type="eppcom:labelType".
                 </t>
-				
+        
                   </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
                   MUST be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
@@ -842,7 +842,7 @@ domainN.test]]>
       <csvDomain:fName/>
       <rdeCsv:fRoid/>
       <rdeCsv:fIdnTableId/>
-	  <csvDomain:fOriginalName/>
+    <csvDomain:fOriginalName/>
       <rdeCsv:fRegistrant/>
       <rdeCsv:fClID/>
       <rdeCsv:fCrRr/>
@@ -2275,7 +2275,7 @@ ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A]]>
                 </t>
                   </list></t>
  
-  					<t>The following field elements MAY be used in the 
+            <t>The following field elements MAY be used in the 
                   "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -3108,7 +3108,7 @@ mycontactid]]>
 
                   </list></t>
                   
-					<t>The following field elements MAY be used in the "registrar" 
+          <t>The following field elements MAY be used in the "registrar" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
@@ -7032,14 +7032,22 @@ END]]></artwork></figure>
   <rde:watermark>2010-10-17T00:00:00Z</rde:watermark>
   <rde:rdeMenu>
     <rde:version>1.0</rde:version>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeHeader-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeContact-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeHost-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeDomain-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeRegistrar-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeIDN-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeNNDN-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeEppParams-1.0</rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeHeader-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeContact-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeHost-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeDomain-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeRegistrar-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeIDN-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeNNDN-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeEppParams-1.0
+    </rde:objURI>
   </rde:rdeMenu>
 
   <!-- Contents -->
@@ -7048,21 +7056,26 @@ END]]></artwork></figure>
     <rdeHeader:header>
       <rdeHeader:tld>test</rdeHeader:tld>
       <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeDomain-1.0">2</rdeHeader:count>
+        uri="urn:ietf:params:xml:ns:rdeDomain-1.0">2
+        </rdeHeader:count>
       <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeHost-1.0">1</rdeHeader:count>
+        uri="urn:ietf:params:xml:ns:rdeHost-1.0">1
+        </rdeHeader:count>
       <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeContact-1.0">1</rdeHeader:count>
+        uri="urn:ietf:params:xml:ns:rdeContact-1.0">1
+        </rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
       <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1</rdeHeader:count>
+        uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1
+        </rdeHeader:count>
       <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0">1</rdeHeader:count>
+        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0">1
+        </rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
     </rdeHeader:header>
 
     <!-- Domian: example1.test -->
@@ -7106,7 +7119,8 @@ END]]></artwork></figure>
       <rdeHost:status s="linked"/>
       <rdeHost:addr ip="v4">192.0.2.2</rdeHost:addr>
       <rdeHost:addr ip="v4">192.0.2.29</rdeHost:addr>
-      <rdeHost:addr ip="v6">1080:0:0:0:8:800:200C:417A</rdeHost:addr>
+      <rdeHost:addr ip="v6">1080:0:0:0:8:800:200C:417A
+      </rdeHost:addr>
       <rdeHost:clID>RegistrarX</rdeHost:clID>
       <rdeHost:crRr>RegistrarX</rdeHost:crRr>
       <rdeHost:crDate>1999-05-08T12:10:00.0Z</rdeHost:crDate>
@@ -7133,15 +7147,23 @@ END]]></artwork></figure>
           <contact:cc>US</contact:cc>
         </contact:addr>
       </rdeContact:postalInfo>
-      <rdeContact:voice x="1234">+1.7035555555</rdeContact:voice>
-      <rdeContact:fax>+1.7035555556</rdeContact:fax>
-      <rdeContact:email>jdoe@example.test</rdeContact:email>
+      <rdeContact:voice x="1234">+1.7035555555
+      </rdeContact:voice>
+      <rdeContact:fax>+1.7035555556
+      </rdeContact:fax>
+      <rdeContact:email>jdoe@example.test
+      </rdeContact:email>
       <rdeContact:clID>RegistrarX</rdeContact:clID>
-      <rdeContact:crRr client="jdoe">RegistrarX</rdeContact:crRr>
-      <rdeContact:crDate>2009-09-13T08:01:00.0Z</rdeContact:crDate>
-      <rdeContact:upRr client="jdoe">RegistrarX</rdeContact:upRr>
-      <rdeContact:upDate>2009-11-26T09:10:00.0Z</rdeContact:upDate>
-      <rdeContact:trDate>2009-12-03T09:05:00.0Z</rdeContact:trDate>
+      <rdeContact:crRr client="jdoe">RegistrarX
+      </rdeContact:crRr>
+      <rdeContact:crDate>2009-09-13T08:01:00.0Z
+      </rdeContact:crDate>
+      <rdeContact:upRr client="jdoe">RegistrarX
+      </rdeContact:upRr>
+      <rdeContact:upDate>2009-11-26T09:10:00.0Z
+      </rdeContact:upDate>
+      <rdeContact:trDate>2009-12-03T09:05:00.0Z
+      </rdeContact:trDate>
       <rdeContact:disclose flag="0">
         <contact:voice/>
         <contact:email/>
@@ -7156,30 +7178,40 @@ END]]></artwork></figure>
       <rdeRegistrar:status>ok</rdeRegistrar:status>
       <rdeRegistrar:postalInfo type="int">
         <rdeRegistrar:addr>
-          <rdeRegistrar:street>123 Example Dr.</rdeRegistrar:street>
-          <rdeRegistrar:street>Suite 100</rdeRegistrar:street>
+          <rdeRegistrar:street>123 Example Dr.
+          </rdeRegistrar:street>
+          <rdeRegistrar:street>Suite 100
+          </rdeRegistrar:street>
           <rdeRegistrar:city>Dulles</rdeRegistrar:city>
           <rdeRegistrar:sp>VA</rdeRegistrar:sp>
           <rdeRegistrar:pc>20166-6503</rdeRegistrar:pc>
           <rdeRegistrar:cc>US</rdeRegistrar:cc>
         </rdeRegistrar:addr>
       </rdeRegistrar:postalInfo>
-      <rdeRegistrar:voice x="1234">+1.7035555555</rdeRegistrar:voice>
-      <rdeRegistrar:fax>+1.7035555556</rdeRegistrar:fax>
-      <rdeRegistrar:email>jdoe@example.test</rdeRegistrar:email>
-      <rdeRegistrar:url>http://www.example.test</rdeRegistrar:url>
+      <rdeRegistrar:voice x="1234">+1.7035555555
+      </rdeRegistrar:voice>
+      <rdeRegistrar:fax>+1.7035555556
+      </rdeRegistrar:fax>
+      <rdeRegistrar:email>jdoe@example.test
+      </rdeRegistrar:email>
+      <rdeRegistrar:url>http://www.example.test
+      </rdeRegistrar:url>
       <rdeRegistrar:whoisInfo>
-        <rdeRegistrar:name>whois.example.test</rdeRegistrar:name>
-        <rdeRegistrar:url>http://whois.example.test</rdeRegistrar:url>
+        <rdeRegistrar:name>whois.example.test
+        </rdeRegistrar:name>
+        <rdeRegistrar:url>http://whois.example.test
+        </rdeRegistrar:url>
       </rdeRegistrar:whoisInfo>
-      <rdeRegistrar:crDate>2005-04-23T11:49:00.0Z</rdeRegistrar:crDate>
-      <rdeRegistrar:upDate>2009-02-17T17:51:00.0Z</rdeRegistrar:upDate>
+      <rdeRegistrar:crDate>2005-04-23T11:49:00.0Z
+      </rdeRegistrar:crDate>
+      <rdeRegistrar:upDate>2009-02-17T17:51:00.0Z
+      </rdeRegistrar:upDate>
     </rdeRegistrar:registrar>
 
     <!-- IDN Table -->
     <rdeIDN:idnTableRef id="pt-BR">
       <rdeIDN:url>
-        http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
+http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
       </rdeIDN:url>
       <rdeIDN:urlPolicy>
         http://registro.br/dominio/regras.html
@@ -7209,8 +7241,10 @@ END]]></artwork></figure>
         urn:ietf:params:xml:ns:host-1.0
       </rdeEppParams:objURI>
       <rdeEppParams:svcExtension>
-        <epp:extURI>urn:ietf:params:xml:ns:rgp-1.0</epp:extURI>
-        <epp:extURI>urn:ietf:params:xml:ns:secDNS-1.1</epp:extURI>
+        <epp:extURI>urn:ietf:params:xml:ns:rgp-1.0
+        </epp:extURI>
+        <epp:extURI>urn:ietf:params:xml:ns:secDNS-1.1
+        </epp:extURI>
       </rdeEppParams:svcExtension>
       <rdeEppParams:dcp>
       <epp:access><epp:all/></epp:access>
@@ -7229,9 +7263,9 @@ END]]></artwork></figure>
         </epp:statement>
       </rdeEppParams:dcp>
     </rdeEppParams:eppParams>
-	<rdePolicy:policy 
-	   scope="//rde:deposit/rde:contents/rdeDomain:domain" 
-	   element="rdeDom:registrant" />
+  <rdePolicy:policy 
+     scope="//rde:deposit/rde:contents/rdeDomain:domain" 
+     element="rdeDom:registrant" />
   </rde:contents>
 </rde:deposit>
 ]]>
@@ -7264,14 +7298,22 @@ END]]></artwork></figure>
   <rde:watermark>2010-10-17T00:00:00Z</rde:watermark>
   <rde:rdeMenu>
     <rde:version>1.0</rde:version>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeHeader-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeContact-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeHost-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeDomain-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeRegistrar-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeIDN-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeNNDN-1.0</rde:objURI>
-    <rde:objURI>urn:ietf:params:xml:ns:rdeEppParams-1.0</rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeHeader-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeContact-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeHost-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeDomain-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeRegistrar-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeIDN-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeNNDN-1.0
+    </rde:objURI>
+    <rde:objURI>urn:ietf:params:xml:ns:rdeEppParams-1.0
+    </rde:objURI>
   </rde:rdeMenu>
 
   <!-- Deletes -->
@@ -7287,21 +7329,26 @@ END]]></artwork></figure>
     <rdeHeader:header>
       <rdeHeader:tld>test</rdeHeader:tld>
       <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeDomain-1.0">1</rdeHeader:count>
+        uri="urn:ietf:params:xml:ns:rdeDomain-1.0">1
+        </rdeHeader:count>
       <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeHost-1.0">1</rdeHeader:count>
+        uri="urn:ietf:params:xml:ns:rdeHost-1.0">1
+        </rdeHeader:count>
       <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeContact-1.0">1</rdeHeader:count>
+        uri="urn:ietf:params:xml:ns:rdeContact-1.0">1
+        </rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
       <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1</rdeHeader:count>
+        uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1
+        </rdeHeader:count>
       <rdeHeader:count
-        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0">1</rdeHeader:count>
+        uri="urn:ietf:params:xml:ns:rdeNNDN-1.0">1
+        </rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
-	  </rdeHeader:count>
+    </rdeHeader:count>
     </rdeHeader:header>
   </rde:contents>
 </rde:deposit>
