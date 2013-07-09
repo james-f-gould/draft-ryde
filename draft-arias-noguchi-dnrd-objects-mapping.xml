@@ -356,7 +356,7 @@
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="E6D52D73">
+        cksum="BF8E79F6">
         domain-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -366,11 +366,11 @@
                         </artwork></figure>
                     </t>
                   <t>The following is example of the "domain-YYYYMMDD.csv" file 
-                  with a single record matching the &lt;rdeCsv:fields&gt; definition.</t>
+                  with one record matching the &lt;rdeCsv:fields&gt; definition.</t>
                     <t>
                         <figure><artwork><![CDATA[
-domain1.test,Ddomain2-TEST,,registrantid,registrarX,registrarX,
-clientY,2009-04-03T22:00:00.0Z,registrarX,clientX
+domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
+clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
 2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z]]>
                         </artwork></figure>
                     </t>
@@ -385,7 +385,7 @@ clientY,2009-04-03T22:00:00.0Z,registrarX,clientX
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="E19349E0">
+        cksum="6F2B988F">
         domain-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -520,7 +520,7 @@ domainN.test]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="9CB43C2E">
+        cksum="06DC1A7E">
         registrar-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -842,7 +842,7 @@ domainN.test]]>
       <csvDomain:fName/>
       <rdeCsv:fRoid/>
       <rdeCsv:fIdnTableId/>
-    <csvDomain:fOriginalName/>
+      <csvDomain:fOriginalName/>
       <rdeCsv:fRegistrant/>
       <rdeCsv:fClID/>
       <rdeCsv:fCrRr/>
@@ -855,7 +855,7 @@ domainN.test]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="E6D52D73">
+        cksum="AD30F3D6">
         domain-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -873,17 +873,16 @@ domainN.test]]>
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
-domain1.test,Ddomain2-TEST,,registrantid,
-registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,
-clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-domain2.test,Ddomain1-TEST,,registrantid,
-registrarX,registrarX,clientY,1999-04-03T22:00:00.0Z,registrarX,
-clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-xn-abc123.test,Dxn-abc123-TEST,LANG1,,
-registrantid,registrarX,registrarX,clientY,
-2009-04-03T22:00:00.0Z,registrarX,clientY,2009-12-03T09:05:00.0Z,
-2015-04-03T22:00:00.0Z
-xn-abc321.test,Dxn-abc321-TEST,LANG1,
+domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
+clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
+2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+domain2.test,Ddomain1-TEST,,,registrantid,registrarX,registrarX,
+clientY,1999-04-03T22:00:00.0Z,registrarX,clientY,
+2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+xn--abc123.test,Dxnabc123-TEST,LANG1,,registrantid,registrarX,
+registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
+2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+xn--abc321.test,Dxnabc321-TEST,LANG1,xn--cbc321.test,
 registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
 registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z]]>
                         </artwork></figure>
@@ -965,7 +964,7 @@ domainN.test]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="70A7C17B">
+        cksum="6BC9F9E8">
         domainContacts-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -1174,7 +1173,7 @@ domain2.test,pendingDelete]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="546C66A5">
+        cksum="569D4638">
         domainNameServers-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -1214,7 +1213,7 @@ domain2.test,Dns2domainexample-TEST]]>
   </rdeCsv:fields>
   <rdeCsv:files>
     <rdeCsv:file 
-     cksum="546C66A5">
+     cksum="569D4638">
      domainNameServers-delete-YYYYMMDD.csv
     </rdeCsv:file> 
   </rdeCsv:files>
@@ -1307,8 +1306,8 @@ domain2.test,Dns2domainexample-TEST]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-       cksum="1234567890 987654">
-       dnssec-YYYYMMDD.csv
+       cksum="AA15CB43">
+       dnssec-ds-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
   </rdeCsv:csv>
@@ -1318,7 +1317,7 @@ domain2.test,Dns2domainexample-TEST]]>
                         </artwork></figure>
                     </t>    
                      <t>
-                        Example of the corresponding dnssec-YYYYMMDD.csv file.
+                        Example of the corresponding dnssec-ds-YYYYMMDD.csv file.
                         The file contains two DS records for domain1.test.
                     </t>
                     <t>
@@ -1345,8 +1344,8 @@ domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-       cksum="AA15CB43">
-       dnssec-YYYYMMDD.csv
+       cksum="1B16F334">
+       dnssec-key-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
   </rdeCsv:csv>
@@ -1356,7 +1355,7 @@ domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B]]>
                         </artwork></figure>
                     </t>    
                      <t>
-                        Example of the corresponding dnssec-YYYYMMDD.csv file.
+                        Example of the corresponding dnssec-key-YYYYMMDD.csv file.
                         The file contains two key records for domain1.test.
                     </t>
                     <t>
@@ -1394,7 +1393,7 @@ domain1.test,604800,257,3,1,AQPJ////4QQQ]]>
                         </artwork></figure>
                     </t>    
                      <t>
-                        Example of the corresponding dnssec-delete-YYYYMMDD.csv file.
+                        Example of the corresponding dnssec-ds-delete-YYYYMMDD.csv file.
                         The file contains two DS records for domain1.test.
                     </t>
                     <t>
@@ -1432,7 +1431,7 @@ domain1.test,12346,3,1,38EC35D5B3A34B44C39B]]>
                         </artwork></figure>
                     </t>    
                      <t>
-                        Example of the corresponding dnssec-delete-YYYYMMDD.csv file.
+                        Example of the corresponding dnssec-key-delete-YYYYMMDD.csv file.
                         The file contains two key records for domain1.test.
                     </t>
                     <t>
@@ -3187,7 +3186,7 @@ mycontactid]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="9CB43C2E">
+        cksum="06DC1A7E">
         registrar-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3343,7 +3342,7 @@ EXAMPLE2]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1924040625 268">
+        cksum="D462EAD0">
         idnLanguage-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3379,8 +3378,8 @@ http://www.iana.org/domains/idn-tables/tables/test_tab2_1.1.txt]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="1924040625 268">
-        idnLanguage-YYYYMMDD.csv
+        cksum="757B573A">
+        idnLanguage-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
   </rdeCsv:csv>
@@ -3551,7 +3550,9 @@ LANG2]]>
                   </t>
                   <t><list style="hanging">
                 <t hangText="&lt;csvNNDN:fOriginalName&gt;">Domain name used to generate the IDN variant with type="eppcom:labelType".</t>  
-                  </list></t>
+                <t hangText="&lt;csvNNDN:fMirroringNS&gt;">Defines whether the "mirroring" &lt;csvNNDN:fNameState&gt; uses the NS mirror mechanism, as described for the &lt;rdeNNDN:nameState&gt; "mirroringNS" attribute in <xref target="ndn_object"/>, with type="boolean".  
+                If the field element is not defined the default value is "true".</t>  
+            </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
                   MUST be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
@@ -3579,11 +3580,12 @@ LANG2]]>
       <rdeCsv:fIdnTableId/>         
       <csvNNDN:fOriginalName/>
       <csvNNDN:fNameState/>
+      <csvNNDN:fMirroringNS/>
       <rdeCsv:fCrDate/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="01F72976">
+        cksum="5EDB3FB1">
         NNDN-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3596,12 +3598,15 @@ LANG2]]>
                     </t>    
                     <t>
                         Example of the corresponding NNDN-YYYYMMDD.csv file.
-                        The file contains a single NNDN record for an IDN.
+                        The file contains two NNDN records for an IDN with 
+                        one blocked variant and one mirrored variant.
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
 xn--exampl-gva.test,pt-BR,xn--exampl.test,
-withheld,2005-04-23T11:49:00.0Z]]>
+blocked,,2005-04-23T11:49:00.0Z
+xn--exampl2-gva.test,pt-BR,xn--exampl.test,
+mirrored,1,2005-04-23T11:49:00.0Z]]>
                         </artwork></figure>
                     </t>    
                     <t>
@@ -3618,7 +3623,7 @@ withheld,2005-04-23T11:49:00.0Z]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="6C253927">
+        cksum="FF104E83">
         NNDN-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -6471,6 +6476,11 @@ END]]></artwork></figure>
     </extension>
   </complexContent>
  </complexType>
+   
+ <!-- Mirroring uses NS mirror mechanism? -->
+ <element name="fMirroringNS" 
+  type="rdeCsv:fBooleanType" 
+  substitutionGroup="rdeCsv:field"/>
   
   <!--
   End of schema.
@@ -7000,6 +7010,7 @@ END]]></artwork></figure>
                       <t>Removed the definition of the &lt;csvDomain:fOriginalName&gt; field element since the &lt;csvNNDN:fOriginalName&gt; field element handles the case of referencing the original domain name of a variant.</t>
                       <t>Added use of the MUST keyword for CSV fields that are required to be supported in an EPP based system.</t>
                       <t>Removed use of the &lt;rdeCsv:fRoid&gt; field element for the "registrar" CSV file.</t>
+                      <t>Added definition of &lt;csvNNDN:fMirroringNS&gt; field element.</t>                      
                    </list>
                 </t>
             </section>
