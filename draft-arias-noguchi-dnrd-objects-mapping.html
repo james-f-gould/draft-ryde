@@ -145,12 +145,12 @@
 <tr><td class="header">Network Working Group</td><td class="header">F. Arias</td></tr>
 <tr><td class="header">Internet-Draft</td><td class="header">G. Lozano</td></tr>
 <tr><td class="header">Intended status: Standards Track</td><td class="header">ICANN</td></tr>
-<tr><td class="header">Expires: January 16, 2014</td><td class="header">S. Noguchi</td></tr>
+<tr><td class="header">Expires: January 10, 2014</td><td class="header">S. Noguchi</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">JPRS</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">J. Gould</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">C. Thippeswamy</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">VeriSign</td></tr>
-<tr><td class="header">&nbsp;</td><td class="header">July 15, 2013</td></tr>
+<tr><td class="header">&nbsp;</td><td class="header">July 09, 2013</td></tr>
 </table></td></tr></table>
 <h1><br />Domain Name Registration Data (DNRD) Objects Mapping<br />draft-arias-noguchi-dnrd-objects-mapping-04</h1>
 
@@ -177,7 +177,7 @@ and may be updated, replaced, or obsoleted by other documents at any time.
 It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
-This Internet-Draft will expire on January 16, 2014.</p>
+This Internet-Draft will expire on January 10, 2014.</p>
 
 <h3>Copyright Notice</h3>
 <p>
@@ -574,7 +574,7 @@ CSV elements</h3>
 <dd>Defines the encoding of the CSV file with the default encoding of "UTF-8".
                       
 </dd>
-<dt>chksum</dt>
+<dt>cksum</dt>
 <dd>Defines the checksum of the CSV file using CRC32, as defined in <a class='info' href='#checksum'>Section&nbsp;4.4<span> (</span><span class='info'>Checksum</span><span>)</span></a>.  This attribute is used to validate 
                       that the full CSV file exists and has not been tampered with.
                       
@@ -4954,11 +4954,13 @@ xn--pingino-q2a.test
 EPP Parameters Object</h3>
 
 <p>
-                    The  EPP Parameters Object defines the set of object and object extension services 
+                  The EPP Parameters Object is a pseudo-object that defines the set of object and object extension services 
                     supported by the registry, as defined in <a class='info' href='#RFC5730'>[RFC5730]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a>.  The 
-                    EPP Parameters Object only supports the XML model and is defined using the 
+                  EPP Parameters Object is only defined as XML but could be used in the the XML model or CSV model.
+                  
+                  The EPP Parameters Object is defined using the 
                     the &lt;rdeEppParams:eppParams&gt; element.
-                    The EPP Parameters Object SHOULD be included if the registry uses EPP.
+                    The EPP Parameters Object SHOULD be included if the registry supports EPP.
                     Only one EPP Parameters Object MUST exist at a certain point in time (watermark).
                 
 </p>
@@ -5050,7 +5052,7 @@ Policy Object</h3>
 
 <p>
                     The Policy object is a pseudo-object that is used to specify which OPTIONAL elements 
-                    from XML Model are REQUIRED based on the business model of the registry.  For the CSV Model, the 
+                    from the XML Model are REQUIRED based on the business model of the registry.  For the CSV Model, the 
                     OPTIONAL "isRequired" attribute of the &lt;rdeCsv:field&gt; elements, defined in 
                     <a class='info' href='#rdeCsv-csv'>Section&nbsp;4.6.1<span> (</span><span class='info'>&lt;rdeCsv:csv&gt; element</span><span>)</span></a>, is used to specify which OPTIONAL fields are REQUIRED
                     based on the business model of the registry.
@@ -5103,7 +5105,9 @@ Header Object</h3>
                     The Header Object is a pseudo-object that is used to specify the number
                     of objects in the SRS at a specific point in time (watermark) regardless
                     of the type of deposit: differential, full or incremental.  The Header Object 
-                    only supports the XML model and is defined using the &lt;rdeHeader:header&gt; element.
+                    is only defined as XML but one header object MUST always be present
+                    per escrow deposit regardless of using XML Model or CSV Model.
+                    The Header Object is defined using the &lt;rdeHeader:header&gt; element.
                 
 </p>
 <a name="header_object"></a><br /><hr />
@@ -5123,8 +5127,9 @@ Header Object</h3>
                             
 </li>
 <li>
-                                A &lt;count&gt; element that number of objects being escrowed.
-                                An "uri" attribute is used to define the type of object.  The "uri" attributes 
+                              A &lt;count&gt; element that contains the number
+                              of objects in the SRS at a specific point in time (watermark) regardless
+                              of the type of deposit: differential, full or incremental.  The "uri" attributes 
                                 reflects the XML namespace URI of the primary objects for 
                                 the XML Model and CSV Model.  For example, the "uri" is set to "urn:ietf:params:xml:ns:rdeDomain-1.0" 
                                 for domain name objects using the XML Model, and the "uri" is set to "urn:ietf:params:xml:ns:csvDomain-1.0" 
@@ -5939,7 +5944,8 @@ RDE Domain Object</h3>
       &lt;extension base="rde:deleteType"&gt;
         &lt;sequence&gt;
           &lt;element name="name"
-            type="eppcom:labelType" maxOccurs="unbounded"/&gt;
+            type="eppcom:labelType" minOccurs="0"
+            maxOccurs="unbounded"/&gt;
         &lt;/sequence&gt;
       &lt;/extension&gt;
     &lt;/complexContent&gt;
@@ -6310,7 +6316,7 @@ RDE Host Object</h3>
   &lt;complexType name="deleteType"&gt;
     &lt;complexContent&gt;
       &lt;extension base="rde:deleteType"&gt;
-        &lt;choice maxOccurs="unbounded"&gt;
+        &lt;choice minOccurs="0" maxOccurs="unbounded"&gt;
           &lt;element name="name"
             type="eppcom:labelType"/&gt;
           &lt;element name="roid"
@@ -8770,6 +8776,8 @@ Changes from version 03 to 04</h3>
 </li>
 <li>Added mirrored state to NNDN
 </li>
+<li>Minor fixes to XML XSDs.
+</li>
 <li>The Report and Notification objects were moved to draft-lozano-icann-registry-interfaces
 </li>
 <li>The section Data escrow notifications was moved to draft-lozano-icann-registry-interfaces
@@ -8795,8 +8803,6 @@ Changes from version 03 to 04</h3>
 <li>Removed use of the &lt;rdeCsv:fRoid&gt; field element for the "registrar" CSV file.
 </li>
 <li>Added definition of &lt;csvNNDN:fMirroringNS&gt; field element.
-</li>
-<li>Added &lt;rdeEppParams:eppParams&gt; to example of full and differential deposits using the CSV model.
 </li>
 </ol><p>
                 
@@ -9179,7 +9185,6 @@ Example of a full deposit using the CSV model</h3>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;rde:deposit
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
    xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
    xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
    xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
@@ -9189,7 +9194,6 @@ Example of a full deposit using the CSV model</h3>
    xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
-   xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
@@ -9198,9 +9202,7 @@ Example of a full deposit using the CSV model</h3>
     urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
     urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
     urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
-    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeEppParams-1.0 rde-epp-param-1.0.xsd
-    urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"
+    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd"
     type="FULL"
    id="20101017001" prevId="20101010001"&gt;
    &lt;rde:watermark&gt;2010-10-18T00:00:00Z&lt;/rde:watermark&gt;
@@ -9258,7 +9260,7 @@ Example of a full deposit using the CSV model</h3>
          &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="AD30F3D6"&gt;
+             cksum="E6D52D73"&gt;
              domain-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
@@ -9298,7 +9300,7 @@ Example of a full deposit using the CSV model</h3>
            &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="569D4638"&gt;
+             cksum="546C66A5"&gt;
              domainNameServers-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
@@ -9530,7 +9532,7 @@ Example of a full deposit using the CSV model</h3>
          &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="06DC1A7E"&gt;
+             cksum="9CB43C2E"&gt;
              registrar-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
@@ -9557,12 +9559,11 @@ Example of a full deposit using the CSV model</h3>
            &lt;rdeCsv:fIdnTableId/&gt;
            &lt;csvNNDN:fOriginalName/&gt;
            &lt;csvNNDN:fNameState/&gt;
-           &lt;csvNNDN:fMirroringNS/&gt;
            &lt;rdeCsv:fCrDate/&gt;
          &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="5EDB3FB1"&gt;
+             cksum="01F72976"&gt;
              NNDN-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
@@ -9606,6 +9607,7 @@ Example of a full deposit using the CSV model</h3>
      &lt;/rdeEppParams:eppParams&gt;
    &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;
+
 </pre></div><p>
 
 
@@ -9625,7 +9627,6 @@ Example of differential deposit using the CSV model</h3>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;rde:deposit
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
    xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
    xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
    xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
@@ -9635,7 +9636,6 @@ Example of differential deposit using the CSV model</h3>
    xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
-   xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
@@ -9644,9 +9644,7 @@ Example of differential deposit using the CSV model</h3>
     urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
     urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
     urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
-    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeEppParams-1.0 rde-epp-param-1.0.xsd
-    urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"
+    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd"
     type="FULL"
    id="20101017001" prevId="20101010001"&gt;
    &lt;rde:watermark&gt;2010-10-18T00:00:00Z&lt;/rde:watermark&gt;
@@ -9703,7 +9701,7 @@ Example of differential deposit using the CSV model</h3>
         &lt;/rdeCsv:fields&gt;
         &lt;rdeCsv:files&gt;
           &lt;rdeCsv:file
-            cksum="569D4638"&gt;
+            cksum="546C66A5"&gt;
             domainNameServers-delete-YYYYMMDD.csv
           &lt;/rdeCsv:file&gt;
         &lt;/rdeCsv:files&gt;
@@ -9819,7 +9817,7 @@ Example of differential deposit using the CSV model</h3>
         &lt;/rdeCsv:fields&gt;
         &lt;rdeCsv:files&gt;
           &lt;rdeCsv:file
-            cksum="9A47B820"&gt;
+            cksum="6F2B988F"&gt;
             contactPostal-delete-YYYYMMDD.csv
           &lt;/rdeCsv:file&gt;
         &lt;/rdeCsv:files&gt;
@@ -9881,7 +9879,7 @@ Example of differential deposit using the CSV model</h3>
         &lt;/rdeCsv:fields&gt;
         &lt;rdeCsv:files&gt;
           &lt;rdeCsv:file
-            cksum="FF104E83"&gt;
+            cksum="6C253927"&gt;
             NNDN-delete-YYYYMMDD.csv
           &lt;/rdeCsv:file&gt;
         &lt;/rdeCsv:files&gt;
@@ -9915,24 +9913,24 @@ Example of differential deposit using the CSV model</h3>
      &lt;/rdeHeader:header&gt;
     &lt;csvDomain:contents&gt;
       &lt;rdeCsv:csv name="domain" sep=","&gt;
-         &lt;rdeCsv:fields&gt;
-           &lt;csvDomain:fName/&gt;
-           &lt;rdeCsv:fRoid/&gt;
-           &lt;rdeCsv:fIdnTableId/&gt;
-           &lt;csvDomain:fOriginalName/&gt;
-           &lt;rdeCsv:fRegistrant isRequired="true"/&gt;
-           &lt;rdeCsv:fClID/&gt;
-           &lt;rdeCsv:fCrRr/&gt;
-           &lt;rdeCsv:fCrID/&gt;
-           &lt;rdeCsv:fCrDate/&gt;
-           &lt;rdeCsv:fUpRr/&gt;
-           &lt;rdeCsv:fUpID/&gt;
-           &lt;rdeCsv:fUpDate/&gt;
-           &lt;rdeCsv:fExDate/&gt;
-         &lt;/rdeCsv:fields&gt;
+        &lt;rdeCsv:fields&gt;
+          &lt;csvDomain:fName/&gt;
+          &lt;rdeCsv:fRoid/&gt;
+          &lt;rdeCsv:fIdnTableId/&gt;
+          &lt;csvDomain:fOriginalName/&gt;
+          &lt;rdeCsv:fRegistrant/&gt;
+          &lt;rdeCsv:fClID/&gt;
+          &lt;rdeCsv:fCrRr/&gt;
+          &lt;rdeCsv:fCrID/&gt;
+          &lt;rdeCsv:fCrDate/&gt;
+          &lt;rdeCsv:fUpRr/&gt;
+          &lt;rdeCsv:fUpID/&gt;
+          &lt;rdeCsv:fUpDate/&gt;
+          &lt;rdeCsv:fExDate/&gt;
+        &lt;/rdeCsv:fields&gt;
         &lt;rdeCsv:files&gt;
           &lt;rdeCsv:file
-            cksum="AD30F3D6"&gt;
+            cksum="E6D52D73"&gt;
             domain-YYYYMMDD.csv
           &lt;/rdeCsv:file&gt;
         &lt;/rdeCsv:files&gt;
@@ -9972,7 +9970,7 @@ Example of differential deposit using the CSV model</h3>
         &lt;/rdeCsv:fields&gt;
         &lt;rdeCsv:files&gt;
           &lt;rdeCsv:file
-            cksum="569D4638"&gt;
+            cksum="546C66A5"&gt;
             domainNameServers-YYYYMMDD.csv
           &lt;/rdeCsv:file&gt;
         &lt;/rdeCsv:files&gt;
@@ -10166,6 +10164,7 @@ Example of differential deposit using the CSV model</h3>
       &lt;rdeCsv:csv name="registrar" sep=","&gt;
         &lt;rdeCsv:fields&gt;
           &lt;csvRegistrar:fId/&gt;
+          &lt;rdeCsv:fRoid/&gt;
           &lt;csvRegistrar:fName isLoc="false"/&gt;
           &lt;csvRegistrar:fGurid/&gt;
           &lt;csvRegistrar:fStatus/&gt;
@@ -10188,7 +10187,7 @@ Example of differential deposit using the CSV model</h3>
         &lt;/rdeCsv:fields&gt;
         &lt;rdeCsv:files&gt;
           &lt;rdeCsv:file
-            cksum="06DC1A7E"&gt;
+            cksum="9CB43C2E"&gt;
             registrar-YYYYMMDD.csv
           &lt;/rdeCsv:file&gt;
         &lt;/rdeCsv:files&gt;
@@ -10215,18 +10214,17 @@ Example of differential deposit using the CSV model</h3>
           &lt;rdeCsv:fIdnTableId/&gt;
           &lt;csvNNDN:fOriginalName/&gt;
           &lt;csvNNDN:fNameState/&gt;
-          &lt;csvNNDN:fMirroringNS/&gt;
           &lt;rdeCsv:fCrDate/&gt;
         &lt;/rdeCsv:fields&gt;
         &lt;rdeCsv:files&gt;
           &lt;rdeCsv:file
-            cksum="5EDB3FB1"&gt;
+            cksum="01F72976"&gt;
             NNDN-YYYYMMDD.csv
           &lt;/rdeCsv:file&gt;
         &lt;/rdeCsv:files&gt;
       &lt;/rdeCsv:csv&gt;
-     &lt;/csvNNDN:contents&gt;
-     &lt;rdeEppParams:eppParams&gt;
+    &lt;/csvNNDN:contents&gt;
+    &lt;rdeEppParams:eppParams&gt;
         &lt;rdeEppParams:version&gt;1.0&lt;/rdeEppParams:version&gt;
         &lt;rdeEppParams:lang&gt;en&lt;/rdeEppParams:lang&gt;
         &lt;rdeEppParams:objURI&gt;urn:ietf:params:xml:ns:domain-1.0
@@ -10264,6 +10262,7 @@ Example of differential deposit using the CSV model</h3>
      &lt;/rdeEppParams:eppParams&gt;
    &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;
+
 </pre></div><p>
 
             
