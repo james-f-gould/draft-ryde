@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
    xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
    xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
    xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
@@ -10,6 +11,7 @@
    xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
+   xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
@@ -18,7 +20,9 @@
     urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd 
     urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
     urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
-    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd" 
+    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
+    urn:ietf:params:xml:ns:rdeEppParams-1.0 rde-epp-param-1.0.xsd
+    urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"
     type="FULL"
    id="20101017001" prevId="20101010001">
    <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
@@ -386,5 +390,41 @@
          </rdeCsv:files>
        </rdeCsv:csv>
      </csvNNDN:contents>
+     <rdeEppParams:eppParams>
+        <rdeEppParams:version>1.0</rdeEppParams:version>
+        <rdeEppParams:lang>en</rdeEppParams:lang>
+        <rdeEppParams:objURI>urn:ietf:params:xml:ns:domain-1.0
+        </rdeEppParams:objURI>
+        <rdeEppParams:objURI>urn:ietf:params:xml:ns:host-1.0
+        </rdeEppParams:objURI>
+        <rdeEppParams:objURI>urn:ietf:params:xml:ns:contact-1.0
+        </rdeEppParams:objURI>
+        <rdeEppParams:svcExtension>
+          <epp:extURI>urn:ietf:params:xml:ns:secDNS-1.1
+          </epp:extURI>
+          <epp:extURI>urn:ietf:params:xml:ns:rgp-1.0
+          </epp:extURI>
+        </rdeEppParams:svcExtension>
+        <rdeEppParams:dcp>
+          <epp:access>
+            <epp:all/>
+          </epp:access>
+          <epp:statement>
+            <epp:purpose>
+              <epp:admin/>
+              <epp:other/>
+              <epp:prov/>
+            </epp:purpose>
+            <epp:recipient>
+              <epp:ours/>
+              <epp:public/>
+              <epp:unrelated/>
+            </epp:recipient>
+            <epp:retention>
+              <epp:indefinite/>
+            </epp:retention>
+          </epp:statement>
+        </rdeEppParams:dcp>
+     </rdeEppParams:eppParams>
    </rde:contents>
 </rde:deposit>

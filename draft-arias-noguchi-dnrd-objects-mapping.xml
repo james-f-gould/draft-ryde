@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="09" month="July" year="2013"/>
+        <date day="15" month="July" year="2013"/>
         
         <area> Applications </area>
         
@@ -7008,7 +7008,8 @@ END]]></artwork></figure>
                       <t>Removed the definition of the &lt;csvDomain:fOriginalName&gt; field element since the &lt;csvNNDN:fOriginalName&gt; field element handles the case of referencing the original domain name of a variant.</t>
                       <t>Added use of the MUST keyword for CSV fields that are required to be supported in an EPP based system.</t>
                       <t>Removed use of the &lt;rdeCsv:fRoid&gt; field element for the "registrar" CSV file.</t>
-                      <t>Added definition of &lt;csvNNDN:fMirroringNS&gt; field element.</t>                      
+                      <t>Added definition of &lt;csvNNDN:fMirroringNS&gt; field element.</t>   
+                      <t>Added &lt;rdeEppParams:eppParams&gt; to example of full and differential deposits using the CSV model.</t>
                    </list>
                 </t>
             </section>
@@ -7377,6 +7378,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
    xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
    xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
    xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
@@ -7386,6 +7388,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
    xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
+   xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
@@ -7394,7 +7397,9 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
     urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd 
     urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
     urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
-    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd" 
+    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
+    urn:ietf:params:xml:ns:rdeEppParams-1.0 rde-epp-param-1.0.xsd
+    urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"
     type="FULL"
    id="20101017001" prevId="20101010001">
    <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
@@ -7438,7 +7443,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
          <rdeCsv:fields>
            <csvDomain:fName/>        
            <rdeCsv:fRoid/>         
-           <rdeCsv:fIdnTableId/>         
+           <rdeCsv:fIdnTableId/>   
            <csvDomain:fOriginalName/>
            <rdeCsv:fRegistrant isRequired="true"/>
            <rdeCsv:fClID/>
@@ -7452,7 +7457,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="E6D52D73">
+             cksum="AD30F3D6">
              domain-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
@@ -7492,7 +7497,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
            </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="546C66A5">
+             cksum="569D4638">
              domainNameServers-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
@@ -7724,7 +7729,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="9CB43C2E">
+             cksum="06DC1A7E">
              registrar-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
@@ -7751,19 +7756,55 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
            <rdeCsv:fIdnTableId/>         
            <csvNNDN:fOriginalName/>
            <csvNNDN:fNameState/>
+           <csvNNDN:fMirroringNS/>
            <rdeCsv:fCrDate/>
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="01F72976">
+             cksum="5EDB3FB1">
              NNDN-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
        </rdeCsv:csv>
      </csvNNDN:contents>
+     <rdeEppParams:eppParams>
+        <rdeEppParams:version>1.0</rdeEppParams:version>
+        <rdeEppParams:lang>en</rdeEppParams:lang>
+        <rdeEppParams:objURI>urn:ietf:params:xml:ns:domain-1.0
+        </rdeEppParams:objURI>
+        <rdeEppParams:objURI>urn:ietf:params:xml:ns:host-1.0
+        </rdeEppParams:objURI>
+        <rdeEppParams:objURI>urn:ietf:params:xml:ns:contact-1.0
+        </rdeEppParams:objURI>
+        <rdeEppParams:svcExtension>
+          <epp:extURI>urn:ietf:params:xml:ns:secDNS-1.1
+          </epp:extURI>
+          <epp:extURI>urn:ietf:params:xml:ns:rgp-1.0
+          </epp:extURI>
+        </rdeEppParams:svcExtension>
+        <rdeEppParams:dcp>
+          <epp:access>
+            <epp:all/>
+          </epp:access>
+          <epp:statement>
+            <epp:purpose>
+              <epp:admin/>
+              <epp:other/>
+              <epp:prov/>
+            </epp:purpose>
+            <epp:recipient>
+              <epp:ours/>
+              <epp:public/>
+              <epp:unrelated/>
+            </epp:recipient>
+            <epp:retention>
+              <epp:indefinite/>
+            </epp:retention>
+          </epp:statement>
+        </rdeEppParams:dcp>
+     </rdeEppParams:eppParams>
    </rde:contents>
-</rde:deposit>
-]]>
+</rde:deposit>]]>
                 </artwork></figure>
 </t>
         </section>
@@ -7777,6 +7818,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
    xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
    xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
    xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
@@ -7786,15 +7828,18 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
    xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
+   xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
     xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
     urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd 
     urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd 
     urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd 
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd 
+    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
     urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
-    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd" 
+    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
+    urn:ietf:params:xml:ns:rdeEppParams-1.0 rde-epp-param-1.0.xsd
+    urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"
     type="FULL"
    id="20101017001" prevId="20101010001">
    <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
@@ -7851,7 +7896,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="546C66A5">
+            cksum="569D4638">
             domainNameServers-delete-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -7967,7 +8012,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="6F2B988F">
+            cksum="9A47B820">
             contactPostal-delete-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -8029,7 +8074,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="6C253927">
+            cksum="FF104E83">
             NNDN-delete-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -8063,24 +8108,24 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
      </rdeHeader:header>  
     <csvDomain:contents>
       <rdeCsv:csv name="domain" sep=",">
-        <rdeCsv:fields>
-          <csvDomain:fName/>        
-          <rdeCsv:fRoid/>         
-          <rdeCsv:fIdnTableId/>         
-          <csvDomain:fOriginalName/>
-          <rdeCsv:fRegistrant/>
-          <rdeCsv:fClID/>
-          <rdeCsv:fCrRr/>
-          <rdeCsv:fCrID/>
-          <rdeCsv:fCrDate/>
-          <rdeCsv:fUpRr/>
-          <rdeCsv:fUpID/>
-          <rdeCsv:fUpDate/>
-          <rdeCsv:fExDate/>
-        </rdeCsv:fields>
+         <rdeCsv:fields>
+           <csvDomain:fName/>        
+           <rdeCsv:fRoid/>         
+           <rdeCsv:fIdnTableId/>   
+           <csvDomain:fOriginalName/>
+           <rdeCsv:fRegistrant isRequired="true"/>
+           <rdeCsv:fClID/>
+           <rdeCsv:fCrRr/>
+           <rdeCsv:fCrID/>
+           <rdeCsv:fCrDate/>
+           <rdeCsv:fUpRr/>
+           <rdeCsv:fUpID/>
+           <rdeCsv:fUpDate/>
+           <rdeCsv:fExDate/>
+         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="E6D52D73">
+            cksum="AD30F3D6">
             domain-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -8120,7 +8165,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="546C66A5">
+            cksum="569D4638">
             domainNameServers-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -8314,7 +8359,6 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
       <rdeCsv:csv name="registrar" sep=",">
         <rdeCsv:fields>
           <csvRegistrar:fId/>
-          <rdeCsv:fRoid/>
           <csvRegistrar:fName isLoc="false"/>
           <csvRegistrar:fGurid/>
           <csvRegistrar:fStatus/>
@@ -8337,7 +8381,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="9CB43C2E">
+            cksum="06DC1A7E">
             registrar-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -8364,19 +8408,55 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
           <rdeCsv:fIdnTableId/>         
           <csvNNDN:fOriginalName/>
           <csvNNDN:fNameState/>
+          <csvNNDN:fMirroringNS/>
           <rdeCsv:fCrDate/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="01F72976">
+            cksum="5EDB3FB1">
             NNDN-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
       </rdeCsv:csv>
-    </csvNNDN:contents>
+     </csvNNDN:contents>
+     <rdeEppParams:eppParams>
+        <rdeEppParams:version>1.0</rdeEppParams:version>
+        <rdeEppParams:lang>en</rdeEppParams:lang>
+        <rdeEppParams:objURI>urn:ietf:params:xml:ns:domain-1.0
+        </rdeEppParams:objURI>
+        <rdeEppParams:objURI>urn:ietf:params:xml:ns:host-1.0
+        </rdeEppParams:objURI>
+        <rdeEppParams:objURI>urn:ietf:params:xml:ns:contact-1.0
+        </rdeEppParams:objURI>
+        <rdeEppParams:svcExtension>
+          <epp:extURI>urn:ietf:params:xml:ns:secDNS-1.1
+          </epp:extURI>
+          <epp:extURI>urn:ietf:params:xml:ns:rgp-1.0
+          </epp:extURI>
+        </rdeEppParams:svcExtension>
+        <rdeEppParams:dcp>
+          <epp:access>
+            <epp:all/>
+          </epp:access>
+          <epp:statement>
+            <epp:purpose>
+              <epp:admin/>
+              <epp:other/>
+              <epp:prov/>
+            </epp:purpose>
+            <epp:recipient>
+              <epp:ours/>
+              <epp:public/>
+              <epp:unrelated/>
+            </epp:recipient>
+            <epp:retention>
+              <epp:indefinite/>
+            </epp:retention>
+          </epp:statement>
+        </rdeEppParams:dcp>
+     </rdeEppParams:eppParams>
    </rde:contents>
-</rde:deposit>
-]]>
+</rde:deposit>]]>
                 </artwork></figure>
             </t>
                         
