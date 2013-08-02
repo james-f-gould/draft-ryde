@@ -4,12 +4,12 @@
 Network Working Group                                           F. Arias
 Internet-Draft                                                 G. Lozano
 Intended status: Standards Track                                   ICANN
-Expires: January 10, 2014                                     S. Noguchi
+Expires: February 1, 2014                                     S. Noguchi
                                                                     JPRS
                                                                 J. Gould
                                                           C. Thippeswamy
                                                                 VeriSign
-                                                           July 09, 2013
+                                                           July 31, 2013
 
 
           Domain Name Registration Data (DNRD) Objects Mapping
@@ -36,7 +36,7 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 10, 2014.
+   This Internet-Draft will expire on February 1, 2014.
 
 Copyright Notice
 
@@ -52,7 +52,7 @@ Copyright Notice
 
 
 
-Arias, et al.           Expires January 10, 2014                [Page 1]
+Arias, et al.           Expires February 1, 2014                [Page 1]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -108,7 +108,7 @@ Table of Contents
 
 
 
-Arias, et al.           Expires January 10, 2014                [Page 2]
+Arias, et al.           Expires February 1, 2014                [Page 2]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -164,7 +164,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014                [Page 3]
+Arias, et al.           Expires February 1, 2014                [Page 3]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -220,7 +220,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014                [Page 4]
+Arias, et al.           Expires February 1, 2014                [Page 4]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -276,7 +276,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014                [Page 5]
+Arias, et al.           Expires February 1, 2014                [Page 5]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -332,7 +332,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014                [Page 6]
+Arias, et al.           Expires February 1, 2014                [Page 6]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -388,7 +388,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014                [Page 7]
+Arias, et al.           Expires February 1, 2014                [Page 7]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -444,7 +444,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014                [Page 8]
+Arias, et al.           Expires February 1, 2014                [Page 8]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -500,7 +500,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014                [Page 9]
+Arias, et al.           Expires February 1, 2014                [Page 9]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -556,7 +556,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 10]
+Arias, et al.           Expires February 1, 2014               [Page 10]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -612,7 +612,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 11]
+Arias, et al.           Expires February 1, 2014               [Page 11]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -668,7 +668,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 12]
+Arias, et al.           Expires February 1, 2014               [Page 12]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -724,7 +724,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 13]
+Arias, et al.           Expires February 1, 2014               [Page 13]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -780,7 +780,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 14]
+Arias, et al.           Expires February 1, 2014               [Page 14]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -836,7 +836,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 15]
+Arias, et al.           Expires February 1, 2014               [Page 15]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -892,7 +892,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 16]
+Arias, et al.           Expires February 1, 2014               [Page 16]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -948,7 +948,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 17]
+Arias, et al.           Expires February 1, 2014               [Page 17]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1004,7 +1004,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 18]
+Arias, et al.           Expires February 1, 2014               [Page 18]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1060,7 +1060,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 19]
+Arias, et al.           Expires February 1, 2014               [Page 19]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1116,7 +1116,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 20]
+Arias, et al.           Expires February 1, 2014               [Page 20]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1172,7 +1172,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 21]
+Arias, et al.           Expires February 1, 2014               [Page 21]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1228,7 +1228,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 22]
+Arias, et al.           Expires February 1, 2014               [Page 22]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1284,7 +1284,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 23]
+Arias, et al.           Expires February 1, 2014               [Page 23]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1340,7 +1340,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 24]
+Arias, et al.           Expires February 1, 2014               [Page 24]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1396,7 +1396,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 25]
+Arias, et al.           Expires February 1, 2014               [Page 25]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1452,7 +1452,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 26]
+Arias, et al.           Expires February 1, 2014               [Page 26]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1508,7 +1508,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 27]
+Arias, et al.           Expires February 1, 2014               [Page 27]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1564,7 +1564,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 28]
+Arias, et al.           Expires February 1, 2014               [Page 28]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1620,7 +1620,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 29]
+Arias, et al.           Expires February 1, 2014               [Page 29]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1676,7 +1676,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 30]
+Arias, et al.           Expires February 1, 2014               [Page 30]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1732,7 +1732,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 31]
+Arias, et al.           Expires February 1, 2014               [Page 31]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1788,7 +1788,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 32]
+Arias, et al.           Expires February 1, 2014               [Page 32]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1844,7 +1844,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 33]
+Arias, et al.           Expires February 1, 2014               [Page 33]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1900,7 +1900,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 34]
+Arias, et al.           Expires February 1, 2014               [Page 34]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -1956,7 +1956,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 35]
+Arias, et al.           Expires February 1, 2014               [Page 35]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2012,7 +2012,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 36]
+Arias, et al.           Expires February 1, 2014               [Page 36]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2068,7 +2068,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 37]
+Arias, et al.           Expires February 1, 2014               [Page 37]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2124,7 +2124,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 38]
+Arias, et al.           Expires February 1, 2014               [Page 38]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2180,7 +2180,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 39]
+Arias, et al.           Expires February 1, 2014               [Page 39]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2236,7 +2236,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 40]
+Arias, et al.           Expires February 1, 2014               [Page 40]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2292,7 +2292,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 41]
+Arias, et al.           Expires February 1, 2014               [Page 41]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2348,7 +2348,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 42]
+Arias, et al.           Expires February 1, 2014               [Page 42]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2404,7 +2404,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 43]
+Arias, et al.           Expires February 1, 2014               [Page 43]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2460,7 +2460,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 44]
+Arias, et al.           Expires February 1, 2014               [Page 44]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2516,7 +2516,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 45]
+Arias, et al.           Expires February 1, 2014               [Page 45]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2572,7 +2572,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 46]
+Arias, et al.           Expires February 1, 2014               [Page 46]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2628,7 +2628,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 47]
+Arias, et al.           Expires February 1, 2014               [Page 47]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2684,7 +2684,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 48]
+Arias, et al.           Expires February 1, 2014               [Page 48]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2740,7 +2740,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 49]
+Arias, et al.           Expires February 1, 2014               [Page 49]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2796,7 +2796,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 50]
+Arias, et al.           Expires February 1, 2014               [Page 50]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2852,7 +2852,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 51]
+Arias, et al.           Expires February 1, 2014               [Page 51]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2908,7 +2908,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 52]
+Arias, et al.           Expires February 1, 2014               [Page 52]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -2964,7 +2964,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 53]
+Arias, et al.           Expires February 1, 2014               [Page 53]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3020,7 +3020,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 54]
+Arias, et al.           Expires February 1, 2014               [Page 54]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3076,7 +3076,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 55]
+Arias, et al.           Expires February 1, 2014               [Page 55]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3132,7 +3132,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 56]
+Arias, et al.           Expires February 1, 2014               [Page 56]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3188,7 +3188,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 57]
+Arias, et al.           Expires February 1, 2014               [Page 57]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3244,7 +3244,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 58]
+Arias, et al.           Expires February 1, 2014               [Page 58]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3300,7 +3300,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 59]
+Arias, et al.           Expires February 1, 2014               [Page 59]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3356,7 +3356,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 60]
+Arias, et al.           Expires February 1, 2014               [Page 60]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3412,7 +3412,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 61]
+Arias, et al.           Expires February 1, 2014               [Page 61]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3468,7 +3468,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 62]
+Arias, et al.           Expires February 1, 2014               [Page 62]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3524,7 +3524,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 63]
+Arias, et al.           Expires February 1, 2014               [Page 63]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3580,7 +3580,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 64]
+Arias, et al.           Expires February 1, 2014               [Page 64]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3636,7 +3636,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 65]
+Arias, et al.           Expires February 1, 2014               [Page 65]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3692,7 +3692,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 66]
+Arias, et al.           Expires February 1, 2014               [Page 66]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3748,7 +3748,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 67]
+Arias, et al.           Expires February 1, 2014               [Page 67]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3804,7 +3804,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 68]
+Arias, et al.           Expires February 1, 2014               [Page 68]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3860,7 +3860,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 69]
+Arias, et al.           Expires February 1, 2014               [Page 69]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3916,7 +3916,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 70]
+Arias, et al.           Expires February 1, 2014               [Page 70]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -3972,7 +3972,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 71]
+Arias, et al.           Expires February 1, 2014               [Page 71]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4028,7 +4028,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 72]
+Arias, et al.           Expires February 1, 2014               [Page 72]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4084,7 +4084,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 73]
+Arias, et al.           Expires February 1, 2014               [Page 73]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4140,7 +4140,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 74]
+Arias, et al.           Expires February 1, 2014               [Page 74]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4196,7 +4196,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 75]
+Arias, et al.           Expires February 1, 2014               [Page 75]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4252,7 +4252,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 76]
+Arias, et al.           Expires February 1, 2014               [Page 76]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4308,7 +4308,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 77]
+Arias, et al.           Expires February 1, 2014               [Page 77]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4364,7 +4364,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 78]
+Arias, et al.           Expires February 1, 2014               [Page 78]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4420,7 +4420,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 79]
+Arias, et al.           Expires February 1, 2014               [Page 79]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4476,7 +4476,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 80]
+Arias, et al.           Expires February 1, 2014               [Page 80]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4532,7 +4532,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 81]
+Arias, et al.           Expires February 1, 2014               [Page 81]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4588,7 +4588,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 82]
+Arias, et al.           Expires February 1, 2014               [Page 82]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4644,7 +4644,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 83]
+Arias, et al.           Expires February 1, 2014               [Page 83]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4700,7 +4700,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 84]
+Arias, et al.           Expires February 1, 2014               [Page 84]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4756,7 +4756,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 85]
+Arias, et al.           Expires February 1, 2014               [Page 85]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4812,7 +4812,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 86]
+Arias, et al.           Expires February 1, 2014               [Page 86]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4868,7 +4868,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 87]
+Arias, et al.           Expires February 1, 2014               [Page 87]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4924,7 +4924,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 88]
+Arias, et al.           Expires February 1, 2014               [Page 88]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -4980,7 +4980,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 89]
+Arias, et al.           Expires February 1, 2014               [Page 89]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5036,7 +5036,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 90]
+Arias, et al.           Expires February 1, 2014               [Page 90]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5092,7 +5092,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 91]
+Arias, et al.           Expires February 1, 2014               [Page 91]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5148,7 +5148,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 92]
+Arias, et al.           Expires February 1, 2014               [Page 92]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5204,7 +5204,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 93]
+Arias, et al.           Expires February 1, 2014               [Page 93]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5260,7 +5260,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 94]
+Arias, et al.           Expires February 1, 2014               [Page 94]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5316,7 +5316,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 95]
+Arias, et al.           Expires February 1, 2014               [Page 95]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5372,7 +5372,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 96]
+Arias, et al.           Expires February 1, 2014               [Page 96]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5428,7 +5428,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 97]
+Arias, et al.           Expires February 1, 2014               [Page 97]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5484,7 +5484,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 98]
+Arias, et al.           Expires February 1, 2014               [Page 98]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5540,7 +5540,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014               [Page 99]
+Arias, et al.           Expires February 1, 2014               [Page 99]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5596,7 +5596,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 100]
+Arias, et al.           Expires February 1, 2014              [Page 100]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5652,7 +5652,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 101]
+Arias, et al.           Expires February 1, 2014              [Page 101]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5708,7 +5708,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 102]
+Arias, et al.           Expires February 1, 2014              [Page 102]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5764,7 +5764,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 103]
+Arias, et al.           Expires February 1, 2014              [Page 103]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5820,7 +5820,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 104]
+Arias, et al.           Expires February 1, 2014              [Page 104]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5876,7 +5876,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 105]
+Arias, et al.           Expires February 1, 2014              [Page 105]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5932,7 +5932,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 106]
+Arias, et al.           Expires February 1, 2014              [Page 106]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -5988,7 +5988,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 107]
+Arias, et al.           Expires February 1, 2014              [Page 107]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6044,7 +6044,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 108]
+Arias, et al.           Expires February 1, 2014              [Page 108]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6100,7 +6100,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 109]
+Arias, et al.           Expires February 1, 2014              [Page 109]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6156,7 +6156,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 110]
+Arias, et al.           Expires February 1, 2014              [Page 110]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6212,7 +6212,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 111]
+Arias, et al.           Expires February 1, 2014              [Page 111]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6268,7 +6268,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 112]
+Arias, et al.           Expires February 1, 2014              [Page 112]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6324,7 +6324,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 113]
+Arias, et al.           Expires February 1, 2014              [Page 113]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6380,7 +6380,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 114]
+Arias, et al.           Expires February 1, 2014              [Page 114]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6436,7 +6436,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 115]
+Arias, et al.           Expires February 1, 2014              [Page 115]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6492,7 +6492,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 116]
+Arias, et al.           Expires February 1, 2014              [Page 116]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6548,7 +6548,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 117]
+Arias, et al.           Expires February 1, 2014              [Page 117]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6604,7 +6604,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 118]
+Arias, et al.           Expires February 1, 2014              [Page 118]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6660,7 +6660,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 119]
+Arias, et al.           Expires February 1, 2014              [Page 119]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6716,7 +6716,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 120]
+Arias, et al.           Expires February 1, 2014              [Page 120]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6772,7 +6772,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 121]
+Arias, et al.           Expires February 1, 2014              [Page 121]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6828,7 +6828,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 122]
+Arias, et al.           Expires February 1, 2014              [Page 122]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6884,7 +6884,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 123]
+Arias, et al.           Expires February 1, 2014              [Page 123]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6940,7 +6940,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 124]
+Arias, et al.           Expires February 1, 2014              [Page 124]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -6996,7 +6996,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 125]
+Arias, et al.           Expires February 1, 2014              [Page 125]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7052,7 +7052,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 126]
+Arias, et al.           Expires February 1, 2014              [Page 126]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7108,7 +7108,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 127]
+Arias, et al.           Expires February 1, 2014              [Page 127]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7164,7 +7164,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 128]
+Arias, et al.           Expires February 1, 2014              [Page 128]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7220,7 +7220,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 129]
+Arias, et al.           Expires February 1, 2014              [Page 129]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7276,7 +7276,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 130]
+Arias, et al.           Expires February 1, 2014              [Page 130]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7332,7 +7332,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 131]
+Arias, et al.           Expires February 1, 2014              [Page 131]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7388,7 +7388,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 132]
+Arias, et al.           Expires February 1, 2014              [Page 132]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7444,7 +7444,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 133]
+Arias, et al.           Expires February 1, 2014              [Page 133]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7500,7 +7500,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 134]
+Arias, et al.           Expires February 1, 2014              [Page 134]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7556,7 +7556,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 135]
+Arias, et al.           Expires February 1, 2014              [Page 135]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7612,7 +7612,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 136]
+Arias, et al.           Expires February 1, 2014              [Page 136]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7668,7 +7668,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 137]
+Arias, et al.           Expires February 1, 2014              [Page 137]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7724,7 +7724,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 138]
+Arias, et al.           Expires February 1, 2014              [Page 138]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7780,7 +7780,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 139]
+Arias, et al.           Expires February 1, 2014              [Page 139]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7836,7 +7836,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 140]
+Arias, et al.           Expires February 1, 2014              [Page 140]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7892,7 +7892,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 141]
+Arias, et al.           Expires February 1, 2014              [Page 141]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -7948,7 +7948,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 142]
+Arias, et al.           Expires February 1, 2014              [Page 142]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -8004,7 +8004,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 143]
+Arias, et al.           Expires February 1, 2014              [Page 143]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -8060,7 +8060,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 144]
+Arias, et al.           Expires February 1, 2014              [Page 144]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -8116,7 +8116,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 145]
+Arias, et al.           Expires February 1, 2014              [Page 145]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -8172,24 +8172,20 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 146]
+Arias, et al.           Expires February 1, 2014              [Page 146]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
         files.
 
-   18.  Removed the definition of the <csvDomain:fOriginalName> field
-        element since the <csvNNDN:fOriginalName> field element handles
-        the case of referencing the original domain name of a variant.
-
-   19.  Added use of the MUST keyword for CSV fields that are required
+   18.  Added use of the MUST keyword for CSV fields that are required
         to be supported in an EPP based system.
 
-   20.  Removed use of the <rdeCsv:fRoid> field element for the
+   19.  Removed use of the <rdeCsv:fRoid> field element for the
         "registrar" CSV file.
 
-   21.  Added definition of <csvNNDN:fMirroringNS> field element.
+   20.  Added definition of <csvNNDN:fMirroringNS> field element.
 
 
 15.  Example of a full deposit using the XML model
@@ -8225,18 +8221,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
        </rde:objURI>
        <rde:objURI>urn:ietf:params:xml:ns:rdeDomain-1.0
        </rde:objURI>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 147]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
        <rde:objURI>urn:ietf:params:xml:ns:rdeRegistrar-1.0
        </rde:objURI>
        <rde:objURI>urn:ietf:params:xml:ns:rdeIDN-1.0
        </rde:objURI>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 147]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
        <rde:objURI>urn:ietf:params:xml:ns:rdeNNDN-1.0
        </rde:objURI>
        <rde:objURI>urn:ietf:params:xml:ns:rdeEppParams-1.0
@@ -8281,18 +8277,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
          <rdeDom:contact type="tech">sh8013</rdeDom:contact>
          <rdeDom:ns>
            <domain:hostObj>ns1.example.com</domain:hostObj>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 148]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
            <domain:hostObj>ns1.example1.test</domain:hostObj>
          </rdeDom:ns>
          <rdeDom:clID>RegistrarX</rdeDom:clID>
          <rdeDom:crRr client="jdoe">RegistrarX</rdeDom:crRr>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 148]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
          <rdeDom:crDate>1999-04-03T22:00:00.0Z</rdeDom:crDate>
          <rdeDom:exDate>2015-04-03T22:00:00.0Z</rdeDom:exDate>
        </rdeDom:domain>
@@ -8337,18 +8333,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
          <rdeContact:status s="linked"/>
          <rdeContact:status s="clientDeleteProhibited"/>
          <rdeContact:postalInfo type="int">
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 149]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
            <contact:name>John Doe</contact:name>
            <contact:org>Example Inc.</contact:org>
            <contact:addr>
              <contact:street>123 Example Dr.</contact:street>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 149]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
              <contact:street>Suite 100</contact:street>
              <contact:city>Dulles</contact:city>
              <contact:sp>VA</contact:sp>
@@ -8393,18 +8389,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
              </rdeRegistrar:street>
              <rdeRegistrar:city>Dulles</rdeRegistrar:city>
              <rdeRegistrar:sp>VA</rdeRegistrar:sp>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 150]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
              <rdeRegistrar:pc>20166-6503</rdeRegistrar:pc>
              <rdeRegistrar:cc>US</rdeRegistrar:cc>
            </rdeRegistrar:addr>
          </rdeRegistrar:postalInfo>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 150]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
          <rdeRegistrar:voice x="1234">+1.7035555555
          </rdeRegistrar:voice>
          <rdeRegistrar:fax>+1.7035555556
@@ -8449,18 +8445,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
          <rdeEppParams:version>1.0</rdeEppParams:version>
          <rdeEppParams:lang>en</rdeEppParams:lang>
          <rdeEppParams:objURI>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 151]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
            urn:ietf:params:xml:ns:domain-1.0
          </rdeEppParams:objURI>
          <rdeEppParams:objURI>
            urn:ietf:params:xml:ns:contact-1.0
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 151]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
          </rdeEppParams:objURI>
          <rdeEppParams:objURI>
            urn:ietf:params:xml:ns:host-1.0
@@ -8505,18 +8501,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
    <rde:deposit type="DIFF" id="20101017002" prevId="20101017001"
      xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
      xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 152]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
      xmlns:secDNS="urn:ietf:params:xml:ns:secDNS-1.1"
      xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
      xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
      xmlns:rdeDom="urn:ietf:params:xml:ns:rdeDomain-1.0"
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 152]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
      xmlns:rdeHost="urn:ietf:params:xml:ns:rdeHost-1.0"
      xmlns:rdeContact="urn:ietf:params:xml:ns:rdeContact-1.0"
      xmlns:rdeRegistrar="urn:ietf:params:xml:ns:rdeRegistrar-1.0"
@@ -8561,18 +8557,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
          <rdeHeader:count
            uri="urn:ietf:params:xml:ns:rdeDomain-1.0">1
            </rdeHeader:count>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 153]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
          <rdeHeader:count
            uri="urn:ietf:params:xml:ns:rdeHost-1.0">1
            </rdeHeader:count>
          <rdeHeader:count
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 153]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
            uri="urn:ietf:params:xml:ns:rdeContact-1.0">1
            </rdeHeader:count>
          <rdeHeader:count
@@ -8617,18 +8613,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
        urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
        urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
        urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 154]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
        urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
        urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd"
        type="FULL"
       id="20101017001" prevId="20101010001">
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 154]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
       <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
       <rde:rdeMenu>
        <rde:version>1.0</rde:version>
@@ -8673,18 +8669,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
               <rdeCsv:fIdnTableId/>
               <csvDomain:fOriginalName/>
               <rdeCsv:fRegistrant isRequired="true"/>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 155]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
               <rdeCsv:fClID/>
               <rdeCsv:fCrRr/>
               <rdeCsv:fCrID/>
               <rdeCsv:fCrDate/>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 155]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
               <rdeCsv:fUpRr/>
               <rdeCsv:fUpID/>
               <rdeCsv:fUpDate/>
@@ -8729,18 +8725,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
             <rdeCsv:fields>
               <csvDomain:fName parent="true"/>
               <rdeCsv:fRoid/>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 156]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
               </rdeCsv:fields>
             <rdeCsv:files>
               <rdeCsv:file
                 cksum="546C66A5">
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 156]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
                 domainNameServers-YYYYMMDD.csv
               </rdeCsv:file>
             </rdeCsv:files>
@@ -8785,18 +8781,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
               <rdeCsv:fReID/>
               <rdeCsv:fReDate/>
               <rdeCsv:fAcRr/>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 157]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
               <rdeCsv:fAcID/>
               <rdeCsv:fAcDate/>
               <rdeCsv:fExDate/>
             </rdeCsv:fields>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 157]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
             <rdeCsv:files>
               <rdeCsv:file
                 cksum="71170194">
@@ -8841,18 +8837,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
             </rdeCsv:files>
           </rdeCsv:csv>
           <rdeCsv:csv name="hostAddresses" sep=",">
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 158]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
             <rdeCsv:fields>
                   <rdeCsv:fRoid parent="true"/>
               <csvHost:fAddr/>
               <csvHost:fAddrVersion/>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 158]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
             </rdeCsv:fields>
             <rdeCsv:files>
               <rdeCsv:file
@@ -8897,18 +8893,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
             <rdeCsv:files>
               <rdeCsv:file
                 cksum="2AAF99D4">
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 159]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
                 contactStatuses-YYYYMMDD.csv
               </rdeCsv:file>
             </rdeCsv:files>
           </rdeCsv:csv>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 159]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
           <rdeCsv:csv name="contactPostal" sep=",">
             <rdeCsv:fields>
               <csvContact:fId parent="true"/>
@@ -8953,18 +8949,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
               <csvContact:fId parent="true"/>
               <csvContact:fDiscloseFlag/>
               <csvContact:fDiscloseNameLoc/>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 160]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
               <csvContact:fDiscloseNameInt/>
               <csvContact:fDiscloseOrgLoc/>
               <csvContact:fDiscloseOrgInt/>
               <csvContact:fDiscloseAddrLoc/>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 160]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
               <csvContact:fDiscloseAddrInt/>
               <csvContact:fDiscloseVoice/>
               <csvContact:fDiscloseFax/>
@@ -9009,18 +9005,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
               </rdeCsv:file>
             </rdeCsv:files>
           </rdeCsv:csv>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 161]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
         </csvRegistrar:contents>
         <csvIDN:contents>
           <rdeCsv:csv name="idnLanguage" sep=",">
             <rdeCsv:fields>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 161]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
               <rdeCsv:fIdnTableId isRequired="true"/>
               <rdeCsv:fUrl isRequired="true"/>
             </rdeCsv:fields>
@@ -9065,18 +9061,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
              </epp:extURI>
            </rdeEppParams:svcExtension>
            <rdeEppParams:dcp>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 162]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
              <epp:access>
                <epp:all/>
              </epp:access>
              <epp:statement>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 162]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
                <epp:purpose>
                  <epp:admin/>
                  <epp:other/>
@@ -9121,18 +9117,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
        urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd
        urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
        urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 163]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
        urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
        urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
        urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd"
        type="FULL"
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 163]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
       id="20101017001" prevId="20101010001">
       <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
       <rde:rdeMenu>
@@ -9177,18 +9173,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
            <rdeCsv:files>
              <rdeCsv:file
                cksum="F54AADF6">
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 164]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
                domainStatuses-delete-YYYYMMDD.csv
              </rdeCsv:file>
            </rdeCsv:files>
          </rdeCsv:csv>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 164]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
          <rdeCsv:csv name="domainNameServers">
            <rdeCsv:fields>
              <csvDomain:fName parent="true"/>
@@ -9233,18 +9229,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
          </rdeCsv:csv>
          <rdeCsv:csv name="domainTransfer">
            <rdeCsv:fields>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 165]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
              <csvDomain:fName parent="true"/>
              <rdeCsv:fReDate/>
            </rdeCsv:fields>
            <rdeCsv:files>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 165]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
              <rdeCsv:file
                cksum="10C3EDA8">
                domainTransfer-delete-YYYYMMDD.csv
@@ -9289,18 +9285,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
            </rdeCsv:files>
          </rdeCsv:csv>
        </csvHost:deletes>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 166]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
        <csvContact:deletes>
          <rdeCsv:csv name="contact">
            <rdeCsv:fields>
              <csvContact:fId/>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 166]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
            </rdeCsv:fields>
            <rdeCsv:files>
              <rdeCsv:file
@@ -9345,18 +9341,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
              </rdeCsv:file>
            </rdeCsv:files>
          </rdeCsv:csv>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 167]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
          <rdeCsv:csv name="contactDisclose">
            <rdeCsv:fields>
              <csvContact:fId parent="true"/>
            </rdeCsv:fields>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 167]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
            <rdeCsv:files>
              <rdeCsv:file
                cksum="6F2B988F">
@@ -9401,18 +9397,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
                cksum="6C253927">
                NNDN-delete-YYYYMMDD.csv
              </rdeCsv:file>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 168]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
            </rdeCsv:files>
          </rdeCsv:csv>
        </csvNNDN:deletes>
       </rde:deletes>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 168]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
       <rde:contents>
         <rdeHeader:header>
          <rdeHeader:tld>test</rdeHeader:tld>
@@ -9457,18 +9453,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
            </rdeCsv:fields>
            <rdeCsv:files>
              <rdeCsv:file
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 169]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
                cksum="E6D52D73">
                domain-YYYYMMDD.csv
              </rdeCsv:file>
            </rdeCsv:files>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 169]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
          </rdeCsv:csv>
          <rdeCsv:csv name="domainContacts" sep=",">
            <rdeCsv:fields>
@@ -9513,18 +9509,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
          <rdeCsv:csv name="dnssec" sep=",">
            <rdeCsv:fields>
              <csvDomain:fName parent="true"/>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 170]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
              <csvDomain:fMaxSigLife/>
              <csvDomain:fKeyTag/>
              <csvDomain:fDsAlg/>
              <csvDomain:fDigestType/>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 170]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
              <csvDomain:fDigest/>
            </rdeCsv:fields>
            <rdeCsv:files>
@@ -9569,18 +9565,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
              <rdeCsv:fTrDate/>
            </rdeCsv:fields>
            <rdeCsv:files>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 171]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
              <rdeCsv:file
                cksum="120938E3">
                host-YYYYMMDD.csv
              </rdeCsv:file>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 171]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
            </rdeCsv:files>
          </rdeCsv:csv>
          <rdeCsv:csv name="hostStatuses" sep=",">
@@ -9625,18 +9621,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
              <rdeCsv:fCrRr/>
              <rdeCsv:fCrID/>
              <rdeCsv:fCrDate/>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 172]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
              <rdeCsv:fUpRr/>
              <rdeCsv:fUpID/>
              <rdeCsv:fUpDate/>
            </rdeCsv:fields>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 172]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
            <rdeCsv:files>
              <rdeCsv:file
                cksum="D7F106A5">
@@ -9681,18 +9677,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
          </rdeCsv:csv>
          <rdeCsv:csv name="contactTransfer" sep=",">
            <rdeCsv:fields>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 173]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
              <csvContact:fId parent="true"/>
              <rdeCsv:fTrStatus/>
              <rdeCsv:fReRr/>
              <rdeCsv:fReID/>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 173]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
              <rdeCsv:fReDate/>
              <rdeCsv:fAcRr/>
              <rdeCsv:fAcID/>
@@ -9737,18 +9733,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
              <csvRegistrar:fStatus/>
              <csvContact:fStreet isLoc="false" index="0"/>
              <csvContact:fStreet isLoc="false" index="1"/>
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 174]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
              <csvContact:fStreet isLoc="false" index="2"/>
              <csvContact:fCity isLoc="false" />
              <csvContact:fSp isLoc="false" />
              <csvContact:fPc isLoc="false" />
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 174]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
              <csvContact:fCc isLoc="false" />
              <csvContact:fVoice/>
              <csvContact:fVoiceExt/>
@@ -9793,18 +9789,18 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
            </rdeCsv:fields>
            <rdeCsv:files>
              <rdeCsv:file
-
-
-
-Arias, et al.           Expires January 10, 2014              [Page 175]
-
-Internet-Draft            DNRD Objects Mapping                 July 2013
-
-
                cksum="01F72976">
                NNDN-YYYYMMDD.csv
              </rdeCsv:file>
            </rdeCsv:files>
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 175]
+
+Internet-Draft            DNRD Objects Mapping                 July 2013
+
+
          </rdeCsv:csv>
        </csvNNDN:contents>
        <rdeEppParams:eppParams>
@@ -9852,7 +9848,11 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 176]
+
+
+
+
+Arias, et al.           Expires February 1, 2014              [Page 176]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -9908,7 +9908,7 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 177]
+Arias, et al.           Expires February 1, 2014              [Page 177]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -9964,7 +9964,7 @@ Authors' Addresses
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 178]
+Arias, et al.           Expires February 1, 2014              [Page 178]
 
 Internet-Draft            DNRD Objects Mapping                 July 2013
 
@@ -10020,5 +10020,5 @@ Internet-Draft            DNRD Objects Mapping                 July 2013
 
 
 
-Arias, et al.           Expires January 10, 2014              [Page 179]
+Arias, et al.           Expires February 1, 2014              [Page 179]
 

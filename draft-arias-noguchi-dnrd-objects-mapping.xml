@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="09" month="July" year="2013"/>
+        <date day="31" month="July" year="2013"/>
         
         <area> Applications </area>
         
@@ -7012,7 +7012,6 @@ END]]></artwork></figure>
                       <t>Replaced use of &lt;rdeCsv:fLang&gt; to new &lt;rdeCsv:fIdnTableId&gt; field in the "domain", "idnLanguage", and "NNDN" CSV files.</t>
                       <t>Replaced use of &lt;csvHost:fName&gt; with &lt;rdeCsv:fRoid&gt; in the "host" &lt;csvHost:deletes&gt; &lt;rdeCsv:csv&gt; element.</t>
                       <t>Changed the foreign key of the hosts to use &lt;rdeCsv:fRoid&gt; instead of &lt;csvHost:fName&gt; and removed use of &lt;csvHost:fName&gt; in the "domainNameServers", "hostStatuses", and "hostAddresses" CSV files.</t>
-                      <t>Removed the definition of the &lt;csvDomain:fOriginalName&gt; field element since the &lt;csvNNDN:fOriginalName&gt; field element handles the case of referencing the original domain name of a variant.</t>
                       <t>Added use of the MUST keyword for CSV fields that are required to be supported in an EPP based system.</t>
                       <t>Removed use of the &lt;rdeCsv:fRoid&gt; field element for the "registrar" CSV file.</t>
                       <t>Added definition of &lt;csvNNDN:fMirroringNS&gt; field element.</t>                      
