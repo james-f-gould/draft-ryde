@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
+   xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
    xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
    xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
    xmlns:csvDomain="urn:ietf:params:xml:ns:csvDomain-1.0"
@@ -11,8 +11,8 @@
    xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
-	 xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
-    xsi:schemaLocation="
+   xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
+   xsi:schemaLocation="
     urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
     urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
     urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd 
