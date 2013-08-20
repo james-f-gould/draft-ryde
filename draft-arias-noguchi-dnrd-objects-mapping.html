@@ -145,12 +145,12 @@
 <tr><td class="header">Network Working Group</td><td class="header">F. Arias</td></tr>
 <tr><td class="header">Internet-Draft</td><td class="header">G. Lozano</td></tr>
 <tr><td class="header">Intended status: Standards Track</td><td class="header">ICANN</td></tr>
-<tr><td class="header">Expires: February 3, 2014</td><td class="header">S. Noguchi</td></tr>
+<tr><td class="header">Expires: February 21, 2014</td><td class="header">S. Noguchi</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">JPRS</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">J. Gould</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">C. Thippeswamy</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">VeriSign</td></tr>
-<tr><td class="header">&nbsp;</td><td class="header">August 2, 2013</td></tr>
+<tr><td class="header">&nbsp;</td><td class="header">August 20, 2013</td></tr>
 </table></td></tr></table>
 <h1><br />Domain Name Registration Data (DNRD) Objects Mapping<br />draft-arias-noguchi-dnrd-objects-mapping-05</h1>
 
@@ -177,7 +177,7 @@ and may be updated, replaced, or obsoleted by other documents at any time.
 It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
-This Internet-Draft will expire on February 3, 2014.</p>
+This Internet-Draft will expire on February 21, 2014.</p>
 
 <h3>Copyright Notice</h3>
 <p>
@@ -1194,6 +1194,20 @@ CSV Model</h3>
 <dd>Domain name field with type="eppcom:labelType" and isRequired="true".  
                   
 </dd>
+</dl></blockquote>
+</dd>
+<dt>&quot;domain&quot;</dt>
+<dd>Defines the fields and CSV file references 
+                  used for the domain name object records.
+</dd>
+<dt></dt>
+<dd>The following "csvDomain" field elements, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MAY be used in the "domain" 
+                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  
+</dd>
+<dt></dt>
+<dd>
+<blockquote class="text"><dl>
 <dt>&lt;csvDomain:fOriginalName&gt;</dt>
 <dd>Fully qualified name of the original IDN domain name object related to the 
                       variant domain name object with type="eppcom:labelType".
@@ -1230,9 +1244,6 @@ CSV Model</h3>
 <dt>&lt;rdeCsv:fExDate&gt;</dt>
 <dd>Expiration date and time for the domain name object.
 </dd>
-<dt>&lt;rdeCsv:fTrDate&gt;</dt>
-<dd>Date and time of the last transfer for the domain name object.
-</dd>
 </dl></blockquote>
 </dd>
 <dt></dt>
@@ -1257,6 +1268,9 @@ CSV Model</h3>
 </dd>
 <dt>&lt;rdeCsv:fUpID&gt;</dt>
 <dd>Identifier of the client that last updated the domain name object.
+</dd>
+<dt>&lt;rdeCsv:fTrDate&gt;</dt>
+<dd>Date and time of the last transfer for the domain name object.
 </dd>
 </dl></blockquote>
 </dd>
@@ -2078,9 +2092,6 @@ domain1.test,257,3,1,AQPJ////4QQQ
 <dt>&lt;rdeCsv:fAcDate&gt;</dt>
 <dd>Date and time that the transfer action should be taken or has been taken.
 </dd>
-<dt>&lt;rdeCsv:fExDate&gt;</dt>
-<dd>Expiration date if the transfer command caused or causes a change in the validity period.
-</dd>
 </dl></blockquote>
 </dd>
 <dt></dt>
@@ -2091,6 +2102,9 @@ domain1.test,257,3,1,AQPJ////4QQQ
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
+<dt>&lt;rdeCsv:fExDate&gt;</dt>
+<dd>Expiration date if the transfer command caused or causes a change in the validity period.
+</dd>
 <dt>&lt;rdeCsv:fReID&gt;</dt>
 <dd>Identifier of client that requested the transfer.
 </dd>
@@ -3180,9 +3194,6 @@ CSV Model</h3>
 <dt>&lt;rdeCsv:fUpDate&gt;</dt>
 <dd>Date and time of the last update to the contact object.
 </dd>
-<dt>&lt;rdeCsv:fTrDate&gt;</dt>
-<dd>Date and time of the last transfer for the contact object.
-</dd>
 </dl></blockquote>
 </dd>
 <dt></dt>
@@ -3198,6 +3209,9 @@ CSV Model</h3>
 </dd>
 <dt>&lt;rdeCsv:fUpID&gt;</dt>
 <dd>Identifier of the client that last updated the contact object.
+</dd>
+<dt>&lt;rdeCsv:fTrDate&gt;</dt>
+<dd>Date and time of the last transfer for the contact object.
 </dd>
 </dl></blockquote>
 </dd>
@@ -8816,6 +8830,12 @@ Changes from version 04 to 05</h3>
               </p>
 <ol class="text">
 <li>Updated the examples of the full and differential deposits using the CSV model.
+</li>
+<li>Made &lt;rdeCsv:fExDate&gt; optional for the "domainTransfer" CSV file to match the XML definition.
+</li>
+<li>Made &lt;csvDomain:fOriginalName&gt; optional for the "domain" CSV file to match the XML definition.
+</li>
+<li>Made &lt;rdeCsv:fTrDate&gt; optional for the "domain" and "contact" CSV files to match the XML definition.
 </li>
 </ol><p>
             

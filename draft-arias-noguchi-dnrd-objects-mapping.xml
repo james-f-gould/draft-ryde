@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="2" month="August" year="2013"/>
+        <date day="20" month="August" year="2013"/>
         
         <area> Applications </area>
         
@@ -799,8 +799,14 @@ domainN.test]]>
                   </t>
                   <t><list style="hanging">
                   <t hangText="&lt;csvDomain:fName&gt;">Domain name field with type="eppcom:labelType" and isRequired="true".  
+                  </t>        
+                  </list></t>
+                  <t hangText="&quot;domain&quot;">Defines the fields and CSV file references 
+                  used for the domain name object records.</t>
+                  <t>The following "csvDomain" field elements, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MAY be used in the "domain" 
+                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
-                  
+                  <t><list style="hanging">
                 <t hangText="&lt;csvDomain:fOriginalName&gt;">Fully qualified name of the original IDN domain name object related to the 
                       variant domain name object with type="eppcom:labelType".
                 </t>
@@ -817,7 +823,6 @@ domainN.test]]>
                     <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
                     <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the domain name object.</t>
                     <t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date and time for the domain name object.</t>
-                    <t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time of the last transfer for the domain name object.</t>
                   </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
                   MAY be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
@@ -828,6 +833,7 @@ domainN.test]]>
                     <t hangText="&lt;rdeCsv:fRegistrant&gt;">Registrant contact identifier for the domain name object.</t>
                     <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the domain name object.</t>
                     <t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of the client that last updated the domain name object.</t>
+                    <t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time of the last transfer for the domain name object.</t>
                   </list></t>
                     <t>
                         Example of a "domain" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element:
@@ -1452,13 +1458,13 @@ domain1.test,257,3,1,AQPJ////4QQQ]]>
                     <t hangText="&lt;rdeCsv:fReDate&gt;">Date and time that the transfer was requested.</t>
                     <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action.</t>
                     <t hangText="&lt;rdeCsv:fAcDate&gt;">Date and time that the transfer action should be taken or has been taken.</t>
-                    <t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date if the transfer command caused or causes a change in the validity period.</t>
                   </list></t>
  
                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
                   MAY be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
+                    <t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date if the transfer command caused or causes a change in the validity period.</t>
                     <t hangText="&lt;rdeCsv:fReID&gt;">Identifier of client that requested the transfer.</t>
                     <t hangText="&lt;rdeCsv:fAcID&gt;">Identifier of client that should take or took action for transfer.</t>
                   </list></t>
@@ -2299,7 +2305,6 @@ ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A]]>
                     <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the contact object</t>
                     <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
                     <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the contact object.</t>
-                    <t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time of the last transfer for the contact object.</t>
                   </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
                   MAY be used in the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
@@ -2307,6 +2312,7 @@ ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A]]>
                   <t><list style="hanging">
                     <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the contact object.</t>
                     <t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of the client that last updated the contact object.</t>
+                    <t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time of the last transfer for the contact object.</t>
                   </list></t>
                     <t>
                         Example of a "contact" &lt;csvContact:contacts&gt; &lt;rdeCsv:csv&gt; element:
@@ -7022,6 +7028,9 @@ END]]></artwork></figure>
             <t>
               <list style="numbers">
                 <t>Updated the examples of the full and differential deposits using the CSV model.</t>
+                <t>Made &lt;rdeCsv:fExDate&gt; optional for the "domainTransfer" CSV file to match the XML definition.</t>
+                <t>Made &lt;csvDomain:fOriginalName&gt; optional for the "domain" CSV file to match the XML definition.</t>
+                <t>Made &lt;rdeCsv:fTrDate&gt; optional for the "domain" and "contact" CSV files to match the XML definition.</t>
               </list>
             </t>
           </section>
