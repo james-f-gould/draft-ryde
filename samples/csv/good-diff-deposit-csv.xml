@@ -23,7 +23,7 @@
     urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
     urn:ietf:params:xml:ns:rdeEppParams-1.0 rde-epp-param-1.0.xsd
     urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"
-    type="FULL"
+    type="DIFF"
    id="20101017001" prevId="20101010001">
    <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
    <rde:rdeMenu>
@@ -283,7 +283,7 @@
       2
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0">
-      1
+      2
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">
       1
@@ -564,7 +564,7 @@
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="06DC1A7E">
+            cksum="306178BB">
             registrar-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -596,7 +596,7 @@
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="5EDB3FB1">
+            cksum="11C80D60">
             NNDN-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
