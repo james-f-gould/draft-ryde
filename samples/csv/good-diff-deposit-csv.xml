@@ -42,7 +42,7 @@
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="E19349E0">
+            cksum="A06D8194">
             domain-delete-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -277,7 +277,7 @@
       2
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">
-      1
+      2
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">
       2
