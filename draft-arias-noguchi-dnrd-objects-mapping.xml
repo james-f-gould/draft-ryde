@@ -355,7 +355,7 @@
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="BF8E79F6">
+        cksum="75E2D01F">
         domain-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -519,7 +519,7 @@ domainN.test]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="06DC1A7E">
+        cksum="306178BB">
         registrar-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -859,7 +859,7 @@ domainN.test]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="AD30F3D6">
+        cksum="75E2D01F">
         domain-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -872,8 +872,8 @@ domainN.test]]>
                     <t>
                         Example of the corresponding domain-YYYYMMDD.csv file.
                         The file contains four records (active ASCII domain, pendingDelete domain, 
-                        original IDN with LANG1 language rules, and variant IDN 
-                        with LANG1 language rules).
+                        original IDN with LANG-1 language rules, and variant IDN 
+                        with LANG-1 language rules).
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
@@ -883,10 +883,10 @@ clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
 domain2.test,Ddomain1-TEST,,,registrantid,registrarX,registrarX,
 clientY,1999-04-03T22:00:00.0Z,registrarX,clientY,
 2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-xn--abc123.test,Dxnabc123-TEST,LANG1,,registrantid,registrarX,
+xn--abc123.test,Dxnabc123-TEST,LANG-1,,registrantid,registrarX,
 registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
 2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-xn--abc321.test,Dxnabc321-TEST,LANG1,xn--cbc321.test,
+xn--abc321.test,Dxnabc321-TEST,LANG-1,xn--cbc321.test,
 registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
 registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z]]>
                         </artwork></figure>
@@ -3188,7 +3188,7 @@ mycontactid]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="06DC1A7E">
+        cksum="306178BB">
         registrar-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3396,8 +3396,8 @@ http://www.iana.org/domains/idn-tables/tables/test_tab2_1.1.txt]]>
                     </t>
                     <t>
                         <figure><artwork><![CDATA[
-LANG1
-LANG2]]>
+LANG-1
+LANG-2]]>
                         </artwork></figure>
                     </t>    
                  
@@ -3589,7 +3589,7 @@ LANG2]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="5EDB3FB1">
+        cksum="11C80D60">
         NNDN-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -7499,7 +7499,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="AD30F3D6">
+             cksum="75E2D01F">
              domain-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
@@ -7771,7 +7771,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="06DC1A7E">
+             cksum="306178BB">
              registrar-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
@@ -7803,7 +7803,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="5EDB3FB1">
+             cksum="11C80D60">
              NNDN-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
@@ -8167,7 +8167,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
          </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="AD30F3D6">
+            cksum="75E2D01F">
             domain-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -8423,7 +8423,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="06DC1A7E">
+            cksum="306178BB">
             registrar-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
@@ -8455,7 +8455,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
-            cksum="5EDB3FB1">
+            cksum="11C80D60">
             NNDN-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
