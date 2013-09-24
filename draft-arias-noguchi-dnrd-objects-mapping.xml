@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="20" month="August" year="2013"/>
+        <date day="20" month="September" year="2013"/>
         
         <area> Applications </area>
         
@@ -284,7 +284,6 @@
                     and in section 8.1.1.6.2 of ITU-T recommendation V.42.
                 </t>
             </section>
-            
             
             <section title="IP addresses">
               <t>
@@ -566,9 +565,7 @@ domainN.test]]>
                         </artwork></figure>
                     </t>                    
             </section>
-            
-      
-      
+
         </section>
         
         <section title="Object Description" anchor="Object_Description">
@@ -609,14 +606,15 @@ domainN.test]]>
                     <t>
                         <list style="symbols">
                             <t>
-                                A &lt;name&gt; element that contains the fully qualified name of the domain name object. 
+                                A &lt;name&gt; element that contains the fully qualified name of the domain name object.
+                                If the domain name is an IDN, the ASCII Compatible Encoding (ACE) MUST be used.
                             </t>
                             <t>
                                 A &lt;roid&gt; element that contains the repository object identifier assigned to the domain 
                                 name object when it was created.
                             </t>
                             <t>
-                                An OPTIONAL &lt;uName&gt; element that contains the name of the domain name in Unicode character set. It
+                                An OPTIONAL &lt;uName&gt; element that contains the fully qualified name of the domain name in Unicode character set. It
                                 MUST be provided if available. 
                             </t>
                             <t>
@@ -3446,10 +3444,11 @@ LANG2]]>
                     <t>
                         <list style="symbols">
                           <t>
-                            An &lt;aName&gt; element that contains the ASCII Compatible Encoding (ACE) field of the NNDN.
+                            An &lt;aName&gt; element that contains the fully qualified name of the NNDN.
+                            If the NNDN is an IDN, the ASCII Compatible Encoding (ACE) MUST be used.
                           </t>
                             <t>
-                                An OPTIONAL &lt;uName&gt; element that contains the name of the NNDN in Unicode character set. It
+                              An OPTIONAL &lt;uName&gt; element that contains the fully qualified name of the NNDN in Unicode character set. It
                                 MUST be provided if available. 
                             </t>
                             <t>
@@ -3458,7 +3457,7 @@ LANG2]]>
                                 element MUST be present if the NNDN is an IDN.
                             </t>
                             <t>
-                                An OPTIONAL &lt;originalName&gt; element is used to indicate that the NNDN is an IDN variant.
+                                An OPTIONAL &lt;originalName&gt; element is used to indicate that the NNDN is used for an IDN variant.
                                 This element contains the domain name used to generate the IDN variant. 
                             </t>
                             <t>
@@ -3470,11 +3469,12 @@ LANG2]]>
                                     </t>
                                   <t>
                                     If a NNDN is considered a potential registration of a domain object for a particular registrant, 
-                                    then the NNDN will be tagged as "withheld".
+                                    then the NNDN will be tagged as "withheld". This status is only used when the NNDN is used for an
+                                    IDN variant.
                                   </t>
                                   <t>
                                     If a NNDN is considered a mirrored IDN variant of a domain object, then the NNDN will be tagged
-                                    as "mirrored". A mirroringNS attribute is used to specify if the mirrored  IDN variant use the
+                                    as "mirrored". A mirroringNS attribute is used to specify if the mirrored IDN variant use the
                                     NS mirror mechanism. The default value of mirroringNS is true. 
                                     If another mechanism such as DNAME is used, the value of mirroringNS attribute MUST be false.
                                   </t>
@@ -3970,6 +3970,9 @@ xn--pingino-q2a.test]]>
               If an EPP Parameters Object was escrowed in the past, one and only one EPP Parameters Object MUST
               be present.
             </t>
+            <t>
+              The watermark is not in the future.
+            </t>
           </list>
         </t>
       </section>
@@ -4450,6 +4453,7 @@ END]]></artwork></figure>
 <schema targetNamespace="urn:ietf:params:xml:ns:rdeDomain-1.0"
   xmlns:rdeDomain="urn:ietf:params:xml:ns:rdeDomain-1.0"
   xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+  xmlns:rdeIDN="urn:ietf:params:xml:ns:rdeIDN-1.0"
   xmlns:rgp="urn:ietf:params:xml:ns:rgp-1.0"
   xmlns:secDNS="urn:ietf:params:xml:ns:secDNS-1.1"
   xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
@@ -4462,6 +4466,7 @@ END]]></artwork></figure>
   <import namespace="urn:ietf:params:xml:ns:secDNS-1.1"/>
   <import namespace="urn:ietf:params:xml:ns:rgp-1.0"/>
   <import namespace="urn:ietf:params:xml:ns:rde-1.0"/>
+  <import namespace="urn:ietf:params:xml:ns:rdeIDN-1.0"/>
 
   <annotation>
     <documentation>
@@ -4489,8 +4494,8 @@ END]]></artwork></figure>
             type="eppcom:roidType"/>
           <element name="uName" 
             type="eppcom:labelType" minOccurs="0"/>
-          <element name="idnTableId" 
-            type="IDREF" minOccurs="0"/>
+          <element name="idnTableId"
+            type="rdeIDN:idType" minOccurs="0"/>
           <element name="originalName" 
             type="eppcom:labelType" minOccurs="0"/>
           <element name="status" 
@@ -6002,29 +6007,43 @@ END]]></artwork></figure>
 
   <annotation>
     <documentation>
-      Registry Data Escrow IDN provisioning schema
+ 	 Registry Data Escrow IDN provisioning schema
     </documentation>
   </annotation>
 
   <element name="idnTableRef" type="rdeIDN:contentType"
     substitutionGroup="rde:content"/>
+  <element name="delete" type="rdeIDN:deleteType"
+    substitutionGroup="rde:delete"/>
 
-  <!-- Content Type -->
+  <!-- Content Types -->
   <complexType name="contentType">
     <complexContent>
-      <extension base="rde:contentType">
-        <sequence>
-          <element name="url" type="anyURI"/>
-          <element name="urlPolicy" type="anyURI"/>
-        </sequence>
-        <attribute name="id" type="rdeIDN:IdType" use="required"/>
-      </extension>
+	  <extension base="rde:contentType">
+ 	    <sequence>
+		  <element name="url" type="anyURI"/>
+		  <element name="urlPolicy" type="anyURI"/>
+          </sequence>
+        <attribute name="id" type="rdeIDN:idType" use="required"/>
+       </extension>
     </complexContent>
   </complexType>
-
-  <simpleType name="IdType">
-    <restriction base="ID">
-      <whiteSpace value="collapse"/>
+ 
+  <complexType name="deleteType">
+    <complexContent>
+	  <extension base="rde:deleteType">
+	    <sequence>
+		  <element name="id" type="rdeIDN:idType"/>
+	    </sequence>
+	  </extension>
+    </complexContent>
+  </complexType>
+ 
+  <!-- Simple Types -->
+  <simpleType name="idType">
+    <restriction base="token">
+	  <minLength value="1"/>
+	  <maxLength value="64"/>
     </restriction>
   </simpleType>
 
@@ -6286,12 +6305,14 @@ END]]></artwork></figure>
 <schema targetNamespace="urn:ietf:params:xml:ns:rdeNNDN-1.0"
   xmlns:rdeNNDN="urn:ietf:params:xml:ns:rdeNNDN-1.0"
   xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+  xmlns:rdeIDN="urn:ietf:params:xml:ns:rdeIDN-1.0"
   xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
   xmlns="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified">
   
   <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/>
   <import namespace="urn:ietf:params:xml:ns:rde-1.0"/>
+  <import namespace="urn:ietf:params:xml:ns:rdeIDN-1.0"/>
     
   <annotation>
     <documentation>
@@ -6314,8 +6335,8 @@ END]]></artwork></figure>
             type="eppcom:labelType"/>
           <element name="uName" 
             type="eppcom:labelType" minOccurs="0"/>
-          <element name="idnTableId" 
-            type="IDREF" minOccurs="0"/>
+          <element name="idnTableId"
+            type="rdeIDN:idType" minOccurs="0"/>
           <element name="originalName" 
             type="eppcom:labelType" minOccurs="0"/>
           <element name="nameState" 
@@ -6826,7 +6847,6 @@ END]]></artwork></figure>
                 </list>
             </t>
             
-            
             <t>Registration request for the RDE IDN namespace:
                 <list>
                     <t>URI: urn:ietf:params:xml:ns:rdeIDN-1.0</t>
@@ -6886,7 +6906,6 @@ END]]></artwork></figure>
                     <t>See the &quot;Formal Syntax&quot; section of this document.</t>
                 </list>
             </t>
-            
             
             <t>Registration request for the RDE EPP parameters namespace:
                 <list>
@@ -7027,10 +7046,12 @@ END]]></artwork></figure>
           <section title="Changes from version 04 to 05">
             <t>
               <list style="numbers">
-                <t>Updated the examples of the full and differential deposits using the CSV model.</t>
+                <t>Updated the examples of the full and differential deposits using the CSV and XML model.</t>
                 <t>Made &lt;rdeCsv:fExDate&gt; optional for the "domainTransfer" CSV file to match the XML definition.</t>
                 <t>Made &lt;csvDomain:fOriginalName&gt; optional for the "domain" CSV file to match the XML definition.</t>
                 <t>Made &lt;rdeCsv:fTrDate&gt; optional for the "domain" and "contact" CSV files to match the XML definition.</t>
+                <t>Change &lt;idnTableId&gt; from IDREF to idType.</t>
+                <t>Minor editorial changes.</t>
               </list>
             </t>
           </section>
@@ -7158,7 +7179,6 @@ END]]></artwork></figure>
       <rdeHost:upRr>RegistrarX</rdeHost:upRr>
       <rdeHost:upDate>2009-10-03T09:34:00.0Z</rdeHost:upDate>
     </rdeHost:host>
-
 
     <!-- Contact: sh8013 -->
     <rdeContact:contact>
@@ -7351,6 +7371,9 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
     <rdeDom:delete>
       <rdeDom:name>example2.test</rdeDom:name>
     </rdeDom:delete>
+	<rdeIDN:delete>
+	 <rdeIDN:id>pt-BR</rdeIDN:id>
+   </rdeIDN:delete>
   </rde:deletes>
 
   <!-- Contents -->
@@ -7369,7 +7392,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         </rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0">1
-    </rdeHeader:count>
+      </rdeHeader:count>
       <rdeHeader:count
         uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1
         </rdeHeader:count>
