@@ -145,14 +145,14 @@
 <tr><td class="header">Network Working Group</td><td class="header">F. Arias</td></tr>
 <tr><td class="header">Internet-Draft</td><td class="header">G. Lozano</td></tr>
 <tr><td class="header">Intended status: Standards Track</td><td class="header">ICANN</td></tr>
-<tr><td class="header">Expires: March 30, 2014</td><td class="header">S. Noguchi</td></tr>
+<tr><td class="header">Expires: April 5, 2014</td><td class="header">S. Noguchi</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">JPRS</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">J. Gould</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">C. Thippeswamy</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">VeriSign</td></tr>
-<tr><td class="header">&nbsp;</td><td class="header">September 26, 2013</td></tr>
+<tr><td class="header">&nbsp;</td><td class="header">October 02, 2013</td></tr>
 </table></td></tr></table>
-<h1><br />Domain Name Registration Data (DNRD) Objects Mapping<br />draft-arias-noguchi-dnrd-objects-mapping-05</h1>
+<h1><br />Domain Name Registration Data (DNRD) Objects Mapping<br />draft-arias-noguchi-dnrd-objects-mapping-06</h1>
 
 <h3>Abstract</h3>
 
@@ -177,7 +177,7 @@ and may be updated, replaced, or obsoleted by other documents at any time.
 It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
-This Internet-Draft will expire on March 30, 2014.</p>
+This Internet-Draft will expire on April 5, 2014.</p>
 
 <h3>Copyright Notice</h3>
 <p>
@@ -300,13 +300,15 @@ Changes from version 02 to 03<br />
 Changes from version 03 to 04<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor41">14.6.</a>&nbsp;
 Changes from version 04 to 05<br />
-<a href="#anchor42">15.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor42">14.7.</a>&nbsp;
+Changes from version 05 to 06<br />
+<a href="#anchor43">15.</a>&nbsp;
 Example of a full deposit using the XML model<br />
-<a href="#anchor43">16.</a>&nbsp;
+<a href="#anchor44">16.</a>&nbsp;
 Example of differential deposit using the XML model<br />
-<a href="#anchor44">17.</a>&nbsp;
+<a href="#anchor45">17.</a>&nbsp;
 Example of a full deposit using the CSV model<br />
-<a href="#anchor45">18.</a>&nbsp;
+<a href="#anchor46">18.</a>&nbsp;
 Example of differential deposit using the CSV model<br />
 <a href="#rfc.references1">19.</a>&nbsp;
 References<br />
@@ -2401,7 +2403,8 @@ CSV Model</h3>
 </dd>
 <dt></dt>
 <dd>The following "csvHost" field elements, defined for the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used in the "host" 
-                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element under the &lt;csvHost:contents&gt; element, and MAY be used 
+                  in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element under the &lt;csvHost:deletes&gt; element:
                   
 </dd>
 <dt></dt>
@@ -4553,8 +4556,7 @@ CSV Model</h3>
 ...
 &lt;csvIDN:contents&gt;
 ...
-  &lt;rdeCsv:csv name="idnLanguage"&gt;
-    &lt;rdeCsv:sep&gt;,&lt;/rdeCsv:sep&gt;
+  &lt;rdeCsv:csv name="idnLanguage" sep=","&gt;
     &lt;rdeCsv:fields&gt;
       &lt;rdeCsv:fIdnTableId/&gt;
       &lt;rdeCsv:fUrl/&gt;
@@ -5453,7 +5455,6 @@ RDE CSV Schema</h3>
   &lt;!-- csv content element --&gt;
   &lt;element name="csv" type="rdeCsv:csvType"/&gt;
 
-
   &lt;!-- Definition of CSV file --&gt;
   &lt;complexType name="csvType"&gt;
     &lt;sequence&gt;
@@ -5461,9 +5462,16 @@ RDE CSV Schema</h3>
      &lt;element name="files" type="rdeCsv:filesType"/&gt;
     &lt;/sequence&gt;
     &lt;attribute name="name" type="token" use="required"/&gt;
-    &lt;attribute name="sep" type="token" default=","/&gt;
+    &lt;attribute name="sep" type="rdeCsv:sepType" default=","/&gt;
   &lt;/complexType&gt;
 
+  &lt;!-- field seperator must be a single character --&gt;
+  &lt;simpleType name="sepType"&gt;
+    &lt;restriction base="string"&gt;
+      &lt;minLength value="1"/&gt;
+      &lt;maxLength value="1"/&gt;
+    &lt;/restriction&gt;
+  &lt;/simpleType&gt;
 
  &lt;!-- Abstract field type --&gt;
  &lt;element name="field" type="rdeCsv:fieldType"
@@ -8871,6 +8879,21 @@ Changes from version 04 to 05</h3>
 </p>
 <a name="anchor42"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.14.7"></a><h3>14.7.&nbsp;
+Changes from version 05 to 06</h3>
+
+<p>
+              </p>
+<ol class="text">
+<li>Defined &lt;rdeCsv:csv&gt; "sep" attribute to use new type rdeCsv:sepType, which is a string of minimum and maximum length of 1 character based on feedback from Klaus Malorny.
+</li>
+<li>Updated description of when the &lt;csvHost:fName&gt; field MUST and MAY be used based on feedback from Klaus Malorny.
+</li>
+</ol><p>
+            
+</p>
+<a name="anchor43"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.15"></a><h3>15.&nbsp;
 Example of a full deposit using the XML model</h3>
 
@@ -9140,7 +9163,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
 
 
 </p>
-<a name="anchor43"></a><br /><hr />
+<a name="anchor44"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.16"></a><h3>16.&nbsp;
 Example of differential deposit using the XML model</h3>
@@ -9229,7 +9252,7 @@ Example of differential deposit using the XML model</h3>
 
             
 </p>
-<a name="anchor44"></a><br /><hr />
+<a name="anchor45"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.17"></a><h3>17.&nbsp;
 Example of a full deposit using the CSV model</h3>
@@ -9675,7 +9698,7 @@ Example of a full deposit using the CSV model</h3>
 
 
 </p>
-<a name="anchor45"></a><br /><hr />
+<a name="anchor46"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18"></a><h3>18.&nbsp;
 Example of differential deposit using the CSV model</h3>

@@ -30,7 +30,7 @@
 <?rfc comments="yes" ?>
 <?rfc sortrefs="yes" ?>
 
-<rfc category="std" ipr="trust200902" docName="draft-arias-noguchi-dnrd-objects-mapping-05">
+<rfc category="std" ipr="trust200902" docName="draft-arias-noguchi-dnrd-objects-mapping-06">
     
     <front>
         
@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="26" month="September" year="2013"/>
+        <date day="02" month="October" year="2013"/>
         
         <area> Applications </area>
         
@@ -1698,7 +1698,8 @@ domain2.test,2012-03-08T19:38:00.0Z]]>
                   <t hangText="&quot;host&quot;">Defines the fields and CSV file references 
                   used for the host object records.</t>  
                   <t>The following "csvHost" field elements, defined for the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used in the "host" 
-                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element under the &lt;csvHost:contents&gt; element, and MAY be used 
+                  in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element under the &lt;csvHost:deletes&gt; element:
                   </t>
                   <t><list style="hanging">
                   
@@ -3336,8 +3337,7 @@ EXAMPLE2]]>
 ...
 <csvIDN:contents>
 ...
-  <rdeCsv:csv name="idnLanguage">
-    <rdeCsv:sep>,</rdeCsv:sep>
+  <rdeCsv:csv name="idnLanguage" sep=",">
     <rdeCsv:fields>
       <rdeCsv:fIdnTableId/>
       <rdeCsv:fUrl/>
@@ -4054,7 +4054,6 @@ xn--pingino-q2a.test]]>
   <!-- csv content element -->  
   <element name="csv" type="rdeCsv:csvType"/>
   
-  
   <!-- Definition of CSV file -->  
   <complexType name="csvType">
     <sequence>
@@ -4062,9 +4061,16 @@ xn--pingino-q2a.test]]>
      <element name="files" type="rdeCsv:filesType"/>
     </sequence>
     <attribute name="name" type="token" use="required"/>
-    <attribute name="sep" type="token" default=","/>
+    <attribute name="sep" type="rdeCsv:sepType" default=","/>
   </complexType>
 
+  <!-- field seperator must be a single character -->
+  <simpleType name="sepType">
+    <restriction base="string">
+      <minLength value="1"/>
+      <maxLength value="1"/>
+    </restriction>
+  </simpleType>
  
  <!-- Abstract field type -->
  <element name="field" type="rdeCsv:fieldType" 
@@ -7052,6 +7058,14 @@ END]]></artwork></figure>
                 <t>Made &lt;rdeCsv:fTrDate&gt; optional for the "domain" and "contact" CSV files to match the XML definition.</t>
                 <t>Change &lt;idnTableId&gt; from IDREF to idType.</t>
                 <t>Minor editorial changes.</t>
+              </list>
+            </t>
+          </section>
+          <section title="Changes from version 05 to 06">
+            <t>
+              <list style="numbers">
+                <t>Defined &lt;rdeCsv:csv&gt; "sep" attribute to use new type rdeCsv:sepType, which is a string of minimum and maximum length of 1 character based on feedback from Klaus Malorny.</t>
+					 <t>Updated description of when the &lt;csvHost:fName&gt; field MUST and MAY be used based on feedback from Klaus Malorny.</t>
               </list>
             </t>
           </section>

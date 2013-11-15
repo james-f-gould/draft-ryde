@@ -24,7 +24,6 @@
   <!-- csv content element -->  
   <element name="csv" type="rdeCsv:csvType"/>
   
-  
   <!-- Definition of CSV file -->  
   <complexType name="csvType">
     <sequence>
@@ -32,9 +31,16 @@
      <element name="files" type="rdeCsv:filesType"/>
     </sequence>
     <attribute name="name" type="token" use="required"/>
-    <attribute name="sep" type="token" default=","/>
+    <attribute name="sep" type="rdeCsv:sepType" default=","/>
   </complexType>
 
+  <!-- field seperator must be a single character -->
+  <simpleType name="sepType">
+    <restriction base="string">
+      <minLength value="1"/>
+      <maxLength value="1"/>
+    </restriction>
+  </simpleType>
  
  <!-- Abstract field type -->
  <element name="field" type="rdeCsv:fieldType" 
