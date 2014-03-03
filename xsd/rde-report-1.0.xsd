@@ -7,14 +7,14 @@
   elementFormDefault="qualified">
 
   <import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/>
+	 schemaLocation="rde-1.0.xsd"/>
   <import namespace="urn:ietf:params:xml:ns:rdeHeader-1.0"
-    schemaLocation="rde-header-1.0.xsd" />
+	 schemaLocation="rde-header-1.0.xsd" />
 
   <annotation>
-    <documentation>
-      Registry Data Escrow Report schema
-    </documentation>
+	 <documentation>
+		Registry Data Escrow Report schema
+	 </documentation>
   </annotation>
 
   <!-- Root Element -->
@@ -22,14 +22,16 @@
 
   <!-- Report Type -->
   <complexType name="reportType">
-    <sequence>
-      <element name="id" type="rde:depositIdType"/>
-      <element name="reDate" type="dateTime"/>
-      <element name="vaDate" type="dateTime" minOccurs="0"/>
-      <element name="kind" type="rde:depositTypeType"/>
-      <element name="lastFullDate" type="date"/>
-      <element name="watermark" type="dateTime"/>
-      <element ref="rdeHeader:header"/>
-    </sequence>
+	 <sequence>
+		<element name="id" type="rde:depositIdType"/>
+		<element name="version" type="unsignedShort"/>
+		<element name="rydeSpecEscrow" type="token"/>
+		<element name="rydeSpecMapping" type="token"/>
+		<element name="resend" type="unsignedShort"/>
+		<element name="crDate" type="dateTime"/>
+		<element name="kind" type="rde:depositTypeType"/>
+		<element name="watermark" type="dateTime"/>
+		<element ref="rdeHeader:header"/>
+	 </sequence>
   </complexType>
 </schema>

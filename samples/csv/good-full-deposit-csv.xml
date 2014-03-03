@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
    xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
    xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
@@ -12,17 +11,6 @@
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
    xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
-    xsi:schemaLocation="
-    urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
-    urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
-    urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd 
-    urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd 
-    urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd 
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
-    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeEppParams-1.0 rde-epp-param-1.0.xsd
-    urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"
     type="FULL"
    id="20101017001" prevId="20101010001">
    <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
