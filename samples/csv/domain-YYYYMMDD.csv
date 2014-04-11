@@ -1,4 +1,4 @@
-domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-domain2.test,Ddomain1-TEST,,,registrantid,registrarX,registrarX,clientY,1999-04-03T22:00:00.0Z,registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-xn--abc123.test,Dxnabc123-TEST,LANG-1,,registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-xn--abc321.test,Dxnabc321-TEST,LANG-1,xn--cbc321.test,registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+Ddomain2-TEST,domain1.test,abc123,sunrise,,pendingAllocation,0000001751376056503931-65535,Ddomain2-TEST.mark,C6BC1FE2,,,,,,registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+Ddomain1-TEST,domain2.test,abc321,claims,landrush,pendingAllocation,,,49FD46E6C4B45C55D4AC,tmch,2012-06-19T09:01:30.0Z,,,,registrantid,registrarX,registrarX,clientY,1999-04-03T22:00:00.0Z,registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+Dxnabc123-TEST,xn--abc123.test,,,,,,,,,,,LANG-1,,registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+Dxnabc321-TEST,xn--abc321.test,,,,,,,,,,,LANG-1,xn--cbc321.test,registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z

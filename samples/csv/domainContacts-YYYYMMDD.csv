@@ -1,6 +1,6 @@
-domain1.test,sh8013,admin
-domain1.test,mycontactid,tech
-domain1.test,mycontactid,billing
-domain2.test,mycontactid,admin
-domain2.test,sh8013,tech
-domain2.test,mycontactid,billing
+Ddomain1-TEST,sh8013,admin
+Ddomain1-TEST,mycontactid,tech
+Ddomain1-TEST,mycontactid,billing
+Ddomain2-TEST,mycontactid,admin
+Ddomain2-TEST,sh8013,tech
+Ddomain2-TEST,mycontactid,billing

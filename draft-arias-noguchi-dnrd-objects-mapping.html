@@ -145,14 +145,14 @@
 <tr><td class="header">Network Working Group</td><td class="header">F. Arias</td></tr>
 <tr><td class="header">Internet-Draft</td><td class="header">G. Lozano</td></tr>
 <tr><td class="header">Intended status: Standards Track</td><td class="header">ICANN</td></tr>
-<tr><td class="header">Expires: April 5, 2014</td><td class="header">S. Noguchi</td></tr>
+<tr><td class="header">Expires: October 13, 2014</td><td class="header">S. Noguchi</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">JPRS</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">J. Gould</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">C. Thippeswamy</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">VeriSign</td></tr>
-<tr><td class="header">&nbsp;</td><td class="header">October 02, 2013</td></tr>
+<tr><td class="header">&nbsp;</td><td class="header">April 11, 2014</td></tr>
 </table></td></tr></table>
-<h1><br />Domain Name Registration Data (DNRD) Objects Mapping<br />draft-arias-noguchi-dnrd-objects-mapping-06</h1>
+<h1><br />Domain Name Registration Data (DNRD) Objects Mapping<br />draft-arias-noguchi-dnrd-objects-mapping-07</h1>
 
 <h3>Abstract</h3>
 
@@ -177,11 +177,11 @@ and may be updated, replaced, or obsoleted by other documents at any time.
 It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
-This Internet-Draft will expire on April 5, 2014.</p>
+This Internet-Draft will expire on October 13, 2014.</p>
 
 <h3>Copyright Notice</h3>
 <p>
-Copyright (c) 2013 IETF Trust and the persons identified as the
+Copyright (c) 2014 IETF Trust and the persons identified as the
 document authors.  All rights reserved.</p>
 <p>
 This document is subject to BCP 78 and the IETF Trust's Legal
@@ -302,13 +302,15 @@ Changes from version 03 to 04<br />
 Changes from version 04 to 05<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor42">14.7.</a>&nbsp;
 Changes from version 05 to 06<br />
-<a href="#anchor43">15.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor43">14.8.</a>&nbsp;
+Changes from version 06 to 07<br />
+<a href="#anchor44">15.</a>&nbsp;
 Example of a full deposit using the XML model<br />
-<a href="#anchor44">16.</a>&nbsp;
+<a href="#anchor45">16.</a>&nbsp;
 Example of differential deposit using the XML model<br />
-<a href="#anchor45">17.</a>&nbsp;
+<a href="#anchor46">17.</a>&nbsp;
 Example of a full deposit using the CSV model<br />
-<a href="#anchor46">18.</a>&nbsp;
+<a href="#anchor47">18.</a>&nbsp;
 Example of differential deposit using the CSV model<br />
 <a href="#rfc.references1">19.</a>&nbsp;
 References<br />
@@ -602,8 +604,8 @@ CSV elements</h3>
 ...
   &lt;rdeCsv:csv name="domain" sep=","&gt;
     &lt;rdeCsv:fields&gt;
+      &lt;csvDomain:fRoid/&gt;
       &lt;csvDomain:fName/&gt;
-      &lt;rdeCsv:fRoid/&gt;
       &lt;rdeCsv:fIdnTableId/&gt;
       &lt;csvDomain:fOriginalName/&gt;
       &lt;rdeCsv:fRegistrant isRequired="true"/&gt;
@@ -635,7 +637,7 @@ CSV elements</h3>
 <p>
                         </p>
 <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
+Ddomain2-TEST,domain1.test,,,registrantid,registrarX,registrarX,
 clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
 2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
 </pre></div><p>
@@ -651,7 +653,7 @@ clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
 ...
   &lt;rdeCsv:csv name="domain"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;csvDomain:fName/&gt;
+      &lt;csvDomain:fRoid/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
@@ -672,9 +674,9 @@ clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
 <p>
                         </p>
 <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test
-domain2.test
-domainN.test
+Ddomain1-TEST
+Ddomain2-TEST
+DdomainN-TEST
 </pre></div><p>
 
                     
@@ -830,7 +832,6 @@ Internationalized and Localized Elements</h3>
   &lt;rdeCsv:csv name="registrar" sep=","&gt;
     &lt;rdeCsv:fields&gt;
       &lt;csvRegistrar:fId/&gt;
-      &lt;rdeCsv:fRoid/&gt;
       &lt;csvRegistrar:fName isLoc="false"/&gt;
       &lt;csvRegistrar:fGurid/&gt;
       &lt;csvRegistrar:fStatus/&gt;
@@ -1190,6 +1191,9 @@ CSV Model</h3>
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   
 </dd>
+<dt>&lt;csvDomain:fRoid&gt;</dt>
+<dd>Registry Object IDentifier (ROID) for the domain name object with type="eppcom:roidType" and isRequired="true".
+</dd>
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
@@ -1216,6 +1220,58 @@ CSV Model</h3>
                       variant domain name object with type="eppcom:labelType".
                 
 </dd>
+<dt>&lt;csvDomain:fApplicationID&gt;</dt>
+<dd>Application identifier of the Launch Application with type="launch:applicationIDType".
+                
+</dd>
+<dt>&lt;csvDomain:fApplicationStatus&gt;</dt>
+<dd>Launch Application or Launch Registration status with type="launch:statusValueType".
+                
+</dd>
+<dt>&lt;csvDomain:fApplicationStatusName&gt;</dt>
+<dd>Launch Application or Launch Registration status that describes the sub-status or the full name of the status when the &lt;csvDomain:fApplicationStatus&gt; value is "custom" with type="token".
+                
+</dd>
+<dt>&lt;csvDomain:fApplicationStatusDescription&gt;</dt>
+<dd>Human-readable text that describes the rationale for the &lt;csvDomain:fApplicationStatus&gt; value with type="token".
+                
+</dd>
+<dt>&lt;csvDomain:fApplicationStatusLang&gt;</dt>
+<dd>Language of the &lt;csvDomain:fApplicationStatusDescription&gt; value with type="language".
+                
+</dd>
+<dt>&lt;csvDomain:fPhase&gt;</dt>
+<dd>Phase during which the application or registration is associated with or was submitted with type="launch:applicationIDType".
+                
+</dd>
+<dt>&lt;csvDomain:fPhaseName&gt;</dt>
+<dd>Phase name that defines a sub-phase or the full name of the phase when the &lt;csvDomain:fPhase&gt; value is "custom" with type="token".
+                
+</dd>
+<dt>&lt;csvDomain:fSmdID&gt;</dt>
+<dd>Signed Mark identifier with type="mark:idType".
+                
+</dd>
+<dt>&lt;csvDomain:fMarkFile&gt;</dt>
+<dd>File name of the file containing the Mark using the &lt;mark:mark&gt; XML with type="token".
+                
+</dd>
+<dt>&lt;csvDomain:fMarkFileCksum&gt;</dt>
+<dd>Checksum of the &lt;csvDomain:fMarkFile&gt; file using CRC32, as defined in <a class='info' href='#checksum'>Section&nbsp;4.4<span> (</span><span class='info'>Checksum</span><span>)</span></a>, with type="token".
+                
+</dd>
+<dt>&lt;csvDomain:fClaimsNoticeID&gt;</dt>
+<dd>Unique claims notice identifier for the Claims Notice with type="launch:noticeIDValue".
+                
+</dd>
+<dt>&lt;csvDomain:fClaimsValidatorID&gt;</dt>
+<dd>Validator Identifier associated with the &lt;csvDomain:fClaimsNoticeID&gt; with type="launch:validatorIDType".
+                
+</dd>
+<dt>&lt;csvDomain:fClaimsAcceptedDate&gt;</dt>
+<dd>Date and time that the Claims Notice was accepted with type="dateTime".
+                
+</dd>
 </dl></blockquote>
 </dd>
 <dt></dt>
@@ -1226,9 +1282,6 @@ CSV Model</h3>
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;rdeCsv:fRoid&gt;</dt>
-<dd>Registry Object IDentifier (ROID) for the domain name object.
-</dd>
 <dt>&lt;rdeCsv:fClID&gt;</dt>
 <dd>Identifier of client that sponsors the domain name object.
 </dd>
@@ -1290,11 +1343,21 @@ CSV Model</h3>
 ...
   &lt;rdeCsv:csv name="domain"&gt;
     &lt;rdeCsv:fields&gt;
+      &lt;csvDomain:fRoid/&gt;
       &lt;csvDomain:fName/&gt;
-      &lt;rdeCsv:fRoid/&gt;
+      &lt;csvDomain:fApplicationID/&gt;
+      &lt;csvDomain:fPhase/&gt;
+      &lt;csvDomain:fPhaseName/&gt;
+      &lt;csvDomain:fApplicationStatus/&gt;
+      &lt;csvDomain:fSmdID/&gt;
+      &lt;csvDomain:fMarkFile/&gt;
+      &lt;csvDomain:fMarkFileCksum/&gt;
+      &lt;csvDomain:fClaimsNoticeID/&gt;
+      &lt;csvDomain:fClaimsValidatorID/&gt;
+      &lt;csvDomain:fClaimsAcceptedDate/&gt;
       &lt;rdeCsv:fIdnTableId/&gt;
       &lt;csvDomain:fOriginalName/&gt;
-      &lt;rdeCsv:fRegistrant/&gt;
+      &lt;rdeCsv:fRegistrant isRequired="true"/&gt;
       &lt;rdeCsv:fClID/&gt;
       &lt;rdeCsv:fCrRr/&gt;
       &lt;rdeCsv:fCrID/&gt;
@@ -1306,7 +1369,7 @@ CSV Model</h3>
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="75E2D01F"&gt;
+        cksum="48BB04DE"&gt;
         domain-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1328,18 +1391,22 @@ CSV Model</h3>
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
-clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
-2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-domain2.test,Ddomain1-TEST,,,registrantid,registrarX,registrarX,
-clientY,1999-04-03T22:00:00.0Z,registrarX,clientY,
-2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-xn--abc123.test,Dxnabc123-TEST,LANG-1,,registrantid,registrarX,
-registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
-2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-xn--abc321.test,Dxnabc321-TEST,LANG-1,xn--cbc321.test,
+Ddomain2-TEST,domain1.test,abc123,sunrise,,pendingAllocation,
+0000001751376056503931-65535,Ddomain2-TEST.mark,C6BC1FE2,,,,,,
 registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
 registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+Ddomain1-TEST,domain2.test,abc321,claims,landrush,pendingAllocation
+,,,49FD46E6C4B45C55D4AC,tmch,2012-06-19T09:01:30.0Z,,,,
+registrantid,registrarX,registrarX,clientY,
+1999-04-03T22:00:00.0Z,registrarX,clientY,2009-12-03T09:05:00.0Z,
+2015-04-03T22:00:00.0Z
+Dxnabc123-TEST,xn--abc123.test,,,,,,,,,,,LANG-1,,registrantid,
+registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
+registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+Dxnabc321-TEST,xn--abc321.test,,,,,,,,,,,LANG-1,xn--cbc321.test,
+registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
+registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+
 </pre></div>
                     
 </dd>
@@ -1356,7 +1423,7 @@ registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
 ...
  &lt;rdeCsv:csv name="domain"&gt;
   &lt;rdeCsv:fields&gt;
-    &lt;csvDomain:fName/&gt;
+    &lt;csvDomain:fRoid/&gt;
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
@@ -1380,9 +1447,9 @@ registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test
-domain2.test
-domainN.test
+Ddomain1-TEST
+Ddomain2-TEST
+DdomainN-TEST
 </pre></div>
                     
 </dd>
@@ -1413,8 +1480,8 @@ domainN.test
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;csvDomain:fName&gt;</dt>
-<dd>The name of the domain object that is linked to the contact object.
+<dt>&lt;csvDomain:fRoid&gt;</dt>
+<dd>Registry Object IDentifier (ROID) for the domain name object.
 </dd>
 </dl></blockquote>
 </dd>
@@ -1444,13 +1511,13 @@ domainN.test
 ...
   &lt;rdeCsv:csv name="domainContacts"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;csvDomain:fName parent="true"/&gt;
+      &lt;csvDomain:fRoid parent="true"/&gt;
       &lt;csvContact:fId/&gt;
       &lt;csvDomain:fContactType/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="6BC9F9E8"&gt;
+        cksum="5F9E0387"&gt;
         domainContacts-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1465,18 +1532,18 @@ domainN.test
 <dd>
                         Example of the corresponding domainContacts-YYYYMMDD.csv file.
                         The file contains an admin, tech, and billing contact for 
-                        the two domain names domain1.test and domain2.test.
+                        the two domain names.
                     
 </dd>
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,sh8013,admin
-domain1.test,mycontactid,tech
-domain1.test,mycontactid,billing
-domain2.test,mycontactid,admin
-domain2.test,sh8013,tech
-domain2.test,mycontactid,billing
+Ddomain1-TEST,sh8013,admin
+Ddomain1-TEST,mycontactid,tech
+Ddomain1-TEST,mycontactid,billing
+Ddomain2-TEST,mycontactid,admin
+Ddomain2-TEST,sh8013,tech
+Ddomain2-TEST,mycontactid,billing
 </pre></div>
                     
 </dd>
@@ -1493,7 +1560,7 @@ domain2.test,mycontactid,billing
 ...
  &lt;rdeCsv:csv name="domainContacts"&gt;
   &lt;rdeCsv:fields&gt;
-      &lt;csvDomain:fName parent="true"/&gt;
+      &lt;csvDomain:fRoid parent="true"/&gt;
       &lt;csvContact:fId/&gt;
       &lt;csvDomain:fContactType/&gt;
   &lt;/rdeCsv:fields&gt;
@@ -1519,8 +1586,8 @@ domain2.test,mycontactid,billing
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,mycontactid,tech
-domain2.test,sh8013,tech
+Ddomain1-TEST,mycontactid,tech
+Ddomain2-TEST,sh8013,tech
 </pre></div>
                     
 </dd>
@@ -1555,8 +1622,8 @@ domain2.test,sh8013,tech
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;csvDomain:fName&gt;</dt>
-<dd>Domain name of status.
+<dt>&lt;csvDomain:fRoid&gt;</dt>
+<dd>Registry Object IDentifier (ROID) for the domain name object.
 </dd>
 </dl></blockquote>
 </dd>
@@ -1589,7 +1656,7 @@ domain2.test,sh8013,tech
 ...
   &lt;rdeCsv:csv name="domainStatuses"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;csvDomain:fName parent="true"/&gt;
+      &lt;csvDomain:fRoid parent="true"/&gt;
       &lt;csvDomain:fStatus/&gt;
       &lt;rdeCsv:fStatusDescription/&gt;
       &lt;rdeCsv:fLang/&gt;
@@ -1597,7 +1664,7 @@ domain2.test,sh8013,tech
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-        cksum="EB8C548E"&gt;
+        cksum="C8B1B454"&gt;
         domainStatuses-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1612,19 +1679,19 @@ domain2.test,sh8013,tech
 <dd>
                         Example of the corresponding domainStatuses-YYYYMMDD.csv file.
                         The file contains the statuses for  
-                        the two domain names domain1.test and domain2.test.
+                        the two domain names.
                     
 </dd>
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,clientUpdateProhibited,"Disallow update",
+Ddomain1-TEST,clientUpdateProhibited,"Disallow update",
 en,
-domain1.test,clientDeleteProhibited,"Disallow delete",
+Ddomain1-TEST,clientDeleteProhibited,"Disallow delete",
 en,
-domain2.test,clientUpdateProhibited,"Disallow update",
+Ddomain2-TEST,clientUpdateProhibited,"Disallow update",
 en,
-domain2.test,pendingDelete,,,
+Ddomain2-TEST,pendingDelete,,,
 redemptionPeriod
 </pre></div>
                     
@@ -1642,7 +1709,7 @@ redemptionPeriod
 ...
  &lt;rdeCsv:csv name="domainStatuses"&gt;
   &lt;rdeCsv:fields&gt;
-    &lt;csvDomain:fName parent="true"/&gt;
+    &lt;csvDomain:fRoid parent="true"/&gt;
     &lt;csvDomain:fStatus/&gt;
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
@@ -1667,8 +1734,8 @@ redemptionPeriod
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,clientUpdateProhibited
-domain2.test,pendingDelete
+Ddomain1-TEST,clientUpdateProhibited
+Ddomain2-TEST,pendingDelete
 </pre></div>
                     
 </dd>
@@ -1677,7 +1744,7 @@ domain2.test,pendingDelete
                   used for the domain name delegated hosts (name servers).  The "domainNameServers" CSV files
                   define the relationship between a domain name object and a delegated host.  To support both  
                   the &lt;domain:hostAttr&gt; and the &lt;domain:hostObj&gt; model, defined in <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>, 
-                  the host &lt;rdeCsv:fRoid&gt; field element is used to reference the host.
+                  the host &lt;csvHost:fRoid&gt; field element is used to reference the host.
 </dd>
 <dt></dt>
 <dd>The following "csvDomain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
@@ -1687,8 +1754,8 @@ domain2.test,pendingDelete
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;csvDomain:fName&gt;</dt>
-<dd>Domain name using the delegated host with host &lt;rdeCsv:fRoid&gt;.
+<dt>&lt;csvDomain:fRoid&gt;</dt>
+<dd>Registry Object IDentifier (ROID) for the domain name object.
 </dd>
 </dl></blockquote>
 </dd>
@@ -1700,7 +1767,7 @@ domain2.test,pendingDelete
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;rdeCsv:fRoid&gt;</dt>
+<dt>&lt;csvHost:fRoid&gt;</dt>
 <dd>Registry Object IDentifier (ROID) used to uniquely reference a delegated host record.  
                     
 </dd>
@@ -1719,8 +1786,8 @@ domain2.test,pendingDelete
 ...
   &lt;rdeCsv:csv name="domainNameServers"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;csvDomain:fName parent="true"/&gt;
-      &lt;rdeCsv:fRoid parent="true"/&gt;
+      &lt;csvDomain:fRoid parent="true"/&gt;
+      &lt;csvHost:fRoid parent="true"/&gt;
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
@@ -1739,17 +1806,16 @@ domain2.test,pendingDelete
 <dd>
                         Example of the corresponding domainNameServers-YYYYMMDD.csv file.
                         The file contains the delegated hosts (name servers) for  
-                        the two domain names domain1.test and domain2.test referenced via 
-                        the &lt;rdeCsv:fRoid&gt; field element.
+                        the two domain names.
                     
 </dd>
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,Dns1domain2test-TEST
-domain1.test,Dns2domain2test-TEST
-domain2.test,Dns1domainexample-TEST
-domain2.test,Dns2domainexample-TEST
+Ddomain1-TEST,Dns1domain2test-TEST
+Ddomain1-TEST,Dns2domain2test-TEST
+Ddomain2-TEST,Dns1domainexample-TEST
+Ddomain2-TEST,Dns2domainexample-TEST
 </pre></div>
                     
 </dd>
@@ -1766,8 +1832,8 @@ domain2.test,Dns2domainexample-TEST
 ...
  &lt;rdeCsv:csv name="domainNameServers"&gt;
   &lt;rdeCsv:fields&gt;
-      &lt;csvDomain:fName parent="true"/&gt;
-      &lt;rdeCsv:fRoid parent="true"/&gt;
+      &lt;csvDomain:fRoid parent="true"/&gt;
+      &lt;csvHost:fRoid parent="true"/&gt;
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
@@ -1791,10 +1857,10 @@ domain2.test,Dns2domainexample-TEST
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,Dns1domain2test-TEST
-domain1.test,Dns2domain2test-TEST
-domain2.test,Dns1domainexample-TEST
-domain2.test,Dns2domainexample-TEST
+Ddomain1-TEST,Dns1domain2test-TEST
+Ddomain1-TEST,Dns2domain2test-TEST
+Ddomain2-TEST,Dns1domainexample-TEST
+Ddomain2-TEST,Dns2domainexample-TEST
 </pre></div>
                     
 </dd>
@@ -1878,8 +1944,8 @@ domain2.test,Dns2domainexample-TEST
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;csvDomain:fName&gt;</dt>
-<dd>Domain name of the domain object associated with the DNSSEC record.
+<dt>&lt;csvDomain:fRoid&gt;</dt>
+<dd>Registry Object IDentifier (ROID) for the domain name object.
 </dd>
 </dl></blockquote>
 </dd>
@@ -1895,7 +1961,7 @@ domain2.test,Dns2domainexample-TEST
 ...
   &lt;rdeCsv:csv name="dnssec"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;csvDomain:fName parent="true"/&gt;
+      &lt;csvDomain:fRoid parent="true"/&gt;
       &lt;csvDomain:fMaxSigLife/&gt;
       &lt;csvDomain:fKeyTag/&gt;
       &lt;csvDomain:fDsAlg/&gt;
@@ -1904,7 +1970,7 @@ domain2.test,Dns2domainexample-TEST
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-       cksum="AA15CB43"&gt;
+       cksum="05290CDE"&gt;
        dnssec-ds-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1924,8 +1990,8 @@ domain2.test,Dns2domainexample-TEST
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,604800,12345,3,1,49FD46E6C4B45C55D4AC
-domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B
+Ddomain1-TEST,604800,12345,3,1,49FD46E6C4B45C55D4AC
+Ddomain1-TEST,604800,12346,3,1,38EC35D5B3A34B44C39B
 </pre></div>
                     
 </dd>
@@ -1941,7 +2007,7 @@ domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B
 ...
   &lt;rdeCsv:csv name="dnssec"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;csvDomain:fName parent="true"/&gt;
+      &lt;csvDomain:fRoid parent="true"/&gt;
       &lt;csvDomain:fMaxSigLife/&gt;
       &lt;csvDomain:fFlags/&gt;
       &lt;csvDomain:fProtocol/&gt;
@@ -1950,7 +2016,7 @@ domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-       cksum="1B16F334"&gt;
+       cksum="B50B7B5D"&gt;
        dnssec-key-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -1964,14 +2030,14 @@ domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B
 <dt></dt>
 <dd>
                         Example of the corresponding dnssec-key-YYYYMMDD.csv file.
-                        The file contains two key records for domain1.test.
+                        The file contains two key records.
                     
 </dd>
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,604800,257,3,1,AQPJ////4Q==
-domain1.test,604800,257,3,1,AQPJ////4QQQ
+Ddomain1-TEST,604800,257,3,1,AQPJ////4Q==
+Ddomain1-TEST,604800,257,3,1,AQPJ////4QQQ
 </pre></div>
                     
 </dd>
@@ -1988,7 +2054,7 @@ domain1.test,604800,257,3,1,AQPJ////4QQQ
 ...
   &lt;rdeCsv:csv name="dnssec"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;csvDomain:fName parent="true"/&gt;
+      &lt;csvDomain:fRoid parent="true"/&gt;
       &lt;csvDomain:fKeyTag/&gt;
       &lt;csvDomain:fDsAlg/&gt;
       &lt;csvDomain:fDigestType/&gt;
@@ -1996,7 +2062,7 @@ domain1.test,604800,257,3,1,AQPJ////4QQQ
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-       cksum="ADB014A2"&gt;
+       cksum="ABE15F79"&gt;
        dnssec-ds-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -2016,8 +2082,8 @@ domain1.test,604800,257,3,1,AQPJ////4QQQ
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,12345,3,1,49FD46E6C4B45C55D4AC
-domain1.test,12346,3,1,38EC35D5B3A34B44C39B
+Ddomain1-TEST,12345,3,1,49FD46E6C4B45C55D4AC
+Ddomain1-TEST,12346,3,1,38EC35D5B3A34B44C39B
 </pre></div>
                     
 </dd>
@@ -2034,7 +2100,7 @@ domain1.test,12346,3,1,38EC35D5B3A34B44C39B
 ...
   &lt;rdeCsv:csv name="dnssec"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;csvDomain:fName parent="true"/&gt;
+      &lt;csvDomain:fRoid parent="true"/&gt;
       &lt;csvDomain:fFlags/&gt;
       &lt;csvDomain:fProtocol/&gt;
       &lt;csvDomain:fKeyAlg/&gt;
@@ -2042,7 +2108,7 @@ domain1.test,12346,3,1,38EC35D5B3A34B44C39B
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-       cksum="B3E06C5C"&gt;
+       cksum="0B9C34EB"&gt;
        dnssec-key-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -2056,14 +2122,14 @@ domain1.test,12346,3,1,38EC35D5B3A34B44C39B
 <dt></dt>
 <dd>
                         Example of the corresponding dnssec-key-delete-YYYYMMDD.csv file.
-                        The file contains two key records for domain1.test.
+                        The file contains two key records.
                     
 </dd>
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,257,3,1,AQPJ////4Q==
-domain1.test,257,3,1,AQPJ////4QQQ
+Ddomain1-TEST,257,3,1,AQPJ////4Q==
+Ddomain1-TEST,257,3,1,AQPJ////4QQQ
 </pre></div>
                     
 </dd>
@@ -2124,8 +2190,8 @@ domain1.test,257,3,1,AQPJ////4QQQ
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;csvDomain:fName&gt;</dt>
-<dd>Domain name of the domain object involved in the transfer.
+<dt>&lt;csvDomain:fRoid&gt;</dt>
+<dd>Registry Object IDentifier (ROID) for the domain name object.
 </dd>
 </dl></blockquote>
 </dd>
@@ -2142,7 +2208,7 @@ domain1.test,257,3,1,AQPJ////4QQQ
 ...
   &lt;rdeCsv:csv name="domainTransfer"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;csvDomain:fName parent="true"/&gt;
+      &lt;csvDomain:fRoid parent="true"/&gt;
       &lt;rdeCsv:fTrStatus/&gt;
       &lt;rdeCsv:fReRr/&gt;
       &lt;rdeCsv:fReID/&gt;
@@ -2154,7 +2220,7 @@ domain1.test,257,3,1,AQPJ////4QQQ
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-       cksum="71170194"&gt;
+       cksum="C1F4591A"&gt;
        domainTransfer-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -2175,10 +2241,10 @@ domain1.test,257,3,1,AQPJ////4QQQ
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,pending,registrarX,clientY,
+Ddomain1-TEST,pending,registrarX,clientY,
 2011-03-08T19:38:00.0Z,registrarY,,2011-03-13T23:59:59.0Z,
 2016-04-03T22:00:00.0Z
-domain2.test,clientApproved,registrarX,clientY,
+Ddomain2-TEST,clientApproved,registrarX,clientY,
 2012-03-08T19:38:00.0Z,registrarY,clientY,
 2012-03-09T23:59:59.0Z,2016-05-04T23:00:00.0Z
 </pre></div>
@@ -2202,7 +2268,7 @@ domain2.test,clientApproved,registrarX,clientY,
     &lt;/rdeCsv:fields&gt;
     &lt;rdeCsv:files&gt;
       &lt;rdeCsv:file
-       cksum="10C3EDA8"&gt;
+       cksum="98A434D6"&gt;
        domainTransfer-delete-YYYYMMDD.csv
       &lt;/rdeCsv:file&gt;
     &lt;/rdeCsv:files&gt;
@@ -2222,8 +2288,8 @@ domain2.test,clientApproved,registrarX,clientY,
 <dt></dt>
 <dd>
                         <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-domain1.test,2011-03-08T19:38:00.0Z
-domain2.test,2012-03-08T19:38:00.0Z
+Ddomain1-TEST,2011-03-08T19:38:00.0Z
+Ddomain2-TEST,2012-03-08T19:38:00.0Z
 </pre></div>
                     
 </dd>
@@ -2410,22 +2476,12 @@ CSV Model</h3>
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
+<dt>&lt;csvHost:fRoid&gt;</dt>
+<dd>Repository Object IDentifier (ROID) assigned to the host object with type="eppcom:roidType" and isRequired="true".
+</dd>
 <dt>&lt;csvHost:fName&gt;</dt>
 <dd>Host name field with type="eppcom:labelType" and isRequired="true".  
                   
-</dd>
-</dl></blockquote>
-</dd>
-<dt></dt>
-<dd>The following "rdeCsv" fields, defined in section <a class='info' href='#csvCommonFieldElements'>CSV common field elements<span> (</span><span class='info'>CSV common field elements</span><span>)</span></a>,  
-                  MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  
-</dd>
-<dt></dt>
-<dd>
-<blockquote class="text"><dl>
-<dt>&lt;rdeCsv:fRoid&gt;</dt>
-<dd>Repository Object IDentifier (ROID) assigned to the host object.
 </dd>
 </dl></blockquote>
 </dd>
@@ -2477,7 +2533,7 @@ CSV Model</h3>
   &lt;rdeCsv:csv name="host"&gt;
    &lt;rdeCsv:fields&gt;
      &lt;csvHost:fName/&gt;
-     &lt;rdeCsv:fRoid/&gt;
+     &lt;csvHost:fRoid/&gt;
      &lt;rdeCsv:fClID/&gt;
      &lt;rdeCsv:fCrRr/&gt;
      &lt;rdeCsv:fCrID/&gt;
@@ -2533,7 +2589,7 @@ clientX,2009-05-08T12:10:00.0Z,clientX,
 ...
  &lt;rdeCsv:csv name="host"&gt;
   &lt;rdeCsv:fields&gt;
-    &lt;rdeCsv:fRoid/&gt;
+    &lt;csvHost:fRoid/&gt;
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
     &lt;rdeCsv:file
@@ -2575,22 +2631,11 @@ Hns1_example_test2-TEST
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;csvHost:fStatus&gt;</dt>
-<dd>The status of the host with type="host:statusValueType"/>.  
-                
-</dd>
-</dl></blockquote>
-</dd>
-<dt></dt>
-<dd>The following "rdeCsv" fields, defined in section <a class='info' href='#csvCommonFieldElements'>CSV common field elements<span> (</span><span class='info'>CSV common field elements</span><span>)</span></a>,  
-                  MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  
-</dd>
-<dt></dt>
-<dd>
-<blockquote class="text"><dl>
-<dt>&lt;rdeCsv:fRoid&gt;</dt>
+<dt>&lt;csvHost:fRoid&gt;</dt>
 <dd>Host object Registry Object IDentifier (ROID) assigned to the host object.
+</dd>
+<dt>&lt;csvHost:fStatus&gt;</dt>
+<dd>The status of the host with type="host:statusValueType".
 </dd>
 </dl></blockquote>
 </dd>
@@ -2623,7 +2668,7 @@ Hns1_example_test2-TEST
 ...
   &lt;rdeCsv:csv name="hostStatuses"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;rdeCsv:fRoid parent="true"/&gt;
+      &lt;csvHost:fRoid parent="true"/&gt;
       &lt;csvHost:fStatus/&gt;
       &lt;rdeCsv:fStatusDescription/&gt;
       &lt;rdeCsv:fLang/&gt;
@@ -2670,7 +2715,7 @@ ns1domain2test-TEST,ok,,
 ...
  &lt;rdeCsv:csv name="hostStatuses"&gt;
   &lt;rdeCsv:fields&gt;
-      &lt;rdeCsv:fRoid parent="true"/&gt;
+      &lt;csvHost:fRoid parent="true"/&gt;
       &lt;csvHost:fStatus/&gt;
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
@@ -2712,6 +2757,9 @@ ns1domain1test-TEST,clientDeleteProhibited
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
+<dt>&lt;csvHost:fRoid&gt;</dt>
+<dd>Host object Registry Object IDentifier (ROID) assigned to the host object.
+</dd>
 <dt>&lt;csvHost:fAddr&gt;</dt>
 <dd>IP addresses associated with the host object with type="host:addrStringType".  
                 
@@ -2720,19 +2768,6 @@ ns1domain1test-TEST,clientDeleteProhibited
 <dd>IP addresses version associated with the host object with type="host:ipType".  
                 "host:ipType" has the enumerated values of "v4" or "v6".  
                 
-</dd>
-</dl></blockquote>
-</dd>
-<dt></dt>
-<dd>The following "rdeCsv" fields, defined in section <a class='info' href='#csvCommonFieldElements'>CSV common field elements<span> (</span><span class='info'>CSV common field elements</span><span>)</span></a>,  
-                  MUST be used in the "hostAddresses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  
-</dd>
-<dt></dt>
-<dd>
-<blockquote class="text"><dl>
-<dt>&lt;rdeCsv:fRoid&gt;</dt>
-<dd>Host object Registry Object IDentifier (ROID) assigned to the host object.
 </dd>
 </dl></blockquote>
 </dd>
@@ -2749,7 +2784,7 @@ ns1domain1test-TEST,clientDeleteProhibited
 ...
   &lt;rdeCsv:csv name="hostAddresses"&gt;
     &lt;rdeCsv:fields&gt;
-      &lt;rdeCsv:fRoid parent="true"/&gt;
+      &lt;csvHost:fRoid parent="true"/&gt;
       &lt;csvHost:fAddr/&gt;
       &lt;csvHost:fAddrVersion/&gt;
     &lt;/rdeCsv:fields&gt;
@@ -2795,7 +2830,7 @@ ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A,v6
 ...
  &lt;rdeCsv:csv name="hostAddresses"&gt;
   &lt;rdeCsv:fields&gt;
-      &lt;rdeCsv:fRoid parent="true"/&gt;
+      &lt;csvHost:fRoid parent="true"/&gt;
       &lt;csvHost:fAddr/&gt;
   &lt;/rdeCsv:fields&gt;
   &lt;rdeCsv:files&gt;
@@ -3140,6 +3175,9 @@ CSV Model</h3>
 <dd>Contains the server-unique contact identifier with type="eppcom:clIDType" and isRequired="true".  
                 
 </dd>
+<dt>&lt;csvContact:fRoid&gt;</dt>
+<dd>The Registry Object IDentifier (ROID) for the contact object with type="eppcom:roidType" and isRequired="true".
+</dd>
 <dt>&lt;csvContact:fEmail&gt;</dt>
 <dd>Contains the contact's email address with type="eppcom:minTokenType" and isRequired="true".  
                 
@@ -3180,9 +3218,6 @@ CSV Model</h3>
 <dt></dt>
 <dd>
 <blockquote class="text"><dl>
-<dt>&lt;rdeCsv:fRoid&gt;</dt>
-<dd>The Registry Object IDentifier (ROID) for the contact object.
-</dd>
 <dt>&lt;rdeCsv:fClID&gt;</dt>
 <dd>Identifier of client (registrar) that sponsors the contact object.
 </dd>
@@ -3233,7 +3268,7 @@ CSV Model</h3>
   &lt;rdeCsv:csv name="contact"&gt;
     &lt;rdeCsv:fields&gt;
      &lt;csvContact:fId/&gt;
-     &lt;rdeCsv:fRoid/&gt;
+     &lt;csvContact:fRoid/&gt;
      &lt;csvContact:fVoice/&gt;
      &lt;csvContact:fVoiceExt/&gt;
      &lt;csvContact:fFax/&gt;
@@ -6056,6 +6091,8 @@ CSV Domain Object</h3>
        xmlns:secDNS="urn:ietf:params:xml:ns:secDNS-1.1"
        xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
        xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+       xmlns:launch="urn:ietf:params:xml:ns:launch-1.0"
+       xmlns:mark="urn:ietf:params:xml:ns:mark-1.0"
        xmlns="http://www.w3.org/2001/XMLSchema"
        elementFormDefault="qualified"&gt;
 
@@ -6074,6 +6111,10 @@ CSV Domain Object</h3>
        schemaLocation="rde-1.0.xsd"/&gt;
   &lt;import namespace="urn:ietf:params:xml:ns:rdeCsv-1.0"
        schemaLocation="rdeCsv-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:launch-1.0"
+       schemaLocation="launch-1.0.xsd"/&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:mark-1.0"
+       schemaLocation="mark-1.0.xsd"/&gt;
 
   &lt;annotation&gt;
    &lt;documentation&gt;
@@ -6113,12 +6154,136 @@ CSV Domain Object</h3>
    &lt;/complexContent&gt;
   &lt;/complexType&gt;
 
-
+ &lt;!-- Domain Registry Object IDentifier (roid) field --&gt;
+ &lt;element name="fRoid" type="rdeCsv:fRoidType"
+  substitutionGroup="rdeCsv:field"/&gt;
 
  &lt;!-- Domain name field --&gt;
  &lt;element name="fName" type="rdeCsv:fNameRequiredType"
   substitutionGroup="rdeCsv:field"/&gt;
 
+ &lt;!-- Application ID field --&gt;
+ &lt;element name="fApplicationID" type="csvDomain:fApplicationIDType"
+  substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;complexType name="fApplicationIDType"&gt;
+  &lt;complexContent&gt;
+    &lt;extension base="rdeCsv:fieldOptionalType"&gt;
+      &lt;sequence/&gt;
+      &lt;attribute name="type" type="token"
+      default="launch\:applicationIDType"/&gt;
+    &lt;/extension&gt;
+  &lt;/complexContent&gt;
+ &lt;/complexType&gt;
+
+ &lt;!-- Launch Phase field --&gt;
+ &lt;element name="fPhase" type="csvDomain:fPhaseType"
+  substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;complexType name="fPhaseType"&gt;
+  &lt;complexContent&gt;
+    &lt;extension base="rdeCsv:fieldOptionalType"&gt;
+      &lt;sequence/&gt;
+      &lt;attribute name="type" type="token"
+      default="launch\:phaseTypeValue"/&gt;
+    &lt;/extension&gt;
+  &lt;/complexContent&gt;
+ &lt;/complexType&gt;
+
+ &lt;!-- Launch Phase Name field --&gt;
+ &lt;element name="fPhaseName" type="rdeCsv:fTokenType"
+  substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;!-- Application Status field --&gt;
+ &lt;element name="fApplicationStatus"
+   type="csvDomain:fApplicationStatusType"
+   substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;complexType name="fApplicationStatusType"&gt;
+  &lt;complexContent&gt;
+    &lt;extension base="rdeCsv:fieldOptionalType"&gt;
+      &lt;sequence/&gt;
+      &lt;attribute name="type" type="token"
+      default="launch\:statusValueType"/&gt;
+    &lt;/extension&gt;
+  &lt;/complexContent&gt;
+ &lt;/complexType&gt;
+
+ &lt;!-- Application Status Name field --&gt;
+ &lt;element name="fApplicationStatusName"
+   type="rdeCsv:fTokenType"
+   substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;!-- Application Status Lang field --&gt;
+ &lt;element name="fApplicationStatusLang"
+   type="rdeCsv:fLangType"
+   substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;!-- Application Status Description field --&gt;
+ &lt;element name="fApplicationStatusDescription"
+   type="rdeCsv:fNormalizedStringType"
+   substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;!-- SMD ID field --&gt;
+ &lt;element name="fSmdID"
+   type="rdeCsv:fTokenType"
+   substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;complexType name="fSmdIDType"&gt;
+  &lt;complexContent&gt;
+    &lt;extension base="rdeCsv:fieldOptionalType"&gt;
+      &lt;sequence/&gt;
+      &lt;attribute name="type" type="token"
+      default="mark\:idType"/&gt;
+    &lt;/extension&gt;
+  &lt;/complexContent&gt;
+ &lt;/complexType&gt;
+
+
+ &lt;!-- Mark File field --&gt;
+ &lt;element name="fMarkFile"
+   type="rdeCsv:fTokenType"
+   substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;!-- Mark File Checksum field --&gt;
+ &lt;element name="fMarkFileCksum"
+   type="rdeCsv:fTokenType"
+   substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;!-- Claims Notice ID field --&gt;
+ &lt;element name="fClaimsNoticeID"
+   type="csvDomain:fClaimsNoticeIDType"
+   substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;complexType name="fClaimsNoticeIDType"&gt;
+  &lt;complexContent&gt;
+    &lt;extension base="rdeCsv:fieldOptionalType"&gt;
+      &lt;sequence/&gt;
+      &lt;attribute name="type" type="token"
+      default="launch\:noticeIDValue"/&gt;
+    &lt;/extension&gt;
+  &lt;/complexContent&gt;
+ &lt;/complexType&gt;
+
+ &lt;!-- Claims Notice Validator ID field --&gt;
+ &lt;element name="fClaimsValidatorID"
+   type="csvDomain:fClaimsValidatorIDType"
+   substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;complexType name="fClaimsValidatorIDType"&gt;
+  &lt;complexContent&gt;
+    &lt;extension base="rdeCsv:fieldOptionalType"&gt;
+      &lt;sequence/&gt;
+      &lt;attribute name="type" type="token"
+      default="launch\:validatorIDType"/&gt;
+    &lt;/extension&gt;
+  &lt;/complexContent&gt;
+ &lt;/complexType&gt;
+
+ &lt;!-- Claims Accepted Date field --&gt;
+ &lt;element name="fClaimsAcceptedDate"
+   type="rdeCsv:fDateTimeType"
+   substitutionGroup="rdeCsv:field"/&gt;
 
  &lt;!-- RGP status field --&gt;
  &lt;element name="fRgpStatus"
@@ -6133,6 +6298,8 @@ CSV Domain Object</h3>
     &lt;/extension&gt;
   &lt;/complexContent&gt;
  &lt;/complexType&gt;
+
+
 
  &lt;!-- Contact type field --&gt;
  &lt;element name="fContactType" type="csvDomain:fContactsTypeType"
@@ -6482,6 +6649,9 @@ CSV Host Object</h3>
    &lt;/complexContent&gt;
   &lt;/complexType&gt;
 
+ &lt;!-- Host Registry Object IDentifier (roid) field --&gt;
+ &lt;element name="fRoid" type="rdeCsv:fRoidType"
+  substitutionGroup="rdeCsv:field"/&gt;
 
  &lt;!-- Host name field --&gt;
  &lt;element name="fName" type="rdeCsv:fNameRequiredType"
@@ -6825,6 +6995,9 @@ Import common element types.
   &lt;/complexContent&gt;
  &lt;/complexType&gt;
 
+ &lt;!-- Contact Registry Object IDentifier (roid) field --&gt;
+ &lt;element name="fRoid" type="rdeCsv:fRoidType"
+  substitutionGroup="rdeCsv:field"/&gt;
 
  &lt;!-- Is Registrar Contact field --&gt;
  &lt;element name="fIsRegistrarContact"
@@ -8894,6 +9067,25 @@ Changes from version 05 to 06</h3>
 </p>
 <a name="anchor43"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.14.8"></a><h3>14.8.&nbsp;
+Changes from version 06 to 07</h3>
+
+<p>
+              </p>
+<ol class="text">
+<li>Defined the &lt;csvDomain:fRoid&gt;, &lt;csvHost:fRoid&gt;, &lt;csvContact:fRoid&gt; elements to be used in place of &lt;rdeCsv:fRoid&gt;.
+</li>
+<li>Replaced the use of the &lt;csvDomain:fName&gt; with the &lt;csvDomain:fRoid as the primary key in the domain CSV files, to support both domains and applications.
+</li>
+<li>Added definition of &lt;csvDomain:fApplicationID&gt;, &lt;csvDomain:fApplicationStatus&gt;, &lt;csvDomain:fApplicationStatusDescription&gt;, &lt;csvDomain:fApplicationStatusLang&gt;, 
+                &lt;csvDomain:fPhase&gt;, &lt;csvDomain:fPhaseName&gt;, &lt;csvDomain:fSmdID&gt;, &lt;csvDomain:fSmdID&gt;, &lt;csvDomain:fMarkFile&gt;, 
+                &lt;csvDomain:fMarkFileCksum&gt;, &lt;csvDomain:fClaimsNoticeID&gt;, &lt;csvDomain:fClaimsValidatorID&gt;, &lt;csvDomain:fClaimsAcceptedDate&gt;.
+</li>
+</ol><p>
+            
+</p>
+<a name="anchor44"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.15"></a><h3>15.&nbsp;
 Example of a full deposit using the XML model</h3>
 
@@ -9163,7 +9355,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
 
 
 </p>
-<a name="anchor44"></a><br /><hr />
+<a name="anchor45"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.16"></a><h3>16.&nbsp;
 Example of differential deposit using the XML model</h3>
@@ -9252,7 +9444,7 @@ Example of differential deposit using the XML model</h3>
 
             
 </p>
-<a name="anchor45"></a><br /><hr />
+<a name="anchor46"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.17"></a><h3>17.&nbsp;
 Example of a full deposit using the CSV model</h3>
@@ -9266,7 +9458,6 @@ Example of a full deposit using the CSV model</h3>
 <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;rde:deposit
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
    xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
    xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
@@ -9278,17 +9469,6 @@ Example of a full deposit using the CSV model</h3>
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
    xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
-    xsi:schemaLocation="
-    urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
-    urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
-    urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd
-    urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
-    urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
-    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeEppParams-1.0 rde-epp-param-1.0.xsd
-    urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"
     type="FULL"
    id="20101017001" prevId="20101010001"&gt;
    &lt;rde:watermark&gt;2010-10-18T00:00:00Z&lt;/rde:watermark&gt;
@@ -9315,7 +9495,7 @@ Example of a full deposit using the CSV model</h3>
       2
       &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0"&gt;
-      1
+      2
       &lt;/rdeHeader:count&gt;
       &lt;rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0"&gt;
       2
@@ -9330,8 +9510,18 @@ Example of a full deposit using the CSV model</h3>
      &lt;csvDomain:contents&gt;
        &lt;rdeCsv:csv name="domain" sep=","&gt;
          &lt;rdeCsv:fields&gt;
+           &lt;csvDomain:fRoid/&gt;
            &lt;csvDomain:fName/&gt;
-           &lt;rdeCsv:fRoid/&gt;
+           &lt;csvDomain:fApplicationID/&gt;
+           &lt;csvDomain:fPhase/&gt;
+           &lt;csvDomain:fPhaseName/&gt;
+           &lt;csvDomain:fApplicationStatus/&gt;
+           &lt;csvDomain:fSmdID/&gt;
+           &lt;csvDomain:fMarkFile/&gt;
+           &lt;csvDomain:fMarkFileCksum/&gt;
+           &lt;csvDomain:fClaimsNoticeID/&gt;
+           &lt;csvDomain:fClaimsValidatorID/&gt;
+           &lt;csvDomain:fClaimsAcceptedDate/&gt;
            &lt;rdeCsv:fIdnTableId/&gt;
            &lt;csvDomain:fOriginalName/&gt;
            &lt;rdeCsv:fRegistrant isRequired="true"/&gt;
@@ -9346,27 +9536,27 @@ Example of a full deposit using the CSV model</h3>
          &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="75E2D01F"&gt;
+             cksum="48BB04DE"&gt;
              domain-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
        &lt;/rdeCsv:csv&gt;
        &lt;rdeCsv:csv name="domainContacts" sep=","&gt;
          &lt;rdeCsv:fields&gt;
-           &lt;csvDomain:fName parent="true"/&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
            &lt;csvContact:fId/&gt;
            &lt;csvDomain:fContactType/&gt;
          &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="70A7C17B"&gt;
+             cksum="5F9E0387"&gt;
              domainContacts-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
        &lt;/rdeCsv:csv&gt;
        &lt;rdeCsv:csv name="domainStatuses" sep=","&gt;
          &lt;rdeCsv:fields&gt;
-           &lt;csvDomain:fName parent="true"/&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
            &lt;csvDomain:fStatus/&gt;
            &lt;rdeCsv:fStatusDescription/&gt;
            &lt;rdeCsv:fLang/&gt;
@@ -9374,26 +9564,26 @@ Example of a full deposit using the CSV model</h3>
          &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="EB8C548E"&gt;
+             cksum="C8B1B454"&gt;
              domainStatuses-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
        &lt;/rdeCsv:csv&gt;
        &lt;rdeCsv:csv name="domainNameServers" sep=","&gt;
          &lt;rdeCsv:fields&gt;
-           &lt;csvDomain:fName parent="true"/&gt;
-           &lt;rdeCsv:fRoid/&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
+           &lt;csvHost:fRoid parent="true"//&gt;
            &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="569D4638"&gt;
+             cksum="B11125AE"&gt;
              domainNameServers-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
        &lt;/rdeCsv:csv&gt;
        &lt;rdeCsv:csv name="dnssec" sep=","&gt;
          &lt;rdeCsv:fields&gt;
-           &lt;csvDomain:fName parent="true"/&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
            &lt;csvDomain:fMaxSigLife/&gt;
            &lt;csvDomain:fKeyTag/&gt;
            &lt;csvDomain:fDsAlg/&gt;
@@ -9402,14 +9592,14 @@ Example of a full deposit using the CSV model</h3>
          &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="AA15CB43"&gt;
+             cksum="05290CDE"&gt;
              dnssec-ds-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
        &lt;/rdeCsv:csv&gt;
        &lt;rdeCsv:csv name="dnssec" sep=","&gt;
          &lt;rdeCsv:fields&gt;
-           &lt;csvDomain:fName parent="true"/&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
            &lt;csvDomain:fMaxSigLife/&gt;
            &lt;csvDomain:fFlags/&gt;
            &lt;csvDomain:fProtocol/&gt;
@@ -9418,14 +9608,14 @@ Example of a full deposit using the CSV model</h3>
          &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="1B16F334"&gt;
+             cksum="B50B7B5D"&gt;
              dnssec-key-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
        &lt;/rdeCsv:csv&gt;
        &lt;rdeCsv:csv name="domainTransfer" sep=","&gt;
          &lt;rdeCsv:fields&gt;
-           &lt;csvDomain:fName parent="true"/&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
            &lt;rdeCsv:fTrStatus/&gt;
            &lt;rdeCsv:fReRr/&gt;
            &lt;rdeCsv:fReID/&gt;
@@ -9437,7 +9627,7 @@ Example of a full deposit using the CSV model</h3>
          &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="71170194"&gt;
+             cksum="C1F4591A"&gt;
              domainTransfer-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
@@ -9446,8 +9636,8 @@ Example of a full deposit using the CSV model</h3>
      &lt;csvHost:contents&gt;
        &lt;rdeCsv:csv name="host" sep=","&gt;
          &lt;rdeCsv:fields&gt;
+           &lt;csvHost:fRoid/&gt;
            &lt;csvHost:fName/&gt;
-           &lt;rdeCsv:fRoid/&gt;
            &lt;rdeCsv:fClID/&gt;
            &lt;rdeCsv:fCrRr/&gt;
            &lt;rdeCsv:fCrID/&gt;
@@ -9459,14 +9649,14 @@ Example of a full deposit using the CSV model</h3>
          &lt;/rdeCsv:fields&gt;
          &lt;rdeCsv:files&gt;
            &lt;rdeCsv:file
-             cksum="120938E3"&gt;
+             cksum="0E75EEC5"&gt;
              host-YYYYMMDD.csv
            &lt;/rdeCsv:file&gt;
          &lt;/rdeCsv:files&gt;
        &lt;/rdeCsv:csv&gt;
        &lt;rdeCsv:csv name="hostStatuses" sep=","&gt;
          &lt;rdeCsv:fields&gt;
-               &lt;rdeCsv:fRoid parent="true"/&gt;
+           &lt;csvHost:fRoid parent="true"/&gt;
            &lt;csvHost:fStatus/&gt;
            &lt;rdeCsv:fStatusDescription/&gt;
            &lt;rdeCsv:fLang/&gt;
@@ -9480,7 +9670,7 @@ Example of a full deposit using the CSV model</h3>
        &lt;/rdeCsv:csv&gt;
        &lt;rdeCsv:csv name="hostAddresses" sep=","&gt;
          &lt;rdeCsv:fields&gt;
-               &lt;rdeCsv:fRoid parent="true"/&gt;
+           &lt;csvHost:fRoid parent="true"/&gt;
            &lt;csvHost:fAddr/&gt;
            &lt;csvHost:fAddrVersion/&gt;
          &lt;/rdeCsv:fields&gt;
@@ -9496,7 +9686,7 @@ Example of a full deposit using the CSV model</h3>
        &lt;rdeCsv:csv name="contact" sep=","&gt;
          &lt;rdeCsv:fields&gt;
            &lt;csvContact:fId/&gt;
-           &lt;rdeCsv:fRoid/&gt;
+           &lt;csvContact:fRoid/&gt;
            &lt;csvContact:fVoice/&gt;
            &lt;csvContact:fVoiceExt/&gt;
            &lt;csvContact:fFax/&gt;
@@ -9698,7 +9888,7 @@ Example of a full deposit using the CSV model</h3>
 
 
 </p>
-<a name="anchor46"></a><br /><hr />
+<a name="anchor47"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.18"></a><h3>18.&nbsp;
 Example of differential deposit using the CSV model</h3>
@@ -9712,7 +9902,6 @@ Example of differential deposit using the CSV model</h3>
 <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;rde:deposit
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
    xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
    xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
@@ -9724,17 +9913,6 @@ Example of differential deposit using the CSV model</h3>
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
    xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
-   xsi:schemaLocation="
-    urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
-    urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
-    urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd
-    urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
-    urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
-    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeEppParams-1.0 rde-epp-param-1.0.xsd
-    urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"
     type="FULL"
    id="20101017001" prevId="20101010001"&gt;
    &lt;rde:watermark&gt;2010-10-18T00:00:00Z&lt;/rde:watermark&gt;
@@ -9787,10 +9965,20 @@ Example of differential deposit using the CSV model</h3>
       &lt;/rdeHeader:count&gt;
      &lt;/rdeHeader:header&gt;
     &lt;csvDomain:contents&gt;
-      &lt;rdeCsv:csv name="domain" sep=","&gt;
+       &lt;rdeCsv:csv name="domain" sep=","&gt;
          &lt;rdeCsv:fields&gt;
+           &lt;csvDomain:fRoid/&gt;
            &lt;csvDomain:fName/&gt;
-           &lt;rdeCsv:fRoid/&gt;
+           &lt;csvDomain:fApplicationID/&gt;
+           &lt;csvDomain:fPhase/&gt;
+           &lt;csvDomain:fPhaseName/&gt;
+           &lt;csvDomain:fApplicationStatus/&gt;
+           &lt;csvDomain:fSmdID/&gt;
+           &lt;csvDomain:fMarkFile/&gt;
+           &lt;csvDomain:fMarkFileCksum/&gt;
+           &lt;csvDomain:fClaimsNoticeID/&gt;
+           &lt;csvDomain:fClaimsValidatorID/&gt;
+           &lt;csvDomain:fClaimsAcceptedDate/&gt;
            &lt;rdeCsv:fIdnTableId/&gt;
            &lt;csvDomain:fOriginalName/&gt;
            &lt;rdeCsv:fRegistrant isRequired="true"/&gt;
@@ -9803,143 +9991,159 @@ Example of differential deposit using the CSV model</h3>
            &lt;rdeCsv:fUpDate/&gt;
            &lt;rdeCsv:fExDate/&gt;
          &lt;/rdeCsv:fields&gt;
-        &lt;rdeCsv:files&gt;
-          &lt;rdeCsv:file
-            cksum="75E2D01F"&gt;
-            domain-YYYYMMDD.csv
-          &lt;/rdeCsv:file&gt;
-        &lt;/rdeCsv:files&gt;
-      &lt;/rdeCsv:csv&gt;
-      &lt;rdeCsv:csv name="domainContacts" sep=","&gt;
-        &lt;rdeCsv:fields&gt;
-          &lt;csvDomain:fName parent="true"/&gt;
-          &lt;csvContact:fId/&gt;
-          &lt;csvDomain:fContactType/&gt;
-        &lt;/rdeCsv:fields&gt;
-        &lt;rdeCsv:files&gt;
-          &lt;rdeCsv:file
-            cksum="70A7C17B"&gt;
-            domainContacts-YYYYMMDD.csv
-          &lt;/rdeCsv:file&gt;
-        &lt;/rdeCsv:files&gt;
-      &lt;/rdeCsv:csv&gt;
-      &lt;rdeCsv:csv name="domainStatuses" sep=","&gt;
-        &lt;rdeCsv:fields&gt;
-          &lt;csvDomain:fName parent="true"/&gt;
-          &lt;csvDomain:fStatus/&gt;
-          &lt;rdeCsv:fStatusDescription/&gt;
-          &lt;rdeCsv:fLang/&gt;
-          &lt;csvDomain:fRgpStatus/&gt;
-        &lt;/rdeCsv:fields&gt;
-        &lt;rdeCsv:files&gt;
-          &lt;rdeCsv:file
-            cksum="EB8C548E"&gt;
-            domainStatuses-YYYYMMDD.csv
-          &lt;/rdeCsv:file&gt;
-        &lt;/rdeCsv:files&gt;
-      &lt;/rdeCsv:csv&gt;
-      &lt;rdeCsv:csv name="domainNameServers" sep=","&gt;
-        &lt;rdeCsv:fields&gt;
-          &lt;csvDomain:fName parent="true"/&gt;
-          &lt;rdeCsv:fRoid/&gt;
-        &lt;/rdeCsv:fields&gt;
-        &lt;rdeCsv:files&gt;
-          &lt;rdeCsv:file
-            cksum="569D4638"&gt;
-            domainNameServers-YYYYMMDD.csv
-          &lt;/rdeCsv:file&gt;
-        &lt;/rdeCsv:files&gt;
-      &lt;/rdeCsv:csv&gt;
-      &lt;rdeCsv:csv name="dnssec" sep=","&gt;
-        &lt;rdeCsv:fields&gt;
-          &lt;csvDomain:fName parent="true"/&gt;
-          &lt;csvDomain:fMaxSigLife/&gt;
-          &lt;csvDomain:fKeyTag/&gt;
-          &lt;csvDomain:fDsAlg/&gt;
-          &lt;csvDomain:fDigestType/&gt;
-          &lt;csvDomain:fDigest/&gt;
-        &lt;/rdeCsv:fields&gt;
-        &lt;rdeCsv:files&gt;
-          &lt;rdeCsv:file
-            cksum="AA15CB43"&gt;
-            dnssec-YYYYMMDD.csv
-          &lt;/rdeCsv:file&gt;
-        &lt;/rdeCsv:files&gt;
-      &lt;/rdeCsv:csv&gt;
-      &lt;rdeCsv:csv name="domainTransfer" sep=","&gt;
-        &lt;rdeCsv:fields&gt;
-          &lt;csvDomain:fName parent="true"/&gt;
-          &lt;rdeCsv:fTrStatus/&gt;
-          &lt;rdeCsv:fReRr/&gt;
-          &lt;rdeCsv:fReID/&gt;
-          &lt;rdeCsv:fReDate/&gt;
-          &lt;rdeCsv:fAcRr/&gt;
-          &lt;rdeCsv:fAcID/&gt;
-          &lt;rdeCsv:fAcDate/&gt;
-          &lt;rdeCsv:fExDate/&gt;
-        &lt;/rdeCsv:fields&gt;
-        &lt;rdeCsv:files&gt;
-          &lt;rdeCsv:file
-            cksum="71170194"&gt;
-            domainTransfer-YYYYMMDD.csv
-          &lt;/rdeCsv:file&gt;
-        &lt;/rdeCsv:files&gt;
-      &lt;/rdeCsv:csv&gt;
+         &lt;rdeCsv:files&gt;
+           &lt;rdeCsv:file
+             cksum="48BB04DE"&gt;
+             domain-YYYYMMDD.csv
+           &lt;/rdeCsv:file&gt;
+         &lt;/rdeCsv:files&gt;
+       &lt;/rdeCsv:csv&gt;
+       &lt;rdeCsv:csv name="domainContacts" sep=","&gt;
+         &lt;rdeCsv:fields&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
+           &lt;csvContact:fId/&gt;
+           &lt;csvDomain:fContactType/&gt;
+         &lt;/rdeCsv:fields&gt;
+         &lt;rdeCsv:files&gt;
+           &lt;rdeCsv:file
+             cksum="5F9E0387"&gt;
+             domainContacts-YYYYMMDD.csv
+           &lt;/rdeCsv:file&gt;
+         &lt;/rdeCsv:files&gt;
+       &lt;/rdeCsv:csv&gt;
+       &lt;rdeCsv:csv name="domainStatuses" sep=","&gt;
+         &lt;rdeCsv:fields&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
+           &lt;csvDomain:fStatus/&gt;
+           &lt;rdeCsv:fStatusDescription/&gt;
+           &lt;rdeCsv:fLang/&gt;
+           &lt;csvDomain:fRgpStatus/&gt;
+         &lt;/rdeCsv:fields&gt;
+         &lt;rdeCsv:files&gt;
+           &lt;rdeCsv:file
+             cksum="C8B1B454"&gt;
+             domainStatuses-YYYYMMDD.csv
+           &lt;/rdeCsv:file&gt;
+         &lt;/rdeCsv:files&gt;
+       &lt;/rdeCsv:csv&gt;
+       &lt;rdeCsv:csv name="domainNameServers" sep=","&gt;
+         &lt;rdeCsv:fields&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
+           &lt;csvHost:fRoid/&gt;
+           &lt;/rdeCsv:fields&gt;
+         &lt;rdeCsv:files&gt;
+           &lt;rdeCsv:file
+             cksum="B11125AE"&gt;
+             domainNameServers-YYYYMMDD.csv
+           &lt;/rdeCsv:file&gt;
+         &lt;/rdeCsv:files&gt;
+       &lt;/rdeCsv:csv&gt;
+       &lt;rdeCsv:csv name="dnssec" sep=","&gt;
+         &lt;rdeCsv:fields&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
+           &lt;csvDomain:fMaxSigLife/&gt;
+           &lt;csvDomain:fKeyTag/&gt;
+           &lt;csvDomain:fDsAlg/&gt;
+           &lt;csvDomain:fDigestType/&gt;
+           &lt;csvDomain:fDigest/&gt;
+         &lt;/rdeCsv:fields&gt;
+         &lt;rdeCsv:files&gt;
+           &lt;rdeCsv:file
+             cksum="05290CDE"&gt;
+             dnssec-ds-YYYYMMDD.csv
+           &lt;/rdeCsv:file&gt;
+         &lt;/rdeCsv:files&gt;
+       &lt;/rdeCsv:csv&gt;
+       &lt;rdeCsv:csv name="dnssec" sep=","&gt;
+         &lt;rdeCsv:fields&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
+           &lt;csvDomain:fMaxSigLife/&gt;
+           &lt;csvDomain:fFlags/&gt;
+           &lt;csvDomain:fProtocol/&gt;
+           &lt;csvDomain:fKeyAlg/&gt;
+           &lt;csvDomain:fPubKey/&gt;
+         &lt;/rdeCsv:fields&gt;
+         &lt;rdeCsv:files&gt;
+           &lt;rdeCsv:file
+             cksum="B50B7B5D"&gt;
+             dnssec-key-YYYYMMDD.csv
+           &lt;/rdeCsv:file&gt;
+         &lt;/rdeCsv:files&gt;
+       &lt;/rdeCsv:csv&gt;
+       &lt;rdeCsv:csv name="domainTransfer" sep=","&gt;
+         &lt;rdeCsv:fields&gt;
+           &lt;csvDomain:fRoid parent="true"/&gt;
+           &lt;rdeCsv:fTrStatus/&gt;
+           &lt;rdeCsv:fReRr/&gt;
+           &lt;rdeCsv:fReID/&gt;
+           &lt;rdeCsv:fReDate/&gt;
+           &lt;rdeCsv:fAcRr/&gt;
+           &lt;rdeCsv:fAcID/&gt;
+           &lt;rdeCsv:fAcDate/&gt;
+           &lt;rdeCsv:fExDate/&gt;
+         &lt;/rdeCsv:fields&gt;
+         &lt;rdeCsv:files&gt;
+           &lt;rdeCsv:file
+             cksum="71170194"&gt;
+             domainTransfer-YYYYMMDD.csv
+           &lt;/rdeCsv:file&gt;
+         &lt;/rdeCsv:files&gt;
+       &lt;/rdeCsv:csv&gt;
     &lt;/csvDomain:contents&gt;
-    &lt;csvHost:contents&gt;
-      &lt;rdeCsv:csv name="host" sep=","&gt;
-        &lt;rdeCsv:fields&gt;
-          &lt;csvHost:fName/&gt;
-          &lt;rdeCsv:fRoid/&gt;
-          &lt;rdeCsv:fClID/&gt;
-          &lt;rdeCsv:fCrRr/&gt;
-          &lt;rdeCsv:fCrID/&gt;
-          &lt;rdeCsv:fCrDate/&gt;
-          &lt;rdeCsv:fUpRr/&gt;
-          &lt;rdeCsv:fUpID/&gt;
-          &lt;rdeCsv:fUpDate/&gt;
-          &lt;rdeCsv:fTrDate/&gt;
-        &lt;/rdeCsv:fields&gt;
-        &lt;rdeCsv:files&gt;
-          &lt;rdeCsv:file
-            cksum="120938E3"&gt;
-            host-YYYYMMDD.csv
-          &lt;/rdeCsv:file&gt;
-        &lt;/rdeCsv:files&gt;
-      &lt;/rdeCsv:csv&gt;
-      &lt;rdeCsv:csv name="hostStatuses" sep=","&gt;
-        &lt;rdeCsv:fields&gt;
-          &lt;rdeCsv:fRoid parent="true"/&gt;
-          &lt;csvHost:fStatus/&gt;
-          &lt;rdeCsv:fStatusDescription/&gt;
-          &lt;rdeCsv:fLang/&gt;
-        &lt;/rdeCsv:fields&gt;
-        &lt;rdeCsv:files&gt;
-          &lt;rdeCsv:file
-            cksum="0BA504FC"&gt;
-            hostStatuses-YYYYMMDD.csv
-          &lt;/rdeCsv:file&gt;
-        &lt;/rdeCsv:files&gt;
-      &lt;/rdeCsv:csv&gt;
-      &lt;rdeCsv:csv name="hostAddresses" sep=","&gt;
-        &lt;rdeCsv:fields&gt;
-          &lt;rdeCsv:fRoid parent="true"/&gt;
-          &lt;csvHost:fAddr/&gt;
-          &lt;csvHost:fAddrVersion/&gt;
-        &lt;/rdeCsv:fields&gt;
-        &lt;rdeCsv:files&gt;
-          &lt;rdeCsv:file
-            cksum="17888F02"&gt;
-            hostAddresses-YYYYMMDD.csv
-          &lt;/rdeCsv:file&gt;
-        &lt;/rdeCsv:files&gt;
-      &lt;/rdeCsv:csv&gt;
-    &lt;/csvHost:contents&gt;
+     &lt;csvHost:contents&gt;
+       &lt;rdeCsv:csv name="host" sep=","&gt;
+         &lt;rdeCsv:fields&gt;
+           &lt;csvHost:fRoid/&gt;
+           &lt;csvHost:fName/&gt;
+           &lt;rdeCsv:fClID/&gt;
+           &lt;rdeCsv:fCrRr/&gt;
+           &lt;rdeCsv:fCrID/&gt;
+           &lt;rdeCsv:fCrDate/&gt;
+           &lt;rdeCsv:fUpRr/&gt;
+           &lt;rdeCsv:fUpID/&gt;
+           &lt;rdeCsv:fUpDate/&gt;
+           &lt;rdeCsv:fTrDate/&gt;
+         &lt;/rdeCsv:fields&gt;
+         &lt;rdeCsv:files&gt;
+           &lt;rdeCsv:file
+             cksum="0E75EEC5"&gt;
+             host-YYYYMMDD.csv
+           &lt;/rdeCsv:file&gt;
+         &lt;/rdeCsv:files&gt;
+       &lt;/rdeCsv:csv&gt;
+       &lt;rdeCsv:csv name="hostStatuses" sep=","&gt;
+         &lt;rdeCsv:fields&gt;
+           &lt;csvHost:fRoid parent="true"/&gt;
+           &lt;csvHost:fStatus/&gt;
+           &lt;rdeCsv:fStatusDescription/&gt;
+           &lt;rdeCsv:fLang/&gt;
+         &lt;/rdeCsv:fields&gt;
+         &lt;rdeCsv:files&gt;
+           &lt;rdeCsv:file
+             cksum="0BA504FC"&gt;
+             hostStatuses-YYYYMMDD.csv
+           &lt;/rdeCsv:file&gt;
+         &lt;/rdeCsv:files&gt;
+       &lt;/rdeCsv:csv&gt;
+       &lt;rdeCsv:csv name="hostAddresses" sep=","&gt;
+         &lt;rdeCsv:fields&gt;
+           &lt;csvHost:fRoid parent="true"/&gt;
+           &lt;csvHost:fAddr/&gt;
+           &lt;csvHost:fAddrVersion/&gt;
+         &lt;/rdeCsv:fields&gt;
+         &lt;rdeCsv:files&gt;
+           &lt;rdeCsv:file
+             cksum="17888F02"&gt;
+             hostAddresses-YYYYMMDD.csv
+           &lt;/rdeCsv:file&gt;
+         &lt;/rdeCsv:files&gt;
+       &lt;/rdeCsv:csv&gt;
+     &lt;/csvHost:contents&gt;
     &lt;csvContact:contents&gt;
       &lt;rdeCsv:csv name="contact" sep=","&gt;
         &lt;rdeCsv:fields&gt;
           &lt;csvContact:fId/&gt;
-          &lt;rdeCsv:fRoid/&gt;
+          &lt;csvContact:fRoid/&gt;
           &lt;csvContact:fVoice/&gt;
           &lt;csvContact:fVoiceExt/&gt;
           &lt;csvContact:fFax/&gt;

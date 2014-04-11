@@ -8,6 +8,8 @@
        xmlns:secDNS="urn:ietf:params:xml:ns:secDNS-1.1"
        xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
        xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+       xmlns:launch="urn:ietf:params:xml:ns:launch-1.0"
+       xmlns:mark="urn:ietf:params:xml:ns:mark-1.0"
        xmlns="http://www.w3.org/2001/XMLSchema"
        elementFormDefault="qualified">
 
@@ -26,6 +28,10 @@
        schemaLocation="rde-1.0.xsd"/>
   <import namespace="urn:ietf:params:xml:ns:rdeCsv-1.0"
        schemaLocation="rdeCsv-1.0.xsd"/>
+  <import namespace="urn:ietf:params:xml:ns:launch-1.0"
+       schemaLocation="launch-1.0.xsd"/>
+  <import namespace="urn:ietf:params:xml:ns:mark-1.0"
+       schemaLocation="mark-1.0.xsd"/>
 
   <annotation>
    <documentation>
@@ -65,13 +71,137 @@
    </complexContent>
   </complexType>
 
-
+ <!-- Domain Registry Object IDentifier (roid) field --> 
+ <element name="fRoid" type="rdeCsv:fRoidType" 
+  substitutionGroup="rdeCsv:field"/>
 
  <!-- Domain name field -->
  <element name="fName" type="rdeCsv:fNameRequiredType" 
   substitutionGroup="rdeCsv:field"/>
  
+ <!-- Application ID field -->
+ <element name="fApplicationID" type="csvDomain:fApplicationIDType" 
+  substitutionGroup="rdeCsv:field"/>
 
+ <complexType name="fApplicationIDType">
+  <complexContent>
+    <extension base="rdeCsv:fieldOptionalType">
+      <sequence/>
+      <attribute name="type" type="token"  
+      default="launch\:applicationIDType"/>
+    </extension>
+  </complexContent>
+ </complexType>
+
+ <!-- Launch Phase field -->
+ <element name="fPhase" type="csvDomain:fPhaseType" 
+  substitutionGroup="rdeCsv:field"/>
+
+ <complexType name="fPhaseType">
+  <complexContent>
+    <extension base="rdeCsv:fieldOptionalType">
+      <sequence/>
+      <attribute name="type" type="token"  
+      default="launch\:phaseTypeValue"/>
+    </extension>
+  </complexContent>
+ </complexType>
+
+ <!-- Launch Phase Name field -->
+ <element name="fPhaseName" type="rdeCsv:fTokenType" 
+  substitutionGroup="rdeCsv:field"/>
+
+ <!-- Application Status field -->
+ <element name="fApplicationStatus" 
+   type="csvDomain:fApplicationStatusType" 
+   substitutionGroup="rdeCsv:field"/>
+
+ <complexType name="fApplicationStatusType">
+  <complexContent>
+    <extension base="rdeCsv:fieldOptionalType">
+      <sequence/>
+      <attribute name="type" type="token"  
+      default="launch\:statusValueType"/>
+    </extension>
+  </complexContent>
+ </complexType>
+
+ <!-- Application Status Name field -->
+ <element name="fApplicationStatusName" 
+   type="rdeCsv:fTokenType" 
+   substitutionGroup="rdeCsv:field"/>
+
+ <!-- Application Status Lang field -->
+ <element name="fApplicationStatusLang" 
+   type="rdeCsv:fLangType" 
+   substitutionGroup="rdeCsv:field"/>
+
+ <!-- Application Status Description field -->
+ <element name="fApplicationStatusDescription" 
+   type="rdeCsv:fNormalizedStringType" 
+   substitutionGroup="rdeCsv:field"/>
+
+ <!-- SMD ID field -->
+ <element name="fSmdID" 
+   type="rdeCsv:fTokenType" 
+   substitutionGroup="rdeCsv:field"/>
+
+ <complexType name="fSmdIDType">
+  <complexContent>
+    <extension base="rdeCsv:fieldOptionalType">
+      <sequence/>
+      <attribute name="type" type="token"  
+      default="mark\:idType"/>
+    </extension>
+  </complexContent>
+ </complexType>
+
+
+ <!-- Mark File field -->
+ <element name="fMarkFile" 
+   type="rdeCsv:fTokenType" 
+   substitutionGroup="rdeCsv:field"/>
+
+ <!-- Mark File Checksum field -->
+ <element name="fMarkFileCksum" 
+   type="rdeCsv:fTokenType" 
+   substitutionGroup="rdeCsv:field"/>
+
+ <!-- Claims Notice ID field -->
+ <element name="fClaimsNoticeID" 
+   type="csvDomain:fClaimsNoticeIDType" 
+   substitutionGroup="rdeCsv:field"/>
+
+ <complexType name="fClaimsNoticeIDType">
+  <complexContent>
+    <extension base="rdeCsv:fieldOptionalType">
+      <sequence/>
+      <attribute name="type" type="token"  
+      default="launch\:noticeIDValue"/>
+    </extension>
+  </complexContent>
+ </complexType>
+
+ <!-- Claims Notice Validator ID field -->
+ <element name="fClaimsValidatorID" 
+   type="csvDomain:fClaimsValidatorIDType" 
+   substitutionGroup="rdeCsv:field"/>
+
+ <complexType name="fClaimsValidatorIDType">
+  <complexContent>
+    <extension base="rdeCsv:fieldOptionalType">
+      <sequence/>
+      <attribute name="type" type="token"  
+      default="launch\:validatorIDType"/>
+    </extension>
+  </complexContent>
+ </complexType>
+ 
+ <!-- Claims Accepted Date field -->
+ <element name="fClaimsAcceptedDate" 
+   type="rdeCsv:fDateTimeType" 
+   substitutionGroup="rdeCsv:field"/>
+ 
  <!-- RGP status field -->
  <element name="fRgpStatus" 
  type="csvDomain:fRgpStatusType" 
@@ -85,6 +215,8 @@
     </extension>
   </complexContent>
  </complexType>
+ 
+ 
  
  <!-- Contact type field -->
  <element name="fContactType" type="csvDomain:fContactsTypeType" 

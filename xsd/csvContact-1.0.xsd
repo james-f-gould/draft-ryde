@@ -72,7 +72,10 @@ Import common element types.
     </extension>
   </complexContent>
  </complexType>
- 
+
+ <!-- Contact Registry Object IDentifier (roid) field --> 
+ <element name="fRoid" type="rdeCsv:fRoidType" 
+  substitutionGroup="rdeCsv:field"/>
   
  <!-- Is Registrar Contact field -->
  <element name="fIsRegistrarContact" 

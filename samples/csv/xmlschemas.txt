@@ -4,6 +4,10 @@
 ../../xsd/domain-1.0.xsd
 ../../xsd/contact-1.0.xsd
 ../../xsd/secDNS-1.1.xsd
+../../xsd/mark-1.0.xsd
+../../xsd/xmldsig-core-schema.xsd
+../../xsd/signedMark-1.0.xsd
+../../xsd/launch-1.0.xsd
 ../../xsd/rgp-1.0.xsd
 ../../xsd/rde-1.0.xsd
 ../../xsd/rde-nndn-1.0.xsd

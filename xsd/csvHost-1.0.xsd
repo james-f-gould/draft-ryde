@@ -59,6 +59,9 @@
    </complexContent>
   </complexType>
   
+ <!-- Host Registry Object IDentifier (roid) field --> 
+ <element name="fRoid" type="rdeCsv:fRoidType" 
+  substitutionGroup="rdeCsv:field"/>
 
  <!-- Host name field -->
  <element name="fName" type="rdeCsv:fNameRequiredType" 

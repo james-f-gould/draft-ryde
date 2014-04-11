@@ -52,8 +52,18 @@
      <csvDomain:contents>
        <rdeCsv:csv name="domain" sep=",">
          <rdeCsv:fields>
-           <csvDomain:fName/>        
-           <rdeCsv:fRoid/>         
+           <csvDomain:fRoid/>         
+           <csvDomain:fName/>   
+           <csvDomain:fApplicationID/>
+           <csvDomain:fPhase/>
+           <csvDomain:fPhaseName/>
+           <csvDomain:fApplicationStatus/>
+           <csvDomain:fSmdID/>
+           <csvDomain:fMarkFile/>
+           <csvDomain:fMarkFileCksum/>
+           <csvDomain:fClaimsNoticeID/>
+           <csvDomain:fClaimsValidatorID/>
+           <csvDomain:fClaimsAcceptedDate/>
            <rdeCsv:fIdnTableId/>   
            <csvDomain:fOriginalName/>
            <rdeCsv:fRegistrant isRequired="true"/>
@@ -68,27 +78,27 @@
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="75E2D01F">
+             cksum="48BB04DE">
              domain-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
        </rdeCsv:csv>
        <rdeCsv:csv name="domainContacts" sep=",">
          <rdeCsv:fields>
-           <csvDomain:fName parent="true"/>
+           <csvDomain:fRoid parent="true"/>         
            <csvContact:fId/>
            <csvDomain:fContactType/>
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="70A7C17B">
+             cksum="5F9E0387">
              domainContacts-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
        </rdeCsv:csv>
        <rdeCsv:csv name="domainStatuses" sep=",">
          <rdeCsv:fields>
-           <csvDomain:fName parent="true"/>
+           <csvDomain:fRoid parent="true"/>         
            <csvDomain:fStatus/>
            <rdeCsv:fStatusDescription/>
            <rdeCsv:fLang/>
@@ -96,26 +106,26 @@
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="EB8C548E">
+             cksum="C8B1B454">
              domainStatuses-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
        </rdeCsv:csv>
        <rdeCsv:csv name="domainNameServers" sep=",">
          <rdeCsv:fields>
-           <csvDomain:fName parent="true"/>
-           <rdeCsv:fRoid/>
+           <csvDomain:fRoid parent="true"/>         
+           <csvHost:fRoid parent="true"//>
            </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="569D4638">
+             cksum="B11125AE">
              domainNameServers-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
        </rdeCsv:csv>
        <rdeCsv:csv name="dnssec" sep=",">
          <rdeCsv:fields>
-           <csvDomain:fName parent="true"/>
+           <csvDomain:fRoid parent="true"/>         
            <csvDomain:fMaxSigLife/>
            <csvDomain:fKeyTag/>
            <csvDomain:fDsAlg/>
@@ -124,14 +134,14 @@
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="AA15CB43">
+             cksum="05290CDE">
              dnssec-ds-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
        </rdeCsv:csv>
        <rdeCsv:csv name="dnssec" sep=",">
          <rdeCsv:fields>
-           <csvDomain:fName parent="true"/>
+           <csvDomain:fRoid parent="true"/>         
            <csvDomain:fMaxSigLife/>
            <csvDomain:fFlags/>
            <csvDomain:fProtocol/>
@@ -140,14 +150,14 @@
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="1B16F334">
+             cksum="B50B7B5D">
              dnssec-key-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
        </rdeCsv:csv>
        <rdeCsv:csv name="domainTransfer" sep=",">
          <rdeCsv:fields>
-           <csvDomain:fName parent="true"/>
+           <csvDomain:fRoid parent="true"/>         
            <rdeCsv:fTrStatus/>
            <rdeCsv:fReRr/>
            <rdeCsv:fReID/>
@@ -159,7 +169,7 @@
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="71170194">
+             cksum="C1F4591A">
              domainTransfer-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
@@ -168,8 +178,8 @@
      <csvHost:contents>
        <rdeCsv:csv name="host" sep=",">
          <rdeCsv:fields>
+           <csvHost:fRoid/>
            <csvHost:fName/>
-           <rdeCsv:fRoid/>
            <rdeCsv:fClID/>
            <rdeCsv:fCrRr/>
            <rdeCsv:fCrID/>
@@ -181,14 +191,14 @@
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
-             cksum="120938E3">
+             cksum="0E75EEC5">
              host-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
        </rdeCsv:csv>
        <rdeCsv:csv name="hostStatuses" sep=",">
          <rdeCsv:fields>
-               <rdeCsv:fRoid parent="true"/>
+           <csvHost:fRoid parent="true"/>
            <csvHost:fStatus/>
            <rdeCsv:fStatusDescription/>
            <rdeCsv:fLang/>
@@ -202,7 +212,7 @@
        </rdeCsv:csv>
        <rdeCsv:csv name="hostAddresses" sep=",">
          <rdeCsv:fields>
-               <rdeCsv:fRoid parent="true"/>
+           <csvHost:fRoid parent="true"/>
            <csvHost:fAddr/>
            <csvHost:fAddrVersion/>
          </rdeCsv:fields>
@@ -218,7 +228,7 @@
        <rdeCsv:csv name="contact" sep=",">
          <rdeCsv:fields>
            <csvContact:fId/>
-           <rdeCsv:fRoid/>
+           <csvContact:fRoid/>
            <csvContact:fVoice/>
            <csvContact:fVoiceExt/>
            <csvContact:fFax/>
