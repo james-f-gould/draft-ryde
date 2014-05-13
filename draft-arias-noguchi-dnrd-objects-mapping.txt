@@ -4,12 +4,12 @@
 Network Working Group                                           F. Arias
 Internet-Draft                                                 G. Lozano
 Intended status: Standards Track                                   ICANN
-Expires: October 13, 2014                                     S. Noguchi
+Expires: November 14, 2014                                    S. Noguchi
                                                                     JPRS
                                                                 J. Gould
                                                           C. Thippeswamy
                                                                 VeriSign
-                                                          April 11, 2014
+                                                            May 13, 2014
 
 
           Domain Name Registration Data (DNRD) Objects Mapping
@@ -36,7 +36,7 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on October 13, 2014.
+   This Internet-Draft will expire on November 14, 2014.
 
 Copyright Notice
 
@@ -52,9 +52,9 @@ Copyright Notice
 
 
 
-Arias, et al.           Expires October 13, 2014                [Page 1]
+Arias, et al.           Expires November 14, 2014               [Page 1]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    include Simplified BSD License text as described in Section 4.e of
@@ -108,9 +108,9 @@ Table of Contents
 
 
 
-Arias, et al.           Expires October 13, 2014                [Page 2]
+Arias, et al.           Expires November 14, 2014               [Page 2]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    10. Internationalization Considerations . . . . . . . . . . . . . 144
@@ -164,9 +164,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014                [Page 3]
+Arias, et al.           Expires November 14, 2014               [Page 3]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 1.  Introduction
@@ -220,9 +220,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014                [Page 4]
+Arias, et al.           Expires November 14, 2014               [Page 4]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    o  XML: The XML model includes all of the deposit information (meta-
@@ -276,9 +276,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014                [Page 5]
+Arias, et al.           Expires November 14, 2014               [Page 5]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    Services are: DNS resolution for the RCDN, WHOIS and EPP.
@@ -332,9 +332,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014                [Page 6]
+Arias, et al.           Expires November 14, 2014               [Page 6]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 4.6.1.  <rdeCsv:csv> element
@@ -388,9 +388,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014                [Page 7]
+Arias, et al.           Expires November 14, 2014               [Page 7]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       cksum  Defines the checksum of the CSV file using CRC32, as
@@ -444,9 +444,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014                [Page 8]
+Arias, et al.           Expires November 14, 2014               [Page 8]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    Ddomain2-TEST,domain1.test,,,registrantid,registrarX,registrarX,
@@ -500,9 +500,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014                [Page 9]
+Arias, et al.           Expires November 14, 2014               [Page 9]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    <rdeCsv:fUName>  UTF-8 encoded name field with type="eppcom:
@@ -556,9 +556,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 10]
+Arias, et al.           Expires November 14, 2014              [Page 10]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    <rdeCsv:fExDate>  Expiration date of object with type="dateTime".
@@ -612,9 +612,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 11]
+Arias, et al.           Expires November 14, 2014              [Page 11]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -668,9 +668,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 12]
+Arias, et al.           Expires November 14, 2014              [Page 12]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -724,9 +724,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 13]
+Arias, et al.           Expires November 14, 2014              [Page 13]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 5.1.1.1.  <rdeDomain:domain> object
@@ -780,9 +780,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 14]
+Arias, et al.           Expires November 14, 2014              [Page 14]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    o  Zero or more OPTIONAL <contact> elements that contain identifiers
@@ -836,9 +836,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 15]
+Arias, et al.           Expires November 14, 2014              [Page 15]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       object.  This element MUST NOT be present if a transfer request
@@ -892,9 +892,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 16]
+Arias, et al.           Expires November 14, 2014              [Page 16]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -948,9 +948,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 17]
+Arias, et al.           Expires November 14, 2014              [Page 17]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    "domain"  Defines the fields and CSV file references used for the
@@ -1004,9 +1004,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 18]
+Arias, et al.           Expires November 14, 2014              [Page 18]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <csvDomain:fPhase>  Phase during which the application or
@@ -1060,9 +1060,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 19]
+Arias, et al.           Expires November 14, 2014              [Page 19]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <rdeCsv:fExDate>  Expiration date and time for the domain name
@@ -1116,9 +1116,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 20]
+Arias, et al.           Expires November 14, 2014              [Page 20]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -1172,9 +1172,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 21]
+Arias, et al.           Expires November 14, 2014              [Page 21]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 
@@ -1228,9 +1228,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 22]
+Arias, et al.           Expires November 14, 2014              [Page 22]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    DdomainN-TEST
@@ -1284,9 +1284,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 23]
+Arias, et al.           Expires November 14, 2014              [Page 23]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -1340,9 +1340,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 24]
+Arias, et al.           Expires November 14, 2014              [Page 24]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -1396,9 +1396,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 25]
+Arias, et al.           Expires November 14, 2014              [Page 25]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       The following "csvDomain" fields, defined for the "domain"
@@ -1452,9 +1452,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 26]
+Arias, et al.           Expires November 14, 2014              [Page 26]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       Example of the corresponding domainStatuses-YYYYMMDD.csv file.
@@ -1508,9 +1508,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 27]
+Arias, et al.           Expires November 14, 2014              [Page 27]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    "domainNameServers"  Defines the fields and CSV file references used
@@ -1564,9 +1564,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 28]
+Arias, et al.           Expires November 14, 2014              [Page 28]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -1620,9 +1620,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 29]
+Arias, et al.           Expires November 14, 2014              [Page 29]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    "dnssec"  Defines the fields and CSV file references used for the
@@ -1676,9 +1676,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 30]
+Arias, et al.           Expires November 14, 2014              [Page 30]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 
@@ -1732,9 +1732,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 31]
+Arias, et al.           Expires November 14, 2014              [Page 31]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 
@@ -1788,9 +1788,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 32]
+Arias, et al.           Expires November 14, 2014              [Page 32]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -1844,9 +1844,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 33]
+Arias, et al.           Expires November 14, 2014              [Page 33]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -1900,9 +1900,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 34]
+Arias, et al.           Expires November 14, 2014              [Page 34]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <rdeCsv:fReDate>  Date and time that the transfer was requested.
@@ -1956,9 +1956,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 35]
+Arias, et al.           Expires November 14, 2014              [Page 35]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -2012,9 +2012,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 36]
+Arias, et al.           Expires November 14, 2014              [Page 36]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -2068,9 +2068,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 37]
+Arias, et al.           Expires November 14, 2014              [Page 37]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 5.2.1.1.  <rdeHost:host> element
@@ -2124,9 +2124,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 38]
+Arias, et al.           Expires November 14, 2014              [Page 38]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -2180,9 +2180,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 39]
+Arias, et al.           Expires November 14, 2014              [Page 39]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    "host"  Defines the fields and CSV file references used for the host
@@ -2236,9 +2236,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 40]
+Arias, et al.           Expires November 14, 2014              [Page 40]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       Example of a "host" <csvHost:contents> <rdeCsv:csv> element:
@@ -2292,9 +2292,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 41]
+Arias, et al.           Expires November 14, 2014              [Page 41]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       Example of a "host" <csvHost:deletes> <rdeCsv:csv> element:
@@ -2348,9 +2348,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 42]
+Arias, et al.           Expires November 14, 2014              [Page 42]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       The following "rdeCsv" fields, defined in section CSV common field
@@ -2404,9 +2404,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 43]
+Arias, et al.           Expires November 14, 2014              [Page 43]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       Example of a "hostStatuses" <csvHost:deletes> <rdeCsv:csv>
@@ -2460,9 +2460,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 44]
+Arias, et al.           Expires November 14, 2014              [Page 44]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <csvHost:fAddrVersion>  IP addresses version associated with the
@@ -2516,9 +2516,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 45]
+Arias, et al.           Expires November 14, 2014              [Page 45]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -2572,9 +2572,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 46]
+Arias, et al.           Expires November 14, 2014              [Page 46]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 5.3.1.1.  <rdeContact:contact> object
@@ -2628,9 +2628,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 47]
+Arias, et al.           Expires November 14, 2014              [Page 47]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
          +  An OPTIONAL <pc> element that contains the contact's postal
@@ -2684,9 +2684,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 48]
+Arias, et al.           Expires November 14, 2014              [Page 48]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
          client attribute is used to specify the client that performed
@@ -2740,9 +2740,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 49]
+Arias, et al.           Expires November 14, 2014              [Page 49]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -2796,9 +2796,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 50]
+Arias, et al.           Expires November 14, 2014              [Page 50]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -2852,9 +2852,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 51]
+Arias, et al.           Expires November 14, 2014              [Page 51]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <csvContact:fVoice>  Contains the contact's voice telephone number
@@ -2908,9 +2908,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 52]
+Arias, et al.           Expires November 14, 2014              [Page 52]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       Example of a "contact" <csvContact:contacts> <rdeCsv:csv> element:
@@ -2964,9 +2964,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 53]
+Arias, et al.           Expires November 14, 2014              [Page 53]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       Example of a "contact" <csvContact:deletes> <rdeCsv:csv> element:
@@ -3020,9 +3020,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 54]
+Arias, et al.           Expires November 14, 2014              [Page 54]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       The following "rdeCsv" fields, defined in section CSV common field
@@ -3076,9 +3076,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 55]
+Arias, et al.           Expires November 14, 2014              [Page 55]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       Example of a "contactStatuses" <csvContact:deletes> <rdeCsv:csv>
@@ -3132,9 +3132,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 56]
+Arias, et al.           Expires November 14, 2014              [Page 56]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <csvContact:fStreet>  Contains the contact's contact's street
@@ -3188,9 +3188,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 57]
+Arias, et al.           Expires November 14, 2014              [Page 57]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <csvContact:fPc>  Contains the contact's postal code with
@@ -3244,9 +3244,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 58]
+Arias, et al.           Expires November 14, 2014              [Page 58]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       Example of the contactPostal-YYYYMMDD.csv file.  The file contains
@@ -3300,9 +3300,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 59]
+Arias, et al.           Expires November 14, 2014              [Page 59]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <rdeCsv:csv> <rdeCsv:fields> element:
@@ -3356,9 +3356,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 60]
+Arias, et al.           Expires November 14, 2014              [Page 60]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -3412,9 +3412,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 61]
+Arias, et al.           Expires November 14, 2014              [Page 61]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -3468,9 +3468,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 62]
+Arias, et al.           Expires November 14, 2014              [Page 62]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <csvContact:fDiscloseNameLoc>  Exceptional disclosure preference
@@ -3524,9 +3524,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 63]
+Arias, et al.           Expires November 14, 2014              [Page 63]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 
@@ -3580,9 +3580,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 64]
+Arias, et al.           Expires November 14, 2014              [Page 64]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -3636,9 +3636,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 65]
+Arias, et al.           Expires November 14, 2014              [Page 65]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 5.4.1.1.  <rdeRegistrar:registrar> element
@@ -3692,9 +3692,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 66]
+Arias, et al.           Expires November 14, 2014              [Page 66]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    o  An OPTIONAL <fax> element that contains the registrar's facsimile
@@ -3748,9 +3748,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 67]
+Arias, et al.           Expires November 14, 2014              [Page 67]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -3804,9 +3804,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 68]
+Arias, et al.           Expires November 14, 2014              [Page 68]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 5.4.2.  CSV Model
@@ -3860,9 +3860,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 69]
+Arias, et al.           Expires November 14, 2014              [Page 69]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <rdeCsv:fCrDate>  Created date and time of the registrar object.
@@ -3916,9 +3916,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 70]
+Arias, et al.           Expires November 14, 2014              [Page 70]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <csvContact:fVoiceExt>  Registrar voice telephone number
@@ -3972,9 +3972,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 71]
+Arias, et al.           Expires November 14, 2014              [Page 71]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -4028,9 +4028,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 72]
+Arias, et al.           Expires November 14, 2014              [Page 72]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 5.5.  IDN Table Reference Object
@@ -4084,9 +4084,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 73]
+Arias, et al.           Expires November 14, 2014              [Page 73]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    language identifier to a language table URL.  The language table URL
@@ -4140,9 +4140,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 74]
+Arias, et al.           Expires November 14, 2014              [Page 74]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -4196,9 +4196,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 75]
+Arias, et al.           Expires November 14, 2014              [Page 75]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -4252,9 +4252,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 76]
+Arias, et al.           Expires November 14, 2014              [Page 76]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    A <rdeNNDN:NNDN> element substitutes for the <rdeNNDN:abstractNNDN>
@@ -4308,9 +4308,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 77]
+Arias, et al.           Expires November 14, 2014              [Page 77]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    Example of <rdeNNDN:NNDN> object:
@@ -4364,9 +4364,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 78]
+Arias, et al.           Expires November 14, 2014              [Page 78]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 
@@ -4420,9 +4420,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 79]
+Arias, et al.           Expires November 14, 2014              [Page 79]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       Example of a "NNDN" <csvNNDN:contents> <rdeCsv:csv> element:
@@ -4476,9 +4476,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 80]
+Arias, et al.           Expires November 14, 2014              [Page 80]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -4532,9 +4532,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 81]
+Arias, et al.           Expires November 14, 2014              [Page 81]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       of managing.
@@ -4588,9 +4588,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 82]
+Arias, et al.           Expires November 14, 2014              [Page 82]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 5.8.  Policy Object
@@ -4644,9 +4644,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 83]
+Arias, et al.           Expires November 14, 2014              [Page 83]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       "urn:ietf:params:xml:ns:rdeDomain-1.0" for domain name objects
@@ -4700,9 +4700,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 84]
+Arias, et al.           Expires November 14, 2014              [Page 84]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -4756,9 +4756,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 85]
+Arias, et al.           Expires November 14, 2014              [Page 85]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 7.  Profile
@@ -4812,9 +4812,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 86]
+Arias, et al.           Expires November 14, 2014              [Page 86]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    o  All contacts objects linked to domain names MUST be present.
@@ -4868,9 +4868,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 87]
+Arias, et al.           Expires November 14, 2014              [Page 87]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
@@ -4924,9 +4924,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 88]
+Arias, et al.           Expires November 14, 2014              [Page 88]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
          <minLength value="1"/>
@@ -4980,9 +4980,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 89]
+Arias, et al.           Expires November 14, 2014              [Page 89]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
            default="eppcom\:labelType"/>
@@ -5036,9 +5036,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 90]
+Arias, et al.           Expires November 14, 2014              [Page 90]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
     <element name="fClID" type="rdeCsv:fClIDRequiredType"
@@ -5092,9 +5092,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 91]
+Arias, et al.           Expires November 14, 2014              [Page 91]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      </complexContent>
@@ -5148,9 +5148,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 92]
+Arias, et al.           Expires November 14, 2014              [Page 92]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      </complexContent>
@@ -5204,9 +5204,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 93]
+Arias, et al.           Expires November 14, 2014              [Page 93]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
        <extension base="rdeCsv:fieldOptionalType">
@@ -5260,9 +5260,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 94]
+Arias, et al.           Expires November 14, 2014              [Page 94]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
          <attribute name="name" type="token"/>
@@ -5316,9 +5316,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 95]
+Arias, et al.           Expires November 14, 2014              [Page 95]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      End of schema.
@@ -5372,9 +5372,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 96]
+Arias, et al.           Expires November 14, 2014              [Page 96]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
@@ -5428,9 +5428,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 97]
+Arias, et al.           Expires November 14, 2014              [Page 97]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
              <element name="contact"
@@ -5484,9 +5484,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 98]
+Arias, et al.           Expires November 14, 2014              [Page 98]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
        <complexContent>
@@ -5540,9 +5540,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014               [Page 99]
+Arias, et al.           Expires November 14, 2014              [Page 99]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    <?xml version="1.0" encoding="UTF-8"?>
@@ -5596,9 +5596,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 100]
+Arias, et al.           Expires November 14, 2014             [Page 100]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       <complexContent>
@@ -5652,9 +5652,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 101]
+Arias, et al.           Expires November 14, 2014             [Page 101]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
     <element name="fPhase" type="csvDomain:fPhaseType"
@@ -5708,9 +5708,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 102]
+Arias, et al.           Expires November 14, 2014             [Page 102]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
     <element name="fSmdID"
@@ -5764,9 +5764,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 103]
+Arias, et al.           Expires November 14, 2014             [Page 103]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
          <sequence/>
@@ -5820,9 +5820,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 104]
+Arias, et al.           Expires November 14, 2014             [Page 104]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      <complexContent>
@@ -5876,9 +5876,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 105]
+Arias, et al.           Expires November 14, 2014             [Page 105]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
     </complexType>
@@ -5932,9 +5932,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 106]
+Arias, et al.           Expires November 14, 2014             [Page 106]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
@@ -5988,9 +5988,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 107]
+Arias, et al.           Expires November 14, 2014             [Page 107]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
                type="host:statusType" maxOccurs="7"/>
@@ -6044,9 +6044,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 108]
+Arias, et al.           Expires November 14, 2014             [Page 108]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    o  Redistributions of source code must retain the above copyright
@@ -6100,9 +6100,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 109]
+Arias, et al.           Expires November 14, 2014             [Page 109]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      <annotation>
@@ -6156,9 +6156,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 110]
+Arias, et al.           Expires November 14, 2014             [Page 110]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
     <element name="fAddr" type="csvHost:fAddrType"
@@ -6212,9 +6212,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 111]
+Arias, et al.           Expires November 14, 2014             [Page 111]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 9.6.  RDE Contact Object
@@ -6268,9 +6268,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 112]
+Arias, et al.           Expires November 14, 2014             [Page 112]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      <annotation>
@@ -6324,9 +6324,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 113]
+Arias, et al.           Expires November 14, 2014             [Page 113]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
              <element name="disclose"
@@ -6380,9 +6380,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 114]
+Arias, et al.           Expires November 14, 2014             [Page 114]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       distribution.
@@ -6436,9 +6436,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 115]
+Arias, et al.           Expires November 14, 2014             [Page 115]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      <!--
@@ -6492,9 +6492,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 116]
+Arias, et al.           Expires November 14, 2014             [Page 116]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      substitutionGroup="rdeCsv:field"/>
@@ -6548,9 +6548,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 117]
+Arias, et al.           Expires November 14, 2014             [Page 117]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
     <element name="fPostalType" type="csvContact:fPostalTypeType"
@@ -6604,9 +6604,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 118]
+Arias, et al.           Expires November 14, 2014             [Page 118]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
     <element name="fStreet" type="csvContact:fStreetType"
@@ -6660,9 +6660,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 119]
+Arias, et al.           Expires November 14, 2014             [Page 119]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
     <!-- Disclosure element fields -->
@@ -6716,9 +6716,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 120]
+Arias, et al.           Expires November 14, 2014             [Page 120]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      </complexContent>
@@ -6772,9 +6772,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 121]
+Arias, et al.           Expires November 14, 2014             [Page 121]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -6828,9 +6828,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 122]
+Arias, et al.           Expires November 14, 2014             [Page 122]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
                type="eppcom:clIDType"/>
@@ -6884,9 +6884,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 123]
+Arias, et al.           Expires November 14, 2014             [Page 123]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
        </sequence>
@@ -6940,9 +6940,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 124]
+Arias, et al.           Expires November 14, 2014             [Page 124]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      <simpleType name="ccType">
@@ -6996,9 +6996,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 125]
+Arias, et al.           Expires November 14, 2014             [Page 125]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    o  Neither the name of Internet Society, IETF or IETF Trust, nor the
@@ -7052,9 +7052,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 126]
+Arias, et al.           Expires November 14, 2014             [Page 126]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      </annotation>
@@ -7108,9 +7108,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 127]
+Arias, et al.           Expires November 14, 2014             [Page 127]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
          <attribute name="type" type="token"
@@ -7164,9 +7164,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 128]
+Arias, et al.           Expires November 14, 2014             [Page 128]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      type="rdeCsv:anyURIType"
@@ -7220,9 +7220,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 129]
+Arias, et al.           Expires November 14, 2014             [Page 129]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
@@ -7276,9 +7276,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 130]
+Arias, et al.           Expires November 14, 2014             [Page 130]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    </schema>
@@ -7332,9 +7332,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 131]
+Arias, et al.           Expires November 14, 2014             [Page 131]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      Import common element types
@@ -7388,9 +7388,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 132]
+Arias, et al.           Expires November 14, 2014             [Page 132]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    </schema>
@@ -7444,9 +7444,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 133]
+Arias, et al.           Expires November 14, 2014             [Page 133]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/>
@@ -7500,9 +7500,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 134]
+Arias, et al.           Expires November 14, 2014             [Page 134]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    o  Redistributions of source code must retain the above copyright
@@ -7556,9 +7556,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 135]
+Arias, et al.           Expires November 14, 2014             [Page 135]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      <element name="delete" type="rdeNNDN:deleteType"
@@ -7612,9 +7612,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 136]
+Arias, et al.           Expires November 14, 2014             [Page 136]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
                type="eppcom:labelType" minOccurs="0"
@@ -7668,9 +7668,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 137]
+Arias, et al.           Expires November 14, 2014             [Page 137]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
           xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
@@ -7724,9 +7724,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 138]
+Arias, et al.           Expires November 14, 2014             [Page 138]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
             <element ref="rdeCsv:csv" maxOccurs="unbounded"/>
@@ -7780,9 +7780,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 139]
+Arias, et al.           Expires November 14, 2014             [Page 139]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    o  Redistributions of source code must retain the above copyright
@@ -7836,9 +7836,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 140]
+Arias, et al.           Expires November 14, 2014             [Page 140]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    BEGIN
@@ -7892,9 +7892,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 141]
+Arias, et al.           Expires November 14, 2014             [Page 141]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       products derived from this software without specific prior written
@@ -7948,9 +7948,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 142]
+Arias, et al.           Expires November 14, 2014             [Page 142]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    BEGIN
@@ -8004,9 +8004,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 143]
+Arias, et al.           Expires November 14, 2014             [Page 143]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 10.  Internationalization Considerations
@@ -8060,9 +8060,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 144]
+Arias, et al.           Expires November 14, 2014             [Page 144]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       Registrant Contact: See the "Author's Address" section of this
@@ -8116,9 +8116,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 145]
+Arias, et al.           Expires November 14, 2014             [Page 145]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       XML: None.  Namespace URIs do not represent an XML specification.
@@ -8172,9 +8172,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 146]
+Arias, et al.           Expires November 14, 2014             [Page 146]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       URI: urn:ietf:params:xml:ns:rdeRegistrar-1.0
@@ -8228,9 +8228,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 147]
+Arias, et al.           Expires November 14, 2014             [Page 147]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       Registrant Contact: See the "Author's Address" section of this
@@ -8284,9 +8284,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 148]
+Arias, et al.           Expires November 14, 2014             [Page 148]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
       XML: None.  Namespace URIs do not represent an XML specification.
@@ -8340,9 +8340,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 149]
+Arias, et al.           Expires November 14, 2014             [Page 149]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    authenticate the identity of the Escrow Agent before submitting any
@@ -8396,9 +8396,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 150]
+Arias, et al.           Expires November 14, 2014             [Page 150]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 14.2.  Changes from version 00 to 01
@@ -8452,9 +8452,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 151]
+Arias, et al.           Expires November 14, 2014             [Page 151]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    2.   Changed the cksum attribute of <rdeCsv:file> to use CRC32 and
@@ -8508,9 +8508,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 152]
+Arias, et al.           Expires November 14, 2014             [Page 152]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
         files.
@@ -8556,22 +8556,22 @@ Internet-Draft            DNRD Objects Mapping                April 2014
        fRoid> elements to be used in place of <rdeCsv:fRoid>.
 
    2.  Replaced the use of the <csvDomain:fName> with the <csvDomain:
-       fRoid as the primary key in the domain CSV files, to support both
-       domains and applications.
+       fRoid> as the primary key in the domain CSV files, to support
+       both domains and applications.
 
    3.  Added definition of <csvDomain:fApplicationID>, <csvDomain:
        fApplicationStatus>, <csvDomain:fApplicationStatusDescription>,
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 153]
+Arias, et al.           Expires November 14, 2014             [Page 153]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
        <csvDomain:fApplicationStatusLang>, <csvDomain:fPhase>,
-       <csvDomain:fPhaseName>, <csvDomain:fSmdID>, <csvDomain:fSmdID>,
-       <csvDomain:fMarkFile>, <csvDomain:fMarkFileCksum>, <csvDomain:
+       <csvDomain:fPhaseName>, <csvDomain:fSmdID>, <csvDomain:
+       fMarkFile>, <csvDomain:fMarkFileCksum>, <csvDomain:
        fClaimsNoticeID>, <csvDomain:fClaimsValidatorID>, <csvDomain:
        fClaimsAcceptedDate>.
 
@@ -8620,9 +8620,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 154]
+Arias, et al.           Expires November 14, 2014             [Page 154]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      </rde:rdeMenu>
@@ -8676,9 +8676,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 155]
+Arias, et al.           Expires November 14, 2014             [Page 155]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
        <!-- Domian: example2.test -->
@@ -8732,9 +8732,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 156]
+Arias, et al.           Expires November 14, 2014             [Page 156]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
            </contact:addr>
@@ -8788,9 +8788,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 157]
+Arias, et al.           Expires November 14, 2014             [Page 157]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
          </rdeRegistrar:email>
@@ -8844,9 +8844,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 158]
+Arias, et al.           Expires November 14, 2014             [Page 158]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
            <epp:extURI>urn:ietf:params:xml:ns:rgp-1.0
@@ -8900,9 +8900,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 159]
+Arias, et al.           Expires November 14, 2014             [Page 159]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      xmlns:epp="urn:ietf:params:xml:ns:epp-1.0">
@@ -8956,9 +8956,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 160]
+Arias, et al.           Expires November 14, 2014             [Page 160]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
            uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1
@@ -9012,9 +9012,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 161]
+Arias, et al.           Expires November 14, 2014             [Page 161]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
          4
@@ -9068,9 +9068,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 162]
+Arias, et al.           Expires November 14, 2014             [Page 162]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
             <rdeCsv:files>
@@ -9124,9 +9124,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 163]
+Arias, et al.           Expires November 14, 2014             [Page 163]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
             <rdeCsv:fields>
@@ -9180,9 +9180,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 164]
+Arias, et al.           Expires November 14, 2014             [Page 164]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
             </rdeCsv:files>
@@ -9236,9 +9236,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 165]
+Arias, et al.           Expires November 14, 2014             [Page 165]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
               </rdeCsv:file>
@@ -9292,9 +9292,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 166]
+Arias, et al.           Expires November 14, 2014             [Page 166]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
               <csvContact:fOrg/>
@@ -9348,9 +9348,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 167]
+Arias, et al.           Expires November 14, 2014             [Page 167]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
             <rdeCsv:files>
@@ -9404,9 +9404,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 168]
+Arias, et al.           Expires November 14, 2014             [Page 168]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
                 cksum="D462EAD0">
@@ -9460,9 +9460,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 169]
+Arias, et al.           Expires November 14, 2014             [Page 169]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
                </epp:purpose>
@@ -9516,9 +9516,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 170]
+Arias, et al.           Expires November 14, 2014             [Page 170]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
            <rdeCsv:fields>
@@ -9572,9 +9572,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 171]
+Arias, et al.           Expires November 14, 2014             [Page 171]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
               <csvDomain:fMarkFileCksum/>
@@ -9628,9 +9628,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 172]
+Arias, et al.           Expires November 14, 2014             [Page 172]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
               </rdeCsv:file>
@@ -9684,9 +9684,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 173]
+Arias, et al.           Expires November 14, 2014             [Page 173]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
             <rdeCsv:fields>
@@ -9740,9 +9740,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 174]
+Arias, et al.           Expires November 14, 2014             [Page 174]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
               <rdeCsv:file
@@ -9796,9 +9796,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 175]
+Arias, et al.           Expires November 14, 2014             [Page 175]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
                <csvContact:fStatus/>
@@ -9852,9 +9852,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 176]
+Arias, et al.           Expires November 14, 2014             [Page 176]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
            </rdeCsv:files>
@@ -9908,9 +9908,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 177]
+Arias, et al.           Expires November 14, 2014             [Page 177]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
            <rdeCsv:files>
@@ -9964,9 +9964,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 178]
+Arias, et al.           Expires November 14, 2014             [Page 178]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
                  <epp:ours/>
@@ -10020,9 +10020,9 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 179]
+Arias, et al.           Expires November 14, 2014             [Page 179]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    [RFC5733]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
@@ -10076,9 +10076,9 @@ Authors' Addresses
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 180]
+Arias, et al.           Expires November 14, 2014             [Page 180]
 
-Internet-Draft            DNRD Objects Mapping                April 2014
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    Gustavo Lozano
@@ -10132,5 +10132,5 @@ Internet-Draft            DNRD Objects Mapping                April 2014
 
 
 
-Arias, et al.           Expires October 13, 2014              [Page 181]
+Arias, et al.           Expires November 14, 2014             [Page 181]
 

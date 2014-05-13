@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="11" month="April" year="2014"/>
+        <date day="13" month="May" year="2014"/>
         
         <area> Applications </area>
         
@@ -7233,9 +7233,9 @@ END]]></artwork></figure>
             <t>
               <list style="numbers">
                 <t>Defined the &lt;csvDomain:fRoid&gt;, &lt;csvHost:fRoid&gt;, &lt;csvContact:fRoid&gt; elements to be used in place of &lt;rdeCsv:fRoid&gt;.</t>
-                <t>Replaced the use of the &lt;csvDomain:fName&gt; with the &lt;csvDomain:fRoid as the primary key in the domain CSV files, to support both domains and applications.</t>
+                <t>Replaced the use of the &lt;csvDomain:fName&gt; with the &lt;csvDomain:fRoid&gt; as the primary key in the domain CSV files, to support both domains and applications.</t>
                 <t>Added definition of &lt;csvDomain:fApplicationID&gt;, &lt;csvDomain:fApplicationStatus&gt;, &lt;csvDomain:fApplicationStatusDescription&gt;, &lt;csvDomain:fApplicationStatusLang&gt;, 
-                &lt;csvDomain:fPhase&gt;, &lt;csvDomain:fPhaseName&gt;, &lt;csvDomain:fSmdID&gt;, &lt;csvDomain:fSmdID&gt;, &lt;csvDomain:fMarkFile&gt;, 
+                &lt;csvDomain:fPhase&gt;, &lt;csvDomain:fPhaseName&gt;, &lt;csvDomain:fSmdID&gt;, &lt;csvDomain:fMarkFile&gt;, 
                 &lt;csvDomain:fMarkFileCksum&gt;, &lt;csvDomain:fClaimsNoticeID&gt;, &lt;csvDomain:fClaimsValidatorID&gt;, &lt;csvDomain:fClaimsAcceptedDate&gt;.</t>  
               </list>
             </t>
