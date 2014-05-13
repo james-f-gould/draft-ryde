@@ -84,26 +84,26 @@ Table of Contents
      5.6.  NNDN Object . . . . . . . . . . . . . . . . . . . . . . .  76
      5.7.  EPP Parameters Object . . . . . . . . . . . . . . . . . .  81
      5.8.  Policy Object . . . . . . . . . . . . . . . . . . . . . .  83
-     5.9.  Header Object . . . . . . . . . . . . . . . . . . . . . .  83
-   6.  RDE IDN Variants handling . . . . . . . . . . . . . . . . . .  85
+     5.9.  Header Object . . . . . . . . . . . . . . . . . . . . . .  84
+   6.  RDE IDN Variants handling . . . . . . . . . . . . . . . . . .  86
    7.  Profile . . . . . . . . . . . . . . . . . . . . . . . . . . .  86
-   8.  Data escrow agent extended verification process . . . . . . .  86
+   8.  Data escrow agent extended verification process . . . . . . .  87
    9.  Formal Syntax . . . . . . . . . . . . . . . . . . . . . . . .  87
-     9.1.  RDE CSV Schema  . . . . . . . . . . . . . . . . . . . . .  87
+     9.1.  RDE CSV Schema  . . . . . . . . . . . . . . . . . . . . .  88
      9.2.  RDE Domain Object . . . . . . . . . . . . . . . . . . . .  96
      9.3.  CSV Domain Object . . . . . . . . . . . . . . . . . . . .  99
-     9.4.  RDE Host Object . . . . . . . . . . . . . . . . . . . . . 106
-     9.5.  CSV Host Object . . . . . . . . . . . . . . . . . . . . . 108
+     9.4.  RDE Host Object . . . . . . . . . . . . . . . . . . . . . 107
+     9.5.  CSV Host Object . . . . . . . . . . . . . . . . . . . . . 109
      9.6.  RDE Contact Object  . . . . . . . . . . . . . . . . . . . 112
-     9.7.  CSV Contact Object  . . . . . . . . . . . . . . . . . . . 114
-     9.8.  RDE Registrar Object  . . . . . . . . . . . . . . . . . . 121
-     9.9.  CSV Registrar Object  . . . . . . . . . . . . . . . . . . 125
+     9.7.  CSV Contact Object  . . . . . . . . . . . . . . . . . . . 115
+     9.8.  RDE Registrar Object  . . . . . . . . . . . . . . . . . . 122
+     9.9.  CSV Registrar Object  . . . . . . . . . . . . . . . . . . 126
      9.10. RDE IDN Table Reference Objects . . . . . . . . . . . . . 129
      9.11. CSV IDN Language Object . . . . . . . . . . . . . . . . . 131
      9.12. EPP Parameters Object . . . . . . . . . . . . . . . . . . 133
-     9.13. NNDN Object . . . . . . . . . . . . . . . . . . . . . . . 134
+     9.13. NNDN Object . . . . . . . . . . . . . . . . . . . . . . . 135
      9.14. CSV NNDN Object . . . . . . . . . . . . . . . . . . . . . 137
-     9.15. Policy Object . . . . . . . . . . . . . . . . . . . . . . 139
+     9.15. Policy Object . . . . . . . . . . . . . . . . . . . . . . 140
      9.16. Header Object . . . . . . . . . . . . . . . . . . . . . . 141
 
 
@@ -981,6 +981,12 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          IDN domain name object related to the variant domain name
          object with type="eppcom:labelType".
 
+      <csvDomain:fVariantGroup>  Variant group name / tag related to the
+         variant domain name with type="token".  All domain names, using
+         the <csvDomain:fVariantGroup> field, and NNDN records, using
+         the <csvNNDN:fVariantGroup> field, with the same value are
+         related variants.
+
       <csvDomain:fApplicationID>  Application identifier of the Launch
          Application with type="launch:applicationIDType".
 
@@ -992,12 +998,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          name of the status when the <csvDomain:fApplicationStatus>
          value is "custom" with type="token".
 
-      <csvDomain:fApplicationStatusDescription>  Human-readable text
-         that describes the rationale for the <csvDomain:
-         fApplicationStatus> value with type="token".
-
-      <csvDomain:fApplicationStatusLang>  Language of the <csvDomain:
-         fApplicationStatusDescription> value with type="language".
 
 
 
@@ -1008,6 +1008,13 @@ Arias, et al.           Expires November 14, 2014              [Page 18]
 
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
+
+      <csvDomain:fApplicationStatusDescription>  Human-readable text
+         that describes the rationale for the <csvDomain:
+         fApplicationStatus> value with type="token".
+
+      <csvDomain:fApplicationStatusLang>  Language of the <csvDomain:
+         fApplicationStatusDescription> value with type="language".
 
       <csvDomain:fPhase>  Phase during which the application or
          registration is associated with or was submitted with
@@ -1048,13 +1055,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       <rdeCsv:fCrRr>  Identifier of the registrar, defined in
          Section 5.4, of the client that created the object.
 
-      <rdeCsv:fCrDate>  Created date and time of the domain name object.
-
-      <rdeCsv:fUpRr>  Identifier of the registrar, defined in
-         Section 5.4, of the client that updated the object.
-
-      <rdeCsv:fUpDate>  Date and time of the last update to the domain
-         name object.
 
 
 
@@ -1064,6 +1064,14 @@ Arias, et al.           Expires November 14, 2014              [Page 19]
 
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
+
+      <rdeCsv:fCrDate>  Created date and time of the domain name object.
+
+      <rdeCsv:fUpRr>  Identifier of the registrar, defined in
+         Section 5.4, of the client that updated the object.
+
+      <rdeCsv:fUpDate>  Date and time of the last update to the domain
+         name object.
 
       <rdeCsv:fExDate>  Expiration date and time for the domain name
          object.
@@ -1095,14 +1103,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          domain name object.
 
       Example of a "domain" <csvDomain:contents> <rdeCsv:csv> element:
-
-
-
-
-
-
-
-
 
 
 
@@ -4377,6 +4377,12 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       <csvNNDN:fOriginalName>  Domain name used to generate the IDN
          variant with type="eppcom:labelType".
 
+      <csvNNDN:fVariantGroup>  Variant group name / tag related to the
+         NNDN and related variant domain names with type="token".  All
+         NNDN records, using the <csvNNDN:fVariantGroup> field, and
+         domain names, using the <csvDomain:fVariantGroup> field, with
+         the same value are related variants.
+
       <csvNNDN:fNameState>  State of the NNDN: blocked or withheld with
          type="rdeNNDN:nameState".  See Section 5.6.1.1 for a
          description of the possible values for the <rdeNNDN:nameState>
@@ -4410,12 +4416,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 
-      <rdeCsv:fUName>  Name of the NNDN in Unicode character set for the
-         <csvNNDN:fAName> field element.
-
-      <rdeCsv:fIdnTableId>  IDN Table Identifier for the NNDN that
-         matches an IDN Table Reference Object record, as defined in
-         Section 5.5.2.
 
 
 
@@ -4424,6 +4424,15 @@ Arias, et al.           Expires November 14, 2014              [Page 79]
 
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
+
+
+
+      <rdeCsv:fUName>  Name of the NNDN in Unicode character set for the
+         <csvNNDN:fAName> field element.
+
+      <rdeCsv:fIdnTableId>  IDN Table Identifier for the NNDN that
+         matches an IDN Table Reference Object record, as defined in
+         Section 5.5.2.
 
       Example of a "NNDN" <csvNNDN:contents> <rdeCsv:csv> element:
 
@@ -4464,21 +4473,16 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    xn--exampl2-gva.test,pt-BR,xn--exampl.test,
    mirrored,1,2005-04-23T11:49:00.0Z
 
-      Example of a "NNDN" <csvNNDN:deletes> <rdeCsv:csv> element:
-
-
-
-
-
-
-
-
 
 
 
 Arias, et al.           Expires November 14, 2014              [Page 80]
 
 Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
+      Example of a "NNDN" <csvNNDN:deletes> <rdeCsv:csv> element:
+
 
 
    ...
@@ -4524,11 +4528,7 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    o  One or more <version> elements that indicate the EPP versions
       supported by the registry.
 
-   o  One or more <lang> elements that indicate the identifiers of the
-      text response languages supported by the registry's EPP server.
 
-   o  One or more <objURI> elements that contain namespace URIs
-      representing the objects that the registry's EPP server is capable
 
 
 
@@ -4537,6 +4537,11 @@ Arias, et al.           Expires November 14, 2014              [Page 81]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+   o  One or more <lang> elements that indicate the identifiers of the
+      text response languages supported by the registry's EPP server.
+
+   o  One or more <objURI> elements that contain namespace URIs
+      representing the objects that the registry's EPP server is capable
       of managing.
 
    o  An OPTIONAL <svcExtension> element that contains one or more
@@ -4548,6 +4553,44 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       section 2.4 of [RFC5730] for more details.
 
    Example of <eppParams> element object:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 82]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -4583,16 +4626,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    </rdeEppParams:eppParams>
    ...
 
-
-
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 82]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
 5.8.  Policy Object
 
    The Policy object is a pseudo-object that is used to specify which
@@ -4605,6 +4638,16 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 5.8.1.  <rdePolicy:policy> object
 
    The OPTIONAL <policy> contains the following attributes:
+
+
+
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 83]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
    o  An <element> that defines that the referenced <element> is
       REQUIRED.
@@ -4641,14 +4684,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       deposit: differential, full or incremental.  The "uri" attributes
       reflects the XML namespace URI of the primary objects for the XML
       Model and CSV Model.  For example, the "uri" is set to
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 83]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
       "urn:ietf:params:xml:ns:rdeDomain-1.0" for domain name objects
       using the XML Model, and the "uri" is set to
       "urn:ietf:params:xml:ns:csvDomain-1.0" for domain name objects
@@ -4656,6 +4691,18 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
    Example of <rdeHeader:header> object referencing only the XML Model
    objects:
+
+
+
+
+
+
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 84]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    ...
@@ -4684,27 +4731,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    Model objects:
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 84]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    ...
    <rdeHeader:header>
      <rdeHeader:tld>test</rdeHeader:tld>
@@ -4728,6 +4754,13 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    ...
 
 
+
+
+Arias, et al.           Expires November 14, 2014              [Page 85]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
 6.  RDE IDN Variants handling
 
    Depending on the Registration Policy of the Registry; for a
@@ -4749,16 +4782,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    variant while an IDN variant computed based on an algorithm is an
    implicit representation.  Explicit representation of an IDN variant
    takes precedence over an implicit representation.
-
-
-
-
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 85]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
 7.  Profile
@@ -4787,6 +4810,13 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    3.  Adding new escrowed objects using the <rde:contents> and <rde:
        deletes> elements.
 
+
+
+Arias, et al.           Expires November 14, 2014              [Page 86]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
    4.  Providing the XML schemas to third parties that require them to
        validate the escrow deposits.
 
@@ -4810,13 +4840,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       to the number objects reported in the <header> element of the
       escrow deposit of that point in time (watermark).
 
-
-
-Arias, et al.           Expires November 14, 2014              [Page 86]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    o  All contacts objects linked to domain names MUST be present.
 
    o  All registrars objects linked to other objects MUST be present.
@@ -4838,6 +4861,17 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 9.  Formal Syntax
 
    Schemas are presented here.
+
+
+
+
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 87]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
 9.1.  RDE CSV Schema
 
@@ -4865,14 +4899,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
    A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 87]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
    LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
@@ -4895,6 +4921,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      Import common element types
      -->
      <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 88]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
           schemaLocation="eppcom-1.0.xsd"/>
      <import namespace="urn:ietf:params:xml:ns:rde-1.0"
           schemaLocation="rde-1.0.xsd"/>
@@ -4921,14 +4955,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      <!-- field seperator must be a single character -->
      <simpleType name="sepType">
        <restriction base="string">
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 88]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
          <minLength value="1"/>
          <maxLength value="1"/>
        </restriction>
@@ -4951,6 +4977,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
            default="false"/>
          <attribute name="parent" type="boolean"/>
        </extension>
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 89]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
      </complexContent>
     </complexType>
 
@@ -4977,14 +5011,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        <extension base="rdeCsv:fieldOptionalType">
          <sequence/>
          <attribute name="type" type="token"
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 89]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
            default="eppcom\:labelType"/>
        </extension>
      </complexContent>
@@ -5007,6 +5033,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      <complexContent>
        <extension base="rdeCsv:fieldRequiredType">
          <sequence/>
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 90]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
          <attribute name="type" type="token"
            default="eppcom\:roidType"/>
        </extension>
@@ -5033,14 +5067,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
     <!-- clID fields (fClID, fCrID, fUpID) -->
     <!-- Identifier of client that sponsors the object -->
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 90]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
     <element name="fClID" type="rdeCsv:fClIDRequiredType"
      substitutionGroup="rdeCsv:field"/>
     <!-- Identifier of registrar of client
@@ -5063,6 +5089,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      substitutionGroup="rdeCsv:field"/>
     <!-- Identifier of client that requested
     the transfer -->
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 91]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
     <element name="fReID" type="rdeCsv:fClIDType"
      substitutionGroup="rdeCsv:field"/>
     <!-- Identifier of registrar client that
@@ -5089,14 +5123,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          <attribute name="type" type="token"
            default="eppcom\:clIDType"/>
        </extension>
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 91]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      </complexContent>
     </complexType>
 
@@ -5119,6 +5145,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
     <complexType name="fDateTimeType">
      <complexContent>
        <extension base="rdeCsv:fieldOptionalType">
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 92]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
          <sequence/>
          <attribute name="type" type="token"
            default="dateTime"/>
@@ -5145,14 +5179,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          <attribute name="type" type="token"
            default="unsignedByte"/>
        </extension>
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 92]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      </complexContent>
     </complexType>
 
@@ -5175,6 +5201,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          <attribute name="type" type="token"
            default="hexBinary"/>
        </extension>
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 93]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
      </complexContent>
     </complexType>
 
@@ -5201,14 +5235,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      substitutionGroup="rdeCsv:field"/>
     <complexType name="fTrStatusType">
      <complexContent>
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 93]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
        <extension base="rdeCsv:fieldOptionalType">
          <sequence/>
          <attribute name="type" type="token"
@@ -5231,6 +5257,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
     <!-- General normalizedString type -->
     <complexType name="fNormalizedStringType">
      <complexContent>
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 94]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
        <extension base="rdeCsv:fieldOptionalType">
          <sequence/>
          <attribute name="type" type="token"
@@ -5257,14 +5291,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      <complexContent>
        <extension base="rdeCsv:fieldOptionalType">
          <sequence/>
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 94]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
          <attribute name="name" type="token"/>
          <attribute name="type" type="token"
            default="token"/>
@@ -5286,6 +5312,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          maxOccurs="unbounded"/>
      </sequence>
     </complexType>
+
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 95]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
     <!-- File definition -->
     <complexType name="fileType">
@@ -5313,14 +5347,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
     </complexType>
 
      <!--
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 95]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      End of schema.
      -->
    </schema>
@@ -5342,6 +5368,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       notice, this list of conditions and the following disclaimer in
       the documentation and/or other materials provided with the
       distribution.
+
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 96]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
    o  Neither the name of Internet Society, IETF or IETF Trust, nor the
       names of specific contributors, may be used to endorse or promote
@@ -5369,14 +5403,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      xmlns:rgp="urn:ietf:params:xml:ns:rgp-1.0"
      xmlns:secDNS="urn:ietf:params:xml:ns:secDNS-1.1"
      xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 96]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
      xmlns="http://www.w3.org/2001/XMLSchema"
      elementFormDefault="qualified">
@@ -5399,6 +5425,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        substitutionGroup="rde:content" abstract="true"/>
      <element name="domain"
        substitutionGroup="rdeDomain:abstractDomain"/>
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 97]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
      <element name="delete"
        type="rdeDomain:deleteType"
        substitutionGroup="rde:delete"/>
@@ -5425,14 +5459,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
                maxOccurs="unbounded"/>
              <element name="registrant"
                type="eppcom:clIDType" minOccurs="0"/>
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 97]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
              <element name="contact"
                type="domain:contactType"
                minOccurs="0" maxOccurs="unbounded"/>
@@ -5455,6 +5481,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
              <element name="trDate"
                type="dateTime" minOccurs="0"/>
              <element name="trnData"
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 98]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
                type="rdeDomain:transferDataType"
                minOccurs="0"/>
            </sequence>
@@ -5481,14 +5515,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
      <!-- Delete Type -->
      <complexType name="deleteType">
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 98]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
        <complexContent>
          <extension base="rde:deleteType">
            <sequence>
@@ -5510,6 +5536,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions
    are met:
+
+
+
+
+Arias, et al.           Expires November 14, 2014              [Page 99]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
    o  Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
@@ -5537,14 +5571,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
    BEGIN
-
-
-
-Arias, et al.           Expires November 14, 2014              [Page 99]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    <?xml version="1.0" encoding="UTF-8"?>
 
    <schema targetNamespace="urn:ietf:params:xml:ns:csvDomain-1.0"
@@ -5567,6 +5593,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
           schemaLocation="eppcom-1.0.xsd"/>
      <import namespace="urn:ietf:params:xml:ns:domain-1.0"
           schemaLocation="domain-1.0.xsd"/>
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 100]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
      <import namespace="urn:ietf:params:xml:ns:secDNS-1.1"
           schemaLocation="secDNS-1.1.xsd"/>
      <import namespace="urn:ietf:params:xml:ns:rgp-1.0"
@@ -5593,14 +5627,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      substitutionGroup="rde:content"/>
 
      <complexType name="contentType">
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 100]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
       <complexContent>
        <extension base="rde:contentType">
           <sequence>
@@ -5623,6 +5649,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
             <element ref="rdeCsv:csv" maxOccurs="unbounded"/>
           </sequence>
        </extension>
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 101]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
       </complexContent>
      </complexType>
 
@@ -5635,7 +5669,8 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      substitutionGroup="rdeCsv:field"/>
 
     <!-- Application ID field -->
-    <element name="fApplicationID" type="csvDomain:fApplicationIDType"
+    <element name="fApplicationID"
+     type="csvDomain:fApplicationIDType"
      substitutionGroup="rdeCsv:field"/>
 
     <complexType name="fApplicationIDType">
@@ -5649,14 +5684,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
     </complexType>
 
     <!-- Launch Phase field -->
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 101]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
     <element name="fPhase" type="csvDomain:fPhaseType"
      substitutionGroup="rdeCsv:field"/>
 
@@ -5678,6 +5705,13 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
     <element name="fApplicationStatus"
       type="csvDomain:fApplicationStatusType"
       substitutionGroup="rdeCsv:field"/>
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 102]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
     <complexType name="fApplicationStatusType">
      <complexContent>
@@ -5705,14 +5739,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       substitutionGroup="rdeCsv:field"/>
 
     <!-- SMD ID field -->
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 102]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
     <element name="fSmdID"
       type="rdeCsv:fTokenType"
       substitutionGroup="rdeCsv:field"/>
@@ -5735,6 +5761,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
     <!-- Mark File Checksum field -->
     <element name="fMarkFileCksum"
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 103]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
       type="rdeCsv:fTokenType"
       substitutionGroup="rdeCsv:field"/>
 
@@ -5761,14 +5795,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
     <complexType name="fClaimsValidatorIDType">
      <complexContent>
        <extension base="rdeCsv:fieldOptionalType">
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 103]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
          <sequence/>
          <attribute name="type" type="token"
          default="launch\:validatorIDType"/>
@@ -5791,6 +5817,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          <sequence/>
          <attribute name="type" type="token"
          default="rgp\:statusValueType"/>
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 104]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
        </extension>
      </complexContent>
     </complexType>
@@ -5798,7 +5832,8 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
     <!-- Contact type field -->
-    <element name="fContactType" type="csvDomain:fContactsTypeType"
+    <element name="fContactType"
+     type="csvDomain:fContactsTypeType"
      substitutionGroup="rdeCsv:field"/>
 
     <complexType name="fContactsTypeType">
@@ -5817,14 +5852,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
     <element name="fMaxSigLife" type="csvDomain:fMaxSigLifeType"
      substitutionGroup="rdeCsv:field"/>
     <complexType name="fMaxSigLifeType">
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 104]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      <complexContent>
        <extension base="rdeCsv:fieldOptionalType">
          <sequence/>
@@ -5845,6 +5872,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
     <!-- Digest type field -->
     <element name="fDigestType" type="rdeCsv:fUnsignedByteType"
      substitutionGroup="rdeCsv:field"/>
+
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 105]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
     <!-- Digest field -->
     <element name="fDigest" type="rdeCsv:fHexBinaryType"
@@ -5873,19 +5908,16 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          default="secDNS\:keyType"/>
        </extension>
      </complexContent>
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 105]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
     </complexType>
 
     <!-- Original Domain Name for Variant field -->
     <element name="fOriginalName" type="rdeCsv:fNameType"
      substitutionGroup="rdeCsv:field"/>
+
+    <!-- Variant group / tag field -->
+    <element name="fVariantGroup"
+      type="rdeCsv:fTokenType"
+      substitutionGroup="rdeCsv:field"/>
 
     <!-- Domain status field -->
     <element name="fStatus" type="csvDomain:fStatusType"
@@ -5897,6 +5929,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        <extension base="rdeCsv:fieldOptionalType">
          <sequence/>
          <attribute name="type" type="token"
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 106]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
            default="domain\:statusValueType"/>
        </extension>
      </complexContent>
@@ -5930,13 +5970,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       products derived from this software without specific prior written
       permission.
 
-
-
-Arias, et al.           Expires November 14, 2014             [Page 106]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -5952,6 +5985,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    BEGIN
    <?xml version="1.0" encoding="UTF-8"?>
    <schema targetNamespace="urn:ietf:params:xml:ns:rdeHost-1.0"
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 107]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
      xmlns:rdeHost="urn:ietf:params:xml:ns:rdeHost-1.0"
      xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
      xmlns:host="urn:ietf:params:xml:ns:host-1.0"
@@ -5985,14 +6026,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
              <element name="roid"
                type="eppcom:roidType"/>
              <element name="status"
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 107]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
                type="host:statusType" maxOccurs="7"/>
              <element name="addr"
                type="host:addrType" minOccurs="0"
@@ -6008,6 +6041,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
              <element name="upDate"
                type="dateTime" minOccurs="0"/>
              <element name="trDate"
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 108]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
                type="dateTime" minOccurs="0"/>
            </sequence>
          </extension>
@@ -6039,16 +6080,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    modification, are permitted provided that the following conditions
    are met:
 
-
-
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 108]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    o  Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
 
@@ -6066,6 +6097,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
    A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 109]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
    OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
    LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
@@ -6098,13 +6137,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      <import namespace="urn:ietf:params:xml:ns:rdeCsv-1.0"
           schemaLocation="rdeCsv-1.0.xsd"/>
 
-
-
-Arias, et al.           Expires November 14, 2014             [Page 109]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      <annotation>
       <documentation>
        Host Comma-Separated Values (CSV) Object
@@ -6121,6 +6153,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       <complexContent>
        <extension base="rde:contentType">
           <sequence>
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 110]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
             <element ref="rdeCsv:csv" maxOccurs="unbounded"/>
           </sequence>
        </extension>
@@ -6153,14 +6193,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
     <!-- IP address field -->
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 110]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
     <element name="fAddr" type="csvHost:fAddrType"
      substitutionGroup="rdeCsv:field"/>
     <complexType name="fAddrType">
@@ -6177,6 +6209,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
     <element name="fAddrVersion" type="csvHost:fAddrVersionType"
      substitutionGroup="rdeCsv:field"/>
     <complexType name="fAddrVersionType">
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 111]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
      <complexContent>
        <extension base="rdeCsv:fieldOptionalType">
          <sequence/>
@@ -6207,16 +6247,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    </schema>
    END
 
-
-
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 111]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
 9.6.  RDE Contact Object
 
    Copyright (c) 2011 IETF Trust and the persons identified as authors
@@ -6233,6 +6263,15 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       notice, this list of conditions and the following disclaimer in
       the documentation and/or other materials provided with the
       distribution.
+
+
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 112]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
    o  Neither the name of Internet Society, IETF or IETF Trust, nor the
       names of specific contributors, may be used to endorse or promote
@@ -6266,13 +6305,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      <import namespace="urn:ietf:params:xml:ns:contact-1.0"/>
      <import namespace="urn:ietf:params:xml:ns:rde-1.0"/>
 
-
-
-Arias, et al.           Expires November 14, 2014             [Page 112]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      <annotation>
        <documentation>
          Registry Data Escrow contact provisioning schema
@@ -6289,6 +6321,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        substitutionGroup="rde:delete"/>
 
      <!-- Contact Type -->
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 113]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
      <complexType name="abstractContentType">
        <complexContent>
          <extension base="rde:contentType">
@@ -6321,14 +6361,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
                type="dateTime" minOccurs="0"/>
              <element name="trnData"
                type="rdeContact:transferDataType" minOccurs="0"/>
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 113]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
              <element name="disclose"
                type="contact:discloseType" minOccurs="0"/>
            </sequence>
@@ -6345,6 +6377,12 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          <element name="acDate" type="dateTime"/>
        </sequence>
      </complexType>
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 114]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
      <!-- Delete Type -->
@@ -6377,14 +6415,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    o  Redistributions in binary form must reproduce the above copyright
       notice, this list of conditions and the following disclaimer in
       the documentation and/or other materials provided with the
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 114]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
       distribution.
 
    o  Neither the name of Internet Society, IETF or IETF Trust, nor the
@@ -6403,6 +6433,13 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 115]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
    BEGIN
    <?xml version="1.0" encoding="UTF-8"?>
@@ -6434,13 +6471,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      </documentation>
    </annotation>
 
-
-
-Arias, et al.           Expires November 14, 2014             [Page 115]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      <!--
      Child elements of the <rde:contents> object
      -->
@@ -6459,6 +6489,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
      <!--
      Child elements of the <rde:deletes> object
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 116]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
      -->
      <element name="deletes" type="csvContact:deleteType"
      substitutionGroup="rde:delete"/>
@@ -6489,14 +6527,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
     <!-- Contact Registry Object IDentifier (roid) field -->
     <element name="fRoid" type="rdeCsv:fRoidType"
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 116]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      substitutionGroup="rdeCsv:field"/>
 
     <!-- Is Registrar Contact field -->
@@ -6515,6 +6545,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        <extension base="rdeCsv:fieldOptionalType">
          <sequence/>
          <attribute name="type" type="token"
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 117]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
          default="contact\:e164StringType"/>
        </extension>
      </complexContent>
@@ -6545,14 +6583,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       Postal type field
       ("loc" = localized, "int" = internationalized)
     -->
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 117]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
     <element name="fPostalType" type="csvContact:fPostalTypeType"
      substitutionGroup="rdeCsv:field"/>
     <complexType name="fPostalTypeType">
@@ -6571,6 +6601,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        <extension base="rdeCsv:fieldRequiredType">
          <sequence/>
          <attribute name="type" type="token"
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 118]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
          default="contact\:postalLineType"/>
          <attribute name="isLoc" type="boolean"/>
        </extension>
@@ -6601,14 +6639,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
     <!-- Street address line field with required index attribute  -->
     <!-- starting with index 0.  -->
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 118]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
     <element name="fStreet" type="csvContact:fStreetType"
      substitutionGroup="rdeCsv:field"/>
     <complexType name="fStreetType">
@@ -6627,6 +6657,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
     <!-- Contact's state or province field -->
     <element name="fSp" type="csvContact:fOptPostalLineType"
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 119]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
      substitutionGroup="rdeCsv:field"/>
 
     <!-- Contact's postal code field -->
@@ -6657,14 +6695,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      </complexContent>
     </complexType>
 
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 119]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
     <!-- Disclosure element fields -->
     <!-- Flag of "1" to allow disclosure
          and "0" to disallow disclosure -->
@@ -6683,6 +6713,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
     <element name="fDiscloseOrgLoc" type="csvContact:fBoolean"
      substitutionGroup="rdeCsv:field"/>
     <!-- Disclosure of internationalized org
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 120]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
          based on fDiscloseFlag? -->
     <element name="fDiscloseOrgInt" type="csvContact:fBoolean"
      substitutionGroup="rdeCsv:field"/>
@@ -6713,14 +6751,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          <attribute name="type" type="token"
          default="boolean"/>
        </extension>
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 120]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      </complexContent>
     </complexType>
 
@@ -6738,6 +6768,13 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        </extension>
      </complexContent>
     </complexType>
+
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 121]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
    <!--
@@ -6769,14 +6806,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       permission.
 
    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 121]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
    A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
@@ -6796,6 +6825,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"
      xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
      xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 122]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
      xmlns="http://www.w3.org/2001/XMLSchema"
      elementFormDefault="qualified">
 
@@ -6825,14 +6862,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          <extension base="rde:contentType">
            <sequence>
              <element name="id"
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 122]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
                type="eppcom:clIDType"/>
              <element name="name"
                type="rdeRegistrar:nameType"/>
@@ -6852,6 +6881,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
              <element name="url"
                type="anyURI" minOccurs="0"/>
              <element name="whoisInfo"
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 123]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
                type="rdeRegistrar:whoisInfoType" minOccurs="0"/>
              <element name="crDate"
                type="dateTime"/>
@@ -6881,14 +6918,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        <sequence>
          <element name="addr"
            type="rdeRegistrar:addrType" />
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 123]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
        </sequence>
        <attribute name="type"
          type="rdeRegistrar:postalInfoEnumType"
@@ -6908,6 +6937,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
            type="rdeRegistrar:optPostalLineType"
            minOccurs="0" maxOccurs="3" />
          <element name="city"
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 124]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
            type="rdeRegistrar:postalLineType" />
          <element name="sp"
            type="rdeRegistrar:optPostalLineType"
@@ -6938,13 +6975,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        </restriction>
      </simpleType>
 
-
-
-Arias, et al.           Expires November 14, 2014             [Page 124]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      <simpleType name="ccType">
        <restriction base="token">
          <length value="2" />
@@ -6963,6 +6993,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      <!-- Delete Type -->
      <complexType name="deleteType">
        <complexContent>
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 125]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
          <extension base="rde:deleteType">
            <sequence>
              <element name="id"
@@ -6992,15 +7030,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       the documentation and/or other materials provided with the
       distribution.
 
-
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 125]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    o  Neither the name of Internet Society, IETF or IETF Trust, nor the
       names of specific contributors, may be used to endorse or promote
       products derived from this software without specific prior written
@@ -7020,6 +7049,13 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
    BEGIN
    <?xml version="1.0" encoding="UTF-8"?>
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 126]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
    <schema targetNamespace="urn:ietf:params:xml:ns:csvRegistrar-1.0"
          xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
@@ -7049,14 +7085,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       <documentation>
        Registar Comma-Separated Values (CSV) Object
       </documentation>
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 126]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      </annotation>
 
      <!--
@@ -7077,6 +7105,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
      <!--
      Child elements of the <rde:deletes> object
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 127]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
      -->
      <element name="deletes" type="csvRegistrar:deleteType"
      substitutionGroup="rde:delete"/>
@@ -7105,14 +7141,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      <complexContent>
        <extension base="rdeCsv:fieldRequiredType">
          <sequence/>
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 127]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
          <attribute name="type" type="token"
          default="normalizedString"/>
          <attribute name="isLoc" type="boolean" default="false"/>
@@ -7133,6 +7161,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      substitutionGroup="rdeCsv:field"/>
     <complexType name="fStatusType">
      <complexContent>
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 128]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
        <extension base="rdeCsv:fieldOptionalType">
          <sequence/>
          <attribute name="type" type="token"
@@ -7161,14 +7197,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
     <!-- Whois URL field -->
     <element name="fWhoisUrl"
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 128]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      type="rdeCsv:anyURIType"
      substitutionGroup="rdeCsv:field"/>
 
@@ -7187,6 +7215,15 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions
    are met:
+
+
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 129]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
    o  Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
@@ -7217,14 +7254,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    <?xml version="1.0" encoding="UTF-8"?>
    <schema targetNamespace="urn:ietf:params:xml:ns:rdeIDN-1.0"
      xmlns:rdeIDN="urn:ietf:params:xml:ns:rdeIDN-1.0"
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 129]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
      xmlns="http://www.w3.org/2001/XMLSchema"
      elementFormDefault="qualified">
@@ -7244,6 +7273,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
      <!-- Content Types -->
      <complexType name="contentType">
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 130]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
        <complexContent>
        <extension base="rde:contentType">
          <sequence>
@@ -7273,14 +7310,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        </restriction>
      </simpleType>
 
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 130]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    </schema>
    END
 
@@ -7300,6 +7329,13 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       notice, this list of conditions and the following disclaimer in
       the documentation and/or other materials provided with the
       distribution.
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 131]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
    o  Neither the name of Internet Society, IETF or IETF Trust, nor the
       names of specific contributors, may be used to endorse or promote
@@ -7329,14 +7365,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          elementFormDefault="qualified">
 
      <!--
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 131]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      Import common element types
      -->
      <import namespace="urn:ietf:params:xml:ns:rde-1.0"
@@ -7357,6 +7385,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      substitutionGroup="rde:content"/>
 
      <complexType name="contentType">
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 132]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
       <complexContent>
        <extension base="rde:contentType">
           <sequence>
@@ -7385,14 +7421,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      <!--
      End of schema.
      -->
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 132]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    </schema>
    END
 
@@ -7412,6 +7440,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       notice, this list of conditions and the following disclaimer in
       the documentation and/or other materials provided with the
       distribution.
+
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 133]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
    o  Neither the name of Internet Society, IETF or IETF Trust, nor the
       names of specific contributors, may be used to endorse or promote
@@ -7441,14 +7477,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      elementFormDefault="qualified">
 
      <import namespace="urn:ietf:params:xml:ns:epp-1.0"/>
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 133]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/>
      <import namespace="urn:ietf:params:xml:ns:rde-1.0"/>
 
@@ -7469,6 +7497,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      <complexType name="abstractContentType">
        <complexContent>
          <extension base="rde:contentType">
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 134]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
            <sequence>
              <element name="version" type="epp:versionType"
                maxOccurs="unbounded"/>
@@ -7497,14 +7533,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    modification, are permitted provided that the following conditions
    are met:
 
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 134]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    o  Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
 
@@ -7525,6 +7553,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
    LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 135]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
    DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
@@ -7553,14 +7589,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      <element name="abstractNNDN" type="rdeNNDN:abstractContentType"
        substitutionGroup="rde:content" abstract="true"/>
      <element name="NNDN" substitutionGroup="rdeNNDN:abstractNNDN"/>
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 135]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
      <element name="delete" type="rdeNNDN:deleteType"
        substitutionGroup="rde:delete"/>
 
@@ -7581,6 +7609,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
                type="rdeNNDN:nameState"/>
              <element name="crDate"
                type="dateTime"/>
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 136]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
            </sequence>
          </extension>
        </complexContent>
@@ -7609,14 +7645,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          <extension base="rde:deleteType">
            <sequence>
              <element name="aName"
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 136]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
                type="eppcom:labelType" minOccurs="0"
                maxOccurs="unbounded"/>
            </sequence>
@@ -7634,6 +7662,16 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions
    are met:
+
+
+
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 137]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
 
    o  Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
@@ -7665,14 +7703,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
    <schema targetNamespace="urn:ietf:params:xml:ns:csvNNDN-1.0"
           xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 137]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
           xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
           xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
           xmlns:rdeNNDN="urn:ietf:params:xml:ns:rdeNNDN-1.0"
@@ -7691,6 +7721,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
      <annotation>
       <documentation>
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 138]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
        NNDN (NNDN's not domain name) (CSV) Object
       </documentation>
      </annotation>
@@ -7721,14 +7759,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       <complexContent>
        <extension base="rde:deleteType">
           <sequence>
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 138]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
             <element ref="rdeCsv:csv" maxOccurs="unbounded"/>
           </sequence>
        </extension>
@@ -7743,6 +7773,19 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
     <!-- domain name used to generate the IDN variant field -->
     <element name="fOriginalName" type="rdeCsv:fNameType"
      substitutionGroup="rdeCsv:field"/>
+
+    <!-- Variant group / tag field -->
+    <element name="fVariantGroup"
+      type="rdeCsv:fTokenType"
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 139]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
+      substitutionGroup="rdeCsv:field"/>
 
     <!-- RGP status field -->
     <element name="fNameState"
@@ -7778,13 +7821,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    modification, are permitted provided that the following conditions
    are met:
 
-
-
-Arias, et al.           Expires November 14, 2014             [Page 139]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
    o  Redistributions of source code must retain the above copyright
       notice, this list of conditions and the following disclaimer.
 
@@ -7798,6 +7834,13 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
       products derived from this software without specific prior written
       permission.
 
+
+
+Arias, et al.           Expires November 14, 2014             [Page 140]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -7809,37 +7852,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 140]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
 
    BEGIN
    <?xml version="1.0" encoding="UTF-8"?>
@@ -7877,6 +7889,14 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions
+
+
+
+Arias, et al.           Expires November 14, 2014             [Page 141]
+
+Internet-Draft            DNRD Objects Mapping                  May 2014
+
+
    are met:
 
    o  Redistributions of source code must retain the above copyright
@@ -7889,14 +7909,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
 
    o  Neither the name of Internet Society, IETF or IETF Trust, nor the
       names of specific contributors, may be used to endorse or promote
-
-
-
-Arias, et al.           Expires November 14, 2014             [Page 141]
-
-Internet-Draft            DNRD Objects Mapping                  May 2014
-
-
       products derived from this software without specific prior written
       permission.
 
@@ -7911,18 +7923,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -8575,6 +8575,10 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        fClaimsNoticeID>, <csvDomain:fClaimsValidatorID>, <csvDomain:
        fClaimsAcceptedDate>.
 
+   4.  Added the <csvDomain:fVariantGroup> and <csvNNDN:fVariantGroup>
+       fields to name / tag related domain name and NNDN variants, based
+       on feedback from Klaus Malorny on the ire list.
+
 
 15.  Example of a full deposit using the XML model
 
@@ -8613,10 +8617,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        </rde:objURI>
        <rde:objURI>urn:ietf:params:xml:ns:rdeIDN-1.0
        </rde:objURI>
-       <rde:objURI>urn:ietf:params:xml:ns:rdeNNDN-1.0
-       </rde:objURI>
-       <rde:objURI>urn:ietf:params:xml:ns:rdeEppParams-1.0
-       </rde:objURI>
 
 
 
@@ -8625,6 +8625,10 @@ Arias, et al.           Expires November 14, 2014             [Page 154]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+       <rde:objURI>urn:ietf:params:xml:ns:rdeNNDN-1.0
+       </rde:objURI>
+       <rde:objURI>urn:ietf:params:xml:ns:rdeEppParams-1.0
+       </rde:objURI>
      </rde:rdeMenu>
 
      <!-- Contents -->
@@ -8669,10 +8673,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          </rdeDom:ns>
          <rdeDom:clID>RegistrarX</rdeDom:clID>
          <rdeDom:crRr client="jdoe">RegistrarX</rdeDom:crRr>
-         <rdeDom:crDate>1999-04-03T22:00:00.0Z</rdeDom:crDate>
-         <rdeDom:exDate>2015-04-03T22:00:00.0Z</rdeDom:exDate>
-       </rdeDom:domain>
-
 
 
 
@@ -8680,6 +8680,10 @@ Arias, et al.           Expires November 14, 2014             [Page 155]
 
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
+
+         <rdeDom:crDate>1999-04-03T22:00:00.0Z</rdeDom:crDate>
+         <rdeDom:exDate>2015-04-03T22:00:00.0Z</rdeDom:exDate>
+       </rdeDom:domain>
 
        <!-- Domian: example2.test -->
        <rdeDom:domain>
@@ -8725,10 +8729,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
            <contact:addr>
              <contact:street>123 Example Dr.</contact:street>
              <contact:street>Suite 100</contact:street>
-             <contact:city>Dulles</contact:city>
-             <contact:sp>VA</contact:sp>
-             <contact:pc>20166-6503</contact:pc>
-             <contact:cc>US</contact:cc>
 
 
 
@@ -8737,6 +8737,10 @@ Arias, et al.           Expires November 14, 2014             [Page 156]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+             <contact:city>Dulles</contact:city>
+             <contact:sp>VA</contact:sp>
+             <contact:pc>20166-6503</contact:pc>
+             <contact:cc>US</contact:cc>
            </contact:addr>
          </rdeContact:postalInfo>
          <rdeContact:voice x="1234">+1.7035555555
@@ -8781,10 +8785,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
            </rdeRegistrar:addr>
          </rdeRegistrar:postalInfo>
          <rdeRegistrar:voice x="1234">+1.7035555555
-         </rdeRegistrar:voice>
-         <rdeRegistrar:fax>+1.7035555556
-         </rdeRegistrar:fax>
-         <rdeRegistrar:email>jdoe@example.test
 
 
 
@@ -8793,6 +8793,10 @@ Arias, et al.           Expires November 14, 2014             [Page 157]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+         </rdeRegistrar:voice>
+         <rdeRegistrar:fax>+1.7035555556
+         </rdeRegistrar:fax>
+         <rdeRegistrar:email>jdoe@example.test
          </rdeRegistrar:email>
          <rdeRegistrar:url>http://www.example.test
          </rdeRegistrar:url>
@@ -8837,10 +8841,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          <rdeEppParams:objURI>
            urn:ietf:params:xml:ns:contact-1.0
          </rdeEppParams:objURI>
-         <rdeEppParams:objURI>
-           urn:ietf:params:xml:ns:host-1.0
-         </rdeEppParams:objURI>
-         <rdeEppParams:svcExtension>
 
 
 
@@ -8849,6 +8849,10 @@ Arias, et al.           Expires November 14, 2014             [Page 158]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+         <rdeEppParams:objURI>
+           urn:ietf:params:xml:ns:host-1.0
+         </rdeEppParams:objURI>
+         <rdeEppParams:svcExtension>
            <epp:extURI>urn:ietf:params:xml:ns:rgp-1.0
            </epp:extURI>
            <epp:extURI>urn:ietf:params:xml:ns:secDNS-1.1
@@ -8893,10 +8897,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
      xmlns:rdeDom="urn:ietf:params:xml:ns:rdeDomain-1.0"
      xmlns:rdeHost="urn:ietf:params:xml:ns:rdeHost-1.0"
      xmlns:rdeContact="urn:ietf:params:xml:ns:rdeContact-1.0"
-     xmlns:rdeRegistrar="urn:ietf:params:xml:ns:rdeRegistrar-1.0"
-     xmlns:rdeIDN="urn:ietf:params:xml:ns:rdeIDN-1.0"
-     xmlns:rdeNNDN="urn:ietf:params:xml:ns:rdeNNDN-1.0"
-     xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
 
 
 
@@ -8905,6 +8905,10 @@ Arias, et al.           Expires November 14, 2014             [Page 159]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+     xmlns:rdeRegistrar="urn:ietf:params:xml:ns:rdeRegistrar-1.0"
+     xmlns:rdeIDN="urn:ietf:params:xml:ns:rdeIDN-1.0"
+     xmlns:rdeNNDN="urn:ietf:params:xml:ns:rdeNNDN-1.0"
+     xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
      xmlns:epp="urn:ietf:params:xml:ns:epp-1.0">
 
      <rde:watermark>2010-10-17T00:00:00Z</rde:watermark>
@@ -8949,10 +8953,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
          <rdeHeader:count
            uri="urn:ietf:params:xml:ns:rdeContact-1.0">1
            </rdeHeader:count>
-         <rdeHeader:count
-           uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0">1
-         </rdeHeader:count>
-         <rdeHeader:count
 
 
 
@@ -8961,6 +8961,10 @@ Arias, et al.           Expires November 14, 2014             [Page 160]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+         <rdeHeader:count
+           uri="urn:ietf:params:xml:ns:rdeRegistrar-1.0">1
+         </rdeHeader:count>
+         <rdeHeader:count
            uri="urn:ietf:params:xml:ns:rdeIDN-1.0">1
            </rdeHeader:count>
          <rdeHeader:count
@@ -9005,10 +9009,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        <rde:objURI>urn:ietf:params:xml:ns:csvNNDN-1.0</rde:objURI>
        <rde:objURI>urn:ietf:params:xml:ns:rdeEppParams-1.0</rde:objURI>
       </rde:rdeMenu>
-      <rde:contents>
-        <rdeHeader:header>
-         <rdeHeader:tld>test</rdeHeader:tld>
-         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvDomain-1.0">
 
 
 
@@ -9017,6 +9017,10 @@ Arias, et al.           Expires November 14, 2014             [Page 161]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+      <rde:contents>
+        <rdeHeader:header>
+         <rdeHeader:tld>test</rdeHeader:tld>
+         <rdeHeader:count uri="urn:ietf:params:xml:ns:csvDomain-1.0">
          4
          </rdeHeader:count>
          <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">
@@ -9061,10 +9065,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
               <rdeCsv:fCrID/>
               <rdeCsv:fCrDate/>
               <rdeCsv:fUpRr/>
-              <rdeCsv:fUpID/>
-              <rdeCsv:fUpDate/>
-              <rdeCsv:fExDate/>
-            </rdeCsv:fields>
 
 
 
@@ -9073,6 +9073,10 @@ Arias, et al.           Expires November 14, 2014             [Page 162]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+              <rdeCsv:fUpID/>
+              <rdeCsv:fUpDate/>
+              <rdeCsv:fExDate/>
+            </rdeCsv:fields>
             <rdeCsv:files>
               <rdeCsv:file
                 cksum="48BB04DE">
@@ -9117,10 +9121,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
               <rdeCsv:file
                 cksum="B11125AE">
                 domainNameServers-YYYYMMDD.csv
-              </rdeCsv:file>
-            </rdeCsv:files>
-          </rdeCsv:csv>
-          <rdeCsv:csv name="dnssec" sep=",">
 
 
 
@@ -9129,6 +9129,10 @@ Arias, et al.           Expires November 14, 2014             [Page 163]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+              </rdeCsv:file>
+            </rdeCsv:files>
+          </rdeCsv:csv>
+          <rdeCsv:csv name="dnssec" sep=",">
             <rdeCsv:fields>
               <csvDomain:fRoid parent="true"/>
               <csvDomain:fMaxSigLife/>
@@ -9173,10 +9177,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
               <rdeCsv:fExDate/>
             </rdeCsv:fields>
             <rdeCsv:files>
-              <rdeCsv:file
-                cksum="C1F4591A">
-                domainTransfer-YYYYMMDD.csv
-              </rdeCsv:file>
 
 
 
@@ -9185,6 +9185,10 @@ Arias, et al.           Expires November 14, 2014             [Page 164]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+              <rdeCsv:file
+                cksum="C1F4591A">
+                domainTransfer-YYYYMMDD.csv
+              </rdeCsv:file>
             </rdeCsv:files>
           </rdeCsv:csv>
         </csvDomain:contents>
@@ -9229,10 +9233,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
               <csvHost:fAddr/>
               <csvHost:fAddrVersion/>
             </rdeCsv:fields>
-            <rdeCsv:files>
-              <rdeCsv:file
-                cksum="17888F02">
-                hostAddresses-YYYYMMDD.csv
 
 
 
@@ -9241,6 +9241,10 @@ Arias, et al.           Expires November 14, 2014             [Page 165]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+            <rdeCsv:files>
+              <rdeCsv:file
+                cksum="17888F02">
+                hostAddresses-YYYYMMDD.csv
               </rdeCsv:file>
             </rdeCsv:files>
           </rdeCsv:csv>
@@ -9285,10 +9289,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
             </rdeCsv:files>
           </rdeCsv:csv>
           <rdeCsv:csv name="contactPostal" sep=",">
-            <rdeCsv:fields>
-              <csvContact:fId parent="true"/>
-              <csvContact:fPostalType/>
-              <csvContact:fName/>
 
 
 
@@ -9297,6 +9297,10 @@ Arias, et al.           Expires November 14, 2014             [Page 166]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+            <rdeCsv:fields>
+              <csvContact:fId parent="true"/>
+              <csvContact:fPostalType/>
+              <csvContact:fName/>
               <csvContact:fOrg/>
               <csvContact:fStreet index="0"/>
               <csvContact:fStreet index="1"/>
@@ -9341,10 +9345,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
               <csvContact:fDiscloseOrgInt/>
               <csvContact:fDiscloseAddrLoc/>
               <csvContact:fDiscloseAddrInt/>
-              <csvContact:fDiscloseVoice/>
-              <csvContact:fDiscloseFax/>
-              <csvContact:fDiscloseEmail/>
-            </rdeCsv:fields>
 
 
 
@@ -9353,6 +9353,10 @@ Arias, et al.           Expires November 14, 2014             [Page 167]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+              <csvContact:fDiscloseVoice/>
+              <csvContact:fDiscloseFax/>
+              <csvContact:fDiscloseEmail/>
+            </rdeCsv:fields>
             <rdeCsv:files>
               <rdeCsv:file
                 cksum="89043A90">
@@ -9397,10 +9401,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
           <rdeCsv:csv name="idnLanguage" sep=",">
             <rdeCsv:fields>
               <rdeCsv:fIdnTableId isRequired="true"/>
-              <rdeCsv:fUrl isRequired="true"/>
-            </rdeCsv:fields>
-            <rdeCsv:files>
-              <rdeCsv:file
 
 
 
@@ -9409,6 +9409,10 @@ Arias, et al.           Expires November 14, 2014             [Page 168]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+              <rdeCsv:fUrl isRequired="true"/>
+            </rdeCsv:fields>
+            <rdeCsv:files>
+              <rdeCsv:file
                 cksum="D462EAD0">
                 idnLanguage-YYYYMMDD.csv
               </rdeCsv:file>
@@ -9453,10 +9457,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
                <epp:all/>
              </epp:access>
              <epp:statement>
-               <epp:purpose>
-                 <epp:admin/>
-                 <epp:other/>
-                 <epp:prov/>
 
 
 
@@ -9465,6 +9465,10 @@ Arias, et al.           Expires November 14, 2014             [Page 169]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+               <epp:purpose>
+                 <epp:admin/>
+                 <epp:other/>
+                 <epp:prov/>
                </epp:purpose>
                <epp:recipient>
                  <epp:ours/>
@@ -9509,10 +9513,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
        <rde:objURI>urn:ietf:params:xml:ns:csvContact-1.0</rde:objURI>
        <rde:objURI>urn:ietf:params:xml:ns:csvRegistrar-1.0</rde:objURI>
        <rde:objURI>urn:ietf:params:xml:ns:csvIDN-1.0</rde:objURI>
-      </rde:rdeMenu>
-      <rde:deletes>
-       <csvNNDN:deletes>
-         <rdeCsv:csv name="NNDN">
 
 
 
@@ -9521,6 +9521,10 @@ Arias, et al.           Expires November 14, 2014             [Page 170]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+      </rde:rdeMenu>
+      <rde:deletes>
+       <csvNNDN:deletes>
+         <rdeCsv:csv name="NNDN">
            <rdeCsv:fields>
              <csvNNDN:fAName isRequired="true"/>
            </rdeCsv:fields>
@@ -9565,10 +9569,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
               <csvDomain:fName/>
               <csvDomain:fApplicationID/>
               <csvDomain:fPhase/>
-              <csvDomain:fPhaseName/>
-              <csvDomain:fApplicationStatus/>
-              <csvDomain:fSmdID/>
-              <csvDomain:fMarkFile/>
 
 
 
@@ -9577,6 +9577,10 @@ Arias, et al.           Expires November 14, 2014             [Page 171]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+              <csvDomain:fPhaseName/>
+              <csvDomain:fApplicationStatus/>
+              <csvDomain:fSmdID/>
+              <csvDomain:fMarkFile/>
               <csvDomain:fMarkFileCksum/>
               <csvDomain:fClaimsNoticeID/>
               <csvDomain:fClaimsValidatorID/>
@@ -9621,10 +9625,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
               <rdeCsv:fLang/>
               <csvDomain:fRgpStatus/>
             </rdeCsv:fields>
-            <rdeCsv:files>
-              <rdeCsv:file
-                cksum="C8B1B454">
-                domainStatuses-YYYYMMDD.csv
 
 
 
@@ -9633,6 +9633,10 @@ Arias, et al.           Expires November 14, 2014             [Page 172]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+            <rdeCsv:files>
+              <rdeCsv:file
+                cksum="C8B1B454">
+                domainStatuses-YYYYMMDD.csv
               </rdeCsv:file>
             </rdeCsv:files>
           </rdeCsv:csv>
@@ -9677,10 +9681,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
               <rdeCsv:file
                 cksum="B50B7B5D">
                 dnssec-key-YYYYMMDD.csv
-              </rdeCsv:file>
-            </rdeCsv:files>
-          </rdeCsv:csv>
-          <rdeCsv:csv name="domainTransfer" sep=",">
 
 
 
@@ -9689,6 +9689,10 @@ Arias, et al.           Expires November 14, 2014             [Page 173]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+              </rdeCsv:file>
+            </rdeCsv:files>
+          </rdeCsv:csv>
+          <rdeCsv:csv name="domainTransfer" sep=",">
             <rdeCsv:fields>
               <csvDomain:fRoid parent="true"/>
               <rdeCsv:fTrStatus/>
@@ -9733,10 +9737,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
             <rdeCsv:fields>
               <csvHost:fRoid parent="true"/>
               <csvHost:fStatus/>
-              <rdeCsv:fStatusDescription/>
-              <rdeCsv:fLang/>
-            </rdeCsv:fields>
-            <rdeCsv:files>
 
 
 
@@ -9745,6 +9745,10 @@ Arias, et al.           Expires November 14, 2014             [Page 174]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+              <rdeCsv:fStatusDescription/>
+              <rdeCsv:fLang/>
+            </rdeCsv:fields>
+            <rdeCsv:files>
               <rdeCsv:file
                 cksum="0BA504FC">
                 hostStatuses-YYYYMMDD.csv
@@ -9789,10 +9793,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
                contact-YYYYMMDD.csv
              </rdeCsv:file>
            </rdeCsv:files>
-         </rdeCsv:csv>
-         <rdeCsv:csv name="contactStatuses" sep=",">
-           <rdeCsv:fields>
-               <csvContact:fId parent="true"/>
 
 
 
@@ -9801,6 +9801,10 @@ Arias, et al.           Expires November 14, 2014             [Page 175]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+         </rdeCsv:csv>
+         <rdeCsv:csv name="contactStatuses" sep=",">
+           <rdeCsv:fields>
+               <csvContact:fId parent="true"/>
                <csvContact:fStatus/>
                <rdeCsv:fStatusDescription/>
                <rdeCsv:fLang/>
@@ -9845,10 +9849,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
              <rdeCsv:fAcDate/>
            </rdeCsv:fields>
            <rdeCsv:files>
-             <rdeCsv:file
-               cksum="D0929632">
-               contactTransfer-YYYYMMDD.csv
-             </rdeCsv:file>
 
 
 
@@ -9857,6 +9857,10 @@ Arias, et al.           Expires November 14, 2014             [Page 176]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+             <rdeCsv:file
+               cksum="D0929632">
+               contactTransfer-YYYYMMDD.csv
+             </rdeCsv:file>
            </rdeCsv:files>
          </rdeCsv:csv>
          <rdeCsv:csv name="contactDisclose" sep=",">
@@ -9901,10 +9905,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
              <csvContact:fFaxExt/>
              <csvContact:fEmail/>
              <rdeCsv:fUrl/>
-             <csvRegistrar:fWhoisUrl/>
-             <rdeCsv:fCrDate/>
-             <rdeCsv:fUpDate/>
-           </rdeCsv:fields>
 
 
 
@@ -9913,6 +9913,10 @@ Arias, et al.           Expires November 14, 2014             [Page 177]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+             <csvRegistrar:fWhoisUrl/>
+             <rdeCsv:fCrDate/>
+             <rdeCsv:fUpDate/>
+           </rdeCsv:fields>
            <rdeCsv:files>
              <rdeCsv:file
                cksum="306178BB">
@@ -9957,10 +9961,6 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
              <epp:statement>
                <epp:purpose>
                  <epp:admin/>
-                 <epp:other/>
-                 <epp:prov/>
-               </epp:purpose>
-               <epp:recipient>
 
 
 
@@ -9969,6 +9969,10 @@ Arias, et al.           Expires November 14, 2014             [Page 178]
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
 
+                 <epp:other/>
+                 <epp:prov/>
+               </epp:purpose>
+               <epp:recipient>
                  <epp:ours/>
                  <epp:public/>
                  <epp:unrelated/>
@@ -10014,16 +10018,15 @@ Internet-Draft            DNRD Objects Mapping                  May 2014
    [RFC5731]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
               Domain Name Mapping", STD 69, RFC 5731, August 2009.
 
-   [RFC5732]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
-              Host Mapping", STD 69, RFC 5732, August 2009.
-
-
 
 
 Arias, et al.           Expires November 14, 2014             [Page 179]
 
 Internet-Draft            DNRD Objects Mapping                  May 2014
 
+
+   [RFC5732]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
+              Host Mapping", STD 69, RFC 5732, August 2009.
 
    [RFC5733]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
               Contact Mapping", STD 69, RFC 5733, August 2009.
@@ -10069,9 +10072,6 @@ Authors' Addresses
 
    Phone: +1.310.823.9358
    Email: francisco.arias@icann.org
-
-
-
 
 
 

@@ -1220,6 +1220,12 @@ CSV Model</h3>
                       variant domain name object with type="eppcom:labelType".
                 
 </dd>
+<dt>&lt;csvDomain:fVariantGroup&gt;</dt>
+<dd>Variant group name / tag related to the variant domain name with type="token".  
+                All domain names, using the &lt;csvDomain:fVariantGroup&gt; field, and NNDN records, using the &lt;csvNNDN:fVariantGroup&gt; field, 
+                with the same value are related variants.
+                
+</dd>
 <dt>&lt;csvDomain:fApplicationID&gt;</dt>
 <dd>Application identifier of the Launch Application with type="launch:applicationIDType".
                 
@@ -4858,6 +4864,12 @@ CSV Model</h3>
 <dt>&lt;csvNNDN:fOriginalName&gt;</dt>
 <dd>Domain name used to generate the IDN variant with type="eppcom:labelType".
 </dd>
+<dt>&lt;csvNNDN:fVariantGroup&gt;</dt>
+<dd>Variant group name / tag related to the NNDN and related variant domain names with type="token".  
+                All NNDN records, using the &lt;csvNNDN:fVariantGroup&gt; field, and domain names, using the &lt;csvDomain:fVariantGroup&gt; field, 
+                with the same value are related variants.
+                
+</dd>
 <dt>&lt;csvNNDN:fNameState&gt;</dt>
 <dd>State of the NNDN: blocked or withheld with type="rdeNNDN:nameState".  See <a class='info' href='#ndn_object'>Section&nbsp;5.6.1.1<span> (</span><span class='info'>&lt;rdeNNDN:NNDN&gt; object</span><span>)</span></a> for a description 
                 of the possible values for the &lt;rdeNNDN:nameState&gt; element.
@@ -6163,7 +6175,8 @@ CSV Domain Object</h3>
   substitutionGroup="rdeCsv:field"/&gt;
 
  &lt;!-- Application ID field --&gt;
- &lt;element name="fApplicationID" type="csvDomain:fApplicationIDType"
+ &lt;element name="fApplicationID"
+  type="csvDomain:fApplicationIDType"
   substitutionGroup="rdeCsv:field"/&gt;
 
  &lt;complexType name="fApplicationIDType"&gt;
@@ -6302,7 +6315,8 @@ CSV Domain Object</h3>
 
 
  &lt;!-- Contact type field --&gt;
- &lt;element name="fContactType" type="csvDomain:fContactsTypeType"
+ &lt;element name="fContactType"
+  type="csvDomain:fContactsTypeType"
   substitutionGroup="rdeCsv:field"/&gt;
 
  &lt;complexType name="fContactsTypeType"&gt;
@@ -6374,6 +6388,11 @@ CSV Domain Object</h3>
  &lt;!-- Original Domain Name for Variant field --&gt;
  &lt;element name="fOriginalName" type="rdeCsv:fNameType"
   substitutionGroup="rdeCsv:field"/&gt;
+
+ &lt;!-- Variant group / tag field --&gt;
+ &lt;element name="fVariantGroup"
+   type="rdeCsv:fTokenType"
+   substitutionGroup="rdeCsv:field"/&gt;
 
  &lt;!-- Domain status field --&gt;
  &lt;element name="fStatus" type="csvDomain:fStatusType"
@@ -8243,6 +8262,11 @@ CSV NNDN Object</h3>
  &lt;element name="fOriginalName" type="rdeCsv:fNameType"
   substitutionGroup="rdeCsv:field"/&gt;
 
+ &lt;!-- Variant group / tag field --&gt;
+ &lt;element name="fVariantGroup"
+   type="rdeCsv:fTokenType"
+   substitutionGroup="rdeCsv:field"/&gt;
+
  &lt;!-- RGP status field --&gt;
  &lt;element name="fNameState"
  type="csvNNDN:fNameStateType"
@@ -9080,6 +9104,8 @@ Changes from version 06 to 07</h3>
 <li>Added definition of &lt;csvDomain:fApplicationID&gt;, &lt;csvDomain:fApplicationStatus&gt;, &lt;csvDomain:fApplicationStatusDescription&gt;, &lt;csvDomain:fApplicationStatusLang&gt;, 
                 &lt;csvDomain:fPhase&gt;, &lt;csvDomain:fPhaseName&gt;, &lt;csvDomain:fSmdID&gt;, &lt;csvDomain:fMarkFile&gt;, 
                 &lt;csvDomain:fMarkFileCksum&gt;, &lt;csvDomain:fClaimsNoticeID&gt;, &lt;csvDomain:fClaimsValidatorID&gt;, &lt;csvDomain:fClaimsAcceptedDate&gt;.
+</li>
+<li>Added the &lt;csvDomain:fVariantGroup&gt; and &lt;csvNNDN:fVariantGroup&gt; fields to name / tag related domain name and NNDN variants, based on feedback from Klaus Malorny on the ire list.
 </li>
 </ol><p>
             

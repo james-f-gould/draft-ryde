@@ -808,6 +808,10 @@ DdomainN-TEST]]>
                 <t hangText="&lt;csvDomain:fOriginalName&gt;">Fully qualified name of the original IDN domain name object related to the 
                       variant domain name object with type="eppcom:labelType".
                 </t>
+                <t hangText="&lt;csvDomain:fVariantGroup&gt;">Variant group name / tag related to the variant domain name with type="token".  
+                All domain names, using the &lt;csvDomain:fVariantGroup&gt; field, and NNDN records, using the &lt;csvNNDN:fVariantGroup&gt; field, 
+                with the same value are related variants.
+                </t>
                 <t hangText="&lt;csvDomain:fApplicationID&gt;">Application identifier of the Launch Application with type="launch:applicationIDType".
                 </t>
                 <t hangText="&lt;csvDomain:fApplicationStatus&gt;">Launch Application or Launch Registration status with type="launch:statusValueType".
@@ -3567,6 +3571,10 @@ LANG-2]]>
                   </t>
                   
                 <t hangText="&lt;csvNNDN:fOriginalName&gt;">Domain name used to generate the IDN variant with type="eppcom:labelType".</t>
+                <t hangText="&lt;csvNNDN:fVariantGroup&gt;">Variant group name / tag related to the NNDN and related variant domain names with type="token".  
+                All NNDN records, using the &lt;csvNNDN:fVariantGroup&gt; field, and domain names, using the &lt;csvDomain:fVariantGroup&gt; field, 
+                with the same value are related variants.
+                </t>
                 <t hangText="&lt;csvNNDN:fNameState&gt;">State of the NNDN: blocked or withheld with type="rdeNNDN:nameState".  See <xref target="ndn_object"/> for a description 
                 of the possible values for the &lt;rdeNNDN:nameState&gt; element.</t>
   
@@ -4723,7 +4731,8 @@ END]]></artwork></figure>
   substitutionGroup="rdeCsv:field"/>
  
  <!-- Application ID field -->
- <element name="fApplicationID" type="csvDomain:fApplicationIDType" 
+ <element name="fApplicationID" 
+  type="csvDomain:fApplicationIDType" 
   substitutionGroup="rdeCsv:field"/>
 
  <complexType name="fApplicationIDType">
@@ -4862,7 +4871,8 @@ END]]></artwork></figure>
  
  
  <!-- Contact type field -->
- <element name="fContactType" type="csvDomain:fContactsTypeType" 
+ <element name="fContactType" 
+  type="csvDomain:fContactsTypeType" 
   substitutionGroup="rdeCsv:field"/>
  
  <complexType name="fContactsTypeType">
@@ -4934,6 +4944,11 @@ END]]></artwork></figure>
  <!-- Original Domain Name for Variant field -->
  <element name="fOriginalName" type="rdeCsv:fNameType" 
   substitutionGroup="rdeCsv:field"/>
+    
+ <!-- Variant group / tag field -->
+ <element name="fVariantGroup" 
+   type="rdeCsv:fTokenType" 
+   substitutionGroup="rdeCsv:field"/>
     
  <!-- Domain status field -->
  <element name="fStatus" type="csvDomain:fStatusType" 
@@ -6660,6 +6675,11 @@ END]]></artwork></figure>
  <element name="fOriginalName" type="rdeCsv:fNameType" 
   substitutionGroup="rdeCsv:field"/> 
 
+ <!-- Variant group / tag field -->
+ <element name="fVariantGroup" 
+   type="rdeCsv:fTokenType" 
+   substitutionGroup="rdeCsv:field"/>
+
  <!-- RGP status field -->
  <element name="fNameState" 
  type="csvNNDN:fNameStateType" 
@@ -6673,7 +6693,7 @@ END]]></artwork></figure>
     </extension>
   </complexContent>
  </complexType>
-   
+
  <!-- Mirroring uses NS mirror mechanism? -->
  <element name="fMirroringNS" 
   type="rdeCsv:fBooleanType" 
@@ -7225,7 +7245,7 @@ END]]></artwork></figure>
             <t>
               <list style="numbers">
                 <t>Defined &lt;rdeCsv:csv&gt; "sep" attribute to use new type rdeCsv:sepType, which is a string of minimum and maximum length of 1 character based on feedback from Klaus Malorny.</t>
-					 <t>Updated description of when the &lt;csvHost:fName&gt; field MUST and MAY be used based on feedback from Klaus Malorny.</t>
+           <t>Updated description of when the &lt;csvHost:fName&gt; field MUST and MAY be used based on feedback from Klaus Malorny.</t>
               </list>
             </t>
           </section>
@@ -7236,7 +7256,8 @@ END]]></artwork></figure>
                 <t>Replaced the use of the &lt;csvDomain:fName&gt; with the &lt;csvDomain:fRoid&gt; as the primary key in the domain CSV files, to support both domains and applications.</t>
                 <t>Added definition of &lt;csvDomain:fApplicationID&gt;, &lt;csvDomain:fApplicationStatus&gt;, &lt;csvDomain:fApplicationStatusDescription&gt;, &lt;csvDomain:fApplicationStatusLang&gt;, 
                 &lt;csvDomain:fPhase&gt;, &lt;csvDomain:fPhaseName&gt;, &lt;csvDomain:fSmdID&gt;, &lt;csvDomain:fMarkFile&gt;, 
-                &lt;csvDomain:fMarkFileCksum&gt;, &lt;csvDomain:fClaimsNoticeID&gt;, &lt;csvDomain:fClaimsValidatorID&gt;, &lt;csvDomain:fClaimsAcceptedDate&gt;.</t>  
+                &lt;csvDomain:fMarkFileCksum&gt;, &lt;csvDomain:fClaimsNoticeID&gt;, &lt;csvDomain:fClaimsValidatorID&gt;, &lt;csvDomain:fClaimsAcceptedDate&gt;.</t> 
+                <t>Added the &lt;csvDomain:fVariantGroup&gt; and &lt;csvNNDN:fVariantGroup&gt; fields to name / tag related domain name and NNDN variants, based on feedback from Klaus Malorny on the ire list.</t>  
               </list>
             </t>
           </section>
@@ -7715,7 +7736,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
        <rdeCsv:csv name="domainNameServers" sep=",">
          <rdeCsv:fields>
            <csvDomain:fRoid parent="true"/>         
-           <csvHost:fRoid parent="true"//>
+           <csvHost:fRoid parent="true"/>
            </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 

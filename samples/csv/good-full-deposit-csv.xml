@@ -114,7 +114,7 @@
        <rdeCsv:csv name="domainNameServers" sep=",">
          <rdeCsv:fields>
            <csvDomain:fRoid parent="true"/>         
-           <csvHost:fRoid parent="true"//>
+           <csvHost:fRoid parent="true"/>
            </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
