@@ -4,22 +4,21 @@
   xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
   xmlns="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified">
-
+  
   <annotation>
     <documentation>
       Registry Data Escrow Policy schema
     </documentation>
   </annotation>
-	
-  <import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/>
-	
+  
+  <import namespace="urn:ietf:params:xml:ns:rde-1.0"/>
   <element name="policy" type="rdePolicy:policyType"
     substitutionGroup="rde:content"/>
-	
+  
   <complexType name="policyType">
     <complexContent>
       <extension base="rde:contentType">
+        <attribute name="scope" type="token" use="required"/>
         <attribute name="element" type="anyURI" use="required"/>
       </extension>
     </complexContent>

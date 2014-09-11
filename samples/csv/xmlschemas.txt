@@ -6,6 +6,7 @@
 ../../xsd/secDNS-1.1.xsd
 ../../xsd/rgp-1.0.xsd
 ../../xsd/rde-1.0.xsd
+../../xsd/rde-idn-1.0.xsd
 ../../xsd/rde-nndn-1.0.xsd
 ../../xsd/rde-header-1.0.xsd
 ../../xsd/rde-epp-param-1.0.xsd

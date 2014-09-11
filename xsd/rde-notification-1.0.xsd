@@ -20,17 +20,29 @@
   <!-- Notification -->
   <complexType name="notificationType">
     <sequence>
-      <element name="reDate" type="date"/>
+      <element name="deaName" type="rdeNotification:nameType"/>
+      <element name="version" type="unsignedShort"/>
+      <element name="repDate" type="date"/>
       <element name="status" type="rdeNotification:statusType"/>
-      <element ref="rdeReport:report"/>
+      <element name="reDate" type="dateTime" minOccurs="0"/>
+      <element name="vaDate" type="dateTime" minOccurs="0"/>
+      <element name="lastFullDate" type="date" minOccurs="0"/>
+      <element ref="rdeReport:report" minOccurs="0"/>
     </sequence>
   </complexType>
 
+  <simpleType name="nameType">
+    <restriction base="normalizedString">
+      <minLength value="1" />
+      <maxLength value="255" />
+    </restriction>
+  </simpleType>
+
   <simpleType name="statusType">
     <restriction base="token">
-      <enumeration value="valid"/>
-      <enumeration value="invalid"/>
-      <enumeration value="missing"/>
+      <enumeration value="DVPN"/>
+      <enumeration value="DVFN"/>
+      <enumeration value="DRFN"/>
     </restriction>
   </simpleType>
 </schema>

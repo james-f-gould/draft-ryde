@@ -9,14 +9,10 @@
   elementFormDefault="qualified">
 
   <!-- Import common element types. -->
-  <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
-    schemaLocation="eppcom-1.0.xsd"/>
-  <import namespace="urn:ietf:params:xml:ns:domain-1.0"
-    schemaLocation="domain-1.0.xsd"/>
-  <import namespace="urn:ietf:params:xml:ns:contact-1.0"
-    schemaLocation="contact-1.0.xsd"/>
-  <import namespace="urn:ietf:params:xml:ns:rde-1.0"
-    schemaLocation="rde-1.0.xsd"/>
+  <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/>
+  <import namespace="urn:ietf:params:xml:ns:domain-1.0"/>
+  <import namespace="urn:ietf:params:xml:ns:contact-1.0"/>
+  <import namespace="urn:ietf:params:xml:ns:rde-1.0"/>
 
   <annotation>
     <documentation>
@@ -37,20 +33,31 @@
     <complexContent>
       <extension base="rde:contentType">
         <sequence>
-          <element name="id" type="eppcom:clIDType"/>
-          <element name="name" type="rdeRegistrar:nameType"/>
-          <element name="gurid" type="positiveInteger" minOccurs="0"/>
-          <element name="status" type="rdeRegistrar:statusType"/>
-          <element name="postalInfo" type="rdeRegistrar:postalInfoType"
+          <element name="id" 
+            type="eppcom:clIDType"/>
+          <element name="name" 
+            type="rdeRegistrar:nameType"/>
+          <element name="gurid" 
+            type="positiveInteger" minOccurs="0"/>
+          <element name="status" 
+            type="rdeRegistrar:statusType"/>
+          <element name="postalInfo" 
+            type="rdeRegistrar:postalInfoType"
             maxOccurs="2"/>
-          <element name="voice" type="contact:e164Type" minOccurs="0"/>
-          <element name="fax" type="contact:e164Type" minOccurs="0"/>
-          <element name="email" type="eppcom:minTokenType"/>
-          <element name="url" type="anyURI" minOccurs="0"/>
-          <element name="whoisInfo" type="rdeRegistrar:whoisInfoType"
-            minOccurs="0"/>
-          <element name="crDate" type="dateTime"/>
-          <element name="upDate" type="dateTime" minOccurs="0"/>
+          <element name="voice" 
+            type="contact:e164Type" minOccurs="0"/>
+          <element name="fax" 
+            type="contact:e164Type" minOccurs="0"/>
+          <element name="email" 
+            type="eppcom:minTokenType"/>
+          <element name="url" 
+            type="anyURI" minOccurs="0"/>
+          <element name="whoisInfo" 
+            type="rdeRegistrar:whoisInfoType" minOccurs="0"/>
+          <element name="crDate" 
+            type="dateTime"/>
+          <element name="upDate" 
+            type="dateTime" minOccurs="0"/>
         </sequence>
       </extension>
     </complexContent>
@@ -73,9 +80,11 @@
 
   <complexType name="postalInfoType">
     <sequence>
-      <element name="addr" type="rdeRegistrar:addrType" />
+      <element name="addr" 
+        type="rdeRegistrar:addrType" />
     </sequence>
-    <attribute name="type" type="rdeRegistrar:postalInfoEnumType"
+    <attribute name="type" 
+      type="rdeRegistrar:postalInfoEnumType"
       use="required" />
   </complexType>
 
@@ -88,13 +97,18 @@
 
   <complexType name="addrType">
     <sequence>
-      <element name="street" type="rdeRegistrar:optPostalLineType"
+      <element name="street" 
+        type="rdeRegistrar:optPostalLineType"
         minOccurs="0" maxOccurs="3" />
-      <element name="city" type="rdeRegistrar:postalLineType" />
-      <element name="sp" type="rdeRegistrar:optPostalLineType"
+      <element name="city" 
+        type="rdeRegistrar:postalLineType" />
+      <element name="sp" 
+        type="rdeRegistrar:optPostalLineType"
         minOccurs="0" />
-      <element name="pc" type="rdeRegistrar:pcType" minOccurs="0" />
-      <element name="cc" type="rdeRegistrar:ccType" />
+      <element name="pc" 
+        type="rdeRegistrar:pcType" minOccurs="0" />
+      <element name="cc" 
+        type="rdeRegistrar:ccType" />
     </sequence>
   </complexType>
 
@@ -125,8 +139,10 @@
 
   <complexType name="whoisInfoType">
     <sequence>
-      <element name="name" type="eppcom:labelType" minOccurs="0"/>
-      <element name="url" type="anyURI" minOccurs="0"/>
+      <element name="name" 
+        type="eppcom:labelType" minOccurs="0"/>
+      <element name="url" 
+        type="anyURI" minOccurs="0"/>
     </sequence>
   </complexType>
 
@@ -135,7 +151,8 @@
     <complexContent>
       <extension base="rde:deleteType">
         <sequence>
-          <element name="id" type="eppcom:clIDType" minOccurs="0"
+          <element name="id" 
+            type="eppcom:clIDType" minOccurs="0"
             maxOccurs="unbounded"/>
         </sequence>
       </extension>
