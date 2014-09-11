@@ -65,6 +65,11 @@
  <element name="fOriginalName" type="rdeCsv:fNameType" 
   substitutionGroup="rdeCsv:field"/> 
 
+ <!-- Variant group / tag field -->
+ <element name="fVariantGroup" 
+   type="rdeCsv:fTokenType" 
+   substitutionGroup="rdeCsv:field"/>
+
  <!-- RGP status field -->
  <element name="fNameState" 
  type="csvNNDN:fNameStateType" 
@@ -78,7 +83,7 @@
     </extension>
   </complexContent>
  </complexType>
-
+   
  <!-- Mirroring uses NS mirror mechanism? -->
  <element name="fMirroringNS" 
   type="rdeCsv:fBooleanType" 
