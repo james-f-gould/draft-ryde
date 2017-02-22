@@ -5,16 +5,16 @@
 Network Working Group                                           F. Arias
 Internet-Draft                                                 G. Lozano
 Intended status: Standards Track                                   ICANN
-Expires: March 30, 2014                                       S. Noguchi
+Expires: August 18, 2017                                      S. Noguchi
                                                                     JPRS
                                                                 J. Gould
                                                           C. Thippeswamy
                                                                 VeriSign
-                                                      September 26, 2013
+                                                       February 14, 2017
 
 
           Domain Name Registration Data (DNRD) Objects Mapping
-              draft-arias-noguchi-dnrd-objects-mapping-05
+              draft-arias-noguchi-dnrd-objects-mapping-06
 
 Abstract
 
@@ -37,11 +37,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on March 30, 2014.
+   This Internet-Draft will expire on August 18, 2017.
 
 Copyright Notice
 
-   Copyright (c) 2013 IETF Trust and the persons identified as the
+   Copyright (c) 2017 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Arias, et al.            Expires March 30, 2014                 [Page 1]
+Arias, et al.            Expires August 18, 2017                [Page 1]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    include Simplified BSD License text as described in Section 4.e of
@@ -77,63 +77,64 @@ Table of Contents
      4.7.  Internationalized and Localized Elements  . . . . . . . .  11
    5.  Object Description  . . . . . . . . . . . . . . . . . . . . .  13
      5.1.  Domain Name Object  . . . . . . . . . . . . . . . . . . .  13
-     5.2.  Host Object . . . . . . . . . . . . . . . . . . . . . . .  36
-     5.3.  Contact Object  . . . . . . . . . . . . . . . . . . . . .  45
-     5.4.  Registrar Object  . . . . . . . . . . . . . . . . . . . .  64
-     5.5.  IDN Table Reference Object  . . . . . . . . . . . . . . .  71
-     5.6.  NNDN Object . . . . . . . . . . . . . . . . . . . . . . .  74
-     5.7.  EPP Parameters Object . . . . . . . . . . . . . . . . . .  79
-     5.8.  Policy Object . . . . . . . . . . . . . . . . . . . . . .  81
-     5.9.  Header Object . . . . . . . . . . . . . . . . . . . . . .  81
-   6.  RDE IDN Variants handling . . . . . . . . . . . . . . . . . .  83
-   7.  Profile . . . . . . . . . . . . . . . . . . . . . . . . . . .  84
-   8.  Data escrow agent extended verification process . . . . . . .  84
-   9.  Formal Syntax . . . . . . . . . . . . . . . . . . . . . . . .  85
-     9.1.  RDE CSV Schema  . . . . . . . . . . . . . . . . . . . . .  85
-     9.2.  RDE Domain Object . . . . . . . . . . . . . . . . . . . .  94
-     9.3.  CSV Domain Object . . . . . . . . . . . . . . . . . . . .  97
-     9.4.  RDE Host Object . . . . . . . . . . . . . . . . . . . . . 101
-     9.5.  CSV Host Object . . . . . . . . . . . . . . . . . . . . . 104
-     9.6.  RDE Contact Object  . . . . . . . . . . . . . . . . . . . 107
-     9.7.  CSV Contact Object  . . . . . . . . . . . . . . . . . . . 109
-     9.8.  RDE Registrar Object  . . . . . . . . . . . . . . . . . . 116
-     9.9.  CSV Registrar Object  . . . . . . . . . . . . . . . . . . 120
-     9.10. RDE IDN Table Reference Objects . . . . . . . . . . . . . 124
-     9.11. CSV IDN Language Object . . . . . . . . . . . . . . . . . 126
-     9.12. EPP Parameters Object . . . . . . . . . . . . . . . . . . 128
-     9.13. NNDN Object . . . . . . . . . . . . . . . . . . . . . . . 129
-     9.14. CSV NNDN Object . . . . . . . . . . . . . . . . . . . . . 132
-     9.15. Policy Object . . . . . . . . . . . . . . . . . . . . . . 134
-     9.16. Header Object . . . . . . . . . . . . . . . . . . . . . . 136
-   10. Internationalization Considerations . . . . . . . . . . . . . 139
+     5.2.  Host Object . . . . . . . . . . . . . . . . . . . . . . .  31
+     5.3.  Contact Object  . . . . . . . . . . . . . . . . . . . . .  40
+     5.4.  Registrar Object  . . . . . . . . . . . . . . . . . . . .  59
+     5.5.  IDN Table Reference Object  . . . . . . . . . . . . . . .  66
+     5.6.  NNDN Object . . . . . . . . . . . . . . . . . . . . . . .  69
+     5.7.  EPP Parameters Object . . . . . . . . . . . . . . . . . .  74
+     5.8.  Policy Object . . . . . . . . . . . . . . . . . . . . . .  76
+     5.9.  Header Object . . . . . . . . . . . . . . . . . . . . . .  76
+   6.  RDE IDN Variants handling . . . . . . . . . . . . . . . . . .  78
+   7.  Profile . . . . . . . . . . . . . . . . . . . . . . . . . . .  79
+   8.  Data escrow agent extended verification process . . . . . . .  79
+   9.  Formal Syntax . . . . . . . . . . . . . . . . . . . . . . . .  80
+     9.1.  RDE CSV Schema  . . . . . . . . . . . . . . . . . . . . .  80
+     9.2.  RDE Domain Object . . . . . . . . . . . . . . . . . . . .  89
+     9.3.  CSV Domain Object . . . . . . . . . . . . . . . . . . . .  92
+     9.4.  RDE Host Object . . . . . . . . . . . . . . . . . . . . .  96
+     9.5.  CSV Host Object . . . . . . . . . . . . . . . . . . . . .  99
+     9.6.  RDE Contact Object  . . . . . . . . . . . . . . . . . . . 102
+     9.7.  CSV Contact Object  . . . . . . . . . . . . . . . . . . . 104
+     9.8.  RDE Registrar Object  . . . . . . . . . . . . . . . . . . 111
+     9.9.  CSV Registrar Object  . . . . . . . . . . . . . . . . . . 115
+     9.10. RDE IDN Table Reference Objects . . . . . . . . . . . . . 119
+     9.11. CSV IDN Language Object . . . . . . . . . . . . . . . . . 121
+     9.12. EPP Parameters Object . . . . . . . . . . . . . . . . . . 123
+     9.13. NNDN Object . . . . . . . . . . . . . . . . . . . . . . . 124
+     9.14. CSV NNDN Object . . . . . . . . . . . . . . . . . . . . . 127
+     9.15. Policy Object . . . . . . . . . . . . . . . . . . . . . . 129
+     9.16. Header Object . . . . . . . . . . . . . . . . . . . . . . 131
+   10. Internationalization Considerations . . . . . . . . . . . . . 134
 
 
 
-Arias, et al.            Expires March 30, 2014                 [Page 2]
+Arias, et al.            Expires August 18, 2017                [Page 2]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-   11. IANA Considerations . . . . . . . . . . . . . . . . . . . . . 139
-   12. Security Considerations . . . . . . . . . . . . . . . . . . . 144
-   13. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . 145
-   14. Change History  . . . . . . . . . . . . . . . . . . . . . . . 145
+   11. IANA Considerations . . . . . . . . . . . . . . . . . . . . . 134
+   12. Security Considerations . . . . . . . . . . . . . . . . . . . 139
+   13. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . 140
+   14. Change History  . . . . . . . . . . . . . . . . . . . . . . . 140
      14.1.  Changes from draft-arias-noguchi-registry-data-escrow-02
-            to -dnrd-objects-mapping-00  . . . . . . . . . . . . . . 145
-     14.2.  Changes from version 00 to 01  . . . . . . . . . . . . . 145
-     14.3.  Changes from version 01 to 02  . . . . . . . . . . . . . 146
-     14.4.  Changes from version 02 to 03  . . . . . . . . . . . . . 146
-     14.5.  Changes from version 03 to 04  . . . . . . . . . . . . . 146
-     14.6.  Changes from version 04 to 05  . . . . . . . . . . . . . 148
-   15. Example of a full deposit using the XML model . . . . . . . . 148
-   16. Example of differential deposit using the XML model . . . . . 153
-   17. Example of a full deposit using the CSV model . . . . . . . . 155
-   18. Example of differential deposit using the CSV model . . . . . 164
-   19. References  . . . . . . . . . . . . . . . . . . . . . . . . . 173
-     19.1.  Normative References . . . . . . . . . . . . . . . . . . 173
-     19.2.  Informative References . . . . . . . . . . . . . . . . . 174
-     19.3.  URIs . . . . . . . . . . . . . . . . . . . . . . . . . . 174
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 175
+            to -dnrd-objects-mapping-00  . . . . . . . . . . . . . . 140
+     14.2.  Changes from version 00 to 01  . . . . . . . . . . . . . 140
+     14.3.  Changes from version 01 to 02  . . . . . . . . . . . . . 141
+     14.4.  Changes from version 02 to 03  . . . . . . . . . . . . . 141
+     14.5.  Changes from version 03 to 04  . . . . . . . . . . . . . 141
+     14.6.  Changes from version 04 to 05  . . . . . . . . . . . . . 143
+     14.7.  Changes from version 05 to 06  . . . . . . . . . . . . . 143
+   15. Example of a full deposit using the XML model . . . . . . . . 143
+   16. Example of differential deposit using the XML model . . . . . 149
+   17. Example of a full deposit using the CSV model . . . . . . . . 150
+   18. Example of differential deposit using the CSV model . . . . . 159
+   19. References  . . . . . . . . . . . . . . . . . . . . . . . . . 168
+     19.1.  Normative References . . . . . . . . . . . . . . . . . . 168
+     19.2.  Informative References . . . . . . . . . . . . . . . . . 169
+     19.3.  URIs . . . . . . . . . . . . . . . . . . . . . . . . . . 170
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . . 170
 
 1.  Introduction
 
@@ -161,14 +162,15 @@ Internet-Draft            DNRD Objects Mapping            September 2013
    o  NNDN (NNDN's not domain name): A lightweight domain-like object
       that is not linked to a Registrar.
 
-   This document defines the following pseudo-objects:
 
 
 
-Arias, et al.            Expires March 30, 2014                 [Page 3]
+Arias, et al.            Expires August 18, 2017                [Page 3]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   This document defines the following pseudo-objects:
 
    o  IDN Table Reference: Internationalized Domain Names (IDN) included
       in the Domain Object Data Escrow include references to the IDN
@@ -215,17 +217,17 @@ Internet-Draft            DNRD Objects Mapping            September 2013
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
    document are to be interpreted as described in BCP 14, [RFC2119].
 
+
+
+
+
+Arias, et al.            Expires August 18, 2017                [Page 4]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
    REGISTRY.  In the context of this draft the definition will be
    overloaded (from the definition in the base protocol) to indicate an
-
-
-
-
-Arias, et al.            Expires March 30, 2014                 [Page 4]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
    organization providing Registry Services for a REGISTRY-CLASS DOMAIN
    NAME.
 
@@ -272,15 +274,16 @@ Internet-Draft            DNRD Objects Mapping            September 2013
    on structures defined in [ITU-E164].  Telephone numbers described in
    this specification are character strings that MUST begin with a plus
    sign ("+", ASCII value 0x002B), followed by a country code defined in
+
+
+
+Arias, et al.            Expires August 18, 2017                [Page 5]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
    [ITU-E164], followed by a dot (".", ASCII value 0x002E), followed by
    a sequence of digits representing the telephone number.
-
-
-
-Arias, et al.            Expires March 30, 2014                 [Page 5]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
 
 4.4.  Checksum
 
@@ -328,16 +331,15 @@ Internet-Draft            DNRD Objects Mapping            September 2013
       "parent" attribute to "true" to identify it as the parent domain
       name of the domain status.
 
+
+
+Arias, et al.            Expires August 18, 2017                [Page 6]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
    <rdeCsv:files>  A list of one or more CSV files using the
       <rdeCsv:file> child element.  The <rdeCsv:file> child element
-
-
-
-Arias, et al.            Expires March 30, 2014                 [Page 6]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
       defines a reference to the CSV file name and has the following
       optional attributes:
 
@@ -387,11 +389,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-
-
-Arias, et al.            Expires March 30, 2014                 [Page 7]
+Arias, et al.            Expires August 18, 2017                [Page 7]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    <csvDomain:contents>
@@ -445,9 +445,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                 [Page 8]
+Arias, et al.            Expires August 18, 2017                [Page 8]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    <csvDomain:deletes>
@@ -501,9 +501,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                 [Page 9]
+Arias, et al.            Expires August 18, 2017                [Page 9]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    <rdeCsv:fClID>  Identifier of client (registrar) that sponsors the
@@ -557,9 +557,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 10]
+Arias, et al.            Expires August 18, 2017               [Page 10]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    <rdeCsv:fLang>  General language field with type="language".
@@ -613,9 +613,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 11]
+Arias, et al.            Expires August 18, 2017               [Page 11]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -669,9 +669,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 12]
+Arias, et al.            Expires August 18, 2017               [Page 12]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -725,9 +725,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 13]
+Arias, et al.            Expires August 18, 2017               [Page 13]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
 5.1.1.1.  <rdeDomain:domain> object
@@ -781,9 +781,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 14]
+Arias, et al.            Expires August 18, 2017               [Page 14]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    o  Zero or more OPTIONAL <contact> elements that contain identifiers
@@ -837,9 +837,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 15]
+Arias, et al.            Expires August 18, 2017               [Page 15]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       object.  This element MUST NOT be present if a transfer request
@@ -893,9 +893,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 16]
+Arias, et al.            Expires August 18, 2017               [Page 16]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -943,115 +943,112 @@ Internet-Draft            DNRD Objects Mapping            September 2013
    <csvDomain:deletes> child element of the <rde:deletes> element is
    used to hold the deleted or purged domain name objects for the
    deposit.  Both the <csvDomain:contents> and <csvDomain:deletes>
-   elements contain one or more <rdeCsv:csv> elements with the following
-   supported "name" attribute values:
+   elements contain one or more <rdeCsv:csv> elements with a set of
+   named CSV file definitions using the <rdeCsv:csv> "name" attribute.
 
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 17]
+Arias, et al.            Expires August 18, 2017               [Page 17]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-   "domain"  Defines the fields and CSV file references used for the
-      domain name object records.
+   Differential and incremental deposits are based on changes to the
+   domain name objects.  The updated domain name object data under the
+   <csvDomain:contents> element is a cascade replace down all of the
+   domain name CSV files starting with the parent "domain" CSV File
+   Definition (Section 5.1.2.1.1).  The child CSV file definitions
+   include a <csvDomain:fName parent="true"> field.  All the child CSV
+   file definition data for the domain name objects in the parent
+   "domain" CSV file definition MUST first be deleted and then set using
+   the data in the child CSV files.  The deleted domain name object data
+   under the <csvDomain:deletes> element is a cascade delete starting
+   from the "domain" Deletes CSV File Definition (Section 5.1.2.2.1).
 
-      The following "csvDomain" field elements, defined for the "domain"
-      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the "domain"
-      <rdeCsv:csv> <rdeCsv:fields> element:
+5.1.2.1.  <csvDomain:contents>
 
+   The <csvDomain:contents> is used to hold the new or updated domain
+   name object information for the deposit.  The <csvDomain:contents> is
+   split into separate CSV file definitions using named <rdeCsv:csv>
+   elements with the "name" attribute.  The following sections include
+   the supported domain name CSV file definitions:
 
+5.1.2.1.1.  "domain" CSV File Definition
 
-      <csvDomain:fName>  Domain name field with type="eppcom:labelType"
-         and isRequired="true".
+   The "domain" CSV File Definition defines the fields and CSV file
+   references used for the parent domain name object records.  All of
+   the other domain name CSV file definitions are child CSV files based
+   on the inclusion of the <csvDomain:fName parent="true"> field.
 
-   "domain"  Defines the fields and CSV file references used for the
-      domain name object records.
+   The following "csvDomain" field elements MUST be used in the "domain"
+   <rdeCsv:csv> <rdeCsv:fields> element:
 
-      The following "csvDomain" field elements, defined for the "domain"
-      <rdeCsv:csv> <rdeCsv:fields> element, MAY be used in the "domain"
-      <rdeCsv:csv> <rdeCsv:fields> element:
+   <csvDomain:fName>  Domain name field with type="eppcom:labelType" and
+      isRequired="true".
 
+   The following "csvDomain" field elements MAY be used in the "domain"
+   <rdeCsv:csv> <rdeCsv:fields> element:
 
+   <csvDomain:fOriginalName>  Fully qualified name of the original IDN
+      domain name object related to the variant domain name object with
+      type="eppcom:labelType".
 
-      <csvDomain:fOriginalName>  Fully qualified name of the original
-         IDN domain name object related to the variant domain name
-         object with type="eppcom:labelType".
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MUST be used in the "domain" <rdeCsv:csv>
+   <rdeCsv:fields> element:
 
-      The following "rdeCsv" fields, defined in section CSV common field
-      elements (Section 4.6.2), MUST be used in the "domain"
-      <rdeCsv:csv> <rdeCsv:fields> element:
-
-
-
-      <rdeCsv:fRoid>  Registry Object IDentifier (ROID) for the domain
-         name object.
-
-      <rdeCsv:fClID>  Identifier of client that sponsors the domain name
-         object.
-
-      <rdeCsv:fCrRr>  Identifier of the registrar, defined in
-         Section 5.4, of the client that created the object.
-
-      <rdeCsv:fCrDate>  Created date and time of the domain name object.
-
-      <rdeCsv:fUpRr>  Identifier of the registrar, defined in
-         Section 5.4, of the client that updated the object.
-
-      <rdeCsv:fUpDate>  Date and time of the last update to the domain
-         name object.
-
+   <rdeCsv:fRoid>  Registry Object IDentifier (ROID) for the domain name
+      object.
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 18]
+
+
+Arias, et al.            Expires August 18, 2017               [Page 18]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-      <rdeCsv:fExDate>  Expiration date and time for the domain name
-         object.
+   <rdeCsv:fClID>  Identifier of client that sponsors the domain name
+      object.
 
-      The following "rdeCsv" fields, defined in section CSV common field
-      elements (Section 4.6.2), MAY be used in the "domain" <rdeCsv:csv>
-      <rdeCsv:fields> element:
+   <rdeCsv:fCrRr>  Identifier of the registrar, defined in Section 5.4,
+      of the client that created the object.
 
+   <rdeCsv:fCrDate>  Created date and time of the domain name object.
 
+   <rdeCsv:fUpRr>  Identifier of the registrar, defined in Section 5.4,
+      of the client that updated the object.
 
-      <rdeCsv:fUName>  UTF8 encoded domain name for the
-         <csvDomain:fName> field element.
+   <rdeCsv:fUpDate>  Date and time of the last update to the domain name
+      object.
 
-      <rdeCsv:fIdnTableId>  IDN Table Identifier used for the IDN domain
-         name object that MUST match a <rdeCsv:fIdnTableId> field
-         element in the "idnLanguage" CSV files, as defined in
-         Section 5.5.2.
+   <rdeCsv:fExDate>  Expiration date and time for the domain name
+      object.
 
-      <rdeCsv:fRegistrant>  Registrant contact identifier for the domain
-         name object.
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MAY be used in the "domain" <rdeCsv:csv>
+   <rdeCsv:fields> element:
 
-      <rdeCsv:fCrID>  Identifier of client that created the domain name
-         object.
+   <rdeCsv:fUName>  UTF8 encoded domain name for the <csvDomain:fName>
+      field element.
 
-      <rdeCsv:fUpID>  Identifier of the client that last updated the
-         domain name object.
+   <rdeCsv:fIdnTableId>  IDN Table Identifier used for the IDN domain
+      name object that MUST match a <rdeCsv:fIdnTableId> field element
+      in the "idnLanguage" CSV files, as defined in Section 5.5.2.
 
-      <rdeCsv:fTrDate>  Date and time of the last transfer for the
-         domain name object.
+   <rdeCsv:fRegistrant>  Registrant contact identifier for the domain
+      name object.
 
-      Example of a "domain" <csvDomain:contents> <rdeCsv:csv> element:
+   <rdeCsv:fCrID>  Identifier of client that created the domain name
+      object.
 
+   <rdeCsv:fUpID>  Identifier of the client that last updated the domain
+      name object.
 
-
-
-
-
-
-
-
-
-
-
+   <rdeCsv:fTrDate>  Date and time of the last transfer for the domain
+      name object.
 
 
 
@@ -1061,45 +1058,45 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 19]
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 19]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-   ...
-   <csvDomain:contents>
-   ...
-     <rdeCsv:csv name="domain">
-       <rdeCsv:fields>
-         <csvDomain:fName/>
-         <rdeCsv:fRoid/>
-         <rdeCsv:fIdnTableId/>
-         <csvDomain:fOriginalName/>
-         <rdeCsv:fRegistrant/>
-         <rdeCsv:fClID/>
-         <rdeCsv:fCrRr/>
-         <rdeCsv:fCrID/>
-         <rdeCsv:fCrDate/>
-         <rdeCsv:fUpRr/>
-         <rdeCsv:fUpID/>
-         <rdeCsv:fUpDate/>
-         <rdeCsv:fExDate/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-           cksum="75E2D01F">
-           domain-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvDomain:contents>
-   ...
+   Example of a "domain" <csvDomain:contents> <rdeCsv:csv> element:
 
-      Example of the corresponding domain-YYYYMMDD.csv file.  The file
-      contains four records (active ASCII domain, pendingDelete domain,
-      original IDN with LANG-1 language rules, and variant IDN with
-      LANG-1 language rules).
+           ...
+           <csvDomain:contents>
+           ...
+             <rdeCsv:csv name="domain">
+                   <rdeCsv:fields>
+                     <csvDomain:fName/>
+                     <rdeCsv:fRoid/>
+                     <rdeCsv:fIdnTableId/>
+                     <csvDomain:fOriginalName/>
+                     <rdeCsv:fRegistrant/>
+                     <rdeCsv:fClID/>
+                     <rdeCsv:fCrRr/>
+                     <rdeCsv:fCrID/>
+                     <rdeCsv:fCrDate/>
+                     <rdeCsv:fUpRr/>
+                     <rdeCsv:fUpID/>
+                     <rdeCsv:fUpDate/>
+                     <rdeCsv:fExDate/>
+                   </rdeCsv:fields>
+                   <rdeCsv:files>
+                     <rdeCsv:file
+                           cksum="75E2D01F">
+                           domain-YYYYMMDD.csv
+                     </rdeCsv:file>
+                   </rdeCsv:files>
+             </rdeCsv:csv>
+           ...
+           </csvDomain:contents>
+           ...
 
 
 
@@ -1117,165 +1114,165 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 20]
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 20]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-   domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
-   clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
-   2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-   domain2.test,Ddomain1-TEST,,,registrantid,registrarX,registrarX,
-   clientY,1999-04-03T22:00:00.0Z,registrarX,clientY,
-   2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-   xn--abc123.test,Dxnabc123-TEST,LANG-1,,registrantid,registrarX,
-   registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
-   2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-   xn--abc321.test,Dxnabc321-TEST,LANG-1,xn--cbc321.test,
-   registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
-   registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+   Example of the corresponding domain-YYYYMMDD.csv file.  The file
+   contains four records (active ASCII domain, pendingDelete domain,
+   original IDN with LANG-1 language rules, and variant IDN with LANG-1
+   language rules).
 
-      Example of a "domain" <csvDomain:deletes> <rdeCsv:csv> element:
+        domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
+        clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
+        2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+        domain2.test,Ddomain1-TEST,,,registrantid,registrarX,registrarX,
+        clientY,1999-04-03T22:00:00.0Z,registrarX,clientY,
+        2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+        xn--abc123.test,Dxnabc123-TEST,LANG-1,,registrantid,registrarX,
+        registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
+        2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+        xn--abc321.test,Dxnabc321-TEST,LANG-1,xn--cbc321.test,
+        registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
+        registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
 
+5.1.2.1.2.  "domainContacts" CSV File Definition
 
+   The "domainContacts" CSV File Definition defines the fields and CSV
+   file references used for the domain name object link records to
+   contact objects, as described in Section 5.3.
 
-   ...
-   <csvDomain:deletes>
-   ...
-    <rdeCsv:csv name="domain">
-     <rdeCsv:fields>
-       <csvDomain:fName/>
-     </rdeCsv:fields>
-     <rdeCsv:files>
-       <rdeCsv:file
-        cksum="E19349E0">
-        domain-delete-YYYYMMDD.csv
-       </rdeCsv:file>
-     </rdeCsv:files>
-    </rdeCsv:csv>
-   ...
-   </csvDomain:deletes>
-   ...
+   The following "csvDomain" field elements MUST be used in the
+   "domainContacts" <rdeCsv:csv> <rdeCsv:fields> element:
 
-      Example of the corresponding domain-delete-YYYYMMDD.csv file.  The
-      file contains three domain name records.
+   <csvDomain:fContactType>  The contact type for the contact object
+      link with type="domain:contactAttrType".  The supported contact
+      type values include "admin" for the administration contact,
+      "billing" for the billing contact, and "tech" for the technical
+      contact.
 
+   The following "csvDomain" field elements, defined for the "domain"
+   <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
+   "domainContacts" <rdeCsv:csv> <rdeCsv:fields> element:
 
+   <csvDomain:fName>  The name of the domain object that is linked to
+      the contact object.
 
-   domain1.test
-   domain2.test
-   domainN.test
+   The following "csvContact" fields, defined for the "contact"
+   <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
+   "domainContacts" <rdeCsv:csv> <rdeCsv:fields> element:
 
-   "domainContacts"  Defines the fields and CSV file references used for
-      the domain name object link records to contact objects, as
-      described in Section 5.3.
-
+   <csvContact:fId>  The server-unique contact identifier.
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 21]
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 21]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-      The following "csvDomain" field elements, defined for the
-      "domainContacts" <rdeCsv:csv> <rdeCsv:fields> element, MUST be
-      used in the "domainContacts" <rdeCsv:csv> <rdeCsv:fields> element:
+   Example of a "domainContacts" <csvDomain:contents> <rdeCsv:csv>
+   element:
+
+           ...
+           <csvDomain:contents>
+           ...
+             <rdeCsv:csv name="domainContacts">
+                   <rdeCsv:fields>
+                     <csvDomain:fName parent="true"/>
+                     <csvContact:fId/>
+                     <csvDomain:fContactType/>
+                   </rdeCsv:fields>
+                   <rdeCsv:files>
+                     <rdeCsv:file
+                           cksum="6BC9F9E8">
+                           domainContacts-YYYYMMDD.csv
+                     </rdeCsv:file>
+                   </rdeCsv:files>
+             </rdeCsv:csv>
+           ...
+           </csvDomain:contents>
+           ...
+
+   Example of the corresponding domainContacts-YYYYMMDD.csv file.  The
+   file contains an admin, tech, and billing contact for the two domain
+   names domain1.test and domain2.test.
+
+           domain1.test,sh8013,admin
+           domain1.test,mycontactid,tech
+           domain1.test,mycontactid,billing
+           domain2.test,mycontactid,admin
+           domain2.test,sh8013,tech
+           domain2.test,mycontactid,billing
+
+5.1.2.1.3.  "domainStatuses" CSV File Definition
+
+   The "domainStatuses" CSV File Definition defines the fields and CSV
+   file references used for the domain name object statuses.
+
+   The following "csvDomain" field elements MUST be used in the
+   "domainStatuses" <rdeCsv:csv> <rdeCsv:fields> element:
+
+   <csvDomain:fStatus>  The status of the domain name with
+      type="domain:statusValueType".
+
+   <csvDomain:fRgpStatus>  The Registry Grace Period (RGP) status, as a
+      sub-status of the <csvDomain:fStatus> "pendingDelete" status
+      value, with type="rgp:statusValueType" as defined in [RFC3915].
 
 
 
-      <csvDomain:fContactType>  The contact type for the contact object
-         link with type="domain:contactAttrType".  The supported contact
-         type values include "admin" for the administration contact,
-         "billing" for the billing contact, and "tech" for the technical
-         contact.
-
-      The following "csvDomain" field elements, defined for the "domain"
-      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
-      "domainContacts" <rdeCsv:csv> <rdeCsv:fields> element:
-
-
-
-      <csvDomain:fName>  The name of the domain object that is linked to
-         the contact object.
-
-      The following "csvContact" fields, defined for the "contact"
-      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
-      "domainContacts" <rdeCsv:csv> <rdeCsv:fields> element:
-
-
-
-      <csvContact:fId>  The server-unique contact identifier.
-
-      Example of a "domainContacts" <csvDomain:contents> <rdeCsv:csv>
-      element:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 22]
+Arias, et al.            Expires August 18, 2017               [Page 22]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-   ...
-   <csvDomain:contents>
-   ...
-     <rdeCsv:csv name="domainContacts">
-       <rdeCsv:fields>
-         <csvDomain:fName parent="true"/>
-         <csvContact:fId/>
-         <csvDomain:fContactType/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-           cksum="6BC9F9E8">
-           domainContacts-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvDomain:contents>
-   ...
+   The following "csvDomain" fields, defined for the "domain"
+   <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
+   "domainStatuses" <rdeCsv:csv> <rdeCsv:fields> element:
 
-      Example of the corresponding domainContacts-YYYYMMDD.csv file.
-      The file contains an admin, tech, and billing contact for the two
-      domain names domain1.test and domain2.test.
+   <csvDomain:fName>  Domain name of status.
 
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MAY be used in the "domainStatuses"
+   <rdeCsv:csv> <rdeCsv:fields> element:
 
+   <rdeCsv:fStatusDescription>  Domain object status description which
+      is free form text describing the rationale for the status.
 
-   domain1.test,sh8013,admin
-   domain1.test,mycontactid,tech
-   domain1.test,mycontactid,billing
-   domain2.test,mycontactid,admin
-   domain2.test,sh8013,tech
-   domain2.test,mycontactid,billing
+   <rdeCsv:fLang>  Language of the <rdeCsv:fStatusDescription> field.
 
-      Example of a "domainContacts" <csvDomain:deletes> <rdeCsv:csv>
-      element:
+   Example of a "domainStatuses" <csvDomain:contents> <rdeCsv:csv>
+   element:
 
-
-
-
-
-
-
+           ...
+           <csvDomain:contents>
+           ...
+             <rdeCsv:csv name="domainStatuses">
+                   <rdeCsv:fields>
+                     <csvDomain:fName parent="true"/>
+                     <csvDomain:fStatus/>
+                     <rdeCsv:fStatusDescription/>
+                     <rdeCsv:fLang/>
+                     <csvDomain:fRgpStatus/>
+                   </rdeCsv:fields>
+                   <rdeCsv:files>
+                     <rdeCsv:file
+                           cksum="EB8C548E">
+                           domainStatuses-YYYYMMDD.csv
+                     </rdeCsv:file>
+                   </rdeCsv:files>
+             </rdeCsv:csv>
+           ...
+           </csvDomain:contents>
+           ...
 
 
 
@@ -1285,709 +1282,443 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 23]
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 23]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-   ...
-   <csvDomain:deletes>
-   ...
-    <rdeCsv:csv name="domainContacts">
-     <rdeCsv:fields>
-         <csvDomain:fName parent="true"/>
-         <csvContact:fId/>
-         <csvDomain:fContactType/>
-     </rdeCsv:fields>
-     <rdeCsv:files>
-       <rdeCsv:file
-        cksum="6BC9F9E8">
-        domainContacts-delete-YYYYMMDD.csv
-       </rdeCsv:file>
-     </rdeCsv:files>
-    </rdeCsv:csv>
-   ...
-   </csvDomain:deletes>
-   ...
+   Example of the corresponding domainStatuses-YYYYMMDD.csv file.  The
+   file contains the statuses for the two domain names domain1.test and
+   domain2.test.
 
-      Example of the corresponding domainContacts-delete-YYYYMMDD.csv
-      file.  The file contains two tech contact records.
+           domain1.test,clientUpdateProhibited,"Disallow update",
+           en,
+           domain1.test,clientDeleteProhibited,"Disallow delete",
+           en,
+           domain2.test,clientUpdateProhibited,"Disallow update",
+           en,
+           domain2.test,pendingDelete,,,
+           redemptionPeriod
 
+5.1.2.1.4.  "domainNameServers" CSV File Definition
 
+   The "domainNameServers" CSV File Definition defines the fields and
+   CSV file references used for the domain name delegated hosts (name
+   servers).  The "domainNameServers" CSV files define the relationship
+   between a domain name object and a delegated host.  To support both
+   the <domain:hostAttr> and the <domain:hostObj> model, defined in
+   [RFC5731], the host <rdeCsv:fRoid> field element is used to reference
+   the host.
 
-   domain1.test,mycontactid,tech
-   domain2.test,sh8013,tech
+   The following "csvDomain" fields, defined for the "domain"
+   <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
+   "domainNameServers" <rdeCsv:csv> <rdeCsv:fields> element:
 
-   "domainStatuses"  Defines the fields and CSV file references used for
-      the domain name object statuses.
+   <csvDomain:fName>  Domain name using the delegated host with host
+      <rdeCsv:fRoid>.
 
-      The following "csvDomain" field elements, defined for the
-      "domainStatuses" <rdeCsv:csv> <rdeCsv:fields> element, MUST be
-      used in the "domainStatuses" <rdeCsv:csv> <rdeCsv:fields> element:
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MUST be used in the "domainNameServers"
+   <rdeCsv:csv> <rdeCsv:fields> element:
 
-
-
-      <csvDomain:fStatus>  The status of the domain name with
-         type="domain:statusValueType".
-
-      <csvDomain:fRgpStatus>  The Registry Grace Period (RGP) status, as
-         a sub-status of the <csvDomain:fStatus> "pendingDelete" status
-         value, with type="rgp:statusValueType" as defined in [RFC3915].
-
-      The following "csvDomain" fields, defined for the "domain"
-      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
-      "domainStatuses" <rdeCsv:csv> <rdeCsv:fields> element:
+   <rdeCsv:fRoid>  Registry Object IDentifier (ROID) used to uniquely
+      reference a delegated host record.
 
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 24]
+
+
+
+
+
+
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 24]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-      <csvDomain:fName>  Domain name of status.
+   Example of a "domainNameServers" <csvDomain:contents> <rdeCsv:csv>
+   element.
 
-      The following "rdeCsv" fields, defined in section CSV common field
-      elements (Section 4.6.2), MAY be used in the "domainStatuses"
-      <rdeCsv:csv> <rdeCsv:fields> element:
+           ...
+           <csvDomain:contents>
+           ...
+             <rdeCsv:csv name="domainNameServers">
+                   <rdeCsv:fields>
+                     <csvDomain:fName parent="true"/>
+                     <rdeCsv:fRoid parent="true"/>
+                   </rdeCsv:fields>
+                   <rdeCsv:files>
+                     <rdeCsv:file
+                           cksum="569D4638">
+                           domainNameServers-YYYYMMDD.csv
+                     </rdeCsv:file>
+                   </rdeCsv:files>
+             </rdeCsv:csv>
+           ...
+           </csvDomain:contents>
+           ...
 
+   Example of the corresponding domainNameServers-YYYYMMDD.csv file.
+   The file contains the delegated hosts (name servers) for the two
+   domain names domain1.test and domain2.test referenced via the
+   <rdeCsv:fRoid> field element.
 
+           domain1.test,Dns1domain2test-TEST
+           domain1.test,Dns2domain2test-TEST
+           domain2.test,Dns1domainexample-TEST
+           domain2.test,Dns2domainexample-TEST
 
-      <rdeCsv:fStatusDescription>  Domain object status description
-         which is free form text describing the rationale for the
-         status.
+5.1.2.1.5.  "dnssec" CSV File Definition
 
-      <rdeCsv:fLang>  Language of the <rdeCsv:fStatusDescription> field.
+   The "dnssec" CSV File Definition defines the fields and CSV file
+   references used for the domain name object DNSSEC records (DS or Key
+   Data).
 
-      Example of a "domainStatuses" <csvDomain:contents> <rdeCsv:csv>
-      element:
+   The following "csvDomain" field elements MUST be used in the "dnssec"
+   <rdeCsv:csv> rdeCsv:fields> element when the DS Data Interface per
+   [RFC5910] is used:
 
+   <csvDomain:fKeyTag>  Contains the DS key tag value per [RFC5910] with
+      type="unsignedShort".
 
-
-   ...
-   <csvDomain:contents>
-   ...
-     <rdeCsv:csv name="domainStatuses">
-       <rdeCsv:fields>
-         <csvDomain:fName parent="true"/>
-         <csvDomain:fStatus/>
-         <rdeCsv:fStatusDescription/>
-         <rdeCsv:fLang/>
-         <csvDomain:fRgpStatus/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-           cksum="EB8C548E">
-           domainStatuses-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvDomain:contents>
-   ...
-
-      Example of the corresponding domainStatuses-YYYYMMDD.csv file.
-      The file contains the statuses for the two domain names
-      domain1.test and domain2.test.
-
-
-
-
-
+   <csvDomain:fDsAlg>  Contains the DS algorithm value per [RFC5910]
+      with type="unsignedByte".
 
 
-Arias, et al.            Expires March 30, 2014                [Page 25]
+
+
+Arias, et al.            Expires August 18, 2017               [Page 25]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-   domain1.test,clientUpdateProhibited,"Disallow update",
-   en,
-   domain1.test,clientDeleteProhibited,"Disallow delete",
-   en,
-   domain2.test,clientUpdateProhibited,"Disallow update",
-   en,
-   domain2.test,pendingDelete,,,
-   redemptionPeriod
+   <csvDomain:fDigestType>  Contains the DS digest type value per
+      [RFC5910] with type="unsignedByte".
 
-      Example of a "domainStatuses" <csvDomain:deletes> <rdeCsv:csv>
-      element:
+   <csvDomain:fDigest>  Contains the DS digest value per [RFC5910] with
+      type="hexBinary".
 
+   The following "csvDomain" field elements MUST be used in the "dnssec"
+   <rdeCsv:csv> rdeCsv:fields> element when the Key Data Interface per
+   [RFC5910] is used:
 
+   <csvDomain:fFlags>  Contains the flags field value per [RFC5910] with
+      type="unsignedShort".
 
-   ...
-   <csvDomain:deletes>
-   ...
-    <rdeCsv:csv name="domainStatuses">
-     <rdeCsv:fields>
-       <csvDomain:fName parent="true"/>
-       <csvDomain:fStatus/>
-     </rdeCsv:fields>
-     <rdeCsv:files>
-       <rdeCsv:file
-        cksum="F54AADF6">
-        domainStatuses-delete-YYYYMMDD.csv
-       </rdeCsv:file>
-     </rdeCsv:files>
-    </rdeCsv:csv>
-   ...
-   </csvDomain:deletes>
-   ...
+   <csvDomain:fProtocol>  Contains the Key protocol value per [RFC5910]
+      with type="unsignedByte".
 
-      Example of the corresponding domainStatuses-delete-YYYYMMDD.csv
-      file.  The file contains two status records.
+   <csvDomain:fKeyAlg>  Contains the Key algorithm value per [RFC5910]
+      with type="unsignedByte".
 
+   <csvDomain:fPubKey>  Contains the public key value per [RFC5910] with
+      type="secDNS:keyType".
 
+   The following "csvDomain" field elements MAY be used in the "dnssec"
+   <rdeCsv:csv> rdeCsv:fields> element:
 
-   domain1.test,clientUpdateProhibited
-   domain2.test,pendingDelete
+   <csvDomain:fMaxSigLife>  Indicates a child's preference for the
+      number of seconds after signature generation when the parent's
+      signature on the DS information provided by the child will expire
+      with type="secDNS:maxSigLifeType" defined in [RFC5910].
 
-   "domainNameServers"  Defines the fields and CSV file references used
-      for the domain name delegated hosts (name servers).  The
-      "domainNameServers" CSV files define the relationship between a
-      domain name object and a delegated host.  To support both the
-      <domain:hostAttr> and the <domain:hostObj> model, defined in
-      [RFC5731], the host <rdeCsv:fRoid> field element is used to
-      reference the host.
+   The following "domain" fields, defined for the "domain" <rdeCsv:csv>
+   <rdeCsv:fields> element, MUST be used in the "dnssec" <rdeCsv:csv>
+   <rdeCsv:fields> element:
+
+   <csvDomain:fName>  Domain name of the domain object associated with
+      the DNSSEC record.
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 26]
+
+
+
+
+
+
+
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 26]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-      The following "csvDomain" fields, defined for the "domain"
-      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
-      "domainNameServers" <rdeCsv:csv> <rdeCsv:fields> element:
+   Example of a "dnssec" <csvDomain:contents> <rdeCsv:csv> element with
+   the DS Data Interface of [RFC5910]:
 
+           <csvDomain:contents>
+           ...
+             <rdeCsv:csv name="dnssec">
+                   <rdeCsv:fields>
+                     <csvDomain:fName parent="true"/>
+                     <csvDomain:fMaxSigLife/>
+                     <csvDomain:fKeyTag/>
+                     <csvDomain:fDsAlg/>
+                     <csvDomain:fDigestType/>
+                     <csvDomain:fDigest/>
+                   </rdeCsv:fields>
+                   <rdeCsv:files>
+                     <rdeCsv:file
+                      cksum="AA15CB43">
+                      dnssec-ds-YYYYMMDD.csv
+                     </rdeCsv:file>
+                   </rdeCsv:files>
+             </rdeCsv:csv>
+           ...
+           </csvDomain:contents>
+           ...
 
+   Example of the corresponding dnssec-ds-YYYYMMDD.csv file.  The file
+   contains two DS records for domain1.test.
 
-      <csvDomain:fName>  Domain name using the delegated host with host
-         <rdeCsv:fRoid>.
-
-      The following "rdeCsv" fields, defined in section CSV common field
-      elements (Section 4.6.2), MUST be used in the "domainNameServers"
-      <rdeCsv:csv> <rdeCsv:fields> element:
-
-
-
-      <rdeCsv:fRoid>  Registry Object IDentifier (ROID) used to uniquely
-         reference a delegated host record.
-
-      Example of a "domainNameServers" <csvDomain:contents> <rdeCsv:csv>
-      element.
-
-
-
-   ...
-   <csvDomain:contents>
-   ...
-     <rdeCsv:csv name="domainNameServers">
-       <rdeCsv:fields>
-         <csvDomain:fName parent="true"/>
-         <rdeCsv:fRoid parent="true"/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-           cksum="569D4638">
-           domainNameServers-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvDomain:contents>
-   ...
-
-      Example of the corresponding domainNameServers-YYYYMMDD.csv file.
-      The file contains the delegated hosts (name servers) for the two
-      domain names domain1.test and domain2.test referenced via the
-      <rdeCsv:fRoid> field element.
+           domain1.test,604800,12345,3,1,49FD46E6C4B45C55D4AC
+           domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B
 
 
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 27]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 27]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-   domain1.test,Dns1domain2test-TEST
-   domain1.test,Dns2domain2test-TEST
-   domain2.test,Dns1domainexample-TEST
-   domain2.test,Dns2domainexample-TEST
+   Example of a "dnssec" <csvDomain:contents> <rdeCsv:csv> element with
+   the Key Data Interface of [RFC5910]:
 
-      Example of a "domainNameServers" <csvDomain:deletes> <rdeCsv:csv>
-      element.
+           <csvDomain:contents>
+           ...
+             <rdeCsv:csv name="dnssec">
+                   <rdeCsv:fields>
+                     <csvDomain:fName parent="true"/>
+                     <csvDomain:fMaxSigLife/>
+                     <csvDomain:fFlags/>
+                     <csvDomain:fProtocol/>
+                     <csvDomain:fKeyAlg/>
+                     <csvDomain:fPubKey/>
+                   </rdeCsv:fields>
+                   <rdeCsv:files>
+                     <rdeCsv:file
+                      cksum="1B16F334">
+                      dnssec-key-YYYYMMDD.csv
+                     </rdeCsv:file>
+                   </rdeCsv:files>
+             </rdeCsv:csv>
+           ...
+           </csvDomain:contents>
+           ...
+
+   Example of the corresponding dnssec-key-YYYYMMDD.csv file.  The file
+   contains two key records for domain1.test.
+
+           domain1.test,604800,257,3,1,AQPJ////4Q==
+           domain1.test,604800,257,3,1,AQPJ////4QQQ
+
+5.1.2.1.6.  "domainTransfer" CSV File Definition
+
+   The "domainTransfer" CSV File Definition defines the fields and CSV
+   file references used for the domain name object pending and completed
+   transfer records.  No additional field elements were added for use in
+   the "domainTransfer" <rdeCsv:csv> <rdeCsv:fields> element.
+
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MUST be used in the "domainTransfer"
+   <rdeCsv:csv> <rdeCsv:fields> element:
+
+   <rdeCsv:fTrStatus>  State of the most recent transfer request.
+
+   <rdeCsv:fReRr>  Identifier of the registrar, defined in Section 5.4,
+      of the client that requested the transfer.
+
+   <rdeCsv:fReDate>  Date and time that the transfer was requested.
 
 
 
-   ...
-   <csvDomain:deletes>
-   ...
-    <rdeCsv:csv name="domainNameServers">
-     <rdeCsv:fields>
-         <csvDomain:fName parent="true"/>
-         <rdeCsv:fRoid parent="true"/>
-     </rdeCsv:fields>
-     <rdeCsv:files>
-       <rdeCsv:file
-        cksum="569D4638">
-        domainNameServers-delete-YYYYMMDD.csv
-       </rdeCsv:file>
-     </rdeCsv:files>
-    </rdeCsv:csv>
-   ...
-   </csvDomain:deletes>
-   ...
-
-      Example of the corresponding domainNameServers-delete-YYYYMMDD.csv
-      file.  The file contains two records.
-
-
-
-   domain1.test,Dns1domain2test-TEST
-   domain1.test,Dns2domain2test-TEST
-   domain2.test,Dns1domainexample-TEST
-   domain2.test,Dns2domainexample-TEST
-
-   "dnssec"  Defines the fields and CSV file references used for the
-      domain name object DNSSEC records (DS or Key Data).
-
-      The following "csvDomain" field elements, defined for the "dnssec"
-      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the "dnssec"
-      <rdeCsv:csv> rdeCsv:fields> element when the DS Data Interface per
-      [RFC5910] is used:
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 28]
+Arias, et al.            Expires August 18, 2017               [Page 28]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-      <csvDomain:fKeyTag>  Contains the DS key tag value per [RFC5910]
-         with type="unsignedShort".
+   <rdeCsv:fAcRr>  Identifier of the registrar, defined in Section 5.4,
+      of the client that should take or took action.
 
-      <csvDomain:fDsAlg>  Contains the DS algorithm value per [RFC5910]
-         with type="unsignedByte".
+   <rdeCsv:fAcDate>  Date and time that the transfer action should be
+      taken or has been taken.
 
-      <csvDomain:fDigestType>  Contains the DS digest type value per
-         [RFC5910] with type="unsignedByte".
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MAY be used in the "domainTransfer"
+   <rdeCsv:csv> <rdeCsv:fields> element:
 
-      <csvDomain:fDigest>  Contains the DS digest value per [RFC5910]
-         with type="hexBinary".
+   <rdeCsv:fExDate>  Expiration date if the transfer command caused or
+      causes a change in the validity period.
 
-      The following "csvDomain" field elements, defined for the "dnssec"
-      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the "dnssec"
-      <rdeCsv:csv> rdeCsv:fields> element when the Key Data Interface
-      per [RFC5910] is used:
+   <rdeCsv:fReID>  Identifier of client that requested the transfer.
 
+   <rdeCsv:fAcID>  Identifier of client that should take or took action
+      for transfer.
 
+   The following "csvDomain" fields, defined for the "domain"
+   <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
+   "domainTransfer" <rdeCsv:csv> <rdeCsv:fields> element:
 
-      <csvDomain:fFlags>  Contains the flags field value per [RFC5910]
-         with type="unsignedShort".
-
-      <csvDomain:fProtocol>  Contains the Key protocol value per
-         [RFC5910] with type="unsignedByte".
-
-      <csvDomain:fKeyAlg>  Contains the Key algorithm value per
-         [RFC5910] with type="unsignedByte".
-
-      <csvDomain:fPubKey>  Contains the public key value per [RFC5910]
-         with type="secDNS:keyType".
-
-      The following "csvDomain" field elements, defined for the "dnssec"
-      <rdeCsv:csv> <rdeCsv:fields> element, MAY be used in the "dnssec"
-      <rdeCsv:csv> rdeCsv:fields> element:
-
-
-
-      <csvDomain:fMaxSigLife>  Indicates a child's preference for the
-         number of seconds after signature generation when the parent's
-         signature on the DS information provided by the child will
-         expire with type="secDNS:maxSigLifeType" defined in [RFC5910].
-
-      The following "domain" fields, defined for the "domain"
-      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the "dnssec"
-      <rdeCsv:csv> <rdeCsv:fields> element:
+   <csvDomain:fName>  Domain name of the domain object involved in the
+      transfer.
 
 
 
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 29]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 29]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-      <csvDomain:fName>  Domain name of the domain object associated
-         with the DNSSEC record.
+   Example of a "domainTransfer" <csvDomain:contents> <rdeCsv:csv>
+   element:
 
-      Example of a "dnssec" <csvDomain:contents> <rdeCsv:csv> element
-      with the DS Data Interface of [RFC5910]:
+           ...
+           <csvDomain:contents>
+           ...
+             <rdeCsv:csv name="domainTransfer">
+                   <rdeCsv:fields>
+                     <csvDomain:fName parent="true"/>
+                     <rdeCsv:fTrStatus/>
+                     <rdeCsv:fReRr/>
+                     <rdeCsv:fReID/>
+                     <rdeCsv:fReDate/>
+                     <rdeCsv:fAcRr/>
+                     <rdeCsv:fAcID/>
+                     <rdeCsv:fAcDate/>
+                     <rdeCsv:fExDate/>
+                   </rdeCsv:fields>
+                   <rdeCsv:files>
+                     <rdeCsv:file
+                      cksum="71170194">
+                      domainTransfer-YYYYMMDD.csv
+                     </rdeCsv:file>
+                   </rdeCsv:files>
+             </rdeCsv:csv>
+           ...
+           </csvDomain:contents>
+           ...
 
+   Example of the corresponding domainTransfer-YYYYMMDD.csv file.  The
+   file contains two domain transfer records, with one in pending status
+   and the second in clientApproved status.
 
+           domain1.test,pending,registrarX,clientY,
+           2011-03-08T19:38:00.0Z,registrarY,,2011-03-13T23:59:59.0Z,
+           2016-04-03T22:00:00.0Z
+           domain2.test,clientApproved,registrarX,clientY,
+           2012-03-08T19:38:00.0Z,registrarY,clientY,
+           2012-03-09T23:59:59.0Z,2016-05-04T23:00:00.0Z
 
-   <csvDomain:contents>
-   ...
-     <rdeCsv:csv name="dnssec">
-       <rdeCsv:fields>
-         <csvDomain:fName parent="true"/>
-         <csvDomain:fMaxSigLife/>
-         <csvDomain:fKeyTag/>
-         <csvDomain:fDsAlg/>
-         <csvDomain:fDigestType/>
-         <csvDomain:fDigest/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-          cksum="AA15CB43">
-          dnssec-ds-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvDomain:contents>
-   ...
+5.1.2.2.  <csvDomain:deletes>
 
-      Example of the corresponding dnssec-ds-YYYYMMDD.csv file.  The
-      file contains two DS records for domain1.test.
-
-
-
-   domain1.test,604800,12345,3,1,49FD46E6C4B45C55D4AC
-   domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B
-
-      Example of a "dnssec" <csvDomain:contents> <rdeCsv:csv> element
-      with the Key Data Interface of [RFC5910]:
-
-
-
-
-
-
-
-
-
+   The <csvDomain:deletes> is used to hold the deleted domain name
+   objects in a differental or incremental deposit.  All of the domain
+   name object data is deleted as part of a casecade delete.  The
+   <csvDomain:deletes> is split into separate CSV file definitions using
+   named <rdeCsv:csv> elements with the "name" attribute.  The following
 
 
-Arias, et al.            Expires March 30, 2014                [Page 30]
+
+
+Arias, et al.            Expires August 18, 2017               [Page 30]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
-   <csvDomain:contents>
-   ...
-     <rdeCsv:csv name="dnssec">
-       <rdeCsv:fields>
-         <csvDomain:fName parent="true"/>
-         <csvDomain:fMaxSigLife/>
-         <csvDomain:fFlags/>
-         <csvDomain:fProtocol/>
-         <csvDomain:fKeyAlg/>
-         <csvDomain:fPubKey/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-          cksum="1B16F334">
-          dnssec-key-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvDomain:contents>
-   ...
-
-      Example of the corresponding dnssec-key-YYYYMMDD.csv file.  The
-      file contains two key records for domain1.test.
-
-
-
-   domain1.test,604800,257,3,1,AQPJ////4Q==
-   domain1.test,604800,257,3,1,AQPJ////4QQQ
-
-      Example of a "dnssec" <csvDomain:deletes> <rdeCsv:csv> element
-      with the DS Data Interface of [RFC5910]:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 31]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
-   ...
-   <csvDomain:deletes>
-   ...
-     <rdeCsv:csv name="dnssec">
-       <rdeCsv:fields>
-         <csvDomain:fName parent="true"/>
-         <csvDomain:fKeyTag/>
-         <csvDomain:fDsAlg/>
-         <csvDomain:fDigestType/>
-         <csvDomain:fDigest/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-          cksum="ADB014A2">
-          dnssec-ds-delete-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvDomain:deletes>
-   ...
-
-      Example of the corresponding dnssec-ds-delete-YYYYMMDD.csv file.
-      The file contains two DS records for domain1.test.
-
-
-
-   domain1.test,12345,3,1,49FD46E6C4B45C55D4AC
-   domain1.test,12346,3,1,38EC35D5B3A34B44C39B
-
-      Example of a "dnssec" <csvDomain:deletes> <rdeCsv:csv> element
-      with the Key Data Interface of [RFC5910]:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 32]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
-   ...
-   <csvDomain:deletes>
-   ...
-     <rdeCsv:csv name="dnssec">
-       <rdeCsv:fields>
-         <csvDomain:fName parent="true"/>
-         <csvDomain:fFlags/>
-         <csvDomain:fProtocol/>
-         <csvDomain:fKeyAlg/>
-         <csvDomain:fPubKey/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-          cksum="B3E06C5C">
-          dnssec-key-delete-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvDomain:deletes>
-   ...
-
-      Example of the corresponding dnssec-key-delete-YYYYMMDD.csv file.
-      The file contains two key records for domain1.test.
-
-
-
-   domain1.test,257,3,1,AQPJ////4Q==
-   domain1.test,257,3,1,AQPJ////4QQQ
-
-   "domainTransfer"  Defines the fields and CSV file references used for
-      the domain name object pending and completed transfer records.  No
-      additional field elements were added for use in the
-      "domainTransfer" <rdeCsv:csv> <rdeCsv:fields> element.
-
-      The following "rdeCsv" fields, defined in section CSV common field
-      elements (Section 4.6.2), MUST be used in the "domainTransfer"
-      <rdeCsv:csv> <rdeCsv:fields> element:
-
-
-
-      <rdeCsv:fTrStatus>  State of the most recent transfer request.
-
-      <rdeCsv:fReRr>  Identifier of the registrar, defined in
-         Section 5.4, of the client that requested the transfer.
-
-      <rdeCsv:fReDate>  Date and time that the transfer was requested.
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 33]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
-      <rdeCsv:fAcRr>  Identifier of the registrar, defined in
-         Section 5.4, of the client that should take or took action.
-
-      <rdeCsv:fAcDate>  Date and time that the transfer action should be
-         taken or has been taken.
-
-      The following "rdeCsv" fields, defined in section CSV common field
-      elements (Section 4.6.2), MAY be used in the "domainTransfer"
-      <rdeCsv:csv> <rdeCsv:fields> element:
-
-
-
-      <rdeCsv:fExDate>  Expiration date if the transfer command caused
-         or causes a change in the validity period.
-
-      <rdeCsv:fReID>  Identifier of client that requested the transfer.
-
-      <rdeCsv:fAcID>  Identifier of client that should take or took
-         action for transfer.
-
-      The following "csvDomain" fields, defined for the "domain"
-      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
-      "domainTransfer" <rdeCsv:csv> <rdeCsv:fields> element:
-
-
-
-      <csvDomain:fName>  Domain name of the domain object involved in
-         the transfer.
-
-      Example of a "domainTransfer" <csvDomain:contents> <rdeCsv:csv>
-      element:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 34]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
-   ...
-   <csvDomain:contents>
-   ...
-     <rdeCsv:csv name="domainTransfer">
-       <rdeCsv:fields>
-         <csvDomain:fName parent="true"/>
-         <rdeCsv:fTrStatus/>
-         <rdeCsv:fReRr/>
-         <rdeCsv:fReID/>
-         <rdeCsv:fReDate/>
-         <rdeCsv:fAcRr/>
-         <rdeCsv:fAcID/>
-         <rdeCsv:fAcDate/>
-         <rdeCsv:fExDate/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-          cksum="71170194">
-          domainTransfer-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvDomain:contents>
-   ...
-
-      Example of the corresponding domainTransfer-YYYYMMDD.csv file.
-      The file contains two domain transfer records, with one in pending
-      status and the second in clientApproved status.
-
-
-
-   domain1.test,pending,registrarX,clientY,
-   2011-03-08T19:38:00.0Z,registrarY,,2011-03-13T23:59:59.0Z,
-   2016-04-03T22:00:00.0Z
-   domain2.test,clientApproved,registrarX,clientY,
-   2012-03-08T19:38:00.0Z,registrarY,clientY,
-   2012-03-09T23:59:59.0Z,2016-05-04T23:00:00.0Z
-
-      Example of a "domainTransfer" <csvDomain:deletes> <rdeCsv:csv>
-      element:
-
-
-
-
-
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 35]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
-   ...
-   <csvDomain:deletes>
-   ...
-     <rdeCsv:csv name="domainTransfer">
-       <rdeCsv:fields>
-         <csvDomain:fName parent="true"/>
-         <rdeCsv:fReDate/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-          cksum="10C3EDA8">
-          domainTransfer-delete-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvDomain:deletes>
-   ...
-
-      Example of the corresponding domainTransfer-delete-YYYYMMDD.csv
-      file.  The file contains two domain transfer records.
-
-
-
-   domain1.test,2011-03-08T19:38:00.0Z
-   domain2.test,2012-03-08T19:38:00.0Z
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
+   section defines the supported domain name deletes CSV file
+   definition:
+
+5.1.2.2.1.  "domain" Deletes CSV File Definition
+
+   The following "csvDomain" field elements MUST be used in the deletes
+   "domain" <rdeCsv:csv> <rdeCsv:fields> element:
+
+   <csvDomain:fName>  Domain name field with type="eppcom:labelType" and
+      isRequired="true".
+
+   Example of a "domain" <csvDomain:deletes> <rdeCsv:csv> element:
+
+           ...
+           <csvDomain:deletes>
+           ...
+            <rdeCsv:csv name="domain">
+             <rdeCsv:fields>
+                   <csvDomain:fName/>
+             </rdeCsv:fields>
+             <rdeCsv:files>
+                   <rdeCsv:file
+                    cksum="E19349E0">
+                    domain-delete-YYYYMMDD.csv
+                   </rdeCsv:file>
+             </rdeCsv:files>
+            </rdeCsv:csv>
+           ...
+           </csvDomain:deletes>
+           ...
+
+   Example of the corresponding domain-delete-YYYYMMDD.csv file.  The
+   file contains three domain name records.
+
+           domain1.test
+           domain2.test
+           domainN.test
 
 5.2.  Host Object
 
@@ -1995,6 +1726,17 @@ Internet-Draft            DNRD Objects Mapping            September 2013
    The host object supports both the XML Model and the CSV Model,
    defined in Models (Section 2) section.  The elements used for both
    models are defined in the following sections.
+
+
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 31]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
 
 5.2.1.  XML Model
 
@@ -2007,16 +1749,6 @@ Internet-Draft            DNRD Objects Mapping            September 2013
    abstract element to define a concrete definition of a host.  The
    <rdeHost:abstractHost> element can be replaced by other host
    definitions using the XML schema substitution groups feature.
-
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 36]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
 
 5.2.1.1.  <rdeHost:host> element
 
@@ -2053,6 +1785,15 @@ Internet-Draft            DNRD Objects Mapping            September 2013
       OPTIONAL client attribute is used to specify the client that
       performed the operation.
 
+
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 32]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
    o  An OPTIONAL <upDate> element that contains the date and time of
       the most recent host-object modification.  This element MUST NOT
       be present if the host object has never been modified.
@@ -2063,16 +1804,6 @@ Internet-Draft            DNRD Objects Mapping            September 2013
       transfered.
 
    Example of <host> object:
-
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 37]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
 
    ...
    <rdeHost:host>
@@ -2111,6 +1842,14 @@ Internet-Draft            DNRD Objects Mapping            September 2013
    </rde:deletes>
    ...
 
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 33]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
 5.2.1.3.  CSV Model
 
    For the CSV Model of the host object, the <csvHost:contents> child
@@ -2121,378 +1860,357 @@ Internet-Draft            DNRD Objects Mapping            September 2013
    <csvHost:deletes> elements contain one or more <rdeCsv:csv> elements
    with the following supported "name" attribute values:
 
+   Differential and incremental deposits are based on changes to the
+   host objects.  The updated host object data under the
+   <csvHost:contents> element is a cascade replace down all of the host
+   CSV files starting with the parent "host" CSV File Definition
+   (Section 5.2.1.3.1.1).  The child CSV file definitions include a
+   <rdeCsv:fRoid parent="true"> field.  All the child CSV file
+   definition data for the host objects in the parent "host" CSV file
+   definition MUST first be deleted and then set using the data in the
+   child CSV files.  The deleted host object data under the
+   <csvHost:deletes> element is a cascade delete starting from the
+   "host" Deletes CSV File Definition (Section 5.2.1.3.2.1).
+
+5.2.1.3.1.  <csvHost:contents>
+
+   The <csvHost:contents> is used to hold the new or updated host object
+   information for the deposit.  The <csvHost:contents> is split into
+   separate CSV file definitions using named <rdeCsv:csv> elements with
+   the "name" attribute.  The following sections include the supported
+   host CSV file definitions.
+
+5.2.1.3.1.1.  "host" CSV File Definition
+
+   The "host" CSV File Definition defines the fields and CSV file
+   references used for the host object records.
+
+   The following "csvHost" field elements MUST be used in the "host"
+   <rdeCsv:csv> <rdeCsv:fields> element:
+
+   <csvHost:fName>  Host name field with type="eppcom:labelType" and
+      isRequired="true".
+
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MUST be used in the "host" <rdeCsv:csv>
+   <rdeCsv:fields> element:
+
+   <rdeCsv:fRoid>  Repository Object IDentifier (ROID) assigned to the
+      host object.
 
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 38]
+Arias, et al.            Expires August 18, 2017               [Page 34]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-   "host"  Defines the fields and CSV file references used for the host
-      object records.
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MAY be used in the "host" <rdeCsv:csv>
+   <rdeCsv:fields> element:
 
-      The following "csvHost" field elements, defined for the "host"
-      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the "host"
-      <rdeCsv:csv> <rdeCsv:fields> element:
+   <rdeCsv:fClID>  Identifier of the sponsoring client.
 
+   <rdeCsv:fCrRr>  Identifier of the registrar, defined in Section 5.4,
+      of the client that created the object.
 
+   <rdeCsv:fCrID>  Identifier of client that created the host object.
 
-      <csvHost:fName>  Host name field with type="eppcom:labelType" and
-         isRequired="true".
+   <rdeCsv:fCrDate>  Date and time that the host object was created.
 
-      The following "rdeCsv" fields, defined in section CSV common field
-      elements (Section 4.6.2), MUST be used in the "host" <rdeCsv:csv>
-      <rdeCsv:fields> element:
+   <rdeCsv:fUpRr>  Identifier of the registrar, defined in Section 5.4,
+      of the client that updated the object.
 
+   <rdeCsv:fUpID>  Identifier of client that last updated the host
+      object.
 
+   <rdeCsv:fUpDate>  Date and time that the host object was last
+      updated.
 
-      <rdeCsv:fRoid>  Repository Object IDentifier (ROID) assigned to
-         the host object.
-
-      The following "rdeCsv" fields, defined in section CSV common field
-      elements (Section 4.6.2), MAY be used in the "host" <rdeCsv:csv>
-      <rdeCsv:fields> element:
-
-
-
-      <rdeCsv:fClID>  Identifier of the sponsoring client.
-
-      <rdeCsv:fCrRr>  Identifier of the registrar, defined in
-         Section 5.4, of the client that created the object.
-
-      <rdeCsv:fCrID>  Identifier of client that created the host object.
-
-      <rdeCsv:fCrDate>  Date and time that the host object was created.
-
-      <rdeCsv:fUpRr>  Identifier of the registrar, defined in
-         Section 5.4, of the client that updated the object.
-
-      <rdeCsv:fUpID>  Identifier of client that last updated the host
-         object.
-
-      <rdeCsv:fUpDate>  Date and time that the host object was last
-         updated.
-
-      <rdeCsv:fTrDate>  Date and time that the host was last
-         transferred.
+   <rdeCsv:fTrDate>  Date and time that the host was last transferred.
 
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 39]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 35]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-      Example of a "host" <csvHost:contents> <rdeCsv:csv> element:
+   Example of a "host" <csvHost:contents> <rdeCsv:csv> element:
+
+           ...
+           <csvHost:contents>
+           ...
+             <rdeCsv:csv name="host">
+              <rdeCsv:fields>
+                    <csvHost:fName/>
+                    <rdeCsv:fRoid/>
+                    <rdeCsv:fClID/>
+                    <rdeCsv:fCrRr/>
+                    <rdeCsv:fCrID/>
+                    <rdeCsv:fCrDate/>
+                    <rdeCsv:fUpRr/>
+                    <rdeCsv:fUpID/>
+                    <rdeCsv:fUpDate/>
+                    <rdeCsv:fTrDate/>
+              </rdeCsv:fields>
+              <rdeCsv:files>
+                    <rdeCsv:file
+                     cksum="120938E3">
+                     host-YYYYMMDD.csv
+                    </rdeCsv:file>
+              </rdeCsv:files>
+             </rdeCsv:csv>
+           ...
+           </csvHost:contents>
+           ...
+
+   Example of the corresponding host-YYYYMMDD.csv file.  The file
+   contains two host records with one being an internal host and the
+   second being an external host.
+
+          ns1.example.test,Hns1_example_test-TEST,registrarX,registrarX,
+          clientY,1999-05-08T12:10:00.0Z,registrarX,
+          clientY,2009-10-03T09:34:00.0Z,2007-01-08T09:19:00.0Z
+          ns1.example.test2,Hns1_example_test2-TEST,clientY,
+          clientX,2009-05-08T12:10:00.0Z,clientX,
+          2010-10-03T09:34:00.0Z,
+
+5.2.1.3.1.2.  "hostStatuses" CSV File Definition
+
+   The "hostStatuses" CSV File Definition defines the fields and CSV
+   file references used for the host object statuses.
+
+   The following "csvHost" fields, defined for the "host" <rdeCsv:csv>
+   <rdeCsv:fields> element, MUST be used in the "hostStatuses"
+   <rdeCsv:csv> <rdeCsv:fields> element:
 
 
 
-   ...
-   <csvHost:contents>
-   ...
-     <rdeCsv:csv name="host">
-      <rdeCsv:fields>
-        <csvHost:fName/>
-        <rdeCsv:fRoid/>
-        <rdeCsv:fClID/>
-        <rdeCsv:fCrRr/>
-        <rdeCsv:fCrID/>
-        <rdeCsv:fCrDate/>
-        <rdeCsv:fUpRr/>
-        <rdeCsv:fUpID/>
-        <rdeCsv:fUpDate/>
-        <rdeCsv:fTrDate/>
-      </rdeCsv:fields>
-      <rdeCsv:files>
-        <rdeCsv:file
-         cksum="120938E3">
-         host-YYYYMMDD.csv
-        </rdeCsv:file>
-      </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvHost:contents>
-   ...
-
-      Example of the corresponding host-YYYYMMDD.csv file.  The file
-      contains two host records with one being an internal host and the
-      second being an external host.
-
-
-
-   ns1.example.test,Hns1_example_test-TEST,registrarX,registrarX,
-   clientY,1999-05-08T12:10:00.0Z,registrarX,
-   clientY,2009-10-03T09:34:00.0Z,2007-01-08T09:19:00.0Z
-   ns1.example.test2,Hns1_example_test2-TEST,clientY,
-   clientX,2009-05-08T12:10:00.0Z,clientX,
-   2010-10-03T09:34:00.0Z,
-
-      Example of a "host" <csvHost:deletes> <rdeCsv:csv> element:
-
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 40]
+Arias, et al.            Expires August 18, 2017               [Page 36]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-   ...
-   <csvHost:deletes>
-   ...
-    <rdeCsv:csv name="host">
-     <rdeCsv:fields>
-       <rdeCsv:fRoid/>
-     </rdeCsv:fields>
-     <rdeCsv:files>
-       <rdeCsv:file
-        cksum="E3408F5E">
-        host-delete-YYYYMMDD.csv
-       </rdeCsv:file>
-     </rdeCsv:files>
-    </rdeCsv:csv>
-   ...
-   </csvHost:deletes>
-   ...
+   <csvHost:fStatus>  The status of the host with
+      type="host:statusValueType"/>.
 
-      Example of the host-delete-YYYYMMDD.csv file.  The file contains
-      two host records.
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MUST be used in the "hostStatuses"
+   <rdeCsv:csv> <rdeCsv:fields> element:
 
+   <rdeCsv:fRoid>  Host object Registry Object IDentifier (ROID)
+      assigned to the host object.
 
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MAY be used in the "hostStatuses"
+   <rdeCsv:csv> <rdeCsv:fields> element:
 
-   Hns1_example_test-TEST
-   Hns1_example_test2-TEST
+   <rdeCsv:fStatusDescription>  Host object status description which is
+      free form text describing the rationale for the status.
 
-   "hostStatuses"  Defines the fields and CSV file references used for
-      the host object statuses.
+   <rdeCsv:fLang>  Language of the <rdeCsv:fStatusDescription> field.
 
-      The following "csvHost" fields, defined for the "host"
-      <rdeCsv:csv> <rdeCsv:fields> element, MUST be used in the
-      "hostStatuses" <rdeCsv:csv> <rdeCsv:fields> element:
+   Example of a "hostStatuses" <csvHost:contents> <rdeCsv:csv> element:
 
-
-
-      <csvHost:fStatus>  The status of the host with
-         type="host:statusValueType"/>.
-
-      The following "rdeCsv" fields, defined in section CSV common field
-      elements (Section 4.6.2), MUST be used in the "hostStatuses"
-      <rdeCsv:csv> <rdeCsv:fields> element:
-
-
-
-      <rdeCsv:fRoid>  Host object Registry Object IDentifier (ROID)
-         assigned to the host object.
+           ...
+           <csvHost:contents>
+           ...
+             <rdeCsv:csv name="hostStatuses">
+                   <rdeCsv:fields>
+                     <rdeCsv:fRoid parent="true"/>
+                     <csvHost:fStatus/>
+                     <rdeCsv:fStatusDescription/>
+                     <rdeCsv:fLang/>
+                   </rdeCsv:fields>
+                   <rdeCsv:files>
+                     <rdeCsv:file
+                           cksum="0BA504FC">
+                           hostStatuses-YYYYMMDD.csv
+                     </rdeCsv:file>
+                   </rdeCsv:files>
+             </rdeCsv:csv>
+           ...
+           </csvHost:contents>
+           ...
 
 
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 41]
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 37]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-      The following "rdeCsv" fields, defined in section CSV common field
-      elements (Section 4.6.2), MAY be used in the "hostStatuses"
-      <rdeCsv:csv> <rdeCsv:fields> element:
+   Example of the corresponding hostStatuses-YYYYMMDD.csv file.  The
+   file contains the statuses for the two host names ns1.domain1.test
+   and ns1.domain2.test.
 
+         ns1domain1test-TEST,clientUpdateProhibited,"Disallow update",en
+         ns1domain1test-TEST,clientDeleteProhibited,"Disallow delete",en
+         ns1domain2test-TEST,ok,,
 
+5.2.1.3.1.3.  "hostAddresses" CSV File Definition
 
-      <rdeCsv:fStatusDescription>  Host object status description which
-         is free form text describing the rationale for the status.
+   The "hostAddresses" CSV File Definition defines the fields and CSV
+   file references used for the host object IP addresses.
 
-      <rdeCsv:fLang>  Language of the <rdeCsv:fStatusDescription> field.
+   The following "csvHost" field elements MUST be used in the
+   "hostAddresses" <rdeCsv:csv> <rdeCsv:fields> element:
 
-      Example of a "hostStatuses" <csvHost:contents> <rdeCsv:csv>
-      element:
+   <csvHost:fAddr>  IP addresses associated with the host object with
+      type="host:addrStringType".
 
+   <csvHost:fAddrVersion>  IP addresses version associated with the host
+      object with type="host:ipType".  "host:ipType" has the enumerated
+      values of "v4" or "v6".
 
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MUST be used in the "hostAddresses"
+   <rdeCsv:csv> <rdeCsv:fields> element:
 
-   ...
-   <csvHost:contents>
-   ...
-     <rdeCsv:csv name="hostStatuses">
-       <rdeCsv:fields>
-         <rdeCsv:fRoid parent="true"/>
-         <csvHost:fStatus/>
-         <rdeCsv:fStatusDescription/>
-         <rdeCsv:fLang/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-           cksum="0BA504FC">
-           hostStatuses-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvHost:contents>
-   ...
-
-      Example of the corresponding hostStatuses-YYYYMMDD.csv file.  The
-      file contains the statuses for the two host names ns1.domain1.test
-      and ns1.domain2.test.
-
-
-
-   ns1domain1test-TEST,clientUpdateProhibited,"Disallow update",en
-   ns1domain1test-TEST,clientDeleteProhibited,"Disallow delete",en
-   ns1domain2test-TEST,ok,,
+   <rdeCsv:fRoid>  Host object Registry Object IDentifier (ROID)
+      assigned to the host object.
 
 
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 42]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017               [Page 38]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-      Example of a "hostStatuses" <csvHost:deletes> <rdeCsv:csv>
-      element:
+   Example of a "hostAddresses" <csvHost:contents> <rdeCsv:csv> element.
+
+           ...
+           <csvHost:contents>
+           ...
+             <rdeCsv:csv name="hostAddresses">
+                   <rdeCsv:fields>
+                     <rdeCsv:fRoid parent="true"/>
+                     <csvHost:fAddr/>
+                     <csvHost:fAddrVersion/>
+                   </rdeCsv:fields>
+                   <rdeCsv:files>
+                     <rdeCsv:file
+                           cksum="17888F02">
+                           hostAddresses-YYYYMMDD.csv
+                     </rdeCsv:file>
+                   </rdeCsv:files>
+             </rdeCsv:csv>
+           ...
+           </csvHost:contents>
+           ...
+
+   Example of the corresponding hostAddressesObj-YYYYMMDD.csv file.  The
+   file contains the IP addresses for the host name ns1.domain1.test.
+
+           ns1domain1test-TEST,192.0.2.2,v4
+           ns1domain1test-TEST,192.0.2.29,v4
+           ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A,v6
+
+5.2.1.3.2.  <csvHost:deletes>
+
+   The <csvHost:deletes> is used to hold the deleted host objects in a
+   differental or incremental deposit.  All of the host object data is
+   deleted as part of a casecade delete.  The <csvHost:deletes> is split
+   into separate CSV file definitions using named <rdeCsv:csv> elements
+   with the "name" attribute.  The following section defines the
+   supported host deletes CSV file definition:
+
+5.2.1.3.2.1.  "host" Deletes CSV File Definition
+
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MUST be used in the "host" <rdeCsv:csv>
+   <rdeCsv:fields> element:
+
+   <rdeCsv:fRoid>  Repository Object IDentifier (ROID) assigned to the
+      host object.
 
 
 
-   ...
-   <csvHost:deletes>
-   ...
-    <rdeCsv:csv name="hostStatuses">
-     <rdeCsv:fields>
-         <rdeCsv:fRoid parent="true"/>
-         <csvHost:fStatus/>
-     </rdeCsv:fields>
-     <rdeCsv:files>
-       <rdeCsv:file
-        cksum="055696AF">
-        hostStatuses-delete-YYYYMMDD.csv
-       </rdeCsv:file>
-     </rdeCsv:files>
-    </rdeCsv:csv>
-   ...
-   </csvHost:deletes>
-   ...
-
-      Example of the corresponding hostStatuses-delete-YYYYMMDD.csv
-      file.  The file contains two status records.
 
 
-
-   ns1domain1test-TEST,clientUpdateProhibited
-   ns1domain1test-TEST,clientDeleteProhibited
-
-   "hostAddresses"  Defines the fields and CSV file references used for
-      the host object IP addresses.
-
-      The following "csvHost" field elements, defined for the
-      "hostAddresses" <rdeCsv:csv> rdeCsv:fields> element, MUST be used
-      in the "hostAddresses" <rdeCsv:csv> <rdeCsv:fields> element:
-
-
-
-      <csvHost:fAddr>  IP addresses associated with the host object with
-         type="host:addrStringType".
-
-      <csvHost:fAddrVersion>  IP addresses version associated with the
-         host object with type="host:ipType".  "host:ipType" has the
-         enumerated values of "v4" or "v6".
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 43]
+Arias, et al.            Expires August 18, 2017               [Page 39]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
-      The following "rdeCsv" fields, defined in section CSV common field
-      elements (Section 4.6.2), MUST be used in the "hostAddresses"
-      <rdeCsv:csv> <rdeCsv:fields> element:
+   Example of a "host" <csvHost:deletes> <rdeCsv:csv> element:
 
+           ...
+           <csvHost:deletes>
+           ...
+            <rdeCsv:csv name="host">
+             <rdeCsv:fields>
+                   <rdeCsv:fRoid/>
+             </rdeCsv:fields>
+             <rdeCsv:files>
+                   <rdeCsv:file
+                    cksum="E3408F5E">
+                    host-delete-YYYYMMDD.csv
+                   </rdeCsv:file>
+             </rdeCsv:files>
+            </rdeCsv:csv>
+           ...
+           </csvHost:deletes>
+           ...
 
+   Example of the host-delete-YYYYMMDD.csv file.  The file contains two
+   host records.
 
-      <rdeCsv:fRoid>  Host object Registry Object IDentifier (ROID)
-         assigned to the host object.
-
-      Example of a "hostAddresses" <csvHost:contents> <rdeCsv:csv>
-      element.
-
-
-
-   ...
-   <csvHost:contents>
-   ...
-     <rdeCsv:csv name="hostAddresses">
-       <rdeCsv:fields>
-         <rdeCsv:fRoid parent="true"/>
-         <csvHost:fAddr/>
-         <csvHost:fAddrVersion/>
-       </rdeCsv:fields>
-       <rdeCsv:files>
-         <rdeCsv:file
-           cksum="17888F02">
-           hostAddresses-YYYYMMDD.csv
-         </rdeCsv:file>
-       </rdeCsv:files>
-     </rdeCsv:csv>
-   ...
-   </csvHost:contents>
-   ...
-
-      Example of the corresponding hostAddressesObj-YYYYMMDD.csv file.
-      The file contains the IP addresses for the host name
-      ns1.domain1.test.
-
-
-
-   ns1domain1test-TEST,192.0.2.2,v4
-   ns1domain1test-TEST,192.0.2.29,v4
-   ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A,v6
-
-      Example of a "hostAddresses" <csvHost:deletes> <rdeCsv:csv>
-      element:
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014                [Page 44]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
-   ...
-   <csvHost:deletes>
-   ...
-    <rdeCsv:csv name="hostAddresses">
-     <rdeCsv:fields>
-         <rdeCsv:fRoid parent="true"/>
-         <csvHost:fAddr/>
-     </rdeCsv:fields>
-     <rdeCsv:files>
-       <rdeCsv:file
-        cksum="BF5D53B0">
-        hostAddresses-delete-YYYYMMDD.csv
-       </rdeCsv:file>
-     </rdeCsv:files>
-    </rdeCsv:csv>
-   ...
-   </csvHost:deletes>
-   ...
-
-      Example of the corresponding hostAddresses-delete-YYYYMMDD.csv
-      file.  The file contains three IP address records.
-
-
-
-   ns1domain1test-TEST,192.0.2.2
-   ns1domain1test-TEST,192.0.2.29
-   ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A
+           Hns1_example_test-TEST
+           Hns1_example_test2-TEST
 
 5.3.  Contact Object
 
@@ -2517,9 +2235,11 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 45]
+
+
+Arias, et al.            Expires August 18, 2017               [Page 40]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
 5.3.1.1.  <rdeContact:contact> object
@@ -2573,9 +2293,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 46]
+Arias, et al.            Expires August 18, 2017               [Page 41]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
          +  An OPTIONAL <pc> element that contains the contact's postal
@@ -2629,9 +2349,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 47]
+Arias, et al.            Expires August 18, 2017               [Page 42]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
          client attribute is used to specify the client that performed
@@ -2685,9 +2405,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 48]
+Arias, et al.            Expires August 18, 2017               [Page 43]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -2741,9 +2461,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 49]
+Arias, et al.            Expires August 18, 2017               [Page 44]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -2797,9 +2517,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 50]
+Arias, et al.            Expires August 18, 2017               [Page 45]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       <csvContact:fFax>  Contains the contact's facsimile telephone
@@ -2853,9 +2573,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 51]
+Arias, et al.            Expires August 18, 2017               [Page 46]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -2909,9 +2629,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 52]
+Arias, et al.            Expires August 18, 2017               [Page 47]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -2965,9 +2685,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 53]
+Arias, et al.            Expires August 18, 2017               [Page 48]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       <rdeCsv:fStatusDescription>  The contact object status description
@@ -3021,9 +2741,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 54]
+Arias, et al.            Expires August 18, 2017               [Page 49]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -3077,9 +2797,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 55]
+Arias, et al.            Expires August 18, 2017               [Page 50]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
          to indicate the localized or internationalized form as defined
@@ -3133,9 +2853,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 56]
+Arias, et al.            Expires August 18, 2017               [Page 51]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       <csvContact:fId>  Server-unique contact identifier for the contact
@@ -3189,9 +2909,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 57]
+Arias, et al.            Expires August 18, 2017               [Page 52]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -3245,9 +2965,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 58]
+Arias, et al.            Expires August 18, 2017               [Page 53]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       <rdeCsv:fAcDate>  Date and time that the transfer action should be
@@ -3301,9 +3021,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 59]
+Arias, et al.            Expires August 18, 2017               [Page 54]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -3357,9 +3077,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 60]
+Arias, et al.            Expires August 18, 2017               [Page 55]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -3413,9 +3133,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 61]
+Arias, et al.            Expires August 18, 2017               [Page 56]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       <csvContact:fDiscloseNameLoc>  Exceptional disclosure preference
@@ -3469,9 +3189,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 62]
+Arias, et al.            Expires August 18, 2017               [Page 57]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -3525,9 +3245,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 63]
+Arias, et al.            Expires August 18, 2017               [Page 58]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -3581,9 +3301,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 64]
+Arias, et al.            Expires August 18, 2017               [Page 59]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
 5.4.1.1.  <rdeRegistrar:registrar> element
@@ -3637,9 +3357,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 65]
+Arias, et al.            Expires August 18, 2017               [Page 60]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    o  An OPTIONAL <fax> element that contains the registrar's facsimile
@@ -3693,9 +3413,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 66]
+Arias, et al.            Expires August 18, 2017               [Page 61]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -3749,9 +3469,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 67]
+Arias, et al.            Expires August 18, 2017               [Page 62]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
 5.4.2.  CSV Model
@@ -3805,9 +3525,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 68]
+Arias, et al.            Expires August 18, 2017               [Page 63]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       <rdeCsv:fUpDate>  Date and time of the last update to the
@@ -3861,9 +3581,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 69]
+Arias, et al.            Expires August 18, 2017               [Page 64]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       <csvContact:fFaxExt>  Registrar facsimile telephone number
@@ -3917,9 +3637,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 70]
+Arias, et al.            Expires August 18, 2017               [Page 65]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    EXAMPLE,"Example Inc.",1234,ok,"123 Example Dr.",
@@ -3973,9 +3693,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 71]
+Arias, et al.            Expires August 18, 2017               [Page 66]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
 5.5.1.  XML Model
@@ -4029,9 +3749,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 72]
+Arias, et al.            Expires August 18, 2017               [Page 67]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    <rdeCsv:csv> elements with the following supported "name" attribute
@@ -4085,9 +3805,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 73]
+Arias, et al.            Expires August 18, 2017               [Page 68]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    LANG-1,
@@ -4141,9 +3861,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 74]
+Arias, et al.            Expires August 18, 2017               [Page 69]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    The NNDN object supports both the XML and the CSV Model, defined in
@@ -4197,9 +3917,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 75]
+Arias, et al.            Expires August 18, 2017               [Page 70]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       *  If a NNDN is considered a mirrored IDN variant of a domain
@@ -4253,9 +3973,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 76]
+Arias, et al.            Expires August 18, 2017               [Page 71]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    "NNDN"  Defines the fields and CSV file references used for the NNDN
@@ -4309,9 +4029,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 77]
+Arias, et al.            Expires August 18, 2017               [Page 72]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       <rdeCsv:fUName>  Name of the NNDN in Unicode character set for the
@@ -4365,9 +4085,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 78]
+Arias, et al.            Expires August 18, 2017               [Page 73]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -4421,9 +4141,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 79]
+Arias, et al.            Expires August 18, 2017               [Page 74]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    o  One or more <objURI> elements that contain namespace URIs
@@ -4477,9 +4197,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 80]
+Arias, et al.            Expires August 18, 2017               [Page 75]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
 5.8.  Policy Object
@@ -4533,9 +4253,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 81]
+Arias, et al.            Expires August 18, 2017               [Page 76]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       using the XML Model, and the "uri" is set to
@@ -4589,9 +4309,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 82]
+Arias, et al.            Expires August 18, 2017               [Page 77]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    ...
@@ -4645,9 +4365,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 83]
+Arias, et al.            Expires August 18, 2017               [Page 78]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
 7.  Profile
@@ -4701,9 +4421,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 84]
+Arias, et al.            Expires August 18, 2017               [Page 79]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    o  All contacts objects linked to domain names MUST be present.
@@ -4757,9 +4477,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 85]
+Arias, et al.            Expires August 18, 2017               [Page 80]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
@@ -4813,9 +4533,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 86]
+Arias, et al.            Expires August 18, 2017               [Page 81]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      abstract="true"/>
@@ -4869,9 +4589,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 87]
+Arias, et al.            Expires August 18, 2017               [Page 82]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
          <sequence/>
@@ -4925,9 +4645,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 88]
+Arias, et al.            Expires August 18, 2017               [Page 83]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
     <element name="fCrID" type="rdeCsv:fClIDType"
@@ -4981,9 +4701,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 89]
+Arias, et al.            Expires August 18, 2017               [Page 84]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
     <element name="fUpDate" type="rdeCsv:fDateTimeType"
@@ -5037,9 +4757,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 90]
+Arias, et al.            Expires August 18, 2017               [Page 85]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
          <sequence/>
@@ -5093,9 +4813,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 91]
+Arias, et al.            Expires August 18, 2017               [Page 86]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
     <!-- General token type -->
@@ -5149,9 +4869,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 92]
+Arias, et al.            Expires August 18, 2017               [Page 87]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
     <complexType name="fieldsType">
@@ -5205,9 +4925,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 93]
+Arias, et al.            Expires August 18, 2017               [Page 88]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
 9.2.  RDE Domain Object
@@ -5261,9 +4981,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 94]
+Arias, et al.            Expires August 18, 2017               [Page 89]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      <import namespace="urn:ietf:params:xml:ns:domain-1.0"/>
@@ -5317,9 +5037,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 95]
+Arias, et al.            Expires August 18, 2017               [Page 90]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
              <element name="clID"
@@ -5373,9 +5093,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 96]
+Arias, et al.            Expires August 18, 2017               [Page 91]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
                maxOccurs="unbounded"/>
@@ -5429,9 +5149,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 97]
+Arias, et al.            Expires August 18, 2017               [Page 92]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
           xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
@@ -5485,9 +5205,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 98]
+Arias, et al.            Expires August 18, 2017               [Page 93]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      -->
@@ -5541,9 +5261,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014                [Page 99]
+Arias, et al.            Expires August 18, 2017               [Page 94]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
     <!-- DNSSEC field types -->
@@ -5597,9 +5317,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 100]
+Arias, et al.            Expires August 18, 2017               [Page 95]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
        <extension base="rdeCsv:fieldOptionalType">
@@ -5653,9 +5373,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 101]
+Arias, et al.            Expires August 18, 2017               [Page 96]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       the documentation and/or other materials provided with the
@@ -5709,9 +5429,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 102]
+Arias, et al.            Expires August 18, 2017               [Page 97]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
        <complexContent>
@@ -5765,9 +5485,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 103]
+Arias, et al.            Expires August 18, 2017               [Page 98]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
 9.5.  CSV Host Object
@@ -5821,9 +5541,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 104]
+Arias, et al.            Expires August 18, 2017               [Page 99]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      -->
@@ -5877,9 +5597,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 105]
+Arias, et al.            Expires August 18, 2017              [Page 100]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
     <!-- Host name field -->
@@ -5933,9 +5653,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 106]
+Arias, et al.            Expires August 18, 2017              [Page 101]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      -->
@@ -5989,9 +5709,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 107]
+Arias, et al.            Expires August 18, 2017              [Page 102]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      <!-- Import common element types. -->
@@ -6045,9 +5765,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 108]
+Arias, et al.            Expires August 18, 2017              [Page 103]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
                type="dateTime" minOccurs="0"/>
@@ -6101,9 +5821,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 109]
+Arias, et al.            Expires August 18, 2017              [Page 104]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    o  Redistributions of source code must retain the above copyright
@@ -6157,9 +5877,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 110]
+Arias, et al.            Expires August 18, 2017              [Page 105]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    <annotation>
@@ -6213,9 +5933,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 111]
+Arias, et al.            Expires August 18, 2017              [Page 106]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
        </extension>
@@ -6269,9 +5989,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 112]
+Arias, et al.            Expires August 18, 2017              [Page 107]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       Postal type field
@@ -6325,9 +6045,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 113]
+Arias, et al.            Expires August 18, 2017              [Page 108]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
     <!-- Street address line field with required index attribute  -->
@@ -6381,9 +6101,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 114]
+Arias, et al.            Expires August 18, 2017              [Page 109]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
     </complexType>
@@ -6437,9 +6157,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 115]
+Arias, et al.            Expires August 18, 2017              [Page 110]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
          default="boolean"/>
@@ -6493,9 +6213,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 116]
+Arias, et al.            Expires August 18, 2017              [Page 111]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
@@ -6549,9 +6269,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 117]
+Arias, et al.            Expires August 18, 2017              [Page 112]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
              <element name="id"
@@ -6605,9 +6325,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 118]
+Arias, et al.            Expires August 18, 2017              [Page 113]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
            type="rdeRegistrar:addrType" />
@@ -6661,9 +6381,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 119]
+Arias, et al.            Expires August 18, 2017              [Page 114]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      </simpleType>
@@ -6717,9 +6437,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 120]
+Arias, et al.            Expires August 18, 2017              [Page 115]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    o  Neither the name of Internet Society, IETF or IETF Trust, nor the
@@ -6773,9 +6493,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 121]
+Arias, et al.            Expires August 18, 2017              [Page 116]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      </annotation>
@@ -6829,9 +6549,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 122]
+Arias, et al.            Expires August 18, 2017              [Page 117]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
          <attribute name="type" type="token"
@@ -6885,9 +6605,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 123]
+Arias, et al.            Expires August 18, 2017              [Page 118]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      type="rdeCsv:anyURIType"
@@ -6941,9 +6661,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 124]
+Arias, et al.            Expires August 18, 2017              [Page 119]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
@@ -6997,9 +6717,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 125]
+Arias, et al.            Expires August 18, 2017              [Page 120]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    </schema>
@@ -7053,9 +6773,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 126]
+Arias, et al.            Expires August 18, 2017              [Page 121]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      Import common element types
@@ -7109,9 +6829,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 127]
+Arias, et al.            Expires August 18, 2017              [Page 122]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    </schema>
@@ -7165,9 +6885,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 128]
+Arias, et al.            Expires August 18, 2017              [Page 123]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/>
@@ -7221,9 +6941,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 129]
+Arias, et al.            Expires August 18, 2017              [Page 124]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    o  Redistributions of source code must retain the above copyright
@@ -7277,9 +6997,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 130]
+Arias, et al.            Expires August 18, 2017              [Page 125]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
      <element name="delete" type="rdeNNDN:deleteType"
@@ -7333,9 +7053,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 131]
+Arias, et al.            Expires August 18, 2017              [Page 126]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
                type="eppcom:labelType" minOccurs="0"
@@ -7389,9 +7109,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 132]
+Arias, et al.            Expires August 18, 2017              [Page 127]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
           xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
@@ -7445,9 +7165,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 133]
+Arias, et al.            Expires August 18, 2017              [Page 128]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
             <element ref="rdeCsv:csv" maxOccurs="unbounded"/>
@@ -7501,9 +7221,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 134]
+Arias, et al.            Expires August 18, 2017              [Page 129]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    o  Redistributions of source code must retain the above copyright
@@ -7557,9 +7277,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 135]
+Arias, et al.            Expires August 18, 2017              [Page 130]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    BEGIN
@@ -7613,9 +7333,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 136]
+Arias, et al.            Expires August 18, 2017              [Page 131]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       products derived from this software without specific prior written
@@ -7669,9 +7389,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 137]
+Arias, et al.            Expires August 18, 2017              [Page 132]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    BEGIN
@@ -7725,9 +7445,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 138]
+Arias, et al.            Expires August 18, 2017              [Page 133]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
 10.  Internationalization Considerations
@@ -7781,9 +7501,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 139]
+Arias, et al.            Expires August 18, 2017              [Page 134]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       Registrant Contact: See the "Author's Address" section of this
@@ -7837,9 +7557,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 140]
+Arias, et al.            Expires August 18, 2017              [Page 135]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       XML: None.  Namespace URIs do not represent an XML specification.
@@ -7893,9 +7613,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 141]
+Arias, et al.            Expires August 18, 2017              [Page 136]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       URI: urn:ietf:params:xml:ns:rdeRegistrar-1.0
@@ -7949,9 +7669,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 142]
+Arias, et al.            Expires August 18, 2017              [Page 137]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       Registrant Contact: See the "Author's Address" section of this
@@ -8005,9 +7725,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 143]
+Arias, et al.            Expires August 18, 2017              [Page 138]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
       XML: None.  Namespace URIs do not represent an XML specification.
@@ -8061,9 +7781,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 144]
+Arias, et al.            Expires August 18, 2017              [Page 139]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    authenticate the identity of the Escrow Agent before submitting any
@@ -8117,9 +7837,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 145]
+Arias, et al.            Expires August 18, 2017              [Page 140]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    2.  Added NNDN object to support list of reserved names and different
@@ -8173,9 +7893,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 146]
+Arias, et al.            Expires August 18, 2017              [Page 141]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    3.   Changed the optional <rdeCsv:sep> element to be an optional
@@ -8229,9 +7949,9 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 147]
+Arias, et al.            Expires August 18, 2017              [Page 142]
 
-Internet-Draft            DNRD Objects Mapping            September 2013
+Internet-Draft            DNRD Objects Mapping             February 2017
 
 
    19.  Removed use of the <rdeCsv:fRoid> field element for the
@@ -8257,6 +7977,10 @@ Internet-Draft            DNRD Objects Mapping            September 2013
 
    6.  Minor editorial changes.
 
+14.7.  Changes from version 05 to 06
+
+   1.
+
 15.  Example of a full deposit using the XML model
 
    Example of a full deposit using the XML model:
@@ -8278,18 +8002,18 @@ Internet-Draft            DNRD Objects Mapping            September 2013
      xmlns:rdePolicy="urn:ietf:params:xml:ns:rdePolicy-1.0"
      xmlns:epp="urn:ietf:params:xml:ns:epp-1.0">
 
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 143]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
      <rde:watermark>2010-10-17T00:00:00Z</rde:watermark>
      <rde:rdeMenu>
        <rde:version>1.0</rde:version>
        <rde:objURI>urn:ietf:params:xml:ns:rdeHeader-1.0
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 148]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
        </rde:objURI>
        <rde:objURI>urn:ietf:params:xml:ns:rdeContact-1.0
        </rde:objURI>
@@ -8335,17 +8059,16 @@ Internet-Draft            DNRD Objects Mapping            September 2013
        </rdeHeader:count>
        </rdeHeader:header>
 
+
+
+Arias, et al.            Expires August 18, 2017              [Page 144]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
        <!-- Domian: example1.test -->
        <rdeDom:domain>
          <rdeDom:name>example1.test</rdeDom:name>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 149]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
          <rdeDom:roid>Dexample1-TEST</rdeDom:roid>
          <rdeDom:status s="ok"/>
          <rdeDom:registrant>jd1234</rdeDom:registrant>
@@ -8391,17 +8114,17 @@ Internet-Draft            DNRD Objects Mapping            September 2013
          <rdeHost:crDate>1999-05-08T12:10:00.0Z</rdeHost:crDate>
          <rdeHost:upRr>RegistrarX</rdeHost:upRr>
          <rdeHost:upDate>2009-10-03T09:34:00.0Z</rdeHost:upDate>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 145]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
        </rdeHost:host>
 
        <!-- Contact: sh8013 -->
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 150]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
        <rdeContact:contact>
          <rdeContact:id>sh8013</rdeContact:id>
          <rdeContact:roid>Csh8013-TEST</rdeContact:roid>
@@ -8447,17 +8170,17 @@ Internet-Draft            DNRD Objects Mapping            September 2013
          <rdeRegistrar:id>RegistrarX</rdeRegistrar:id>
          <rdeRegistrar:name>Registrar X</rdeRegistrar:name>
          <rdeRegistrar:gurid>123</rdeRegistrar:gurid>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 146]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
          <rdeRegistrar:status>ok</rdeRegistrar:status>
          <rdeRegistrar:postalInfo type="int">
            <rdeRegistrar:addr>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 151]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
              <rdeRegistrar:street>123 Example Dr.
              </rdeRegistrar:street>
              <rdeRegistrar:street>Suite 100
@@ -8503,16 +8226,17 @@ Internet-Draft            DNRD Objects Mapping            September 2013
          <rdeNNDN:aName>xn--exampl-gva.test</rdeNNDN:aName>
          <rdeNNDN:idnTableId>pt-BR</rdeNNDN:idnTableId>
          <rdeNNDN:originalName>example1.test</rdeNNDN:originalName>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 147]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
          <rdeNNDN:nameState>withheld</rdeNNDN:nameState>
          <rdeNNDN:crDate>2005-04-23T11:49:00.0Z</rdeNNDN:crDate>
        </rdeNNDN:NNDN>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 152]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
 
        <!-- EppParams -->
        <rdeEppParams:eppParams>
@@ -8556,20 +8280,22 @@ Internet-Draft            DNRD Objects Mapping            September 2013
      </rde:contents>
    </rde:deposit>
 
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 148]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
 16.  Example of differential deposit using the XML model
 
    Example of a differential deposit using the XML model:
 
    <?xml version="1.0" encoding="UTF-8"?>
    <rde:deposit type="DIFF" id="20101017002" prevId="20101017001"
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 153]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
      xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
      xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"
      xmlns:secDNS="urn:ietf:params:xml:ns:secDNS-1.1"
@@ -8612,20 +8338,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
        </rdeDom:delete>
      </rde:deletes>
 
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 149]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
      <!-- Contents -->
      <rde:contents>
        <!-- Header -->
        <rdeHeader:header>
          <rdeHeader:tld>test</rdeHeader:tld>
          <rdeHeader:count
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 154]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
            uri="urn:ietf:params:xml:ns:rdeDomain-1.0">1
            </rdeHeader:count>
          <rdeHeader:count
@@ -8668,20 +8394,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
       xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
       xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
       xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 150]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
        xsi:schemaLocation="
        urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
        urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
        urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd
        urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
        urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 155]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
        urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
        urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
        urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
@@ -8724,20 +8450,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
          <rdeHeader:count uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">
          1
          </rdeHeader:count>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 151]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
         </rdeHeader:header>
         <csvDomain:contents>
           <rdeCsv:csv name="domain" sep=",">
             <rdeCsv:fields>
               <csvDomain:fName/>
               <rdeCsv:fRoid/>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 156]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
               <rdeCsv:fIdnTableId/>
               <csvDomain:fOriginalName/>
               <rdeCsv:fRegistrant isRequired="true"/>
@@ -8780,20 +8506,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
             </rdeCsv:fields>
             <rdeCsv:files>
               <rdeCsv:file
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 152]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
                 cksum="EB8C548E">
                 domainStatuses-YYYYMMDD.csv
               </rdeCsv:file>
             </rdeCsv:files>
           </rdeCsv:csv>
           <rdeCsv:csv name="domainNameServers" sep=",">
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 157]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
             <rdeCsv:fields>
               <csvDomain:fName parent="true"/>
               <rdeCsv:fRoid/>
@@ -8836,20 +8562,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
                 dnssec-key-YYYYMMDD.csv
               </rdeCsv:file>
             </rdeCsv:files>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 153]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
           </rdeCsv:csv>
           <rdeCsv:csv name="domainTransfer" sep=",">
             <rdeCsv:fields>
               <csvDomain:fName parent="true"/>
               <rdeCsv:fTrStatus/>
               <rdeCsv:fReRr/>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 158]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
               <rdeCsv:fReID/>
               <rdeCsv:fReDate/>
               <rdeCsv:fAcRr/>
@@ -8892,20 +8618,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
               <csvHost:fStatus/>
               <rdeCsv:fStatusDescription/>
               <rdeCsv:fLang/>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 154]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
             </rdeCsv:fields>
             <rdeCsv:files>
               <rdeCsv:file
                 cksum="0BA504FC">
                 hostStatuses-YYYYMMDD.csv
               </rdeCsv:file>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 159]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
             </rdeCsv:files>
           </rdeCsv:csv>
           <rdeCsv:csv name="hostAddresses" sep=",">
@@ -8948,20 +8674,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
             </rdeCsv:files>
           </rdeCsv:csv>
           <rdeCsv:csv name="contactStatuses" sep=",">
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 155]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
             <rdeCsv:fields>
                 <csvContact:fId parent="true"/>
                 <csvContact:fStatus/>
                 <rdeCsv:fStatusDescription/>
                 <rdeCsv:fLang/>
               </rdeCsv:fields>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 160]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
             <rdeCsv:files>
               <rdeCsv:file
                 cksum="2AAF99D4">
@@ -9004,20 +8730,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
             <rdeCsv:files>
               <rdeCsv:file
                 cksum="D0929632">
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 156]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
                 contactTransfer-YYYYMMDD.csv
               </rdeCsv:file>
             </rdeCsv:files>
           </rdeCsv:csv>
           <rdeCsv:csv name="contactDisclose" sep=",">
             <rdeCsv:fields>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 161]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
               <csvContact:fId parent="true"/>
               <csvContact:fDiscloseFlag/>
               <csvContact:fDiscloseNameLoc/>
@@ -9060,20 +8786,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
               <rdeCsv:fUrl/>
               <csvRegistrar:fWhoisUrl/>
               <rdeCsv:fCrDate/>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 157]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
               <rdeCsv:fUpDate/>
             </rdeCsv:fields>
             <rdeCsv:files>
               <rdeCsv:file
                 cksum="306178BB">
                 registrar-YYYYMMDD.csv
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 162]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
               </rdeCsv:file>
             </rdeCsv:files>
           </rdeCsv:csv>
@@ -9116,20 +8842,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
            <rdeEppParams:objURI>urn:ietf:params:xml:ns:domain-1.0
            </rdeEppParams:objURI>
            <rdeEppParams:objURI>urn:ietf:params:xml:ns:host-1.0
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 158]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
            </rdeEppParams:objURI>
            <rdeEppParams:objURI>urn:ietf:params:xml:ns:contact-1.0
            </rdeEppParams:objURI>
            <rdeEppParams:svcExtension>
              <epp:extURI>urn:ietf:params:xml:ns:secDNS-1.1
              </epp:extURI>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 163]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
              <epp:extURI>urn:ietf:params:xml:ns:rgp-1.0
              </epp:extURI>
            </rdeEppParams:svcExtension>
@@ -9172,20 +8898,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
       xmlns:csvContact="urn:ietf:params:xml:ns:csvContact-1.0"
       xmlns:csvRegistrar="urn:ietf:params:xml:ns:csvRegistrar-1.0"
       xmlns:csvIDN="urn:ietf:params:xml:ns:csvIDN-1.0"
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 159]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
       xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
       xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
       xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
       xsi:schemaLocation="
        urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd
        urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 164]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
        urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd
        urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd
        urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd
@@ -9228,20 +8954,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
          </rdeHeader:count>
          <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">
          2
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 160]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
          </rdeHeader:count>
          <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">
          2
          </rdeHeader:count>
          <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">
          1
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 165]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
          </rdeHeader:count>
          <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">
          2
@@ -9284,20 +9010,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
              <csvDomain:fContactType/>
            </rdeCsv:fields>
            <rdeCsv:files>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 161]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
              <rdeCsv:file
                cksum="70A7C17B">
                domainContacts-YYYYMMDD.csv
              </rdeCsv:file>
            </rdeCsv:files>
          </rdeCsv:csv>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 166]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
          <rdeCsv:csv name="domainStatuses" sep=",">
            <rdeCsv:fields>
              <csvDomain:fName parent="true"/>
@@ -9340,20 +9066,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
                dnssec-YYYYMMDD.csv
              </rdeCsv:file>
            </rdeCsv:files>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 162]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
          </rdeCsv:csv>
          <rdeCsv:csv name="domainTransfer" sep=",">
            <rdeCsv:fields>
              <csvDomain:fName parent="true"/>
              <rdeCsv:fTrStatus/>
              <rdeCsv:fReRr/>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 167]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
              <rdeCsv:fReID/>
              <rdeCsv:fReDate/>
              <rdeCsv:fAcRr/>
@@ -9396,20 +9122,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
              <csvHost:fStatus/>
              <rdeCsv:fStatusDescription/>
              <rdeCsv:fLang/>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 163]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
            </rdeCsv:fields>
            <rdeCsv:files>
              <rdeCsv:file
                cksum="0BA504FC">
                hostStatuses-YYYYMMDD.csv
              </rdeCsv:file>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 168]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
            </rdeCsv:files>
          </rdeCsv:csv>
          <rdeCsv:csv name="hostAddresses" sep=",">
@@ -9452,20 +9178,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
            </rdeCsv:files>
          </rdeCsv:csv>
          <rdeCsv:csv name="contactStatuses" sep=",">
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 164]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
            <rdeCsv:fields>
                <csvContact:fId parent="true"/>
                <csvContact:fStatus/>
                <rdeCsv:fStatusDescription/>
                <rdeCsv:fLang/>
            </rdeCsv:fields>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 169]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
            <rdeCsv:files>
              <rdeCsv:file
                cksum="2AAF99D4">
@@ -9508,20 +9234,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
            <rdeCsv:files>
              <rdeCsv:file
                cksum="D0929632">
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 165]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
                contactTransfer-YYYYMMDD.csv
              </rdeCsv:file>
            </rdeCsv:files>
          </rdeCsv:csv>
          <rdeCsv:csv name="contactDisclose" sep=",">
            <rdeCsv:fields>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 170]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
              <csvContact:fId parent="true"/>
              <csvContact:fDiscloseFlag/>
              <csvContact:fDiscloseNameLoc/>
@@ -9564,20 +9290,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
              <rdeCsv:fUrl/>
              <csvRegistrar:fWhoisUrl/>
              <rdeCsv:fCrDate/>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 166]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
              <rdeCsv:fUpDate/>
            </rdeCsv:fields>
            <rdeCsv:files>
              <rdeCsv:file
                cksum="306178BB">
                registrar-YYYYMMDD.csv
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 171]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
              </rdeCsv:file>
            </rdeCsv:files>
          </rdeCsv:csv>
@@ -9620,20 +9346,20 @@ Internet-Draft            DNRD Objects Mapping            September 2013
                  <epp:admin/>
                  <epp:other/>
                  <epp:prov/>
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 167]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
                </epp:purpose>
                <epp:recipient>
                  <epp:ours/>
                  <epp:public/>
                  <epp:unrelated/>
                </epp:recipient>
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 172]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
-
                <epp:retention>
                  <epp:indefinite/>
                </epp:retention>
@@ -9676,19 +9402,18 @@ Internet-Draft            DNRD Objects Mapping            September 2013
               STD 69, RFC 5730, DOI 10.17487/RFC5730, August 2009,
               <http://www.rfc-editor.org/info/rfc5730>.
 
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 168]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
    [RFC5731]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
               Domain Name Mapping", STD 69, RFC 5731,
               DOI 10.17487/RFC5731, August 2009,
               <http://www.rfc-editor.org/info/rfc5731>.
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 173]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
 
    [RFC5732]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
               Host Mapping", STD 69, RFC 5732, DOI 10.17487/RFC5732,
@@ -9729,22 +9454,22 @@ Internet-Draft            DNRD Objects Mapping            September 2013
               <http://www.icann.org/en/topics/idn/
               idn-vip-integrated-issues-final-clean-20feb12-en.pdf>.
 
+
+
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 169]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
 19.3.  URIs
 
    [1] http://tools.ietf.org/id/draft-arias-noguchi-registry-data-
        escrow-05.txt
-
-
-
-
-
-
-
-
-Arias, et al.            Expires March 30, 2014               [Page 174]
-
-Internet-Draft            DNRD Objects Mapping            September 2013
-
 
 Authors' Addresses
 
@@ -9787,6 +9512,16 @@ Authors' Addresses
    Email: jgould@verisign.com
 
 
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 170]
+
+Internet-Draft            DNRD Objects Mapping             February 2017
+
+
    Chethan Thippeswamy
    VeriSign, Inc.
    12061 Bluemont Way
@@ -9797,4 +9532,45 @@ Authors' Addresses
 
 
 
-Arias, et al.            Expires March 30, 2014               [Page 175]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arias, et al.            Expires August 18, 2017              [Page 171]
