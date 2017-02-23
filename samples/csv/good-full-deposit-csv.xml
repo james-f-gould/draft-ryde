@@ -104,12 +104,24 @@
        <rdeCsv:csv name="domainNameServers" sep=",">
          <rdeCsv:fields>
            <csvDomain:fName parent="true"/>
+           <csvHost:fName parent="true"/>
+           </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="984C3097">
+             domainNameServers-name-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="domainNameServers" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
            <rdeCsv:fRoid/>
            </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
              cksum="569D4638">
-             domainNameServers-YYYYMMDD.csv
+             domainNameServers-roid-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
        </rdeCsv:csv>

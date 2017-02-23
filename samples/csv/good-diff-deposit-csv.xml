@@ -11,7 +11,7 @@
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
    xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
-    type="FULL"
+    type="DIFF"
    id="20101017001" prevId="20101010001">
    <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
    <rde:rdeMenu>
@@ -23,10 +23,75 @@
     <rde:objURI>urn:ietf:params:xml:ns:csvIDN-1.0</rde:objURI>
    </rde:rdeMenu>
    <rde:deletes>
-    <csvNNDN:deletes>
+     <csvDomain:deletes>
+       <rdeCsv:csv name="domain">
+         <rdeCsv:fields>
+           <csvDomain:fName/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="6F2B988F">
+             domain-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvDomain:deletes>
+     <csvHost:deletes>     
+       <rdeCsv:csv name="host">
+         <rdeCsv:fields>
+           <rdeCsv:fRoid/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="E3408F5E">
+             host-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvHost:deletes>     
+     <csvContact:deletes>     
+       <rdeCsv:csv name="contact">
+         <rdeCsv:fields>
+           <csvContact:fId/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="6F2B988F">
+             contact-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvContact:deletes>
+     <csvRegistrar:deletes>
+       <rdeCsv:csv name="registrar">
+         <rdeCsv:fields>
+           <csvRegistrar:fId/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="307B87AE">
+             registrar-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvRegistrar:deletes>
+     <csvIDN:deletes>
+       <rdeCsv:csv name="idnLanguage">
+         <rdeCsv:fields>
+           <rdeCsv:fIdnTableId/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="757B573A">
+             idnLanguage-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvIDN:deletes>     
+     <csvNNDN:deletes>
       <rdeCsv:csv name="NNDN">
         <rdeCsv:fields>
-          <csvNNDN:fAName isRequired="true"/>
+          <csvNNDN:fAName/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
@@ -117,12 +182,24 @@
       <rdeCsv:csv name="domainNameServers" sep=",">
         <rdeCsv:fields>
           <csvDomain:fName parent="true"/>
+          <csvHost:fName parent="true"/>
+          </rdeCsv:fields>
+        <rdeCsv:files>
+          <rdeCsv:file 
+            cksum="984C3097">
+            domainNameServers-name-YYYYMMDD.csv
+          </rdeCsv:file> 
+        </rdeCsv:files>
+      </rdeCsv:csv>
+      <rdeCsv:csv name="domainNameServers" sep=",">
+        <rdeCsv:fields>
+          <csvDomain:fName parent="true"/>
           <rdeCsv:fRoid/>
-        </rdeCsv:fields>
+          </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
             cksum="569D4638">
-            domainNameServers-YYYYMMDD.csv
+            domainNameServers-roid-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
       </rdeCsv:csv>
