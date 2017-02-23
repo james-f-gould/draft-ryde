@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="14" month="February" year="2017"/>
+        <date day="23" month="February" year="2017"/>
         
         <area> Applications </area>
         
@@ -793,625 +793,626 @@ domainN.test]]>
                    Differential and incremental deposits are based on changes to the domain name objects.  The updated domain name object 
                    data under the &lt;csvDomain:contents&gt; element is a cascade replace down all of the domain name CSV files starting with the 
                    parent <xref target="csvDomainDefinition">"domain" CSV File Definition</xref>.  The child CSV file definitions include a &lt;csvDomain:fName parent="true"&gt; field.  
-                   All the child CSV file definition data for the domain name objects in the parent "domain" CSV file definition 
+                   All the child CSV file definition data for the domain name objects in the parent <xref target="csvDomainDefinition">"domain" CSV File Definition</xref> 
                    MUST first be deleted and then set using the data in the child CSV files.  The deleted domain name object data under the &lt;csvDomain:deletes&gt; 
                    element is a cascade delete starting from the <xref target="csvDomainDeletesDefinition">"domain" Deletes CSV File Definition</xref>.  
                 </t>
                 
                <section title="&lt;csvDomain:contents&gt;" anchor="csvDomainContents">
-                	<t>The &lt;csvDomain:contents&gt; is used to hold the new or updated domain name object information for the deposit.  
-                	The &lt;csvDomain:contents&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
-                	The following sections include the supported domain name CSV file definitions:
-                	</t>
-                	<section title="&quot;domain&quot; CSV File Definition" anchor="csvDomainDefinition">
-                	
-					  <t>The "domain" CSV File Definition defines the fields and CSV file references 
-					  used for the parent domain name object records.  All of the other domain name CSV file definitions are 
-					  child CSV files based on the inclusion of the &lt;csvDomain:fName parent="true"&gt; field.</t>
-					  <t>The following "csvDomain" field elements MUST be used in the "domain" 
-					  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-					    <t hangText="&lt;csvDomain:fName&gt;">Domain name field with type="eppcom:labelType" and isRequired="true".  
-					    </t>        
-					  </list></t>
-					<t>The following "csvDomain" field elements MAY be used in the "domain" 
-					  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					</t>
-					  <t><list style="hanging">
-					    <t hangText="&lt;csvDomain:fOriginalName&gt;">Fully qualified name of the original IDN domain name object related to the 
-						  variant domain name object with type="eppcom:labelType".
-					    </t>
-			
-					  </list></t>
-					  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					  MUST be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list  style="hanging">
-						<t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) for the domain name object.</t>
-						<t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client that sponsors the domain name object.</t>
-						<t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
-						<t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the domain name object.</t>
-						<t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
-						<t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the domain name object.</t>
-						<t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date and time for the domain name object.</t>
-					  </list></t>
-					  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					  MAY be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list  style="hanging">
-						<t hangText="&lt;rdeCsv:fUName&gt;">UTF8 encoded domain name for the &lt;csvDomain:fName&gt; field element.</t>
-						<t hangText="&lt;rdeCsv:fIdnTableId&gt;">IDN Table Identifier used for the IDN domain name object that MUST match a &lt;rdeCsv:fIdnTableId&gt; field element in the "idnLanguage" CSV files, as defined in <xref target="idnCsvModel"/>.</t>
-						<t hangText="&lt;rdeCsv:fRegistrant&gt;">Registrant contact identifier for the domain name object.</t>
-						<t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the domain name object.</t>
-						<t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of the client that last updated the domain name object.</t>
-						<t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time of the last transfer for the domain name object.</t>
-					  </list></t>
-						<t>
-							<figure>
-							  <preamble>
-								Example of a "domain" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element:							  
-							  </preamble>
-							  <artwork><![CDATA[
-	...
-	<csvDomain:contents>
-	...
-	  <rdeCsv:csv name="domain">
-		<rdeCsv:fields>
-		  <csvDomain:fName/>
-		  <rdeCsv:fRoid/>
-		  <rdeCsv:fIdnTableId/>
-		  <csvDomain:fOriginalName/>
-		  <rdeCsv:fRegistrant/>
-		  <rdeCsv:fClID/>
-		  <rdeCsv:fCrRr/>
-		  <rdeCsv:fCrID/>
-		  <rdeCsv:fCrDate/>
-		  <rdeCsv:fUpRr/>
-		  <rdeCsv:fUpID/>
-		  <rdeCsv:fUpDate/>
-		  <rdeCsv:fExDate/>
-		</rdeCsv:fields>
-		<rdeCsv:files>
-		  <rdeCsv:file 
-			cksum="75E2D01F">
-			domain-YYYYMMDD.csv
-		  </rdeCsv:file> 
-		</rdeCsv:files>
-	  </rdeCsv:csv>
-	...
-	</csvDomain:contents>
-	...]]>
-							  </artwork>
-							</figure>
-						</t>    
-						<t>
-							<figure>
-							  <preamble>
-								Example of the corresponding domain-YYYYMMDD.csv file.
-								The file contains four records (active ASCII domain, pendingDelete domain, 
-								original IDN with LANG-1 language rules, and variant IDN 
-								with LANG-1 language rules).							  
-							  </preamble>
-							  <artwork><![CDATA[
-	domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
-	clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
-	2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-	domain2.test,Ddomain1-TEST,,,registrantid,registrarX,registrarX,
-	clientY,1999-04-03T22:00:00.0Z,registrarX,clientY,
-	2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-	xn--abc123.test,Dxnabc123-TEST,LANG-1,,registrantid,registrarX,
-	registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
-	2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-	xn--abc321.test,Dxnabc321-TEST,LANG-1,xn--cbc321.test,
-	registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
-	registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z]]>
-							  </artwork>
-							</figure>
-						</t> 
-					</section>
-                	<section title="&quot;domainContacts&quot; CSV File Definition" anchor="csvDomainContactsDefinition">
-					  <t>The "domainContacts" CSV File Definition defines the fields and CSV file references 
-					  used for the domain name object link records to contact objects, as described in <xref target="contactObject"/>.</t>
-					  <t>The following "csvDomain" field elements MUST be used in the "domainContacts" 
-					  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-					<t hangText="&lt;csvDomain:fContactType&gt;">The contact type for the contact object link with type="domain:contactAttrType".  The supported 
-					contact type values include "admin" for the administration contact, "billing" for the billing contact, and "tech" for the technical contact.  
-					</t>
-					
-					
-					  </list></t>
-					 <t>The following "csvDomain" field elements, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-					  MUST be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;csvDomain:fName&gt;">The name of the domain object that is linked to the contact object.</t>
-					  </list></t>
-					
-					  <t>The following "csvContact" fields, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-					  MUST be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;csvContact:fId&gt;">The server-unique contact identifier.</t>
-					  </list></t>
-					
-						<t>
-							<figure>
-							  <preamble>
-								Example of a "domainContacts" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element:
-							  </preamble>
-							  <artwork><![CDATA[
-	...
-	<csvDomain:contents>
-	...
-	  <rdeCsv:csv name="domainContacts">
-		<rdeCsv:fields>
-		  <csvDomain:fName parent="true"/>
-		  <csvContact:fId/>
-		  <csvDomain:fContactType/>
-		</rdeCsv:fields>
-		<rdeCsv:files>
-		  <rdeCsv:file 
-			cksum="6BC9F9E8">
-			domainContacts-YYYYMMDD.csv
-		  </rdeCsv:file> 
-		</rdeCsv:files>
-	  </rdeCsv:csv>
-	...
-	</csvDomain:contents>
-	...]]>
-							</artwork></figure>
-						</t>    
-						<t>
-							<figure>
-							  <preamble>
-								Example of the corresponding domainContacts-YYYYMMDD.csv file.
-								The file contains an admin, tech, and billing contact for 
-								the two domain names domain1.test and domain2.test.
-							  </preamble>
-							  <artwork><![CDATA[
-	domain1.test,sh8013,admin
-	domain1.test,mycontactid,tech
-	domain1.test,mycontactid,billing
-	domain2.test,mycontactid,admin
-	domain2.test,sh8013,tech
-	domain2.test,mycontactid,billing]]>
-							  </artwork>
-							</figure>
-						</t>    
-	   
-		 			</section>
-                	<section title="&quot;domainStatuses&quot; CSV File Definition" anchor="csvDomainStatusesDefinition">
-					  <t>The "domainStatuses" CSV File Definition defines the fields and CSV file references 
-					  used for the domain name object statuses.</t>  
-					  <t>The following "csvDomain" field elements MUST be used in the "domainStatuses" 
-					  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-					  
-				        <t hangText="&lt;csvDomain:fStatus&gt;">The status of the domain name with type="domain:statusValueType".  
-					    </t>
-				        <t hangText="&lt;csvDomain:fRgpStatus&gt;">The Registry Grace Period (RGP) status, as a sub-status of the &lt;csvDomain:fStatus&gt; "pendingDelete" status value, with type="rgp:statusValueType" as 
-					      defined in <xref target="RFC3915"/>.  
-					    </t>
-					 </list></t>
-					
-					 <t>The following "csvDomain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-					  MUST be used in the "domainStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					 </t>
-					 <t><list style="hanging">
-						<t hangText="&lt;csvDomain:fName&gt;">Domain name of status.</t>
-					 </list></t>
-					
-					
-					 <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					  MAY be used in the "domainStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					 </t>
-					 <t><list style="hanging">
-					   <t hangText="&lt;rdeCsv:fStatusDescription&gt;">Domain object status description which is free form text describing the rationale for the status.</t>
-					   <t hangText="&lt;rdeCsv:fLang&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
-					 </list></t>
-					 <t>
-							<figure>
-							  <preamble>
-					  			Example of a "domainStatuses" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element:							  
-							  </preamble>
-							  <artwork><![CDATA[
-	...
-	<csvDomain:contents>
-	...
-	  <rdeCsv:csv name="domainStatuses">
-		<rdeCsv:fields>
-		  <csvDomain:fName parent="true"/>
-		  <csvDomain:fStatus/>
-		  <rdeCsv:fStatusDescription/>
-		  <rdeCsv:fLang/>
-		  <csvDomain:fRgpStatus/>
-		</rdeCsv:fields>
-		<rdeCsv:files>
-		  <rdeCsv:file 
-			cksum="EB8C548E">
-			domainStatuses-YYYYMMDD.csv
-		  </rdeCsv:file> 
-		</rdeCsv:files>
-	  </rdeCsv:csv>
-	...
-	</csvDomain:contents>
-	...]]>
-							  </artwork>
-							</figure>
-						</t>    
-						<t>
-							<figure>
-							  <preamble>
-								Example of the corresponding domainStatuses-YYYYMMDD.csv file.
-								The file contains the statuses for  
-								the two domain names domain1.test and domain2.test.
-							  </preamble>
-							  <artwork><![CDATA[
-	domain1.test,clientUpdateProhibited,"Disallow update",
-	en,
-	domain1.test,clientDeleteProhibited,"Disallow delete",
-	en,
-	domain2.test,clientUpdateProhibited,"Disallow update",
-	en,
-	domain2.test,pendingDelete,,,
-	redemptionPeriod]]>
-							  </artwork>
-							</figure>
-						</t>    
-	 
-	 				</section>
-                	<section title="&quot;domainNameServers&quot; CSV File Definition" anchor="csvDomainNameServersDefinition">
-					  <t>The "domainNameServers" CSV File Definition defines the fields and CSV file references 
-					  used for the domain name delegated hosts (name servers).  The "domainNameServers" CSV files
-					  define the relationship between a domain name object and a delegated host.  To support both  
-					  the &lt;domain:hostAttr&gt; and the &lt;domain:hostObj&gt; model, defined in <xref target="RFC5731"/>, 
-					  the host &lt;rdeCsv:fRoid&gt; field element is used to reference the host.</t> 
-					 
-					 <t>The following "csvDomain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-					  MUST be used in the "domainNameServers" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;csvDomain:fName&gt;">Domain name using the delegated host with host &lt;rdeCsv:fRoid&gt;.</t>
-					  </list></t>                
-					
-					  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					  MUST be used in the "domainNameServers" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) used to uniquely reference a delegated host record.  
-						</t>   
-						 
-					  </list></t>
-						<t>
-							<figure>
-							  <preamble>
-								Example of a "domainNameServers" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.  
-							  </preamble>
-							  <artwork><![CDATA[
-	...
-	<csvDomain:contents>
-	...
-	  <rdeCsv:csv name="domainNameServers">
-		<rdeCsv:fields>
-		  <csvDomain:fName parent="true"/>
-		  <rdeCsv:fRoid parent="true"/>
-		</rdeCsv:fields>
-		<rdeCsv:files>
-		  <rdeCsv:file 
-			cksum="569D4638">
-			domainNameServers-YYYYMMDD.csv
-		  </rdeCsv:file> 
-		</rdeCsv:files>
-	  </rdeCsv:csv>
-	...
-	</csvDomain:contents>
-	...]]>
-							  </artwork>
-							</figure>
-						</t>    
-						 
-						<t>
-							<figure>
-							  <preamble>
-								Example of the corresponding domainNameServers-YYYYMMDD.csv file.
-								The file contains the delegated hosts (name servers) for  
-								the two domain names domain1.test and domain2.test referenced via 
-								the &lt;rdeCsv:fRoid&gt; field element.
-							  </preamble>
-							  <artwork><![CDATA[
-	domain1.test,Dns1domain2test-TEST
-	domain1.test,Dns2domain2test-TEST
-	domain2.test,Dns1domainexample-TEST
-	domain2.test,Dns2domainexample-TEST]]>
-							  </artwork>
-							</figure>
-						</t>    
-	 				</section>
-                	<section title="&quot;dnssec&quot; CSV File Definition" anchor="csvDnssecDefinition">
-					  <t>The "dnssec" CSV File Definition defines the fields and CSV file references used 
-					  for the domain name object DNSSEC records (DS or Key Data).</t>
-					  <t>The following "csvDomain" field elements MUST be used 
-					  in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element when the DS Data Interface per <xref target="RFC5910"/> is used:
-					  </t>
-					  <t><list style="hanging">
-					<t hangText="&lt;csvDomain:fKeyTag&gt;">Contains the DS key tag value per <xref target="RFC5910"/> with type="unsignedShort".  
-					</t>
-	  
-					<t hangText="&lt;csvDomain:fDsAlg&gt;">Contains the DS algorithm value per <xref target="RFC5910"/> with type="unsignedByte".
-					</t>
-	  
-					<t hangText="&lt;csvDomain:fDigestType&gt;">Contains the DS digest type value per <xref target="RFC5910"/> with type="unsignedByte".
-					</t>
-	  
-					<t hangText="&lt;csvDomain:fDigest&gt;">Contains the DS digest value per <xref target="RFC5910"/> with type="hexBinary".
-					</t>
-					  </list></t>
-					 <t>The following "csvDomain" field elements MUST be used 
-					  in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element when the Key Data Interface per <xref target="RFC5910"/> is used:
-					  </t>
-					  <t><list style="hanging">
-					<t hangText="&lt;csvDomain:fFlags&gt;">Contains the flags field value per <xref target="RFC5910"/> with type="unsignedShort".
-					</t>
-									
-					<t hangText="&lt;csvDomain:fProtocol&gt;">Contains the Key protocol value per <xref target="RFC5910"/> with type="unsignedByte".
-					</t>
-					
-					<t hangText="&lt;csvDomain:fKeyAlg&gt;">Contains the Key algorithm value per <xref target="RFC5910"/> with type="unsignedByte".
-					</t>
-					
-					  <t hangText="&lt;csvDomain:fPubKey&gt;">Contains the public key value per <xref target="RFC5910"/> with type="secDNS:keyType".
-					</t>
-					  </list></t>
-					  
-					  <t>The following "csvDomain" field elements MAY be used 
-					  in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-					<t hangText="&lt;csvDomain:fMaxSigLife&gt;">Indicates a child's preference for the number of seconds 
-					after signature generation when the parent's signature on the DS information provided by the child 
-					will expire with type="secDNS:maxSigLifeType" defined in <xref target="RFC5910"/>.
-					</t>
-					  </list></t>
-					  <t>The following "domain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-					  MUST be used in the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;csvDomain:fName&gt;">Domain name of the domain object associated with the DNSSEC record.</t>
-					  </list></t>
-						<t>
-							<figure>
-							  <preamble>
-								Example of a "dnssec" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element with the DS Data Interface of <xref target="RFC5910"/>:							  
-							  </preamble>
-							  <artwork><![CDATA[
-	<csvDomain:contents>
-	...
-	  <rdeCsv:csv name="dnssec">
-		<rdeCsv:fields>
-		  <csvDomain:fName parent="true"/>
-		  <csvDomain:fMaxSigLife/>
-		  <csvDomain:fKeyTag/>
-		  <csvDomain:fDsAlg/>
-		  <csvDomain:fDigestType/>
-		  <csvDomain:fDigest/>
-		</rdeCsv:fields>
-		<rdeCsv:files>
-		  <rdeCsv:file 
-		   cksum="AA15CB43">
-		   dnssec-ds-YYYYMMDD.csv
-		  </rdeCsv:file> 
-		</rdeCsv:files>
-	  </rdeCsv:csv>
-	...
-	</csvDomain:contents>
-	...]]>
-							  </artwork>
-							</figure>
-						</t>    
-						<t>
-							<figure>
-							  <preamble>
-								Example of the corresponding dnssec-ds-YYYYMMDD.csv file.
-								The file contains two DS records for domain1.test.
-							  </preamble>
-							  <artwork><![CDATA[
-	domain1.test,604800,12345,3,1,49FD46E6C4B45C55D4AC
-	domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B]]>
-							  </artwork>
-							</figure>
-						</t>    
-						<t>
-							<figure>
-							  <preamble>
-								Example of a "dnssec" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element with the Key Data Interface of <xref target="RFC5910"/>:
-							  </preamble>
-							  <artwork><![CDATA[
-	<csvDomain:contents>
-	...
-	  <rdeCsv:csv name="dnssec">
-		<rdeCsv:fields>
-		  <csvDomain:fName parent="true"/>
-		  <csvDomain:fMaxSigLife/>
-		  <csvDomain:fFlags/>
-		  <csvDomain:fProtocol/>
-		  <csvDomain:fKeyAlg/>
-		  <csvDomain:fPubKey/>
-		</rdeCsv:fields>
-		<rdeCsv:files>
-		  <rdeCsv:file 
-		   cksum="1B16F334">
-		   dnssec-key-YYYYMMDD.csv
-		  </rdeCsv:file> 
-		</rdeCsv:files>
-	  </rdeCsv:csv>
-	...
-	</csvDomain:contents>
-	...]]>
-							  </artwork>
-							</figure>
-						</t>    
-						<t>
-							<figure>
-							  <preamble>
-								Example of the corresponding dnssec-key-YYYYMMDD.csv file.
-								The file contains two key records for domain1.test.
-							  </preamble>
-							  <artwork><![CDATA[
-	domain1.test,604800,257,3,1,AQPJ////4Q==
-	domain1.test,604800,257,3,1,AQPJ////4QQQ]]>
-							  </artwork>
-							</figure>
-						</t>    
-					  
-					</section>
-                	<section title="&quot;domainTransfer&quot; CSV File Definition" anchor="csvDomainTransferDefinition">
-					  <t>The "domainTransfer" CSV File Definition defines the fields and CSV file references 
-					  used for the domain name object pending and completed transfer records.  No additional 
-					  field elements were added for use in the "domainTransfer"  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element.</t>
-					  
-					  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					  MUST be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request.</t>
-						<t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer.</t>
-						<t hangText="&lt;rdeCsv:fReDate&gt;">Date and time that the transfer was requested.</t>
-						<t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action.</t>
-						<t hangText="&lt;rdeCsv:fAcDate&gt;">Date and time that the transfer action should be taken or has been taken.</t>
-					  </list></t>
-	 
-					 <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					  MAY be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date if the transfer command caused or causes a change in the validity period.</t>
-						<t hangText="&lt;rdeCsv:fReID&gt;">Identifier of client that requested the transfer.</t>
-						<t hangText="&lt;rdeCsv:fAcID&gt;">Identifier of client that should take or took action for transfer.</t>
-					  </list></t>
-	
-	 
-					  <t>The following "csvDomain" fields, defined for the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-					  MUST be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;csvDomain:fName&gt;">Domain name of the domain object involved in the transfer.</t>
-					  </list></t>
-	
-						<t>
-							<figure>
-							  <preamble>
-								Example of a "domainTransfer" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element:
-							  </preamble>
-							  <artwork><![CDATA[
-	...
-	<csvDomain:contents>
-	...
-	  <rdeCsv:csv name="domainTransfer">
-		<rdeCsv:fields>
-		  <csvDomain:fName parent="true"/>
-		  <rdeCsv:fTrStatus/>
-		  <rdeCsv:fReRr/>
-		  <rdeCsv:fReID/>
-		  <rdeCsv:fReDate/>
-		  <rdeCsv:fAcRr/>
-		  <rdeCsv:fAcID/>
-		  <rdeCsv:fAcDate/>
-		  <rdeCsv:fExDate/>
-		</rdeCsv:fields>
-		<rdeCsv:files>
-		  <rdeCsv:file 
-		   cksum="71170194">
-		   domainTransfer-YYYYMMDD.csv
-		  </rdeCsv:file> 
-		</rdeCsv:files>
-	  </rdeCsv:csv>
-	...
-	</csvDomain:contents>
-	...]]>
-							  </artwork>
-							</figure>
-						</t>    
-						<t>
-							<figure>
-							  <preamble>
-								Example of the corresponding domainTransfer-YYYYMMDD.csv file.
-								The file contains two domain transfer records, with one
-								in pending status and the second in clientApproved status.							  
-							  </preamble>
-							  <artwork><![CDATA[
-	domain1.test,pending,registrarX,clientY,
-	2011-03-08T19:38:00.0Z,registrarY,,2011-03-13T23:59:59.0Z,
-	2016-04-03T22:00:00.0Z
-	domain2.test,clientApproved,registrarX,clientY,
-	2012-03-08T19:38:00.0Z,registrarY,clientY,
-	2012-03-09T23:59:59.0Z,2016-05-04T23:00:00.0Z]]>
-							  </artwork>
-							</figure>
-						</t>   
-					</section>
-					
-			   </section>
+                  <t>The &lt;csvDomain:contents&gt; is used to hold the new or updated domain name object information for the deposit.  
+                  The &lt;csvDomain:contents&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                  The following sections include the supported domain name CSV file definitions:
+                  </t>
+                  
+                  <section title="&quot;domain&quot; CSV File Definition" anchor="csvDomainDefinition">
+                  
+            <t>The "domain" CSV File Definition defines the fields and CSV file references 
+            used for the parent domain name object records.  All of the other domain name CSV file definitions are 
+            child CSV files based on the inclusion of the &lt;csvDomain:fName parent="true"&gt; field.</t>
+            <t>The following "csvDomain" field elements MUST be used in the "domain" 
+            &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+              <t hangText="&lt;csvDomain:fName&gt;">Domain name field with type="eppcom:labelType" and isRequired="true".  
+              </t>        
+            </list></t>
+          <t>The following "csvDomain" field elements MAY be used in the "domain" 
+            &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+          </t>
+            <t><list style="hanging">
+              <t hangText="&lt;csvDomain:fOriginalName&gt;">Fully qualified name of the original IDN domain name object related to the 
+              variant domain name object with type="eppcom:labelType".
+              </t>
+      
+            </list></t>
+            <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+            MUST be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list  style="hanging">
+            <t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) for the domain name object.</t>
+            <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client that sponsors the domain name object.</t>
+            <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
+            <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the domain name object.</t>
+            <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
+            <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the domain name object.</t>
+            <t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date and time for the domain name object.</t>
+            </list></t>
+            <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+            MAY be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list  style="hanging">
+            <t hangText="&lt;rdeCsv:fUName&gt;">UTF8 encoded domain name for the &lt;csvDomain:fName&gt; field element.</t>
+            <t hangText="&lt;rdeCsv:fIdnTableId&gt;">IDN Table Identifier used for the IDN domain name object that MUST match a &lt;rdeCsv:fIdnTableId&gt; field element in the "idnLanguage" CSV files, as defined in <xref target="idnCsvModel"/>.</t>
+            <t hangText="&lt;rdeCsv:fRegistrant&gt;">Registrant contact identifier for the domain name object.</t>
+            <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the domain name object.</t>
+            <t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of the client that last updated the domain name object.</t>
+            <t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time of the last transfer for the domain name object.</t>
+            </list></t>
+            <t>
+              <figure>
+                <preamble>
+                Example of a "domain" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.                
+                </preamble>
+                <artwork><![CDATA[
+  ...
+  <csvDomain:contents>
+  ...
+    <rdeCsv:csv name="domain">
+    <rdeCsv:fields>
+      <csvDomain:fName/>
+      <rdeCsv:fRoid/>
+      <rdeCsv:fIdnTableId/>
+      <csvDomain:fOriginalName/>
+      <rdeCsv:fRegistrant/>
+      <rdeCsv:fClID/>
+      <rdeCsv:fCrRr/>
+      <rdeCsv:fCrID/>
+      <rdeCsv:fCrDate/>
+      <rdeCsv:fUpRr/>
+      <rdeCsv:fUpID/>
+      <rdeCsv:fUpDate/>
+      <rdeCsv:fExDate/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+      cksum="75E2D01F">
+      domain-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+    </rdeCsv:csv>
+  ...
+  </csvDomain:contents>
+  ...]]>
+                </artwork>
+              </figure>
+            </t>    
+            <t>
+              <figure>
+                <preamble>
+                Example of the corresponding domain-YYYYMMDD.csv file.
+                The file contains four records (active ASCII domain, pendingDelete domain, 
+                original IDN with LANG-1 language rules, and variant IDN 
+                with LANG-1 language rules).                
+                </preamble>
+                <artwork><![CDATA[
+  domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
+  clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
+  2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+  domain2.test,Ddomain1-TEST,,,registrantid,registrarX,registrarX,
+  clientY,1999-04-03T22:00:00.0Z,registrarX,clientY,
+  2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+  xn--abc123.test,Dxnabc123-TEST,LANG-1,,registrantid,registrarX,
+  registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
+  2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+  xn--abc321.test,Dxnabc321-TEST,LANG-1,xn--cbc321.test,
+  registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
+  registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z]]>
+                </artwork>
+              </figure>
+            </t> 
+          </section>
+                  <section title="&quot;domainContacts&quot; CSV File Definition" anchor="csvDomainContactsDefinition">
+            <t>The "domainContacts" CSV File Definition defines the fields and CSV file references 
+            used for the domain name object link records to contact objects, as described in <xref target="contactObject">Contact Object</xref>.</t>
+            <t>The following "csvDomain" field elements MUST be used in the "domainContacts" 
+            &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+          <t hangText="&lt;csvDomain:fContactType&gt;">The contact type for the contact object link with type="domain:contactAttrType".  The supported 
+          contact type values include "admin" for the administration contact, "billing" for the billing contact, and "tech" for the technical contact.  
+          </t>
+          
+          
+            </list></t>
+           <t>The following "csvDomain" field elements, defined for the <xref target="csvDomainDefinition">"domain" CSV File Definition</xref>,  
+            MUST be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;csvDomain:fName&gt;">The name of the domain object that is linked to the contact object.</t>
+            </list></t>
+          
+            <t>The following "csvContact" fields, defined for the <xref target="csvContactDefinition">"contact" CSV File Definition</xref>,  
+            MUST be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;csvContact:fId&gt;">The server-unique contact identifier.</t>
+            </list></t>
+          
+            <t>
+              <figure>
+                <preamble>
+                Example of a "domainContacts" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.
+                </preamble>
+                <artwork><![CDATA[
+  ...
+  <csvDomain:contents>
+  ...
+    <rdeCsv:csv name="domainContacts">
+    <rdeCsv:fields>
+      <csvDomain:fName parent="true"/>
+      <csvContact:fId/>
+      <csvDomain:fContactType/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+      cksum="6BC9F9E8">
+      domainContacts-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+    </rdeCsv:csv>
+  ...
+  </csvDomain:contents>
+  ...]]>
+              </artwork></figure>
+            </t>    
+            <t>
+              <figure>
+                <preamble>
+                Example of the corresponding domainContacts-YYYYMMDD.csv file.
+                The file contains an admin, tech, and billing contact for 
+                the two domain names domain1.test and domain2.test.
+                </preamble>
+                <artwork><![CDATA[
+  domain1.test,sh8013,admin
+  domain1.test,mycontactid,tech
+  domain1.test,mycontactid,billing
+  domain2.test,mycontactid,admin
+  domain2.test,sh8013,tech
+  domain2.test,mycontactid,billing]]>
+                </artwork>
+              </figure>
+            </t>    
+     
+          </section>
+                  <section title="&quot;domainStatuses&quot; CSV File Definition" anchor="csvDomainStatusesDefinition">
+            <t>The "domainStatuses" CSV File Definition defines the fields and CSV file references 
+            used for the domain name object statuses.</t>  
+            <t>The following "csvDomain" field elements MUST be used in the "domainStatuses" 
+            &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            
+                <t hangText="&lt;csvDomain:fStatus&gt;">The status of the domain name with type="domain:statusValueType".  
+              </t>
+                <t hangText="&lt;csvDomain:fRgpStatus&gt;">The Registry Grace Period (RGP) status, as a sub-status of the &lt;csvDomain:fStatus&gt; "pendingDelete" status value, with type="rgp:statusValueType" as 
+                defined in <xref target="RFC3915"/>.  
+              </t>
+           </list></t>
+          
+           <t>The following "csvDomain" fields, defined for the <xref target="csvDomainDefinition">"domain" CSV File Definition</xref>,  
+            MUST be used in the "domainStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+           </t>
+           <t><list style="hanging">
+            <t hangText="&lt;csvDomain:fName&gt;">Domain name of status.</t>
+           </list></t>
+          
+          
+           <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+            MAY be used in the "domainStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+           </t>
+           <t><list style="hanging">
+             <t hangText="&lt;rdeCsv:fStatusDescription&gt;">Domain object status description which is free form text describing the rationale for the status.</t>
+             <t hangText="&lt;rdeCsv:fLang&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
+           </list></t>
+           <t>
+              <figure>
+                <preamble>
+                  Example of a "domainStatuses" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.                
+                </preamble>
+                <artwork><![CDATA[
+  ...
+  <csvDomain:contents>
+  ...
+    <rdeCsv:csv name="domainStatuses">
+    <rdeCsv:fields>
+      <csvDomain:fName parent="true"/>
+      <csvDomain:fStatus/>
+      <rdeCsv:fStatusDescription/>
+      <rdeCsv:fLang/>
+      <csvDomain:fRgpStatus/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+      cksum="EB8C548E">
+      domainStatuses-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+    </rdeCsv:csv>
+  ...
+  </csvDomain:contents>
+  ...]]>
+                </artwork>
+              </figure>
+            </t>    
+            <t>
+              <figure>
+                <preamble>
+                Example of the corresponding domainStatuses-YYYYMMDD.csv file.
+                The file contains the statuses for  
+                the two domain names domain1.test and domain2.test.
+                </preamble>
+                <artwork><![CDATA[
+  domain1.test,clientUpdateProhibited,"Disallow update",
+  en,
+  domain1.test,clientDeleteProhibited,"Disallow delete",
+  en,
+  domain2.test,clientUpdateProhibited,"Disallow update",
+  en,
+  domain2.test,pendingDelete,,,
+  redemptionPeriod]]>
+                </artwork>
+              </figure>
+            </t>    
+   
+          </section>
+                  <section title="&quot;domainNameServers&quot; CSV File Definition" anchor="csvDomainNameServersDefinition">
+            <t>The "domainNameServers" CSV File Definition defines the fields and CSV file references 
+            used for the domain name delegated hosts (name servers).  The "domainNameServers" CSV files
+            define the relationship between a domain name object and a delegated host.  To support both  
+            the &lt;domain:hostAttr&gt; and the &lt;domain:hostObj&gt; model, defined in <xref target="RFC5731"/>, 
+            the host &lt;rdeCsv:fRoid&gt; field element is used to reference the host.</t> 
+           
+           <t>The following "csvDomain" fields, defined for the <xref target="csvDomainDefinition">"domain" CSV File Definition</xref>,  
+            MUST be used in the "domainNameServers" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;csvDomain:fName&gt;">Domain name using the delegated host with host &lt;rdeCsv:fRoid&gt;.</t>
+            </list></t>                
+          
+            <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+            MUST be used in the "domainNameServers" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) used to uniquely reference a delegated host record.  
+            </t>   
+             
+            </list></t>
+            <t>
+              <figure>
+                <preamble>
+                Example of a "domainNameServers" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.  
+                </preamble>
+                <artwork><![CDATA[
+  ...
+  <csvDomain:contents>
+  ...
+    <rdeCsv:csv name="domainNameServers">
+    <rdeCsv:fields>
+      <csvDomain:fName parent="true"/>
+      <rdeCsv:fRoid parent="true"/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+      cksum="569D4638">
+      domainNameServers-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+    </rdeCsv:csv>
+  ...
+  </csvDomain:contents>
+  ...]]>
+                </artwork>
+              </figure>
+            </t>    
+             
+            <t>
+              <figure>
+                <preamble>
+                Example of the corresponding domainNameServers-YYYYMMDD.csv file.
+                The file contains the delegated hosts (name servers) for  
+                the two domain names domain1.test and domain2.test referenced via 
+                the &lt;rdeCsv:fRoid&gt; field element.
+                </preamble>
+                <artwork><![CDATA[
+  domain1.test,Dns1domain2test-TEST
+  domain1.test,Dns2domain2test-TEST
+  domain2.test,Dns1domainexample-TEST
+  domain2.test,Dns2domainexample-TEST]]>
+                </artwork>
+              </figure>
+            </t>    
+          </section>
+                  <section title="&quot;dnssec&quot; CSV File Definition" anchor="csvDnssecDefinition">
+            <t>The "dnssec" CSV File Definition defines the fields and CSV file references used 
+            for the domain name object DNSSEC records (DS or Key Data).</t>
+            <t>The following "csvDomain" field elements MUST be used 
+            in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element when the DS Data Interface per <xref target="RFC5910"/> is used:
+            </t>
+            <t><list style="hanging">
+          <t hangText="&lt;csvDomain:fKeyTag&gt;">Contains the DS key tag value per <xref target="RFC5910"/> with type="unsignedShort".  
+          </t>
+    
+          <t hangText="&lt;csvDomain:fDsAlg&gt;">Contains the DS algorithm value per <xref target="RFC5910"/> with type="unsignedByte".
+          </t>
+    
+          <t hangText="&lt;csvDomain:fDigestType&gt;">Contains the DS digest type value per <xref target="RFC5910"/> with type="unsignedByte".
+          </t>
+    
+          <t hangText="&lt;csvDomain:fDigest&gt;">Contains the DS digest value per <xref target="RFC5910"/> with type="hexBinary".
+          </t>
+            </list></t>
+           <t>The following "csvDomain" field elements MUST be used 
+            in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element when the Key Data Interface per <xref target="RFC5910"/> is used:
+            </t>
+            <t><list style="hanging">
+          <t hangText="&lt;csvDomain:fFlags&gt;">Contains the flags field value per <xref target="RFC5910"/> with type="unsignedShort".
+          </t>
+                  
+          <t hangText="&lt;csvDomain:fProtocol&gt;">Contains the Key protocol value per <xref target="RFC5910"/> with type="unsignedByte".
+          </t>
+          
+          <t hangText="&lt;csvDomain:fKeyAlg&gt;">Contains the Key algorithm value per <xref target="RFC5910"/> with type="unsignedByte".
+          </t>
+          
+            <t hangText="&lt;csvDomain:fPubKey&gt;">Contains the public key value per <xref target="RFC5910"/> with type="secDNS:keyType".
+          </t>
+            </list></t>
+            
+            <t>The following "csvDomain" field elements MAY be used 
+            in the "dnssec" &lt;rdeCsv:csv&gt; rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+          <t hangText="&lt;csvDomain:fMaxSigLife&gt;">Indicates a child's preference for the number of seconds 
+          after signature generation when the parent's signature on the DS information provided by the child 
+          will expire with type="secDNS:maxSigLifeType" defined in <xref target="RFC5910"/>.
+          </t>
+            </list></t>
+            <t>The following "domain" fields, defined for the <xref target="csvDomainDefinition">"domain" CSV File Definition</xref>,  
+            MUST be used in the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;csvDomain:fName&gt;">Domain name of the domain object associated with the DNSSEC record.</t>
+            </list></t>
+            <t>
+              <figure>
+                <preamble>
+                Example of a "dnssec" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element with the DS Data Interface of <xref target="RFC5910"/>:               
+                </preamble>
+                <artwork><![CDATA[
+  <csvDomain:contents>
+  ...
+    <rdeCsv:csv name="dnssec">
+    <rdeCsv:fields>
+      <csvDomain:fName parent="true"/>
+      <csvDomain:fMaxSigLife/>
+      <csvDomain:fKeyTag/>
+      <csvDomain:fDsAlg/>
+      <csvDomain:fDigestType/>
+      <csvDomain:fDigest/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+       cksum="AA15CB43">
+       dnssec-ds-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+    </rdeCsv:csv>
+  ...
+  </csvDomain:contents>
+  ...]]>
+                </artwork>
+              </figure>
+            </t>    
+            <t>
+              <figure>
+                <preamble>
+                Example of the corresponding dnssec-ds-YYYYMMDD.csv file.
+                The file contains two DS records for domain1.test.
+                </preamble>
+                <artwork><![CDATA[
+  domain1.test,604800,12345,3,1,49FD46E6C4B45C55D4AC
+  domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B]]>
+                </artwork>
+              </figure>
+            </t>    
+            <t>
+              <figure>
+                <preamble>
+                Example of a "dnssec" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element with the Key Data Interface of <xref target="RFC5910"/>:
+                </preamble>
+                <artwork><![CDATA[
+  <csvDomain:contents>
+  ...
+    <rdeCsv:csv name="dnssec">
+    <rdeCsv:fields>
+      <csvDomain:fName parent="true"/>
+      <csvDomain:fMaxSigLife/>
+      <csvDomain:fFlags/>
+      <csvDomain:fProtocol/>
+      <csvDomain:fKeyAlg/>
+      <csvDomain:fPubKey/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+       cksum="1B16F334">
+       dnssec-key-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+    </rdeCsv:csv>
+  ...
+  </csvDomain:contents>
+  ...]]>
+                </artwork>
+              </figure>
+            </t>    
+            <t>
+              <figure>
+                <preamble>
+                Example of the corresponding dnssec-key-YYYYMMDD.csv file.
+                The file contains two key records for domain1.test.
+                </preamble>
+                <artwork><![CDATA[
+  domain1.test,604800,257,3,1,AQPJ////4Q==
+  domain1.test,604800,257,3,1,AQPJ////4QQQ]]>
+                </artwork>
+              </figure>
+            </t>    
+            
+          </section>
+                  <section title="&quot;domainTransfer&quot; CSV File Definition" anchor="csvDomainTransferDefinition">
+            <t>The "domainTransfer" CSV File Definition defines the fields and CSV file references 
+            used for the domain name object pending and completed transfer records.  No additional 
+            field elements were added for use in the "domainTransfer"  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element.</t>
+            
+            <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+            MUST be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request.</t>
+            <t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer.</t>
+            <t hangText="&lt;rdeCsv:fReDate&gt;">Date and time that the transfer was requested.</t>
+            <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action.</t>
+            <t hangText="&lt;rdeCsv:fAcDate&gt;">Date and time that the transfer action should be taken or has been taken.</t>
+            </list></t>
+   
+           <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+            MAY be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date if the transfer command caused or causes a change in the validity period.</t>
+            <t hangText="&lt;rdeCsv:fReID&gt;">Identifier of client that requested the transfer.</t>
+            <t hangText="&lt;rdeCsv:fAcID&gt;">Identifier of client that should take or took action for transfer.</t>
+            </list></t>
+  
+   
+            <t>The following "csvDomain" fields, defined for the <xref target="csvDomainDefinition">"domain" CSV File Definition</xref>,  
+            MUST be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;csvDomain:fName&gt;">Domain name of the domain object involved in the transfer.</t>
+            </list></t>
+  
+            <t>
+              <figure>
+                <preamble>
+                Example of a "domainTransfer" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.
+                </preamble>
+                <artwork><![CDATA[
+  ...
+  <csvDomain:contents>
+  ...
+    <rdeCsv:csv name="domainTransfer">
+    <rdeCsv:fields>
+      <csvDomain:fName parent="true"/>
+      <rdeCsv:fTrStatus/>
+      <rdeCsv:fReRr/>
+      <rdeCsv:fReID/>
+      <rdeCsv:fReDate/>
+      <rdeCsv:fAcRr/>
+      <rdeCsv:fAcID/>
+      <rdeCsv:fAcDate/>
+      <rdeCsv:fExDate/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+       cksum="71170194">
+       domainTransfer-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+    </rdeCsv:csv>
+  ...
+  </csvDomain:contents>
+  ...]]>
+                </artwork>
+              </figure>
+            </t>    
+            <t>
+              <figure>
+                <preamble>
+                Example of the corresponding domainTransfer-YYYYMMDD.csv file.
+                The file contains two domain transfer records, with one
+                in pending status and the second in clientApproved status.                
+                </preamble>
+                <artwork><![CDATA[
+  domain1.test,pending,registrarX,clientY,
+  2011-03-08T19:38:00.0Z,registrarY,,2011-03-13T23:59:59.0Z,
+  2016-04-03T22:00:00.0Z
+  domain2.test,clientApproved,registrarX,clientY,
+  2012-03-08T19:38:00.0Z,registrarY,clientY,
+  2012-03-09T23:59:59.0Z,2016-05-04T23:00:00.0Z]]>
+                </artwork>
+              </figure>
+            </t>   
+          </section>
+          
+         </section>
      
                <section title="&lt;csvDomain:deletes&gt;" anchor="csvDomainDeletes">
-                	<t>
-                	The &lt;csvDomain:deletes&gt; is used to hold the deleted domain name objects in a differental or incremental deposit.  
-                	All of the domain name object data is deleted as part of a casecade delete.  The &lt;csvDomain:deletes&gt; is split into 
-                	separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
-                	The following section defines the supported domain name deletes CSV file definition:
-                	</t>
-                	<section title="&quot;domain&quot; Deletes CSV File Definition" anchor="csvDomainDeletesDefinition">
-                	  <t>
-                		The following "csvDomain" field elements MUST be used in the deletes "domain" 
-					  	&lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-					    <t hangText="&lt;csvDomain:fName&gt;">Domain name field with type="eppcom:labelType" and isRequired="true".  
-					  </t>        
-					  </list></t>
-					  <t>
-					    <figure>
-					      <preamble>
-					  	    Example of a "domain" &lt;csvDomain:deletes&gt; &lt;rdeCsv:csv&gt; element:
-					      </preamble>
-					      <artwork><![CDATA[
-	...
-	<csvDomain:deletes>
-	...
-	 <rdeCsv:csv name="domain">
-	  <rdeCsv:fields>
-		<csvDomain:fName/>
-	  </rdeCsv:fields>
-	  <rdeCsv:files>
-		<rdeCsv:file 
-		 cksum="E19349E0">
-		 domain-delete-YYYYMMDD.csv
-		</rdeCsv:file> 
-	  </rdeCsv:files>
-	 </rdeCsv:csv>
-	...
-	</csvDomain:deletes>
-	...]]>
-					    </artwork>
-					  </figure>
-					</t>    
-					<t>
-					  <figure>
-					  	<preamble>
-					  		Example of the corresponding domain-delete-YYYYMMDD.csv file.
-					  		The file contains three domain name records.					  	
-					  	</preamble>
-					    <artwork><![CDATA[
-	domain1.test
-	domain2.test
-	domainN.test]]>
-					    </artwork>
-					  </figure>
-					</t>  
-				  </section>
+                  <t>
+                  The &lt;csvDomain:deletes&gt; is used to hold the deleted domain name objects in a differental or incremental deposit.  
+                  All of the domain name object data is deleted as part of a casecade delete.  The &lt;csvDomain:deletes&gt; is split into 
+                  separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                  The following section defines the supported domain name deletes CSV file definition.
+                  </t>
+                  <section title="&quot;domain&quot; Deletes CSV File Definition" anchor="csvDomainDeletesDefinition">
+                    <t>
+                    The following "csvDomain" field elements MUST be used in the deletes "domain" 
+              &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+              <t hangText="&lt;csvDomain:fName&gt;">Domain name field with type="eppcom:labelType" and isRequired="true".  
+            </t>        
+            </list></t>
+            <t>
+              <figure>
+                <preamble>
+                  Example of a "domain" &lt;csvDomain:deletes&gt; &lt;rdeCsv:csv&gt; element:
+                </preamble>
+                <artwork><![CDATA[
+  ...
+  <csvDomain:deletes>
+  ...
+   <rdeCsv:csv name="domain">
+    <rdeCsv:fields>
+    <csvDomain:fName/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+    <rdeCsv:file 
+     cksum="E19349E0">
+     domain-delete-YYYYMMDD.csv
+    </rdeCsv:file> 
+    </rdeCsv:files>
+   </rdeCsv:csv>
+  ...
+  </csvDomain:deletes>
+  ...]]>
+              </artwork>
+            </figure>
+          </t>    
+          <t>
+            <figure>
+              <preamble>
+                Example of the corresponding domain-delete-YYYYMMDD.csv file.
+                The file contains three domain name records.              
+              </preamble>
+              <artwork><![CDATA[
+  domain1.test
+  domain2.test
+  domainN.test]]>
+              </artwork>
+            </figure>
+          </t>  
+          </section>
                 </section>
 
  
@@ -1423,7 +1424,8 @@ domainN.test]]>
                 <t>
                     The host object is based on the EPP host name mapping in <xref target="RFC5732"/>. The 
                     host object supports both the XML Model and the CSV Model, defined in <xref target="models">Models</xref> section.  The 
-                    elements used for both models are defined in the following sections. 
+                    elements used for both models are defined in the following sections.  Both the &lt;csvHost:contents&gt; and &lt;csvHost:deletes&gt; 
+                   elements contain one or more &lt;rdeCsv:csv&gt; elements with a set of named CSV file definitions using the &lt;rdeCsv:csv&gt; "name" attribute. 
                 </t>
               <section title="XML Model" anchor="hostXmlModel">
                 <t>There are
@@ -1544,300 +1546,299 @@ domainN.test]]>
                 <t>For the CSV Model of the host object, the &lt;csvHost:contents&gt; child 
                    element of the &lt;rde:contents&gt; element is used to hold the new or updated host objects for the deposit.  
                    The &lt;csvHost:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
-                   purged host objects for the deposit.  Both the &lt;csvHost:contents&gt; and &lt;csvHost:deletes&gt; 
-                   elements contain one or more &lt;rdeCsv:csv&gt; elements with the following supported "name" attribute values:
+                   purged host objects for the deposit.  
                 </t>
                 <t>
                    Differential and incremental deposits are based on changes to the host objects.  The updated host object 
                    data under the &lt;csvHost:contents&gt; element is a cascade replace down all of the host CSV files starting with the 
                    parent <xref target="csvHostDefinition">"host" CSV File Definition</xref>.  The child CSV file definitions include a &lt;rdeCsv:fRoid parent="true"&gt; field.  
-                   All the child CSV file definition data for the host objects in the parent "host" CSV file definition 
+                   All the child CSV file definition data for the host objects in the parent <xref target="csvHostDefinition">"host" CSV File Definition</xref> 
                    MUST first be deleted and then set using the data in the child CSV files.  The deleted host object data under the &lt;csvHost:deletes&gt; 
                    element is a cascade delete starting from the <xref target="csvHostDeletesDefinition">"host" Deletes CSV File Definition</xref>.  
                 </t>
                 
                <section title="&lt;csvHost:contents&gt;" anchor="csvHostContents">
-                	<t>The &lt;csvHost:contents&gt; is used to hold the new or updated host object information for the deposit.  
-                	The &lt;csvHost:contents&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
-                	The following sections include the supported host CSV file definitions.
-                	</t>
-                	<section title="&quot;host&quot; CSV File Definition" anchor="csvHostDefinition">
-					  <t>The "host" CSV File Definition defines the fields and CSV file references 
-					  used for the host object records.</t>  
-					  <t>The following "csvHost" field elements MUST be used in the "host" 
-					  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-					  
-					  <t hangText="&lt;csvHost:fName&gt;">Host name field with type="eppcom:labelType" and isRequired="true".  
-					  </t>
-									 
-					  </list></t>
-					  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					  MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;rdeCsv:fRoid&gt;">Repository Object IDentifier (ROID) assigned to the host object.</t>
-					   </list></t>
-					  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					  MAY be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;rdeCsv:fClID&gt;">Identifier of the sponsoring client.</t>
-						<t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
-						<t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the host object.</t>
-						<t hangText="&lt;rdeCsv:fCrDate&gt;">Date and time that the host object was created.</t>
-						<t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
-						<t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of client that last updated the host object.</t>
-						<t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time that the host object was last updated.</t>
-						<t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time that the host was last transferred.</t>
-					  </list></t>
-						<t>
-							<figure>
-							  <preamble>Example of a "host" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element:</preamble>
-							  <artwork><![CDATA[
-	...
-	<csvHost:contents>
-	...
-	  <rdeCsv:csv name="host">
-	   <rdeCsv:fields>
-		 <csvHost:fName/>
-		 <rdeCsv:fRoid/>
-		 <rdeCsv:fClID/>
-		 <rdeCsv:fCrRr/>
-		 <rdeCsv:fCrID/>
-		 <rdeCsv:fCrDate/>
-		 <rdeCsv:fUpRr/>
-		 <rdeCsv:fUpID/>
-		 <rdeCsv:fUpDate/>
-		 <rdeCsv:fTrDate/>
-	   </rdeCsv:fields>
-	   <rdeCsv:files>
-		 <rdeCsv:file 
-		  cksum="120938E3">
-		  host-YYYYMMDD.csv
-		 </rdeCsv:file> 
-	   </rdeCsv:files>
-	  </rdeCsv:csv>
-	...
-	</csvHost:contents>
-	...]]>
-							  </artwork>
-							</figure>
-						</t>    
-						<t>
-							<figure>
-							  <preamble>
-								Example of the corresponding host-YYYYMMDD.csv file.
-								The file contains two host records with one being 
-								an internal host and the second being an external 
-								host.
-							  </preamble>
-						      <artwork><![CDATA[
-	ns1.example.test,Hns1_example_test-TEST,registrarX,registrarX,
-	clientY,1999-05-08T12:10:00.0Z,registrarX,
-	clientY,2009-10-03T09:34:00.0Z,2007-01-08T09:19:00.0Z
-	ns1.example.test2,Hns1_example_test2-TEST,clientY,
-	clientX,2009-05-08T12:10:00.0Z,clientX,
-	2010-10-03T09:34:00.0Z,]]>
-							  </artwork>
-							</figure>
-						</t>    
-					</section>
-                	<section title="&quot;hostStatuses&quot; CSV File Definition" anchor="csvHostStatusesDefinition">
-					  <t>The "hostStatuses" CSV File Definition defines the fields and CSV file references 
-					  used for the host object statuses.  
-					   </t>
-					
-					 <t>The following "csvHost" fields, defined for the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-					  MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-					<t hangText="&lt;csvHost:fStatus&gt;">The status of the host with type="host:statusValueType"/>.  
-					</t>
-					  </list></t>
-					
-					
-					  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					  MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;rdeCsv:fRoid&gt;">Host object Registry Object IDentifier (ROID) assigned to the host object.</t>
-					  </list></t>
-					  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					  MAY be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;rdeCsv:fStatusDescription&gt;">Host object status description which is free form text describing the rationale for the status.</t>
-						<t hangText="&lt;rdeCsv:fLang&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
-					  </list></t>
-						<t>
-							<figure>
-							  <preamble>
-							    Example of a "hostStatuses" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element:
-							  </preamble>
-							  <artwork><![CDATA[
-	...
-	<csvHost:contents>
-	...
-	  <rdeCsv:csv name="hostStatuses">
-		<rdeCsv:fields>
-		  <rdeCsv:fRoid parent="true"/>
-		  <csvHost:fStatus/>
-		  <rdeCsv:fStatusDescription/>
-		  <rdeCsv:fLang/>
-		</rdeCsv:fields>
-		<rdeCsv:files>
-		  <rdeCsv:file 
-			cksum="0BA504FC">
-			hostStatuses-YYYYMMDD.csv
-		  </rdeCsv:file> 
-		</rdeCsv:files>
-	  </rdeCsv:csv>
-	...
-	</csvHost:contents>
-	...]]>
-							  </artwork>
-							</figure>
-						</t>    
-						<t>
-							<figure>
-							  <preamble>
-								Example of the corresponding hostStatuses-YYYYMMDD.csv file.
-								The file contains the statuses for  
-								the two host names ns1.domain1.test and ns1.domain2.test.
-							  </preamble>
-							  <artwork><![CDATA[
-	ns1domain1test-TEST,clientUpdateProhibited,"Disallow update",en
-	ns1domain1test-TEST,clientDeleteProhibited,"Disallow delete",en
-	ns1domain2test-TEST,ok,,]]>
-							  </artwork>
-							</figure>
-						</t>    
-	   				</section>
-                	<section title="&quot;hostAddresses&quot; CSV File Definition" anchor="csvHostAddressesDefinition">
-					  <t>The "hostAddresses" CSV File Definition defines the fields and CSV file references 
-					  used for the host object IP addresses.</t>  
-					 <t>The following "csvHost" field elements MUST be used in the "hostAddresses" 
-					 &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-					  
-					<t hangText="&lt;csvHost:fAddr&gt;">IP addresses associated with the host object with type="host:addrStringType".  
-					</t>
-					<t hangText="&lt;csvHost:fAddrVersion&gt;">IP addresses version associated with the host object with type="host:ipType".  
-					"host:ipType" has the enumerated values of "v4" or "v6".  
-					</t>
-					  
-					  </list></t>
-									
-					  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					  MUST be used in the "hostAddresses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-						<t hangText="&lt;rdeCsv:fRoid&gt;">Host object Registry Object IDentifier (ROID) assigned to the host object.</t>
-					  </list></t>
-						<t>
-							<figure>
-							  <preamble>
-							    Example of a "hostAddresses" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element.
-							  </preamble>
-							  <artwork><![CDATA[
-	...
-	<csvHost:contents>
-	...
-	  <rdeCsv:csv name="hostAddresses">
-		<rdeCsv:fields>
-		  <rdeCsv:fRoid parent="true"/>
-		  <csvHost:fAddr/>
-		  <csvHost:fAddrVersion/>
-		</rdeCsv:fields>
-		<rdeCsv:files>
-		  <rdeCsv:file 
-			cksum="17888F02">
-			hostAddresses-YYYYMMDD.csv
-		  </rdeCsv:file> 
-		</rdeCsv:files>
-	  </rdeCsv:csv>
-	...
-	</csvHost:contents>
-	...]]>
-							  </artwork>
-							</figure>
-						</t>    
-						<t>
-							<figure>
-							  <preamble>
-								Example of the corresponding hostAddressesObj-YYYYMMDD.csv file.
-								The file contains the IP addresses for  
-								the host name ns1.domain1.test.							  
-							  </preamble>
-							  <artwork><![CDATA[
-	ns1domain1test-TEST,192.0.2.2,v4
-	ns1domain1test-TEST,192.0.2.29,v4
-	ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A,v6]]>
-							  </artwork>
-							</figure>
-						</t>    
-					  					
-				  </section>
-					
-				</section>                
+                  <t>The &lt;csvHost:contents&gt; is used to hold the new or updated host object information for the deposit.  
+                  The &lt;csvHost:contents&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                  The following sections include the supported host CSV file definitions.
+                  </t>
+                  <section title="&quot;host&quot; CSV File Definition" anchor="csvHostDefinition">
+            <t>The "host" CSV File Definition defines the fields and CSV file references 
+            used for the host object records.</t>  
+            <t>The following "csvHost" field elements MUST be used in the "host" 
+            &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            
+            <t hangText="&lt;csvHost:fName&gt;">Host name field with type="eppcom:labelType" and isRequired="true".  
+            </t>
+                   
+            </list></t>
+            <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+            MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;rdeCsv:fRoid&gt;">Repository Object IDentifier (ROID) assigned to the host object.</t>
+             </list></t>
+            <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+            MAY be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of the sponsoring client.</t>
+            <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
+            <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the host object.</t>
+            <t hangText="&lt;rdeCsv:fCrDate&gt;">Date and time that the host object was created.</t>
+            <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
+            <t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of client that last updated the host object.</t>
+            <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time that the host object was last updated.</t>
+            <t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time that the host was last transferred.</t>
+            </list></t>
+            <t>
+              <figure>
+                <preamble>Example of a "host" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element.</preamble>
+                <artwork><![CDATA[
+  ...
+  <csvHost:contents>
+  ...
+    <rdeCsv:csv name="host">
+     <rdeCsv:fields>
+     <csvHost:fName/>
+     <rdeCsv:fRoid/>
+     <rdeCsv:fClID/>
+     <rdeCsv:fCrRr/>
+     <rdeCsv:fCrID/>
+     <rdeCsv:fCrDate/>
+     <rdeCsv:fUpRr/>
+     <rdeCsv:fUpID/>
+     <rdeCsv:fUpDate/>
+     <rdeCsv:fTrDate/>
+     </rdeCsv:fields>
+     <rdeCsv:files>
+     <rdeCsv:file 
+      cksum="120938E3">
+      host-YYYYMMDD.csv
+     </rdeCsv:file> 
+     </rdeCsv:files>
+    </rdeCsv:csv>
+  ...
+  </csvHost:contents>
+  ...]]>
+                </artwork>
+              </figure>
+            </t>    
+            <t>
+              <figure>
+                <preamble>
+                Example of the corresponding host-YYYYMMDD.csv file.
+                The file contains two host records with one being 
+                an internal host and the second being an external 
+                host.
+                </preamble>
+                  <artwork><![CDATA[
+  ns1.example.test,Hns1_example_test-TEST,registrarX,registrarX,
+  clientY,1999-05-08T12:10:00.0Z,registrarX,
+  clientY,2009-10-03T09:34:00.0Z,2007-01-08T09:19:00.0Z
+  ns1.example.test2,Hns1_example_test2-TEST,clientY,
+  clientX,2009-05-08T12:10:00.0Z,clientX,
+  2010-10-03T09:34:00.0Z,]]>
+                </artwork>
+              </figure>
+            </t>    
+          </section>
+                  <section title="&quot;hostStatuses&quot; CSV File Definition" anchor="csvHostStatusesDefinition">
+            <t>The "hostStatuses" CSV File Definition defines the fields and CSV file references 
+            used for the host object statuses.  
+             </t>
+          
+           <t>The following "csvHost" fields, defined for the <xref target="csvHostDefinition">"host" CSV File Definition</xref>,  
+            MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+          <t hangText="&lt;csvHost:fStatus&gt;">The status of the host with type="host:statusValueType"/>.  
+          </t>
+            </list></t>
+          
+          
+            <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+            MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;rdeCsv:fRoid&gt;">Host object Registry Object IDentifier (ROID) assigned to the host object.</t>
+            </list></t>
+            <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+            MAY be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;rdeCsv:fStatusDescription&gt;">Host object status description which is free form text describing the rationale for the status.</t>
+            <t hangText="&lt;rdeCsv:fLang&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
+            </list></t>
+            <t>
+              <figure>
+                <preamble>
+                  Example of a "hostStatuses" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element.
+                </preamble>
+                <artwork><![CDATA[
+  ...
+  <csvHost:contents>
+  ...
+    <rdeCsv:csv name="hostStatuses">
+    <rdeCsv:fields>
+      <rdeCsv:fRoid parent="true"/>
+      <csvHost:fStatus/>
+      <rdeCsv:fStatusDescription/>
+      <rdeCsv:fLang/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+      cksum="0BA504FC">
+      hostStatuses-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+    </rdeCsv:csv>
+  ...
+  </csvHost:contents>
+  ...]]>
+                </artwork>
+              </figure>
+            </t>    
+            <t>
+              <figure>
+                <preamble>
+                Example of the corresponding hostStatuses-YYYYMMDD.csv file.
+                The file contains the statuses for  
+                the two host names ns1.domain1.test and ns1.domain2.test.
+                </preamble>
+                <artwork><![CDATA[
+  ns1domain1test-TEST,clientUpdateProhibited,"Disallow update",en
+  ns1domain1test-TEST,clientDeleteProhibited,"Disallow delete",en
+  ns1domain2test-TEST,ok,,]]>
+                </artwork>
+              </figure>
+            </t>    
+            </section>
+                  <section title="&quot;hostAddresses&quot; CSV File Definition" anchor="csvHostAddressesDefinition">
+            <t>The "hostAddresses" CSV File Definition defines the fields and CSV file references 
+            used for the host object IP addresses.</t>  
+           <t>The following "csvHost" field elements MUST be used in the "hostAddresses" 
+           &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            
+          <t hangText="&lt;csvHost:fAddr&gt;">IP addresses associated with the host object with type="host:addrStringType".  
+          </t>
+          <t hangText="&lt;csvHost:fAddrVersion&gt;">IP addresses version associated with the host object with type="host:ipType".  
+          "host:ipType" has the enumerated values of "v4" or "v6".  
+          </t>
+            
+            </list></t>
+                  
+            <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+            MUST be used in the "hostAddresses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+            <t hangText="&lt;rdeCsv:fRoid&gt;">Host object Registry Object IDentifier (ROID) assigned to the host object.</t>
+            </list></t>
+            <t>
+              <figure>
+                <preamble>
+                  Example of a "hostAddresses" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element.
+                </preamble>
+                <artwork><![CDATA[
+  ...
+  <csvHost:contents>
+  ...
+    <rdeCsv:csv name="hostAddresses">
+    <rdeCsv:fields>
+      <rdeCsv:fRoid parent="true"/>
+      <csvHost:fAddr/>
+      <csvHost:fAddrVersion/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+      cksum="17888F02">
+      hostAddresses-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+    </rdeCsv:csv>
+  ...
+  </csvHost:contents>
+  ...]]>
+                </artwork>
+              </figure>
+            </t>    
+            <t>
+              <figure>
+                <preamble>
+                Example of the corresponding hostAddressesObj-YYYYMMDD.csv file.
+                The file contains the IP addresses for  
+                the host name ns1.domain1.test.               
+                </preamble>
+                <artwork><![CDATA[
+  ns1domain1test-TEST,192.0.2.2,v4
+  ns1domain1test-TEST,192.0.2.29,v4
+  ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A,v6]]>
+                </artwork>
+              </figure>
+            </t>    
+                      
+          </section>
+          
+        </section>                
                 
                <section title="&lt;csvHost:deletes&gt;" anchor="csvHostDeletes">
-                	<t>
-                	The &lt;csvHost:deletes&gt; is used to hold the deleted host objects in a differental or incremental deposit.  
-                	All of the host object data is deleted as part of a casecade delete.  The &lt;csvHost:deletes&gt; is split into 
-                	separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
-                	The following section defines the supported host deletes CSV file definition:
-                	</t>
-                	<section title="&quot;host&quot; Deletes CSV File Definition" anchor="csvHostDeletesDefinition">                	
-					  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-					    MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-					  </t>
-					  <t><list style="hanging">
-					    <t hangText="&lt;rdeCsv:fRoid&gt;">Repository Object IDentifier (ROID) assigned to the host object.</t>
-					  </list></t>
-					  <t>
-						  <figure>
-						    <preamble>
-							  Example of a "host" &lt;csvHost:deletes&gt; &lt;rdeCsv:csv&gt; element:						  
-						    </preamble>
-						    <artwork><![CDATA[
-	...
-	<csvHost:deletes>
-	...
-	 <rdeCsv:csv name="host">
-	  <rdeCsv:fields>
-		<rdeCsv:fRoid/>
-	  </rdeCsv:fields>
-	  <rdeCsv:files>
-		<rdeCsv:file 
-		 cksum="E3408F5E">
-		 host-delete-YYYYMMDD.csv
-		</rdeCsv:file> 
-	  </rdeCsv:files>
-	 </rdeCsv:csv>
-	...
-	</csvHost:deletes>
-	...]]>
-						    </artwork>
-						  </figure>
-					  </t>    
-					  <t>
-						  <figure>
-						    <preamble>
-							  Example of the host-delete-YYYYMMDD.csv file.
-							  The file contains two host records.						  
-						    </preamble>
-						    <artwork><![CDATA[
-	Hns1_example_test-TEST
-	Hns1_example_test2-TEST]]>
-						    </artwork>
-						  </figure>
-					  </t>  
-					  
-				  </section>
+                  <t>
+                  The &lt;csvHost:deletes&gt; is used to hold the deleted host objects in a differental or incremental deposit.  
+                  All of the host object data is deleted as part of a cascade delete.  The &lt;csvHost:deletes&gt; is split into 
+                  separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                  The following section defines the supported host deletes CSV file definition.
+                  </t>
+                  <section title="&quot;host&quot; Deletes CSV File Definition" anchor="csvHostDeletesDefinition">                  
+            <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+              MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+              <t hangText="&lt;rdeCsv:fRoid&gt;">Repository Object IDentifier (ROID) assigned to the host object.</t>
+            </list></t>
+            <t>
+              <figure>
+                <preamble>
+                Example of a "host" &lt;csvHost:deletes&gt; &lt;rdeCsv:csv&gt; element.             
+                </preamble>
+                <artwork><![CDATA[
+  ...
+  <csvHost:deletes>
+  ...
+   <rdeCsv:csv name="host">
+    <rdeCsv:fields>
+    <rdeCsv:fRoid/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+    <rdeCsv:file 
+     cksum="E3408F5E">
+     host-delete-YYYYMMDD.csv
+    </rdeCsv:file> 
+    </rdeCsv:files>
+   </rdeCsv:csv>
+  ...
+  </csvHost:deletes>
+  ...]]>
+                </artwork>
+              </figure>
+            </t>    
+            <t>
+              <figure>
+                <preamble>
+                Example of the host-delete-YYYYMMDD.csv file.
+                The file contains two host records.             
+                </preamble>
+                <artwork><![CDATA[
+  Hns1_example_test-TEST
+  Hns1_example_test2-TEST]]>
+                </artwork>
+              </figure>
+            </t>  
+            
+          </section>
 
                 </section>
                 
@@ -2089,67 +2090,85 @@ domainN.test]]>
 
                <section title="CSV Model" anchor="contactCsvModel">
                 <t>For the CSV Model of the contact object, the &lt;csvContact:contents&gt; child 
-                   element of the &lt;rde:contents&gt; element is used to hold the new or updated contact objects for the deposit.  
+                   element of the &lt;rde:contents&gt; element is used to hold the new or updated contacts objects for the deposit.  
                    The &lt;csvContact:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
                    purged contact objects for the deposit.  Both the &lt;csvContact:contents&gt; and &lt;csvContact:deletes&gt; 
-                   elements contain one or more &lt;rdeCsv:csv&gt; elements with the following supported "name" attribute values:
+                   elements contain one or more &lt;rdeCsv:csv&gt; elements with a set of named CSV file definitions using the &lt;rdeCsv:csv&gt; "name" attribute.
                 </t>
-                <t><list style="hanging">
-                  <t hangText="&quot;contact&quot;">Defines the fields and CSV file references 
-                  used for the contact object records.</t>
-                  <t>The following "csvContact" field elements, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, MUST be used in the 
-                  "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                <t>
+                   Differential and incremental deposits are based on changes to the contact objects.  The updated contact object 
+                   data under the &lt;csvContact:contents&gt; element is a cascade replace down all of the contact CSV files starting with the 
+                   parent <xref target="csvContactDefinition">"contact" CSV File Definition</xref>.  The child CSV file definitions include a &lt;csvContact:fId parent="true"&gt; field.  
+                   All the child CSV file definition data for the contact objects in the parent <xref target="csvContactDefinition">"contact" CSV File Definition</xref> 
+                   MUST first be deleted and then set using the data in the child CSV files.  The deleted contact object data under the &lt;csvContact:deletes&gt; 
+                   element is a cascade delete starting from the <xref target="csvContactDeletesDefinition">"contact" Deletes CSV File Definition</xref>.  
+                </t>     
+                
+               <section title="&lt;csvContact:contents&gt;" anchor="csvContactContents">
+                  <t>The &lt;csvContact:contents&gt; is used to hold the new or updated contact object information for the deposit.  
+                  The &lt;csvContact:contents&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                  The following sections include the supported contact CSV file definitions.
                   </t>
-                  <t><list style="hanging">
+                  <section title="&quot;contact&quot; CSV File Definition" anchor="csvContactDefinition">
+
+                
+                      <t>The "contact" CSV File Definition defines the fields and CSV file references 
+                        used for the contact object records.
+                      </t>
+                      <t>The following "csvContact" field elements MUST be used in the 
+                        "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                      </t>
+                      <t><list style="hanging">
   
-                <t hangText="&lt;csvContact:fId&gt;">Contains the server-unique contact identifier with type="eppcom:clIDType" and isRequired="true".  
-                </t>
+                        <t hangText="&lt;csvContact:fId&gt;">Contains the server-unique contact identifier with type="eppcom:clIDType" and isRequired="true".  
+                        </t>
  
-                <t hangText="&lt;csvContact:fEmail&gt;">Contains the contact's email address with type="eppcom:minTokenType" and isRequired="true".  
-                </t>
-                  </list></t>
+                        <t hangText="&lt;csvContact:fEmail&gt;">Contains the contact's email address with type="eppcom:minTokenType" and isRequired="true".  
+                        </t>
+                      </list></t>
  
-            <t>The following field elements MAY be used in the 
-                  "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
+                      <t>The following field elements MAY be used in the 
+                        "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                      </t>
+                      <t><list style="hanging">
   
-                <t hangText="&lt;csvContact:fVoice&gt;">Contains the contact's voice telephone number with type="contact:e164StringType".  
-                </t>
+                        <t hangText="&lt;csvContact:fVoice&gt;">Contains the contact's voice telephone number with type="contact:e164StringType".  
+                        </t>
 
-                <t hangText="&lt;csvContact:fVoiceExt&gt;">Contains the contact's voice telephone number extension with type="token".  
-                </t>
+                        <t hangText="&lt;csvContact:fVoiceExt&gt;">Contains the contact's voice telephone number extension with type="token".  
+                        </t>
 
-                <t hangText="&lt;csvContact:fFax&gt;">Contains the contact's facsimile telephone number with type="contact:e164StringType".  
-                </t>
+                        <t hangText="&lt;csvContact:fFax&gt;">Contains the contact's facsimile telephone number with type="contact:e164StringType".  
+                        </t>
 
-                <t hangText="&lt;csvContact:fFaxExt&gt;">Contains the contact's facsimile telephone number extension with type="token".  
-                </t>
-                  </list></t>
-                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MUST be used in the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;rdeCsv:fRoid&gt;">The Registry Object IDentifier (ROID) for the contact object.</t>
-                    <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client (registrar) that sponsors the contact object.</t>
-                    <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
-                    <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the contact object</t>
-                    <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
-                    <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the contact object.</t>
-                  </list></t>
-                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MAY be used in the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the contact object.</t>
-                    <t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of the client that last updated the contact object.</t>
-                    <t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time of the last transfer for the contact object.</t>
-                  </list></t>
-                    <t>
-                        Example of a "contact" &lt;csvContact:contacts&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <t hangText="&lt;csvContact:fFaxExt&gt;">Contains the contact's facsimile telephone number extension with type="token".  
+                        </t>
+                      </list></t>
+                      <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                        MUST be used in the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                      </t>
+                      <t><list style="hanging">
+                        <t hangText="&lt;rdeCsv:fRoid&gt;">The Registry Object IDentifier (ROID) for the contact object.</t>
+                        <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client (registrar) that sponsors the contact object.</t>
+                        <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object.</t>
+                        <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the contact object</t>
+                        <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
+                        <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the contact object.</t>
+                      </list></t>
+                      <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                        MAY be used in the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                      </t>
+                      <t><list style="hanging">
+                        <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the contact object.</t>
+                        <t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of the client that last updated the contact object.</t>
+                        <t hangText="&lt;rdeCsv:fTrDate&gt;">Date and time of the last transfer for the contact object.</t>
+                      </list></t>
+                      <t>
+                        <figure>
+                          <preamble>
+                          Example of a "contact" &lt;csvContact:contacts&gt; &lt;rdeCsv:csv&gt; element.
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <csvContact:contents>
 ...
@@ -2180,14 +2199,16 @@ domainN.test]]>
 ...
 </csvContact:contents>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
-                     <t>
-                        Example of the contact-YYYYMMDD.csv file.
-                        The file contains two object contact records.
-                    </t>
                     <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                          Example of the contact-YYYYMMDD.csv file.
+                          The file contains two object contact records.
+                          </preamble>
+                          <artwork><![CDATA[
 sh8013,Csh8013-TEST,+1.7035555555,1234,+1.7035555556,,
 jdoe@example.test,registrarX,registarX,
 clientY,2009-09-13T08:01:00.0Z,registarX,clientY,
@@ -2195,68 +2216,37 @@ clientY,2009-09-13T08:01:00.0Z,registarX,clientY,
 mycontactid,Cmycontactid-TEST,+1.7034444444,1234,
 +1.7033333333,,jsmith@example.test,registrarX,registarX,clientY,
 2010-09-13T08:01:00.0Z,registarX,clientY,2011-11-26T09:10:00.0Z]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>    
-                    <t>
-                        Example of a "contact" &lt;csvContact:deletes&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
-...
-<csvContact:deletes>
-...
-  <rdeCsv:csv name="contact">
-    <rdeCsv:fields>
-      <csvContact:fId/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-        cksum="6F2B988F">
-        contact-delete-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-  </rdeCsv:csv>
-...
-</csvContact:deletes>
-...]]>
-                        </artwork></figure>
-                    </t>    
-                     <t>
-                        Example of the contact-delete-YYYYMMDD.csv file.
-                        The file contains two contact records.
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
-sh8013
-mycontactid]]>
-                        </artwork></figure>
-                    </t>    
+           </section>
+                 <section title="&quot;contactStatuses&quot; CSV File Definition" anchor="csvContactStatusesDefinition">
  
-                 <t hangText="&quot;contactStatuses&quot;">Defines the fields and CSV file references 
-                  used for the contact object statuses.  
-                  </t>
+                   <t>The "contactStatuses" CSV File Definition defines the fields and CSV file references 
+                    used for the contact object statuses.  
+                   </t>
                  
-                 <t>The following "csvContact" field elements, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,  
-                  MUST be used in the "contactStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier of status.</t>
-               <t hangText="&lt;csvContact:fStatus&gt;">The status of the contact with type="contact:statusValueType".</t>
-                  </list></t>
+                   <t>The following "csvContact" field elements, defined for the <xref target="csvContactDefinition">"contact" CSV File Definition</xref>,  
+                     MUST be used in the "contactStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                   </t>
+                   <t><list style="hanging">
+                     <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier of status.</t>
+                     <t hangText="&lt;csvContact:fStatus&gt;">The status of the contact with type="contact:statusValueType".</t>
+                   </list></t>
                 
-                
-                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MAY be used in the "contactStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;rdeCsv:fStatusDescription&gt;">The contact object status description which is free form text describing the rationale for the status.</t>
-                    <t hangText="&lt;rdeCsv:fLang&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
-                  </list></t>
-                    <t>
-                        Example of a "contactStatuses" &lt;csvContact:contents&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                     MAY be used in the "contactStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                   </t>
+                   <t><list style="hanging">
+                     <t hangText="&lt;rdeCsv:fStatusDescription&gt;">The contact object status description which is free form text describing the rationale for the status.</t>
+                     <t hangText="&lt;rdeCsv:fLang&gt;">Language of the &lt;rdeCsv:fStatusDescription&gt; field.</t>
+                   </list></t>
+                   <t>
+                     <figure>
+                       <preamble>
+                         Example of a "contactStatuses" &lt;csvContact:contents&gt; &lt;rdeCsv:csv&gt; element.                       
+                       </preamble>
+                       <artwork><![CDATA[
 ...
 <csvContact:contents>
 ...
@@ -2277,123 +2267,91 @@ mycontactid]]>
 ...
 </csvContact:contents>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
                     <t>
-                        Example of the corresponding contactStatuses-YYYYMMDD.csv file.
-                        The file contains the statuses for  
-                        the two contact identifiers sh8013 and mycontactid.
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of the corresponding contactStatuses-YYYYMMDD.csv file.
+                          The file contains the statuses for  
+                          the two contact identifiers sh8013 and mycontactid.
+                        </preamble>
+                        <artwork><![CDATA[
 sh8013,clientUpdateProhibited,"Disallow update",en
 sh8013,clientDeleteProhibited,"Disallow delete",en
 mycontactid,ok,,]]>
-                        </artwork></figure>
-                    </t>    
-                    <t>
-                        Example of a "contactStatuses" &lt;csvContact:deletes&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
-...
-<csvContact:deletes>
-...
- <rdeCsv:csv name="contactStatuses">
-  <rdeCsv:fields>
-      <csvContact:fId parent="true"/>
-      <csvContact:fStatus/>
-  </rdeCsv:fields>
-  <rdeCsv:files>
-    <rdeCsv:file 
-     cksum="CBEE0AB6">
-     contactStatuses-delete-YYYYMMDD.csv
-    </rdeCsv:file> 
-  </rdeCsv:files>
- </rdeCsv:csv>
-...
-</csvContact:deletes>
-...]]>
-                        </artwork></figure>
-                    </t>    
-                    <t>
-                        Example of the corresponding contactStatuses-delete-YYYYMMDD.csv file.
-                        The file contains two status records.
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
-sh8013,clientUpdateProhibited
-sh8013,clientDeleteProhibited]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
  
                  
-                  <t hangText="&quot;contactPostal&quot;">Defines the fields and CSV file references 
-                  used for the contact postal info object records.</t>
-                  <t>The following "csvContact" field elements, defined for the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element,
-                  MUST be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-  
-                <t hangText="&lt;csvContact:fName&gt;">Contains the contact's name of the individual or role represented by the contact with type="contact:postalLineType" and isRequired="true".  
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
-                </t>
-
-                <t hangText="&lt;csvContact:fStreet&gt;">Contains the contact's contact's street address line with type="contact:fPostalLineType".  An index attribute 
-                is required to indicate which street address line the field represents with index "0" for the first line and index "2" for the last line.  
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
-                </t>
-
-                <t hangText="&lt;csvContact:fCity&gt;">Contains the contact's city with type="contact:postalLineType" and isRequired="true".   
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
-                </t>
-
-                <t hangText="&lt;csvContact:fCc&gt;">Contains the contact's country code with type="contact:ccType".   
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
-                </t>
-   
-                  </list></t>
-                  
-                  <t hangText="&quot;contactPostal&quot;">Defines the fields and CSV file references 
-                  used for the contact postal info object records.</t>
-                  <t>The following "csvContact" field elements, defined for the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
-                  MAY be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-  
-                <t hangText="&lt;csvContact:fPostalType&gt;">Contains the form of the postal-address information with type="contact:postalLineType".  
-                This field specifies the form ("int" or "loc"), as defined in <xref target="intandloc"/>, of the 
-                &lt;csvContact:fName&gt;, &lt;csvContact:fOrg&gt;, &lt;csvContact:fStreet&gt;, &lt;csvContact:fCity&gt;, 
-                &lt;csvContact:fSp&gt;, &lt;csvContact:fPc&gt;, &lt;csvContact:fCc&gt; fields.  
-                </t>
- 
-                <t hangText="&lt;csvContact:fOrg&gt;">Contains the name of the organization with which the contact is affiliated with type="contact:optPostalLineType".  
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
-              </t>
-
-                <t hangText="&lt;csvContact:fSp&gt;">Contains the contact's state or province with type="contact:optPostalLineType".   
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
-                </t>
-   
-                <t hangText="&lt;csvContact:fPc&gt;">Contains the contact's postal code with type="contact:pcType".  
-                An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
-                </t>
-   
-                  </list></t>
-                  
-                  
-                  <t>The following "csvContact" fields, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
-                  MUST be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object.</t>
-                 </list></t>
-                  
-                    <t>
-                        Example of a "contactPostal" &lt;csvContact:contents&gt; &lt;rdeCsv:csv&gt; element:
+            </section>
+                  <section title="&quot;contactPostal&quot; CSV File Definition" anchor="csvContactPostalDefinition">
+                    <t>The "contactPostal" CSV File Definition defines the fields and CSV file references 
+                       used for the contact postal info object records.
                     </t>
+                    <t>The following "csvContact" field elements MUST be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                    </t>
+                    <t><list style="hanging">
+  
+                      <t hangText="&lt;csvContact:fName&gt;">Contains the contact's name of the individual or role represented by the contact with type="contact:postalLineType" and isRequired="true".  
+                        An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
+                      </t>
+
+                      <t hangText="&lt;csvContact:fStreet&gt;">Contains the contact's contact's street address line with type="contact:fPostalLineType".  An index attribute 
+                        is required to indicate which street address line the field represents with index "0" for the first line and index "2" for the last line.  
+                        An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
+                      </t>
+
+                      <t hangText="&lt;csvContact:fCity&gt;">Contains the contact's city with type="contact:postalLineType" and isRequired="true".   
+                        An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
+                      </t>
+
+                      <t hangText="&lt;csvContact:fCc&gt;">Contains the contact's country code with type="contact:ccType".   
+                        An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
+                      </t>
+   
+                    </list></t>
+                  
+                    <t>The following "csvContact" field elements MAY be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                    </t>
+                    <t><list style="hanging">
+  
+                      <t hangText="&lt;csvContact:fPostalType&gt;">Contains the form of the postal-address information with type="contact:postalLineType".  
+                        This field specifies the form ("int" or "loc"), as defined in <xref target="intandloc"/>, of the 
+                        &lt;csvContact:fName&gt;, &lt;csvContact:fOrg&gt;, &lt;csvContact:fStreet&gt;, &lt;csvContact:fCity&gt;, 
+                        &lt;csvContact:fSp&gt;, &lt;csvContact:fPc&gt;, &lt;csvContact:fCc&gt; fields.  
+                      </t>
+ 
+                      <t hangText="&lt;csvContact:fOrg&gt;">Contains the name of the organization with which the contact is affiliated with type="contact:optPostalLineType".  
+                        An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
+                      </t>
+
+                      <t hangText="&lt;csvContact:fSp&gt;">Contains the contact's state or province with type="contact:optPostalLineType".   
+                        An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
+                      </t>
+   
+                      <t hangText="&lt;csvContact:fPc&gt;">Contains the contact's postal code with type="contact:pcType".  
+                        An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
+                      </t>
+   
+                    </list></t>
+                  
+                  
+                    <t>The following "csvContact" fields, defined for the <xref target="csvContactDefinition">"contact" CSV File Definition</xref>, 
+                      MUST be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                    </t>
+                    <t><list style="hanging">
+                      <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object.</t>
+                    </list></t>
+                  
                     <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of a "contactPostal" &lt;csvContact:contents&gt; &lt;rdeCsv:csv&gt; element.
+                        </preamble>
+                        <artwork><![CDATA[
 ...
 <csvContact:contents>
 ...
@@ -2421,88 +2379,59 @@ sh8013,clientDeleteProhibited]]>
 ...
 </csvContact:contents>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
-                     <t>
-                        Example of the contactPostal-YYYYMMDD.csv file.
-                        The file contains two contact postal records.
-                    </t>
                     <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of the contactPostal-YYYYMMDD.csv file.
+                          The file contains two contact postal records.
+                        </preamble>
+                        <artwork><![CDATA[
 sh8013,int,"John Doe","Example Inc.",
 "123 Example Dr.","Suite 100",,Reston,VA,20190,US
 mycontactid,int,"John Smith","Acme Inc.",
 "123 Sample Dr.",,,Reston,VA,20190,US]]>
-                        </artwork></figure>
-                    </t>    
-                    <t>
-                        Example of a "contactPostal" &lt;csvContact:deletes&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
-...
-<csvContact:deletes>
-...
-  <rdeCsv:csv name="contactPostal">
-    <rdeCsv:fields>
-      <csvContact:fId parent="true"/>
-      <csvContact:fPostalType/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-        cksum="9A47B820">
-        contactPostal-delete-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-  </rdeCsv:csv>     
-...
-</csvContact:deletes>
-...]]>
-                        </artwork></figure>
-                    </t>    
-                     <t>
-                        Example of the contactPostal-delete-YYYYMMDD.csv file.
-                        The file contains two contact postal records.
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
-sh8013,int
-mycontactid,int]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
                 
-                  <t hangText="&quot;contactTransfer&quot;">Defines the fields and CSV file references 
-                  used for the contact object pending and completed transfer records.  No additional 
-                  field elements were added for use in the "contactTransfer"  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element. 
-                  The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MUST be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request.</t>
-                    <t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer.</t>
-                    <t hangText="&lt;rdeCsv:fReDate&gt;">Date and time that the transfer was requested.</t>
-                    <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action.</t>
-                    <t hangText="&lt;rdeCsv:fAcDate&gt;">Date and time that the transfer action should be taken or has been taken</t>
-                  </list></t>
-                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MAY be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;rdeCsv:fReID&gt;">Identifier of client that requested the transfer.</t>
-                    <t hangText="&lt;rdeCsv:fAcID&gt;">Identifier of client that should take or took action for transfer.</t>
-                  </list></t>
-                  <t>The following "csvContact" fields, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
-                  MUST be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object.</t>
-                 </list></t>
-                  
-                     <t>
-                        Example of a "contactTransfer" &lt;csvContact:contents&gt; &lt;rdeCsv:csv&gt; element:
+          </section>
+                  <section title="&quot;contactTransfer&quot; CSV File Definition" anchor="csvContactTransferDefinition">
+                    <t>The "contactTransfer" CSV File Definition defines the fields and CSV file references 
+                    used for the contact object pending and completed transfer records.  No additional 
+                    field elements were added for use in the "contactTransfer"  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element. 
+                    The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                    MUST be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                     </t>
+                    <t><list style="hanging">
+                      <t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request.</t>
+                      <t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer.</t>
+                      <t hangText="&lt;rdeCsv:fReDate&gt;">Date and time that the transfer was requested.</t>
+                      <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action.</t>
+                      <t hangText="&lt;rdeCsv:fAcDate&gt;">Date and time that the transfer action should be taken or has been taken</t>
+                    </list></t>
+                    <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                      MAY be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                    </t>
+                    <t><list style="hanging">
+                      <t hangText="&lt;rdeCsv:fReID&gt;">Identifier of client that requested the transfer.</t>
+                      <t hangText="&lt;rdeCsv:fAcID&gt;">Identifier of client that should take or took action for transfer.</t>
+                    </list></t>
+                    <t>The following "csvContact" fields, defined for the <xref target="csvContactDefinition">"contact" CSV File Definition</xref>, 
+                      MUST be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                    </t>
+                    <t><list style="hanging">
+                      <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object.</t>
+                    </list></t>
+                  
                     <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of a "contactTransfer" &lt;csvContact:contents&gt; &lt;rdeCsv:csv&gt; element.
+                        </preamble>
+                        <artwork><![CDATA[
 ...
 <csvContact:contents>
 ...
@@ -2527,123 +2456,92 @@ mycontactid,int]]>
 ...
 </csvContact:contents>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
-                     <t>
-                        Example of the contactTransfer-YYYYMMDD.csv file.
-                        The file contains two contact transfer records 
-                        with one in pending status and the second in 
-                        clientApproved status.
-                    </t>
                     <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of the contactTransfer-YYYYMMDD.csv file.
+                          The file contains two contact transfer records 
+                          with one in pending status and the second in 
+                          clientApproved status.
+                        </preamble>
+                        <artwork><![CDATA[
 sh8013,pending,registrarX,clientX,2011-03-08T19:38:00.0Z,
 registrarY,,2011-03-13T23:59:59.0Z
 mycontactid,clientApproved,registrarX,clientX,2011-04-08T19:38:00.0Z,
 registrarY,clientY,2011-04-09T20:38:00.0Z]]>
-                        </artwork></figure>
-                    </t>    
-                    <t>
-                        Example of a "contactTransfer" &lt;csvContact:deletes&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
-...
-<csvContact:deletes>
-...
-  <rdeCsv:csv name="contactTransfer">
-    <rdeCsv:fields>
-      <csvContact:fId parent="true"/>
-      <rdeCsv:fReDate/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-        cksum="AF1479BD">
-        contactTransfer-delete-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-  </rdeCsv:csv>
-...
-</csvContact:deletes>
-...]]>
-                        </artwork></figure>
-                    </t>    
-                      <t>
-                        Example of the contactTransfer-delete-YYYYMMDD.csv file.
-                        The file contains two contact transfer records.
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
-sh8013,2011-03-08T19:38:00.0Z
-mycontactid,2011-04-08T19:38:00.0Z]]>
-                        </artwork></figure>
-                    </t>    
-               
+                        </artwork>
+                      </figure>
+                    </t>                  
                 
-                  <t hangText="&quot;contactDisclose&quot;">Defines the fields and CSV file references 
-                  used for the contact disclose object records.</t>
-                  <t>The following "csvContact" field elements, defined for the "contactDisclose" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
-                  MAY be used in the "contactDisclose" 
-                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
+            </section>
+                  <section title="&quot;contactDisclose&quot; CSV File Definition" anchor="csvContactDiscloseDefinition">
+                    <t>The "contactDisclose" CSV File Definition defines the fields and CSV file references 
+                      used for the contact disclose object records.</t>
+                    <t>The following "csvContact" field elements MAY be used in the "contactDisclose" 
+                      &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                    </t>
+                    <t><list style="hanging">
   
-                <t hangText="&lt;csvContact:fDiscloseFlag&gt;">Contains flag with a value of "true" or "1" (one) notes the preference 
-                to allow disclosure of the specified elements as an exception to the stated data-collection policy.  
-                A value of "false" or "0" (zero) notes a client preference to not allow disclosure of the specified elements as an exception 
-                to the stated data-collection policy with type="boolean". The additional fields define specific exceptional disclosure 
-                preferences based on the &lt;csvContact:fDiscloseFlag&gt; field.  
-                </t>
+                      <t hangText="&lt;csvContact:fDiscloseFlag&gt;">Contains flag with a value of "true" or "1" (one) notes the preference 
+                        to allow disclosure of the specified elements as an exception to the stated data-collection policy.  
+                        A value of "false" or "0" (zero) notes a client preference to not allow disclosure of the specified elements as an exception 
+                        to the stated data-collection policy with type="boolean". The additional fields define specific exceptional disclosure 
+                        preferences based on the &lt;csvContact:fDiscloseFlag&gt; field.  
+                      </t>
  
-                <t hangText="&lt;csvContact:fDiscloseNameLoc&gt;">Exceptional disclosure preference flag for the localized form of the 
-                contact name with type="boolean".  
-                </t>
+                      <t hangText="&lt;csvContact:fDiscloseNameLoc&gt;">Exceptional disclosure preference flag for the localized form of the 
+                        contact name with type="boolean".  
+                      </t>
 
-                <t hangText="&lt;csvContact:fDiscloseNameInt&gt;">Exceptional disclosure preference flag for the internationalized form of the 
-                contact name with type="boolean".   
-                </t>
+                      <t hangText="&lt;csvContact:fDiscloseNameInt&gt;">Exceptional disclosure preference flag for the internationalized form of the 
+                        contact name with type="boolean".   
+                      </t>
 
-                <t hangText="&lt;csvContact:fDiscloseOrgLoc&gt;">Exceptional disclosure preference flag for the localized form of the 
-                contact organization with type="boolean".   with type="boolean".  
-                </t>
+                      <t hangText="&lt;csvContact:fDiscloseOrgLoc&gt;">Exceptional disclosure preference flag for the localized form of the 
+                        contact organization with type="boolean".   with type="boolean".  
+                      </t>
 
-                <t hangText="&lt;csvContact:fDiscloseOrgInt&gt;">Exceptional disclosure preference flag for the internationalized form of the 
-                contact organization with type="boolean".   with type="boolean".  
-                </t>
+                      <t hangText="&lt;csvContact:fDiscloseOrgInt&gt;">Exceptional disclosure preference flag for the internationalized form of the 
+                        contact organization with type="boolean".   with type="boolean".  
+                      </t>
 
-                <t hangText="&lt;csvContact:fDiscloseAddrLoc&gt;">Exceptional disclosure preference flag for the localized form of the 
-                contact address with type="boolean".
-                </t>
+                      <t hangText="&lt;csvContact:fDiscloseAddrLoc&gt;">Exceptional disclosure preference flag for the localized form of the 
+                        contact address with type="boolean".
+                      </t>
    
-                <t hangText="&lt;csvContact:fDiscloseAddrInt&gt;">Exceptional disclosure preference flag for the internationalized form of the 
-                contact address with type="boolean".  
-                </t>
+                      <t hangText="&lt;csvContact:fDiscloseAddrInt&gt;">Exceptional disclosure preference flag for the internationalized form of the 
+                        contact address with type="boolean".  
+                      </t>
 
-                <t hangText="&lt;csvContact:fDiscloseVoice&gt;">Exceptional disclosure preference flag of the 
-                contact voice telephone number with type="boolean". 
-                </t>
+                      <t hangText="&lt;csvContact:fDiscloseVoice&gt;">Exceptional disclosure preference flag of the 
+                        contact voice telephone number with type="boolean". 
+                      </t>
 
-                <t hangText="&lt;csvContact:fDiscloseFax&gt;">Exceptional disclosure preference flag of the 
-                contact facsimile telephone number with type="boolean".   
-                </t>
+                      <t hangText="&lt;csvContact:fDiscloseFax&gt;">Exceptional disclosure preference flag of the 
+                        contact facsimile telephone number with type="boolean".   
+                      </t>
 
-                <t hangText="&lt;csvContact:fDiscloseEmail&gt;">Exceptional disclosure preference flag of the 
-                contact email address with type="boolean".  
-                </t>
+                      <t hangText="&lt;csvContact:fDiscloseEmail&gt;">Exceptional disclosure preference flag of the 
+                        contact email address with type="boolean".  
+                      </t>
    
-                  </list></t>
-                  <t>The following "csvContact" fields, defined for the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
-                  is used in the "contactDisclose" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object.</t>
-                 </list></t>
+                    </list></t>
+                    <t>The following "csvContact" fields, defined for the <xref target="csvContactDefinition">"contact" CSV File Definition</xref>, 
+                      MUST be used in the "contactDisclose" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                    </t>
+                    <t><list style="hanging">
+                      <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object.</t>
+                    </list></t>
                   
                     <t>
-                        Example of a "contactDisclose" &lt;csvContact:contents&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of a "contactDisclose" &lt;csvContact:contents&gt; &lt;rdeCsv:csv&gt; element.
+                        </preamble>
+                        <artwork><![CDATA[
 ...
 <csvContact:contents>
 ...
@@ -2671,59 +2569,88 @@ mycontactid,2011-04-08T19:38:00.0Z]]>
 ...
 </csvContact:contents>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
-                      <t>
-                        Example of the contactDisclose-YYYYMMDD.csv file.
-                        The file contains two disclosure records.  The first contact 
-                        disables disclosure of voice, fax, and email.  
-                        The second contact enables disclosure of the localized 
-                        and internationalized form of the name.
-                    </t>
                     <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of the contactDisclose-YYYYMMDD.csv file.
+                          The file contains two disclosure records.  The first contact 
+                          disables disclosure of voice, fax, and email.  
+                          The second contact enables disclosure of the localized 
+                          and internationalized form of the name.
+                        </preamble>
+                        <artwork><![CDATA[
 sh8013,0,0,0,0,0,0,0,1,1,1
 mycontactid,1,1,1,0,0,0,0,0,0,0]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
- 
+                    
+                  </section>
+                
+                </section>                
+            
+               <section title="&lt;csvContact:deletes&gt;" anchor="csvContactDeletes">
+                  <t>
+                  The &lt;csvContact:deletes&gt; is used to hold the deleted contact objects in a differental or incremental deposit.  
+                  All of the contact object data is deleted as part of a cascade delete.  The &lt;csvContact:deletes&gt; is split into 
+                  separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                  The following section defines the supported contact deletes CSV file definition.
+                  </t>
+                  <section title="&quot;contact&quot; Deletes CSV File Definition" anchor="csvContactDeletesDefinition">
                     <t>
-                        Example of a "contactDisclose" &lt;csvContact:deletes&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                    The following "csvContact" field elements MUST be used in the deletes "contact" 
+              &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+                        <t hangText="&lt;csvContact:fId&gt;">Contains the server-unique contact identifier with type="eppcom:clIDType" and isRequired="true".  
+                        </t>            
+            </list></t>
+                      <t>
+                        <figure>
+                          <preamble>
+                          Example of a "contact" &lt;csvContact:deletes&gt; &lt;rdeCsv:csv&gt; element.
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <csvContact:deletes>
 ...
-  <rdeCsv:csv name="contactDisclose">
+  <rdeCsv:csv name="contact">
     <rdeCsv:fields>
-      <csvContact:fId parent="true"/>
+      <csvContact:fId/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
         cksum="6F2B988F">
-        contactDisclose-delete-YYYYMMDD.csv
+        contact-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
   </rdeCsv:csv>
 ...
 </csvContact:deletes>
 ...]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>    
-                      <t>
-                        Example of the contactDisclose-delete-YYYYMMDD.csv file.
-                        The file contains two disclosure records.
-                    </t>
                     <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                          Example of the contact-delete-YYYYMMDD.csv file.
+                          The file contains two contact records.                          
+                          </preamble>
+                          <artwork><![CDATA[
 sh8013
 mycontactid]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>    
-                </list></t>
-                
-          </section>                
+          </section> 
+          
+        </section>
+        
+        </section>
             
             </section>
             
@@ -2915,84 +2842,102 @@ mycontactid]]>
             </section>
             
                <section title="CSV Model" anchor="registrarCsvModel">
-                <t>For the CSV Model of the registrar object, The &lt;csvRegistrar:contents&gt; child 
+               
+                <t>For the CSV Model of the registrar object, the &lt;csvRegistrar:contents&gt; child 
                    element of the &lt;rde:contents&gt; element is used to hold the new or updated registrar objects for the deposit.  
                    The &lt;csvRegistrar:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
                    purged registrar objects for the deposit.  Both the &lt;csvRegistrar:contents&gt; and &lt;csvRegistrar:deletes&gt; 
-                   elements contain one or more &lt;rdeCsv:csv&gt; elements with the following supported "name" attribute values:
+                   elements contain one or more &lt;rdeCsv:csv&gt; elements with a set of named CSV file definitions using the &lt;rdeCsv:csv&gt; "name" attribute.
                 </t>
+                <t>
+                   Differential and incremental deposits are based on changes to the registrar objects.  The updated registrar object 
+                   data under the &lt;csvContact:contents&gt; element is a cascade replace down all of the registrar CSV files starting with the 
+                   parent <xref target="csvRegistrarDefinition">"registrar" CSV File Definition</xref>.  The child CSV file definitions include a &lt;csvRegistrar:fId parent="true"&gt; field.  
+                   All the child CSV file definition data for the registrar objects in the parent <xref target="csvRegistrarDefinition">"registrar" CSV File Definition</xref> 
+                   MUST first be deleted and then set using the data in the child CSV files.  The deleted registrar object data under the &lt;csvRegistrar:deletes&gt; 
+                   element is a cascade delete starting from the <xref target="csvRegistrarDeletesDefinition">"registrar" Deletes CSV File Definition</xref>.  
+                </t>     
+               
 
-                <t><list style="hanging">
-                  <t hangText="&quot;registrar&quot;">Defines the fields and CSV file references 
-                  used for the registrar object records.</t>
-                  <t>The following "csvRegistrar" field elements, defined for the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
-                  MUST be used in the "registrar" 
-                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+               <section title="&lt;csvRegistrar:contents&gt;" anchor="csvRegistrarContents">
+               
+                  <t>The &lt;csvRegistrar:contents&gt; is used to hold the new or updated registrar object information for the deposit.  
+                  The &lt;csvRegistrar:contents&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                  The following sections include the supported contact CSV file definitions.
                   </t>
-                  <t><list style="hanging">
-  
-                <t hangText="&lt;csvRegistrar:fId&gt;">Contains the server-unique registrar identifier with type="eppcom:clIDType" and isRequired="true".  
-                </t>
- 
-                <t hangText="&lt;csvRegistrar:fName&gt;">Contains the name of the registrar with type="normalizedString" and isRequired="true".  
-                </t>
-                
-                <t hangText="&lt;csvRegistrar:fStatus&gt;">Contains the status of the registrar with type="csvRegistrar:statusValueType".  
-                </t>
-
-                  </list></t>
                   
-          <t>The following field elements MAY be used in the "registrar" 
-                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-
-
-                <t hangText="&lt;csvRegistrar:fGurid&gt;">Contains the ID assigned by ICANN with type="positiveInteger".  
-                </t>
-
-                <t hangText="&lt;csvRegistrar:fWhoisUrl&gt;">Contains the Whois URL of the registrar with type="anyURI".  
-                </t>
+                  <section title="&quot;registrar&quot; CSV File Definition" anchor="csvRegistrarDefinition">
+               
+                      <t>The "registrar" CSV File Definition defines the fields and CSV file references 
+                        used for the registrar object records.</t>
+                      <t>The following "csvRegistrar" field elements MUST be used in the "registrar" 
+                        &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                      </t>
+                      <t><list style="hanging">
+  
+                        <t hangText="&lt;csvRegistrar:fId&gt;">Contains the server-unique registrar identifier with type="eppcom:clIDType" and isRequired="true".  
+                        </t>
+ 
+                        <t hangText="&lt;csvRegistrar:fName&gt;">Contains the name of the registrar with type="normalizedString" and isRequired="true".  
+                        </t>
                 
-                  </list></t>                  
-                  <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MUST be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the registrar object.</t>
-                    <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the registrar object.</t>
-                    <t hangText="&lt;rdeCsv:fUrl&gt;">URL for the registrar web home page.</t>
-                  </list></t>
-                  <t>The following "csvContact" fields, defined in section <xref target="contactObject"/>,  
-                  MUST be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;csvContact:fStreet&gt;">Registrar street address line with an "index" attribute that represents the order of the street address line from "0" to "2".  
-                    An OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
-                    <t hangText="&lt;csvContact:fCity&gt;">Registrar city with an OPTIONAL "isLoc" attribute that is used to 
-                    indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
-                    <t hangText="&lt;csvContact:fCc&gt;">Registrar country code with an OPTIONAL "isLoc" attribute that is used to 
-                    indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
-                    <t hangText="&lt;csvContact:fEmail&gt;">Registrar email address.</t>
-                </list></t>
-                  <t>The following "csvContact" fields, defined in section <xref target="contactObject"/>,  
-                  MAY be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;csvContact:fSp&gt;">Registrar state or province with an OPTIONAL "isLoc" attribute that is used to 
-                    indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
-                    <t hangText="&lt;csvContact:fPc&gt;">Registrar postal code with an OPTIONAL "isLoc" attribute that is used to 
-                    indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
-                    <t hangText="&lt;csvContact:fVoice&gt;">Registrar voice telephone number.</t>
-                    <t hangText="&lt;csvContact:fVoiceExt&gt;">Registrar voice telephone number extension.</t>
-                    <t hangText="&lt;csvContact:fFax&gt;">Registrar facsimile telephone number.</t>
-                    <t hangText="&lt;csvContact:fFaxExt&gt;">Registrar facsimile telephone number extension.</t>
-                </list></t>
-                   <t>
-                        Example of a "registrar" &lt;csvRegistrar:contents&gt; &lt;rdeCsv:csv&gt; element. 
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <t hangText="&lt;csvRegistrar:fStatus&gt;">Contains the status of the registrar with type="csvRegistrar:statusValueType".  
+                        </t>
+
+                      </list></t>
+                  
+                      <t>The following field elements MAY be used in the "registrar" 
+                        &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                      </t>
+                      <t><list style="hanging">
+
+                        <t hangText="&lt;csvRegistrar:fGurid&gt;">Contains the ID assigned by ICANN with type="positiveInteger".  
+                        </t>
+
+                        <t hangText="&lt;csvRegistrar:fWhoisUrl&gt;">Contains the Whois URL of the registrar with type="anyURI".  
+                        </t>
+                
+                      </list></t>   
+                      
+                      <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
+                        MUST be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                      </t>
+                      <t><list style="hanging">
+                        <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the registrar object.</t>
+                        <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the registrar object.</t>
+                        <t hangText="&lt;rdeCsv:fUrl&gt;">URL for the registrar web home page.</t>
+                      </list></t>
+                     <t>The following "csvContact" fields, defined in section <xref target="contactObject">Contact Object</xref>,  
+                       MUST be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                     </t>
+                     <t><list style="hanging">
+                       <t hangText="&lt;csvContact:fStreet&gt;">Registrar street address line with an "index" attribute that represents the order of the street address line from "0" to "2".  
+                         An OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
+                       <t hangText="&lt;csvContact:fCity&gt;">Registrar city with an OPTIONAL "isLoc" attribute that is used to 
+                         indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
+                       <t hangText="&lt;csvContact:fCc&gt;">Registrar country code with an OPTIONAL "isLoc" attribute that is used to 
+                         indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
+                       <t hangText="&lt;csvContact:fEmail&gt;">Registrar email address.</t>
+                     </list></t>
+                     <t>The following "csvContact" fields, defined in section <xref target="contactObject">Contact Object</xref>,  
+                       MAY be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                     </t>
+                     <t><list style="hanging">
+                       <t hangText="&lt;csvContact:fSp&gt;">Registrar state or province with an OPTIONAL "isLoc" attribute that is used to 
+                         indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
+                       <t hangText="&lt;csvContact:fPc&gt;">Registrar postal code with an OPTIONAL "isLoc" attribute that is used to 
+                         indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
+                       <t hangText="&lt;csvContact:fVoice&gt;">Registrar voice telephone number.</t>
+                       <t hangText="&lt;csvContact:fVoiceExt&gt;">Registrar voice telephone number extension.</t>
+                       <t hangText="&lt;csvContact:fFax&gt;">Registrar facsimile telephone number.</t>
+                       <t hangText="&lt;csvContact:fFaxExt&gt;">Registrar facsimile telephone number extension.</t>
+                     </list></t>
+                     <t>
+                       <figure>
+                         <preamble>
+                           Example of a "registrar" &lt;csvRegistrar:contents&gt; &lt;rdeCsv:csv&gt; element. 
+                         </preamble>
+                         <artwork><![CDATA[
 ...
 <csvRegistrar:contents>
 ...
@@ -3029,26 +2974,51 @@ mycontactid]]>
 ...
 </csvRegistrar:contents>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
-                      <t>
-                        Example of the registrar-YYYYMMDD.csv file.
-                        The file contains one registrar record.
-                    </t>
                     <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of the registrar-YYYYMMDD.csv file.
+                            The file contains one registrar record.
+                          </preamble>
+                          <artwork><![CDATA[
 EXAMPLE,"Example Inc.",1234,ok,"123 Example Dr.",
 "Suite 100",,Dulles,VA,20166-6503,US,+1.7035555555,1234,
 +1.7035555556,,jdoe@example.test,http://www.example.test,
 http://whois.example.test,2005-04-23T11:49:00.0Z,
 2009-02-17T17:51:00.0Z]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
+                    
+                  </section>
+                  
+               </section>
+                    
+               <section title="&lt;csvRegistrar:deletes&gt;" anchor="csvRegistrarDeletes">
+                  <t>
+                  The &lt;csvRegistrar:deletes&gt; is used to hold the deleted registrar objects in a differental or incremental deposit.  
+                  All of the registrar object data is deleted as part of a cascade delete.  The &lt;csvRegistrar:deletes&gt; is split into 
+                  separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                  The following section defines the supported registrar deletes CSV file definition.
+                  </t>
+                  <section title="&quot;registrar&quot; Deletes CSV File Definition" anchor="csvRegistrarDeletesDefinition">
                     <t>
-                        Example of a "registrar" &lt;csvRegistrar:deletes&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
+                    The following "csvRegistrar" field elements MUST be used in the deletes "registrar" 
+              &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+                        <t hangText="&lt;csvRegistrar:fId&gt;">Contains the server-unique registrar identifier with type="eppcom:clIDType" and isRequired="true".  
+                        </t>
+                      </list></t>
                     <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of a "registrar" &lt;csvRegistrar:deletes&gt; &lt;rdeCsv:csv&gt; element.
+                        </preamble>
+                        <artwork><![CDATA[
 ...
 <csvRegistrar:deletes>
 ...
@@ -3066,22 +3036,27 @@ http://whois.example.test,2005-04-23T11:49:00.0Z,
 ...
 </csvRegistrar:deletes>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t> 
-                      <t>
-                        Example of the registrar-delete-YYYYMMDD.csv file.
-                        The file contains two registrar records.
-                    </t>
                     <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of the registrar-delete-YYYYMMDD.csv file.
+                          The file contains two registrar records.
+                        </preamble>
+                        <artwork><![CDATA[
 EXAMPLE
 EXAMPLE2]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t> 
-                    
-                     </list></t>  
-         
-              </section>
+          </section> 
+          
+        </section>
+        
+        </section>
+            
             </section>
             
             <section title="IDN Table Reference Object">
@@ -3148,24 +3123,32 @@ EXAMPLE2]]>
                    element of the &lt;rde:contents&gt; element is used to hold the new or updated IDN table reference objects for the deposit.  
                    The &lt;csvIDN:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
                    purged IDN table reference objects for the deposit.  Both the &lt;csvIDN:contents&gt; and &lt;csvIDN:deletes&gt; 
-                   elements contain one or more &lt;rdeCsv:csv&gt; elements with the following supported "name" attribute values:
+                   elements contain one or more &lt;rdeCsv:csv&gt; elements with a set of named CSV file definitions using the &lt;rdeCsv:csv&gt; "name" attribute.
                 </t>
-                <t><list style="hanging">
-                  <t hangText="&quot;idnLanguage&quot;">Defines the fields and CSV file references 
-                  used for the IDN table reference object records.  
-                  </t>
-                  <t>The following "rdeCsv" fields, defined in <xref target="csvCommonFieldElements"/>,  
-                  MUST be used in the "idnLanguage" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+               <section title="&lt;csvIDN:contents&gt;" anchor="csvIDNContents">
+                
+                 <t>The &lt;csvIDN:contents&gt; is used to hold the new or updated IDN table reference object information for the deposit.  
+                   The &lt;csvIDN:contents&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                   The following sections include the supported IDN table reference CSV file definitions.
+                 </t>
+                 <section title="&quot;idnLanguage&quot; CSV File Definition" anchor="csvIDNDefinition">
+                
+                   <t>The "idnLanguage" CSV File Definition defines the fields and CSV file references 
+                     used for the IDN table reference object records.  
                    </t>
-                  <t><list style="hanging">
-                    <t hangText="&lt;rdeCsv:fIdnTableId&gt;">The language identifier that matches the values for the &lt;rdeCsv:fIdnTableId&gt; field element in the "domain" CSV files, as defined in <xref target="domainNameObject"/>.</t>
-                    <t hangText="&lt;rdeCsv:fUrl&gt;">URL that defines the character code points that can be used for the language defined by the &lt;rdeCsv:fLang&gt; field element.</t>
+                   <t>The following "rdeCsv" fields, defined in <xref target="csvCommonFieldElements"/>,  
+                     MUST be used in the "idnLanguage" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                   </t>
+                   <t><list style="hanging">
+                     <t hangText="&lt;rdeCsv:fIdnTableId&gt;">The language identifier that matches the values for the &lt;rdeCsv:fIdnTableId&gt; field element in the <xref target="csvDomainDefinition">"domain" CSV File Definition</xref> files.</t>
+                     <t hangText="&lt;rdeCsv:fUrl&gt;">URL that defines the character code points that can be used for the language defined by the &lt;rdeCsv:fLang&gt; field element.</t>
                    </list></t>
                     <t>
-                        Example of a "idnLanguage" &lt;csvIDN:contents&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of a "idnLanguage" &lt;csvIDN:contents&gt; &lt;rdeCsv:csv&gt; element.
+                        </preamble>
+                        <artwork><![CDATA[
 ...
 <csvIDN:contents>
 ...
@@ -3185,25 +3168,48 @@ EXAMPLE2]]>
 ...
 </csvIDN:contents>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
-                     <t>
-                        Example of the corresponding idnLanguage-YYYYMMDD.csv file.
-                        The file contains two IDN language records.
-                    </t>
                     <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of the corresponding idnLanguage-YYYYMMDD.csv file.
+                          The file contains two IDN language records.
+                        </preamble>
+                        <artwork><![CDATA[
 LANG-1,
 http://www.iana.org/domains/idn-tables/tables/test_tab1_1.1.txt
 LANG-2,
 http://www.iana.org/domains/idn-tables/tables/test_tab2_1.1.txt]]>
                         </artwork></figure>
                     </t>    
+                    
+                  </section>
+                  
+                </section>
+                 
+               <section title="&lt;csvIDN:deletes&gt;" anchor="csvIDNDeletes">
+                  <t>
+                  The &lt;csvIDN:deletes&gt; is used to hold the deleted IDN table reference objects in a differental or incremental deposit.  
+                  The &lt;csvIDN:deletes&gt; is split into 
+                  separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                  The following section defines the supported IDN table reference deletes CSV file definition.
+                  </t>
+                  <section title="&quot;idnLanguage&quot; Deletes CSV File Definition" anchor="csvIDNDeletesDefinition">
                     <t>
-                        Example of a "idnLanguage" &lt;csvIDN:deletes&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
+                    The following "idnLanguage" field elements MUST be used in the deletes "idnLanguage" 
+              &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+                        <t hangText="&lt;rdeCsv:fIdnTableId&gt;">The language identifier that matches the values for the &lt;rdeCsv:fIdnTableId&gt; field element in the <xref target="csvDomainDefinition">"domain" CSV File Definition</xref> files.</t>
+            </list></t>
                     <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of a "idnLanguage" &lt;csvIDN:deletes&gt; &lt;rdeCsv:csv&gt; element.
+                        </preamble>
+                        <artwork><![CDATA[
 ...
 <csvIDN:deletes>
 ...
@@ -3221,23 +3227,27 @@ http://www.iana.org/domains/idn-tables/tables/test_tab2_1.1.txt]]>
 ...
 </csvIDN:deletes>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
-                     <t>
-                        Example of the idnLanguage-delete-YYYYMMDD.csv file.
-                        The file contains two IDN language records.
-                    </t>
                     <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of the idnLanguage-delete-YYYYMMDD.csv file.
+                          The file contains two IDN language records.
+                        </preamble>
+                        <artwork><![CDATA[
 LANG-1
 LANG-2]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
-                 
-                  
-                </list></t>
+          </section>
+                </section>
+
+
+               </section>
              
-             </section>
             </section>
             
             <section title="NNDN Object">
@@ -3364,50 +3374,55 @@ LANG-2]]>
                    element of the &lt;rde:contents&gt; element is used to hold the new or updated NNDN objects for the deposit.  
                    The &lt;csvNNDN:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or 
                    purged NNDN objects for the deposit.  Both the &lt;csvNNDN:contents&gt; and &lt;csvNNDN:deletes&gt; 
-                   elements contain one or more &lt;rdeCsv:csv&gt; elements with the following supported "name" attribute values:
+                   elements contain one or more &lt;rdeCsv:csv&gt; elements with a set of named CSV file definitions using the &lt;rdeCsv:csv&gt; "name" attribute.
                 </t>
-                <t><list style="hanging">
-                  <t hangText="&quot;NNDN&quot;">Defines the fields and CSV file references 
-                  used for the NNDN object records.</t>
-                  <t>The following "csvNNDN" field elements, defined for the "NNDN" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element, 
-                  MUST be used in the "NNDN" 
-                  &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
-                  </t>
-                  <t><list style="hanging">
-                  <t hangText="&lt;csvNNDN:fAName&gt;">ASCII Compatible Encoding (ACE) field of the NNDN with type="eppcom:labelType" and isRequired="true".  
-                  </t>
-                  
-                <t hangText="&lt;csvNNDN:fOriginalName&gt;">Domain name used to generate the IDN variant with type="eppcom:labelType".</t>
-                <t hangText="&lt;csvNNDN:fNameState&gt;">State of the NNDN: blocked or withheld with type="rdeNNDN:nameState".  See <xref target="ndn_object"/> for a description 
-                of the possible values for the &lt;rdeNNDN:nameState&gt; element.</t>
-  
+               <section title="&lt;csvNNDN:contents&gt;" anchor="csvNNDNContents">
+                
+                 <t>The &lt;csvNNDN:contents&gt; is used to hold the new or updated NNDN object information for the deposit.  
+                   The &lt;csvNNDN:contents&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                   The following sections include the supported NNDN CSV file definitions.
+                 </t>
+                 <section title="&quot;NNDN&quot; CSV File Definition" anchor="csvNNDNDefinition">
+                
+                   <t>The "NNDN" CSV File Definition defines the fields and CSV file references 
+                     used for the NNDN object records.</t>
+                   <t>The following "csvNNDN" field elements MUST be used in the "NNDN" 
+                     &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                   </t>
+                   <t><list style="hanging">
+                     <t hangText="&lt;csvNNDN:fAName&gt;">ASCII Compatible Encoding (ACE) field of the NNDN with type="eppcom:labelType" and isRequired="true".  
+                     </t>
+                     <t hangText="&lt;csvNNDN:fOriginalName&gt;">Domain name used to generate the IDN variant with type="eppcom:labelType".</t>
+                     <t hangText="&lt;csvNNDN:fNameState&gt;">State of the NNDN: blocked or withheld with type="rdeNNDN:nameState".  See <xref target="ndn_object"/> for a description 
+                       of the possible values for the &lt;rdeNNDN:nameState&gt; element.</t>
                   </list></t>
                   <t>The following field elements MAY be used in the "NNDN" 
                   &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list style="hanging">
-                <t hangText="&lt;csvNNDN:fOriginalName&gt;">Domain name used to generate the IDN variant with type="eppcom:labelType".</t>  
-                <t hangText="&lt;csvNNDN:fMirroringNS&gt;">Defines whether the "mirroring" &lt;csvNNDN:fNameState&gt; uses the NS mirror mechanism, as described for the &lt;rdeNNDN:nameState&gt; "mirroringNS" attribute in <xref target="ndn_object"/>, with type="boolean".  
-                If the field element is not defined the default value is "true".</t>  
-            </list></t>
+                    <t hangText="&lt;csvNNDN:fOriginalName&gt;">Domain name used to generate the IDN variant with type="eppcom:labelType".</t>  
+                    <t hangText="&lt;csvNNDN:fMirroringNS&gt;">Defines whether the "mirroring" &lt;csvNNDN:fNameState&gt; uses the NS mirror mechanism, as described for the &lt;rdeNNDN:nameState&gt; "mirroringNS" attribute in <xref target="ndn_object"/>, with type="boolean".  
+                      If the field element is not defined the default value is "true".</t>  
+                  </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MUST be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                    MUST be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list  style="hanging">
                     <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the domain name object.</t>
                   </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
-                  MAY be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+                    MAY be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list  style="hanging">
                     <t hangText="&lt;rdeCsv:fUName&gt;">Name of the NNDN in Unicode character set for the &lt;csvNNDN:fAName&gt; field element.</t>
                     <t hangText="&lt;rdeCsv:fIdnTableId&gt;">IDN Table Identifier for the NNDN that matches an IDN Table Reference Object record, as defined in <xref target="idnCsvModel"/>.</t>
                   </list></t>
-                    <t>
+                  <t>
+                    <figure>
+                      <preamble>
                         Example of a "NNDN" &lt;csvNNDN:contents&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                      </preamble>
+                      <artwork><![CDATA[
 ...
 <csvNNDN:contents>
 ...
@@ -3431,32 +3446,55 @@ LANG-2]]>
 </csvNNDN:contents>
 ...
 ]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
                     <t>
-                        Example of the corresponding NNDN-YYYYMMDD.csv file.
-                        The file contains two NNDN records for an IDN with 
-                        one blocked variant and one mirrored variant.
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of the corresponding NNDN-YYYYMMDD.csv file.
+                          The file contains two NNDN records for an IDN with 
+                          one blocked variant and one mirrored variant.
+                        </preamble>
+                        <artwork><![CDATA[
 xn--exampl-gva.test,pt-BR,xn--exampl.test,
 blocked,,2005-04-23T11:49:00.0Z
 xn--exampl2-gva.test,pt-BR,xn--exampl.test,
 mirrored,1,2005-04-23T11:49:00.0Z]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
+                  </section>
+              </section>
+               
+               <section title="&lt;csvNNDN:deletes&gt;" anchor="csvNNDNDeletes">
+                  <t>
+                  The &lt;csvNNDN:deletes&gt; is used to hold the deleted NNDN objects in a differental or incremental deposit.  
+                  The &lt;csvNNDN:deletes&gt; is split into 
+                  separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
+                  The following section defines the supported NNDN deletes CSV file definition.
+                  </t>
+                  <section title="&quot;NNDN&quot; Deletes CSV File Definition" anchor="csvNNDNDeletesDefinition">
                     <t>
-                        Example of a "NNDN" &lt;csvNNDN:deletes&gt; &lt;rdeCsv:csv&gt; element:
-                    </t>
+                    The following "NNDN" field elements MUST be used in the deletes "NNDN" 
+              &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
+            </t>
+            <t><list style="hanging">
+                        <t hangText="&lt;csvNNDN:fAName&gt;">ASCII Compatible Encoding (ACE) field of the NNDN with type="eppcom:labelType" and isRequired="true".  
+                        </t>
+            </list></t>
                     <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of a "NNDN" &lt;csvNNDN:deletes&gt; &lt;rdeCsv:csv&gt; element.
+                        </preamble>
+                        <artwork><![CDATA[
 ...
 <csvNNDN:deletes>
 ...
   <rdeCsv:csv name="NNDN">
     <rdeCsv:fields>
-      <csvNNDN:fAName isRequired="true"/>
+      <csvNNDN:fAName/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -3468,20 +3506,25 @@ mirrored,1,2005-04-23T11:49:00.0Z]]>
 ...
 </csvNNDN:deletes>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>    
                     <t>
-                        Example of the corresponding NNDN-delete-YYYYMMDD.csv file.
-                        The file contains one NNDN record.
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                      <figure>
+                        <preamble>
+                          Example of the corresponding NNDN-delete-YYYYMMDD.csv file.
+                          The file contains one NNDN record.
+                        </preamble>
+                        <artwork><![CDATA[
 xn--pingino-q2a.test]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t> 
-                  </list></t>
-              </section>
-               
+          </section>
+                </section>
+
+               </section>
+             
             </section>
             
             <section title="EPP Parameters Object" anchor="eppParams">
@@ -3785,7 +3828,7 @@ xn--pingino-q2a.test]]>
               escrow deposit of that point in time (watermark).
             </t>
             <t>
-              All contacts objects linked to domain names MUST be present.
+              All contact objects linked to domain names MUST be present.
             </t>
             <t>
               All registrars objects linked to other objects MUST be present.
@@ -6891,7 +6934,9 @@ END]]></artwork></figure>
           <section title="Changes from version 05 to 06">
             <t>
               <list style="numbers">
-                <t></t>
+                <t>Revised the differential and incremental deposits for the CSV format to use cascade update / replace and delete 
+                from the parent object to be consistent with the XML format.</t>
+                <t>Revised the structure of the CSV format sections to utilize sub-sections instead of a list for the CSV file definitions.</t>
               </list>
             </t>
           </section>
@@ -7696,7 +7741,6 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
                 <figure><artwork><![CDATA[
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
    xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
    xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
@@ -7708,18 +7752,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
    xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
-   xsi:schemaLocation="
-    urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
-    urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
-    urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd 
-    urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd 
-    urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd 
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
-    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeEppParams-1.0 rde-epp-param-1.0.xsd
-    urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"
-    type="FULL"
+   type="DIFF"
    id="20101017001" prevId="20101010001">
    <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
    <rde:rdeMenu>
@@ -7731,10 +7764,75 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
     <rde:objURI>urn:ietf:params:xml:ns:csvIDN-1.0</rde:objURI>
    </rde:rdeMenu>
    <rde:deletes>
-    <csvNNDN:deletes>
+     <csvDomain:deletes>
+       <rdeCsv:csv name="domain">
+         <rdeCsv:fields>
+           <csvDomain:fName/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="6F2B988F">
+             domain-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvDomain:deletes>
+     <csvHost:deletes>     
+       <rdeCsv:csv name="host">
+         <rdeCsv:fields>
+           <rdeCsv:fRoid/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="E3408F5E">
+             host-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvHost:deletes>     
+     <csvContact:deletes>     
+       <rdeCsv:csv name="contact">
+         <rdeCsv:fields>
+           <csvContact:fId/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="6F2B988F">
+             contact-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvContact:deletes>
+     <csvRegistrar:deletes>
+       <rdeCsv:csv name="registrar">
+         <rdeCsv:fields>
+           <csvRegistrar:fId/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="307B87AE">
+             registrar-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvRegistrar:deletes>
+     <csvIDN:deletes>
+       <rdeCsv:csv name="idnLanguage">
+         <rdeCsv:fields>
+           <rdeCsv:fIdnTableId/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="757B573A">
+             idnLanguage-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvIDN:deletes>     
+     <csvNNDN:deletes>
       <rdeCsv:csv name="NNDN">
         <rdeCsv:fields>
-          <csvNNDN:fAName isRequired="true"/>
+          <csvNNDN:fAName/>
         </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
@@ -7825,12 +7923,24 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
       <rdeCsv:csv name="domainNameServers" sep=",">
         <rdeCsv:fields>
           <csvDomain:fName parent="true"/>
+          <csvHost:fName parent="true"/>
+          </rdeCsv:fields>
+        <rdeCsv:files>
+          <rdeCsv:file 
+            cksum="984C3097">
+            domainNameServers-name-YYYYMMDD.csv
+          </rdeCsv:file> 
+        </rdeCsv:files>
+      </rdeCsv:csv>
+      <rdeCsv:csv name="domainNameServers" sep=",">
+        <rdeCsv:fields>
+          <csvDomain:fName parent="true"/>
           <rdeCsv:fRoid/>
-        </rdeCsv:fields>
+          </rdeCsv:fields>
         <rdeCsv:files>
           <rdeCsv:file 
             cksum="569D4638">
-            domainNameServers-YYYYMMDD.csv
+            domainNameServers-roid-YYYYMMDD.csv
           </rdeCsv:file> 
         </rdeCsv:files>
       </rdeCsv:csv>
