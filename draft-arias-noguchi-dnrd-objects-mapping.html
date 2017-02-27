@@ -659,7 +659,9 @@
   </dd>
 </dl>
 <p id="rfc.section.4.6.1.p.3">The &lt;rdeCsv:csv&gt; elements requires a "name" attribute that defines the purpose of the CSV file with values like "domain", "host", "contact".  The supported "name" attribute values are defined for each object type.  The OPTIONAL "sep" attribute defines the CSV separator character with the default separator character of ",".  </p>
-<p id="rfc.section.4.6.1.p.4">The following is an example of the &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element for domain name records where the &lt;rdeCsv:fRegistrant&gt; is set as required with isRequired="true".</p>
+<p/>
+
+<p>The following is an example of the &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element for domain name records where the &lt;rdeCsv:fRegistrant&gt; is set as required with isRequired="true".  </p>
 <pre>
 &lt;csvDomain:contents&gt;
 ...
@@ -690,14 +692,16 @@
 &lt;/csvDomain:contents&gt;
                         </pre>
 <p/>
-<p id="rfc.section.4.6.1.p.6">The following is example of the "domain-YYYYMMDD.csv" file with one record matching the &lt;rdeCsv:fields&gt; definition.</p>
+
+<p>The following is example of the "domain-YYYYMMDD.csv" file with one record matching the &lt;rdeCsv:fields&gt; definition.  </p>
 <pre>
 domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
 clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
 2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-                        </pre>
+                          </pre>
 <p/>
-<p id="rfc.section.4.6.1.p.8">The following is an example of the &lt;csvDomain:deletes&gt; &lt;rdeCsv:csv&gt; element for domain name records.</p>
+
+<p>The following is an example of the &lt;csvDomain:deletes&gt; &lt;rdeCsv:csv&gt; element for domain name records.  </p>
 <pre>
 &lt;csvDomain:deletes&gt;
 ...
@@ -714,15 +718,15 @@ clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
   &lt;/rdeCsv:csv&gt;
 ...
 &lt;/csvDomain:deletes&gt;
-                        </pre>
+                          </pre>
 <p/>
-<p id="rfc.section.4.6.1.p.10">The following is example of the "domain-delete-YYYYMMDD.csv" file with three records that matches the single &lt;csvDomain:fName&gt; field.</p>
+
+<p>The following is example of the "domain-delete-YYYYMMDD.csv" file with three records that matches the single &lt;csvDomain:fName&gt; field.  </p>
 <pre>
 domain1.test
 domain2.test
 domainN.test
-                        </pre>
-<p/>
+                          </pre>
 <h1 id="rfc.section.4.6.2"><a href="#rfc.section.4.6.2">4.6.2.</a> <a href="#csvCommonFieldElements" id="csvCommonFieldElements">CSV common field elements</a></h1>
 <p id="rfc.section.4.6.2.p.1">The &lt;rdeCsv:fields&gt; element defined in the <a href="#rdeCsv-csv">&lt;rdeCsv:csv&gt; element</a> <cite title="NONE">[rdeCsv-csv]</cite> section has child elements that substitute for the abstract &lt;rdeCsv:field&gt; element.  By convention &lt;rdeCsv:field&gt; elements include an 'f' prefix to identify them as field definition elements.  There are a set of common field elements that are used across multiple data escrow objects.  The common field elements are defined using the "urn:ietf:params:xml:ns:rdeCsv-1.0" namespace and using the "rdeCsv" sample namespace prefix.  The CSV common field elements include: </p>
 <p/>
@@ -782,7 +786,10 @@ domainN.test
   <dd style="margin-left: 8">Custom field with name attribute that defines the custom field name" with type="token".  </dd>
 </dl>
 <h1 id="rfc.section.4.7"><a href="#rfc.section.4.7">4.7.</a> <a href="#intandloc" id="intandloc">Internationalized and Localized Elements</a></h1>
-<p id="rfc.section.4.7.p.1">Some elements MAY be provided in either internationalized form ("int") or provided in localized form ("loc").  Those elements use a field value or "isLoc" attribute to specify the form used.  If an "isLoc" attribute is used, a value of "true" indicates the use of the localized form and a value of "false" indicates the use of the internationalized form.  This MAY override the form specified for a parent element.  A value of "int" is used to indicate the internationalized form and a value of "loc" is used to indicate the localized form.  When the internalized form ("int") is provided, the field value MUST be represented in a subset of UTF-8 that can be represented in the 7-bit US-ASCII character set.  When the localized form ("loc") is provided, the field value MAY be represented in unrestricted UTF-8.  Some of the field elements below of the "registrar" &lt;rdeCsv:csv"&gt; &lt;rdeCsv:fields&gt; element specify the internationalized form with the isLoc="false" attribute: </p>
+<p id="rfc.section.4.7.p.1">Some elements MAY be provided in either internationalized form ("int") or provided in localized form ("loc").  Those elements use a field value or "isLoc" attribute to specify the form used.  If an "isLoc" attribute is used, a value of "true" indicates the use of the localized form and a value of "false" indicates the use of the internationalized form.  This MAY override the form specified for a parent element.  A value of "int" is used to indicate the internationalized form and a value of "loc" is used to indicate the localized form.  When the internalized form ("int") is provided, the field value MUST be represented in a subset of UTF-8 that can be represented in the 7-bit US-ASCII character set.  When the localized form ("loc") is provided, the field value MAY be represented in unrestricted UTF-8.  </p>
+<p/>
+
+<p>The field elements below of the "registrar" &lt;rdeCsv:csv"&gt; &lt;rdeCsv:fields&gt; element specify the internationalized form with the isLoc="false" attribute.  </p>
 <pre>
 ...
 &lt;csvRegistrar:contents&gt;
@@ -825,9 +832,10 @@ domainN.test
 ...
 &lt;/csvRegistrar:contents&gt;
 ...
-                        </pre>
+                    </pre>
 <p/>
-<p id="rfc.section.4.7.p.3">The following is an example of using the &lt;csvContact:fPostalType&gt; field value to define the internationalized or localized form of the remainder of the "contactPostal" field values.  </p>
+
+<p>The following is an example of using the &lt;csvContact:fPostalType&gt; field value to define the internationalized or localized form of the remainder of the "contactPostal" field values.  </p>
 <pre>
 ...
 &lt;csvContact:contents&gt;
@@ -856,8 +864,7 @@ domainN.test
 ...
 &lt;/csvContact:contents&gt;
 ...
-                        </pre>
-<p/>
+                   </pre>
 <h1 id="rfc.section.5"><a href="#rfc.section.5">5.</a> <a href="#Object_Description" id="Object_Description">Object Description</a></h1>
 <p id="rfc.section.5.p.1">This section describes the base objects supported by this specification: </p>
 <h1 id="rfc.section.5.1"><a href="#rfc.section.5.1">5.1.</a> <a href="#domainNameObject" id="domainNameObject">Domain Name Object</a></h1>
@@ -893,7 +900,9 @@ domainN.test
 </ul>
 
 <p> </p>
-<p id="rfc.section.5.1.1.1.p.5">Example of a domain object: </p>
+<p/>
+
+<p>Example of a domain object: </p>
 <pre>
 ...
 &lt;rdeDom:domain&gt;
@@ -914,10 +923,11 @@ domainN.test
 &lt;/rdeDom:domain&gt;
 ...
                             </pre>
-<p/>
 <h1 id="rfc.section.5.1.1.2"><a href="#rfc.section.5.1.1.2">5.1.1.2.</a> <a href="#rdeDomainDeleteElement" id="rdeDomainDeleteElement">&lt;rdeDomain:delete&gt; object</a></h1>
 <p id="rfc.section.5.1.1.2.p.1">The &lt;rdeDomain:delete&gt; element contains the fully qualified domain name that was deleted and purged.  </p>
-<p id="rfc.section.5.1.1.2.p.2">Example of &lt;rdeDomain:delete&gt; object: </p>
+<p/>
+
+<p>Example of &lt;rdeDomain:delete&gt; object: </p>
 <pre>
 ...
 &lt;rde:deletes&gt;
@@ -930,7 +940,6 @@ domainN.test
 &lt;/rde:deletes&gt;
 ...
                         </pre>
-<p/>
 <h1 id="rfc.section.5.1.2"><a href="#rfc.section.5.1.2">5.1.2.</a> <a href="#domainCsvModel" id="domainCsvModel">CSV Model</a></h1>
 <p id="rfc.section.5.1.2.p.1">For the CSV Model of the domain name object, the &lt;csvDomain:contents&gt; child element of the &lt;rde:contents&gt; element is used to hold the new or updated domain name objects for the deposit.  The &lt;csvDomain:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or purged domain name objects for the deposit.  Both the &lt;csvDomain:contents&gt; and &lt;csvDomain:deletes&gt; elements contain one or more &lt;rdeCsv:csv&gt; elements with a set of named CSV file definitions using the &lt;rdeCsv:csv&gt; "name" attribute.  </p>
 <p id="rfc.section.5.1.2.p.2">Differential and incremental deposits are based on changes to the domain name objects.  The updated domain name object data under the &lt;csvDomain:contents&gt; element is a cascade replace down all of the domain name CSV files starting with the parent <a href="#csvDomainDefinition">"domain" CSV File Definition</a> <cite title="NONE">[csvDomainDefinition]</cite>.  The child CSV file definitions include a &lt;csvDomain:fName parent="true"&gt; field.  All the child CSV file definition data for the domain name objects in the parent <a href="#csvDomainDefinition">"domain" CSV File Definition</a> <cite title="NONE">[csvDomainDefinition]</cite> MUST first be deleted and then set using the data in the child CSV files.  The deleted domain name object data under the &lt;csvDomain:deletes&gt; element is a cascade delete starting from the <a href="#csvDomainDeletesDefinition">"domain" Deletes CSV File Definition</a> <cite title="NONE">[csvDomainDeletesDefinition]</cite>.  </p>
@@ -1459,7 +1468,9 @@ domainN.test
 </ul>
 
 <p> </p>
-<p id="rfc.section.5.2.1.1.p.4">Example of &lt;host&gt; object: </p>
+<p/>
+
+<p>Example of &lt;host&gt; object: </p>
 <pre>
 ...
 &lt;rdeHost:host&gt;
@@ -1477,11 +1488,12 @@ domainN.test
   &lt;rdeHost:upDate&gt;2009-10-03T09:34:00.0Z&lt;/rdeHost:upDate&gt;
 &lt;/rdeHost:host&gt;
 ...
-                        </pre>
-<p/>
+                          </pre>
 <h1 id="rfc.section.5.2.1.2"><a href="#rfc.section.5.2.1.2">5.2.1.2.</a> <a href="#del_host_object" id="del_host_object">&lt;rdeHost:delete&gt; object</a></h1>
 <p id="rfc.section.5.2.1.2.p.1">The &lt;rdeHost:delete&gt; element contains the fully qualified domain name of a host that was deleted.  The &lt;rdeHost:delete&gt; element also supports host removal based on roid to support SRS systems in which different hosts with the same fully qualified domain name are active at the same time.  </p>
-<p id="rfc.section.5.2.1.2.p.2">Example of &lt;rdeHost:delete&gt; object: </p>
+<p/>
+
+<p>Example of &lt;rdeHost:delete&gt; object: </p>
 <pre>
 ...
 &lt;rde:deletes&gt;
@@ -1492,8 +1504,7 @@ domainN.test
   ...
 &lt;/rde:deletes&gt;
 ...
-                        </pre>
-<p/>
+                          </pre>
 <h1 id="rfc.section.5.2.1.3"><a href="#rfc.section.5.2.1.3">5.2.1.3.</a> <a href="#hostCsvModel" id="hostCsvModel">CSV Model</a></h1>
 <p id="rfc.section.5.2.1.3.p.1">For the CSV Model of the host object, the &lt;csvHost:contents&gt; child element of the &lt;rde:contents&gt; element is used to hold the new or updated host objects for the deposit.  The &lt;csvHost:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or purged host objects for the deposit.  </p>
 <p id="rfc.section.5.2.1.3.p.2">Differential and incremental deposits are based on changes to the host objects.  The updated host object data under the &lt;csvHost:contents&gt; element is a cascade replace down all of the host CSV files starting with the parent <a href="#csvHostDefinition">"host" CSV File Definition</a> <cite title="NONE">[csvHostDefinition]</cite>.  The child CSV file definitions include a &lt;rdeCsv:fRoid parent="true"&gt; field.  All the child CSV file definition data for the host objects in the parent <a href="#csvHostDefinition">"host" CSV File Definition</a> <cite title="NONE">[csvHostDefinition]</cite> MUST first be deleted and then set using the data in the child CSV files.  The deleted host object data under the &lt;csvHost:deletes&gt; element is a cascade delete starting from the <a href="#csvHostDeletesDefinition">"host" Deletes CSV File Definition</a> <cite title="NONE">[csvHostDeletesDefinition]</cite>.  </p>
@@ -1754,7 +1765,9 @@ domainN.test
 </ul>
 
 <p> </p>
-<p id="rfc.section.5.3.1.1.p.4">Example &lt;contact&gt; object:</p>
+<p/>
+
+<p>Example &lt;contact&gt; object: </p>
 <pre>
 ...
 &lt;rdeContact:contact&gt;
@@ -1797,10 +1810,11 @@ domainN.test
 &lt;/rdeContact:contact&gt;
 ...
                         </pre>
-<p/>
 <h1 id="rfc.section.5.3.1.2"><a href="#rfc.section.5.3.1.2">5.3.1.2.</a> <a href="#del_contact_object" id="del_contact_object">&lt;rdeContact:delete&gt; object</a></h1>
 <p id="rfc.section.5.3.1.2.p.1">The &lt;rdeContact:delete&gt; element contains the id of a contact that was deleted.  </p>
-<p id="rfc.section.5.3.1.2.p.2">Example of &lt;rdeContact:delete&gt; object: </p>
+<p/>
+
+<p>Example of &lt;rdeContact:delete&gt; object: </p>
 <pre>
 ...
 &lt;rde:deletes&gt;
@@ -1812,8 +1826,7 @@ domainN.test
   ...
 &lt;/rde:deletes&gt;
 ...
-                        </pre>
-<p/>
+                          </pre>
 <h1 id="rfc.section.5.3.2"><a href="#rfc.section.5.3.2">5.3.2.</a> <a href="#contactCsvModel" id="contactCsvModel">CSV Model</a></h1>
 <p id="rfc.section.5.3.2.p.1">For the CSV Model of the contact object, the &lt;csvContact:contents&gt; child element of the &lt;rde:contents&gt; element is used to hold the new or updated contacts objects for the deposit.  The &lt;csvContact:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or purged contact objects for the deposit.  Both the &lt;csvContact:contents&gt; and &lt;csvContact:deletes&gt; elements contain one or more &lt;rdeCsv:csv&gt; elements with a set of named CSV file definitions using the &lt;rdeCsv:csv&gt; "name" attribute.  </p>
 <p id="rfc.section.5.3.2.p.2">Differential and incremental deposits are based on changes to the contact objects.  The updated contact object data under the &lt;csvContact:contents&gt; element is a cascade replace down all of the contact CSV files starting with the parent <a href="#csvContactDefinition">"contact" CSV File Definition</a> <cite title="NONE">[csvContactDefinition]</cite>.  The child CSV file definitions include a &lt;csvContact:fId parent="true"&gt; field.  All the child CSV file definition data for the contact objects in the parent <a href="#csvContactDefinition">"contact" CSV File Definition</a> <cite title="NONE">[csvContactDefinition]</cite> MUST first be deleted and then set using the data in the child CSV files.  The deleted contact object data under the &lt;csvContact:deletes&gt; element is a cascade delete starting from the <a href="#csvContactDeletesDefinition">"contact" Deletes CSV File Definition</a> <cite title="NONE">[csvContactDeletesDefinition]</cite>.  </p>
@@ -2254,7 +2267,9 @@ mycontactid
 </ul>
 
 <p> </p>
-<p id="rfc.section.5.4.1.1.p.3">Example of &lt;registrar&gt; object: </p>
+<p/>
+
+<p>Example of &lt;registrar&gt; object: </p>
 <pre>
 ...
 &lt;rdeRegistrar:registrar&gt;
@@ -2285,10 +2300,11 @@ mycontactid
 &lt;/rdeRegistrar:registrar&gt;
 ...
                         </pre>
-<p/>
 <h1 id="rfc.section.5.4.1.2"><a href="#rfc.section.5.4.1.2">5.4.1.2.</a> <a href="#del_registrar_object" id="del_registrar_object">&lt;rdeRegistrar:delete&gt; object</a></h1>
 <p id="rfc.section.5.4.1.2.p.1">The &lt;rdeRegistrar:delete&gt; element contains the id of a registrar that was deleted.  </p>
-<p id="rfc.section.5.4.1.2.p.2">Example of &lt;rdeRegistrar:delete&gt; object: </p>
+<p/>
+
+<p>Example of &lt;rdeRegistrar:delete&gt; object: </p>
 <pre>
 ...
 &lt;rde:deletes&gt;
@@ -2299,8 +2315,7 @@ mycontactid
   ...
 &lt;/rde:deletes&gt;
 ...
-                        </pre>
-<p/>
+                          </pre>
 <h1 id="rfc.section.5.4.2"><a href="#rfc.section.5.4.2">5.4.2.</a> <a href="#registrarCsvModel" id="registrarCsvModel">CSV Model</a></h1>
 <p id="rfc.section.5.4.2.p.1">For the CSV Model of the registrar object, the &lt;csvRegistrar:contents&gt; child element of the &lt;rde:contents&gt; element is used to hold the new or updated registrar objects for the deposit.  The &lt;csvRegistrar:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or purged registrar objects for the deposit.  Both the &lt;csvRegistrar:contents&gt; and &lt;csvRegistrar:deletes&gt; elements contain one or more &lt;rdeCsv:csv&gt; elements with a set of named CSV file definitions using the &lt;rdeCsv:csv&gt; "name" attribute.  </p>
 <p id="rfc.section.5.4.2.p.2">Differential and incremental deposits are based on changes to the registrar objects.  The updated registrar object data under the &lt;csvContact:contents&gt; element is a cascade replace down all of the registrar CSV files starting with the parent <a href="#csvRegistrarDefinition">"registrar" CSV File Definition</a> <cite title="NONE">[csvRegistrarDefinition]</cite>.  The child CSV file definitions include a &lt;csvRegistrar:fId parent="true"&gt; field.  All the child CSV file definition data for the registrar objects in the parent <a href="#csvRegistrarDefinition">"registrar" CSV File Definition</a> <cite title="NONE">[csvRegistrarDefinition]</cite> MUST first be deleted and then set using the data in the child CSV files.  The deleted registrar object data under the &lt;csvRegistrar:deletes&gt; element is a cascade delete starting from the <a href="#csvRegistrarDeletesDefinition">"registrar" Deletes CSV File Definition</a> <cite title="NONE">[csvRegistrarDeletesDefinition]</cite>.  </p>
@@ -2473,7 +2488,9 @@ EXAMPLE2
 </ul>
 
 <p> </p>
-<p id="rfc.section.5.5.1.1.p.3">Example of &lt;idnTableRef&gt; object: </p>
+<p/>
+
+<p>Example of &lt;idnTableRef&gt; object: </p>
 <pre>
 ...
 &lt;rdeIDN:idnTableRef id="pt-BR"&gt;
@@ -2485,8 +2502,7 @@ EXAMPLE2
   &lt;/rdeIDN:urlPolicy&gt;
 &lt;/rdeIDN:idnTableRef&gt;
 ...
-                        </pre>
-<p/>
+                          </pre>
 <h1 id="rfc.section.5.5.2"><a href="#rfc.section.5.5.2">5.5.2.</a> <a href="#idnCsvModel" id="idnCsvModel">CSV Model</a></h1>
 <p id="rfc.section.5.5.2.p.1">The IDN domain names, defined in <a href="#domainNameObject">Section 5.1</a>, MAY have references to the IDN language identifier using the &lt;rdeCsv:fIdnTableId&gt; field element.  The IDN table reference object defines the mapping of a language identifier to a language table URL.  The language table URL defines the character code points that can be used for the language identifier. The elements used for the IDN table reference object is defined in this section.  The &lt;csvIDN:contents&gt; child element of the &lt;rde:contents&gt; element is used to hold the new or updated IDN table reference objects for the deposit.  The &lt;csvIDN:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or purged IDN table reference objects for the deposit.  Both the &lt;csvIDN:contents&gt; and &lt;csvIDN:deletes&gt; elements contain one or more &lt;rdeCsv:csv&gt; elements with a set of named CSV file definitions using the &lt;rdeCsv:csv&gt; "name" attribute.  </p>
 <h1 id="rfc.section.5.5.2.1"><a href="#rfc.section.5.5.2.1">5.5.2.1.</a> <a href="#csvIDNContents" id="csvIDNContents">&lt;csvIDN:contents&gt;</a></h1>
@@ -2596,7 +2612,9 @@ LANG-2
 </ul>
 
 <p> </p>
-<p id="rfc.section.5.6.1.1.p.3">Example of &lt;rdeNNDN:NNDN&gt; object: </p>
+<p/>
+
+<p>Example of &lt;rdeNNDN:NNDN&gt; object: </p>
 <pre>
 ...
 &lt;rdeNNDN:NNDN&gt;
@@ -2607,11 +2625,12 @@ LANG-2
   &lt;rdeNNDN:crDate&gt;2005-04-23T11:49:00.0Z&lt;/rdeNNDN:crDate&gt;
 &lt;/rdeNNDN:NNDN&gt;
 ...
-                        </pre>
-<p/>
+                          </pre>
 <h1 id="rfc.section.5.6.1.2"><a href="#rfc.section.5.6.1.2">5.6.1.2.</a> <a href="#delNDNObject" id="delNDNObject">&lt;rdeNNDN:delete&gt; object</a></h1>
 <p id="rfc.section.5.6.1.2.p.1">The &lt;rdeNNDN:delete&gt; element contains the ACE of a NNDN that was deleted, i.e., the &lt;aName&gt;.  </p>
-<p id="rfc.section.5.6.1.2.p.2">Example of &lt;rdeNNDN::delete&gt; object: </p>
+<p/>
+
+<p>Example of &lt;rdeNNDN::delete&gt; object: </p>
 <pre>
 ...
 &lt;rde:deletes&gt;
@@ -2622,8 +2641,7 @@ LANG-2
   ...
 &lt;/rde:deletes&gt;
 ...
-                        </pre>
-<p/>
+                          </pre>
 <h1 id="rfc.section.5.6.2"><a href="#rfc.section.5.6.2">5.6.2.</a> <a href="#nndnCsvModel" id="nndnCsvModel">CSV Model</a></h1>
 <p id="rfc.section.5.6.2.p.1">For the CSV Model of the NNDN object, the &lt;csvNNDN:contents&gt; child element of the &lt;rde:contents&gt; element is used to hold the new or updated NNDN objects for the deposit.  The &lt;csvNNDN:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or purged NNDN objects for the deposit.  Both the &lt;csvNNDN:contents&gt; and &lt;csvNNDN:deletes&gt; elements contain one or more &lt;rdeCsv:csv&gt; elements with a set of named CSV file definitions using the &lt;rdeCsv:csv&gt; "name" attribute.  </p>
 <h1 id="rfc.section.5.6.2.1"><a href="#rfc.section.5.6.2.1">5.6.2.1.</a> <a href="#csvNNDNContents" id="csvNNDNContents">&lt;csvNNDN:contents&gt;</a></h1>
@@ -2755,7 +2773,9 @@ xn--pingino-q2a.test
 </ul>
 
 <p> </p>
-<p id="rfc.section.5.7.p.4">Example of &lt;eppParams&gt; element object: </p>
+<p/>
+
+<p>Example of &lt;eppParams&gt; element object: </p>
 <pre>
 ...
 &lt;rdeEppParams:eppParams&gt;
@@ -2789,8 +2809,7 @@ xn--pingino-q2a.test
   &lt;/rdeEppParams:dcp&gt;
 &lt;/rdeEppParams:eppParams&gt;
 ...
-                    </pre>
-<p/>
+                      </pre>
 <h1 id="rfc.section.5.8"><a href="#rfc.section.5.8">5.8.</a> Policy Object</h1>
 <p id="rfc.section.5.8.p.1">The Policy object is a pseudo-object that is used to specify which OPTIONAL elements from the XML Model are REQUIRED based on the business model of the registry.  For the CSV Model, the OPTIONAL "isRequired" attribute of the &lt;rdeCsv:field&gt; elements, defined in <a href="#rdeCsv-csv">Section 4.6.1</a>, is used to specify which OPTIONAL fields are REQUIRED based on the business model of the registry.  </p>
 <h1 id="rfc.section.5.8.1"><a href="#rfc.section.5.8.1">5.8.1.</a> <a href="#policy_object" id="policy_object">&lt;rdePolicy:policy&gt; object</a></h1>
@@ -2803,14 +2822,15 @@ xn--pingino-q2a.test
 </ul>
 
 <p> </p>
-<p id="rfc.section.5.8.1.p.3">Example of &lt;rdePolicy:policy&gt; object: </p>
+<p/>
+
+<p>Example of &lt;rdePolicy:policy&gt; object: </p>
 <pre>
 ...
 &lt;rdePolicy:policy scope="//rde:deposit/rde:contents/rdeDomain:domain"
   element="rdeDom:registrant" /&gt;
 ...
-                        </pre>
-<p/>
+                          </pre>
 <h1 id="rfc.section.5.9"><a href="#rfc.section.5.9">5.9.</a> Header Object</h1>
 <p id="rfc.section.5.9.p.1">The Header Object is a pseudo-object that is used to specify the number of objects in the SRS at a specific point in time (watermark) regardless of the type of deposit: differential, full or incremental.  The Header Object is only defined as XML but one header object MUST always be present per escrow deposit regardless of using XML Model or CSV Model.  The Header Object is defined using the &lt;rdeHeader:header&gt; element.  </p>
 <h1 id="rfc.section.5.9.1"><a href="#rfc.section.5.9.1">5.9.1.</a> <a href="#header_object" id="header_object">&lt;rdeHeader:header&gt; object</a></h1>
@@ -2823,7 +2843,9 @@ xn--pingino-q2a.test
 </ul>
 
 <p> </p>
-<p id="rfc.section.5.9.1.p.3">Example of &lt;rdeHeader:header&gt; object referencing only the XML Model objects: </p>
+<p/>
+
+<p>Example of &lt;rdeHeader:header&gt; object referencing only the XML Model objects: </p>
 <pre>
 ...
 &lt;rdeHeader:header&gt;
@@ -2846,9 +2868,10 @@ xn--pingino-q2a.test
   &lt;/rdeHeader:count&gt;
 &lt;/rdeHeader:header&gt;
 ...
-                        </pre>
+                          </pre>
 <p/>
-<p id="rfc.section.5.9.1.p.5">Example of &lt;rdeHeader:header&gt; object referencing the CSV and XML Model objects: </p>
+
+<p>Example of &lt;rdeHeader:header&gt; object referencing the CSV and XML Model objects: </p>
 <pre>
 ...
 &lt;rdeHeader:header&gt;
@@ -2871,8 +2894,7 @@ xn--pingino-q2a.test
   &lt;/rdeHeader:count&gt;
 &lt;/rdeHeader:header&gt;
 ...
-                        </pre>
-<p/>
+                          </pre>
 <h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> RDE IDN Variants handling</h1>
 <p id="rfc.section.6.p.1">Depending on the Registration Policy of the Registry; for a particular domain name there may be multiple variant names. See <a href="#variantTLDsReport">[variantTLDsReport]</a> for further detail on IDN variants.  </p>
 <p id="rfc.section.6.p.2">A registry could choose to escrow IDN variants as domains or NNDN objects. An specific IDN variant can be represented in the escrow deposit, as a domain or as a NNDN object, but not both.  </p>
@@ -5455,7 +5477,9 @@ END</pre>
 
 <p> </p>
 <h1 id="rfc.section.15"><a href="#rfc.section.15">15.</a> Example of a full deposit using the XML model</h1>
-<p id="rfc.section.15.p.1">Example of a full deposit using the XML model: </p>
+<p/>
+
+<p>Example of a full deposit using the XML model: </p>
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;rde:deposit type="FULL" id="20101017001" prevId="20101010001"
@@ -5713,9 +5737,10 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
   &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;
                 </pre>
-<p/>
 <h1 id="rfc.section.16"><a href="#rfc.section.16">16.</a> Example of differential deposit using the XML model</h1>
-<p id="rfc.section.16.p.1">Example of a differential deposit using the XML model: </p>
+<p/>
+
+<p>Example of a differential deposit using the XML model: </p>
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;rde:deposit type="DIFF" id="20101017002" prevId="20101017001"
@@ -5791,9 +5816,10 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
   &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;
                 </pre>
-<p/>
 <h1 id="rfc.section.17"><a href="#rfc.section.17">17.</a> Example of a full deposit using the CSV model</h1>
-<p id="rfc.section.17.p.1">Example of a full deposit using the CSV model: </p>
+<p/>
+
+<p>Example of a full deposit using the CSV model: </p>
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;rde:deposit
@@ -6226,9 +6252,10 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
    &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;
                 </pre>
-<p/>
 <h1 id="rfc.section.18"><a href="#rfc.section.18">18.</a> Example of differential deposit using the CSV model</h1>
-<p id="rfc.section.18.p.1">Example of a differential deposit using the CSV model: </p>
+<p/>
+
+<p>Example of a differential deposit using the CSV model: </p>
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;rde:deposit
@@ -6705,7 +6732,6 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
    &lt;/rde:contents&gt;
 &lt;/rde:deposit&gt;
                 </pre>
-<p/>
 <h1 id="rfc.references"><a href="#rfc.references">19.</a> References</h1>
 <h1 id="rfc.references.1"><a href="#rfc.references.1">19.1.</a> Normative References</h1>
 <table>

@@ -331,10 +331,13 @@
                   purpose of the CSV file with values like "domain", "host", "contact".  The supported "name" attribute values 
                   are defined for each object type.  The OPTIONAL "sep" attribute defines the CSV separator character with the default separator character of ",".
                   </t>
-                  <t>The following is an example of the &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element for domain name records where the &lt;rdeCsv:fRegistrant&gt; is 
-                  set as required with isRequired="true".</t>
                     <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            The following is an example of the &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element for domain name records 
+                            where the &lt;rdeCsv:fRegistrant&gt; is set as required with isRequired="true".
+                          </preamble>
+                          <artwork><![CDATA[
 <csvDomain:contents>
 ...
   <rdeCsv:csv name="domain" sep=",">
@@ -362,20 +365,28 @@
   </rdeCsv:csv>
 ...
 </csvDomain:contents>]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>
-                  <t>The following is example of the "domain-YYYYMMDD.csv" file 
-                  with one record matching the &lt;rdeCsv:fields&gt; definition.</t>
                     <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            The following is example of the "domain-YYYYMMDD.csv" file 
+                            with one record matching the &lt;rdeCsv:fields&gt; definition.
+                          </preamble>
+                          <artwork><![CDATA[
 domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
 clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
 2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>
-                  <t>The following is an example of the &lt;csvDomain:deletes&gt; &lt;rdeCsv:csv&gt; element for domain name records.</t>
                     <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            The following is an example of the &lt;csvDomain:deletes&gt; &lt;rdeCsv:csv&gt; element for domain name records.
+                          </preamble>
+                          <artwork><![CDATA[
 <csvDomain:deletes>
 ...
   <rdeCsv:csv name="domain">
@@ -391,16 +402,21 @@ clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
   </rdeCsv:csv>
 ...
 </csvDomain:deletes>]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>
-                  <t>The following is example of the "domain-delete-YYYYMMDD.csv" file 
-                  with three records that matches the single &lt;csvDomain:fName&gt; field.</t>
                     <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            The following is example of the "domain-delete-YYYYMMDD.csv" file 
+                            with three records that matches the single &lt;csvDomain:fName&gt; field.
+                          </preamble>
+                          <artwork><![CDATA[
 domain1.test
 domain2.test
 domainN.test]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>
               </section>
               <section title="CSV common field elements" anchor="csvCommonFieldElements">
@@ -480,12 +496,15 @@ domainN.test]]>
                     a value of "loc" is used to indicate the localized form.  
                     When the internalized form ("int") is provided, the field value MUST be represented in a subset of 
                     UTF-8 that can be represented in the 7-bit US-ASCII character set.  When the localized form ("loc") 
-                    is provided, the field value MAY be represented in unrestricted UTF-8.  Some of the field elements below of 
-                    the "registrar" &lt;rdeCsv:csv"&gt; &lt;rdeCsv:fields&gt; element specify the 
-                    internationalized form with the isLoc="false" attribute:
+                    is provided, the field value MAY be represented in unrestricted UTF-8.  
                 </t>
                 <t>
-                        <figure><artwork><![CDATA[
+                  <figure>
+                    <preamble>
+                    The field elements below of the "registrar" &lt;rdeCsv:csv"&gt; &lt;rdeCsv:fields&gt; element 
+                    specify the internationalized form with the isLoc="false" attribute.
+                    </preamble>
+                    <artwork><![CDATA[
 ...
 <csvRegistrar:contents>
 ...
@@ -527,14 +546,17 @@ domainN.test]]>
 ...
 </csvRegistrar:contents>
 ...]]>
-                        </artwork></figure>
-                    </t>  
-                <t>The following is an example of using the &lt;csvContact:fPostalType&gt; 
-                field value to define the internationalized or localized form of the remainder of 
-                the "contactPostal" field values.
-                </t>
+                    </artwork>
+                  </figure>
+                </t>  
                 <t>
-                        <figure><artwork><![CDATA[
+                  <figure>
+                    <preamble>
+                      The following is an example of using the &lt;csvContact:fPostalType&gt; 
+                      field value to define the internationalized or localized form of the remainder of 
+                      the "contactPostal" field values.
+                    </preamble>
+                    <artwork><![CDATA[
 ...
 <csvContact:contents>
 ...
@@ -562,8 +584,9 @@ domainN.test]]>
 ...
 </csvContact:contents>
 ...]]>
-                        </artwork></figure>
-                    </t>                    
+                   </artwork>
+                 </figure>
+               </t>                    
             </section>
 
         </section>
@@ -729,10 +752,11 @@ domainN.test]]>
                     </t>
                     
                     <t>
-                        Example of a domain object:
-                    </t>
-                    <t>
-                            <figure><artwork><![CDATA[
+                            <figure>
+                              <preamble>
+                              Example of a domain object:
+                              </preamble>
+                              <artwork><![CDATA[
 ...
 <rdeDom:domain>
   <rdeDom:name>example1.test</rdeDom:name>
@@ -751,7 +775,8 @@ domainN.test]]>
   <rdeDom:exDate>2015-04-03T22:00:00.0Z</rdeDom:exDate>
 </rdeDom:domain>
 ...]]>
-                            </artwork></figure>
+                            </artwork>
+                          </figure>
                     </t>    
                 </section>
                 
@@ -762,10 +787,11 @@ domainN.test]]>
                     </t>
                     
                     <t>
-                        Example of &lt;rdeDomain:delete&gt; object:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;rdeDomain:delete&gt; object:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rde:deletes>
   ...
@@ -1491,10 +1517,11 @@ domainN.test]]>
                     </t>
                     
                     <t>
-                        Example of &lt;host&gt; object:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;host&gt; object:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rdeHost:host>
   <rdeHost:name>ns1.example1.test</rdeHost:name>
@@ -1511,7 +1538,8 @@ domainN.test]]>
   <rdeHost:upDate>2009-10-03T09:34:00.0Z</rdeHost:upDate>
 </rdeHost:host>
 ...]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>
                 </section>
                 
@@ -1525,10 +1553,11 @@ domainN.test]]>
                     </t>
                     
                     <t>
-                        Example of &lt;rdeHost:delete&gt; object:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;rdeHost:delete&gt; object:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rde:deletes>
   ...
@@ -1538,7 +1567,8 @@ domainN.test]]>
   ...
 </rde:deletes>
 ...]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>    
                 </section>
                 
@@ -2014,9 +2044,12 @@ domainN.test]]>
                         </list>
                     </t>
                     
-                    <t>Example &lt;contact&gt; object:</t>
                     <t>    
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example &lt;contact&gt; object:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rdeContact:contact>
   <rdeContact:roid>Csh8013-TEST</rdeContact:roid>
@@ -2057,7 +2090,8 @@ domainN.test]]>
   </rdeContact:disclose>
 </rdeContact:contact>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>
                 </section>
                 
@@ -2068,10 +2102,11 @@ domainN.test]]>
                     </t>
                     
                     <t>
-                        Example of &lt;rdeContact:delete&gt; object:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;rdeContact:delete&gt; object:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rde:deletes>
   ...
@@ -2082,7 +2117,8 @@ domainN.test]]>
   ...
 </rde:deletes>
 ...]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>    
                 </section>
                 
@@ -2777,11 +2813,12 @@ mycontactid]]>
                             </t>
                         </list>
                     </t>
-                    <t>
-                        Example of &lt;registrar&gt; object:
-                    </t>
                     <t>    
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;registrar&gt; object:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rdeRegistrar:registrar>
   <rdeRegistrar:id>RegistrarX</rdeRegistrar:id>
@@ -2810,7 +2847,8 @@ mycontactid]]>
   <rdeRegistrar:upDate>2009-02-17T17:51:00.0Z</rdeRegistrar:upDate>
 </rdeRegistrar:registrar>
 ...]]>
-                        </artwork></figure>
+                        </artwork>
+                      </figure>
                     </t>
                 </section>
                 
@@ -2821,10 +2859,11 @@ mycontactid]]>
                     </t>
                     
                     <t>
-                        Example of &lt;rdeRegistrar:delete&gt; object:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;rdeRegistrar:delete&gt; object:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rde:deletes>
   ...
@@ -2834,7 +2873,8 @@ mycontactid]]>
   ...
 </rde:deletes>
 ...]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>    
                 </section>
                 
@@ -3093,10 +3133,11 @@ EXAMPLE2]]>
                     </t>
                     
                     <t>
-                        Example of &lt;idnTableRef&gt; object:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;idnTableRef&gt; object:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rdeIDN:idnTableRef id="pt-BR">
   <rdeIDN:url>
@@ -3107,7 +3148,8 @@ EXAMPLE2]]>
   </rdeIDN:urlPolicy>
 </rdeIDN:idnTableRef>
 ...]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>
                 </section>
              </section>
@@ -3328,11 +3370,12 @@ LANG-2]]>
                             </t>
                         </list>
                     </t>
-                    <t>
-                        Example of &lt;rdeNNDN:NNDN&gt; object:
-                    </t>
                     <t>    
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;rdeNNDN:NNDN&gt; object:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rdeNNDN:NNDN>
   <rdeNNDN:aName>xn--exampl-gva.test</rdeNNDN:aName>
@@ -3342,7 +3385,8 @@ LANG-2]]>
   <rdeNNDN:crDate>2005-04-23T11:49:00.0Z</rdeNNDN:crDate>
 </rdeNNDN:NNDN>
 ...]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>
                 </section>
                 
@@ -3351,10 +3395,11 @@ LANG-2]]>
                         The &lt;rdeNNDN:delete&gt; element contains the ACE of a NNDN that was deleted, i.e., the &lt;aName&gt;.
                     </t>
                     <t>
-                        Example of &lt;rdeNNDN::delete&gt; object:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;rdeNNDN::delete&gt; object:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rde:deletes>
   ...
@@ -3364,7 +3409,8 @@ LANG-2]]>
   ...
 </rde:deletes>
 ...]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>
                 </section>
                 </section>
@@ -3570,10 +3616,11 @@ xn--pingino-q2a.test]]>
                 </t>
                 
                 <t>
-                    Example of &lt;eppParams&gt; element object:
-                </t>
-                <t>
-                    <figure><artwork><![CDATA[
+                    <figure>
+                      <preamble>
+                        Example of &lt;eppParams&gt; element object:
+                      </preamble>
+                      <artwork><![CDATA[
 ...
 <rdeEppParams:eppParams>
   <rdeEppParams:version>1.0</rdeEppParams:version>
@@ -3606,7 +3653,8 @@ xn--pingino-q2a.test]]>
   </rdeEppParams:dcp>
 </rdeEppParams:eppParams>
 ...]]>
-                    </artwork></figure>
+                      </artwork>
+                    </figure>
                 </t>
                 
             </section>
@@ -3636,15 +3684,17 @@ xn--pingino-q2a.test]]>
                     </t>
                     
                     <t>
-                        Example of &lt;rdePolicy:policy&gt; object:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;rdePolicy:policy&gt; object:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rdePolicy:policy scope="//rde:deposit/rde:contents/rdeDomain:domain"
   element="rdeDom:registrant" />
 ...]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>
                 </section>
             </section>
@@ -3681,10 +3731,11 @@ xn--pingino-q2a.test]]>
                     </t>
                     
                     <t>
-                        Example of &lt;rdeHeader:header&gt; object referencing only the XML Model objects:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;rdeHeader:header&gt; object referencing only the XML Model objects:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rdeHeader:header>
   <rdeHeader:tld>test</rdeHeader:tld>
@@ -3706,13 +3757,15 @@ xn--pingino-q2a.test]]>
   </rdeHeader:count>
 </rdeHeader:header>
 ...]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>
                     <t>
-                        Example of &lt;rdeHeader:header&gt; object referencing the CSV and XML Model objects:
-                    </t>
-                    <t>
-                        <figure><artwork><![CDATA[
+                        <figure>
+                          <preamble>
+                            Example of &lt;rdeHeader:header&gt; object referencing the CSV and XML Model objects:
+                          </preamble>
+                          <artwork><![CDATA[
 ...
 <rdeHeader:header>
   <rdeHeader:tld>test</rdeHeader:tld>
@@ -3734,7 +3787,8 @@ xn--pingino-q2a.test]]>
   </rdeHeader:count>
 </rdeHeader:header>
 ...]]>
-                        </artwork></figure>
+                          </artwork>
+                        </figure>
                     </t>
                     
                 </section>
@@ -6944,11 +6998,12 @@ END]]></artwork></figure>
         
         
         <section title="Example of a full deposit using the XML model">
-            <t>
-                Example of a full deposit using the XML model:
-            </t>
             <t>    
-                <figure><artwork><![CDATA[
+                <figure>
+                  <preamble>
+                    Example of a full deposit using the XML model:
+                  </preamble>
+                  <artwork><![CDATA[
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit type="FULL" id="20101017001" prevId="20101010001"
   xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
@@ -7209,11 +7264,12 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         </section>
         
         <section title="Example of differential deposit using the XML model">
-            <t>
-                Example of a differential deposit using the XML model:
-            </t>
             <t>    
-                <figure><artwork><![CDATA[
+                <figure>
+                  <preamble>
+                    Example of a differential deposit using the XML model:
+                  </preamble>
+                  <artwork><![CDATA[
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit type="DIFF" id="20101017002" prevId="20101017001"
   xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
@@ -7294,11 +7350,12 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         
 
         <section title="Example of a full deposit using the CSV model">
-            <t>
-                Example of a full deposit using the CSV model:
-            </t>
             <t>    
-                <figure><artwork><![CDATA[
+                <figure>
+                  <preamble>
+                    Example of a full deposit using the CSV model:
+                  </preamble>
+                  <artwork><![CDATA[
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -7734,11 +7791,12 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
         </section>
         
         <section title="Example of differential deposit using the CSV model">
-            <t>
-                Example of a differential deposit using the CSV model:
-            </t>
             <t>    
-                <figure><artwork><![CDATA[
+                <figure>
+                  <preamble>
+                    Example of a differential deposit using the CSV model:
+                  </preamble>
+                  <artwork><![CDATA[
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit
    xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"

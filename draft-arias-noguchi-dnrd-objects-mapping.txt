@@ -361,9 +361,9 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    each object type.  The OPTIONAL "sep" attribute defines the CSV
    separator character with the default separator character of ",".
 
-   The following is an example of the <csvDomain:contents> <rdeCsv:csv>
-   element for domain name records where the <rdeCsv:fRegistrant> is set
-   as required with isRequired="true".
+
+
+
 
 
 
@@ -393,6 +393,10 @@ Arias, et al.            Expires August 27, 2017                [Page 7]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   The following is an example of the <csvDomain:contents> <rdeCsv:csv>
+   element for domain name records where the <rdeCsv:fRegistrant> is set
+   as required with isRequired="true".
 
    <csvDomain:contents>
    ...
@@ -429,10 +433,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
    2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
 
-   The following is an example of the <csvDomain:deletes> <rdeCsv:csv>
-   element for domain name records.
-
-
 
 
 
@@ -449,6 +449,9 @@ Arias, et al.            Expires August 27, 2017                [Page 8]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   The following is an example of the <csvDomain:deletes> <rdeCsv:csv>
+   element for domain name records.
 
    <csvDomain:deletes>
    ...
@@ -494,9 +497,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    <rdeCsv:fRegistrant>  Registrant contact identifier with
       type="eppcom:clIDType".
 
-   <rdeCsv:fStatusDescription>  The object status description, which is
-      free form text describing the rationale for the status, with
-      type="normalizedString".
 
 
 
@@ -505,6 +505,10 @@ Arias, et al.            Expires August 27, 2017                [Page 9]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   <rdeCsv:fStatusDescription>  The object status description, which is
+      free form text describing the rationale for the status, with
+      type="normalizedString".
 
    <rdeCsv:fClID>  Identifier of client (registrar) that sponsors the
       object with type="eppcom:clIDType" and isRequired="true".
@@ -549,10 +553,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
 
    <rdeCsv:fTrDate>  Date of last transfer with type="dateTime".
 
-   <rdeCsv:fTrStatus>  State of the most recent transfer request with
-      type="eppcom:trStatusType".
-
-   <rdeCsv:fTokenType>  General token field with type="token".
 
 
 
@@ -561,6 +561,11 @@ Arias, et al.            Expires August 27, 2017               [Page 10]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   <rdeCsv:fTrStatus>  State of the most recent transfer request with
+      type="eppcom:trStatusType".
+
+   <rdeCsv:fTokenType>  General token field with type="token".
 
    <rdeCsv:fLang>  General language field with type="language".
 
@@ -590,12 +595,7 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    field value MUST be represented in a subset of UTF-8 that can be
    represented in the 7-bit US-ASCII character set.  When the localized
    form ("loc") is provided, the field value MAY be represented in
-   unrestricted UTF-8.  Some of the field elements below of the
-   "registrar" <rdeCsv:csv"> <rdeCsv:fields> element specify the
-   internationalized form with the isLoc="false" attribute:
-
-
-
+   unrestricted UTF-8.
 
 
 
@@ -617,6 +617,10 @@ Arias, et al.            Expires August 27, 2017               [Page 11]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   The field elements below of the "registrar" <rdeCsv:csv">
+   <rdeCsv:fields> element specify the internationalized form with the
+   isLoc="false" attribute.
 
    ...
    <csvRegistrar:contents>
@@ -660,10 +664,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    </csvRegistrar:contents>
    ...
 
-   The following is an example of using the <csvContact:fPostalType>
-   field value to define the internationalized or localized form of the
-   remainder of the "contactPostal" field values.
-
 
 
 
@@ -673,6 +673,10 @@ Arias, et al.            Expires August 27, 2017               [Page 12]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   The following is an example of using the <csvContact:fPostalType>
+   field value to define the internationalized or localized form of the
+   remainder of the "contactPostal" field values.
 
    ...
    <csvContact:contents>
@@ -715,12 +719,8 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    The elements used for both models are defined in the following
    sections.
 
-5.1.1.  XML Model
 
-   There are two elements used in the data escrow of the domain name
-   objects for the XML model including the <rdeDomain:domain>, under the
-   <rde:contents> element, and the <rdeDomain:delete> element, under the
-   <rde:deletes> element.
+
 
 
 
@@ -729,6 +729,13 @@ Arias, et al.            Expires August 27, 2017               [Page 13]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+5.1.1.  XML Model
+
+   There are two elements used in the data escrow of the domain name
+   objects for the XML model including the <rdeDomain:domain>, under the
+   <rde:contents> element, and the <rdeDomain:delete> element, under the
+   <rde:deletes> element.
 
 5.1.1.1.  <rdeDomain:domain> object
 
@@ -771,13 +778,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    o  Zero or more OPTIONAL <rgpStatus> element to represent
       "pendingDelete" sub-statuses, including "redemptionPeriod",
       "pendingRestore", and "pendingDelete", that a domain name can be
-      in as a result of grace period processing as specified in
-      [RFC3915].
-
-   o  An OPTIONAL <registrant> element that contain the identifier for
-      the human or organizational social information object associated
-      as the holder of the domain name object.
-
 
 
 
@@ -785,6 +785,13 @@ Arias, et al.            Expires August 27, 2017               [Page 14]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+      in as a result of grace period processing as specified in
+      [RFC3915].
+
+   o  An OPTIONAL <registrant> element that contain the identifier for
+      the human or organizational social information object associated
+      as the holder of the domain name object.
 
    o  Zero or more OPTIONAL <contact> elements that contain identifiers
       for the human or organizational social information objects
@@ -827,13 +834,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
       information associated with Domain Name System security (DNSSEC)
       extensions for the domain name as specified in [RFC5910].
 
-   o  An OPTIONAL <trDate> element that contains the date and time of
-      the most recent domain object successful transfer.  This element
-      MUST NOT be present if the domain name object has never been
-      transfered.
-
-   o  An OPTIONAL <trnData> element that contains the following child
-      elements related to the last transfer request of the domain name
 
 
 
@@ -842,6 +842,13 @@ Arias, et al.            Expires August 27, 2017               [Page 15]
 Internet-Draft            DNRD Objects Mapping             February 2017
 
 
+   o  An OPTIONAL <trDate> element that contains the date and time of
+      the most recent domain object successful transfer.  This element
+      MUST NOT be present if the domain name object has never been
+      transfered.
+
+   o  An OPTIONAL <trnData> element that contains the following child
+      elements related to the last transfer request of the domain name
       object.  This element MUST NOT be present if a transfer request
       for the domain name has never been created.
 
@@ -873,13 +880,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
          domain name object's validity period (expiry date) if the
          transfer caused or causes a change in the validity period.
 
-   Example of a domain object:
-
-
-
-
-
-
 
 
 
@@ -897,6 +897,8 @@ Arias, et al.            Expires August 27, 2017               [Page 16]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   Example of a domain object:
 
    ...
    <rdeDom:domain>
@@ -943,8 +945,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    <csvDomain:deletes> child element of the <rde:deletes> element is
    used to hold the deleted or purged domain name objects for the
    deposit.  Both the <csvDomain:contents> and <csvDomain:deletes>
-   elements contain one or more <rdeCsv:csv> elements with a set of
-   named CSV file definitions using the <rdeCsv:csv> "name" attribute.
 
 
 
@@ -953,6 +953,9 @@ Arias, et al.            Expires August 27, 2017               [Page 17]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   elements contain one or more <rdeCsv:csv> elements with a set of
+   named CSV file definitions using the <rdeCsv:csv> "name" attribute.
 
    Differential and incremental deposits are based on changes to the
    domain name objects.  The updated domain name object data under the
@@ -999,9 +1002,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    elements (Section 4.6.2), MUST be used in the "domain" <rdeCsv:csv>
    <rdeCsv:fields> element:
 
-   <rdeCsv:fRoid>  Registry Object IDentifier (ROID) for the domain name
-      object.
-
 
 
 
@@ -1009,6 +1009,9 @@ Arias, et al.            Expires August 27, 2017               [Page 18]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   <rdeCsv:fRoid>  Registry Object IDentifier (ROID) for the domain name
+      object.
 
    <rdeCsv:fClID>  Identifier of client that sponsors the domain name
       object.
@@ -1049,9 +1052,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
 
    <rdeCsv:fTrDate>  Date and time of the last transfer for the domain
       name object.
-
-
-
 
 
 
@@ -2379,7 +2379,7 @@ Internet-Draft            DNRD Objects Mapping             February 2017
       [RFC5733] for a description of the child elements contained within
       the <disclose> element.
 
-   Example <contact> object:
+
 
 
 
@@ -2409,6 +2409,8 @@ Arias, et al.            Expires August 27, 2017               [Page 43]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   Example <contact> object:
 
    ...
    <rdeContact:contact>
@@ -2456,8 +2458,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    The <rdeContact:delete> element contains the id of a contact that was
    deleted.
 
-   Example of <rdeContact:delete> object:
-
 
 
 
@@ -2465,6 +2465,8 @@ Arias, et al.            Expires August 27, 2017               [Page 44]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   Example of <rdeContact:delete> object:
 
    ...
    <rde:deletes>
@@ -2509,10 +2511,8 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    elements with the "name" attribute.  The following sections include
    the supported contact CSV file definitions.
 
-5.3.2.1.1.  "contact" CSV File Definition
 
-   The "contact" CSV File Definition defines the fields and CSV file
-   references used for the contact object records.
+
 
 
 
@@ -2521,6 +2521,11 @@ Arias, et al.            Expires August 27, 2017               [Page 45]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+5.3.2.1.1.  "contact" CSV File Definition
+
+   The "contact" CSV File Definition defines the fields and CSV file
+   references used for the contact object records.
 
    The following "csvContact" field elements MUST be used in the
    "contact" <rdeCsv:csv> <rdeCsv:fields> element:
@@ -2564,12 +2569,7 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    <rdeCsv:fUpRr>  Identifier of the registrar, defined in Section 5.4,
       of the client that updated the object.
 
-   <rdeCsv:fUpDate>  Date and time of the last update to the contact
-      object.
 
-   The following "rdeCsv" fields, defined in section CSV common field
-   elements (Section 4.6.2), MAY be used in the "contact" <rdeCsv:csv>
-   <rdeCsv:fields> element:
 
 
 
@@ -2577,6 +2577,13 @@ Arias, et al.            Expires August 27, 2017               [Page 46]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   <rdeCsv:fUpDate>  Date and time of the last update to the contact
+      object.
+
+   The following "rdeCsv" fields, defined in section CSV common field
+   elements (Section 4.6.2), MAY be used in the "contact" <rdeCsv:csv>
+   <rdeCsv:fields> element:
 
    <rdeCsv:fCrID>  Identifier of client that created the contact object.
 
@@ -2618,13 +2625,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    ...
    </csvContact:contents>
    ...
-
-
-
-
-
-
-
 
 
 
@@ -3224,7 +3224,7 @@ Internet-Draft            DNRD Objects Mapping             February 2017
       MUST NOT be present if the rdeRegistrar object has never been
       modified.
 
-   Example of <registrar> object:
+
 
 
 
@@ -3249,6 +3249,8 @@ Arias, et al.            Expires August 27, 2017               [Page 58]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   Example of <registrar> object:
 
    ...
    <rdeRegistrar:registrar>
@@ -3295,8 +3297,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
      ...
    </rde:deletes>
    ...
-
-
 
 
 
@@ -4231,8 +4231,8 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    </rdeHeader:header>
    ...
 
-   Example of <rdeHeader:header> object referencing the CSV and XML
-   Model objects:
+
+
 
 
 
@@ -4257,6 +4257,9 @@ Arias, et al.            Expires August 27, 2017               [Page 76]
 
 Internet-Draft            DNRD Objects Mapping             February 2017
 
+
+   Example of <rdeHeader:header> object referencing the CSV and XML
+   Model objects:
 
    ...
    <rdeHeader:header>
@@ -4301,9 +4304,6 @@ Internet-Draft            DNRD Objects Mapping             February 2017
    variant while an IDN variant computed based on an algorithm is an
    implicit representation.  Explicit representation of an IDN variant
    takes precedence over an implicit representation.
-
-
-
 
 
 
