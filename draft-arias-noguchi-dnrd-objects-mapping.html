@@ -383,8 +383,9 @@
 <link href="#rfc.section.4.3" rel="Chapter" title="4.3 Telephone numbers"/>
 <link href="#rfc.section.4.4" rel="Chapter" title="4.4 Checksum"/>
 <link href="#rfc.section.4.5" rel="Chapter" title="4.5 IP addresses"/>
-<link href="#rfc.section.4.6" rel="Chapter" title="4.6 CSV elements"/>
-<link href="#rfc.section.4.7" rel="Chapter" title="4.7 Internationalized and Localized Elements"/>
+<link href="#rfc.section.4.6" rel="Chapter" title="4.6 CSV Parent Child Relationship"/>
+<link href="#rfc.section.4.7" rel="Chapter" title="4.7 CSV elements"/>
+<link href="#rfc.section.4.8" rel="Chapter" title="4.8 Internationalized and Localized Elements"/>
 <link href="#rfc.section.5" rel="Chapter" title="5 Object Description"/>
 <link href="#rfc.section.5.1" rel="Chapter" title="5.1 Domain Name Object"/>
 <link href="#rfc.section.5.2" rel="Chapter" title="5.2 Host Object"/>
@@ -442,7 +443,7 @@
 
   <meta name="dct.creator" content="Arias, F., Lozano, G., Noguchi, S., Gould, J., and C. Thippeswamy" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-arias-noguchi-dnrd-objects-mapping-06" />
-  <meta name="dct.issued" scheme="ISO8601" content="2017-2-23" />
+  <meta name="dct.issued" scheme="ISO8601" content="2017-3-15" />
   <meta name="dct.abstract" content="This document specifies the format, contents and semantics of Domain Name Registration Data (DNRD) Escrow deposits for a Domain Name Registry.  " />
   <meta name="description" content="This document specifies the format, contents and semantics of Domain Name Registration Data (DNRD) Escrow deposits for a Domain Name Registry.  " />
 
@@ -466,7 +467,7 @@
   <td class="right">ICANN</td>
 </tr>
 <tr>
-  <td class="left">Expires: August 27, 2017</td>
+  <td class="left">Expires: September 16, 2017</td>
   <td class="right">S. Noguchi</td>
 </tr>
 <tr>
@@ -487,7 +488,7 @@
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">February 23, 2017</td>
+  <td class="right">March 15, 2017</td>
 </tr>
 
     	
@@ -507,7 +508,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on August 27, 2017.</p>
+<p>This Internet-Draft will expire on September 16, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -528,8 +529,9 @@
 <li>4.3.   <a href="#rfc.section.4.3">Telephone numbers</a></li>
 <li>4.4.   <a href="#rfc.section.4.4">Checksum</a></li>
 <li>4.5.   <a href="#rfc.section.4.5">IP addresses</a></li>
-<li>4.6.   <a href="#rfc.section.4.6">CSV elements</a></li>
-<li>4.7.   <a href="#rfc.section.4.7">Internationalized and Localized Elements</a></li>
+<li>4.6.   <a href="#rfc.section.4.6">CSV Parent Child Relationship</a></li>
+<li>4.7.   <a href="#rfc.section.4.7">CSV elements</a></li>
+<li>4.8.   <a href="#rfc.section.4.8">Internationalized and Localized Elements</a></li>
 </ul><li>5.   <a href="#rfc.section.5">Object Description</a></li>
 <ul><li>5.1.   <a href="#rfc.section.5.1">Domain Name Object</a></li>
 <li>5.2.   <a href="#rfc.section.5.2">Host Object</a></li>
@@ -636,14 +638,58 @@
 <p id="rfc.section.4.4.p.1">Checksum of the CSV data escrow files MUST use CRC32, that is the algorithm used in the ISO 3309 standard and in section 8.1.1.6.2 of ITU-T recommendation V.42.  </p>
 <h1 id="rfc.section.4.5"><a href="#rfc.section.4.5">4.5.</a> IP addresses</h1>
 <p id="rfc.section.4.5.p.1">IP addresses syntax MUST conform to the text representation of either of, Internet Protocol <a href="#RFC0791">[RFC0791]</a>, for IPv4 addresses, or IP Version 6 Addressing Architecture <a href="#RFC4291">[RFC4291]</a>, for IPv6 addresses.  </p>
-<h1 id="rfc.section.4.6"><a href="#rfc.section.4.6">4.6.</a> <a href="#csvElements" id="csvElements">CSV elements</a></h1>
-<h1 id="rfc.section.4.6.1"><a href="#rfc.section.4.6.1">4.6.1.</a> <a href="#rdeCsv-csv" id="rdeCsv-csv">&lt;rdeCsv:csv&gt; element</a></h1>
-<p id="rfc.section.4.6.1.p.1">To support a CSV model with the <a href="http://tools.ietf.org/id/draft-arias-noguchi-registry-data-escrow-05.txt">Registry Data Escrow Specification</a>, an element is defined for each object that substitutes for the &lt;rde:content&gt; element and for the &lt;rde:delete&gt; element, that contains one or more &lt;rdeCsv:csv&gt; elements.  For example, the <a href="#domainNameObject">Domain Name Object</a> <cite title="NONE">[domainNameObject]</cite> defines the &lt;csvDomain:contents&gt; element, that substitutes for the &lt;rde:content&gt; element, and the &lt;csvDomain:deletes&gt; element, that substitutes for the &lt;rde:delete&gt; element.  Both the &lt;csvDomain:contents&gt; element and the &lt;csvDomain:deletes&gt; elements contain one or more &lt;rdeCsv:csv&gt; elements.  The &lt;rdeCsv:csv&gt; element has the following child elements:</p>
+<h1 id="rfc.section.4.6"><a href="#rfc.section.4.6">4.6.</a> <a href="#csvParentChildRelationship" id="csvParentChildRelationship">CSV Parent Child Relationship</a></h1>
+<p id="rfc.section.4.6.p.1">The CSV model represents a relational model, where the CSV files represent relational tables, the fields of the CSV files represent columns of the tables, and each line of the CSV file file represents a record.  As in a relational model, the CSV files can have relationships utilizing primary keys in the parent CSV file definitions and foreign keys in the child CSV file definitions for a 1-to-many relationship.  The primary keys are not explicitely defined, but the foreign keys are using the boolean "parent" field attribute in the child CSV file.  The relationships between the CSV files are used to support a cascade replace or cascade delete of records starting from the parent record in differential and incremental deposits.  </p>
+<p/>
+
+<p>The following is an example of the CSV file definitions for a Sample object consisting of a parent "sample" CSV File Definition and a child "sampleStatuses" CSV File Definition.  The primary key for the Sample object is the field &lt;csvSample:fName&gt; that is used as the foreign key in the "sampleStatuses" CSV File Definition by specifying the "parent=true" attribute.  If a Sample record is updated or deleted in a differential or incremental deposit, it should cascade replace the data using the records included in the child "sampleStatuses" CSV File Definition or cascade delete the existing records in the child "sampleStatuses" CSV File Definition, respectively.  </p>
+<pre>
+&lt;csvSample:contents&gt;
+...
+  &lt;rdeCsv:csv name="sample" sep=","&gt;
+    &lt;rdeCsv:fields&gt;
+      &lt;csvSample:fName/&gt;
+      &lt;rdeCsv:fClID/&gt;
+      &lt;rdeCsv:fCrRr/&gt;
+      &lt;rdeCsv:fCrID/&gt;
+      &lt;rdeCsv:fCrDate/&gt;
+      &lt;rdeCsv:fUpRr/&gt;
+      &lt;rdeCsv:fUpID/&gt;
+      &lt;rdeCsv:fUpDate/&gt;
+      &lt;rdeCsv:fExDate/&gt;
+    &lt;/rdeCsv:fields&gt;
+    &lt;rdeCsv:files&gt;
+      &lt;rdeCsv:file 
+        cksum="75E2D22F"&gt;
+        sample-YYYYMMDD.csv
+      &lt;/rdeCsv:file&gt; 
+    &lt;/rdeCsv:files&gt;
+  &lt;/rdeCsv:csv&gt;
+  &lt;rdeCsv:csv name="sampleStatuses" sep=","&gt;
+    &lt;rdeCsv:fields&gt;
+      &lt;csvSample:fName parent="true"/&gt;
+      &lt;csvSample:fStatus/&gt;
+      &lt;rdeCsv:fStatusDescription/&gt;
+      &lt;rdeCsv:fLang/&gt;
+    &lt;/rdeCsv:fields&gt;
+    &lt;rdeCsv:files&gt;
+      &lt;rdeCsv:file 
+        cksum="EB9C558E"&gt;
+        sampleStatuses-YYYYMMDD.csv
+      &lt;/rdeCsv:file&gt; 
+    &lt;/rdeCsv:files&gt;
+  &lt;/rdeCsv:csv&gt;
+...
+&lt;/csvSample:contents&gt;
+                  </pre>
+<h1 id="rfc.section.4.7"><a href="#rfc.section.4.7">4.7.</a> <a href="#csvElements" id="csvElements">CSV elements</a></h1>
+<h1 id="rfc.section.4.7.1"><a href="#rfc.section.4.7.1">4.7.1.</a> <a href="#rdeCsv-csv" id="rdeCsv-csv">&lt;rdeCsv:csv&gt; element</a></h1>
+<p id="rfc.section.4.7.1.p.1">To support a CSV model with the <a href="http://tools.ietf.org/id/draft-arias-noguchi-registry-data-escrow-05.txt">Registry Data Escrow Specification</a>, an element is defined for each object that substitutes for the &lt;rde:content&gt; element and for the &lt;rde:delete&gt; element, that contains one or more &lt;rdeCsv:csv&gt; elements.  For example, the <a href="#domainNameObject">Domain Name Object</a> <cite title="NONE">[domainNameObject]</cite> defines the &lt;csvDomain:contents&gt; element, that substitutes for the &lt;rde:content&gt; element, and the &lt;csvDomain:deletes&gt; element, that substitutes for the &lt;rde:delete&gt; element.  Both the &lt;csvDomain:contents&gt; element and the &lt;csvDomain:deletes&gt; elements contain one or more &lt;rdeCsv:csv&gt; elements.  The &lt;rdeCsv:csv&gt; element has the following child elements:</p>
 <p/>
 
 <dl>
   <dt>&lt;rdeCsv:fields&gt;</dt>
-  <dd style="margin-left: 8">Ordered list of CSV fields used in the CSV files.  There is one or more child elements that substitute for the &lt;rdeCsv:field&gt; abstract element.  Each element defines the format of the CSV field contained in the CSV files.  The &lt;rdeCsv:field&gt; elements support the "type" attribute that defines the XML simple data type of the field element.  The &lt;rdeCsv:field&gt; elements support the "isRequired" attribute, with a default value of "false", when set to "true" indicates that the field must be non-empty in the CSV files and when set to "false" indicates that the field MAY be empty in the CSV files.  The "isRequired" attribute MAY be specifically set for the field elements within the XML schema and MAY be overridden when specifying the fields under the &lt;rdeCsv:fields&gt; element.  The &lt;rdeCsv:field&gt; element supports an OPTIONAL "parent" attribute that identifies the field as a reference to a parent object.  For example, the &lt;rdeCsv:csv name="domainStatuses"&gt; &lt;csvDomain:fName&gt; field SHOULD set the "parent" attribute to "true" to identify it as the parent domain name of the domain status.</dd>
+  <dd style="margin-left: 8">Ordered list of CSV fields used in the CSV files.  There is one or more child elements that substitute for the &lt;rdeCsv:field&gt; abstract element.  Each element defines the format of the CSV field contained in the CSV files.  The &lt;rdeCsv:field&gt; elements support the "type" attribute that defines the XML simple data type of the field element.  The &lt;rdeCsv:field&gt; elements support the "isRequired" attribute, with a default value of "false", when set to "true" indicates that the field must be non-empty in the CSV files and when set to "false" indicates that the field MAY be empty in the CSV files.  The "isRequired" attribute MAY be specifically set for the field elements within the XML schema and MAY be overridden when specifying the fields under the &lt;rdeCsv:fields&gt; element.  The &lt;rdeCsv:field&gt; element supports an OPTIONAL "parent" attribute that identifies the field as a reference to a parent object, as defined in <a href="#csvParentChildRelationship">CSV Parent Child Relationship</a> <cite title="NONE">[csvParentChildRelationship]</cite>.  For example, the &lt;rdeCsv:csv name="domainStatuses"&gt; &lt;csvDomain:fName&gt; field SHOULD set the "parent" attribute to "true" to identify it as the parent domain name of the domain status.</dd>
   <dt>&lt;rdeCsv:files&gt;</dt>
   <dd style="margin-left: 8">A list of one or more CSV files using the &lt;rdeCsv:file&gt; child element.  The &lt;rdeCsv:file&gt; child element defines a reference to the CSV file name and has the following optional attributes:</dd>
   <dt></dt>
@@ -658,7 +704,7 @@
     </dl>
   </dd>
 </dl>
-<p id="rfc.section.4.6.1.p.3">The &lt;rdeCsv:csv&gt; elements requires a "name" attribute that defines the purpose of the CSV file with values like "domain", "host", "contact".  The supported "name" attribute values are defined for each object type.  The OPTIONAL "sep" attribute defines the CSV separator character with the default separator character of ",".  </p>
+<p id="rfc.section.4.7.1.p.3">The &lt;rdeCsv:csv&gt; elements requires a "name" attribute that defines the purpose of the CSV file with values like "domain", "host", "contact".  The supported "name" attribute values are defined for each object type.  The OPTIONAL "sep" attribute defines the CSV separator character with the default separator character of ",".  </p>
 <p/>
 
 <p>The following is an example of the &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element for domain name records where the &lt;rdeCsv:fRegistrant&gt; is set as required with isRequired="true".  </p>
@@ -727,8 +773,8 @@ domain1.test
 domain2.test
 domainN.test
                           </pre>
-<h1 id="rfc.section.4.6.2"><a href="#rfc.section.4.6.2">4.6.2.</a> <a href="#csvCommonFieldElements" id="csvCommonFieldElements">CSV common field elements</a></h1>
-<p id="rfc.section.4.6.2.p.1">The &lt;rdeCsv:fields&gt; element defined in the <a href="#rdeCsv-csv">&lt;rdeCsv:csv&gt; element</a> <cite title="NONE">[rdeCsv-csv]</cite> section has child elements that substitute for the abstract &lt;rdeCsv:field&gt; element.  By convention &lt;rdeCsv:field&gt; elements include an 'f' prefix to identify them as field definition elements.  There are a set of common field elements that are used across multiple data escrow objects.  The common field elements are defined using the "urn:ietf:params:xml:ns:rdeCsv-1.0" namespace and using the "rdeCsv" sample namespace prefix.  The CSV common field elements include: </p>
+<h1 id="rfc.section.4.7.2"><a href="#rfc.section.4.7.2">4.7.2.</a> <a href="#csvCommonFieldElements" id="csvCommonFieldElements">CSV common field elements</a></h1>
+<p id="rfc.section.4.7.2.p.1">The &lt;rdeCsv:fields&gt; element defined in the <a href="#rdeCsv-csv">&lt;rdeCsv:csv&gt; element</a> <cite title="NONE">[rdeCsv-csv]</cite> section has child elements that substitute for the abstract &lt;rdeCsv:field&gt; element.  By convention &lt;rdeCsv:field&gt; elements include an 'f' prefix to identify them as field definition elements.  There are a set of common field elements that are used across multiple data escrow objects.  The common field elements are defined using the "urn:ietf:params:xml:ns:rdeCsv-1.0" namespace and using the "rdeCsv" sample namespace prefix.  The CSV common field elements include: </p>
 <p/>
 
 <dl>
@@ -785,8 +831,8 @@ domainN.test
   <dt>&lt;rdeCsv:fCustom&gt;</dt>
   <dd style="margin-left: 8">Custom field with name attribute that defines the custom field name" with type="token".  </dd>
 </dl>
-<h1 id="rfc.section.4.7"><a href="#rfc.section.4.7">4.7.</a> <a href="#intandloc" id="intandloc">Internationalized and Localized Elements</a></h1>
-<p id="rfc.section.4.7.p.1">Some elements MAY be provided in either internationalized form ("int") or provided in localized form ("loc").  Those elements use a field value or "isLoc" attribute to specify the form used.  If an "isLoc" attribute is used, a value of "true" indicates the use of the localized form and a value of "false" indicates the use of the internationalized form.  This MAY override the form specified for a parent element.  A value of "int" is used to indicate the internationalized form and a value of "loc" is used to indicate the localized form.  When the internalized form ("int") is provided, the field value MUST be represented in a subset of UTF-8 that can be represented in the 7-bit US-ASCII character set.  When the localized form ("loc") is provided, the field value MAY be represented in unrestricted UTF-8.  </p>
+<h1 id="rfc.section.4.8"><a href="#rfc.section.4.8">4.8.</a> <a href="#intandloc" id="intandloc">Internationalized and Localized Elements</a></h1>
+<p id="rfc.section.4.8.p.1">Some elements MAY be provided in either internationalized form ("int") or provided in localized form ("loc").  Those elements use a field value or "isLoc" attribute to specify the form used.  If an "isLoc" attribute is used, a value of "true" indicates the use of the localized form and a value of "false" indicates the use of the internationalized form.  This MAY override the form specified for a parent element.  A value of "int" is used to indicate the internationalized form and a value of "loc" is used to indicate the localized form.  When the internalized form ("int") is provided, the field value MUST be represented in a subset of UTF-8 that can be represented in the 7-bit US-ASCII character set.  When the localized form ("loc") is provided, the field value MAY be represented in unrestricted UTF-8.  </p>
 <p/>
 
 <p>The field elements below of the "registrar" &lt;rdeCsv:csv"&gt; &lt;rdeCsv:fields&gt; element specify the internationalized form with the isLoc="false" attribute.  </p>
@@ -1405,7 +1451,7 @@ domainN.test
   2012-03-09T23:59:59.0Z,2016-05-04T23:00:00.0Z
                 </pre>
 <h1 id="rfc.section.5.1.2.2"><a href="#rfc.section.5.1.2.2">5.1.2.2.</a> <a href="#csvDomainDeletes" id="csvDomainDeletes">&lt;csvDomain:deletes&gt;</a></h1>
-<p id="rfc.section.5.1.2.2.p.1">The &lt;csvDomain:deletes&gt; is used to hold the deleted domain name objects in a differental or incremental deposit.  All of the domain name object data is deleted as part of a casecade delete.  The &lt;csvDomain:deletes&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  The following section defines the supported domain name deletes CSV file definition.  </p>
+<p id="rfc.section.5.1.2.2.p.1">The &lt;csvDomain:deletes&gt; is used to hold the deleted domain name objects in a differental or incremental deposit.  All of the domain name object data is deleted as part of a cascade delete.  The &lt;csvDomain:deletes&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  The following section defines the supported domain name deletes CSV file definition.  </p>
 <h1 id="rfc.section.5.1.2.2.1"><a href="#rfc.section.5.1.2.2.1">5.1.2.2.1.</a> <a href="#csvDomainDeletesDefinition" id="csvDomainDeletesDefinition">"domain" Deletes CSV File Definition</a></h1>
 <p id="rfc.section.5.1.2.2.1.p.1">The following "csvDomain" field elements MUST be used in the deletes "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
@@ -1991,26 +2037,26 @@ mycontactid,ok,,
 
 <dl>
   <dt>&lt;csvContact:fName&gt;</dt>
-  <dd style="margin-left: 8">Contains the contact's name of the individual or role represented by the contact with type="contact:postalLineType" and isRequired="true".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.7</a>.  </dd>
+  <dd style="margin-left: 8">Contains the contact's name of the individual or role represented by the contact with type="contact:postalLineType" and isRequired="true".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.8</a>.  </dd>
   <dt>&lt;csvContact:fStreet&gt;</dt>
-  <dd style="margin-left: 8">Contains the contact's contact's street address line with type="contact:fPostalLineType".  An index attribute is required to indicate which street address line the field represents with index "0" for the first line and index "2" for the last line.  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.7</a>.  </dd>
+  <dd style="margin-left: 8">Contains the contact's contact's street address line with type="contact:fPostalLineType".  An index attribute is required to indicate which street address line the field represents with index "0" for the first line and index "2" for the last line.  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.8</a>.  </dd>
   <dt>&lt;csvContact:fCity&gt;</dt>
-  <dd style="margin-left: 8">Contains the contact's city with type="contact:postalLineType" and isRequired="true".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.7</a>.  </dd>
+  <dd style="margin-left: 8">Contains the contact's city with type="contact:postalLineType" and isRequired="true".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.8</a>.  </dd>
   <dt>&lt;csvContact:fCc&gt;</dt>
-  <dd style="margin-left: 8">Contains the contact's country code with type="contact:ccType".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.7</a>.  </dd>
+  <dd style="margin-left: 8">Contains the contact's country code with type="contact:ccType".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.8</a>.  </dd>
 </dl>
 <p id="rfc.section.5.3.2.1.3.p.4">The following "csvContact" field elements MAY be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
 
 <dl>
   <dt>&lt;csvContact:fPostalType&gt;</dt>
-  <dd style="margin-left: 8">Contains the form of the postal-address information with type="contact:postalLineType".  This field specifies the form ("int" or "loc"), as defined in <a href="#intandloc">Section 4.7</a>, of the &lt;csvContact:fName&gt;, &lt;csvContact:fOrg&gt;, &lt;csvContact:fStreet&gt;, &lt;csvContact:fCity&gt;, &lt;csvContact:fSp&gt;, &lt;csvContact:fPc&gt;, &lt;csvContact:fCc&gt; fields.  </dd>
+  <dd style="margin-left: 8">Contains the form of the postal-address information with type="contact:postalLineType".  This field specifies the form ("int" or "loc"), as defined in <a href="#intandloc">Section 4.8</a>, of the &lt;csvContact:fName&gt;, &lt;csvContact:fOrg&gt;, &lt;csvContact:fStreet&gt;, &lt;csvContact:fCity&gt;, &lt;csvContact:fSp&gt;, &lt;csvContact:fPc&gt;, &lt;csvContact:fCc&gt; fields.  </dd>
   <dt>&lt;csvContact:fOrg&gt;</dt>
-  <dd style="margin-left: 8">Contains the name of the organization with which the contact is affiliated with type="contact:optPostalLineType".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.7</a>.  </dd>
+  <dd style="margin-left: 8">Contains the name of the organization with which the contact is affiliated with type="contact:optPostalLineType".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.8</a>.  </dd>
   <dt>&lt;csvContact:fSp&gt;</dt>
-  <dd style="margin-left: 8">Contains the contact's state or province with type="contact:optPostalLineType".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.7</a>.  </dd>
+  <dd style="margin-left: 8">Contains the contact's state or province with type="contact:optPostalLineType".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.8</a>.  </dd>
   <dt>&lt;csvContact:fPc&gt;</dt>
-  <dd style="margin-left: 8">Contains the contact's postal code with type="contact:pcType".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.7</a>.  </dd>
+  <dd style="margin-left: 8">Contains the contact's postal code with type="contact:pcType".  An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <a href="#intandloc">Section 4.8</a>.  </dd>
 </dl>
 <p id="rfc.section.5.3.2.1.3.p.6">The following "csvContact" fields, defined for the <a href="#csvContactDefinition">"contact" CSV File Definition</a> <cite title="NONE">[csvContactDefinition]</cite>, MUST be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
@@ -2359,11 +2405,11 @@ mycontactid
 
 <dl>
   <dt>&lt;csvContact:fStreet&gt;</dt>
-  <dd style="margin-left: 8">Registrar street address line with an "index" attribute that represents the order of the street address line from "0" to "2".  An OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a href="#intandloc">Section 4.7</a>.</dd>
+  <dd style="margin-left: 8">Registrar street address line with an "index" attribute that represents the order of the street address line from "0" to "2".  An OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a href="#intandloc">Section 4.8</a>.</dd>
   <dt>&lt;csvContact:fCity&gt;</dt>
-  <dd style="margin-left: 8">Registrar city with an OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a href="#intandloc">Section 4.7</a>.</dd>
+  <dd style="margin-left: 8">Registrar city with an OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a href="#intandloc">Section 4.8</a>.</dd>
   <dt>&lt;csvContact:fCc&gt;</dt>
-  <dd style="margin-left: 8">Registrar country code with an OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a href="#intandloc">Section 4.7</a>.</dd>
+  <dd style="margin-left: 8">Registrar country code with an OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a href="#intandloc">Section 4.8</a>.</dd>
   <dt>&lt;csvContact:fEmail&gt;</dt>
   <dd style="margin-left: 8">Registrar email address.</dd>
 </dl>
@@ -2372,9 +2418,9 @@ mycontactid
 
 <dl>
   <dt>&lt;csvContact:fSp&gt;</dt>
-  <dd style="margin-left: 8">Registrar state or province with an OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a href="#intandloc">Section 4.7</a>.</dd>
+  <dd style="margin-left: 8">Registrar state or province with an OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a href="#intandloc">Section 4.8</a>.</dd>
   <dt>&lt;csvContact:fPc&gt;</dt>
-  <dd style="margin-left: 8">Registrar postal code with an OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a href="#intandloc">Section 4.7</a>.</dd>
+  <dd style="margin-left: 8">Registrar postal code with an OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <a href="#intandloc">Section 4.8</a>.</dd>
   <dt>&lt;csvContact:fVoice&gt;</dt>
   <dd style="margin-left: 8">Registrar voice telephone number.</dd>
   <dt>&lt;csvContact:fVoiceExt&gt;</dt>
@@ -2509,7 +2555,7 @@ EXAMPLE2
 <p id="rfc.section.5.5.2.1.p.1">The &lt;csvIDN:contents&gt; is used to hold the new or updated IDN table reference object information for the deposit.  The &lt;csvIDN:contents&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  The following sections include the supported IDN table reference CSV file definitions.  </p>
 <h1 id="rfc.section.5.5.2.1.1"><a href="#rfc.section.5.5.2.1.1">5.5.2.1.1.</a> <a href="#csvIDNDefinition" id="csvIDNDefinition">"idnLanguage" CSV File Definition</a></h1>
 <p id="rfc.section.5.5.2.1.1.p.1">The "idnLanguage" CSV File Definition defines the fields and CSV file references used for the IDN table reference object records.  </p>
-<p id="rfc.section.5.5.2.1.1.p.2">The following "rdeCsv" fields, defined in <a href="#csvCommonFieldElements">Section 4.6.2</a>, MUST be used in the "idnLanguage" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
+<p id="rfc.section.5.5.2.1.1.p.2">The following "rdeCsv" fields, defined in <a href="#csvCommonFieldElements">Section 4.7.2</a>, MUST be used in the "idnLanguage" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
 
 <dl>
@@ -2811,7 +2857,7 @@ xn--pingino-q2a.test
 ...
                       </pre>
 <h1 id="rfc.section.5.8"><a href="#rfc.section.5.8">5.8.</a> Policy Object</h1>
-<p id="rfc.section.5.8.p.1">The Policy object is a pseudo-object that is used to specify which OPTIONAL elements from the XML Model are REQUIRED based on the business model of the registry.  For the CSV Model, the OPTIONAL "isRequired" attribute of the &lt;rdeCsv:field&gt; elements, defined in <a href="#rdeCsv-csv">Section 4.6.1</a>, is used to specify which OPTIONAL fields are REQUIRED based on the business model of the registry.  </p>
+<p id="rfc.section.5.8.p.1">The Policy object is a pseudo-object that is used to specify which OPTIONAL elements from the XML Model are REQUIRED based on the business model of the registry.  For the CSV Model, the OPTIONAL "isRequired" attribute of the &lt;rdeCsv:field&gt; elements, defined in <a href="#rdeCsv-csv">Section 4.7.1</a>, is used to specify which OPTIONAL fields are REQUIRED based on the business model of the registry.  </p>
 <h1 id="rfc.section.5.8.1"><a href="#rfc.section.5.8.1">5.8.1.</a> <a href="#policy_object" id="policy_object">&lt;rdePolicy:policy&gt; object</a></h1>
 <p id="rfc.section.5.8.1.p.1">The OPTIONAL &lt;policy&gt; contains the following attributes: </p>
 <p/>
@@ -2997,7 +3043,8 @@ xn--pingino-q2a.test
       &lt;sequence/&gt;
       &lt;attribute name="isRequired" type="boolean" 
         default="false"/&gt;
-      &lt;attribute name="parent" type="boolean"/&gt;
+      &lt;attribute name="parent" type="boolean"
+        default="false"/&gt;
     &lt;/extension&gt;
   &lt;/complexContent&gt;
  &lt;/complexType&gt;
@@ -3009,7 +3056,8 @@ xn--pingino-q2a.test
       &lt;sequence/&gt;
       &lt;attribute name="isRequired" type="boolean" 
         default="true"/&gt;
-      &lt;attribute name="parent" type="boolean"/&gt;
+      &lt;attribute name="parent" type="boolean"
+        default="false"/&gt;
     &lt;/extension&gt;
   &lt;/complexContent&gt;
  &lt;/complexType&gt;
@@ -5473,6 +5521,7 @@ END</pre>
 <ol>
   <li>Revised the differential and incremental deposits for the CSV format to use cascade update / replace and delete from the parent object to be consistent with the XML format.</li>
   <li>Revised the structure of the CSV format sections to utilize sub-sections instead of a list for the CSV file definitions.</li>
+  <li>Added the "CSV Parent Child Relationship" section to describe the concept of parent child relationships across CSV file definitions.</li>
 </ol>
 
 <p> </p>

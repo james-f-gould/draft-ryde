@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="23" month="February" year="2017"/>
+        <date day="15" month="March" year="2017"/>
         
         <area> Applications </area>
         
@@ -293,6 +293,67 @@
               </t>
             </section>
             
+            <section title="CSV Parent Child Relationship" anchor="csvParentChildRelationship">
+              <t>
+              The CSV model represents a relational model, where the CSV files represent relational tables, the fields of the CSV files represent columns of the tables, and each line of the CSV file 
+              file represents a record.  As in a relational model, the CSV files can have relationships utilizing primary keys in the parent CSV file definitions and 
+              foreign keys in the child CSV file definitions for a 1-to-many relationship.  The primary keys are not explicitely defined, but the foreign keys are using the 
+              boolean "parent" field attribute in the child CSV file.  The relationships between the CSV files are used to support a cascade replace or cascade delete of records starting 
+              from the parent record in differential and incremental deposits.  
+              </t>
+			  <t>
+			    <figure>
+				  <preamble>
+				    The following is an example of the CSV file definitions for a Sample object consisting of a parent "sample" CSV File Definition 
+					and a child "sampleStatuses" CSV File Definition.  The primary key for the Sample object is the field &lt;csvSample:fName&gt; that is 
+					used as the foreign key in the "sampleStatuses" CSV File Definition by specifying the "parent=true" attribute.  If a Sample record is updated 
+					or deleted in a differential or incremental deposit, it should cascade replace the data using the records included in the child "sampleStatuses" 
+					CSV File Definition or cascade delete the existing records in the child "sampleStatuses" CSV File Definition, respectively.  
+			      </preamble>
+				  <artwork><![CDATA[
+<csvSample:contents>
+...
+  <rdeCsv:csv name="sample" sep=",">
+    <rdeCsv:fields>
+      <csvSample:fName/>
+      <rdeCsv:fClID/>
+      <rdeCsv:fCrRr/>
+      <rdeCsv:fCrID/>
+      <rdeCsv:fCrDate/>
+      <rdeCsv:fUpRr/>
+      <rdeCsv:fUpID/>
+      <rdeCsv:fUpDate/>
+      <rdeCsv:fExDate/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+        cksum="75E2D22F">
+        sample-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+  </rdeCsv:csv>
+  <rdeCsv:csv name="sampleStatuses" sep=",">
+    <rdeCsv:fields>
+      <csvSample:fName parent="true"/>
+      <csvSample:fStatus/>
+      <rdeCsv:fStatusDescription/>
+      <rdeCsv:fLang/>
+    </rdeCsv:fields>
+    <rdeCsv:files>
+      <rdeCsv:file 
+        cksum="EB9C558E">
+        sampleStatuses-YYYYMMDD.csv
+      </rdeCsv:file> 
+    </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvSample:contents>]]>
+                  </artwork>
+                </figure>
+              </t>
+            </section>
+            
+            
             <section title="CSV elements" anchor="csvElements">
               <section title="&lt;rdeCsv:csv&gt; element" anchor="rdeCsv-csv">
                 <t>
@@ -312,7 +373,8 @@
                     in the CSV files and when set to "false" indicates that the field MAY be empty in the CSV files.  The "isRequired" 
                     attribute MAY be specifically set for the field elements within the XML schema and MAY be overridden when specifying 
                     the fields under the &lt;rdeCsv:fields&gt; element.  The &lt;rdeCsv:field&gt; element supports an OPTIONAL "parent" attribute 
-                    that identifies the field as a reference to a parent object.  For example, the &lt;rdeCsv:csv name="domainStatuses"&gt; &lt;csvDomain:fName&gt; field SHOULD 
+                    that identifies the field as a reference to a parent object, as defined in <xref target="csvParentChildRelationship">CSV Parent Child Relationship</xref>.  
+                    For example, the &lt;rdeCsv:csv name="domainStatuses"&gt; &lt;csvDomain:fName&gt; field SHOULD 
                     set the "parent" attribute to "true" to identify it as the parent domain name of the domain status.</t>  
                     <t hangText="&lt;rdeCsv:files&gt;">A list of one or more CSV files using the &lt;rdeCsv:file&gt; child element.  
                     The &lt;rdeCsv:file&gt; child element defines a reference to the CSV file name and has the following optional attributes:</t>
@@ -1386,7 +1448,7 @@ domainN.test]]>
                <section title="&lt;csvDomain:deletes&gt;" anchor="csvDomainDeletes">
                   <t>
                   The &lt;csvDomain:deletes&gt; is used to hold the deleted domain name objects in a differental or incremental deposit.  
-                  All of the domain name object data is deleted as part of a casecade delete.  The &lt;csvDomain:deletes&gt; is split into 
+                  All of the domain name object data is deleted as part of a cascade delete.  The &lt;csvDomain:deletes&gt; is split into
                   separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  
                   The following section defines the supported domain name deletes CSV file definition.
                   </t>
@@ -4011,7 +4073,8 @@ xn--pingino-q2a.test]]>
       <sequence/>
       <attribute name="isRequired" type="boolean" 
         default="false"/>
-      <attribute name="parent" type="boolean"/>
+      <attribute name="parent" type="boolean"
+        default="false"/>
     </extension>
   </complexContent>
  </complexType>
@@ -4023,7 +4086,8 @@ xn--pingino-q2a.test]]>
       <sequence/>
       <attribute name="isRequired" type="boolean" 
         default="true"/>
-      <attribute name="parent" type="boolean"/>
+      <attribute name="parent" type="boolean"
+        default="false"/>
     </extension>
   </complexContent>
  </complexType>
@@ -6991,6 +7055,7 @@ END]]></artwork></figure>
                 <t>Revised the differential and incremental deposits for the CSV format to use cascade update / replace and delete 
                 from the parent object to be consistent with the XML format.</t>
                 <t>Revised the structure of the CSV format sections to utilize sub-sections instead of a list for the CSV file definitions.</t>
+                <t>Added the "CSV Parent Child Relationship" section to describe the concept of parent child relationships across CSV file definitions.</t>                
               </list>
             </t>
           </section>
