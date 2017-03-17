@@ -443,7 +443,7 @@
 
   <meta name="dct.creator" content="Arias, F., Lozano, G., Noguchi, S., Gould, J., and C. Thippeswamy" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-arias-noguchi-dnrd-objects-mapping-06" />
-  <meta name="dct.issued" scheme="ISO8601" content="2017-3-15" />
+  <meta name="dct.issued" scheme="ISO8601" content="2017-3-17" />
   <meta name="dct.abstract" content="This document specifies the format, contents and semantics of Domain Name Registration Data (DNRD) Escrow deposits for a Domain Name Registry.  " />
   <meta name="description" content="This document specifies the format, contents and semantics of Domain Name Registration Data (DNRD) Escrow deposits for a Domain Name Registry.  " />
 
@@ -467,7 +467,7 @@
   <td class="right">ICANN</td>
 </tr>
 <tr>
-  <td class="left">Expires: September 16, 2017</td>
+  <td class="left">Expires: September 18, 2017</td>
   <td class="right">S. Noguchi</td>
 </tr>
 <tr>
@@ -488,7 +488,7 @@
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">March 15, 2017</td>
+  <td class="right">March 17, 2017</td>
 </tr>
 
     	
@@ -508,7 +508,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on September 16, 2017.</p>
+<p>This Internet-Draft will expire on September 18, 2017.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -1551,28 +1551,28 @@ domainN.test
 &lt;/rde:deletes&gt;
 ...
                           </pre>
-<h1 id="rfc.section.5.2.1.3"><a href="#rfc.section.5.2.1.3">5.2.1.3.</a> <a href="#hostCsvModel" id="hostCsvModel">CSV Model</a></h1>
-<p id="rfc.section.5.2.1.3.p.1">For the CSV Model of the host object, the &lt;csvHost:contents&gt; child element of the &lt;rde:contents&gt; element is used to hold the new or updated host objects for the deposit.  The &lt;csvHost:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or purged host objects for the deposit.  </p>
-<p id="rfc.section.5.2.1.3.p.2">Differential and incremental deposits are based on changes to the host objects.  The updated host object data under the &lt;csvHost:contents&gt; element is a cascade replace down all of the host CSV files starting with the parent <a href="#csvHostDefinition">"host" CSV File Definition</a> <cite title="NONE">[csvHostDefinition]</cite>.  The child CSV file definitions include a &lt;rdeCsv:fRoid parent="true"&gt; field.  All the child CSV file definition data for the host objects in the parent <a href="#csvHostDefinition">"host" CSV File Definition</a> <cite title="NONE">[csvHostDefinition]</cite> MUST first be deleted and then set using the data in the child CSV files.  The deleted host object data under the &lt;csvHost:deletes&gt; element is a cascade delete starting from the <a href="#csvHostDeletesDefinition">"host" Deletes CSV File Definition</a> <cite title="NONE">[csvHostDeletesDefinition]</cite>.  </p>
-<h1 id="rfc.section.5.2.1.3.1"><a href="#rfc.section.5.2.1.3.1">5.2.1.3.1.</a> <a href="#csvHostContents" id="csvHostContents">&lt;csvHost:contents&gt;</a></h1>
-<p id="rfc.section.5.2.1.3.1.p.1">The &lt;csvHost:contents&gt; is used to hold the new or updated host object information for the deposit.  The &lt;csvHost:contents&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  The following sections include the supported host CSV file definitions.  </p>
-<h1 id="rfc.section.5.2.1.3.1.1"><a href="#rfc.section.5.2.1.3.1.1">5.2.1.3.1.1.</a> <a href="#csvHostDefinition" id="csvHostDefinition">"host" CSV File Definition</a></h1>
-<p id="rfc.section.5.2.1.3.1.1.p.1">The "host" CSV File Definition defines the fields and CSV file references used for the host object records.</p>
-<p id="rfc.section.5.2.1.3.1.1.p.2">The following "csvHost" field elements MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
+<h1 id="rfc.section.5.2.2"><a href="#rfc.section.5.2.2">5.2.2.</a> <a href="#hostCsvModel" id="hostCsvModel">CSV Model</a></h1>
+<p id="rfc.section.5.2.2.p.1">For the CSV Model of the host object, the &lt;csvHost:contents&gt; child element of the &lt;rde:contents&gt; element is used to hold the new or updated host objects for the deposit.  The &lt;csvHost:deletes&gt; child element of the &lt;rde:deletes&gt; element is used to hold the deleted or purged host objects for the deposit.  </p>
+<p id="rfc.section.5.2.2.p.2">Differential and incremental deposits are based on changes to the host objects.  The updated host object data under the &lt;csvHost:contents&gt; element is a cascade replace down all of the host CSV files starting with the parent <a href="#csvHostDefinition">"host" CSV File Definition</a> <cite title="NONE">[csvHostDefinition]</cite>.  The child CSV file definitions include a &lt;rdeCsv:fRoid parent="true"&gt; field.  All the child CSV file definition data for the host objects in the parent <a href="#csvHostDefinition">"host" CSV File Definition</a> <cite title="NONE">[csvHostDefinition]</cite> MUST first be deleted and then set using the data in the child CSV files.  The deleted host object data under the &lt;csvHost:deletes&gt; element is a cascade delete starting from the <a href="#csvHostDeletesDefinition">"host" Deletes CSV File Definition</a> <cite title="NONE">[csvHostDeletesDefinition]</cite>.  </p>
+<h1 id="rfc.section.5.2.2.1"><a href="#rfc.section.5.2.2.1">5.2.2.1.</a> <a href="#csvHostContents" id="csvHostContents">&lt;csvHost:contents&gt;</a></h1>
+<p id="rfc.section.5.2.2.1.p.1">The &lt;csvHost:contents&gt; is used to hold the new or updated host object information for the deposit.  The &lt;csvHost:contents&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  The following sections include the supported host CSV file definitions.  </p>
+<h1 id="rfc.section.5.2.2.1.1"><a href="#rfc.section.5.2.2.1.1">5.2.2.1.1.</a> <a href="#csvHostDefinition" id="csvHostDefinition">"host" CSV File Definition</a></h1>
+<p id="rfc.section.5.2.2.1.1.p.1">The "host" CSV File Definition defines the fields and CSV file references used for the host object records.</p>
+<p id="rfc.section.5.2.2.1.1.p.2">The following "csvHost" field elements MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
 
 <dl>
   <dt>&lt;csvHost:fName&gt;</dt>
   <dd style="margin-left: 8">Host name field with type="eppcom:labelType" and isRequired="true".  </dd>
 </dl>
-<p id="rfc.section.5.2.1.3.1.1.p.4">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
+<p id="rfc.section.5.2.2.1.1.p.4">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
 
 <dl>
   <dt>&lt;rdeCsv:fRoid&gt;</dt>
   <dd style="margin-left: 8">Repository Object IDentifier (ROID) assigned to the host object.</dd>
 </dl>
-<p id="rfc.section.5.2.1.3.1.1.p.6">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MAY be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
+<p id="rfc.section.5.2.2.1.1.p.6">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MAY be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
 
 <dl>
@@ -1635,23 +1635,23 @@ domainN.test
   clientX,2009-05-08T12:10:00.0Z,clientX,
   2010-10-03T09:34:00.0Z,
                 </pre>
-<h1 id="rfc.section.5.2.1.3.1.2"><a href="#rfc.section.5.2.1.3.1.2">5.2.1.3.1.2.</a> <a href="#csvHostStatusesDefinition" id="csvHostStatusesDefinition">"hostStatuses" CSV File Definition</a></h1>
-<p id="rfc.section.5.2.1.3.1.2.p.1">The "hostStatuses" CSV File Definition defines the fields and CSV file references used for the host object statuses.  </p>
-<p id="rfc.section.5.2.1.3.1.2.p.2">The following "csvHost" fields, defined for the <a href="#csvHostDefinition">"host" CSV File Definition</a> <cite title="NONE">[csvHostDefinition]</cite>, MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
+<h1 id="rfc.section.5.2.2.1.2"><a href="#rfc.section.5.2.2.1.2">5.2.2.1.2.</a> <a href="#csvHostStatusesDefinition" id="csvHostStatusesDefinition">"hostStatuses" CSV File Definition</a></h1>
+<p id="rfc.section.5.2.2.1.2.p.1">The "hostStatuses" CSV File Definition defines the fields and CSV file references used for the host object statuses.  </p>
+<p id="rfc.section.5.2.2.1.2.p.2">The following "csvHost" fields, defined for the <a href="#csvHostDefinition">"host" CSV File Definition</a> <cite title="NONE">[csvHostDefinition]</cite>, MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
 
 <dl>
   <dt>&lt;csvHost:fStatus&gt;</dt>
   <dd style="margin-left: 8">The status of the host with type="host:statusValueType"/&gt;.  </dd>
 </dl>
-<p id="rfc.section.5.2.1.3.1.2.p.4">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
+<p id="rfc.section.5.2.2.1.2.p.4">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
 
 <dl>
   <dt>&lt;rdeCsv:fRoid&gt;</dt>
   <dd style="margin-left: 8">Host object Registry Object IDentifier (ROID) assigned to the host object.</dd>
 </dl>
-<p id="rfc.section.5.2.1.3.1.2.p.6">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MAY be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
+<p id="rfc.section.5.2.2.1.2.p.6">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MAY be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
 
 <dl>
@@ -1693,9 +1693,9 @@ domainN.test
   ns1domain1test-TEST,clientDeleteProhibited,"Disallow delete",en
   ns1domain2test-TEST,ok,,
                 </pre>
-<h1 id="rfc.section.5.2.1.3.1.3"><a href="#rfc.section.5.2.1.3.1.3">5.2.1.3.1.3.</a> <a href="#csvHostAddressesDefinition" id="csvHostAddressesDefinition">"hostAddresses" CSV File Definition</a></h1>
-<p id="rfc.section.5.2.1.3.1.3.p.1">The "hostAddresses" CSV File Definition defines the fields and CSV file references used for the host object IP addresses.</p>
-<p id="rfc.section.5.2.1.3.1.3.p.2">The following "csvHost" field elements MUST be used in the "hostAddresses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
+<h1 id="rfc.section.5.2.2.1.3"><a href="#rfc.section.5.2.2.1.3">5.2.2.1.3.</a> <a href="#csvHostAddressesDefinition" id="csvHostAddressesDefinition">"hostAddresses" CSV File Definition</a></h1>
+<p id="rfc.section.5.2.2.1.3.p.1">The "hostAddresses" CSV File Definition defines the fields and CSV file references used for the host object IP addresses.</p>
+<p id="rfc.section.5.2.2.1.3.p.2">The following "csvHost" field elements MUST be used in the "hostAddresses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
 
 <dl>
@@ -1704,7 +1704,7 @@ domainN.test
   <dt>&lt;csvHost:fAddrVersion&gt;</dt>
   <dd style="margin-left: 8">IP addresses version associated with the host object with type="host:ipType".  "host:ipType" has the enumerated values of "v4" or "v6".  </dd>
 </dl>
-<p id="rfc.section.5.2.1.3.1.3.p.4">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MUST be used in the "hostAddresses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
+<p id="rfc.section.5.2.2.1.3.p.4">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MUST be used in the "hostAddresses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
 
 <dl>
@@ -1743,10 +1743,10 @@ domainN.test
   ns1domain1test-TEST,192.0.2.29,v4
   ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A,v6
                 </pre>
-<h1 id="rfc.section.5.2.1.3.2"><a href="#rfc.section.5.2.1.3.2">5.2.1.3.2.</a> <a href="#csvHostDeletes" id="csvHostDeletes">&lt;csvHost:deletes&gt;</a></h1>
-<p id="rfc.section.5.2.1.3.2.p.1">The &lt;csvHost:deletes&gt; is used to hold the deleted host objects in a differental or incremental deposit.  All of the host object data is deleted as part of a cascade delete.  The &lt;csvHost:deletes&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  The following section defines the supported host deletes CSV file definition.  </p>
-<h1 id="rfc.section.5.2.1.3.2.1"><a href="#rfc.section.5.2.1.3.2.1">5.2.1.3.2.1.</a> <a href="#csvHostDeletesDefinition" id="csvHostDeletesDefinition">"host" Deletes CSV File Definition</a></h1>
-<p id="rfc.section.5.2.1.3.2.1.p.1">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
+<h1 id="rfc.section.5.2.2.2"><a href="#rfc.section.5.2.2.2">5.2.2.2.</a> <a href="#csvHostDeletes" id="csvHostDeletes">&lt;csvHost:deletes&gt;</a></h1>
+<p id="rfc.section.5.2.2.2.p.1">The &lt;csvHost:deletes&gt; is used to hold the deleted host objects in a differental or incremental deposit.  All of the host object data is deleted as part of a cascade delete.  The &lt;csvHost:deletes&gt; is split into separate CSV file definitions using named &lt;rdeCsv:csv&gt; elements with the "name" attribute.  The following section defines the supported host deletes CSV file definition.  </p>
+<h1 id="rfc.section.5.2.2.2.1"><a href="#rfc.section.5.2.2.2.1">5.2.2.2.1.</a> <a href="#csvHostDeletesDefinition" id="csvHostDeletesDefinition">"host" Deletes CSV File Definition</a></h1>
+<p id="rfc.section.5.2.2.2.1.p.1">The following "rdeCsv" fields, defined in section <a href="#csvCommonFieldElements">CSV common field elements</a> <cite title="NONE">[csvCommonFieldElements]</cite>, MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element: </p>
 <p/>
 
 <dl>

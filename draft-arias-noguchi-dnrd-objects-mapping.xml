@@ -113,7 +113,7 @@
             </address>
         </author>
         
-        <date day="15" month="March" year="2017"/>
+        <date day="17" month="March" year="2017"/>
         
         <area> Applications </area>
         
@@ -1633,7 +1633,7 @@ domainN.test]]>
                         </figure>
                     </t>    
                 </section>
-                
+               </section> 
                <section title="CSV Model" anchor="hostCsvModel">
                 <t>For the CSV Model of the host object, the &lt;csvHost:contents&gt; child 
                    element of the &lt;rde:contents&gt; element is used to hold the new or updated host objects for the deposit.  
@@ -1937,7 +1937,7 @@ domainN.test]]>
                 
                </section>   
                 
-            </section>
+            
             
             </section>
             
