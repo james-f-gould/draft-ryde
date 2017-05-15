@@ -96,7 +96,7 @@
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fStatusType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="csvRegistrar\:statusType"/>

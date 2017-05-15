@@ -56,7 +56,7 @@
            <rdeCsv:fRoid/>         
            <rdeCsv:fIdnTableId/>   
            <csvDomain:fOriginalName/>
-           <rdeCsv:fRegistrant isRequired="true"/>
+           <rdeCsv:fRegistrant/>
            <rdeCsv:fClID/>
            <rdeCsv:fCrRr/>
            <rdeCsv:fCrID/>
@@ -64,7 +64,7 @@
            <rdeCsv:fUpRr/>
            <rdeCsv:fUpID/>
            <rdeCsv:fUpDate/>
-           <rdeCsv:fExDate/>
+           <rdeCsv:fExDate isRequired="true"/>
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
@@ -215,8 +215,8 @@
        <rdeCsv:csv name="hostAddresses" sep=",">
          <rdeCsv:fields>
                <rdeCsv:fRoid parent="true"/>
-           <csvHost:fAddr/>
-           <csvHost:fAddrVersion/>
+           <csvHost:fAddr isRequired="true"/>
+           <csvHost:fAddrVersion isRequired="true"/>
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
@@ -375,7 +375,7 @@
      <csvNNDN:contents>
        <rdeCsv:csv name="NNDN" sep=",">
          <rdeCsv:fields>
-           <csvNNDN:fAName isRequired="true"/>
+           <csvNNDN:fAName/>
            <rdeCsv:fIdnTableId/>         
            <csvNNDN:fOriginalName/>
            <csvNNDN:fNameState/>

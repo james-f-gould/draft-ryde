@@ -84,7 +84,7 @@
             </address>
         </author>
         
-        <date day="10" month="May" year="2017"/>
+        <date day="15" month="May" year="2017"/>
         
         <area> Applications </area>
         
@@ -473,7 +473,7 @@ domainN.test]]>
                   </t>
                   <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client (registrar) that sponsors the object with type="eppcom:clIDType" and isRequired="true".
                   </t>
-                  <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object with type="eppcom:clIDType".
+                  <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object with type="eppcom:clIDType" and isRequired="true".
                   </t>
                   <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the object with type="eppcom:clIDType".
                   </t>
@@ -481,27 +481,27 @@ domainN.test]]>
                   </t>
                   <t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of client that updated the object with type="eppcom:clIDType".
                   </t>
-                  <t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer with type="eppcom:clIDType".
+                  <t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer with type="eppcom:clIDType" and isRequired="true".
                   </t>
                   <t hangText="&lt;rdeCsv:fReID&gt;">Identifier of client that requested the transfer with type="eppcom:clIDType".
                   </t>
-                  <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action with type="eppcom:clIDType".
+                  <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action with type="eppcom:clIDType" and isRequired="true".
                   </t>
                   <t hangText="&lt;rdeCsv:fAcID&gt;">Identifier of client that should take or took action for transfer with type="eppcom:clIDType".
                   </t>
-                  <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date of object with type="dateTime".
+                  <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date of object with type="dateTime" and isRequired="true".
                   </t>
                   <t hangText="&lt;rdeCsv:fUpDate&gt;">Updated date of object with type="dateTime".
                   </t>
                   <t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date of object with type="dateTime".
                   </t>
-                  <t hangText="&lt;rdeCsv:fReDate&gt;">Date that transfer was requested with type="dateTime".
+                  <t hangText="&lt;rdeCsv:fReDate&gt;">Date that transfer was requested with type="dateTime" and isRequired="true".
                   </t>
-                  <t hangText="&lt;rdeCsv:fAcDate&gt;">Date that transfer action should be taken or has been taken with type="dateTime".
+                  <t hangText="&lt;rdeCsv:fAcDate&gt;">Date that transfer action should be taken or has been taken with type="dateTime" and isRequired="true".
                   </t>
                   <t hangText="&lt;rdeCsv:fTrDate&gt;">Date of last transfer with type="dateTime".
                   </t>
-                  <t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request with type="eppcom:trStatusType".
+                  <t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request with type="eppcom:trStatusType" and isRequired="true".
                   </t>
                   <t hangText="&lt;rdeCsv:fTokenType&gt;">General token field with type="token".
                   </t>
@@ -888,10 +888,10 @@ domainN.test]]>
             MUST be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list  style="hanging">
-            <t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) for the domain name object.</t>
-            <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client that sponsors the domain name object.</t>
-              <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object. The attribute isRequired MUST equal "true".</t>
-              <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the domain name object. The attribute isRequired MUST equal "true".</t>
+            <t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) for the domain name object with isRequired="true".</t>
+            <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client that sponsors the domain name object with isRequired="true".</t>
+              <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object with isRequired="true".</t>
+              <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the domain name object with isRequired="true".</t>
             <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
             <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the domain name object.</t>
               <t hangText="&lt;rdeCsv:fExDate&gt;">Expiration date and time for the domain name object. The attribute isRequired MUST equal "true".</t>
@@ -918,15 +918,15 @@ domainN.test]]>
   ...
     <rdeCsv:csv name="domain">
     <rdeCsv:fields>
-      <csvDomain:fName isRequired="true"/>
-      <rdeCsv:fRoid isRequired="true"/>
+      <csvDomain:fName/>
+      <rdeCsv:fRoid/>
       <rdeCsv:fIdnTableId/>
       <csvDomain:fOriginalName/>
       <rdeCsv:fRegistrant/>
-      <rdeCsv:fClID isRequired="ture"/>
-      <rdeCsv:fCrRr isRequired="true"/>
+      <rdeCsv:fClID/>
+      <rdeCsv:fCrRr/>
       <rdeCsv:fCrID/>
-      <rdeCsv:fCrDate isRequired="true"/>
+      <rdeCsv:fCrDate/>
       <rdeCsv:fUpRr/>
       <rdeCsv:fUpID/>
       <rdeCsv:fUpDate/>
@@ -977,7 +977,7 @@ domainN.test]]>
             &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-              <t hangText="&lt;csvDomain:fContactType&gt;">The contact type for the contact object link with type="domain:contactAttrType". The attribute isRequired MUST equal "true". The supported 
+              <t hangText="&lt;csvDomain:fContactType&gt;">The contact type for the contact object link with type="domain:contactAttrType" and isRequired="true". The supported 
           contact type values include "admin" for the administration contact, "billing" for the billing contact, and "tech" for the technical contact.  
           </t>
           
@@ -987,14 +987,14 @@ domainN.test]]>
             MUST be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-              <t hangText="&lt;csvDomain:fName&gt;">The name of the domain object that is linked to the contact object. The attribute isRequired MUST equal "true".</t>
+              <t hangText="&lt;csvDomain:fName&gt;">The name of the domain object that is linked to the contact object with isRequired="true".</t>
             </list></t>
           
             <t>The following "csvContact" fields, defined for the <xref target="csvContactDefinition">"contact" CSV File Definition</xref>,  
             MUST be used in the "domainContacts" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-              <t hangText="&lt;csvContact:fId&gt;">The server-unique contact identifier. The attribute isRequired MUST equal "true".</t>
+              <t hangText="&lt;csvContact:fId&gt;">The server-unique contact identifier with isRequired="true".</t>
             </list></t>
           
             <t>
@@ -1008,9 +1008,9 @@ domainN.test]]>
   ...
     <rdeCsv:csv name="domainContacts">
     <rdeCsv:fields>
-      <csvDomain:fName parent="true" isRequired="true"/>
-      <csvContact:fId parent="true" isRequired="true"/>
-      <csvDomain:fContactType isRequired="true"/>
+      <csvDomain:fName parent="true"/>
+      <csvContact:fId parent="true"/>
+      <csvDomain:fContactType/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -1059,7 +1059,7 @@ domainN.test]]>
             </t>
             <t><list style="hanging">
             
-              <t hangText="&lt;csvDomain:fStatus&gt;">The status of the domain name with type="domain:statusValueType". The attribute isRequired MUST equal "true".  
+              <t hangText="&lt;csvDomain:fStatus&gt;">The status of the domain name with type="domain:statusValueType" and isRequired="true".  
               </t>
                 <t hangText="&lt;csvDomain:fRgpStatus&gt;">The Registry Grace Period (RGP) status, as a sub-status of the &lt;csvDomain:fStatus&gt; "pendingDelete" status value, with type="rgp:statusValueType" as 
                 defined in <xref target="RFC3915"/>.  
@@ -1070,7 +1070,7 @@ domainN.test]]>
             MUST be used in the "domainStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
            </t>
            <t><list style="hanging">
-             <t hangText="&lt;csvDomain:fName&gt;">Domain name of status. The attribute isRequired MUST equal "true".</t>
+             <t hangText="&lt;csvDomain:fName&gt;">Domain name of status with isRequired="true".</t>
            </list></t>
           
           
@@ -1092,8 +1092,8 @@ domainN.test]]>
   ...
     <rdeCsv:csv name="domainStatuses">
     <rdeCsv:fields>
-      <csvDomain:fName parent="true" isRequired="true"/>
-      <csvDomain:fStatus isRequired="true"/>
+      <csvDomain:fName parent="true"/>
+      <csvDomain:fStatus/>
       <rdeCsv:fStatusDescription/>
       <rdeCsv:fLang/>
       <csvDomain:fRgpStatus/>
@@ -1147,14 +1147,14 @@ domainN.test]]>
             MUST be used in the "domainNameServers" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-              <t hangText="&lt;csvDomain:fName&gt;">Domain name using the delegated host with host &lt;rdeCsv:fRoid&gt;. The attribute isRequired MUST equal "true".</t>
+              <t hangText="&lt;csvDomain:fName&gt;">Domain name using the delegated host with host &lt;rdeCsv:fRoid&gt; and isRequired="true".</t>
             </list></t>                
           
             <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
             MUST be used in the "domainNameServers" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-              <t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) used to uniquely reference a delegated host record.  
+              <t hangText="&lt;rdeCsv:fRoid&gt;">Registry Object IDentifier (ROID) used to uniquely reference a delegated host record with isRequired="true".  
             </t>   
              
             </list></t>
@@ -1169,8 +1169,8 @@ domainN.test]]>
   ...
     <rdeCsv:csv name="domainNameServers">
     <rdeCsv:fields>
-      <csvDomain:fName parent="true" isRequired="true"/>
-      <rdeCsv:fRoid parent="true" isRequired="true"/>
+      <csvDomain:fName parent="true"/>
+      <rdeCsv:fRoid parent="true"/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -1220,7 +1220,7 @@ domainN.test]]>
                      MUST be used in the "domainNameServersAddresses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                    </t>
                    <t><list style="hanging">
-                     <t hangText="&lt;csvDomain:fName&gt;">Domain name using the delegated host with host &lt;csvHost:fName&gt;. The attribute isRequired MUST equal "true".</t>
+                     <t hangText="&lt;csvDomain:fName&gt;">Domain name using the delegated host with host &lt;csvHost:fName&gt; and isRequired="true".</t>
                    </list></t>                
                    
                    <t>The following "rdeCsv" fields, defined in section <xref target="hostCsvModel">Host CSV model elements</xref>,  
@@ -1252,8 +1252,8 @@ domainN.test]]>
   ...
     <rdeCsv:csv name="domainNameServersAddresses">
     <rdeCsv:fields>
-      <csvDomain:fName parent="true" isRequired="true"/>
-      <csvHost:fName isRequired="true"/>
+      <csvDomain:fName parent="true"/>
+      <csvHost:fName/>
       <csvHost:fAddr/>
       <csvHost:fAddrVersion/>
     </rdeCsv:fields>
@@ -1351,7 +1351,7 @@ domainN.test]]>
             MUST be used in the "dnssec" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-              <t hangText="&lt;csvDomain:fName&gt;">Domain name of the domain object associated with the DNSSEC record. The attribute isRequired MUST equal "true".</t>
+              <t hangText="&lt;csvDomain:fName&gt;">Domain name of the domain object associated with the DNSSEC record and isRequired="true".</t>
             </list></t>
             <t>
               <figure>
@@ -1363,12 +1363,12 @@ domainN.test]]>
   ...
     <rdeCsv:csv name="dnssec">
     <rdeCsv:fields>
-      <csvDomain:fName parent="true" isRequired="true"/>
+      <csvDomain:fName parent="true"/>
       <csvDomain:fMaxSigLife/>
-      <csvDomain:fKeyTag isRequired="true"/>
-      <csvDomain:fDsAlg isRequired="true"/>
-      <csvDomain:fDigestType isRequired="true"/>
-      <csvDomain:fDigest isRequired="true"/>
+      <csvDomain:fKeyTag/>
+      <csvDomain:fDsAlg/>
+      <csvDomain:fDigestType/>
+      <csvDomain:fDigest/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -1405,12 +1405,12 @@ domainN.test]]>
   ...
     <rdeCsv:csv name="dnssec">
     <rdeCsv:fields>
-      <csvDomain:fName parent="true" isRequired="true"/>
+      <csvDomain:fName/>
       <csvDomain:fMaxSigLife/>
-      <csvDomain:fFlags isRequired="true"/>
-      <csvDomain:fProtocol isRequired="true"/>
-      <csvDomain:fKeyAlg isRequired="true"/>
-      <csvDomain:fPubKey isRequired="true"/>
+      <csvDomain:fFlags/>
+      <csvDomain:fProtocol/>
+      <csvDomain:fKeyAlg/>
+      <csvDomain:fPubKey/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -1448,11 +1448,11 @@ domainN.test]]>
             MUST be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-              <t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request. The attribute isRequired MUST equal "true".</t>
-              <t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer. The attribute isRequired MUST equal "true".</t>
-              <t hangText="&lt;rdeCsv:fReDate&gt;">Date and time that the transfer was requested. The attribute isRequired MUST equal "true".</t>
-              <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action. The attribute isRequired MUST equal "true".</t>
-              <t hangText="&lt;rdeCsv:fAcDate&gt;">Date and time that the transfer action should be taken or has been taken. The attribute isRequired MUST equal "true".</t>
+              <t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request with isRequired="true".</t>
+              <t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer with isRequired="true".</t>
+              <t hangText="&lt;rdeCsv:fReDate&gt;">Date and time that the transfer was requested with isRequired="true".</t>
+              <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action with isRequired="true".</t>
+              <t hangText="&lt;rdeCsv:fAcDate&gt;">Date and time that the transfer action should be taken or has been taken with isRequired="true".</t>
             </list></t>
    
            <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
@@ -1469,7 +1469,7 @@ domainN.test]]>
             MUST be used in the "domainTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-            <t hangText="&lt;csvDomain:fName&gt;">Domain name of the domain object involved in the transfer.</t>
+            <t hangText="&lt;csvDomain:fName&gt;">Domain name of the domain object involved in the transfer with isRequired="true".</t>
             </list></t>
   
             <t>
@@ -1483,14 +1483,14 @@ domainN.test]]>
   ...
     <rdeCsv:csv name="domainTransfer">
     <rdeCsv:fields>
-      <csvDomain:fName parent="true" isRequired="true"/>
-      <rdeCsv:fTrStatus isRequired="true"/>
-      <rdeCsv:fReRr isRequired="true"/>
+      <csvDomain:fName parent="true"/>
+      <rdeCsv:fTrStatus/>
+      <rdeCsv:fReRr/>
       <rdeCsv:fReID/>
-      <rdeCsv:fReDate isRequired="true"/>
-      <rdeCsv:fAcRr isRequired="true"/>
+      <rdeCsv:fReDate/>
+      <rdeCsv:fAcRr/>
       <rdeCsv:fAcID/>
-      <rdeCsv:fAcDate isRequired="true"/>
+      <rdeCsv:fAcDate/>
       <rdeCsv:fExDate/>
     </rdeCsv:fields>
     <rdeCsv:files>
@@ -1554,7 +1554,7 @@ domainN.test]]>
   ...
    <rdeCsv:csv name="domain">
     <rdeCsv:fields>
-    <csvDomain:fName isRequired="true"/>
+    <csvDomain:fName/>
     </rdeCsv:fields>
     <rdeCsv:files>
     <rdeCsv:file 
@@ -1751,16 +1751,16 @@ domainN.test]]>
             MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-            <t hangText="&lt;rdeCsv:fRoid&gt;">Repository Object IDentifier (ROID) assigned to the host object.</t>
+            <t hangText="&lt;rdeCsv:fRoid&gt;">Repository Object IDentifier (ROID) assigned to the host object with isRequired="true".</t>
              </list></t>
             <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
             MAY be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-              <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of the sponsoring client.</t>
-              <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object. The attribute isRequired MUST equal "true".</t>
+              <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of the sponsoring client with isRequired="true".</t>
+              <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object with isRequired="true".</t>
             <t hangText="&lt;rdeCsv:fCrID&gt;">Identifier of client that created the host object.</t>
-              <t hangText="&lt;rdeCsv:fCrDate&gt;">Date and time that the host object was created. The attribute isRequired MUST equal "true".</t>
+              <t hangText="&lt;rdeCsv:fCrDate&gt;">Date and time that the host object was created with isRequired="true".</t>
             <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
             <t hangText="&lt;rdeCsv:fUpID&gt;">Identifier of client that last updated the host object.</t>
             <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time that the host object was last updated.</t>
@@ -1775,12 +1775,12 @@ domainN.test]]>
   ...
     <rdeCsv:csv name="host">
      <rdeCsv:fields>
-     <csvHost:fName isRequired="true"/>
-     <rdeCsv:fRoid isRequired="true"/>
-     <rdeCsv:fClID isRequired="true"/>
-     <rdeCsv:fCrRr isRequired="true"/>
+     <csvHost:fName/>
+     <rdeCsv:fRoid/>
+     <rdeCsv:fClID/>
+     <rdeCsv:fCrRr/>
      <rdeCsv:fCrID/>
-     <rdeCsv:fCrDate isRequired="true"/>
+     <rdeCsv:fCrDate/>
      <rdeCsv:fUpRr/>
      <rdeCsv:fUpID/>
      <rdeCsv:fUpDate/>
@@ -1827,7 +1827,7 @@ domainN.test]]>
             MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-          <t hangText="&lt;csvHost:fStatus&gt;">The status of the host with type="host:statusValueType"/>.  
+          <t hangText="&lt;csvHost:fStatus&gt;">The status of the host with type="host:statusValueType" and isRequired="true"./>.  
           </t>
             </list></t>
           
@@ -1836,7 +1836,7 @@ domainN.test]]>
             MUST be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-            <t hangText="&lt;rdeCsv:fRoid&gt;">Host object Registry Object IDentifier (ROID) assigned to the host object.</t>
+            <t hangText="&lt;rdeCsv:fRoid&gt;">Host object Registry Object IDentifier (ROID) assigned to the host object with isRequired="true".</t>
             </list></t>
             <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
             MAY be used in the "hostStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
@@ -1856,8 +1856,8 @@ domainN.test]]>
   ...
     <rdeCsv:csv name="hostStatuses">
     <rdeCsv:fields>
-      <rdeCsv:fRoid parent="true" isRequired="true"/>
-      <csvHost:fStatus isRequired="true"/>
+      <rdeCsv:fRoid parent="true"/>
+      <csvHost:fStatus/>
       <rdeCsv:fStatusDescription/>
       <rdeCsv:fLang/>
     </rdeCsv:fields>
@@ -1922,7 +1922,7 @@ domainN.test]]>
   ...
     <rdeCsv:csv name="hostAddresses">
     <rdeCsv:fields>
-      <rdeCsv:fRoid parent="true" isRequired="true"/>
+      <rdeCsv:fRoid parent="true"/>
       <csvHost:fAddr isRequired="true"/>
       <csvHost:fAddrVersion isRequired="true"/>
     </rdeCsv:fields>
@@ -1969,7 +1969,7 @@ domainN.test]]>
               MUST be used in the "host" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
             </t>
             <t><list style="hanging">
-              <t hangText="&lt;rdeCsv:fRoid&gt;">Repository Object IDentifier (ROID) assigned to the host object.</t>
+              <t hangText="&lt;rdeCsv:fRoid&gt;">Repository Object IDentifier (ROID) assigned to the host object with isRequired="true".</t>
             </list></t>
             <t>
               <figure>
@@ -1982,13 +1982,13 @@ domainN.test]]>
   ...
    <rdeCsv:csv name="host">
     <rdeCsv:fields>
-    <rdeCsv:fRoid isRequired="true"/>
+      <rdeCsv:fRoid/>
     </rdeCsv:fields>
     <rdeCsv:files>
-    <rdeCsv:file 
-     cksum="E3408F5E">
-     host-delete-YYYYMMDD.csv
-    </rdeCsv:file> 
+      <rdeCsv:file 
+       cksum="E3408F5E">
+       host-delete-YYYYMMDD.csv
+      </rdeCsv:file> 
     </rdeCsv:files>
    </rdeCsv:csv>
   ...
@@ -2325,10 +2325,10 @@ domainN.test]]>
                         MUST be used in the "contact" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                       </t>
                       <t><list style="hanging">
-                        <t hangText="&lt;rdeCsv:fRoid&gt;">The Registry Object IDentifier (ROID) for the contact object.</t>
-                        <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client (registrar) that sponsors the contact object.</t>
-                        <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object. The attribute isRequired MUST equal "true".</t>
-                        <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the contact object. The attribute isRequired MUST equal "true".</t>
+                        <t hangText="&lt;rdeCsv:fRoid&gt;">The Registry Object IDentifier (ROID) for the contact object with isRequired="true".</t>
+                        <t hangText="&lt;rdeCsv:fClID&gt;">Identifier of client (registrar) that sponsors the contact object with isRequired="true".</t>
+                        <t hangText="&lt;rdeCsv:fCrRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that created the object with isRequired="true".</t>
+                        <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the contact object with isRequired="true".</t>
                         <t hangText="&lt;rdeCsv:fUpRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that updated the object.</t>
                         <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the contact object.</t>
                       </list></t>
@@ -2351,17 +2351,17 @@ domainN.test]]>
 ...
   <rdeCsv:csv name="contact">
     <rdeCsv:fields>
-     <csvContact:fId isRequired="true"/>
-     <rdeCsv:fRoid isRequired="true"/>
+     <csvContact:fId/>
+     <rdeCsv:fRoid/>
      <csvContact:fVoice/>
      <csvContact:fVoiceExt/>
      <csvContact:fFax/>
      <csvContact:fFaxExt/>
-     <csvContact:fEmail isRequired="true"/>
-     <rdeCsv:fClID isRequired="true"/>
-     <rdeCsv:fCrRr isRequired="true"/>
+     <csvContact:fEmail/>
+     <rdeCsv:fClID/>
+     <rdeCsv:fCrRr/>
      <rdeCsv:fCrID/>
-     <rdeCsv:fCrDate isRequired="true"/>
+     <rdeCsv:fCrDate/>
      <rdeCsv:fUpRr"/>
      <rdeCsv:fUpID/>
      <rdeCsv:fUpDate/>
@@ -2407,8 +2407,8 @@ mycontactid,Cmycontactid-TEST,+1.7034444444,1234,
                      MUST be used in the "contactStatuses" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                    </t>
                    <t><list style="hanging">
-                     <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier of status. The attribute isRequired MUST equal "true".</t>
-                     <t hangText="&lt;csvContact:fStatus&gt;">The status of the contact with type="contact:statusValueType". The attribute isRequired MUST equal "true".</t>
+                     <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier of status with isRequired="true".</t>
+                     <t hangText="&lt;csvContact:fStatus&gt;">The status of the contact with type="contact:statusValueType" and isRequired="true".</t>
                    </list></t>
                 
                    <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
@@ -2429,8 +2429,8 @@ mycontactid,Cmycontactid-TEST,+1.7034444444,1234,
 ...
   <rdeCsv:csv name="contactStatuses">
     <rdeCsv:fields>
-      <csvContact:fId parent="true" isRequired="true"/>
-      <csvContact:fStatus isRequired="true"/>
+      <csvContact:fId parent="true"/>
+      <csvContact:fStatus/>
       <rdeCsv:fStatusDescription/>
       <rdeCsv:fLang/>
     </rdeCsv:fields>
@@ -2472,6 +2472,12 @@ mycontactid,ok,,]]>
                     </t>
                     <t><list style="hanging">
   
+                     <t hangText="&lt;csvContact:fPostalType&gt;">Contains the form of the postal-address information with type="contact:postalLineType" and isRequired="true".  
+                        This field specifies the form ("int" or "loc"), as defined in <xref target="intandloc"/>, of the 
+                        &lt;csvContact:fName&gt;, &lt;csvContact:fOrg&gt;, &lt;csvContact:fStreet&gt;, &lt;csvContact:fCity&gt;, 
+                        &lt;csvContact:fSp&gt;, &lt;csvContact:fPc&gt;, &lt;csvContact:fCc&gt; fields.  
+                      </t>
+  
                       <t hangText="&lt;csvContact:fName&gt;">Contains the contact's name of the individual or role represented by the contact with type="contact:postalLineType" and isRequired="true".  
                         An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
                       </t>
@@ -2494,13 +2500,7 @@ mycontactid,ok,,]]>
                     <t>The following "csvContact" field elements MAY be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                     </t>
                     <t><list style="hanging">
-  
-                      <t hangText="&lt;csvContact:fPostalType&gt;">Contains the form of the postal-address information with type="contact:postalLineType".  
-                        This field specifies the form ("int" or "loc"), as defined in <xref target="intandloc"/>, of the 
-                        &lt;csvContact:fName&gt;, &lt;csvContact:fOrg&gt;, &lt;csvContact:fStreet&gt;, &lt;csvContact:fCity&gt;, 
-                        &lt;csvContact:fSp&gt;, &lt;csvContact:fPc&gt;, &lt;csvContact:fCc&gt; fields.  
-                      </t>
- 
+   
                       <t hangText="&lt;csvContact:fOrg&gt;">Contains the name of the organization with which the contact is affiliated with type="contact:optPostalLineType".  
                         An OPTIONAL "isLoc" attribute to used to indicate the localized or internationalized form as defined in section <xref target="intandloc"/>. 
                       </t>
@@ -2520,7 +2520,7 @@ mycontactid,ok,,]]>
                       MUST be used in the "contactPostal" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                     </t>
                     <t><list style="hanging">
-                      <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object. The attribute isRequired MUST equal "true".</t>
+                      <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object with isRequired="true".</t>
                     </list></t>
                   
                     <t>
@@ -2534,17 +2534,17 @@ mycontactid,ok,,]]>
 ...
   <rdeCsv:csv name="contactPostal">
     <rdeCsv:fields>
-      <csvContact:fId parent="true" isRequired="true"/>
+      <csvContact:fId parent="true"/>
       <csvContact:fPostalType/>
-      <csvContact:fName isRequired="true"/>
+      <csvContact:fName/>
       <csvContact:fOrg/>
       <csvContact:fStreet index="0"/>
       <csvContact:fStreet index="1"/>
       <csvContact:fStreet index="2"/>
-      <csvContact:fCity isRequired="true"/>
+      <csvContact:fCity/>
       <csvContact:fSp/>
       <csvContact:fPc/>
-      <csvContact:fCc isRequired="true"/>
+      <csvContact:fCc/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -2583,11 +2583,11 @@ mycontactid,int,"John Smith","Acme Inc.",
                     MUST be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                     </t>
                     <t><list style="hanging">
-                      <t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request. The attribute isRequired MUST equal "true".</t>
-                      <t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer. The attribute isRequired MUST equal "true".</t>
-                      <t hangText="&lt;rdeCsv:fReDate&gt;">Date and time that the transfer was requested. The attribute isRequired MUST equal "true".</t>
-                      <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action. The attribute isRequired MUST equal "true".</t>
-                      <t hangText="&lt;rdeCsv:fAcDate&gt;">Date and time that the transfer action should be taken or has been taken isRequired="true.</t>
+                      <t hangText="&lt;rdeCsv:fTrStatus&gt;">State of the most recent transfer request with isRequired="true".</t>
+                      <t hangText="&lt;rdeCsv:fReRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that requested the transfer with isRequired="true".</t>
+                      <t hangText="&lt;rdeCsv:fReDate&gt;">Date and time that the transfer was requested with isRequired="true".</t>
+                      <t hangText="&lt;rdeCsv:fAcRr&gt;">Identifier of the registrar, defined in <xref target="registrarObject"/>, of the client that should take or took action with isRequired="true".</t>
+                      <t hangText="&lt;rdeCsv:fAcDate&gt;">Date and time that the transfer action should be taken or has been taken with isRequired="true".</t>
                     </list></t>
                     <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
                       MAY be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
@@ -2600,7 +2600,7 @@ mycontactid,int,"John Smith","Acme Inc.",
                       MUST be used in the "contactTransfer" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                     </t>
                     <t><list style="hanging">
-                      <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object.</t>
+                      <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object with isRequired="true".</t>
                     </list></t>
                   
                     <t>
@@ -2614,14 +2614,14 @@ mycontactid,int,"John Smith","Acme Inc.",
 ...
   <rdeCsv:csv name="contactTransfer">
     <rdeCsv:fields>
-      <csvContact:fId parent="true" isRequired="true"/>
-      <rdeCsv:fTrStatus isRequired="true"/>
-      <rdeCsv:fReRr isRequired="true"/>
+      <csvContact:fId parent="true"/>
+      <rdeCsv:fTrStatus/>
+      <rdeCsv:fReRr/>
       <rdeCsv:fReID/>
-      <rdeCsv:fReDate isRequired="true"/>
-      <rdeCsv:fAcRr isRequired="true"/>
+      <rdeCsv:fReDate/>
+      <rdeCsv:fAcRr/>
       <rdeCsv:fAcID/>
-      <rdeCsv:fAcDate isRequired="true"/>
+      <rdeCsv:fAcDate/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -2710,7 +2710,7 @@ registrarY,clientY,2011-04-09T20:38:00.0Z]]>
                       MUST be used in the "contactDisclose" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                     </t>
                     <t><list style="hanging">
-                      <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object. The attribute isRequired MUST equal "true".</t>
+                      <t hangText="&lt;csvContact:fId&gt;">Server-unique contact identifier for the contact object with isRequired="true".</t>
                     </list></t>
                   
                     <t>
@@ -2724,7 +2724,7 @@ registrarY,clientY,2011-04-09T20:38:00.0Z]]>
 ...
   <rdeCsv:csv name="contactDisclose">
     <rdeCsv:fields>
-      <csvContact:fId parent="true" isRequired="true"/>
+      <csvContact:fId parent="true"/>
       <csvContact:fDiscloseFlag/>
       <csvContact:fDiscloseNameLoc/>
       <csvContact:fDiscloseNameInt/>
@@ -2796,7 +2796,7 @@ mycontactid,1,1,1,0,0,0,0,0,0,0]]>
 ...
   <rdeCsv:csv name="contact">
     <rdeCsv:fields>
-      <csvContact:fId isRequired="true"/>
+      <csvContact:fId/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -3062,7 +3062,7 @@ mycontactid]]>
                         <t hangText="&lt;csvRegistrar:fName&gt;">Contains the name of the registrar with type="normalizedString" and isRequired="true".  
                         </t>
                 
-                        <t hangText="&lt;csvRegistrar:fStatus&gt;">Contains the status of the registrar with type="csvRegistrar:statusValueType".  
+                        <t hangText="&lt;csvRegistrar:fStatus&gt;">Contains the status of the registrar with type="csvRegistrar:statusValueType" and isRequired="true".  
                         </t>
 
                       </list></t>
@@ -3084,7 +3084,7 @@ mycontactid]]>
                         MUST be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                       </t>
                       <t><list style="hanging">
-                        <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the registrar object.</t>
+                        <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the registrar object with isRequired="true".</t>
                         <t hangText="&lt;rdeCsv:fUpDate&gt;">Date and time of the last update to the registrar object.</t>
                         <t hangText="&lt;rdeCsv:fUrl&gt;">URL for the registrar web home page.</t>
                       </list></t>
@@ -3095,10 +3095,10 @@ mycontactid]]>
                        <t hangText="&lt;csvContact:fStreet&gt;">Registrar street address line with an "index" attribute that represents the order of the street address line from "0" to "2".  
                          An OPTIONAL "isLoc" attribute that is used to indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
                        <t hangText="&lt;csvContact:fCity&gt;">Registrar city with an OPTIONAL "isLoc" attribute that is used to 
-                         indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
+                         indicate the localized or internationalized form, as defined in <xref target="intandloc"/> with isRequired="true".</t>
                        <t hangText="&lt;csvContact:fCc&gt;">Registrar country code with an OPTIONAL "isLoc" attribute that is used to 
-                         indicate the localized or internationalized form, as defined in <xref target="intandloc"/>.</t>
-                       <t hangText="&lt;csvContact:fEmail&gt;">Registrar email address.</t>
+                         indicate the localized or internationalized form, as defined in <xref target="intandloc"/> with isRequired="true".</t>
+                       <t hangText="&lt;csvContact:fEmail&gt;">Registrar email address with isRequired="true".</t>
                      </list></t>
                      <t>The following "csvContact" fields, defined in section <xref target="contactObject">Contact Object</xref>,  
                        MAY be used in the "registrar" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
@@ -3124,10 +3124,10 @@ mycontactid]]>
 ...
   <rdeCsv:csv name="registrar">
     <rdeCsv:fields>
-      <csvRegistrar:fId isRequired="true"/>
-      <csvRegistrar:fName isLoc="false" isRequired="true"/>
+      <csvRegistrar:fId/>
+      <csvRegistrar:fName isLoc="false"/>
       <csvRegistrar:fGurid/>
-      <csvRegistrar:fStatus isRequired="true"/>
+      <csvRegistrar:fStatus/>
       <csvContact:fStreet isLoc="false" index="0"/>
       <csvContact:fStreet isLoc="false" index="1"/>
       <csvContact:fStreet isLoc="false" index="2"/>
@@ -3140,7 +3140,7 @@ mycontactid]]>
       <csvContact:fFax/>
       <csvContact:fFaxExt/>
       <csvContact:fEmail/>
-      <rdeCsv:fUrl isRequired="true"/>
+      <rdeCsv:fUrl/>
       <csvRegistrar:fWhoisUrl/>
       <rdeCsv:fCrDate/>
       <rdeCsv:fUpDate/>
@@ -3205,7 +3205,7 @@ http://whois.example.test,2005-04-23T11:49:00.0Z,
 ...
   <rdeCsv:csv name="registrar">
     <rdeCsv:fields>
-      <csvRegistrar:fId isRequired="true"/>
+      <csvRegistrar:fId/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -3579,7 +3579,7 @@ LANG-2]]>
                    <t><list style="hanging">
                      <t hangText="&lt;csvNNDN:fAName&gt;">ASCII Compatible Encoding (ACE) field of the NNDN with type="eppcom:labelType" and isRequired="true".  
                      </t>
-                     <t hangText="&lt;csvNNDN:fNameState&gt;">State of the NNDN: blocked or withheld with type="rdeNNDN:nameState". The attribute isRequired MUST equal "true".  See <xref target="ndn_object"/> for a description 
+                     <t hangText="&lt;csvNNDN:fNameState&gt;">State of the NNDN: blocked or withheld with type="rdeNNDN:nameState" and isRequired="true".  See <xref target="ndn_object"/> for a description 
                        of the possible values for the &lt;rdeNNDN:nameState&gt; element.</t>
                   </list></t>
                   <t>The following field elements MAY be used in the "NNDN" 
@@ -3594,7 +3594,7 @@ LANG-2]]>
                     MUST be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
                   </t>
                   <t><list  style="hanging">
-                    <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the NNDN object. The attribute isRequired MUST equal "true".</t>
+                    <t hangText="&lt;rdeCsv:fCrDate&gt;">Created date and time of the NNDN object with isRequired="true".</t>
                   </list></t>
                   <t>The following "rdeCsv" fields, defined in section <xref target="csvCommonFieldElements">CSV common field elements</xref>,  
                     MAY be used in the "domain" &lt;rdeCsv:csv&gt; &lt;rdeCsv:fields&gt; element:
@@ -3614,12 +3614,12 @@ LANG-2]]>
 ...
   <rdeCsv:csv name="NNDN" sep=",">
     <rdeCsv:fields>
-      <csvNNDN:fAName isRequired="true"/>
+      <csvNNDN:fAName/>
       <rdeCsv:fIdnTableId/>         
       <csvNNDN:fOriginalName/>
-      <csvNNDN:fNameState isRequired="true"/>
+      <csvNNDN:fNameState/>
       <csvNNDN:fMirroringNS/>
-      <rdeCsv:fCrDate isRequired="true"/>
+      <rdeCsv:fCrDate/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -3680,7 +3680,7 @@ mirrored,1,2005-04-23T11:49:00.0Z]]>
 ...
   <rdeCsv:csv name="NNDN">
     <rdeCsv:fields>
-      <csvNNDN:fAName isRequired="true"/>
+      <csvNNDN:fAName/>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
@@ -4101,377 +4101,423 @@ xn--pingino-q2a.test]]>
 <?xml version="1.0" encoding="UTF-8"?>
 
 <schema targetNamespace="urn:ietf:params:xml:ns:rdeCsv-1.0"
-       xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
-       xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
-       xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
-       xmlns="http://www.w3.org/2001/XMLSchema"
-       elementFormDefault="qualified">
+     xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
+     xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
+     xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+     xmlns="http://www.w3.org/2001/XMLSchema"
+     elementFormDefault="qualified">
 
   <!--
   Import common element types
   -->
   <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
-       schemaLocation="eppcom-1.0.xsd"/>
+     schemaLocation="eppcom-1.0.xsd"/>
   <import namespace="urn:ietf:params:xml:ns:rde-1.0"
-       schemaLocation="rde-1.0.xsd"/>
+     schemaLocation="rde-1.0.xsd"/>
 
   <annotation>
-   <documentation>
-    Registry Data Escrow Comma-Seperated Values (CSV) 
-   </documentation>
+  <documentation>
+    Registry Data Escrow Comma-Seperated Values (CSV)
+  </documentation>
   </annotation>
 
-  <!-- csv content element -->  
+  <!-- csv content element -->
   <element name="csv" type="rdeCsv:csvType"/>
-  
-  
-  <!-- Definition of CSV file -->  
+
+  <!-- Definition of CSV file -->
   <complexType name="csvType">
-    <sequence>
-     <element name="fields" type="rdeCsv:fieldsType"/>
-     <element name="files" type="rdeCsv:filesType"/>
-    </sequence>
-    <attribute name="name" type="token" use="required"/>
-    <attribute name="sep" type="rdeCsv:sepType" default=","/>
+   <sequence>
+    <element name="fields" type="rdeCsv:fieldsType"/>
+    <element name="files" type="rdeCsv:filesType"/>
+   </sequence>
+   <attribute name="name" type="token" use="required"/>
+   <attribute name="sep" type="rdeCsv:sepType" default=","/>
   </complexType>
 
   <!-- field seperator must be a single character -->
   <simpleType name="sepType">
-    <restriction base="string">
-      <minLength value="1"/>
-      <maxLength value="1"/>
-    </restriction>
+   <restriction base="string">
+    <minLength value="1"/>
+    <maxLength value="1"/>
+   </restriction>
   </simpleType>
- 
+
  <!-- Abstract field type -->
- <element name="field" type="rdeCsv:fieldType" 
+ <element name="field" type="rdeCsv:fieldType"
   abstract="true"/>
-  
+
  <complexType name="fieldType">
   <sequence/>
  </complexType>
-  
- <!-- fieldType with optional value (isRequired=false) -->  
+
+ <!-- fieldType with optional value (isRequired=false) -->
  <complexType name="fieldOptionalType">
   <complexContent>
-    <extension base="rdeCsv:fieldType">
-      <sequence/>
-      <attribute name="isRequired" type="boolean" 
-        default="false"/>
-      <attribute name="parent" type="boolean"
-        default="false"/>
-    </extension>
+   <extension base="rdeCsv:fieldType">
+    <sequence/>
+    <attribute name="isRequired" type="boolean"
+      default="false"/>
+    <attribute name="parent" type="boolean"
+      default="false"/>
+   </extension>
   </complexContent>
  </complexType>
- 
- <!-- fieldType with required value (isRequired=false) -->  
+
+ <!-- fieldType with required value (isRequired=false) -->
  <complexType name="fieldRequiredType">
   <complexContent>
-    <extension base="rdeCsv:fieldType">
-      <sequence/>
-      <attribute name="isRequired" type="boolean" 
-        default="true"/>
-      <attribute name="parent" type="boolean"
-        default="false"/>
-    </extension>
+   <extension base="rdeCsv:fieldType">
+    <sequence/>
+    <attribute name="isRequired" type="boolean"
+      default="true"/>
+    <attribute name="parent" type="boolean"
+      default="false"/>
+   </extension>
   </complexContent>
  </complexType>
- 
- 
+
+
  <!-- Concrete field types -->
- 
+
  <!-- UTF-8 Name field (e.g. domain name) -->
- <element name="fUName" type="rdeCsv:fNameType" 
-   substitutionGroup="rdeCsv:field"/>   
+ <element name="fUName" type="rdeCsv:fNameType"
+  substitutionGroup="rdeCsv:field"/>
  <complexType name="fNameType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="eppcom\:labelType"/>
-    </extension>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="eppcom\:labelType"/>
+   </extension>
   </complexContent>
  </complexType>
  <complexType name="fNameRequiredType">
   <complexContent>
-    <extension base="rdeCsv:fieldRequiredType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="eppcom\:labelType"/>
-    </extension>
+   <extension base="rdeCsv:fieldRequiredType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="eppcom\:labelType"/>
+   </extension>
   </complexContent>
  </complexType>
- 
+
 
  <!-- Registry Object IDentifier (roid) field -->
- <element name="fRoid" type="rdeCsv:fRoidType" 
+ <element name="fRoid" type="rdeCsv:fRoidType"
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fRoidType">
   <complexContent>
-    <extension base="rdeCsv:fieldRequiredType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="eppcom\:roidType"/>
-    </extension>
+   <extension base="rdeCsv:fieldRequiredType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="eppcom\:roidType"/>
+   </extension>
   </complexContent>
  </complexType>
 
  <!-- Registrant field -->
- <element name="fRegistrant" type="rdeCsv:fRegistrantType" 
+ <element name="fRegistrant" type="rdeCsv:fRegistrantType"
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fRegistrantType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="eppcom\:clIDType"/>
-    </extension>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="eppcom\:clIDType"/>
+   </extension>
   </complexContent>
  </complexType>
- 
+
  <!-- Object Status Description -->
- <element name="fStatusDescription" 
-  type="rdeCsv:fNormalizedStringType" 
+ <element name="fStatusDescription"
+  type="rdeCsv:fNormalizedStringType"
   substitutionGroup="rdeCsv:field"/>
- 
+
  <!-- clID fields (fClID, fCrID, fUpID) -->
- <!-- Identifier of client that sponsors the object -->   
- <element name="fClID" type="rdeCsv:fClIDRequiredType" 
+ <!-- Identifier of client that sponsors the object -->
+ <element name="fClID" type="rdeCsv:fClIDRequiredType"
   substitutionGroup="rdeCsv:field"/>
- <!-- Identifier of registrar of client 
- that created the object -->  
- <element name="fCrRr" type="rdeCsv:fClIDType" 
+ <!-- Identifier of registrar of client
+ that created the object -->
+ <element name="fCrRr" type="rdeCsv:fClIDRequiredType"
   substitutionGroup="rdeCsv:field"/>
- <!-- Identifier of client that created the object -->  
- <element name="fCrID" type="rdeCsv:fClIDType" 
+ <!-- Identifier of client that created the object -->
+ <element name="fCrID" type="rdeCsv:fClIDType"
   substitutionGroup="rdeCsv:field"/>
- <!-- Identifier of registrar of client that 
- updated the object -->  
+ <!-- Identifier of registrar of client that
+ updated the object -->
  <element name="fUpRr" type="rdeCsv:fClIDType"
   substitutionGroup="rdeCsv:field"/>
- <!-- Identifier of client that updated the object -->  
- <element name="fUpID" type="rdeCsv:fClIDType" 
+ <!-- Identifier of client that updated the object -->
+ <element name="fUpID" type="rdeCsv:fClIDType"
   substitutionGroup="rdeCsv:field"/>
- <!-- Identifier of registrar of client that 
+ <!-- Identifier of registrar of client that
  requested the transfer -->
- <element name="fReRr" type="rdeCsv:fClIDType" 
+ <element name="fReRr" type="rdeCsv:fClIDType"
   substitutionGroup="rdeCsv:field"/>
- <!-- Identifier of client that requested 
+ <!-- Identifier of client that requested
  the transfer -->
- <element name="fReID" type="rdeCsv:fClIDType" 
+ <element name="fReID" type="rdeCsv:fClIDType"
   substitutionGroup="rdeCsv:field"/>
- <!-- Identifier of registrar client that 
+ <!-- Identifier of registrar client that
  should take or took action -->
- <element name="fAcRr" type="rdeCsv:fClIDType" 
+ <element name="fAcRr" type="rdeCsv:fClIDRequiredType"
   substitutionGroup="rdeCsv:field"/>
- <!-- Identifier of client that should take or 
+ <!-- Identifier of client that should take or
  took action -->
- <element name="fAcID" type="rdeCsv:fClIDType" 
+ <element name="fAcID" type="rdeCsv:fClIDType"
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fClIDType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="eppcom\:clIDType"/>
-    </extension>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="eppcom\:clIDType"/>
+   </extension>
   </complexContent>
  </complexType>
  <complexType name="fClIDRequiredType">
   <complexContent>
-    <extension base="rdeCsv:fieldRequiredType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="eppcom\:clIDType"/>
-    </extension>
+   <extension base="rdeCsv:fieldRequiredType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="eppcom\:clIDType"/>
+   </extension>
   </complexContent>
  </complexType>
 
- 
+
  <!-- dateTime fields (fCrDate, fUpDate, fExDate) -->
- <element name="fCrDate" type="rdeCsv:fDateTimeType" 
+ <element name="fCrDate" type="rdeCsv:fRequiredDateTimeType"
   substitutionGroup="rdeCsv:field"/>
- <element name="fUpDate" type="rdeCsv:fDateTimeType" 
+ <element name="fUpDate" type="rdeCsv:fDateTimeType"
   substitutionGroup="rdeCsv:field"/>
- <element name="fExDate" type="rdeCsv:fDateTimeType" 
+ <element name="fExDate" type="rdeCsv:fDateTimeType"
   substitutionGroup="rdeCsv:field"/>
  <!-- Date and time that transfer was requested -->
- <element name="fReDate" type="rdeCsv:fDateTimeType" 
+ <element name="fReDate" type="rdeCsv:fRequiredDateTimeType"
   substitutionGroup="rdeCsv:field"/>
  <!-- Date and time of a required or completed response -->
- <element name="fAcDate" type="rdeCsv:fDateTimeType" 
+ <element name="fAcDate" type="rdeCsv:fRequiredDateTimeType"
   substitutionGroup="rdeCsv:field"/>
- <element name="fTrDate" type="rdeCsv:fDateTimeType" 
+ <element name="fTrDate" type="rdeCsv:fDateTimeType"
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fDateTimeType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="dateTime"/>
-    </extension>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="dateTime"/>
+   </extension>
   </complexContent>
  </complexType>
- 
+  <complexType name="fRequiredDateTimeType">
+  <complexContent>
+   <extension base="rdeCsv:fieldRequiredType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="dateTime"/>
+   </extension>
+  </complexContent>
+ </complexType>
+
+
  <!-- boolean type -->
  <complexType name="fBooleanType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="boolean"/>
-    </extension>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="boolean"/>
+   </extension>
+  </complexContent>
+ </complexType>
+ <complexType name="fRequiredBooleanType">
+  <complexContent>
+   <extension base="rdeCsv:fieldRequiredType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="boolean"/>
+   </extension>
   </complexContent>
  </complexType>
 
  <!-- unsignedByte type -->
  <complexType name="fUnsignedByteType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="unsignedByte"/>
-    </extension>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="unsignedByte"/>
+   </extension>
+  </complexContent>
+ </complexType>
+ <complexType name="fRequiredUnsignedByteType">
+  <complexContent>
+   <extension base="rdeCsv:fieldRequiredType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="unsignedByte"/>
+   </extension>
   </complexContent>
  </complexType>
 
  <!-- unsignedShort type -->
  <complexType name="fUnsignedShortType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="unsignedShort"/>
-    </extension>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="unsignedShort"/>
+   </extension>
+  </complexContent>
+ </complexType> 
+ <complexType name="fRequiredUnsignedShortType">
+  <complexContent>
+   <extension base="rdeCsv:fieldRequiredType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="unsignedShort"/>
+   </extension>
   </complexContent>
  </complexType>
+
 
  <!-- hexBinary type -->
  <complexType name="fHexBinaryType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="hexBinary"/>
-    </extension>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="hexBinary"/>
+   </extension>
+  </complexContent>
+ </complexType>
+ <complexType name="fRequiredHexBinaryType">
+  <complexContent>
+   <extension base="rdeCsv:fieldRequiredType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="hexBinary"/>
+   </extension>
   </complexContent>
  </complexType>
 
 
  <!-- language type -->
- <element name="fLang" type="rdeCsv:fLangType" 
+ <element name="fLang" type="rdeCsv:fLangType"
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fLangType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="language"/>
-    </extension>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="language"/>
+   </extension>
   </complexContent>
  </complexType>
 
  <!-- IDN Table Identifier -->
- <element name="fIdnTableId" type="rdeCsv:fTokenType" 
+ <element name="fIdnTableId" type="rdeCsv:fTokenType"
   substitutionGroup="rdeCsv:field"/>
- 
+
  <!-- State of the most recent transfer request -->
- <element name="fTrStatus" type="rdeCsv:fTrStatusType" 
+ <element name="fTrStatus" type="rdeCsv:fTrStatusType"
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fTrStatusType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="eppcom\:trStatusType"/>
-    </extension>
-  </complexContent>
- </complexType>
- 
- <!-- General token type -->
- <complexType name="fTokenType">
-  <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="token"/>
-    </extension>
-  </complexContent>
- </complexType>
- 
- <!-- General normalizedString type -->
- <complexType name="fNormalizedStringType">
-  <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="normalizedString"/>
-    </extension>
-  </complexContent>
- </complexType>
- 
- <!-- positive integer type -->
- <complexType name="fPositiveIntegerType">
-  <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-        default="positiveInteger"/>
-    </extension>
-  </complexContent>
- </complexType>
- 
- <!-- Custom / extension field type -->
- <element name="fCustom" type="rdeCsv:fCustomType" 
-  substitutionGroup="rdeCsv:field"/>
- <complexType name="fCustomType">
-  <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="name" type="token"/>
-      <attribute name="type" type="token"  
-        default="token"/>
-    </extension>
+   <extension base="rdeCsv:fieldRequiredType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="eppcom\:trStatusType"/>
+   </extension>
   </complexContent>
  </complexType>
 
- <!-- Ordered list of field definitions for the csv --> 
+ <!-- General token type -->
+ <complexType name="fTokenType">
+  <complexContent>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="token"/>
+   </extension>
+  </complexContent>
+ </complexType>
+
+ <!-- General normalizedString type -->
+ <complexType name="fNormalizedStringType">
+  <complexContent>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="normalizedString"/>
+   </extension>
+  </complexContent>
+ </complexType>
+
+ <!-- positive integer type -->
+ <complexType name="fPositiveIntegerType">
+  <complexContent>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+      default="positiveInteger"/>
+   </extension>
+  </complexContent>
+ </complexType>
+
+ <!-- Custom / extension field type -->
+ <element name="fCustom" type="rdeCsv:fCustomType"
+  substitutionGroup="rdeCsv:field"/>
+ <complexType name="fCustomType">
+  <complexContent>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="name" type="token"/>
+    <attribute name="type" type="token"
+      default="token"/>
+   </extension>
+  </complexContent>
+ </complexType>
+
+ <!-- Ordered list of field definitions for the csv -->
  <complexType name="fieldsType">
   <sequence maxOccurs="unbounded">
-    <element ref="rdeCsv:field"/>
+   <element ref="rdeCsv:field"/>
   </sequence>
  </complexType>
- 
+
  <!-- List of files -->
  <complexType name="filesType">
   <sequence>
-    <element name="file" type="rdeCsv:fileType" 
-      maxOccurs="unbounded"/>
+   <element name="file" type="rdeCsv:fileType"
+    maxOccurs="unbounded"/>
   </sequence>
  </complexType>
- 
+
  <!-- File definition -->
  <complexType name="fileType">
   <simpleContent>
-    <extension base="token">
-      <attribute name="compression" type="token"/>
-      <attribute name="encoding" type="token" 
-        default="UTF-8"/>
-      <attribute name="cksum" type="token"/>
-    </extension>
+   <extension base="token">
+    <attribute name="compression" type="token"/>
+    <attribute name="encoding" type="token"
+      default="UTF-8"/>
+    <attribute name="cksum" type="token"/>
+   </extension>
   </simpleContent>
  </complexType>
- 
+
  <!-- URL fields -->
- <element name="fUrl" type="rdeCsv:anyURIType" 
+ <element name="fUrl" type="rdeCsv:anyURIType"
   substitutionGroup="rdeCsv:field"/>
  <complexType name="anyURIType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
-      <sequence/>
-      <attribute name="type" type="token"  
-      default="anyURI"/>
-    </extension>
+   <extension base="rdeCsv:fieldOptionalType">
+    <sequence/>
+    <attribute name="type" type="token"
+    default="anyURI"/>
+   </extension>
   </complexContent>
  </complexType>
 
@@ -4479,7 +4525,7 @@ xn--pingino-q2a.test]]>
   End of schema.
   -->
 </schema>
-END]]></artwork></figure>
+    END]]></artwork></figure>
                 </t>    
             </section>
                        
@@ -4786,7 +4832,7 @@ END]]></artwork></figure>
  
  <complexType name="fContactsTypeType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="domain\:contactAttrType"/>
@@ -4810,31 +4856,31 @@ END]]></artwork></figure>
  </complexType>
 
  <!-- Key tag field -->
- <element name="fKeyTag" type="rdeCsv:fUnsignedShortType" 
+ <element name="fKeyTag" type="rdeCsv:fRequiredUnsignedShortType" 
   substitutionGroup="rdeCsv:field"/>
 
  <!-- DS Algorithm field -->
- <element name="fDsAlg" type="rdeCsv:fUnsignedByteType" 
+ <element name="fDsAlg" type="rdeCsv:fRequiredUnsignedByteType" 
   substitutionGroup="rdeCsv:field"/>
  
  <!-- Digest type field -->
- <element name="fDigestType" type="rdeCsv:fUnsignedByteType" 
+ <element name="fDigestType" type="rdeCsv:fRequiredUnsignedByteType" 
   substitutionGroup="rdeCsv:field"/>
 
  <!-- Digest field -->
- <element name="fDigest" type="rdeCsv:fHexBinaryType" 
+ <element name="fDigest" type="rdeCsv:fRequiredHexBinaryType" 
   substitutionGroup="rdeCsv:field"/>
  
  <!-- Flags field -->
- <element name="fFlags" type="rdeCsv:fUnsignedShortType" 
+ <element name="fFlags" type="rdeCsv:fRequiredUnsignedShortType" 
   substitutionGroup="rdeCsv:field"/>
  
  <!-- Protocol field -->
- <element name="fProtocol" type="rdeCsv:fUnsignedByteType" 
+ <element name="fProtocol" type="rdeCsv:fRequiredUnsignedByteType" 
   substitutionGroup="rdeCsv:field"/>
 
  <!-- Key Algorithm field -->
- <element name="fKeyAlg" type="rdeCsv:fUnsignedByteType" 
+ <element name="fKeyAlg" type="rdeCsv:fRequiredUnsignedByteType" 
   substitutionGroup="rdeCsv:field"/>
 
  <!-- Public Key field -->
@@ -4842,7 +4888,7 @@ END]]></artwork></figure>
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fPubKeyType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="secDNS\:keyType"/>
@@ -4854,6 +4900,11 @@ END]]></artwork></figure>
  <element name="fOriginalName" type="rdeCsv:fNameType" 
   substitutionGroup="rdeCsv:field"/>
   
+ <!-- Variant group / tag field -->
+ <element name="fVariantGroup" 
+   type="rdeCsv:fTokenType" 
+   substitutionGroup="rdeCsv:field"/>
+  
  <!-- Domain status field -->
  <element name="fStatus" type="csvDomain:fStatusType" 
   substitutionGroup="rdeCsv:field"/>
@@ -4861,7 +4912,7 @@ END]]></artwork></figure>
  <!-- Domain status based on domain-1.0.xsd  -->
  <complexType name="fStatusType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
         default="domain\:statusValueType"/>
@@ -5141,7 +5192,7 @@ END]]></artwork></figure>
  <!-- Host status based on host-1.0.xsd  -->
  <complexType name="fStatusType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
         default="host\:statusValueType"/>
@@ -5470,7 +5521,7 @@ Import common element types.
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fPostalTypeType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="contact\:postalInfoEnumType"/>
@@ -5553,7 +5604,7 @@ Import common element types.
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fCcType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="contact\:ccType"/>
@@ -5620,7 +5671,7 @@ Import common element types.
  <!-- Host status based on contact-1.0.xsd  -->
  <complexType name="fStatusType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
         default="contact\:statusValueType"/>
@@ -5990,7 +6041,7 @@ END]]></artwork></figure>
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fStatusType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="csvRegistrar\:statusType"/>
@@ -6573,13 +6624,18 @@ END]]></artwork></figure>
  <element name="fOriginalName" type="rdeCsv:fNameType" 
   substitutionGroup="rdeCsv:field"/> 
 
+ <!-- Variant group / tag field -->
+ <element name="fVariantGroup" 
+   type="rdeCsv:fTokenType" 
+   substitutionGroup="rdeCsv:field"/>
+
  <!-- RGP status field -->
  <element name="fNameState" 
  type="csvNNDN:fNameStateType" 
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fNameStateType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="rdeNNDN\:nameState"/>
@@ -7141,6 +7197,13 @@ END]]></artwork></figure>
                 from the parent object to be consistent with the XML format.</t>
                 <t>Revised the structure of the CSV format sections to utilize sub-sections instead of a list for the CSV file definitions.</t>
                 <t>Added the "CSV Parent Child Relationship" section to describe the concept of parent child relationships across CSV file definitions.</t>                
+                <t>Added the "domainNameServersAddresses" CSV File Definition section to support the domain host attributes model of <xref target="RFC5731"/>.</t>                
+                <t>Made the required fields in the CSV format consistent with the XML format.  The CSV fields updated to be required include:
+                  &lt;rdeCsv:fCrDate&gt;, &lt;csvDomain:fContactType&gt;, &lt;csvDomain:fStatus&gt;, &lt;csvDomain:fKeyTag&gt;, &lt;csvDomain:fDsAlg&gt;, 
+                  &lt;csvDomain:fDigestType&gt;, &lt;csvDomain:fDigest&gt;, &lt;csvDomain:fFlags&gt;, &lt;csvDomain:fProtocol&gt;, 
+                  &lt;csvDomain:fKeyAlg&gt;, &lt;csvDomain:fPubKey&gt;, &lt;rdeCsv:fTrStatus&gt;, &lt;rdeCsv:fReRr&gt;, &lt;rdeCsv:fReDate&lt;, 
+                  &lt;rdeCsv:fAcRr&gt;, &lt;rdeCsv:fAcDate&gt;, &lt;csvHost:fStatus&gt;, &lt;csvContact:fCc&gt;, &lt;csvContact:fStatus&gt;, &lt;csvContact:fPostalType&gt;,
+                  &lt;csvRegistrar:fStatus&gt;, and &lt;csvNNDN:fNameState&gt;.</t> 
               </list>
             </t>
           </section>
@@ -7508,7 +7571,6 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
                   <artwork><![CDATA[
 <?xml version="1.0" encoding="UTF-8"?>
 <rde:deposit
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
    xmlns:rde="urn:ietf:params:xml:ns:rde-1.0"
    xmlns:rdeCsv="urn:ietf:params:xml:ns:rdeCsv-1.0"
@@ -7520,17 +7582,6 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
    xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
-    xsi:schemaLocation="
-    urn:ietf:params:xml:ns:rde-1.0 rde-1.0.xsd 
-    urn:ietf:params:xml:ns:csvDomain-1.0 csvDomain-1.0.xsd 
-    urn:ietf:params:xml:ns:csvHost-1.0 csvHost-1.0.xsd 
-    urn:ietf:params:xml:ns:csvContact-1.0 csvContact-1.0.xsd 
-    urn:ietf:params:xml:ns:csvRegistrar-1.0 csvRegistrar-1.0.xsd 
-    urn:ietf:params:xml:ns:csvIDN-1.0 csvIDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd
-    urn:ietf:params:xml:ns:csvNNDN-1.0 csvNNDN-1.0.xsd
-    urn:ietf:params:xml:ns:rdeEppParams-1.0 rde-epp-param-1.0.xsd
-    urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"
     type="FULL"
    id="20101017001" prevId="20101010001">
    <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
@@ -7557,7 +7608,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
       2
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">
-      1
+      2
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">
       2
@@ -7576,7 +7627,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
            <rdeCsv:fRoid/>         
            <rdeCsv:fIdnTableId/>   
            <csvDomain:fOriginalName/>
-           <rdeCsv:fRegistrant isRequired="true"/>
+           <rdeCsv:fRegistrant/>
            <rdeCsv:fClID/>
            <rdeCsv:fCrRr/>
            <rdeCsv:fCrID/>
@@ -7584,7 +7635,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
            <rdeCsv:fUpRr/>
            <rdeCsv:fUpID/>
            <rdeCsv:fUpDate/>
-           <rdeCsv:fExDate/>
+           <rdeCsv:fExDate isRequired="true"/>
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
@@ -7624,12 +7675,24 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
        <rdeCsv:csv name="domainNameServers" sep=",">
          <rdeCsv:fields>
            <csvDomain:fName parent="true"/>
+           <csvHost:fName parent="true"/>
+           </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="984C3097">
+             domainNameServers-name-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="domainNameServers" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
            <rdeCsv:fRoid/>
            </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
              cksum="569D4638">
-             domainNameServers-YYYYMMDD.csv
+             domainNameServers-roid-YYYYMMDD.csv
            </rdeCsv:file> 
          </rdeCsv:files>
        </rdeCsv:csv>
@@ -7723,8 +7786,8 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
        <rdeCsv:csv name="hostAddresses" sep=",">
          <rdeCsv:fields>
                <rdeCsv:fRoid parent="true"/>
-           <csvHost:fAddr/>
-           <csvHost:fAddrVersion/>
+           <csvHost:fAddr isRequired="true"/>
+           <csvHost:fAddrVersion isRequired="true"/>
          </rdeCsv:fields>
          <rdeCsv:files>
            <rdeCsv:file 
@@ -7883,7 +7946,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
      <csvNNDN:contents>
        <rdeCsv:csv name="NNDN" sep=",">
          <rdeCsv:fields>
-           <csvNNDN:fAName isRequired="true"/>
+           <csvNNDN:fAName/>
            <rdeCsv:fIdnTableId/>         
            <csvNNDN:fOriginalName/>
            <csvNNDN:fNameState/>
@@ -7960,7 +8023,7 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
    xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
    xmlns:csvNNDN="urn:ietf:params:xml:ns:csvNNDN-1.0"
    xmlns:rdeEppParams="urn:ietf:params:xml:ns:rdeEppParams-1.0"
-   type="DIFF"
+    type="DIFF"
    id="20101017001" prevId="20101010001">
    <rde:watermark>2010-10-18T00:00:00Z</rde:watermark>
    <rde:rdeMenu>
@@ -7998,15 +8061,67 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
          </rdeCsv:files>
        </rdeCsv:csv>
      </csvHost:deletes>     
+     <csvContact:deletes>     
+       <rdeCsv:csv name="contact">
+         <rdeCsv:fields>
+           <csvContact:fId/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="6F2B988F">
+             contact-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvContact:deletes>
+     <csvRegistrar:deletes>
+       <rdeCsv:csv name="registrar">
+         <rdeCsv:fields>
+           <csvRegistrar:fId/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="307B87AE">
+             registrar-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvRegistrar:deletes>
+     <csvIDN:deletes>
+       <rdeCsv:csv name="idnLanguage">
+         <rdeCsv:fields>
+           <rdeCsv:fIdnTableId/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="757B573A">
+             idnLanguage-delete-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvIDN:deletes>     
+     <csvNNDN:deletes>
+      <rdeCsv:csv name="NNDN">
+        <rdeCsv:fields>
+          <csvNNDN:fAName/>
+        </rdeCsv:fields>
+        <rdeCsv:files>
+          <rdeCsv:file 
+            cksum="FF104E83">
+            NNDN-delete-YYYYMMDD.csv
+          </rdeCsv:file> 
+        </rdeCsv:files>
+      </rdeCsv:csv>
+    </csvNNDN:deletes>
    </rde:deletes>
    <rde:contents>
      <rdeHeader:header>
       <rdeHeader:tld>test</rdeHeader:tld>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvDomain-1.0">
-      2
+      4
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">
-      1
+      2
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">
       2
@@ -8024,152 +8139,347 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
       1
       </rdeHeader:count>
      </rdeHeader:header>  
-    <csvContact:contents>
-      <rdeCsv:csv name="contact" sep=",">
-        <rdeCsv:fields>
-          <csvContact:fId/>
-          <rdeCsv:fRoid/>
-          <csvContact:fVoice/>
-          <csvContact:fVoiceExt/>
-          <csvContact:fFax/>
-          <csvContact:fFaxExt/>
-          <csvContact:fEmail/>
-          <rdeCsv:fClID/>
-          <rdeCsv:fCrRr/>
-          <rdeCsv:fCrID/>
-          <rdeCsv:fCrDate/>
-          <rdeCsv:fUpRr/>
-          <rdeCsv:fUpID/>
-          <rdeCsv:fUpDate/>
-        </rdeCsv:fields>
-        <rdeCsv:files>
-          <rdeCsv:file 
-            cksum="D7F106A5">
-            contact-YYYYMMDD.csv
-          </rdeCsv:file> 
-        </rdeCsv:files>
-      </rdeCsv:csv>
-      <rdeCsv:csv name="contactStatuses" sep=",">
-        <rdeCsv:fields>
-            <csvContact:fId parent="true"/>
-            <csvContact:fStatus/>
-            <rdeCsv:fStatusDescription/>
-            <rdeCsv:fLang/>
-        </rdeCsv:fields>
-        <rdeCsv:files>
-          <rdeCsv:file 
-            cksum="2AAF99D4">
-            contactStatuses-YYYYMMDD.csv
-          </rdeCsv:file> 
-        </rdeCsv:files>
-      </rdeCsv:csv>
-      <rdeCsv:csv name="contactPostal" sep=",">
-        <rdeCsv:fields>
-          <csvContact:fId parent="true"/>
-          <csvContact:fPostalType/>
-          <csvContact:fName/>
-          <csvContact:fOrg/>
-          <csvContact:fStreet index="0"/>
-          <csvContact:fStreet index="1"/>
-          <csvContact:fStreet index="2"/>
-          <csvContact:fCity/>
-          <csvContact:fSp/>
-          <csvContact:fPc/>
-          <csvContact:fCc/>
-        </rdeCsv:fields>
-        <rdeCsv:files>
-          <rdeCsv:file 
-            cksum="02CC2504">
-            contactPostal-YYYYMMDD.csv
-          </rdeCsv:file> 
-        </rdeCsv:files>
-      </rdeCsv:csv>     
-      <rdeCsv:csv name="contactTransfer" sep=",">
-        <rdeCsv:fields>
-          <csvContact:fId parent="true"/>
-          <rdeCsv:fTrStatus/>
-          <rdeCsv:fReRr/>
-          <rdeCsv:fReID/>
-          <rdeCsv:fReDate/>
-          <rdeCsv:fAcRr/>
-          <rdeCsv:fAcID/>
-          <rdeCsv:fAcDate/>
-        </rdeCsv:fields>
-        <rdeCsv:files>
-          <rdeCsv:file 
-            cksum="D0929632">
-            contactTransfer-YYYYMMDD.csv
-          </rdeCsv:file> 
-        </rdeCsv:files>
-      </rdeCsv:csv>
-      <rdeCsv:csv name="contactDisclose" sep=",">
-        <rdeCsv:fields>
-          <csvContact:fId parent="true"/>
-          <csvContact:fDiscloseFlag/>
-          <csvContact:fDiscloseNameLoc/>
-          <csvContact:fDiscloseNameInt/>
-          <csvContact:fDiscloseOrgLoc/>
-          <csvContact:fDiscloseOrgInt/>
-          <csvContact:fDiscloseAddrLoc/>
-          <csvContact:fDiscloseAddrInt/>
-          <csvContact:fDiscloseVoice/>
-          <csvContact:fDiscloseFax/>
-          <csvContact:fDiscloseEmail/>
-        </rdeCsv:fields>
-        <rdeCsv:files>
-          <rdeCsv:file 
-            cksum="89043A90">
-            contactDisclose-YYYYMMDD.csv
-          </rdeCsv:file> 
-        </rdeCsv:files>
-      </rdeCsv:csv>
-    </csvContact:contents>
-    <csvRegistrar:contents>
-      <rdeCsv:csv name="registrar" sep=",">
-        <rdeCsv:fields>
-          <csvRegistrar:fId/>
-          <csvRegistrar:fName isLoc="false"/>
-          <csvRegistrar:fGurid/>
-          <csvRegistrar:fStatus/>
-          <csvContact:fStreet isLoc="false" index="0"/>
-          <csvContact:fStreet isLoc="false" index="1"/>
-          <csvContact:fStreet isLoc="false" index="2"/>
-          <csvContact:fCity isLoc="false" />
-          <csvContact:fSp isLoc="false" />
-          <csvContact:fPc isLoc="false" />
-          <csvContact:fCc isLoc="false" />
-          <csvContact:fVoice/>
-          <csvContact:fVoiceExt/>
-          <csvContact:fFax/>
-          <csvContact:fFaxExt/>
-          <csvContact:fEmail/>
-          <rdeCsv:fUrl/>
-          <csvRegistrar:fWhoisUrl/>
-          <rdeCsv:fCrDate/>
-          <rdeCsv:fUpDate/>
-        </rdeCsv:fields>
-        <rdeCsv:files>
-          <rdeCsv:file 
-            cksum="306178BB">
-            registrar-YYYYMMDD.csv
-          </rdeCsv:file> 
-        </rdeCsv:files>
-      </rdeCsv:csv>
-    </csvRegistrar:contents>
-    <csvIDN:contents>
-      <rdeCsv:csv name="idnLanguage" sep=",">
-        <rdeCsv:fields>
-          <rdeCsv:fIdnTableId/>
-          <rdeCsv:fUrl/>
-        </rdeCsv:fields>
-        <rdeCsv:files>
-          <rdeCsv:file 
-            cksum="D462EAD0">
-            idnLanguage-YYYYMMDD.csv
-          </rdeCsv:file> 
-        </rdeCsv:files>
-      </rdeCsv:csv>
-    </csvIDN:contents>
+     <csvDomain:contents>
+       <rdeCsv:csv name="domain" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName/>        
+           <rdeCsv:fRoid/>         
+           <rdeCsv:fIdnTableId/>   
+           <csvDomain:fOriginalName/>
+           <rdeCsv:fRegistrant/>
+           <rdeCsv:fClID/>
+           <rdeCsv:fCrRr/>
+           <rdeCsv:fCrID/>
+           <rdeCsv:fCrDate/>
+           <rdeCsv:fUpRr/>
+           <rdeCsv:fUpID/>
+           <rdeCsv:fUpDate/>
+           <rdeCsv:fExDate isRequired="true"/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="75E2D01F">
+             domain-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="domainContacts" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <csvContact:fId/>
+           <csvDomain:fContactType/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="70A7C17B">
+             domainContacts-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="domainStatuses" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <csvDomain:fStatus/>
+           <rdeCsv:fStatusDescription/>
+           <rdeCsv:fLang/>
+           <csvDomain:fRgpStatus/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="EB8C548E">
+             domainStatuses-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="domainNameServers" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <csvHost:fName parent="true"/>
+           </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="984C3097">
+             domainNameServers-name-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="domainNameServers" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <rdeCsv:fRoid/>
+           </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="569D4638">
+             domainNameServers-roid-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="dnssec" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <csvDomain:fMaxSigLife/>
+           <csvDomain:fKeyTag/>
+           <csvDomain:fDsAlg/>
+           <csvDomain:fDigestType/>
+           <csvDomain:fDigest/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="AA15CB43">
+             dnssec-ds-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="dnssec" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <csvDomain:fMaxSigLife/>
+           <csvDomain:fFlags/>
+           <csvDomain:fProtocol/>
+           <csvDomain:fKeyAlg/>
+           <csvDomain:fPubKey/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="1B16F334">
+             dnssec-key-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="domainTransfer" sep=",">
+         <rdeCsv:fields>
+           <csvDomain:fName parent="true"/>
+           <rdeCsv:fTrStatus/>
+           <rdeCsv:fReRr/>
+           <rdeCsv:fReID/>
+           <rdeCsv:fReDate/>
+           <rdeCsv:fAcRr/>
+           <rdeCsv:fAcID/>
+           <rdeCsv:fAcDate/>
+           <rdeCsv:fExDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="71170194">
+             domainTransfer-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvDomain:contents>
+     <csvHost:contents>
+       <rdeCsv:csv name="host" sep=",">
+         <rdeCsv:fields>
+           <csvHost:fName/>
+           <rdeCsv:fRoid/>
+           <rdeCsv:fClID/>
+           <rdeCsv:fCrRr/>
+           <rdeCsv:fCrID/>
+           <rdeCsv:fCrDate/>
+           <rdeCsv:fUpRr/>
+           <rdeCsv:fUpID/>
+           <rdeCsv:fUpDate/>
+           <rdeCsv:fTrDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="120938E3">
+             host-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="hostStatuses" sep=",">
+         <rdeCsv:fields>
+               <rdeCsv:fRoid parent="true"/>
+           <csvHost:fStatus/>
+           <rdeCsv:fStatusDescription/>
+           <rdeCsv:fLang/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="0BA504FC">
+             hostStatuses-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="hostAddresses" sep=",">
+         <rdeCsv:fields>
+               <rdeCsv:fRoid parent="true"/>
+           <csvHost:fAddr isRequired="true"/>
+           <csvHost:fAddrVersion isRequired="true"/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="17888F02">
+             hostAddresses-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvHost:contents>
+     <csvContact:contents>
+       <rdeCsv:csv name="contact" sep=",">
+         <rdeCsv:fields>
+           <csvContact:fId/>
+           <rdeCsv:fRoid/>
+           <csvContact:fVoice/>
+           <csvContact:fVoiceExt/>
+           <csvContact:fFax/>
+           <csvContact:fFaxExt/>
+           <csvContact:fEmail/>
+           <rdeCsv:fClID/>
+           <rdeCsv:fCrRr/>
+           <rdeCsv:fCrID/>
+           <rdeCsv:fCrDate/>
+           <rdeCsv:fUpRr/>
+           <rdeCsv:fUpID/>
+           <rdeCsv:fUpDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="D7F106A5">
+             contact-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="contactStatuses" sep=",">
+         <rdeCsv:fields>
+             <csvContact:fId parent="true"/>
+             <csvContact:fStatus/>
+             <rdeCsv:fStatusDescription/>
+             <rdeCsv:fLang/>
+           </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="2AAF99D4">
+             contactStatuses-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="contactPostal" sep=",">
+         <rdeCsv:fields>
+           <csvContact:fId parent="true"/>
+           <csvContact:fPostalType/>
+           <csvContact:fName/>
+           <csvContact:fOrg/>
+           <csvContact:fStreet index="0"/>
+           <csvContact:fStreet index="1"/>
+           <csvContact:fStreet index="2"/>
+           <csvContact:fCity/>
+           <csvContact:fSp/>
+           <csvContact:fPc/>
+           <csvContact:fCc/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="02CC2504">
+             contactPostal-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>     
+       <rdeCsv:csv name="contactTransfer" sep=",">
+         <rdeCsv:fields>
+           <csvContact:fId parent="true"/>
+           <rdeCsv:fTrStatus/>
+           <rdeCsv:fReRr/>
+           <rdeCsv:fReID/>
+           <rdeCsv:fReDate/>
+           <rdeCsv:fAcRr/>
+           <rdeCsv:fAcID/>
+           <rdeCsv:fAcDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="D0929632">
+             contactTransfer-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+       <rdeCsv:csv name="contactDisclose" sep=",">
+         <rdeCsv:fields>
+           <csvContact:fId parent="true"/>
+           <csvContact:fDiscloseFlag/>
+           <csvContact:fDiscloseNameLoc/>
+           <csvContact:fDiscloseNameInt/>
+           <csvContact:fDiscloseOrgLoc/>
+           <csvContact:fDiscloseOrgInt/>
+           <csvContact:fDiscloseAddrLoc/>
+           <csvContact:fDiscloseAddrInt/>
+           <csvContact:fDiscloseVoice/>
+           <csvContact:fDiscloseFax/>
+           <csvContact:fDiscloseEmail/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="89043A90">
+             contactDisclose-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvContact:contents>
+     <csvRegistrar:contents>
+       <rdeCsv:csv name="registrar" sep=",">
+         <rdeCsv:fields>
+           <csvRegistrar:fId/>
+           <csvRegistrar:fName isLoc="false"/>
+           <csvRegistrar:fGurid/>
+           <csvRegistrar:fStatus/>
+           <csvContact:fStreet isLoc="false" index="0"/>
+           <csvContact:fStreet isLoc="false" index="1"/>
+           <csvContact:fStreet isLoc="false" index="2"/>
+           <csvContact:fCity isLoc="false" />
+           <csvContact:fSp isLoc="false" />
+           <csvContact:fPc isLoc="false" />
+           <csvContact:fCc isLoc="false" />
+           <csvContact:fVoice/>
+           <csvContact:fVoiceExt/>
+           <csvContact:fFax/>
+           <csvContact:fFaxExt/>
+           <csvContact:fEmail/>
+           <rdeCsv:fUrl/>
+           <csvRegistrar:fWhoisUrl/>
+           <rdeCsv:fCrDate/>
+           <rdeCsv:fUpDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="306178BB">
+             registrar-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvRegistrar:contents>
+     <csvIDN:contents>
+       <rdeCsv:csv name="idnLanguage" sep=",">
+         <rdeCsv:fields>
+           <rdeCsv:fIdnTableId isRequired="true"/>
+           <rdeCsv:fUrl isRequired="true"/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="D462EAD0">
+             idnLanguage-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvIDN:contents>
+     <csvNNDN:contents>
+       <rdeCsv:csv name="NNDN" sep=",">
+         <rdeCsv:fields>
+           <csvNNDN:fAName/>
+           <rdeCsv:fIdnTableId/>         
+           <csvNNDN:fOriginalName/>
+           <csvNNDN:fNameState/>
+           <csvNNDN:fMirroringNS/>
+           <rdeCsv:fCrDate/>
+         </rdeCsv:fields>
+         <rdeCsv:files>
+           <rdeCsv:file 
+             cksum="11C80D60">
+             NNDN-YYYYMMDD.csv
+           </rdeCsv:file> 
+         </rdeCsv:files>
+       </rdeCsv:csv>
+     </csvNNDN:contents>
      <rdeEppParams:eppParams>
         <rdeEppParams:version>1.0</rdeEppParams:version>
         <rdeEppParams:lang>en</rdeEppParams:lang>

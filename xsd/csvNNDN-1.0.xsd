@@ -76,7 +76,7 @@
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fNameStateType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="rdeNNDN\:nameState"/>

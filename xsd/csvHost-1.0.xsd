@@ -98,7 +98,7 @@
  <!-- Host status based on host-1.0.xsd  -->
  <complexType name="fStatusType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
         default="host\:statusValueType"/>

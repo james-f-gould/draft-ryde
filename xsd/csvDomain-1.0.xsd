@@ -92,7 +92,7 @@
  
  <complexType name="fContactsTypeType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="domain\:contactAttrType"/>
@@ -116,31 +116,31 @@
  </complexType>
 
  <!-- Key tag field -->
- <element name="fKeyTag" type="rdeCsv:fUnsignedShortType" 
+ <element name="fKeyTag" type="rdeCsv:fRequiredUnsignedShortType" 
   substitutionGroup="rdeCsv:field"/>
 
  <!-- DS Algorithm field -->
- <element name="fDsAlg" type="rdeCsv:fUnsignedByteType" 
+ <element name="fDsAlg" type="rdeCsv:fRequiredUnsignedByteType" 
   substitutionGroup="rdeCsv:field"/>
  
  <!-- Digest type field -->
- <element name="fDigestType" type="rdeCsv:fUnsignedByteType" 
+ <element name="fDigestType" type="rdeCsv:fRequiredUnsignedByteType" 
   substitutionGroup="rdeCsv:field"/>
 
  <!-- Digest field -->
- <element name="fDigest" type="rdeCsv:fHexBinaryType" 
+ <element name="fDigest" type="rdeCsv:fRequiredHexBinaryType" 
   substitutionGroup="rdeCsv:field"/>
  
  <!-- Flags field -->
- <element name="fFlags" type="rdeCsv:fUnsignedShortType" 
+ <element name="fFlags" type="rdeCsv:fRequiredUnsignedShortType" 
   substitutionGroup="rdeCsv:field"/>
  
  <!-- Protocol field -->
- <element name="fProtocol" type="rdeCsv:fUnsignedByteType" 
+ <element name="fProtocol" type="rdeCsv:fRequiredUnsignedByteType" 
   substitutionGroup="rdeCsv:field"/>
 
  <!-- Key Algorithm field -->
- <element name="fKeyAlg" type="rdeCsv:fUnsignedByteType" 
+ <element name="fKeyAlg" type="rdeCsv:fRequiredUnsignedByteType" 
   substitutionGroup="rdeCsv:field"/>
 
  <!-- Public Key field -->
@@ -148,7 +148,7 @@
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fPubKeyType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="secDNS\:keyType"/>
@@ -172,7 +172,7 @@
  <!-- Domain status based on domain-1.0.xsd  -->
  <complexType name="fStatusType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
         default="domain\:statusValueType"/>

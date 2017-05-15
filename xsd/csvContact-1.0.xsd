@@ -124,7 +124,7 @@ Import common element types.
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fPostalTypeType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="contact\:postalInfoEnumType"/>
@@ -207,7 +207,7 @@ Import common element types.
   substitutionGroup="rdeCsv:field"/>
  <complexType name="fCcType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
       default="contact\:ccType"/>
@@ -274,7 +274,7 @@ Import common element types.
  <!-- Host status based on contact-1.0.xsd  -->
  <complexType name="fStatusType">
   <complexContent>
-    <extension base="rdeCsv:fieldOptionalType">
+    <extension base="rdeCsv:fieldRequiredType">
       <sequence/>
       <attribute name="type" type="token"  
         default="contact\:statusValueType"/>
