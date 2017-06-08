@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <rdeReport:report
+   xmlns:rdeReport="urn:ietf:params:xml:ns:rdeReport-1.0"
+   xmlns:rdeHeader="urn:ietf:params:xml:ns:rdeHeader-1.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="
+    urn:ietf:params:xml:ns:rdeHeader-1.0 rde-header-1.0.xsd 
+    urn:ietf:params:xml:ns:rdeReport-1.0 rde-report-1.0.xsd">
+  <rdeReport:id>
+	1391451772003
+  </rdeReport:id>
+  <rdeReport:version>1</rdeReport:version>
+  <rdeReport:rydeSpecEscrow>
+	draft-arias-noguchi-registry-data-escrow-06
+  </rdeReport:rydeSpecEscrow>
+  <rdeReport:rydeSpecMapping>
+	draft-arias-noguchi-dnrd-objects-mapping-04
+  </rdeReport:rydeSpecMapping>
+  <rdeReport:resend>
+	0
+  </rdeReport:resend>
+  <rdeReport:crDate>
+	2014-02-03T17:51:34Z
+  </rdeReport:crDate>
+  <rdeReport:kind>
+	FULL
+  </rdeReport:kind>
+  <rdeReport:watermark>
+	2014-02-02T00:00:00Z
+  </rdeReport:watermark>
+  <rdeHeader:header>
+    <rdeHeader:tld>EXAMPLE23</rdeHeader:tld>
+    <rdeHeader:count uri="urn:ietf:params:xml:ns:csvDomain-1.0">
+		706
+    </rdeHeader:count>
+    <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">
+		318
+    </rdeHeader:count>
+    <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">
+		13
+    </rdeHeader:count>
+    <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">
+		4
+    </rdeHeader:count>
+    <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">
+		101
+    </rdeHeader:count>
+    <rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0">0
+    </rdeHeader:count>
+	<rdeHeader:count
+	 uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">1
+	     </rdeHeader:count>
+  </rdeHeader:header>
+</rdeReport:report>

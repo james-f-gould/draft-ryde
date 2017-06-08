@@ -1,3 +1,6 @@
-ns1domain1test-TEST,clientUpdateProhibited,"Disallow update",en
-ns1domain1test-TEST,clientDeleteProhibited,"Disallow delete",en
-ns1domain2test-TEST,ok,,
+Hns1_domain1_test-TEST,ok,,
+Hns2_domain1_test-TEST,ok,,
+Hns1_domain2_test-TEST,ok,,
+Hns2_domain2_test-TEST,ok,,
+Hns1_example_test-TEST,ok,,
+Hns2_example_test-TEST,ok,,

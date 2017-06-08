@@ -1,0 +1,8 @@
+domain1.test,ns1.domain1.test,192.0.2.1,v4
+domain1.test,ns2.domain1.test,2001:DB8::1,v6
+domain2.test,ns1.domain2.test2,192.0.2.2,v4
+domain2.test,ns2.domain2.test2,2001:DB8::2,v6
+xn--abc123.test,ns1.example.example,,
+xn--abc123.test,ns2.example.example,,
+xn--abc321.test,ns1.example.example,,
+xn--abc321.test,ns2.example.example,,

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mark:mark xmlns:mark="urn:ietf:params:xml:ns:mark-1.0">
+  <mark:trademark>
+	 <mark:id>00052013734689731373468973-65535</mark:id>
+	 <mark:markName>Test &amp; Validate</mark:markName>
+	 <mark:holder entitlement="owner">
+		<mark:org>Ag corporation</mark:org>
+		<mark:addr>
+		  <mark:street>1305 Bright Avenue</mark:street>
+		  <mark:city>Arcadia</mark:city>
+		  <mark:sp>CA</mark:sp>
+		  <mark:pc>90028</mark:pc>
+		  <mark:cc>US</mark:cc>
+		</mark:addr>
+	 </mark:holder>
+	 <mark:contact type="agent">
+		<mark:name>Tony Holland</mark:name>
+		<mark:org>Ag corporation</mark:org>
+		<mark:addr>
+		  <mark:street>1305 Bright Avenue</mark:street>
+		  <mark:city>Arcadia</mark:city>
+		  <mark:sp>CA</mark:sp>
+		  <mark:pc>90028</mark:pc>
+		  <mark:cc>US</mark:cc>
+		</mark:addr>
+		<mark:voice>+1.2025562302</mark:voice>
+		<mark:fax>+1.2025562301</mark:fax>
+		<mark:email>info@agcorporation.com</mark:email>
+	 </mark:contact>
+	 <mark:jurisdiction>US</mark:jurisdiction>
+	 <mark:class>15</mark:class>
+	 <mark:label>testandvalidate</mark:label>
+	 <mark:label>test---validate</mark:label>
+	 <mark:label>testand-validate</mark:label>
+	 <mark:label>test-et-validate</mark:label>
+	 <mark:label>test-validate</mark:label>
+	 <mark:label>test--validate</mark:label>
+	 <mark:label>test-etvalidate</mark:label>
+	 <mark:label>testetvalidate</mark:label>
+	 <mark:label>testvalidate</mark:label>
+	 <mark:label>testet-validate</mark:label>
+	 <mark:goodsAndServices>guitar</mark:goodsAndServices>
+	 <mark:regNum>1234</mark:regNum>
+	 <mark:regDate>2012-12-31T23:00:00.000Z</mark:regDate>
+  </mark:trademark>
+</mark:mark>

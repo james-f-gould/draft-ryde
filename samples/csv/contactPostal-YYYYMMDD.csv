@@ -1,2 +1,9 @@
-sh8013,int,"John Doe","Example Inc.","123 Example Dr.","Suite 100",,Reston,VA,20190,US
-mycontactid,int,"John Smith","Acme Inc.","123 Sample Dr.",,,Reston,VA,20190,US
+domain1admin,int,"John Doe","Example Inc.","123 Example Dr.","Suite 100",,Reston,VA,20190,US
+domain1tech,int,"John Doe","Example Inc.","123 Example Dr.","Suite 100",,Reston,VA,20190,US
+domain1billing,int,"John Doe","Example Inc.","123 Example Dr.","Suite 100",,Reston,VA,20190,US
+domain2admin,int,"John Doe","Example Inc.","123 Example Dr.","Suite 100",,Reston,VA,20190,US
+domain2tech,int,"John Doe","Example Inc.","123 Example Dr.","Suite 100",,Reston,VA,20190,US
+domain2billing,int,"John Doe","Example Inc.","123 Example Dr.","Suite 100",,Reston,VA,20190,US
+xnabc123admin,int,"John Doe","Example Inc.","123 Example Dr.","Suite 100",,Reston,VA,20190,US
+xnabc123tech,int,"John Doe","Example Inc.","123 Example Dr.","Suite 100",,Reston,VA,20190,US
+xnabc123billing,int,"John Doe","Example Inc.","123 Example Dr.","Suite 100",,Reston,VA,20190,US

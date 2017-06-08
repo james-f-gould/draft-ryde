@@ -84,7 +84,7 @@
             </address>
         </author>
         
-        <date day="15" month="May" year="2017"/>
+        <date day="07" month="Jun" year="2017"/>
         
         <area> Applications </area>
         
@@ -913,35 +913,35 @@ domainN.test]]>
                 Example of a "domain" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.                
                 </preamble>
                 <artwork><![CDATA[
-  ...
-  <csvDomain:contents>
-  ...
-    <rdeCsv:csv name="domain">
-    <rdeCsv:fields>
-      <csvDomain:fName/>
-      <rdeCsv:fRoid/>
-      <rdeCsv:fIdnTableId/>
-      <csvDomain:fOriginalName/>
-      <rdeCsv:fRegistrant/>
-      <rdeCsv:fClID/>
-      <rdeCsv:fCrRr/>
-      <rdeCsv:fCrID/>
-      <rdeCsv:fCrDate/>
-      <rdeCsv:fUpRr/>
-      <rdeCsv:fUpID/>
-      <rdeCsv:fUpDate/>
-      <rdeCsv:fExDate isRequired="true"/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-      cksum="75E2D01F">
-      domain-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-    </rdeCsv:csv>
-  ...
-  </csvDomain:contents>
-  ...]]>
+...
+<csvDomain:contents>
+...
+  <rdeCsv:csv name="domain">
+  <rdeCsv:fields>
+    <csvDomain:fName/>
+    <rdeCsv:fRoid/>
+    <rdeCsv:fIdnTableId/>
+    <csvDomain:fOriginalName/>
+    <rdeCsv:fRegistrant/>
+    <rdeCsv:fClID/>
+    <rdeCsv:fCrRr/>
+    <rdeCsv:fCrID/>
+    <rdeCsv:fCrDate/>
+    <rdeCsv:fUpRr/>
+    <rdeCsv:fUpID/>
+    <rdeCsv:fUpDate/>
+    <rdeCsv:fExDate isRequired="true"/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+    <rdeCsv:file 
+    cksum="5E403BD6">
+    domain-YYYYMMDD.csv
+    </rdeCsv:file> 
+  </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvDomain:contents>
+...]]>
                 </artwork>
               </figure>
             </t>    
@@ -949,23 +949,23 @@ domainN.test]]>
               <figure>
                 <preamble>
                 Example of the corresponding domain-YYYYMMDD.csv file.
-                The file contains four records (active ASCII domain, pendingDelete domain, 
+                The file contains four records (two active ASCII domains,
                 original IDN with LANG-1 language rules, and variant IDN 
                 with LANG-1 language rules).                
                 </preamble>
                 <artwork><![CDATA[
-  domain1.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
-  clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
-  2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-  domain2.test,Ddomain1-TEST,,,registrantid,registrarX,registrarX,
-  clientY,1999-04-03T22:00:00.0Z,registrarX,clientY,
-  2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-  xn--abc123.test,Dxnabc123-TEST,LANG-1,,registrantid,registrarX,
-  registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
-  2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
-  xn--abc321.test,Dxnabc321-TEST,LANG-1,xn--cbc321.test,
-  registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
-  registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z]]>
+domain1.test,Ddomain1-TEST,,,registrantid,registrarX,registrarX,
+clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
+2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+domain2.test,Ddomain2-TEST,,,registrantid,registrarX,registrarX,
+clientY,1999-04-03T22:00:00.0Z,registrarX,clientY,
+2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+xn--abc123.test,Dxnabc123-TEST,LANG-1,,registrantid,registrarX,
+registrarX,clientY,2009-04-03T22:00:00.0Z,registrarX,clientY,
+2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z
+xn--abc321.test,Dxnabc321-TEST,LANG-1,xn--abc123.test,
+registrantid,registrarX,registrarX,clientY,2009-04-03T22:00:00.0Z,
+registrarX,clientY,2009-12-03T09:05:00.0Z,2015-04-03T22:00:00.0Z]]>
                 </artwork>
               </figure>
             </t> 
@@ -1003,25 +1003,25 @@ domainN.test]]>
                 Example of a "domainContacts" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.
                 </preamble>
                 <artwork><![CDATA[
-  ...
-  <csvDomain:contents>
-  ...
-    <rdeCsv:csv name="domainContacts">
-    <rdeCsv:fields>
-      <csvDomain:fName parent="true"/>
-      <csvContact:fId parent="true"/>
-      <csvDomain:fContactType/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-      cksum="6BC9F9E8">
-      domainContacts-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-    </rdeCsv:csv>
-  ...
-  </csvDomain:contents>
-  ...]]>
+...
+<csvDomain:contents>
+...
+  <rdeCsv:csv name="domainContacts">
+  <rdeCsv:fields>
+    <csvDomain:fName parent="true"/>
+    <csvContact:fId parent="true"/>
+    <csvDomain:fContactType/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+    <rdeCsv:file 
+    cksum="6B976A6C">
+    domainContacts-YYYYMMDD.csv
+    </rdeCsv:file> 
+  </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvDomain:contents>
+...]]>
               </artwork></figure>
             </t>    
             <t>
@@ -1033,19 +1033,18 @@ domainN.test]]>
                 and xn--abc321.test.
                 </preamble>
                 <artwork><![CDATA[
-  domain1.test,sh8013,admin
-  domain1.test,mycontactid,tech
-  domain1.test,mycontactid,billing
-  domain2.test,mycontactid,admin
-  domain2.test,sh8013,tech
-  domain2.test,mycontactid,billing
-  xn--abc123.test,mycontactid,admin
-  xn--abc123.test,sh8013,tech
-  xn--abc123.test,mycontactid,billing
-  xn--abc321.test,mycontactid,admin
-  xn--abc321.test,sh8013,tech
-  xn--abc321.test,mycontactid,billing
-  ]]>
+domain1.test,domain1admin,admin
+domain1.test,domain1tech,tech
+domain1.test,domain1billing,billing
+domain2.test,domain2admin,admin
+domain2.test,domain2tech,tech
+domain2.test,domain2billing,billing
+xn--abc123.test,xnabc123admin,admin
+xn--abc123.test,xnabc123tech,tech
+xn--abc123.test,xnabc123billing,billing
+xn--abc321.test,xnabc123admin,admin
+xn--abc321.test,xnabc123tech,tech
+xn--abc321.test,xnabc123billing,billing]]>
                 </artwork>
               </figure>
             </t>    
@@ -1087,27 +1086,27 @@ domainN.test]]>
                   Example of a "domainStatuses" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.                
                 </preamble>
                 <artwork><![CDATA[
-  ...
-  <csvDomain:contents>
-  ...
-    <rdeCsv:csv name="domainStatuses">
-    <rdeCsv:fields>
-      <csvDomain:fName parent="true"/>
-      <csvDomain:fStatus/>
-      <rdeCsv:fStatusDescription/>
-      <rdeCsv:fLang/>
-      <csvDomain:fRgpStatus/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-      cksum="EB8C548E">
-      domainStatuses-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-    </rdeCsv:csv>
-  ...
-  </csvDomain:contents>
-  ...]]>
+...
+<csvDomain:contents>
+...
+  <rdeCsv:csv name="domainStatuses">
+  <rdeCsv:fields>
+    <csvDomain:fName parent="true"/>
+    <csvDomain:fStatus/>
+    <rdeCsv:fStatusDescription/>
+    <rdeCsv:fLang/>
+    <csvDomain:fRgpStatus/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+    <rdeCsv:file 
+    cksum="98D139A3">
+    domainStatuses-YYYYMMDD.csv
+    </rdeCsv:file> 
+  </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvDomain:contents>
+...]]>
                 </artwork>
               </figure>
             </t>    
@@ -1120,17 +1119,13 @@ domainN.test]]>
                 and xn--abc321.test.
                 </preamble>
                 <artwork><![CDATA[
-  domain1.test,clientUpdateProhibited,"Disallow update",
-  en,
-  domain1.test,clientDeleteProhibited,"Disallow delete",
-  en,
-  domain2.test,clientUpdateProhibited,"Disallow update",
-  en,
-  domain2.test,pendingDelete,,,
-  redemptionPeriod
-  xn--abc123.test,ok,,,
-  xn--abc321.test,ok,,,
-  ]]>
+domain1.test,clientUpdateProhibited,"Disallow update",
+en,
+domain1.test,clientDeleteProhibited,"Disallow delete",
+en,
+domain2.test,ok,,,
+xn--abc123.test,ok,,,
+xn--abc321.test,ok,,,]]>
                 </artwork>
               </figure>
             </t>    
@@ -1164,24 +1159,24 @@ domainN.test]]>
                 Example of a "domainNameServers" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.  
                 </preamble>
                 <artwork><![CDATA[
-  ...
-  <csvDomain:contents>
-  ...
-    <rdeCsv:csv name="domainNameServers">
-    <rdeCsv:fields>
-      <csvDomain:fName parent="true"/>
-      <rdeCsv:fRoid parent="true"/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-      cksum="569D4638">
-      domainNameServers-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-    </rdeCsv:csv>
-  ...
-  </csvDomain:contents>
-  ...]]>
+...
+<csvDomain:contents>
+...
+  <rdeCsv:csv name="domainNameServers">
+  <rdeCsv:fields>
+    <csvDomain:fName parent="true"/>
+    <rdeCsv:fRoid parent="true"/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+    <rdeCsv:file 
+    cksum="8FE6E9E1">
+    domainNameServers-YYYYMMDD.csv
+    </rdeCsv:file> 
+  </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvDomain:contents>
+...]]>
                 </artwork>
               </figure>
             </t>    
@@ -1196,10 +1191,14 @@ domainN.test]]>
                 the &lt;rdeCsv:fRoid&gt; field element.
                 </preamble>
                 <artwork><![CDATA[
-  domain1.test,Hns1_example_test-TEST
-  domain2.test,Hns1_example_test-TEST
-  xn--abc123.test,Hns1_example_test2-TEST
-  xn--abc321.test,Hns1_example_test2-TEST]]>
+domain1.test,Hns1_domain1_test-TEST
+domain1.test,Hns2_domain1_test-TEST
+domain2.test,Hns1_domain2_test-TEST
+domain2.test,Hns2_domain2_test-TEST
+xn--abc123.test,Hns1_example_test-TEST
+xn--abc123.test,Hns2_example_test-TEST
+xn--abc321.test,Hns1_example_test-TEST
+xn--abc321.test,Hns2_example_test-TEST]]>
                 </artwork>
               </figure>
             </t>    
@@ -1247,26 +1246,26 @@ domainN.test]]>
                          Example of a "domainNameServersAddresses" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.  
                        </preamble>
                        <artwork><![CDATA[
-  ...
-  <csvDomain:contents>
-  ...
-    <rdeCsv:csv name="domainNameServersAddresses">
-    <rdeCsv:fields>
-      <csvDomain:fName parent="true"/>
-      <csvHost:fName/>
-      <csvHost:fAddr/>
-      <csvHost:fAddrVersion/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-      cksum="569D4638">
-      domainNameServersAddresses-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-    </rdeCsv:csv>
-  ...
-  </csvDomain:contents>
-  ...]]>
+...
+<csvDomain:contents>
+...
+  <rdeCsv:csv name="domainNameServersAddresses">
+  <rdeCsv:fields>
+    <csvDomain:fName parent="true"/>
+    <csvHost:fName/>
+    <csvHost:fAddr/>
+    <csvHost:fAddrVersion/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+    <rdeCsv:file 
+    cksum="D3B77438">
+    domainNameServersAddresses-YYYYMMDD.csv
+    </rdeCsv:file> 
+  </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvDomain:contents>
+...]]>
                        </artwork>
                      </figure>
                    </t>    
@@ -1276,12 +1275,18 @@ domainN.test]]>
                        <preamble>
                          Example of the corresponding domainNameServersAddresses-YYYYMMDD.csv file.
                          The file contains the delegated hosts (name servers) for  
-                         the two domain names domain1.test and domain2.test.
+                         the four domain names domain1.test, domain2.test, xn--abc123.test
+                         and xn--abc321.test.
                        </preamble>
                        <artwork><![CDATA[
-  domain1.test,ns1.domain1.test,192.0.2.2,v4
-  domain1.test,ns1.domain1.test,1080:0:0:0:8:800:200C:417A,v6
-  domain2.test,ns1.example.test2,,]]>
+domain1.test,ns1.domain1.test,192.0.2.1,v4
+domain1.test,ns2.domain1.test,2001:DB8::1,v6
+domain2.test,ns1.domain2.test2,192.0.2.2,v4
+domain2.test,ns2.domain2.test2,2001:DB8::2,v6
+xn--abc123.test,ns1.example.example,,
+xn--abc123.test,ns2.example.example,,
+xn--abc321.test,ns1.example.example,,
+xn--abc321.test,ns2.example.example,,]]>
                        </artwork>
                      </figure>
                    </t>    
@@ -1359,27 +1364,27 @@ domainN.test]]>
                 Example of a "dnssec" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element with the DS Data Interface of <xref target="RFC5910"/>:               
                 </preamble>
                 <artwork><![CDATA[
-  <csvDomain:contents>
-  ...
-    <rdeCsv:csv name="dnssec">
-    <rdeCsv:fields>
-      <csvDomain:fName parent="true"/>
-      <csvDomain:fMaxSigLife/>
-      <csvDomain:fKeyTag/>
-      <csvDomain:fDsAlg/>
-      <csvDomain:fDigestType/>
-      <csvDomain:fDigest/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-       cksum="AA15CB43">
-       dnssec-ds-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-    </rdeCsv:csv>
-  ...
-  </csvDomain:contents>
-  ...]]>
+<csvDomain:contents>
+...
+  <rdeCsv:csv name="dnssec">
+  <rdeCsv:fields>
+    <csvDomain:fName parent="true"/>
+    <csvDomain:fMaxSigLife/>
+    <csvDomain:fKeyTag/>
+    <csvDomain:fDsAlg/>
+    <csvDomain:fDigestType/>
+    <csvDomain:fDigest/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+    <rdeCsv:file 
+     cksum="10ED6C42">
+     dnssec-ds-YYYYMMDD.csv
+    </rdeCsv:file> 
+  </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvDomain:contents>
+...]]>
                 </artwork>
               </figure>
             </t>    
@@ -1390,8 +1395,8 @@ domainN.test]]>
                 The file contains two DS records for domain1.test.
                 </preamble>
                 <artwork><![CDATA[
-  domain1.test,604800,12345,3,1,49FD46E6C4B45C55D4AC
-  domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B]]>
+domain1.test,604800,12345,3,1,49FD46E6C4B45C55D4AC
+domain1.test,604800,12346,3,1,38EC35D5B3A34B44C39B]]>
                 </artwork>
               </figure>
             </t>    
@@ -1401,27 +1406,27 @@ domainN.test]]>
                 Example of a "dnssec" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element with the Key Data Interface of <xref target="RFC5910"/>:
                 </preamble>
                 <artwork><![CDATA[
-  <csvDomain:contents>
-  ...
-    <rdeCsv:csv name="dnssec">
-    <rdeCsv:fields>
-      <csvDomain:fName/>
-      <csvDomain:fMaxSigLife/>
-      <csvDomain:fFlags/>
-      <csvDomain:fProtocol/>
-      <csvDomain:fKeyAlg/>
-      <csvDomain:fPubKey/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-       cksum="1B16F334">
-       dnssec-key-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-    </rdeCsv:csv>
-  ...
-  </csvDomain:contents>
-  ...]]>
+<csvDomain:contents>
+...
+  <rdeCsv:csv name="dnssec">
+  <rdeCsv:fields>
+    <csvDomain:fName/>
+    <csvDomain:fMaxSigLife/>
+    <csvDomain:fFlags/>
+    <csvDomain:fProtocol/>
+    <csvDomain:fKeyAlg/>
+    <csvDomain:fPubKey/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+    <rdeCsv:file 
+     cksum="183C3F79">
+     dnssec-key-YYYYMMDD.csv
+    </rdeCsv:file> 
+  </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvDomain:contents>
+...]]>
                 </artwork>
               </figure>
             </t>    
@@ -1432,8 +1437,8 @@ domainN.test]]>
                 The file contains two key records for domain1.test.
                 </preamble>
                 <artwork><![CDATA[
-  domain1.test,604800,257,3,1,AQPJ////4Q==
-  domain1.test,604800,257,3,1,AQPJ////4QQQ]]>
+domain1.test,604800,257,3,1,AQPJ////4Q==
+domain1.test,604800,257,3,1,AQPJ////4QQQ]]>
                 </artwork>
               </figure>
             </t>    
@@ -1478,31 +1483,31 @@ domainN.test]]>
                 Example of a "domainTransfer" &lt;csvDomain:contents&gt; &lt;rdeCsv:csv&gt; element.
                 </preamble>
                 <artwork><![CDATA[
-  ...
-  <csvDomain:contents>
-  ...
-    <rdeCsv:csv name="domainTransfer">
-    <rdeCsv:fields>
-      <csvDomain:fName parent="true"/>
-      <rdeCsv:fTrStatus/>
-      <rdeCsv:fReRr/>
-      <rdeCsv:fReID/>
-      <rdeCsv:fReDate/>
-      <rdeCsv:fAcRr/>
-      <rdeCsv:fAcID/>
-      <rdeCsv:fAcDate/>
-      <rdeCsv:fExDate/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-       cksum="71170194">
-       domainTransfer-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-    </rdeCsv:csv>
-  ...
-  </csvDomain:contents>
-  ...]]>
+...
+<csvDomain:contents>
+...
+  <rdeCsv:csv name="domainTransfer">
+  <rdeCsv:fields>
+    <csvDomain:fName parent="true"/>
+    <rdeCsv:fTrStatus/>
+    <rdeCsv:fReRr/>
+    <rdeCsv:fReID/>
+    <rdeCsv:fReDate/>
+    <rdeCsv:fAcRr/>
+    <rdeCsv:fAcID/>
+    <rdeCsv:fAcDate/>
+    <rdeCsv:fExDate/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+    <rdeCsv:file 
+     cksum="2E5A9ACD">
+     domainTransfer-YYYYMMDD.csv
+    </rdeCsv:file> 
+  </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvDomain:contents>
+...]]>
                 </artwork>
               </figure>
             </t>    
@@ -1510,16 +1515,12 @@ domainN.test]]>
               <figure>
                 <preamble>
                 Example of the corresponding domainTransfer-YYYYMMDD.csv file.
-                The file contains two domain transfer records, with one
-                in pending status and the second in clientApproved status.                
+                The file contains one domain transfer record with a pending status.                
                 </preamble>
                 <artwork><![CDATA[
-  domain1.test,pending,registrarX,clientY,
-  2011-03-08T19:38:00.0Z,registrarY,,2011-03-13T23:59:59.0Z,
-  2016-04-03T22:00:00.0Z
-  domain2.test,clientApproved,registrarX,clientY,
-  2012-03-08T19:38:00.0Z,registrarY,clientY,
-  2012-03-09T23:59:59.0Z,2016-05-04T23:00:00.0Z]]>
+domain1.test,pending,registrarX,clientY,
+2011-03-08T19:38:00.0Z,registrarY,,2011-03-13T23:59:59.0Z,
+2016-04-03T22:00:00.0Z]]>
                 </artwork>
               </figure>
             </t>   
@@ -1549,23 +1550,23 @@ domainN.test]]>
                   Example of a "domain" &lt;csvDomain:deletes&gt; &lt;rdeCsv:csv&gt; element:
                 </preamble>
                 <artwork><![CDATA[
-  ...
-  <csvDomain:deletes>
-  ...
-   <rdeCsv:csv name="domain">
-    <rdeCsv:fields>
-    <csvDomain:fName/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-    <rdeCsv:file 
-     cksum="E19349E0">
-     domain-delete-YYYYMMDD.csv
-    </rdeCsv:file> 
-    </rdeCsv:files>
-   </rdeCsv:csv>
-  ...
-  </csvDomain:deletes>
-  ...]]>
+...
+<csvDomain:deletes>
+...
+ <rdeCsv:csv name="domain">
+  <rdeCsv:fields>
+  <csvDomain:fName/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+  <rdeCsv:file 
+   cksum="A06D8194">
+   domain-delete-YYYYMMDD.csv
+  </rdeCsv:file> 
+  </rdeCsv:files>
+ </rdeCsv:csv>
+...
+</csvDomain:deletes>
+...]]>
               </artwork>
             </figure>
           </t>    
@@ -1576,8 +1577,8 @@ domainN.test]]>
                 The file contains two domain name records.              
               </preamble>
               <artwork><![CDATA[
-  domain1.test
-  domain2.test]]>
+domain1.test
+domain2.test]]>
               </artwork>
             </figure>
           </t>  
@@ -1770,32 +1771,32 @@ domainN.test]]>
               <figure>
                 <preamble>Example of a "host" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element.</preamble>
                 <artwork><![CDATA[
-  ...
-  <csvHost:contents>
-  ...
-    <rdeCsv:csv name="host">
-     <rdeCsv:fields>
-     <csvHost:fName/>
-     <rdeCsv:fRoid/>
-     <rdeCsv:fClID/>
-     <rdeCsv:fCrRr/>
-     <rdeCsv:fCrID/>
-     <rdeCsv:fCrDate/>
-     <rdeCsv:fUpRr/>
-     <rdeCsv:fUpID/>
-     <rdeCsv:fUpDate/>
-     <rdeCsv:fTrDate/>
-     </rdeCsv:fields>
-     <rdeCsv:files>
-     <rdeCsv:file 
-      cksum="120938E3">
-      host-YYYYMMDD.csv
-     </rdeCsv:file> 
-     </rdeCsv:files>
-    </rdeCsv:csv>
-  ...
-  </csvHost:contents>
-  ...]]>
+...
+<csvHost:contents>
+...
+  <rdeCsv:csv name="host">
+   <rdeCsv:fields>
+   <csvHost:fName/>
+   <rdeCsv:fRoid/>
+   <rdeCsv:fClID/>
+   <rdeCsv:fCrRr/>
+   <rdeCsv:fCrID/>
+   <rdeCsv:fCrDate/>
+   <rdeCsv:fUpRr/>
+   <rdeCsv:fUpID/>
+   <rdeCsv:fUpDate/>
+   <rdeCsv:fTrDate/>
+   </rdeCsv:fields>
+   <rdeCsv:files>
+   <rdeCsv:file 
+    cksum="6F1E58E5">
+    host-YYYYMMDD.csv
+   </rdeCsv:file> 
+   </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvHost:contents>
+...]]>
                 </artwork>
               </figure>
             </t>    
@@ -1803,17 +1804,29 @@ domainN.test]]>
               <figure>
                 <preamble>
                 Example of the corresponding host-YYYYMMDD.csv file.
-                The file contains two host records with one being 
-                an internal host and the second being an external 
-                host.
+                The file contains six host records with four being 
+                internal hosts and two being external 
+                hosts.
                 </preamble>
                   <artwork><![CDATA[
-  ns1.domain1.test,Hns1_example_test-TEST,registrarX,registrarX,
-  clientY,1999-05-08T12:10:00.0Z,registrarX,
-  clientY,2009-10-03T09:34:00.0Z,2007-01-08T09:19:00.0Z
-  ns1.example.test2,Hns1_example_test2-TEST,clientY,
-  clientX,2009-05-08T12:10:00.0Z,clientX,
-  2010-10-03T09:34:00.0Z,]]>
+ns1.domain1.test,Hns1_example_test-TEST,registrarX,registrarX,
+clientY,1999-05-08T12:10:00.0Z,registrarX,
+clientY,2009-10-03T09:34:00.0Z,2007-01-08T09:19:00.0Z
+ns2.domain1.test,Hns2_domain1_test-TEST,registrarX,registrarX,
+clientY,1999-05-08T12:10:00.0Z,registrarX,
+clientY,2009-10-03T09:34:00.0Z,2007-01-08T09:19:00.0Z
+ns1.domain2.test,Hns1_domain2_test-TEST,registrarX,registrarX,
+clientY,1999-05-08T12:10:00.0Z,registrarX,
+clientY,2009-10-03T09:34:00.0Z,2007-01-08T09:19:00.0Z
+ns2.domain2.test,Hns2_domain2_test-TEST,registrarX,registrarX,
+clientY,1999-05-08T12:10:00.0Z,registrarX,
+clientY,2009-10-03T09:34:00.0Z,2007-01-08T09:19:00.0Z
+ns1.example.example,Hns1_example_test-TEST,registrarX,registrarX,
+clientY,1999-05-08T12:10:00.0Z,registrarX,
+clientY,2009-10-03T09:34:00.0Z,2007-01-08T09:19:00.0Z
+ns2.example.example,Hns2_example_test-TEST,registrarX,registrarX,
+clientY,1999-05-08T12:10:00.0Z,registrarX,
+clientY,2009-10-03T09:34:00.0Z,2007-01-08T09:19:00.0Z]]>
                 </artwork>
               </figure>
             </t>    
@@ -1851,26 +1864,26 @@ domainN.test]]>
                   Example of a "hostStatuses" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element.
                 </preamble>
                 <artwork><![CDATA[
-  ...
-  <csvHost:contents>
-  ...
-    <rdeCsv:csv name="hostStatuses">
-    <rdeCsv:fields>
-      <rdeCsv:fRoid parent="true"/>
-      <csvHost:fStatus/>
-      <rdeCsv:fStatusDescription/>
-      <rdeCsv:fLang/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-      cksum="0BA504FC">
-      hostStatuses-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-    </rdeCsv:csv>
-  ...
-  </csvHost:contents>
-  ...]]>
+...
+<csvHost:contents>
+...
+  <rdeCsv:csv name="hostStatuses">
+  <rdeCsv:fields>
+    <rdeCsv:fRoid parent="true"/>
+    <csvHost:fStatus/>
+    <rdeCsv:fStatusDescription/>
+    <rdeCsv:fLang/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+    <rdeCsv:file 
+    cksum="0DAE0583">
+    hostStatuses-YYYYMMDD.csv
+    </rdeCsv:file> 
+  </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvHost:contents>
+...]]>
                 </artwork>
               </figure>
             </t>    
@@ -1879,12 +1892,16 @@ domainN.test]]>
                 <preamble>
                 Example of the corresponding hostStatuses-YYYYMMDD.csv file.
                 The file contains the statuses for  
-                the two host names ns1.domain1.test and ns1.domain2.test.
+                the six host names ns1.domain1.test, ns2.domain1.test,
+                ns1.domain2.test, ns2.domain2.test, ns1.example.example and ns2.example.example.
                 </preamble>
                 <artwork><![CDATA[
-  Hns1_example_test-TEST,clientUpdateProhibited,"Disallow update",en
-  Hns1_example_test-TEST,clientDeleteProhibited,"Disallow delete",en
-  Hns1_example_test2-TEST,ok,,]]>
+Hns1_domain1_test-TEST,ok,,
+Hns2_domain1_test-TEST,ok,,
+Hns1_domain2_test-TEST,ok,,
+Hns2_domain2_test-TEST,ok,,
+Hns1_example_test-TEST,ok,,
+Hns2_example_test-TEST,ok,,]]>
                 </artwork>
               </figure>
             </t>    
@@ -1917,25 +1934,25 @@ domainN.test]]>
                   Example of a "hostAddresses" &lt;csvHost:contents&gt; &lt;rdeCsv:csv&gt; element.
                 </preamble>
                 <artwork><![CDATA[
-  ...
-  <csvHost:contents>
-  ...
-    <rdeCsv:csv name="hostAddresses">
-    <rdeCsv:fields>
-      <rdeCsv:fRoid parent="true"/>
-      <csvHost:fAddr isRequired="true"/>
-      <csvHost:fAddrVersion isRequired="true"/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-      cksum="17888F02">
-      hostAddresses-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-    </rdeCsv:csv>
-  ...
-  </csvHost:contents>
-  ...]]>
+...
+<csvHost:contents>
+...
+  <rdeCsv:csv name="hostAddresses">
+  <rdeCsv:fields>
+    <rdeCsv:fRoid parent="true"/>
+    <csvHost:fAddr isRequired="true"/>
+    <csvHost:fAddrVersion isRequired="true"/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+    <rdeCsv:file 
+    cksum="28B194B0">
+    hostAddresses-YYYYMMDD.csv
+    </rdeCsv:file> 
+  </rdeCsv:files>
+  </rdeCsv:csv>
+...
+</csvHost:contents>
+...]]>
                 </artwork>
               </figure>
             </t>    
@@ -1944,11 +1961,14 @@ domainN.test]]>
                 <preamble>
                 Example of the corresponding hostAddressesObj-YYYYMMDD.csv file.
                 The file contains the IP addresses for  
-                the host name ns1.domain1.test.               
+                the host names ns1.domain1.test, ns2.domain1.test,
+                ns1.domain2.test and ns2.domain2.test.               
                 </preamble>
                 <artwork><![CDATA[
-  Hns1_example_test-TEST,192.0.2.2,v4
-  Hns1_example_test-TEST,1080:0:0:0:8:800:200C:417A,v6]]>
+Hns1_domain1_test-TEST,192.0.2.1,v4
+Hns2_domain1_test-TEST,2001:DB8::1,v6
+Hns1_domain2_test-TEST,192.0.2.2,v4
+Hns2_domain2_test-TEST,2001:DB8::2,v6]]>
                 </artwork>
               </figure>
             </t>    
@@ -1977,23 +1997,23 @@ domainN.test]]>
                 Example of a "host" &lt;csvHost:deletes&gt; &lt;rdeCsv:csv&gt; element.             
                 </preamble>
                 <artwork><![CDATA[
-  ...
-  <csvHost:deletes>
-  ...
-   <rdeCsv:csv name="host">
-    <rdeCsv:fields>
-      <rdeCsv:fRoid/>
-    </rdeCsv:fields>
-    <rdeCsv:files>
-      <rdeCsv:file 
-       cksum="E3408F5E">
-       host-delete-YYYYMMDD.csv
-      </rdeCsv:file> 
-    </rdeCsv:files>
-   </rdeCsv:csv>
-  ...
-  </csvHost:deletes>
-  ...]]>
+...
+<csvHost:deletes>
+...
+ <rdeCsv:csv name="host">
+  <rdeCsv:fields>
+    <rdeCsv:fRoid/>
+  </rdeCsv:fields>
+  <rdeCsv:files>
+    <rdeCsv:file 
+     cksum="777F5F0E">
+     host-delete-YYYYMMDD.csv
+    </rdeCsv:file> 
+  </rdeCsv:files>
+ </rdeCsv:csv>
+...
+</csvHost:deletes>
+...]]>
                 </artwork>
               </figure>
             </t>    
@@ -2001,10 +2021,13 @@ domainN.test]]>
               <figure>
                 <preamble>
                 Example of the host-delete-YYYYMMDD.csv file.
-                The file contains one host records.             
+                The file contains four host records.             
                 </preamble>
                 <artwork><![CDATA[
-  Hns1_example_test-TEST]]>
+Hns1_domain1_test-TEST
+Hns2_domain1_test-TEST
+Hns1_domain2_test-TEST
+Hns2_domain2_test-TEST]]>
                 </artwork>
               </figure>
             </t>  
@@ -2368,7 +2391,7 @@ domainN.test]]>
     </rdeCsv:fields>
     <rdeCsv:files>
      <rdeCsv:file 
-      cksum="D7F106A5">
+      cksum="8587AA49">
       contact-YYYYMMDD.csv
      </rdeCsv:file> 
     </rdeCsv:files>
@@ -2383,16 +2406,45 @@ domainN.test]]>
                         <figure>
                           <preamble>
                           Example of the contact-YYYYMMDD.csv file.
-                          The file contains two object contact records.
+                          The file contains nine object contact records.
                           </preamble>
                           <artwork><![CDATA[
-sh8013,Csh8013-TEST,+1.7035555555,1234,+1.7035555556,,
-jdoe@example.test,registrarX,registarX,
+domain1admin,Cdomain1admin-TEST,+1.7035555555,1234,
++1.7035555556,,jdoe@example.test,registrarX,registarX,
 clientY,2009-09-13T08:01:00.0Z,registarX,clientY,
 2009-11-26T09:10:00.0Z
-mycontactid,Cmycontactid-TEST,+1.7034444444,1234,
-+1.7033333333,,jsmith@example.test,registrarX,registarX,clientY,
-2010-09-13T08:01:00.0Z,registarX,clientY,2011-11-26T09:10:00.0Z]]>
+domain1tech,Cdomain1tech-TEST,+1.7035555555,1234,
++1.7035555556,,jdoe@example.test,registrarX,registarX,
+clientY,2009-09-13T08:01:00.0Z,registarX,clientY,
+2009-11-26T09:10:00.0Z
+domain1billing,Cdomain1billing-TEST,+1.7035555555,1234,
++1.7035555556,,jdoe@example.test,registrarX,registarX,
+clientY,2009-09-13T08:01:00.0Z,registarX,clientY,
+2009-11-26T09:10:00.0Z
+domain2admin,Cdomain2admin-TEST,+1.7035555555,1234,
++1.7035555556,,jdoe@example.test,registrarX,registarX,
+clientY,2009-09-13T08:01:00.0Z,registarX,clientY,
+2009-11-26T09:10:00.0Z
+domain2tech,Cdomain2tech-TEST,+1.7035555555,1234,
++1.7035555556,,jdoe@example.test,registrarX,registarX,
+clientY,2009-09-13T08:01:00.0Z,registarX,clientY,
+2009-11-26T09:10:00.0Z
+domain2billing,Cdomain2billing-TEST,+1.7035555555,1234,
++1.7035555556,,jdoe@example.test,registrarX,registarX,
+clientY,2009-09-13T08:01:00.0Z,registarX,clientY,
+2009-11-26T09:10:00.0Z
+xnabc123admin,Cxnabc123admin-TEST,+1.7035555555,1234,
++1.7035555556,,jdoe@example.test,registrarX,registarX,
+clientY,2009-09-13T08:01:00.0Z,registarX,clientY,
+2009-11-26T09:10:00.0Z
+xnabc123tech,Cxnabc123tech-TEST,+1.7035555555,1234,
++1.7035555556,,jdoe@example.test,registrarX,registarX,
+clientY,2009-09-13T08:01:00.0Z,registarX,clientY,
+2009-11-26T09:10:00.0Z
+xnabc123billing,Cxnabc123billing-TEST,+1.7035555555,1234,
++1.7035555556,,jdoe@example.test,registrarX,registarX,
+clientY,2009-09-13T08:01:00.0Z,registarX,clientY,
+2009-11-26T09:10:00.0Z]]>
                           </artwork>
                         </figure>
                     </t>    
@@ -2436,7 +2488,7 @@ mycontactid,Cmycontactid-TEST,+1.7034444444,1234,
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="2AAF99D4">
+        cksum="137E13EC">
         contactStatuses-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2452,12 +2504,18 @@ mycontactid,Cmycontactid-TEST,+1.7034444444,1234,
                         <preamble>
                           Example of the corresponding contactStatuses-YYYYMMDD.csv file.
                           The file contains the statuses for  
-                          the two contact identifiers sh8013 and mycontactid.
+                          the nine contact identifiers.
                         </preamble>
                         <artwork><![CDATA[
-sh8013,clientUpdateProhibited,"Disallow update",en
-sh8013,clientDeleteProhibited,"Disallow delete",en
-mycontactid,ok,,]]>
+domain1admin,ok,,
+domain1tech,ok,,
+domain1billing,ok,,
+domain2admin,ok,,
+domain2tech,ok,,
+domain2billing,ok,,
+xnabc123admin,ok,,
+xnabc123tech,ok,,
+xnabc123billing,ok,,]]>
                         </artwork>
                       </figure>
                     </t>    
@@ -2548,7 +2606,7 @@ mycontactid,ok,,]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="02CC2504">
+        cksum="1456A89C">
         contactPostal-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2563,13 +2621,27 @@ mycontactid,ok,,]]>
                       <figure>
                         <preamble>
                           Example of the contactPostal-YYYYMMDD.csv file.
-                          The file contains two contact postal records.
+                          The file contains nine contact postal records.
                         </preamble>
                         <artwork><![CDATA[
-sh8013,int,"John Doe","Example Inc.",
+domain1admin,int,"John Doe","Example Inc.",
 "123 Example Dr.","Suite 100",,Reston,VA,20190,US
-mycontactid,int,"John Smith","Acme Inc.",
-"123 Sample Dr.",,,Reston,VA,20190,US]]>
+domain1tech,int,"John Doe","Example Inc.",
+"123 Example Dr.","Suite 100",,Reston,VA,20190,US
+domain1billing,int,"John Doe","Example Inc.",
+"123 Example Dr.","Suite 100",,Reston,VA,20190,US
+domain2admin,int,"John Doe","Example Inc.",
+"123 Example Dr.","Suite 100",,Reston,VA,20190,US
+domain2tech,int,"John Doe","Example Inc.",
+"123 Example Dr.","Suite 100",,Reston,VA,20190,US
+domain2billing,int,"John Doe","Example Inc.",
+"123 Example Dr.","Suite 100",,Reston,VA,20190,US
+xnabc123admin,int,"John Doe","Example Inc.",
+"123 Example Dr.","Suite 100",,Reston,VA,20190,US
+xnabc123tech,int,"John Doe","Example Inc.",
+"123 Example Dr.","Suite 100",,Reston,VA,20190,US
+xnabc123billing,int,"John Doe","Example Inc.",
+"123 Example Dr.","Suite 100",,Reston,VA,20190,US]]>
                         </artwork>
                       </figure>
                     </t>    
@@ -2625,7 +2697,7 @@ mycontactid,int,"John Smith","Acme Inc.",
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="D0929632">
+        cksum="788D308E">
         contactTransfer-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2640,15 +2712,11 @@ mycontactid,int,"John Smith","Acme Inc.",
                       <figure>
                         <preamble>
                           Example of the contactTransfer-YYYYMMDD.csv file.
-                          The file contains two contact transfer records 
-                          with one in pending status and the second in 
-                          clientApproved status.
+                          The file contains one contact transfer record in pending status.
                         </preamble>
                         <artwork><![CDATA[
-sh8013,pending,registrarX,clientX,2011-03-08T19:38:00.0Z,
-registrarY,,2011-03-13T23:59:59.0Z
-mycontactid,clientApproved,registrarX,clientX,2011-04-08T19:38:00.0Z,
-registrarY,clientY,2011-04-09T20:38:00.0Z]]>
+xnabc123admin,clientApproved,registrarX,clientX,
+2011-04-08T19:38:00.0Z,registrarY,clientY,2011-04-09T20:38:00.0Z]]>
                         </artwork>
                       </figure>
                     </t>                  
@@ -2738,7 +2806,7 @@ registrarY,clientY,2011-04-09T20:38:00.0Z]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="89043A90">
+        cksum="1141EFD4">
         contactDisclose-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2753,14 +2821,11 @@ registrarY,clientY,2011-04-09T20:38:00.0Z]]>
                       <figure>
                         <preamble>
                           Example of the contactDisclose-YYYYMMDD.csv file.
-                          The file contains two disclosure records.  The first contact 
-                          disables disclosure of voice, fax, and email.  
-                          The second contact enables disclosure of the localized 
-                          and internationalized form of the name.
+                          The file contains one disclosure records, disabling
+                          disclosure of voice, fax, and email.  
                         </preamble>
                         <artwork><![CDATA[
-sh8013,0,0,0,0,0,0,0,1,1,1
-mycontactid,1,1,1,0,0,0,0,0,0,0]]>
+xnabc123admin,0,0,0,0,0,0,0,1,1,1]]>
                         </artwork>
                       </figure>
                     </t>    
@@ -2800,7 +2865,7 @@ mycontactid,1,1,1,0,0,0,0,0,0,0]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="6F2B988F">
+        cksum="0C4B70DC">
         contact-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -2815,11 +2880,15 @@ mycontactid,1,1,1,0,0,0,0,0,0,0]]>
                         <figure>
                           <preamble>
                           Example of the contact-delete-YYYYMMDD.csv file.
-                          The file contains two contact records.                          
+                          The file contains six contact records.                          
                           </preamble>
                           <artwork><![CDATA[
-sh8013
-mycontactid]]>
+domain1admin
+domain1tech
+domain1billing
+domain2admin
+domain2tech
+domain2billing]]>
                           </artwork>
                         </figure>
                     </t>    
@@ -3147,7 +3216,7 @@ mycontactid]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="306178BB">
+        cksum="57F6856F">
         registrar-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3162,10 +3231,20 @@ mycontactid]]>
                         <figure>
                           <preamble>
                             Example of the registrar-YYYYMMDD.csv file.
-                            The file contains one registrar record.
+                            The file contains three registrar records.
                           </preamble>
                           <artwork><![CDATA[
-EXAMPLE,"Example Inc.",1234,ok,"123 Example Dr.",
+registrarX,"Example Inc.",1234,ok,"123 Example Dr.",
+"Suite 100",,Dulles,VA,20166-6503,US,+1.7035555555,1234,
++1.7035555556,,jdoe@example.test,http://www.example.test,
+http://whois.example.test,2005-04-23T11:49:00.0Z,
+2009-02-17T17:51:00.0Z
+registrarY,"Example2 Inc.",1234,ok,"123 Example Dr.",
+"Suite 100",,Dulles,VA,20166-6503,US,+1.7035555555,1234,
++1.7035555556,,jdoe@example.test,http://www.example.test,
+http://whois.example.test,2005-04-23T11:49:00.0Z,
+2009-02-17T17:51:00.0Z
+registrarZ,"Example2 Inc.",1234,ok,"123 Example Dr.",
 "Suite 100",,Dulles,VA,20166-6503,US,+1.7035555555,1234,
 +1.7035555556,,jdoe@example.test,http://www.example.test,
 http://whois.example.test,2005-04-23T11:49:00.0Z,
@@ -3209,7 +3288,7 @@ http://whois.example.test,2005-04-23T11:49:00.0Z,
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="307B87AE">
+        cksum="5CB20A52">
         registrar-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3224,11 +3303,10 @@ http://whois.example.test,2005-04-23T11:49:00.0Z,
                       <figure>
                         <preamble>
                           Example of the registrar-delete-YYYYMMDD.csv file.
-                          The file contains two registrar records.
+                          The file contains one registrar record.
                         </preamble>
                         <artwork><![CDATA[
-EXAMPLE
-EXAMPLE2]]>
+registrarZ]]>
                         </artwork>
                       </figure>
                     </t> 
@@ -3343,7 +3421,7 @@ EXAMPLE2]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="D462EAD0">
+        cksum="D6B0424F">
         idnLanguage-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3402,7 +3480,7 @@ http://www.iana.org/domains/idn-tables/tables/test_tab2_1.1.txt]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="757B573A">
+        cksum="4A28A569">
         idnLanguage-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3417,10 +3495,9 @@ http://www.iana.org/domains/idn-tables/tables/test_tab2_1.1.txt]]>
                       <figure>
                         <preamble>
                           Example of the idnLanguage-delete-YYYYMMDD.csv file.
-                          The file contains two IDN language records.
+                          The file contains one IDN language record.
                         </preamble>
                         <artwork><![CDATA[
-LANG-1
 LANG-2]]>
                         </artwork>
                       </figure>
@@ -3623,7 +3700,7 @@ LANG-2]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="11C80D60">
+        cksum="085A7CE4">
         NNDN-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3643,9 +3720,9 @@ LANG-2]]>
                           one blocked variant and one mirrored variant.
                         </preamble>
                         <artwork><![CDATA[
-xn--exampl-gva.test,pt-BR,xn--exampl.test,
+xn--abc456.test,LANG-1,xn--abc123.test,
 blocked,,2005-04-23T11:49:00.0Z
-xn--exampl2-gva.test,pt-BR,xn--exampl.test,
+xn--abc789.test,LANG-1,xn--abc123.test,
 mirrored,1,2005-04-23T11:49:00.0Z]]>
                         </artwork>
                       </figure>
@@ -3684,7 +3761,7 @@ mirrored,1,2005-04-23T11:49:00.0Z]]>
     </rdeCsv:fields>
     <rdeCsv:files>
       <rdeCsv:file 
-        cksum="FF104E83">
+        cksum="A41F1D9B">
         NNDN-delete-YYYYMMDD.csv
       </rdeCsv:file> 
     </rdeCsv:files>
@@ -3699,10 +3776,10 @@ mirrored,1,2005-04-23T11:49:00.0Z]]>
                       <figure>
                         <preamble>
                           Example of the corresponding NNDN-delete-YYYYMMDD.csv file.
-                          The file contains one NNDN record.
+                          The file contains one NNDN records.
                         </preamble>
                         <artwork><![CDATA[
-xn--pingino-q2a.test]]>
+xn--abc456.test]]>
                         </artwork>
                       </figure>
                     </t> 
@@ -7089,7 +7166,9 @@ END]]></artwork></figure>
                 Parts of this document are based on EPP <xref target="RFC5730"/> and related RFCs by Scott Hollenbeck.
             </t>
             <t>
-                TBD
+              Shoji Noguchi and Francisco Arias participated
+              as co-authors until version 05 providing invaluable support for this
+              document.
             </t>
         </section>
               
@@ -7203,7 +7282,8 @@ END]]></artwork></figure>
                   &lt;csvDomain:fDigestType&gt;, &lt;csvDomain:fDigest&gt;, &lt;csvDomain:fFlags&gt;, &lt;csvDomain:fProtocol&gt;, 
                   &lt;csvDomain:fKeyAlg&gt;, &lt;csvDomain:fPubKey&gt;, &lt;rdeCsv:fTrStatus&gt;, &lt;rdeCsv:fReRr&gt;, &lt;rdeCsv:fReDate&lt;, 
                   &lt;rdeCsv:fAcRr&gt;, &lt;rdeCsv:fAcDate&gt;, &lt;csvHost:fStatus&gt;, &lt;csvContact:fCc&gt;, &lt;csvContact:fStatus&gt;, &lt;csvContact:fPostalType&gt;,
-                  &lt;csvRegistrar:fStatus&gt;, and &lt;csvNNDN:fNameState&gt;.</t> 
+                  &lt;csvRegistrar:fStatus&gt;, and &lt;csvNNDN:fNameState&gt;.</t>
+                <t>Revised the CSV examples to use a more realistic set of records.</t>
               </list>
             </t>
           </section>
@@ -7602,13 +7682,13 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
       4
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">
-      2
+      6
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">
-      2
+      9
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">
-      2
+      3
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">
       2
@@ -8118,22 +8198,22 @@ http://www.iana.org/domains/idn-tables/tables/br_pt-br_1.0.html
      <rdeHeader:header>
       <rdeHeader:tld>test</rdeHeader:tld>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvDomain-1.0">
-      4
+      2
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">
       2
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">
-      2
+      3
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">
       1
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">
-      2
+      1
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvNNDN-1.0">
-      2
+      1
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:rdeEppParams-1.0">
       1

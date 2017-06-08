@@ -1,3 +1,9 @@
-sh8013,clientUpdateProhibited,"Disallow update",en
-sh8013,clientDeleteProhibited,"Disallow delete",en
-mycontactid,ok,,
+domain1admin,ok,,
+domain1tech,ok,,
+domain1billing,ok,,
+domain2admin,ok,,
+domain2tech,ok,,
+domain2billing,ok,,
+xnabc123admin,ok,,
+xnabc123tech,ok,,
+xnabc123billing,ok,,

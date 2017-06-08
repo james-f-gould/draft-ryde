@@ -1,4 +1,5 @@
 domain1.test,clientUpdateProhibited,"Disallow update",en,
 domain1.test,clientDeleteProhibited,"Disallow delete",en,
-domain2.test,clientUpdateProhibited,"Disallow update",en,
-domain2.test,pendingDelete,,,redemptionPeriod
+domain2.test,ok,,,
+xn--abc123.test,ok,,,
+xn--abc321.test,ok,,,

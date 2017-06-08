@@ -31,13 +31,13 @@
       4
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvHost-1.0">
-      2
+      6
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvContact-1.0">
-      2
+      9
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvRegistrar-1.0">
-      2
+      3
       </rdeHeader:count>
       <rdeHeader:count uri="urn:ietf:params:xml:ns:csvIDN-1.0">
       2

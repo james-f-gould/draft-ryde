@@ -1,3 +1,4 @@
-ns1domain1test-TEST,192.0.2.2,v4
-ns1domain1test-TEST,192.0.2.29,v4
-ns1domain1test-TEST,1080:0:0:0:8:800:200C:417A,v6
+Hns1_domain1_test-TEST,192.0.2.1,v4
+Hns2_domain1_test-TEST,2001:DB8::1,v6
+Hns1_domain2_test-TEST,192.0.2.2,v4
+Hns2_domain2_test-TEST,2001:DB8::2,v6
